@@ -51,7 +51,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The default value of the '{@link #getResMult() <em>Res Mult</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResMult()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #getResMult() <em>Res Mult</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResMult()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The default value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsProtected()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsProtected()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The default value of the '{@link #isIsActive() <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsActive()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #isIsActive() <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsActive()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #getBase_InstanceSpecification() <em>Base Instance Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_InstanceSpecification()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #getBase_Classifier() <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Classifier()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #getBase_Lifeline() <em>Base Lifeline</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Lifeline()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	 * The cached value of the '{@link #getBase_ConnectableElement() <em>Base Connectable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ConnectableElement()
 	 * @generated
 	 * @ordered
@@ -171,7 +171,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ResourceImpl() {
@@ -181,7 +181,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -300,7 +300,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InstanceSpecification basicGetBase_InstanceSpecification() {
@@ -345,7 +345,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Classifier basicGetBase_Classifier() {
@@ -390,7 +390,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +405,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -425,7 +425,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Lifeline basicGetBase_Lifeline() {
@@ -435,7 +435,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -450,7 +450,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -470,7 +470,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConnectableElement basicGetBase_ConnectableElement() {
@@ -480,7 +480,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -495,7 +495,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -539,7 +539,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -576,7 +576,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -613,7 +613,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -642,7 +642,7 @@ public class ResourceImpl extends EObjectImpl implements Resource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.layers.stackmodel.layers;
 
 import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.layers.stackmodel.LayersException;
@@ -51,7 +52,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerExpression_Name()
@@ -64,7 +65,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -79,7 +80,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerExpression_Description()
@@ -92,7 +93,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -107,7 +108,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * If the meaning of the '<em>Is Layer Enabled Internal</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Layer Enabled Internal</em>' attribute.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerExpression_IsLayerEnabledInternal()
 	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.boolean" required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -123,7 +124,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * If the meaning of the '<em>Is Layer Enabled</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Layer Enabled</em>' attribute.
 	 * @see #setIsLayerEnabled(boolean)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerExpression_IsLayerEnabled()
@@ -136,7 +137,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isLayerEnabled <em>Is Layer Enabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Layer Enabled</em>' attribute.
 	 * @see #isLayerEnabled()
@@ -155,7 +156,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * In other world, if an ancestor node is disable, the branch is disabled.
 	 * Setting the value of this node set the value of the subnodes.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Branch Enabled</em>' attribute.
 	 * @see #setIsBranchEnabled(boolean)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerExpression_IsBranchEnabled()
@@ -168,7 +169,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isBranchEnabled <em>Is Branch Enabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Branch Enabled</em>' attribute.
 	 * @see #isBranchEnabled()
@@ -183,7 +184,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * If the meaning of the '<em>Owning Layers Stack</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owning Layers Stack</em>' reference.
 	 * @see #setOwningLayersStack(LayersStack)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerExpression_OwningLayersStack()
@@ -196,7 +197,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getOwningLayersStack <em>Owning Layers Stack</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owning Layers Stack</em>' reference.
 	 * @see #getOwningLayersStack()
@@ -213,7 +214,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * If the meaning of the '<em>State</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>State</em>' attribute.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerState
 	 * @see #setState(LayerState)
@@ -227,7 +228,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getState <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>State</em>' attribute.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerState
@@ -239,7 +240,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException" viewRequired="true" viewOrdered="false"
 	 *        propertyRequired="true" propertyOrdered="false"
 	 * @generated
@@ -249,7 +250,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException" viewMany="true" propertyRequired="true" propertyOrdered="false"
 	 * @generated
 	 */
@@ -258,7 +259,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException" viewRequired="true" viewOrdered="false" propertyRequired="true" propertyMany="true"
 	 * @generated
 	 */
@@ -273,7 +274,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * This method is called by the LayersStack when it detect that tha layer is attached to it.
 	 *
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model owningLayersStackRequired="true" owningLayersStackOrdered="false"
 	 * @generated
 	 */
@@ -286,7 +287,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * A checked version of getOwningLayersStack.
 	 *
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.NotFoundException"
 	 * @generated
 	 */
@@ -299,7 +300,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * This method is called by the class immediately after entering in attached state.
 	 * The methodcan be used to start the layer behaviors.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException"
 	 * @generated
 	 */
@@ -321,7 +322,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Just after enterring in "attached" state, the enterAttachedState() method is called.
 	 * If this Layer is successfully attached, then attach subLayers.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException"
 	 * @generated
 	 */
@@ -334,7 +335,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * Detach the Layer. The state go to "detached".
 	 * Associated behavior are stopped.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException"
 	 * @generated
 	 */
@@ -347,7 +348,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	 * This method is called just before this Layer leave the attached state.
 	 *
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model
 	 * @generated
 	 */
@@ -356,7 +357,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws LayersException
 	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" viewMany="true" propertyRequired="true" propertyOrdered="false"
 	 * @generated NOT
@@ -366,7 +367,7 @@ public interface LayerExpression extends ApplicationDependantElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws LayersException
 	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" viewRequired="true" viewOrdered="false" propertyRequired="true" propertyMany="true"
 	 * @generated NOT

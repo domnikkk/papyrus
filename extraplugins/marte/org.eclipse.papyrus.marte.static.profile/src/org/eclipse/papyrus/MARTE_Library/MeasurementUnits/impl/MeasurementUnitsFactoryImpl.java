@@ -35,7 +35,7 @@ import org.eclipse.papyrus.MARTE_Library.MeasurementUnits.WeightUnitKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements MeasurementUnitsFactory {
@@ -43,7 +43,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static MeasurementUnitsFactory init() {
@@ -62,7 +62,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MeasurementUnitsFactoryImpl() {
@@ -72,7 +72,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeUnitKind createTimeUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -164,7 +164,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTimeUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -174,7 +174,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PowerUnitKind createPowerUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -188,7 +188,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPowerUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -198,7 +198,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FrequencyUnitKind createFrequencyUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -212,7 +212,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertFrequencyUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -222,7 +222,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataSizeUnitKind createDataSizeUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -236,7 +236,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDataSizeUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -246,7 +246,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataTxRateUnitKind createDataTxRateUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -260,7 +260,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDataTxRateUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -270,7 +270,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnergyUnitKind createEnergyUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -284,7 +284,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEnergyUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -294,7 +294,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LengthUnitKind createLengthUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -308,7 +308,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertLengthUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -318,7 +318,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AreaUnitKind createAreaUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -332,7 +332,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAreaUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -342,7 +342,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public WeightUnitKind createWeightUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -356,7 +356,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertWeightUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -366,7 +366,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class MeasurementUnitsFactoryImpl extends EFactoryImpl implements Measure
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

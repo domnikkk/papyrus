@@ -30,7 +30,7 @@ public class HwSupportImpl extends HwDeviceImpl implements HwSupport {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwSupportImpl() {
@@ -40,7 +40,7 @@ public class HwSupportImpl extends HwDeviceImpl implements HwSupport {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

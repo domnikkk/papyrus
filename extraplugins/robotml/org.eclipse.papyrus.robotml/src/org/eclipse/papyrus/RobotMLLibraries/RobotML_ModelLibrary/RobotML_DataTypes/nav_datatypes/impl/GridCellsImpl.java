@@ -6,23 +6,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.GridCells;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -46,7 +39,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -57,7 +50,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	 * The default value of the '{@link #getCell_width() <em>Cell width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCell_width()
 	 * @generated
 	 * @ordered
@@ -68,7 +61,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	 * The cached value of the '{@link #getCell_width() <em>Cell width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCell_width()
 	 * @generated
 	 * @ordered
@@ -79,7 +72,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	 * The default value of the '{@link #getCell_height() <em>Cell height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCell_height()
 	 * @generated
 	 * @ordered
@@ -90,7 +83,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	 * The cached value of the '{@link #getCell_height() <em>Cell height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCell_height()
 	 * @generated
 	 * @ordered
@@ -101,7 +94,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	 * The cached value of the '{@link #getCells() <em>Cells</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCells()
 	 * @generated
 	 * @ordered
@@ -111,7 +104,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GridCellsImpl() {
@@ -121,7 +114,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +125,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -142,7 +135,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -162,7 +155,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -187,7 +180,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getCell_width() {
@@ -197,7 +190,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCell_width(float newCell_width) {
@@ -211,7 +204,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getCell_height() {
@@ -221,7 +214,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCell_height(float newCell_height) {
@@ -235,7 +228,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Point> getCells() {
@@ -248,7 +241,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +258,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +279,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -313,7 +306,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +331,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +352,7 @@ public class GridCellsImpl extends MinimalEObjectImpl.Container implements GridC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

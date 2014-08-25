@@ -32,7 +32,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackag
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryFactory
  * @model kind="package"
  * @generated
@@ -42,7 +42,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "HwMemory";
@@ -51,7 +51,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/HwMemory/1";
@@ -60,7 +60,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "HwMemory";
@@ -69,7 +69,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HwMemoryPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl.init();
@@ -78,7 +78,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl <em>Hw Memory</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwMemory()
 	 * @generated
@@ -89,7 +89,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -99,7 +99,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -109,7 +109,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -119,7 +119,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -129,7 +129,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -139,7 +139,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -149,7 +149,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -179,7 +179,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +259,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Timings</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Memory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +289,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl <em>Hw RAM</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwRAM()
 	 * @generated
@@ -300,7 +300,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -310,7 +310,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -320,7 +320,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -330,7 +330,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -340,7 +340,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -350,7 +350,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -360,7 +360,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,7 +370,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +380,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -390,7 +390,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -400,7 +400,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -410,7 +410,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -420,7 +420,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +430,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +440,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -450,7 +450,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -460,7 +460,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -470,7 +470,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Timings</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -480,7 +480,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -490,7 +490,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Organization</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -500,7 +500,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Synchronous</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -510,7 +510,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -520,7 +520,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Non Volatile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -530,7 +530,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Repl Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -540,7 +540,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Write Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -550,7 +550,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw RAM</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -560,7 +560,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwROMImpl <em>Hw ROM</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwROMImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwROM()
 	 * @generated
@@ -571,7 +571,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -581,7 +581,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -591,7 +591,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -601,7 +601,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -611,7 +611,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -621,7 +621,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -631,7 +631,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -641,7 +641,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -651,7 +651,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -661,7 +661,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -671,7 +671,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -681,7 +681,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -691,7 +691,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -701,7 +701,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -711,7 +711,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -721,7 +721,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -731,7 +731,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -741,7 +741,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Timings</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -751,7 +751,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -761,7 +761,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -771,7 +771,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Organization</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -781,7 +781,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw ROM</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -791,7 +791,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwDriveImpl <em>Hw Drive</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwDriveImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwDrive()
 	 * @generated
@@ -802,7 +802,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -812,7 +812,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -822,7 +822,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -832,7 +832,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -842,7 +842,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -852,7 +852,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -862,7 +862,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -872,7 +872,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -882,7 +882,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -892,7 +892,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -902,7 +902,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -912,7 +912,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -922,7 +922,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -932,7 +932,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -942,7 +942,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -952,7 +952,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -962,7 +962,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -972,7 +972,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Timings</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -982,7 +982,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -992,7 +992,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Sector Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1002,7 +1002,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Buffer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1012,7 +1012,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Drive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1022,7 +1022,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwCacheImpl <em>Hw Cache</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwCacheImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwCache()
 	 * @generated
@@ -1033,7 +1033,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1043,7 +1043,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1053,7 +1053,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1063,7 +1063,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1073,7 +1073,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1083,7 +1083,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1093,7 +1093,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1103,7 +1103,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1113,7 +1113,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1123,7 +1123,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1133,7 +1133,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1143,7 +1143,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1153,7 +1153,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1163,7 +1163,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1173,7 +1173,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1183,7 +1183,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1193,7 +1193,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1203,7 +1203,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Timings</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1213,7 +1213,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Throughput</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1223,7 +1223,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1233,7 +1233,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1243,7 +1243,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Structure</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1253,7 +1253,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Repl Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1263,7 +1263,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The feature id for the '<em><b>Write Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1273,7 +1273,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Cache</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1283,7 +1283,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy <em>Repl Policy</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getRepl_Policy()
 	 * @generated
@@ -1294,7 +1294,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy <em>Write Policy</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getWritePolicy()
 	 * @generated
@@ -1305,7 +1305,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.CacheType <em>Cache Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.CacheType
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getCacheType()
 	 * @generated
@@ -1316,7 +1316,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.ROM_Type <em>ROM Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.ROM_Type
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getROM_Type()
 	 * @generated
@@ -1327,7 +1327,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '<em>Timing</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getTiming()
 	 * @generated
@@ -1338,7 +1338,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '<em>Cache Structure</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getCacheStructure()
 	 * @generated
@@ -1349,7 +1349,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * The meta object id for the '<em>Memory Organization</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getMemoryOrganization()
 	 * @generated
@@ -1361,7 +1361,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory <em>Hw Memory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Memory</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory
 	 * @generated
@@ -1372,7 +1372,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getMemorySize <em>Memory Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Memory Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getMemorySize()
 	 * @see #getHwMemory()
@@ -1384,7 +1384,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getAdressSize <em>Adress Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Adress Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getAdressSize()
 	 * @see #getHwMemory()
@@ -1396,7 +1396,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getTimings <em>Timings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Timings</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getTimings()
 	 * @see #getHwMemory()
@@ -1408,7 +1408,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getThroughput <em>Throughput</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Throughput</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getThroughput()
 	 * @see #getHwMemory()
@@ -1420,7 +1420,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM <em>Hw RAM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw RAM</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM
 	 * @generated
@@ -1431,7 +1431,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getOrganization <em>Organization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Organization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getOrganization()
 	 * @see #getHwRAM()
@@ -1443,7 +1443,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsSynchronous <em>Is Synchronous</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Synchronous</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsSynchronous()
 	 * @see #getHwRAM()
@@ -1455,7 +1455,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsStatic <em>Is Static</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Static</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsStatic()
 	 * @see #getHwRAM()
@@ -1467,7 +1467,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsNonVolatile <em>Is Non Volatile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Non Volatile</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsNonVolatile()
 	 * @see #getHwRAM()
@@ -1479,7 +1479,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getRepl_Policy <em>Repl Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Repl Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getRepl_Policy()
 	 * @see #getHwRAM()
@@ -1491,7 +1491,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getWritePolicy <em>Write Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Write Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getWritePolicy()
 	 * @see #getHwRAM()
@@ -1503,7 +1503,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwROM <em>Hw ROM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw ROM</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwROM
 	 * @generated
@@ -1514,7 +1514,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwROM#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwROM#getType()
 	 * @see #getHwROM()
@@ -1526,7 +1526,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwROM#getOrganization <em>Organization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Organization</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwROM#getOrganization()
 	 * @see #getHwROM()
@@ -1538,7 +1538,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwDrive <em>Hw Drive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Drive</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwDrive
 	 * @generated
@@ -1549,7 +1549,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwDrive#getSectorSize <em>Sector Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Sector Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwDrive#getSectorSize()
 	 * @see #getHwDrive()
@@ -1561,7 +1561,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwDrive#getBuffer <em>Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Buffer</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwDrive#getBuffer()
 	 * @see #getHwDrive()
@@ -1573,7 +1573,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache <em>Hw Cache</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Cache</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache
 	 * @generated
@@ -1584,7 +1584,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getLevel <em>Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Level</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getLevel()
 	 * @see #getHwCache()
@@ -1596,7 +1596,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getType()
 	 * @see #getHwCache()
@@ -1608,7 +1608,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getStructure <em>Structure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Structure</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getStructure()
 	 * @see #getHwCache()
@@ -1620,7 +1620,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getRepl_Policy <em>Repl Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Repl Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getRepl_Policy()
 	 * @see #getHwCache()
@@ -1632,7 +1632,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getWritePolicy <em>Write Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Write Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwCache#getWritePolicy()
 	 * @see #getHwCache()
@@ -1644,7 +1644,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy <em>Repl Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Repl Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy
 	 * @generated
@@ -1655,7 +1655,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy <em>Write Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Write Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy
 	 * @generated
@@ -1666,7 +1666,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.CacheType <em>Cache Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Cache Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.CacheType
 	 * @generated
@@ -1677,7 +1677,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.ROM_Type <em>ROM Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>ROM Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.ROM_Type
 	 * @generated
@@ -1688,7 +1688,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Timing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Timing</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -1700,7 +1700,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Cache Structure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Cache Structure</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -1712,7 +1712,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Memory Organization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Memory Organization</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -1724,7 +1724,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1740,7 +1740,7 @@ public interface HwMemoryPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1748,7 +1748,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl <em>Hw Memory</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwMemory()
 		 * @generated
@@ -1759,7 +1759,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Memory Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_MEMORY__MEMORY_SIZE = eINSTANCE.getHwMemory_MemorySize();
@@ -1768,7 +1768,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Adress Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_MEMORY__ADRESS_SIZE = eINSTANCE.getHwMemory_AdressSize();
@@ -1777,7 +1777,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Timings</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_MEMORY__TIMINGS = eINSTANCE.getHwMemory_Timings();
@@ -1786,7 +1786,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Throughput</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_MEMORY__THROUGHPUT = eINSTANCE.getHwMemory_Throughput();
@@ -1795,7 +1795,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl <em>Hw RAM</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwRAM()
 		 * @generated
@@ -1806,7 +1806,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Organization</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RAM__ORGANIZATION = eINSTANCE.getHwRAM_Organization();
@@ -1815,7 +1815,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Synchronous</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RAM__IS_SYNCHRONOUS = eINSTANCE.getHwRAM_IsSynchronous();
@@ -1824,7 +1824,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Static</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RAM__IS_STATIC = eINSTANCE.getHwRAM_IsStatic();
@@ -1833,7 +1833,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Non Volatile</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RAM__IS_NON_VOLATILE = eINSTANCE.getHwRAM_IsNonVolatile();
@@ -1842,7 +1842,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Repl Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RAM__REPL_POLICY = eINSTANCE.getHwRAM_Repl_Policy();
@@ -1851,7 +1851,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Write Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RAM__WRITE_POLICY = eINSTANCE.getHwRAM_WritePolicy();
@@ -1860,7 +1860,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwROMImpl <em>Hw ROM</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwROMImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwROM()
 		 * @generated
@@ -1871,7 +1871,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_ROM__TYPE = eINSTANCE.getHwROM_Type();
@@ -1880,7 +1880,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Organization</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_ROM__ORGANIZATION = eINSTANCE.getHwROM_Organization();
@@ -1889,7 +1889,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwDriveImpl <em>Hw Drive</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwDriveImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwDrive()
 		 * @generated
@@ -1900,7 +1900,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Sector Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_DRIVE__SECTOR_SIZE = eINSTANCE.getHwDrive_SectorSize();
@@ -1909,7 +1909,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Buffer</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_DRIVE__BUFFER = eINSTANCE.getHwDrive_Buffer();
@@ -1918,7 +1918,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwCacheImpl <em>Hw Cache</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwCacheImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getHwCache()
 		 * @generated
@@ -1929,7 +1929,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_CACHE__LEVEL = eINSTANCE.getHwCache_Level();
@@ -1938,7 +1938,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_CACHE__TYPE = eINSTANCE.getHwCache_Type();
@@ -1947,7 +1947,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Structure</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_CACHE__STRUCTURE = eINSTANCE.getHwCache_Structure();
@@ -1956,7 +1956,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Repl Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_CACHE__REPL_POLICY = eINSTANCE.getHwCache_Repl_Policy();
@@ -1965,7 +1965,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Write Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_CACHE__WRITE_POLICY = eINSTANCE.getHwCache_WritePolicy();
@@ -1974,7 +1974,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy <em>Repl Policy</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getRepl_Policy()
 		 * @generated
@@ -1985,7 +1985,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy <em>Write Policy</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getWritePolicy()
 		 * @generated
@@ -1996,7 +1996,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.CacheType <em>Cache Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.CacheType
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getCacheType()
 		 * @generated
@@ -2007,7 +2007,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.ROM_Type <em>ROM Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.ROM_Type
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getROM_Type()
 		 * @generated
@@ -2018,7 +2018,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em>Timing</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getTiming()
 		 * @generated
@@ -2029,7 +2029,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em>Cache Structure</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getCacheStructure()
 		 * @generated
@@ -2040,7 +2040,7 @@ public interface HwMemoryPackage extends EPackage {
 		 * The meta object literal for the '<em>Memory Organization</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl#getMemoryOrganization()
 		 * @generated

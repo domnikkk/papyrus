@@ -32,7 +32,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEReference()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SelectionRefImpl() {
@@ -52,7 +52,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,7 +63,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getEReference() {
@@ -82,7 +82,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetEReference() {
@@ -92,7 +92,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEReference(EObject newEReference) {
@@ -106,7 +106,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class SelectionRefImpl extends AbstractSelectionImpl implements Selection
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

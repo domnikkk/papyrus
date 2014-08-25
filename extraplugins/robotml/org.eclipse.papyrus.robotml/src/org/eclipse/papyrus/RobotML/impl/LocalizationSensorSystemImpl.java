@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.LocalizationSensorSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,7 +19,7 @@ public class LocalizationSensorSystemImpl extends SensorSystemImpl implements Lo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LocalizationSensorSystemImpl() {
@@ -30,7 +29,7 @@ public class LocalizationSensorSystemImpl extends SensorSystemImpl implements Lo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

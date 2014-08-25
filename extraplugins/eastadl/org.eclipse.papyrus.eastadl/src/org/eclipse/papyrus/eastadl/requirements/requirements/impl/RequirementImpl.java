@@ -4,6 +4,7 @@ package org.eclipse.papyrus.eastadl.requirements.requirements.impl;
 
 import java.util.Collection;
 import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -54,7 +55,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -65,7 +66,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -76,7 +77,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getOwnedComment() <em>Owned Comment</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedComment()
 	 * @generated
 	 * @ordered
@@ -87,7 +88,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getBase_PackageableElement() <em>Base Packageable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_PackageableElement()
 	 * @generated
 	 * @ordered
@@ -98,7 +99,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -109,7 +110,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -120,7 +121,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getFormalism() <em>Formalism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFormalism()
 	 * @generated
 	 * @ordered
@@ -131,7 +132,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getFormalism() <em>Formalism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFormalism()
 	 * @generated
 	 * @ordered
@@ -142,7 +143,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -153,7 +154,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -164,7 +165,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -174,7 +175,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RequirementImpl() {
@@ -184,7 +185,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +196,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +216,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -225,7 +226,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +241,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -251,7 +252,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -262,7 +263,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +277,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +297,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PackageableElement basicGetBase_PackageableElement() {
@@ -306,7 +307,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +322,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +333,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +348,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +359,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +374,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +385,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -399,7 +400,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -413,7 +414,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +449,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -488,7 +489,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -525,7 +526,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -554,7 +555,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -593,7 +594,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -735,7 +736,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

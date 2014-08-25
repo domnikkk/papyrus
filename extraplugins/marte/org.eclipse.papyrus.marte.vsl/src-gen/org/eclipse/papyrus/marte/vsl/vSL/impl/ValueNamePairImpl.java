@@ -4,18 +4,14 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.Expression;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
 import org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
@@ -40,7 +36,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -51,7 +47,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -61,7 +57,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ValueNamePairImpl()
@@ -72,7 +68,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +80,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +103,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetProperty()
@@ -118,7 +114,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +130,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +142,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
@@ -168,7 +164,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +192,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +204,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +216,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +228,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +245,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +267,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +288,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +309,7 @@ public class ValueNamePairImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

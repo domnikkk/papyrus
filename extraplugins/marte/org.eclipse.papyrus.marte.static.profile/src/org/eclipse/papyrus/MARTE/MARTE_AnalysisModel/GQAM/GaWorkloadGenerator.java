@@ -42,7 +42,7 @@ public interface GaWorkloadGenerator extends EObject {
 	 * If the meaning of the '<em>Pop</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pop</em>' attribute.
 	 * @see #setPop(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadGenerator_Pop()
@@ -55,7 +55,7 @@ public interface GaWorkloadGenerator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator#getPop <em>Pop</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Pop</em>' attribute.
 	 * @see #getPop()
@@ -70,7 +70,7 @@ public interface GaWorkloadGenerator extends EObject {
 	 * If the meaning of the '<em>Base Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavior</em>' reference.
 	 * @see #setBase_Behavior(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadGenerator_Base_Behavior()
@@ -83,7 +83,7 @@ public interface GaWorkloadGenerator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadGenerator#getBase_Behavior <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavior</em>' reference.
 	 * @see #getBase_Behavior()

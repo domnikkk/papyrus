@@ -27,7 +27,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceServi
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFactory {
@@ -35,7 +35,7 @@ public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwGeneralFactory init() {
@@ -54,7 +54,7 @@ public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwGeneralFactoryImpl() {
@@ -64,7 +64,7 @@ public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class HwGeneralFactoryImpl extends EFactoryImpl implements HwGeneralFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

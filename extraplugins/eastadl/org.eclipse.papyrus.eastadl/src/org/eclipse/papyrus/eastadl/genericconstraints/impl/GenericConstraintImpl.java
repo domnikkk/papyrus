@@ -59,7 +59,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -124,7 +124,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GenericConstraintImpl() {
@@ -134,7 +134,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -224,7 +224,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +303,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EAValue basicGetValue() {
@@ -338,7 +338,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -382,7 +382,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +397,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -427,7 +427,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -442,7 +442,7 @@ public class GenericConstraintImpl extends TraceableSpecificationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

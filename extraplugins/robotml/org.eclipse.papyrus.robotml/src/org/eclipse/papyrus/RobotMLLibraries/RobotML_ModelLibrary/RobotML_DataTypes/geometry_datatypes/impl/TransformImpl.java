@@ -4,13 +4,10 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform;
@@ -35,7 +32,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	 * The cached value of the '{@link #getTranslation() <em>Translation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTranslation()
 	 * @generated
 	 * @ordered
@@ -46,7 +43,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	 * The cached value of the '{@link #getRotation() <em>Rotation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRotation()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TransformImpl() {
@@ -66,7 +63,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +74,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Vector3 getTranslation() {
@@ -87,7 +84,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTranslation(Vector3 newTranslation, NotificationChain msgs) {
@@ -107,7 +104,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTranslation(Vector3 newTranslation) {
@@ -132,7 +129,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Quaternion getRotation() {
@@ -142,7 +139,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetRotation(Quaternion newRotation, NotificationChain msgs) {
@@ -162,7 +159,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRotation(Quaternion newRotation) {
@@ -187,7 +184,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +201,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +218,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +256,7 @@ public class TransformImpl extends MinimalEObjectImpl.Container implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

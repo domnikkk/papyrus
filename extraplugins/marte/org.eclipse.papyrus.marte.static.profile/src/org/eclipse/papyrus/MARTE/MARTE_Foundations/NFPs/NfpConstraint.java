@@ -45,7 +45,7 @@ public interface NfpConstraint extends EObject {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind
 	 * @see #setKind(ConstraintKind)
@@ -59,7 +59,7 @@ public interface NfpConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.ConstraintKind
@@ -75,7 +75,7 @@ public interface NfpConstraint extends EObject {
 	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Constraint</em>' reference.
 	 * @see #setBase_Constraint(Constraint)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getNfpConstraint_Base_Constraint()
@@ -88,7 +88,7 @@ public interface NfpConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint#getBase_Constraint <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Constraint</em>' reference.
 	 * @see #getBase_Constraint()
@@ -104,7 +104,7 @@ public interface NfpConstraint extends EObject {
 	 * If the meaning of the '<em>Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getNfpConstraint_Mode()
 	 * @model ordered="false"

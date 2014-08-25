@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
 
@@ -33,7 +30,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getR() <em>R</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getR()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getR() <em>R</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getR()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getG() <em>G</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getG()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getG() <em>G</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getG()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getB() <em>B</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getB()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getB() <em>B</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getB()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The default value of the '{@link #getA() <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	 * The cached value of the '{@link #getA() <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -120,7 +117,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ColorRGBAImpl() {
@@ -130,7 +127,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getR() {
@@ -151,7 +148,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setR(float newR) {
@@ -165,7 +162,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getG() {
@@ -175,7 +172,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setG(float newG) {
@@ -189,7 +186,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getB() {
@@ -199,7 +196,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setB(float newB) {
@@ -213,7 +210,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getA() {
@@ -223,7 +220,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setA(float newA) {
@@ -237,7 +234,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +255,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +280,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +305,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +326,7 @@ public class ColorRGBAImpl extends MinimalEObjectImpl.Container implements Color
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -53,7 +53,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Nature</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nature</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind
 	 * @see #setNature(TimeNatureKind)
@@ -67,7 +67,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getNature <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nature</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind
@@ -83,7 +83,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Unit Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unit Type</em>' reference.
 	 * @see #setUnitType(Enumeration)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_UnitType()
@@ -96,7 +96,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getUnitType <em>Unit Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Unit Type</em>' reference.
 	 * @see #getUnitType()
@@ -112,7 +112,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Is Logical</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Logical</em>' attribute.
 	 * @see #setIsLogical(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_IsLogical()
@@ -125,7 +125,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#isIsLogical <em>Is Logical</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Logical</em>' attribute.
 	 * @see #isIsLogical()
@@ -140,7 +140,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Resol Attr</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Resol Attr</em>' reference.
 	 * @see #setResolAttr(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_ResolAttr()
@@ -153,7 +153,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getResolAttr <em>Resol Attr</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Resol Attr</em>' reference.
 	 * @see #getResolAttr()
@@ -168,7 +168,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Max Val Attr</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Max Val Attr</em>' reference.
 	 * @see #setMaxValAttr(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_MaxValAttr()
@@ -181,7 +181,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getMaxValAttr <em>Max Val Attr</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Max Val Attr</em>' reference.
 	 * @see #getMaxValAttr()
@@ -196,7 +196,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Offset Attr</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Offset Attr</em>' reference.
 	 * @see #setOffsetAttr(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_OffsetAttr()
@@ -209,7 +209,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getOffsetAttr <em>Offset Attr</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Offset Attr</em>' reference.
 	 * @see #getOffsetAttr()
@@ -224,7 +224,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Get Time</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Get Time</em>' reference.
 	 * @see #setGetTime(Operation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_GetTime()
@@ -237,7 +237,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getGetTime <em>Get Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Get Time</em>' reference.
 	 * @see #getGetTime()
@@ -252,7 +252,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Set Time</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Set Time</em>' reference.
 	 * @see #setSetTime(Operation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_SetTime()
@@ -265,7 +265,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getSetTime <em>Set Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Set Time</em>' reference.
 	 * @see #getSetTime()
@@ -280,7 +280,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Index To Value</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Index To Value</em>' reference.
 	 * @see #setIndexToValue(Operation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_IndexToValue()
@@ -293,7 +293,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getIndexToValue <em>Index To Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Index To Value</em>' reference.
 	 * @see #getIndexToValue()
@@ -308,7 +308,7 @@ public interface ClockType extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockType_Base_Class()
@@ -321,7 +321,7 @@ public interface ClockType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()

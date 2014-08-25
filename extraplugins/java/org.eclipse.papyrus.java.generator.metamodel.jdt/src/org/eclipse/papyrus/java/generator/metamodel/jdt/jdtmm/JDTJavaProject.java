@@ -51,7 +51,7 @@ public interface JDTJavaProject extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Java Model</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Java Model</em>' container reference.
 	 * @see #setJavaModel(JDTJavaModel)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaProject_JavaModel()
@@ -65,7 +65,7 @@ public interface JDTJavaProject extends JDTParentJavaElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject#getJavaModel <em>Java Model</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Java Model</em>' container reference.
 	 * @see #getJavaModel()
@@ -88,7 +88,7 @@ public interface JDTJavaProject extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Package Fragment Roots</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Package Fragment Roots</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaProject_PackageFragmentRoots()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot#getJavaProject

@@ -35,7 +35,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.EAValue;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage
  * @generated
  */
@@ -44,7 +44,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static BehaviorPackage modelPackage;
@@ -53,7 +53,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorSwitch<Adapter> modelSwitch = new BehaviorSwitch<Adapter>() {
@@ -121,7 +121,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehaviorAdapterFactory() {
@@ -133,7 +133,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -150,7 +150,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.behavior.Behavior
 	 * @generated
@@ -165,7 +165,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.Context
 	 * @generated
@@ -180,7 +180,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAValue
 	 * @generated
@@ -195,7 +195,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression
 	 * @generated
@@ -210,7 +210,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement
 	 * @generated
@@ -223,7 +223,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc --> This default
 	 * implementation returns null. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -237,7 +237,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.behavior.FunctionBehavior
 	 * @generated
@@ -252,7 +252,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.behavior.FunctionTrigger
 	 * @generated
@@ -267,7 +267,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.behavior.Mode
 	 * @generated
@@ -282,7 +282,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.behavior.ModeGroup
 	 * @generated
@@ -297,7 +297,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -312,7 +312,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification
 	 * @generated
@@ -326,7 +326,7 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc
 	 * --> This implementation returns <code>true</code> if the object is either the model's package
 	 * or is an instance object of the model. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */

@@ -19,7 +19,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,7 +28,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
@@ -37,7 +35,7 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VirtualTypedElementItemProvider
@@ -52,7 +50,7 @@ public class VirtualTypedElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VirtualTypedElementItemProvider(AdapterFactory adapterFactory) {
@@ -63,7 +61,7 @@ public class VirtualTypedElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +80,7 @@ public class VirtualTypedElementItemProvider
 	 * This adds a property descriptor for the Lower feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLowerPropertyDescriptor(Object object) {
@@ -105,7 +103,7 @@ public class VirtualTypedElementItemProvider
 	 * This adds a property descriptor for the Upper feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addUpperPropertyDescriptor(Object object) {
@@ -128,7 +126,7 @@ public class VirtualTypedElementItemProvider
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
@@ -151,7 +149,7 @@ public class VirtualTypedElementItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +166,7 @@ public class VirtualTypedElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +187,7 @@ public class VirtualTypedElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

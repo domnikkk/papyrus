@@ -38,7 +38,7 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * If the meaning of the '<em>Operators</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operators</em>' reference.
 	 * @see #setOperators(OperatorConfig)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getSimpleBinding_Operators()
@@ -51,7 +51,7 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getOperators <em>Operators</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Operators</em>' reference.
 	 * @see #getOperators()
@@ -67,7 +67,7 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * If the meaning of the '<em>Layer Operator Multiple Binding</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Layer Operator Multiple Binding</em>' container reference.
 	 * @see #setLayerOperatorMultipleBinding(LayerOperatorMultipleBinding)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getSimpleBinding_LayerOperatorMultipleBinding()
@@ -81,7 +81,7 @@ public interface SimpleBinding extends LayersOperatorBinding {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.SimpleBinding#getLayerOperatorMultipleBinding <em>Layer Operator Multiple Binding</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Layer Operator Multiple Binding</em>' container reference.
 	 * @see #getLayerOperatorMultipleBinding()

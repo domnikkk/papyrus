@@ -47,7 +47,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	 * The cached value of the '{@link #getBase_StructuredClassifier() <em>Base Structured Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_StructuredClassifier()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationImpl() {
@@ -89,7 +89,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StructuredClassifier basicGetBase_StructuredClassifier() {
@@ -130,7 +130,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -175,7 +175,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -253,7 +253,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -5,12 +5,9 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
 
@@ -34,7 +31,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	 * The default value of the '{@link #getSeq() <em>Seq</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeq()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	 * The cached value of the '{@link #getSeq() <em>Seq</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeq()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	 * The default value of the '{@link #getStamp() <em>Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStamp()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	 * The cached value of the '{@link #getStamp() <em>Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStamp()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	 * The default value of the '{@link #getFrame_id() <em>Frame id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrame_id()
 	 * @generated
 	 * @ordered
@@ -89,7 +86,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	 * The cached value of the '{@link #getFrame_id() <em>Frame id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrame_id()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HeaderImpl() {
@@ -109,7 +106,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +117,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getSeq() {
@@ -130,7 +127,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSeq(long newSeq) {
@@ -144,7 +141,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Date getStamp() {
@@ -154,7 +151,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStamp(Date newStamp) {
@@ -168,7 +165,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getFrame_id() {
@@ -178,7 +175,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setFrame_id(String newFrame_id) {
@@ -192,7 +189,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +208,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +230,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +252,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +271,7 @@ public class HeaderImpl extends MinimalEObjectImpl.Container implements Header {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

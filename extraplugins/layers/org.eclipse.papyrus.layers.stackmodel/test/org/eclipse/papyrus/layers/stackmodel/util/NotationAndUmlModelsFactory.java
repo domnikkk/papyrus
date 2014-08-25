@@ -35,7 +35,7 @@ public class NotationAndUmlModelsFactory {
 
 	/**
 	 * Create a Diagram
-	 * 
+	 *
 	 * @return
 	 */
 	public Diagram newDiagram() {
@@ -118,7 +118,7 @@ public class NotationAndUmlModelsFactory {
 
 	/**
 	 * Remove the specified element and its associated View.
-	 * 
+	 *
 	 * @param element
 	 *            element to remove.
 	 * @return The associated view.

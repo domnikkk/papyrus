@@ -38,7 +38,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	 * The default value of the '{@link #getCoolingPower() <em>Cooling Power</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCoolingPower()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	 * The cached value of the '{@link #getCoolingPower() <em>Cooling Power</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCoolingPower()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwCoolingSupplyImpl() {
@@ -69,7 +69,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class HwCoolingSupplyImpl extends HwComponentImpl implements HwCoolingSup
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -31,7 +31,7 @@ public class ColorImpl extends TypeImpl implements Color {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected ColorImpl() {
@@ -42,7 +42,7 @@ public class ColorImpl extends TypeImpl implements Color {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -53,7 +53,7 @@ public class ColorImpl extends TypeImpl implements Color {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

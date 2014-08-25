@@ -39,7 +39,7 @@ public interface JavaClass extends JavaGen {
 	 * If the meaning of the '<em>Base Classifier</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Classifier</em>' reference.
 	 * @see #setBase_Classifier(Classifier)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaClass_Base_Classifier()
@@ -52,7 +52,7 @@ public interface JavaClass extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaClass#getBase_Classifier <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Classifier</em>' reference.
 	 * @see #getBase_Classifier()
@@ -67,7 +67,7 @@ public interface JavaClass extends JavaGen {
 	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Final</em>' attribute.
 	 * @see #setIsFinal(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaClass_IsFinal()
@@ -80,7 +80,7 @@ public interface JavaClass extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaClass#isFinal <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Final</em>' attribute.
 	 * @see #isFinal()
@@ -95,7 +95,7 @@ public interface JavaClass extends JavaGen {
 	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Abstract</em>' attribute.
 	 * @see #setIsAbstract(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaClass_IsAbstract()
@@ -108,7 +108,7 @@ public interface JavaClass extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaClass#isAbstract <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Abstract</em>' attribute.
 	 * @see #isAbstract()
@@ -123,7 +123,7 @@ public interface JavaClass extends JavaGen {
 	 * If the meaning of the '<em>Is Static</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Static</em>' attribute.
 	 * @see #setIsStatic(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaClass_IsStatic()
@@ -136,7 +136,7 @@ public interface JavaClass extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaClass#isStatic <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Static</em>' attribute.
 	 * @see #isStatic()
@@ -152,7 +152,7 @@ public interface JavaClass extends JavaGen {
 	 * If the meaning of the '<em>Explicit Plain Text Required Imports</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Explicit Plain Text Required Imports</em>' attribute list.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaClass_ExplicitPlainTextRequiredImports()
 	 * @model unique="false" ordered="false"
@@ -168,7 +168,7 @@ public interface JavaClass extends JavaGen {
 	 * If the meaning of the '<em>Explicit Required Imports</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Explicit Required Imports</em>' reference list.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaClass_ExplicitRequiredImports()
 	 * @model ordered="false"
@@ -180,7 +180,7 @@ public interface JavaClass extends JavaGen {
 	 * Retrieves the first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>' from the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
 	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>', or <code>null</code>.
@@ -193,7 +193,7 @@ public interface JavaClass extends JavaGen {
 	 * Retrieves the first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>' from the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
 	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
 	 * @param ignoreCase

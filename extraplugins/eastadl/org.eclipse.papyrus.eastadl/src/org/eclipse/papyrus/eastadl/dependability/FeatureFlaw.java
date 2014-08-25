@@ -56,7 +56,7 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getFeatureFlaw_Base_Class()
@@ -69,7 +69,7 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.FeatureFlaw#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -85,7 +85,7 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * If the meaning of the '<em>Item</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Item</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getFeatureFlaw_Item()
 	 * @model required="true" ordered="false"
@@ -101,7 +101,7 @@ public interface FeatureFlaw extends TraceableSpecification {
 	 * If the meaning of the '<em>Non Fulfilled Requirement</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Non Fulfilled Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getFeatureFlaw_NonFulfilledRequirement()
 	 * @model ordered="false"

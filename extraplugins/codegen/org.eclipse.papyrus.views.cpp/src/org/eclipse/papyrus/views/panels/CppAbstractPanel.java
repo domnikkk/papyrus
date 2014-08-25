@@ -402,7 +402,7 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.swt.widgets.Widget#dispose()
 	 */
 	@Override

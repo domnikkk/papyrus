@@ -46,7 +46,7 @@ public interface AbstractLayer extends LayerExpression {
 	 * If the meaning of the '<em>Property Values</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property Values</em>' reference list.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getAbstractLayer_PropertyValues()
 	 * @model
@@ -63,7 +63,7 @@ public interface AbstractLayer extends LayerExpression {
 	 * If the meaning of the '<em>Property Value Map</em>' map isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property Value Map</em>' map.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getAbstractLayer_PropertyValueMap()
 	 * @model mapType="org.eclipse.papyrus.layers.stackmodel.layers.StringToTypeInstanceMap<org.eclipse.papyrus.layers.stackmodel.layers.String, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance>" ordered="false"
@@ -78,7 +78,7 @@ public interface AbstractLayer extends LayerExpression {
 	 * If the meaning of the '<em>Layer Descriptor</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Layer Descriptor</em>' reference.
 	 * @see #setLayerDescriptor(LayerDescriptor)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getAbstractLayer_LayerDescriptor()
@@ -91,7 +91,7 @@ public interface AbstractLayer extends LayerExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getLayerDescriptor <em>Layer Descriptor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Layer Descriptor</em>' reference.
 	 * @see #getLayerDescriptor()
@@ -107,7 +107,7 @@ public interface AbstractLayer extends LayerExpression {
 	 * If the meaning of the '<em>Views</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Views</em>' reference list.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getAbstractLayer_Views()
 	 * @model ordered="false"
@@ -123,7 +123,7 @@ public interface AbstractLayer extends LayerExpression {
 	 * If the meaning of the '<em>Attached Properties</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attached Properties</em>' reference list.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getAbstractLayer_AttachedProperties()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
@@ -134,7 +134,7 @@ public interface AbstractLayer extends LayerExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException" propertyRequired="true" propertyOrdered="false"
 	 * @generated
 	 */
@@ -143,7 +143,7 @@ public interface AbstractLayer extends LayerExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model propertyRequired="true" propertyOrdered="false"
 	 * @generated
 	 */
@@ -152,7 +152,7 @@ public interface AbstractLayer extends LayerExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException" propertyRequired="true" propertyOrdered="false"
 	 * @generated
 	 */
@@ -161,7 +161,7 @@ public interface AbstractLayer extends LayerExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException" propertyDataType="org.eclipse.papyrus.layers.stackmodel.layers.String" propertyRequired="true" propertyOrdered="false"
 	 * @generated
 	 */

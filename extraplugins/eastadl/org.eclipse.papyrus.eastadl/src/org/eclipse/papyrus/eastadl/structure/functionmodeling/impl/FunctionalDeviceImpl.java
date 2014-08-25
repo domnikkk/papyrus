@@ -31,7 +31,7 @@ public class FunctionalDeviceImpl extends AnalysisFunctionTypeImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionalDeviceImpl() {
@@ -40,7 +40,7 @@ public class FunctionalDeviceImpl extends AnalysisFunctionTypeImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

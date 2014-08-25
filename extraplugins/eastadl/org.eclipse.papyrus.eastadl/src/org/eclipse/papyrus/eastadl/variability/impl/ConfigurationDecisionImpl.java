@@ -54,7 +54,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The default value of the '{@link #getEffect() <em>Effect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The default value of the '{@link #getCriterion() <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCriterion()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #getCriterion() <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCriterion()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The default value of the '{@link #isIsEquivalence() <em>Is Equivalence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsEquivalence()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #isIsEquivalence() <em>Is Equivalence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsEquivalence()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationDecisionImpl() {
@@ -140,7 +140,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public SelectionCriterion basicGetSelectionCriterion() {
@@ -163,7 +163,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -239,7 +239,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +334,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -364,7 +364,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +379,7 @@ public class ConfigurationDecisionImpl extends ConfigurationDecisionModelEntryIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

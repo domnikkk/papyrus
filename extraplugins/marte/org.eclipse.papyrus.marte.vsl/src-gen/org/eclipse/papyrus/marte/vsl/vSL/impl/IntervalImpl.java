@@ -4,17 +4,13 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.Expression;
 import org.eclipse.papyrus.marte.vsl.vSL.Interval;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -40,7 +36,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	 * The default value of the '{@link #getIsLowerIncluded() <em>Is Lower Included</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsLowerIncluded()
 	 * @generated
 	 * @ordered
@@ -51,7 +47,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	 * The cached value of the '{@link #getIsLowerIncluded() <em>Is Lower Included</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsLowerIncluded()
 	 * @generated
 	 * @ordered
@@ -62,7 +58,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -73,7 +69,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -84,7 +80,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	 * The default value of the '{@link #getIsUpperIncluded() <em>Is Upper Included</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsUpperIncluded()
 	 * @generated
 	 * @ordered
@@ -95,7 +91,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	 * The cached value of the '{@link #getIsUpperIncluded() <em>Is Upper Included</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsUpperIncluded()
 	 * @generated
 	 * @ordered
@@ -105,7 +101,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IntervalImpl()
@@ -116,7 +112,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +124,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +136,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +152,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +164,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLower(Expression newLower, NotificationChain msgs)
@@ -190,7 +186,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +214,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +226,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetUpper(Expression newUpper, NotificationChain msgs)
@@ -252,7 +248,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +276,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +288,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +304,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +316,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +328,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +340,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +359,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +382,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -413,7 +409,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +436,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -463,7 +459,7 @@ public class IntervalImpl extends ValueSpecificationImpl implements Interval
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

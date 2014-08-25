@@ -29,7 +29,7 @@ public interface Proxi_Left_Right extends EObject {
 	 * If the meaning of the '<em>Proxi left</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Proxi left</em>' containment reference.
 	 * @see #setProxi_left(Distance)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage#getProxi_Left_Right_Proxi_left()
@@ -42,7 +42,7 @@ public interface Proxi_Left_Right extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Proxi_Left_Right#getProxi_left <em>Proxi left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Proxi left</em>' containment reference.
 	 * @see #getProxi_left()
@@ -57,7 +57,7 @@ public interface Proxi_Left_Right extends EObject {
 	 * If the meaning of the '<em>Proxi right</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Proxi right</em>' containment reference.
 	 * @see #setProxi_right(Distance)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage#getProxi_Left_Right_Proxi_right()
@@ -70,7 +70,7 @@ public interface Proxi_Left_Right extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Proxi_Left_Right#getProxi_right <em>Proxi right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Proxi right</em>' containment reference.
 	 * @see #getProxi_right()

@@ -24,7 +24,7 @@ public class ECoreUtils {
 	/**
 	 * Check if one of the ancestor is instance of the specified type.
 	 * Ancestors are classes that contains this class
-	 * 
+	 *
 	 * @param child
 	 *            Child for which we want to check the ancestor's type
 	 * @param type
@@ -46,7 +46,7 @@ public class ECoreUtils {
 	/**
 	 * Lookup if one of the ancestor is instance of the specified type.
 	 * Ancestors are classes that contains this class
-	 * 
+	 *
 	 * @param child
 	 *            Child for which we want to check the ancestor's type
 	 * @param type

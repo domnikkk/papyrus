@@ -151,7 +151,7 @@ public class BundleSelectionPage extends WizardPage {
 
 	/**
 	 * create an item that represent the bundle
-	 * 
+	 *
 	 * @param _package
 	 */
 	private void createTreeItem(Object bundle) {

@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.qompass.designer.core;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.qompass.designer.core.transformations.LazyCopier;
 import org.eclipse.uml2.uml.NamedElement;

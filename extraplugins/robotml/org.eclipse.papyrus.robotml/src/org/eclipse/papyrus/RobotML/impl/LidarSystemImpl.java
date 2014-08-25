@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.LidarSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -40,7 +37,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getNbLayers() <em>Nb Layers</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbLayers()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getNbLayers() <em>Nb Layers</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbLayers()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getLayerAngleMin() <em>Layer Angle Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerAngleMin()
 	 * @generated
 	 * @ordered
@@ -73,7 +70,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getLayerAngleMin() <em>Layer Angle Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerAngleMin()
 	 * @generated
 	 * @ordered
@@ -84,7 +81,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getLayerAngleStep() <em>Layer Angle Step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerAngleStep()
 	 * @generated
 	 * @ordered
@@ -95,7 +92,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getLayerAngleStep() <em>Layer Angle Step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerAngleStep()
 	 * @generated
 	 * @ordered
@@ -106,7 +103,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #isNoise() <em>Noise</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isNoise()
 	 * @generated
 	 * @ordered
@@ -117,7 +114,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #isNoise() <em>Noise</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isNoise()
 	 * @generated
 	 * @ordered
@@ -128,7 +125,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getSigmaNoise() <em>Sigma Noise</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSigmaNoise()
 	 * @generated
 	 * @ordered
@@ -139,7 +136,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getSigmaNoise() <em>Sigma Noise</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSigmaNoise()
 	 * @generated
 	 * @ordered
@@ -150,7 +147,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getAngle_min() <em>Angle min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAngle_min()
 	 * @generated
 	 * @ordered
@@ -161,7 +158,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getAngle_min() <em>Angle min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAngle_min()
 	 * @generated
 	 * @ordered
@@ -172,7 +169,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getAngle_max() <em>Angle max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAngle_max()
 	 * @generated
 	 * @ordered
@@ -183,7 +180,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getAngle_max() <em>Angle max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAngle_max()
 	 * @generated
 	 * @ordered
@@ -194,7 +191,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getTime_increment() <em>Time increment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTime_increment()
 	 * @generated
 	 * @ordered
@@ -205,7 +202,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getTime_increment() <em>Time increment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTime_increment()
 	 * @generated
 	 * @ordered
@@ -216,7 +213,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getScan_time() <em>Scan time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScan_time()
 	 * @generated
 	 * @ordered
@@ -227,7 +224,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getScan_time() <em>Scan time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScan_time()
 	 * @generated
 	 * @ordered
@@ -238,7 +235,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getRange_min() <em>Range min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRange_min()
 	 * @generated
 	 * @ordered
@@ -249,7 +246,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getRange_min() <em>Range min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRange_min()
 	 * @generated
 	 * @ordered
@@ -260,7 +257,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getRange_max() <em>Range max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRange_max()
 	 * @generated
 	 * @ordered
@@ -271,7 +268,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getRange_max() <em>Range max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRange_max()
 	 * @generated
 	 * @ordered
@@ -282,7 +279,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The default value of the '{@link #getNbRays() <em>Nb Rays</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbRays()
 	 * @generated
 	 * @ordered
@@ -293,7 +290,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * The cached value of the '{@link #getNbRays() <em>Nb Rays</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbRays()
 	 * @generated
 	 * @ordered
@@ -303,7 +300,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LidarSystemImpl() {
@@ -313,7 +310,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +321,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getNbLayers() {
@@ -334,7 +331,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setNbLayers(long newNbLayers) {
@@ -348,7 +345,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getLayerAngleMin() {
@@ -358,7 +355,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLayerAngleMin(float newLayerAngleMin) {
@@ -372,7 +369,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getLayerAngleStep() {
@@ -382,7 +379,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLayerAngleStep(float newLayerAngleStep) {
@@ -396,7 +393,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isNoise() {
@@ -406,7 +403,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setNoise(boolean newNoise) {
@@ -420,7 +417,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getSigmaNoise() {
@@ -430,7 +427,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSigmaNoise(float newSigmaNoise) {
@@ -444,7 +441,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getAngle_min() {
@@ -454,7 +451,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAngle_min(float newAngle_min) {
@@ -468,7 +465,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getAngle_max() {
@@ -478,7 +475,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAngle_max(float newAngle_max) {
@@ -492,7 +489,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getTime_increment() {
@@ -502,7 +499,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTime_increment(float newTime_increment) {
@@ -516,7 +513,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getScan_time() {
@@ -526,7 +523,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setScan_time(float newScan_time) {
@@ -540,7 +537,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getRange_min() {
@@ -550,7 +547,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRange_min(float newRange_min) {
@@ -564,7 +561,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getRange_max() {
@@ -574,7 +571,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRange_max(float newRange_max) {
@@ -588,7 +585,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getNbRays() {
@@ -598,7 +595,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setNbRays(long newNbRays) {
@@ -612,7 +609,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -649,7 +646,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -698,7 +695,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -747,7 +744,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -784,7 +781,7 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

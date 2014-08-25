@@ -81,7 +81,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * If the meaning of the '<em>Configurable Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Configurable Element</em>' reference.
 	 * @see #setConfigurableElement(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurableContainer_ConfigurableElement()
@@ -97,7 +97,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * The PDM of the configurable container.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Internal Binding</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurableContainer_InternalBinding()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -112,7 +112,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * The local feature model of the configurable container.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Public Feature Model</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurableContainer_PublicFeatureModel()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -128,7 +128,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * The variation groups that define certain constraints between this ADLVariableContainer's variable elements.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Variation Group</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurableContainer_VariationGroup()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -143,7 +143,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurableContainer_Base_Class()
@@ -156,7 +156,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurableContainer#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -171,7 +171,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurableContainer_Base_Package()
@@ -184,7 +184,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurableContainer#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -196,7 +196,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurableContainer#getConfigurableElement <em>Configurable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Configurable Element</em>' reference.
 	 * @see #getConfigurableElement()
@@ -212,7 +212,7 @@ public interface ConfigurableContainer extends EAElement {
 	 * If the meaning of the '<em>Private Content</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Private Content</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurableContainer_PrivateContent()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

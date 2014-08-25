@@ -91,7 +91,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * If the meaning of the '<em>Error Behavior Description</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Error Behavior Description</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_ErrorBehaviorDescription()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -107,7 +107,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * If the meaning of the '<em>External Fault</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>External Fault</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_ExternalFault()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -123,7 +123,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * If the meaning of the '<em>Failure</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Failure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_Failure()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -140,7 +140,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * The links for the error propagations between subordinate error models.
 	 * {derived from UML::StructuredClassifier::ownedConnector}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fault Failure Connector</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_FaultFailureConnector()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -156,7 +156,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * If the meaning of the '<em>Hw Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hw Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_HwTarget()
 	 * @model ordered="false"
@@ -172,7 +172,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * If the meaning of the '<em>Internal Fault</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Internal Fault</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_InternalFault()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -188,7 +188,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * <!-- begin-model-doc -->
 	 * {derived from UML::Classifier::attribute}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Part</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_Part()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -204,7 +204,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * If the meaning of the '<em>Process Fault</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Process Fault</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_ProcessFault()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -220,7 +220,7 @@ public interface ErrorModelType extends TraceableSpecification, EAType {
 	 * If the meaning of the '<em>Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelType_Target()
 	 * @model ordered="false"

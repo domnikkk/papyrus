@@ -62,7 +62,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getDimensions() <em>Dimensions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDimensions()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getArea() <em>Area</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArea()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getGrid() <em>Grid</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGrid()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getNbPins() <em>Nb Pins</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbPins()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getNbPins() <em>Nb Pins</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbPins()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getWeight() <em>Weight</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWeight()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getWeight() <em>Weight</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWeight()
 	 * @generated
 	 * @ordered
@@ -172,7 +172,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrice()
 	 * @generated
 	 * @ordered
@@ -183,7 +183,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrice()
 	 * @generated
 	 * @ordered
@@ -194,7 +194,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getR_Conditions() <em>RConditions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getR_Conditions()
 	 * @generated
 	 * @ordered
@@ -205,7 +205,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getPoweredServices() <em>Powered Services</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoweredServices()
 	 * @generated
 	 * @ordered
@@ -216,7 +216,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getStaticConsumption() <em>Static Consumption</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStaticConsumption()
 	 * @generated
 	 * @ordered
@@ -227,7 +227,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getStaticConsumption() <em>Static Consumption</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStaticConsumption()
 	 * @generated
 	 * @ordered
@@ -238,7 +238,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getStaticDissipation() <em>Static Dissipation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStaticDissipation()
 	 * @generated
 	 * @ordered
@@ -249,7 +249,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getStaticDissipation() <em>Static Dissipation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStaticDissipation()
 	 * @generated
 	 * @ordered
@@ -260,7 +260,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getSubComponents() <em>Sub Components</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubComponents()
 	 * @generated
 	 * @ordered
@@ -270,7 +270,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwComponentImpl() {
@@ -280,7 +280,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -390,7 +390,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -431,7 +431,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -442,7 +442,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -457,7 +457,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -468,7 +468,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -483,7 +483,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -494,7 +494,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -509,7 +509,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -523,7 +523,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -537,7 +537,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +548,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -563,7 +563,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -574,7 +574,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -589,7 +589,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -603,7 +603,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -618,7 +618,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -657,7 +657,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -716,7 +716,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -768,7 +768,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -807,7 +807,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

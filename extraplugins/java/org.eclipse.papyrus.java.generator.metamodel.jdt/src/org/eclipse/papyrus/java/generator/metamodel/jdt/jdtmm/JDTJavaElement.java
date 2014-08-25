@@ -56,7 +56,7 @@ public interface JDTJavaElement extends EObject {
 	 * If the meaning of the '<em>Parent</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parent</em>' reference.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaElement_Parent()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren
@@ -72,7 +72,7 @@ public interface JDTJavaElement extends EObject {
 	 * If the meaning of the '<em>Element Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Name</em>' attribute.
 	 * @see #setElementName(String)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaElement_ElementName()
@@ -85,7 +85,7 @@ public interface JDTJavaElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getElementName <em>Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Name</em>' attribute.
 	 * @see #getElementName()
@@ -100,7 +100,7 @@ public interface JDTJavaElement extends EObject {
 	 * If the meaning of the '<em>Element Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Type</em>' attribute.
 	 * @see #setElementType(int)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaElement_ElementType()
@@ -113,7 +113,7 @@ public interface JDTJavaElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getElementType <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Type</em>' attribute.
 	 * @see #getElementType()
@@ -128,7 +128,7 @@ public interface JDTJavaElement extends EObject {
 	 * If the meaning of the '<em>Comment</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Comment</em>' attribute.
 	 * @see #setComment(String)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaElement_Comment()
@@ -141,7 +141,7 @@ public interface JDTJavaElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getComment <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Comment</em>' attribute.
 	 * @see #getComment()
@@ -156,7 +156,7 @@ public interface JDTJavaElement extends EObject {
 	 * If the meaning of the '<em>Generated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Generated</em>' attribute.
 	 * @see #setGenerated(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaElement_Generated()
@@ -169,7 +169,7 @@ public interface JDTJavaElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#isGenerated <em>Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Generated</em>' attribute.
 	 * @see #isGenerated()
@@ -180,7 +180,7 @@ public interface JDTJavaElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" dataType="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.String" required="true" ordered="false"
 	 * @generated
 	 */
@@ -189,7 +189,7 @@ public interface JDTJavaElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model exceptions="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTVisitorException" visitorDataType="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.Visitor" visitorRequired="true" visitorOrdered="false"
 	 * @generated
 	 */
@@ -198,7 +198,7 @@ public interface JDTJavaElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" dataType="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.String" required="true" ordered="false"
 	 * @generated
 	 */

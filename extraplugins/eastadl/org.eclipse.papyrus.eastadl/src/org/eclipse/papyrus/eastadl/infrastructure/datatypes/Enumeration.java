@@ -43,7 +43,7 @@ public interface Enumeration extends EADatatype {
 	 * If the meaning of the '<em>Literal</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Literal</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEnumeration_Literal()
 	 * @model containment="true" lower="2" ordered="false"
@@ -58,7 +58,7 @@ public interface Enumeration extends EADatatype {
 	 * If the meaning of the '<em>Is Multi Valued</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Multi Valued</em>' attribute.
 	 * @see #setIsMultiValued(boolean)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEnumeration_IsMultiValued()
@@ -71,7 +71,7 @@ public interface Enumeration extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Enumeration#isIsMultiValued <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Multi Valued</em>' attribute.
 	 * @see #isIsMultiValued()

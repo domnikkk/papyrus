@@ -26,7 +26,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -37,7 +37,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EAStringValueImpl() {
@@ -57,7 +57,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class EAStringValueImpl extends EAValueImpl implements EAStringValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

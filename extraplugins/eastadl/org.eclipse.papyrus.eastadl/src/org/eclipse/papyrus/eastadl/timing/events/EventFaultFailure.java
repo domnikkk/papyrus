@@ -29,7 +29,7 @@ public interface EventFaultFailure extends Event {
 	 * If the meaning of the '<em>Fault Failure</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fault Failure</em>' reference.
 	 * @see #setFaultFailure(FaultFailure)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFaultFailure_FaultFailure()
@@ -42,7 +42,7 @@ public interface EventFaultFailure extends Event {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFaultFailure#getFaultFailure <em>Fault Failure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Fault Failure</em>' reference.
 	 * @see #getFaultFailure()

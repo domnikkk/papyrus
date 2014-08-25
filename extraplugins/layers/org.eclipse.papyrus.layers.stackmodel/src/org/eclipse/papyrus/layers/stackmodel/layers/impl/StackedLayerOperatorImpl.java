@@ -12,6 +12,8 @@
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -21,7 +23,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +38,7 @@ public class StackedLayerOperatorImpl extends AbstractLayerOperatorImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected StackedLayerOperatorImpl() {
@@ -51,7 +52,7 @@ public class StackedLayerOperatorImpl extends AbstractLayerOperatorImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +118,7 @@ public class StackedLayerOperatorImpl extends AbstractLayerOperatorImpl implemen
 
 		/**
 		 * The {@link LayerImpl#propertyValueMap} has changed. Synchronize the {@link LayerImpl#propertyValues} list.
-		 * 
+		 *
 		 * @param msg
 		 */
 		protected void notifyDescriptorNameChanged(Notification msg) {
@@ -136,7 +137,7 @@ public class StackedLayerOperatorImpl extends AbstractLayerOperatorImpl implemen
 
 		/**
 		 * The {@link LayerImpl#propertyValueMap} has changed. Synchronize the {@link LayerImpl#propertyValues} list.
-		 * 
+		 *
 		 * @param msg
 		 */
 		protected void notifyLayerApplicationFeatureChanged(Notification msg) {

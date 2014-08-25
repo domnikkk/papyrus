@@ -48,7 +48,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	 * The cached value of the '{@link #getDemand() <em>Demand</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDemand()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaWorkloadBehaviorImpl() {
@@ -90,7 +90,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -159,7 +159,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -221,7 +221,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class GaWorkloadBehaviorImpl extends EObjectImpl implements GaWorkloadBeh
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

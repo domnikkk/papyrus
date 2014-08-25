@@ -1,11 +1,17 @@
 package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.parser.antlr.internal;
 
+import org.antlr.runtime.BaseRecognizer;
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.DFA;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.services.ConstraintWithVSLlGrammarAccess;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.services.ConstraintWithVSLlGrammarAccess;
-
-import org.antlr.runtime.*;
 
 @SuppressWarnings("all")
 public class InternalConstraintWithVSLlParser extends AbstractInternalAntlrParser {

@@ -42,7 +42,7 @@ public interface DataEvent extends EObject {
 	 * If the meaning of the '<em>Base Any Receive Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Any Receive Event</em>' reference.
 	 * @see #setBase_AnyReceiveEvent(AnyReceiveEvent)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getDataEvent_Base_AnyReceiveEvent()
@@ -55,7 +55,7 @@ public interface DataEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent#getBase_AnyReceiveEvent <em>Base Any Receive Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Any Receive Event</em>' reference.
 	 * @see #getBase_AnyReceiveEvent()
@@ -70,7 +70,7 @@ public interface DataEvent extends EObject {
 	 * If the meaning of the '<em>Classifier</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Classifier</em>' reference.
 	 * @see #setClassifier(Classifier)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getDataEvent_Classifier()
@@ -83,7 +83,7 @@ public interface DataEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent#getClassifier <em>Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Classifier</em>' reference.
 	 * @see #getClassifier()

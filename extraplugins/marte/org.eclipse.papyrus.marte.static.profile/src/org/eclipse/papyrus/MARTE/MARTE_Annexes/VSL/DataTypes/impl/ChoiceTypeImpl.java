@@ -47,7 +47,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	 * The cached value of the '{@link #getChoiceAttrib() <em>Choice Attrib</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChoiceAttrib()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	 * The cached value of the '{@link #getDefaultAttrib() <em>Default Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultAttrib()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ChoiceTypeImpl() {
@@ -89,7 +89,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetDefaultAttrib() {
@@ -144,7 +144,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataType basicGetBase_DataType() {
@@ -189,7 +189,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -253,7 +253,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class ChoiceTypeImpl extends EObjectImpl implements ChoiceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

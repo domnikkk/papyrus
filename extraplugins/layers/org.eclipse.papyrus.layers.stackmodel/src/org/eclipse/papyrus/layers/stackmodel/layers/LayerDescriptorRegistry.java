@@ -40,7 +40,7 @@ public interface LayerDescriptorRegistry extends EObject {
 	 * If the meaning of the '<em>Layer Descriptors</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Layer Descriptors</em>' containment reference list.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerDescriptorRegistry_LayerDescriptors()
 	 * @model containment="true" ordered="false"

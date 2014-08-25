@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface GRMFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	GRMFactory eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.GRMFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Resource</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Storage Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Storage Resource</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Communication End Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Communication End Point</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Synchronization Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Synchronization Resource</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Concurrency Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Concurrency Resource</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Scheduler</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Scheduler</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Processing Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Processing Resource</em>'.
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Computing Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Computing Resource</em>'.
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Mutual Exclusion Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Mutual Exclusion Resource</em>'.
 	 * @generated
 	 */
@@ -128,7 +128,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Schedulable Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Schedulable Resource</em>'.
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Secondary Scheduler</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Secondary Scheduler</em>'.
 	 * @generated
 	 */
@@ -148,7 +148,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Communication Media</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Communication Media</em>'.
 	 * @generated
 	 */
@@ -158,7 +158,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Device Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Device Resource</em>'.
 	 * @generated
 	 */
@@ -168,7 +168,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Timing Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Timing Resource</em>'.
 	 * @generated
 	 */
@@ -178,7 +178,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Clock Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Clock Resource</em>'.
 	 * @generated
 	 */
@@ -188,7 +188,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Timer Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Timer Resource</em>'.
 	 * @generated
 	 */
@@ -198,7 +198,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Gr Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Gr Service</em>'.
 	 * @generated
 	 */
@@ -208,7 +208,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Release</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Release</em>'.
 	 * @generated
 	 */
@@ -218,7 +218,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Acquire</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Acquire</em>'.
 	 * @generated
 	 */
@@ -228,7 +228,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns a new object of class '<em>Resource Usage</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Resource Usage</em>'.
 	 * @generated
 	 */
@@ -238,7 +238,7 @@ public interface GRMFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

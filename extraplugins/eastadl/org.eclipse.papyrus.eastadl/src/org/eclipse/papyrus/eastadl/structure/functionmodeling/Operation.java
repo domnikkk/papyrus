@@ -55,7 +55,7 @@ public interface Operation extends EAElement {
 	 * If the meaning of the '<em>Base Operation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Operation</em>' reference.
 	 * @see #setBase_Operation(org.eclipse.uml2.uml.Operation)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getOperation_Base_Operation()
@@ -68,7 +68,7 @@ public interface Operation extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation#getBase_Operation <em>Base Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Operation</em>' reference.
 	 * @see #getBase_Operation()
@@ -84,7 +84,7 @@ public interface Operation extends EAElement {
 	 * If the meaning of the '<em>Argument</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Argument</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getOperation_Argument()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -99,7 +99,7 @@ public interface Operation extends EAElement {
 	 * If the meaning of the '<em>Return</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Return</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getOperation_Return()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

@@ -53,7 +53,7 @@ public class LayersTreeDiagramEditorFactory implements IPluggableEditorFactory {
 
 	/**
 	 * Initialize the factory with useful Classes.
-	 * 
+	 *
 	 * @see IPluggableEditorFactory#init(ServicesRegistry, EditorDescriptor)
 	 *
 	 * @param serviceRegistry

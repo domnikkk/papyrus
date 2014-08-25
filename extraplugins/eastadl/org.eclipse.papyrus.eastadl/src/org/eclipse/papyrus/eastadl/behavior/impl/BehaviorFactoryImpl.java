@@ -34,14 +34,14 @@ import org.eclipse.papyrus.eastadl.behavior.TriggerPolicyKind;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -53,7 +53,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static BehaviorFactory init() {
@@ -71,7 +71,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehaviorFactoryImpl() {
@@ -81,7 +81,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertFunctionBehaviorKindToString(EDataType eDataType, Object instanceValue) {
@@ -90,7 +90,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTriggerPolicyKindToString(EDataType eDataType, Object instanceValue) {
@@ -117,7 +117,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionBehaviorKind createFunctionBehaviorKindFromString(EDataType eDataType, String initialValue) {
@@ -196,7 +196,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TriggerPolicyKind createTriggerPolicyKindFromString(EDataType eDataType, String initialValue) {
@@ -245,7 +245,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

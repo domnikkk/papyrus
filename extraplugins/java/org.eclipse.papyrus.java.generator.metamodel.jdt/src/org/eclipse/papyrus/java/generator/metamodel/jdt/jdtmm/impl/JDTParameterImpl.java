@@ -25,7 +25,6 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -60,7 +59,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -71,7 +70,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	 * The default value of the '{@link #isMultiValued() <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMultiValued()
 	 * @generated
 	 * @ordered
@@ -82,7 +81,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	 * The cached value of the '{@link #isMultiValued() <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMultiValued()
 	 * @generated
 	 * @ordered
@@ -93,7 +92,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -103,7 +102,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTParameterImpl() {
@@ -113,7 +112,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +123,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +137,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetParameterOwner(JDTMethod newParameterOwner, NotificationChain msgs) {
@@ -149,7 +148,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +177,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +188,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +203,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +223,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JDTType basicGetType() {
@@ -234,7 +233,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +248,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +262,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetReturnOwner(JDTMethod newReturnOwner, NotificationChain msgs) {
@@ -274,7 +273,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +302,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +325,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +342,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +359,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +385,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +413,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -442,7 +441,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -465,7 +464,7 @@ public class JDTParameterImpl extends JDTMemberImpl implements JDTParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

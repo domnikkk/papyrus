@@ -126,7 +126,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InfrastructurePackageImpl extends EPackageImpl implements InfrastructurePackage {
@@ -134,7 +134,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass instanceRefEClass = null;
@@ -142,7 +142,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass targetInstanceRefEClass = null;
@@ -150,7 +150,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass functionConnectorPortInstanceRefEClass = null;
@@ -158,7 +158,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwareConnectorInstanceRefEClass = null;
@@ -166,7 +166,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwarePortConnectorInstanceRefEClass = null;
@@ -174,7 +174,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass allocatedElementInstanceRefEClass = null;
@@ -182,7 +182,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass clampConnectorInstanceRefEClass = null;
@@ -190,7 +190,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass refineInstanceRefEClass = null;
@@ -198,7 +198,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass satisfyInstanceRefEClass = null;
@@ -206,7 +206,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass vvCaseInstanceRefEClass = null;
@@ -214,7 +214,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass vvTargetInstanceRefEClass = null;
@@ -222,7 +222,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass realization_realizedInstanceRefEClass = null;
@@ -230,7 +230,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass realization_realizedByInstanceRefEClass = null;
@@ -238,7 +238,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eventFunctionInstanceRefEClass = null;
@@ -246,7 +246,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eventFunctionClientServerPortInstanceRefEClass = null;
@@ -254,7 +254,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eventFunctionFlowPortInstanceRefEClass = null;
@@ -262,7 +262,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass precedenceConstraint_precedingInstanceRefEClass = null;
@@ -270,7 +270,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass precedenceConstraint_successiveInstanceRefEClass = null;
@@ -278,7 +278,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass errorModelPrototype_functionTargetInstanceRefEClass = null;
@@ -286,7 +286,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass errorModelPrototype_hwTargetInstanceRefEClass = null;
@@ -294,7 +294,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePort_hwTargetInstanceRefEClass = null;
@@ -302,7 +302,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePort_functionTargetInstanceRefEClass = null;
@@ -310,7 +310,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePropagationLink_fromPortInstanceRefEClass = null;
@@ -318,7 +318,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass faultFailure_anomalyInstanceRefEClass = null;
@@ -326,7 +326,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass faultFailurePropagationLink_toPortInstanceRefEClass = null;
@@ -334,7 +334,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintInternalBinding_throughFunctionConnectorInstanceRefEClass = null;
@@ -342,7 +342,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefEClass = null;
@@ -350,7 +350,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintPrototype_functionTargetInstanceRefEClass = null;
@@ -358,7 +358,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintPrototype_hardwareComponentTargetInstanceRefEClass = null;
@@ -366,7 +366,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass behaviorConstraintPrototype_errorModelTargetInstanceRefEClass = null;
@@ -374,7 +374,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType dummyEDataType = null;
@@ -382,7 +382,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -393,7 +393,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * <p>
 	 * This method is used to initialize {@link InfrastructurePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -432,7 +432,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
+				: VehiclefeaturemodelingPackage.eINSTANCE);
 		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
@@ -450,7 +451,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI)
+				: VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -467,11 +469,13 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
+				: AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
+				.getEPackage(ComputationconstraintPackage.eNS_URI)
+				: ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
@@ -559,7 +563,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -570,7 +574,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -581,7 +585,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -592,7 +596,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -603,7 +607,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -614,7 +618,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -625,7 +629,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -636,7 +640,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -647,7 +651,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -658,7 +662,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -669,7 +673,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -680,7 +684,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -691,7 +695,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -702,7 +706,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -713,7 +717,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -724,7 +728,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -735,7 +739,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -746,7 +750,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -757,7 +761,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -768,7 +772,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -779,7 +783,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -790,7 +794,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -801,7 +805,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -812,7 +816,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -823,7 +827,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -834,7 +838,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -845,7 +849,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -856,7 +860,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -867,7 +871,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -878,7 +882,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -889,7 +893,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -900,7 +904,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -911,7 +915,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -922,7 +926,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -933,7 +937,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -944,7 +948,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -955,7 +959,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -966,7 +970,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -977,7 +981,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -988,7 +992,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -999,7 +1003,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1010,7 +1014,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1021,7 +1025,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1032,7 +1036,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1043,7 +1047,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1054,7 +1058,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1065,7 +1069,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1076,7 +1080,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1087,7 +1091,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1098,7 +1102,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1109,7 +1113,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1120,7 +1124,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1131,7 +1135,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1142,7 +1146,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1153,7 +1157,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1164,7 +1168,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1175,7 +1179,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1186,7 +1190,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1197,7 +1201,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1208,7 +1212,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1219,7 +1223,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1230,7 +1234,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1241,7 +1245,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1252,7 +1256,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1263,7 +1267,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1274,7 +1278,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1285,7 +1289,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1296,7 +1300,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1307,7 +1311,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1318,7 +1322,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1329,7 +1333,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1340,7 +1344,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1351,7 +1355,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1362,7 +1366,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1373,7 +1377,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1384,7 +1388,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1395,7 +1399,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1406,7 +1410,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1417,7 +1421,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1428,7 +1432,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1439,7 +1443,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1450,7 +1454,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1461,7 +1465,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1472,7 +1476,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1483,7 +1487,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1494,7 +1498,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1505,7 +1509,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1516,7 +1520,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1527,7 +1531,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1538,7 +1542,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1546,7 +1550,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1556,7 +1560,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#eNS_URI
 	 * @see #init()
@@ -1571,7 +1575,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1707,7 +1711,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1718,7 +1722,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1731,7 +1735,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

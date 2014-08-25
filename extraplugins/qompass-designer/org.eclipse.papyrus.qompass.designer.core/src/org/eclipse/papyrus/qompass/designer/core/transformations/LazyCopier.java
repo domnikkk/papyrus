@@ -21,7 +21,6 @@ import java.util.Map;
 import java.util.Stack;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
@@ -234,7 +233,7 @@ public class LazyCopier extends Copier {
 	 * the target object is marked as full copy.
 	 * Just using the put operation lead to bug 422899 - [QDesigner] Regression in
 	 * template instantiation
-	 * 
+	 *
 	 * @return
 	 */
 	public EObject putPair(EObject sourceEObj, EObject targetEObj) {
@@ -263,7 +262,7 @@ public class LazyCopier extends Copier {
 
 	/**
 	 * Set the status of a copy object
-	 * 
+	 *
 	 * @param targetEObj
 	 * @param status
 	 */
@@ -331,7 +330,7 @@ public class LazyCopier extends Copier {
 	 * Remove an element and its children from the map to enable subsequent copies, in particular if the
 	 * same element (e.g. an operation) is bound multiple times within a template instantiation.
 	 * TODO: there must be a better way to do this.
-	 * 
+	 *
 	 * @param element
 	 */
 	public void removeForCopy(EObject element) {

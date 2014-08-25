@@ -9,21 +9,15 @@ package org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.emf.facet.infra.query.ModelQuery;
-
 import org.eclipse.emf.facet.widgets.nattable.instance.tableinstance2.TableInstance2;
-
 import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance;
 import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage;
 
@@ -52,7 +46,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,7 +57,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -74,7 +68,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -85,7 +79,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -96,7 +90,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The default value of the '{@link #isIsSynchronized() <em>Is Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsSynchronized()
 	 * @generated
 	 * @ordered
@@ -107,7 +101,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The cached value of the '{@link #isIsSynchronized() <em>Is Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsSynchronized()
 	 * @generated
 	 * @ordered
@@ -118,7 +112,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTable()
 	 * @generated
 	 * @ordered
@@ -129,7 +123,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The cached value of the '{@link #getFillingQueries() <em>Filling Queries</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFillingQueries()
 	 * @generated
 	 * @ordered
@@ -140,7 +134,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The default value of the '{@link #getPastedElementId() <em>Pasted Element Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPastedElementId()
 	 * @generated
 	 * @ordered
@@ -151,7 +145,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The cached value of the '{@link #getPastedElementId() <em>Pasted Element Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPastedElementId()
 	 * @generated
 	 * @ordered
@@ -162,7 +156,7 @@ public class PapyrusTableInstanceImpl extends
 	 * The cached value of the '{@link #getPastedElementContainmentFeature() <em>Pasted Element Containment Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPastedElementContainmentFeature()
 	 * @generated
 	 * @ordered
@@ -172,7 +166,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusTableInstanceImpl() {
@@ -182,7 +176,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +187,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +198,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +213,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +224,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +239,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +250,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +265,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +285,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TableInstance2 basicGetTable() {
@@ -301,7 +295,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +310,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +324,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +335,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +350,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -376,7 +370,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference basicGetPastedElementContainmentFeature() {
@@ -386,7 +380,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -401,7 +395,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -434,7 +428,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -470,7 +464,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +498,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -531,7 +525,7 @@ public class PapyrusTableInstanceImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,7 +21,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.java.profile.java.JavaClass;
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 
@@ -30,7 +28,7 @@ import org.eclipse.papyrus.java.profile.java.JavaPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaClass} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaClassItemProvider
@@ -45,7 +43,7 @@ public class JavaClassItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaClassItemProvider(AdapterFactory adapterFactory) {
@@ -56,7 +54,7 @@ public class JavaClassItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +76,7 @@ public class JavaClassItemProvider
 	 * This adds a property descriptor for the Base Classifier feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_ClassifierPropertyDescriptor(Object object) {
@@ -101,7 +99,7 @@ public class JavaClassItemProvider
 	 * This adds a property descriptor for the Is Final feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsFinalPropertyDescriptor(Object object) {
@@ -124,7 +122,7 @@ public class JavaClassItemProvider
 	 * This adds a property descriptor for the Is Abstract feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsAbstractPropertyDescriptor(Object object) {
@@ -147,7 +145,7 @@ public class JavaClassItemProvider
 	 * This adds a property descriptor for the Is Static feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsStaticPropertyDescriptor(Object object) {
@@ -170,7 +168,7 @@ public class JavaClassItemProvider
 	 * This adds a property descriptor for the Explicit Plain Text Required Imports feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addExplicitPlainTextRequiredImportsPropertyDescriptor(Object object) {
@@ -193,7 +191,7 @@ public class JavaClassItemProvider
 	 * This adds a property descriptor for the Explicit Required Imports feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addExplicitRequiredImportsPropertyDescriptor(Object object) {
@@ -216,7 +214,7 @@ public class JavaClassItemProvider
 	 * This returns JavaClass.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +226,7 @@ public class JavaClassItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +242,7 @@ public class JavaClassItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +265,7 @@ public class JavaClassItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

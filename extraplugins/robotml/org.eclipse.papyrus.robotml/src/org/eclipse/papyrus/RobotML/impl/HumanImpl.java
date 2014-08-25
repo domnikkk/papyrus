@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,7 +19,7 @@ public class HumanImpl extends AgentImpl implements Human {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HumanImpl() {
@@ -30,7 +29,7 @@ public class HumanImpl extends AgentImpl implements Human {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

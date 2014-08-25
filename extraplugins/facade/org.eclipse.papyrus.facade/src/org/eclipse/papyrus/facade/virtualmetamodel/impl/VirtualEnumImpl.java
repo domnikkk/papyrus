@@ -16,15 +16,11 @@ package org.eclipse.papyrus.facade.virtualmetamodel.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
@@ -47,7 +43,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	 * The cached value of the '{@link #getLiterals() <em>Literals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLiterals()
 	 * @generated
 	 * @ordered
@@ -57,7 +53,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualEnumImpl() {
@@ -67,7 +63,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +74,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +88,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +103,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +118,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -140,7 +136,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +152,7 @@ public class VirtualEnumImpl extends VirtualClassifierImpl implements VirtualEnu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

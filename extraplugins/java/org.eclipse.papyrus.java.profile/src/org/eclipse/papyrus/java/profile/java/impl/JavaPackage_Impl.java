@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 import org.eclipse.papyrus.java.profile.java.JavaPackage_;
 
@@ -35,7 +32,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	 * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPackageName()
 	 * @generated
 	 * @ordered
@@ -46,7 +43,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	 * The cached value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPackageName()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaPackage_Impl() {
@@ -77,7 +74,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +85,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +96,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +111,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +131,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -144,7 +141,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +156,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +176,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +195,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +214,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +231,7 @@ public class JavaPackage_Impl extends JavaGenImpl implements JavaPackage_ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

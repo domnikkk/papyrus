@@ -42,7 +42,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	 * The cached value of the '{@link #getBase_Trigger() <em>Base Trigger</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Trigger()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFeature()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GCMTriggerImpl() {
@@ -73,7 +73,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Trigger basicGetBase_Trigger() {
@@ -114,7 +114,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Feature basicGetFeature() {
@@ -159,7 +159,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

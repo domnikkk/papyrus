@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TimeXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class TimeXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeXMLProcessor() {
@@ -45,7 +45,7 @@ public class TimeXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the TimeResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

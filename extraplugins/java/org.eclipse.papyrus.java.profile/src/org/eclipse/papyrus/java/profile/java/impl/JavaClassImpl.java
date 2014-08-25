@@ -7,19 +7,16 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.papyrus.java.profile.java.JavaClass;
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
-
 import org.eclipse.uml2.uml.Classifier;
 
 /**
@@ -45,7 +42,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The cached value of the '{@link #getBase_Classifier() <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Classifier()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The default value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The cached value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The default value of the '{@link #isAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -89,7 +86,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The cached value of the '{@link #isAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -100,7 +97,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The default value of the '{@link #isStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -111,7 +108,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The cached value of the '{@link #isStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -122,7 +119,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The cached value of the '{@link #getExplicitPlainTextRequiredImports() <em>Explicit Plain Text Required Imports</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExplicitPlainTextRequiredImports()
 	 * @generated
 	 * @ordered
@@ -133,7 +130,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	 * The cached value of the '{@link #getExplicitRequiredImports() <em>Explicit Required Imports</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExplicitRequiredImports()
 	 * @generated
 	 * @ordered
@@ -143,7 +140,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaClassImpl() {
@@ -153,7 +150,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +161,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +181,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Classifier basicGetBase_Classifier() {
@@ -194,7 +191,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +206,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +217,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +232,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +243,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +258,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +269,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +284,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +298,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +312,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +323,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -346,7 +343,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +371,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -408,7 +405,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +436,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +461,7 @@ public class JavaClassImpl extends JavaGenImpl implements JavaClass {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

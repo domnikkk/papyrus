@@ -52,7 +52,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Cause</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Cause</em>' reference.
 	 * @see #setCause(GaWorkloadEvent)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_Cause()
@@ -65,7 +65,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getCause <em>Cause</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Cause</em>' reference.
 	 * @see #getCause()
@@ -81,7 +81,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Host Demand</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Host Demand</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_HostDemand()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -97,7 +97,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Host Demand Ops</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Host Demand Ops</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_HostDemandOps()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" ordered="false"
@@ -113,7 +113,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Inter Occ T</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Inter Occ T</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_InterOccT()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -129,7 +129,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Throughput</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Throughput</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_Throughput()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Frequency" ordered="false"
@@ -145,7 +145,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Resp T</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Resp T</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_RespT()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -161,7 +161,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Utilization</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utilization</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_Utilization()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" ordered="false"
@@ -177,7 +177,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Utilization On Host</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utilization On Host</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_UtilizationOnHost()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" ordered="false"
@@ -192,7 +192,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Root</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Root</em>' reference.
 	 * @see #setRoot(GaStep)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_Root()
@@ -205,7 +205,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario#getRoot <em>Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Root</em>' reference.
 	 * @see #getRoot()
@@ -222,7 +222,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Steps</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Steps</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_Steps()
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getScenario
@@ -240,7 +240,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Parent Step</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parent Step</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_ParentStep()
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getChildScenario
@@ -257,7 +257,7 @@ public interface GaScenario extends ResourceUsage, TimedProcessing {
 	 * If the meaning of the '<em>Timing</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Timing</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaScenario_Timing()
 	 * @model ordered="false"

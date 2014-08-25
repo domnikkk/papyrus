@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,7 +41,7 @@ public interface Configuration extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getConfiguration_Base_Class()
@@ -55,7 +54,7 @@ public interface Configuration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Configuration#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -71,7 +70,7 @@ public interface Configuration extends EObject {
 	 * If the meaning of the '<em>Config Options</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Config Options</em>' reference list.
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getConfiguration_ConfigOptions()
 	 * @model ordered="false"
@@ -86,7 +85,7 @@ public interface Configuration extends EObject {
 	 * If the meaning of the '<em>Deployment Plan</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deployment Plan</em>' reference.
 	 * @see #setDeploymentPlan(DeploymentPlan)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getConfiguration_DeploymentPlan()
@@ -99,7 +98,7 @@ public interface Configuration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Configuration#getDeploymentPlan <em>Deployment Plan</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Deployment Plan</em>' reference.
 	 * @see #getDeploymentPlan()

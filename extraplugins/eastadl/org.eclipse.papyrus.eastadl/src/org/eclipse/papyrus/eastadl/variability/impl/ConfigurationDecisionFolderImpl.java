@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.variability.impl;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -44,7 +45,7 @@ public class ConfigurationDecisionFolderImpl extends ConfigurationDecisionModelE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationDecisionFolderImpl() {
@@ -54,7 +55,7 @@ public class ConfigurationDecisionFolderImpl extends ConfigurationDecisionModelE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +70,7 @@ public class ConfigurationDecisionFolderImpl extends ConfigurationDecisionModelE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +85,7 @@ public class ConfigurationDecisionFolderImpl extends ConfigurationDecisionModelE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +96,7 @@ public class ConfigurationDecisionFolderImpl extends ConfigurationDecisionModelE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override

@@ -30,7 +30,7 @@ public class HWActuatorImpl extends HwI_OImpl implements HWActuator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HWActuatorImpl() {
@@ -40,7 +40,7 @@ public class HWActuatorImpl extends HwI_OImpl implements HWActuator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

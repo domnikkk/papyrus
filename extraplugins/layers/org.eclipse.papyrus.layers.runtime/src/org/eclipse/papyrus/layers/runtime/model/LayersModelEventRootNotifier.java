@@ -43,7 +43,7 @@ public class LayersModelEventRootNotifier {
 
 		/**
 		 * Something happen on the tree of object
-		 * 
+		 *
 		 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 		 *
 		 * @param msg
@@ -118,7 +118,7 @@ public class LayersModelEventRootNotifier {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean isDisposed() {
@@ -147,7 +147,7 @@ public class LayersModelEventRootNotifier {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeEventListener(ILayersModelRootEventListener listener) {
@@ -157,7 +157,7 @@ public class LayersModelEventRootNotifier {
 
 	/**
 	 * Called by events when a root is added to the {@link LayersModel}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void fireLayersModelRootAddedEvent(Notification msg) {
@@ -168,7 +168,7 @@ public class LayersModelEventRootNotifier {
 
 	/**
 	 * Called by events when a root is added to the {@link LayersModel}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void fireLayersModelRootRemovedEvent(Notification msg) {

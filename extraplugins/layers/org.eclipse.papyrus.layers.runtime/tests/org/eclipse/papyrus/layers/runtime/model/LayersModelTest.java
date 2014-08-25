@@ -52,7 +52,7 @@ public class LayersModelTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.model.LayersModel#LayersModel()}.
-	 * 
+	 *
 	 * @throws CoreException
 	 * @throws IOException
 	 */

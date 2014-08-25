@@ -42,7 +42,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The default value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The cached value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The default value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The cached value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The default value of the '{@link #getSchedUtiliz() <em>Sched Utiliz</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedUtiliz()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The cached value of the '{@link #getSchedUtiliz() <em>Sched Utiliz</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedUtiliz()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The default value of the '{@link #getISRswitchT() <em>IS Rswitch T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getISRswitchT()
 	 * @generated
 	 * @ordered
@@ -119,7 +119,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The cached value of the '{@link #getISRswitchT() <em>IS Rswitch T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getISRswitchT()
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The default value of the '{@link #getISRprioRange() <em>IS Rprio Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getISRprioRange()
 	 * @generated
 	 * @ordered
@@ -141,7 +141,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	 * The cached value of the '{@link #getISRprioRange() <em>IS Rprio Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getISRprioRange()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SaExecHostImpl() {
@@ -161,7 +161,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +353,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +381,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +404,7 @@ public class SaExecHostImpl extends GaExecHostImpl implements SaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -53,7 +53,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	 * The cached value of the '{@link #getBase_ValueSpecification() <em>Base Value Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ValueSpecification()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	 * The default value of the '{@link #getEventKind() <em>Event Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEventKind()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	 * The cached value of the '{@link #getEventKind() <em>Event Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEventKind()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EventFunctionClientServerPortImpl() {
@@ -117,7 +117,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -285,7 +285,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +320,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSpecification basicGetBase_ValueSpecification() {
@@ -330,7 +330,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +381,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPort(EventFunctionClientServerPortInstanceRef newPort, NotificationChain msgs) {
@@ -412,7 +412,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +438,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,7 +453,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -468,7 +468,7 @@ public class EventFunctionClientServerPortImpl extends EventImpl implements Even
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

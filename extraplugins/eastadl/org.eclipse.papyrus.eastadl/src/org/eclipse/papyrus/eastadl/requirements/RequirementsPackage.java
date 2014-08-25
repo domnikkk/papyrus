@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * Elements inspired by SysML are Requirement, Satisfy, Refine, DeriveRequirement, (Verify)
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.requirements.RequirementsFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "requirements";
@@ -49,7 +49,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Requirements/1";
@@ -58,7 +58,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Requirements";
@@ -67,7 +67,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	RequirementsPackage eINSTANCE = org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl.init();
@@ -76,7 +76,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '<em>Dummy</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl#getDummy()
 	 * @generated
@@ -88,7 +88,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Dummy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Dummy</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -100,7 +100,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface RequirementsPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -125,7 +125,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em>Dummy</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl#getDummy()
 		 * @generated

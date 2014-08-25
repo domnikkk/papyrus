@@ -17,6 +17,7 @@ package org.eclipse.papyrus.layers.stackmodel.notifier;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.layers.stackmodel.util.NotationAndUmlModelsFactory;
 import org.junit.After;

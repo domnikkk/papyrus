@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.CycabTK;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -31,7 +28,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	 * The default value of the '{@link #isUseRealTime() <em>Use Real Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUseRealTime()
 	 * @generated
 	 * @ordered
@@ -42,7 +39,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	 * The cached value of the '{@link #isUseRealTime() <em>Use Real Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUseRealTime()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	 * The default value of the '{@link #getTimeStep() <em>Time Step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeStep()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	 * The cached value of the '{@link #getTimeStep() <em>Time Step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeStep()
 	 * @generated
 	 * @ordered
@@ -75,7 +72,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	 * The default value of the '{@link #getTimeFactor() <em>Time Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeFactor()
 	 * @generated
 	 * @ordered
@@ -86,7 +83,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	 * The cached value of the '{@link #getTimeFactor() <em>Time Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeFactor()
 	 * @generated
 	 * @ordered
@@ -96,7 +93,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CycabTKImpl() {
@@ -106,7 +103,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +114,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isUseRealTime() {
@@ -127,7 +124,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setUseRealTime(boolean newUseRealTime) {
@@ -141,7 +138,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getTimeStep() {
@@ -151,7 +148,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTimeStep(float newTimeStep) {
@@ -165,7 +162,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getTimeFactor() {
@@ -175,7 +172,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTimeFactor(float newTimeFactor) {
@@ -189,7 +186,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +205,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +227,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +249,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +268,7 @@ public class CycabTKImpl extends RoboticSimulatorImpl implements CycabTK {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

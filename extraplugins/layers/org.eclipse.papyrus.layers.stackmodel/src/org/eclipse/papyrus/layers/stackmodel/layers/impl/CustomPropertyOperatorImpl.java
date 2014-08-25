@@ -12,6 +12,8 @@
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.runtime.Platform;
@@ -26,7 +28,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceException;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +49,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	 * The default value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -59,7 +60,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	 * The cached value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -70,7 +71,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	 * The default value of the '{@link #getOperatorInstance() <em>Operator Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperatorInstance()
 	 * @generated
 	 * @ordered
@@ -81,7 +82,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	 * The cached value of the '{@link #getOperatorInstance() <em>Operator Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperatorInstance()
 	 * @generated
 	 * @ordered
@@ -92,7 +93,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	 * The default value of the '{@link #getClassBundleID() <em>Class Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassBundleID()
 	 * @generated
 	 * @ordered
@@ -103,7 +104,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	 * The cached value of the '{@link #getClassBundleID() <em>Class Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassBundleID()
 	 * @generated
 	 * @ordered
@@ -113,7 +114,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CustomPropertyOperatorImpl() {
@@ -123,7 +124,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +135,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +146,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -163,7 +164,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -185,7 +186,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +201,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +212,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +227,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws LayersException
 	 * @generated NOT
 	 */
@@ -261,7 +262,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +281,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +303,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +325,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +345,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,7 +395,7 @@ public class CustomPropertyOperatorImpl extends PropertyOperatorImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

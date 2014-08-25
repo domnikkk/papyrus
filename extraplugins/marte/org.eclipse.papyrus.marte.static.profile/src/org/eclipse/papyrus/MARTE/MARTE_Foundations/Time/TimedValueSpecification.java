@@ -42,7 +42,7 @@ public interface TimedValueSpecification extends TimedElement {
 	 * If the meaning of the '<em>Interpretation</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Interpretation</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind
 	 * @see #setInterpretation(TimeInterpretationKind)
@@ -56,7 +56,7 @@ public interface TimedValueSpecification extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification#getInterpretation <em>Interpretation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Interpretation</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind
@@ -72,7 +72,7 @@ public interface TimedValueSpecification extends TimedElement {
 	 * If the meaning of the '<em>Base Value Specification</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Value Specification</em>' reference.
 	 * @see #setBase_ValueSpecification(ValueSpecification)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedValueSpecification_Base_ValueSpecification()
@@ -85,7 +85,7 @@ public interface TimedValueSpecification extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification#getBase_ValueSpecification <em>Base Value Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Value Specification</em>' reference.
 	 * @see #getBase_ValueSpecification()

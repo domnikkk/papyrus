@@ -51,7 +51,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Is Static Scheduling Feature</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Static Scheduling Feature</em>' attribute.
 	 * @see #setIsStaticSchedulingFeature(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_IsStaticSchedulingFeature()
@@ -64,7 +64,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsStaticSchedulingFeature <em>Is Static Scheduling Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Static Scheduling Feature</em>' attribute.
 	 * @see #isIsStaticSchedulingFeature()
@@ -79,7 +79,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Is Preemptable</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Preemptable</em>' attribute.
 	 * @see #setIsPreemptable(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_IsPreemptable()
@@ -92,7 +92,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsPreemptable <em>Is Preemptable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Preemptable</em>' attribute.
 	 * @see #isIsPreemptable()
@@ -107,7 +107,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Schedulers</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Schedulers</em>' reference.
 	 * @see #setSchedulers(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_Schedulers()
@@ -120,7 +120,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getSchedulers <em>Schedulers</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Schedulers</em>' reference.
 	 * @see #getSchedulers()
@@ -136,7 +136,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Deadline Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deadline Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_DeadlineElements()
 	 * @model ordered="false"
@@ -152,7 +152,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Deadline Type Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deadline Type Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_DeadlineTypeElements()
 	 * @model ordered="false"
@@ -168,7 +168,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Time Slice Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Time Slice Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_TimeSliceElements()
 	 * @model ordered="false"
@@ -184,7 +184,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Delay Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Delay Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_DelayServices()
 	 * @model ordered="false"
@@ -200,7 +200,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Join Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Join Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_JoinServices()
 	 * @model ordered="false"
@@ -216,7 +216,7 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * If the meaning of the '<em>Yield Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Yield Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_YieldServices()
 	 * @model ordered="false"

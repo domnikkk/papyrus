@@ -49,7 +49,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AnalysisLevelImpl() {
@@ -80,7 +80,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public AnalysisFunctionPrototype basicGetFunctionalAnalysisArchitecture() {
@@ -104,7 +104,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -214,7 +214,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -259,7 +259,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +308,7 @@ public class AnalysisLevelImpl extends ContextImpl implements AnalysisLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

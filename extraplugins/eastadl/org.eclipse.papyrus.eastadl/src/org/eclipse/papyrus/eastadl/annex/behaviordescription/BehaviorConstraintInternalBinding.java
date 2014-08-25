@@ -35,7 +35,7 @@ public interface BehaviorConstraintInternalBinding extends EObject {
 	 * If the meaning of the '<em>Binding Through Clamp Connector</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Binding Through Clamp Connector</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintInternalBinding_BindingThroughClampConnector()
 	 * @model ordered="false"
@@ -51,7 +51,7 @@ public interface BehaviorConstraintInternalBinding extends EObject {
 	 * If the meaning of the '<em>Binding Through Function Connector</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Binding Through Function Connector</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector()
 	 * @model containment="true" ordered="false"
@@ -67,7 +67,7 @@ public interface BehaviorConstraintInternalBinding extends EObject {
 	 * If the meaning of the '<em>Binding Through Hardware Connector</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Binding Through Hardware Connector</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector()
 	 * @model containment="true" ordered="false"

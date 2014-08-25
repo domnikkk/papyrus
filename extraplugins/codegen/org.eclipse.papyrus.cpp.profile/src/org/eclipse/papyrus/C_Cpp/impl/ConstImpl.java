@@ -43,7 +43,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	 * The cached value of the '{@link #getBase_parameter() <em>Base parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_parameter()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	 * The cached value of the '{@link #getBase_property() <em>Base property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_property()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	 * The cached value of the '{@link #getBase_operation() <em>Base operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_operation()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConstImpl() {
@@ -85,7 +85,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_parameter() {
@@ -126,7 +126,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_property() {
@@ -171,7 +171,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetBase_operation() {
@@ -216,7 +216,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +303,7 @@ public class ConstImpl extends MinimalEObjectImpl.Container implements Const {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

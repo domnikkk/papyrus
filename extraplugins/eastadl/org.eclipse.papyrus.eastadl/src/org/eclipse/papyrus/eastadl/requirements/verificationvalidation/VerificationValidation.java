@@ -37,7 +37,7 @@ public interface VerificationValidation extends Context {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerificationValidation_Base_Class()
@@ -50,7 +50,7 @@ public interface VerificationValidation extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -65,7 +65,7 @@ public interface VerificationValidation extends Context {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerificationValidation_Base_Package()
@@ -78,7 +78,7 @@ public interface VerificationValidation extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -94,7 +94,7 @@ public interface VerificationValidation extends Context {
 	 * If the meaning of the '<em>Verify</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Verify</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerificationValidation_Verify()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -110,7 +110,7 @@ public interface VerificationValidation extends Context {
 	 * If the meaning of the '<em>Vv Case</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Case</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerificationValidation_VvCase()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -126,7 +126,7 @@ public interface VerificationValidation extends Context {
 	 * If the meaning of the '<em>Vv Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerificationValidation_VvTarget()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

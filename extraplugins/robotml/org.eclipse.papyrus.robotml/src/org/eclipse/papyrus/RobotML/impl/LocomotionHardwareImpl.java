@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.LocomotionHardware;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -20,7 +19,7 @@ public class LocomotionHardwareImpl extends ActuatorHardwareImpl implements Loco
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LocomotionHardwareImpl() {
@@ -30,7 +29,7 @@ public class LocomotionHardwareImpl extends ActuatorHardwareImpl implements Loco
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

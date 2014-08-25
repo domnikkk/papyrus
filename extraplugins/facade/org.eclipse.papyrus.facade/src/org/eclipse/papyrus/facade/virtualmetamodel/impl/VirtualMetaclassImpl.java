@@ -17,21 +17,15 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty;
@@ -60,7 +54,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -71,7 +65,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -82,7 +76,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getAppliedStereotypes() <em>Applied Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAppliedStereotypes()
 	 * @generated
 	 * @ordered
@@ -93,7 +87,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperations()
 	 * @generated
 	 * @ordered
@@ -104,7 +98,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getParents() <em>Parents</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParents()
 	 * @generated
 	 * @ordered
@@ -115,7 +109,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -126,7 +120,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The default value of the '{@link #isStereotypeInterface() <em>Stereotype Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStereotypeInterface()
 	 * @generated
 	 * @ordered
@@ -137,7 +131,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #isStereotypeInterface() <em>Stereotype Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStereotypeInterface()
 	 * @generated
 	 * @ordered
@@ -147,7 +141,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualMetaclassImpl() {
@@ -157,7 +151,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +162,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +173,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +188,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +202,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +216,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +230,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +244,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +255,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +270,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -292,7 +286,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +303,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +328,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -370,7 +364,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -401,7 +395,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,7 +420,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

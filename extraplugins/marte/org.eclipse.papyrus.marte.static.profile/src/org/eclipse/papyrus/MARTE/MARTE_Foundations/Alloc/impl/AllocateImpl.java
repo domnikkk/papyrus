@@ -50,7 +50,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The default value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	 * The cached value of the '{@link #getImpliedConstraint() <em>Implied Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImpliedConstraint()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AllocateImpl() {
@@ -125,7 +125,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -218,7 +218,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +233,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -298,7 +298,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +344,7 @@ public class AllocateImpl extends EObjectImpl implements Allocate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.runtime;
 
+import static org.eclipse.papyrus.layers.runtime.Activator.log;
+
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,7 +29,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Property;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter;
 import org.eclipse.papyrus.layers.stackmodel.notifier.DiagramViewEventNotifier;
 import org.eclipse.papyrus.layers.stackmodel.notifier.IDiagramViewEventListener;
-import static org.eclipse.papyrus.layers.runtime.Activator.log;
 
 
 /**
@@ -145,7 +146,7 @@ public class LayerStackSynchronizer implements IDiagramViewEventListener, ILayer
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean isDisposed() {

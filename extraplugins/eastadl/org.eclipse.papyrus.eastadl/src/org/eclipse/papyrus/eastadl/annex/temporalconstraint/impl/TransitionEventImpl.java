@@ -38,7 +38,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredFeatureFlaw() <em>Occurred Feature Flaw</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurredFeatureFlaw()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredHazardousEvent() <em>Occurred Hazardous Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurredHazardousEvent()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredFaultFailure() <em>Occurred Fault Failure</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurredFaultFailure()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredExecutionEvent() <em>Occurred Execution Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurredExecutionEvent()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	 * The cached value of the '{@link #getOccurredLogicalEvent() <em>Occurred Logical Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurredLogicalEvent()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TransitionEventImpl() {
@@ -102,7 +102,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -240,7 +240,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +268,7 @@ public class TransitionEventImpl extends EAElementImpl implements TransitionEven
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -49,7 +49,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The default value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The default value of the '{@link #getTransmMode() <em>Transm Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransmMode()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The cached value of the '{@link #getTransmMode() <em>Transm Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransmMode()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The cached value of the '{@link #getBlockT() <em>Block T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The cached value of the '{@link #getPacketT() <em>Packet T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPacketT()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCapacity()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommunicationMediaImpl() {
@@ -146,7 +146,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -213,7 +213,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +268,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -359,7 +359,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -390,7 +390,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +415,7 @@ public class CommunicationMediaImpl extends ProcessingResourceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

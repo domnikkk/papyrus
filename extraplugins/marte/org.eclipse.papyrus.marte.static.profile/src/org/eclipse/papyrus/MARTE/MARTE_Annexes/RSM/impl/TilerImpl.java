@@ -43,7 +43,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getOrigin() <em>Origin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrigin()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getOrigin() <em>Origin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrigin()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getPaving() <em>Paving</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPaving()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getPaving() <em>Paving</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPaving()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getFitting() <em>Fitting</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFitting()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getFitting() <em>Fitting</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFitting()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getTiler() <em>Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTiler()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getTiler() <em>Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTiler()
 	 * @generated
 	 * @ordered
@@ -131,7 +131,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getBase_ConnectorEnd() <em>Base Connector End</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ConnectorEnd()
 	 * @generated
 	 * @ordered
@@ -141,7 +141,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TilerImpl() {
@@ -151,7 +151,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +266,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConnectorEnd basicGetBase_ConnectorEnd() {
@@ -296,7 +296,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +337,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +365,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +393,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +416,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

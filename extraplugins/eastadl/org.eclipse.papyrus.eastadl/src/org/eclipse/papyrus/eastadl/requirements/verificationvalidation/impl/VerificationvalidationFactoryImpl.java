@@ -23,7 +23,7 @@ import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VerificationvalidationFactoryImpl extends EFactoryImpl implements VerificationvalidationFactory {
@@ -31,7 +31,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VerificationvalidationFactory init() {
@@ -50,7 +50,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VerificationvalidationFactoryImpl() {
@@ -60,7 +60,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class VerificationvalidationFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

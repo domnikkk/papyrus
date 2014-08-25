@@ -71,7 +71,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	/**
 	 * The cached value of the '{@link #getVariableElement() <em>Variable Element</em>}' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVariableElement()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VariationGroupImpl() {
@@ -121,7 +121,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -190,7 +190,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -317,7 +317,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class VariationGroupImpl extends EAElementImpl implements VariationGroup 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

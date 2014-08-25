@@ -30,7 +30,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StateEventImpl() {
@@ -61,7 +61,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State basicGetEnd() {
@@ -102,7 +102,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State basicGetStart() {
@@ -147,7 +147,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

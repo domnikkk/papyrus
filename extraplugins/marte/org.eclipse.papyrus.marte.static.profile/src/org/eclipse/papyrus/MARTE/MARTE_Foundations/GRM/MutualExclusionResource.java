@@ -44,7 +44,7 @@ public interface MutualExclusionResource extends Resource {
 	 * If the meaning of the '<em>Protect Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Protect Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind
 	 * @see #setProtectKind(ProtectProtocolKind)
@@ -58,7 +58,7 @@ public interface MutualExclusionResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.MutualExclusionResource#getProtectKind <em>Protect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Protect Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind
@@ -74,7 +74,7 @@ public interface MutualExclusionResource extends Resource {
 	 * If the meaning of the '<em>Ceiling</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ceiling</em>' attribute.
 	 * @see #setCeiling(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getMutualExclusionResource_Ceiling()
@@ -87,7 +87,7 @@ public interface MutualExclusionResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.MutualExclusionResource#getCeiling <em>Ceiling</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Ceiling</em>' attribute.
 	 * @see #getCeiling()
@@ -102,7 +102,7 @@ public interface MutualExclusionResource extends Resource {
 	 * If the meaning of the '<em>Other Protect Protocol</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Other Protect Protocol</em>' attribute.
 	 * @see #setOtherProtectProtocol(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getMutualExclusionResource_OtherProtectProtocol()
@@ -115,7 +115,7 @@ public interface MutualExclusionResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.MutualExclusionResource#getOtherProtectProtocol <em>Other Protect Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Other Protect Protocol</em>' attribute.
 	 * @see #getOtherProtectProtocol()
@@ -131,7 +131,7 @@ public interface MutualExclusionResource extends Resource {
 	 * If the meaning of the '<em>Scheduler</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Scheduler</em>' reference.
 	 * @see #setScheduler(Scheduler)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getMutualExclusionResource_Scheduler()
@@ -145,7 +145,7 @@ public interface MutualExclusionResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.MutualExclusionResource#getScheduler <em>Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Scheduler</em>' reference.
 	 * @see #getScheduler()

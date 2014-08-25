@@ -43,7 +43,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Is Static</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Static</em>' attribute.
 	 * @see #setIsStatic(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_IsStatic()
@@ -56,7 +56,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isStatic <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Static</em>' attribute.
 	 * @see #isStatic()
@@ -71,7 +71,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Final</em>' attribute.
 	 * @see #setIsFinal(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_IsFinal()
@@ -84,7 +84,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isFinal <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Final</em>' attribute.
 	 * @see #isFinal()
@@ -99,7 +99,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Abstract</em>' attribute.
 	 * @see #setIsAbstract(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_IsAbstract()
@@ -112,7 +112,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isAbstract <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Abstract</em>' attribute.
 	 * @see #isAbstract()
@@ -127,7 +127,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Is Native</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Native</em>' attribute.
 	 * @see #setIsNative(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_IsNative()
@@ -140,7 +140,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isNative <em>Is Native</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Native</em>' attribute.
 	 * @see #isNative()
@@ -155,7 +155,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Is Synchronized</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Synchronized</em>' attribute.
 	 * @see #setIsSynchronized(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_IsSynchronized()
@@ -168,7 +168,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isSynchronized <em>Is Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Synchronized</em>' attribute.
 	 * @see #isSynchronized()
@@ -183,7 +183,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Is Constructor</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Constructor</em>' attribute.
 	 * @see #setIsConstructor(boolean)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_IsConstructor()
@@ -196,7 +196,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isConstructor <em>Is Constructor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Constructor</em>' attribute.
 	 * @see #isConstructor()
@@ -211,7 +211,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Base Operation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Operation</em>' reference.
 	 * @see #setBase_Operation(Operation)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_Base_Operation()
@@ -224,7 +224,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#getBase_Operation <em>Base Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Operation</em>' reference.
 	 * @see #getBase_Operation()
@@ -240,7 +240,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Explicit Plain Text Required Imports</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Explicit Plain Text Required Imports</em>' attribute list.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_ExplicitPlainTextRequiredImports()
 	 * @model unique="false" ordered="false"
@@ -256,7 +256,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * If the meaning of the '<em>Explicit Required Imports</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Explicit Required Imports</em>' reference list.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaMethod_ExplicitRequiredImports()
 	 * @model ordered="false"
@@ -268,7 +268,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Retrieves the first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>' from the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
 	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>', or <code>null</code>.
@@ -281,7 +281,7 @@ public interface JavaMethod extends JavaNamedElement {
 	 * Retrieves the first {@link org.eclipse.uml2.uml.Classifier} with the specified '<em><b>Name</b></em>' from the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
 	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Classifier} to retrieve, or <code>null</code>.
 	 * @param ignoreCase

@@ -13,7 +13,7 @@ import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Attri
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AttributequantificationconstraintXMLProcessor extends XMLProcessor {
@@ -22,7 +22,7 @@ public class AttributequantificationconstraintXMLProcessor extends XMLProcessor 
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AttributequantificationconstraintXMLProcessor() {
@@ -34,7 +34,7 @@ public class AttributequantificationconstraintXMLProcessor extends XMLProcessor 
 	 * Register for "*" and "xml" file extensions the AttributequantificationconstraintResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

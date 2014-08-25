@@ -47,7 +47,7 @@ abstract public class UnconnectedPorts extends AbstractModelConstraint
 {
 	/**
 	 * Called by one of the sub-classes (does not override a superclass method)
-	 * 
+	 *
 	 * @param ctx
 	 *            the validation context
 	 * @param required

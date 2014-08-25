@@ -25,7 +25,6 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.papyrus.infra.core.utils.DisplayUtils;
 import org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil;
 import org.eclipse.papyrus.marte.vsl.extensions.VSLTypeInferenceUtil;
-import org.eclipse.papyrus.marte.vsl.ui.contentassist.AbstractVSLProposalProvider;
 import org.eclipse.papyrus.marte.vsl.vSL.DataTypeName;
 import org.eclipse.papyrus.marte.vsl.vSL.DurationObsName;
 import org.eclipse.papyrus.marte.vsl.vSL.InstantObsName;
@@ -65,9 +64,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 
 
 	/* *************************************************
-	 * 
+	 *
 	 * Private Utility method for creating a completion proposal
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -90,9 +89,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 	}
 
 	/* *************************************************
-	 * 
+	 *
 	 * Private utility method for sorting a list of NamedElement by kind and name
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -132,9 +131,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for qualified names
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -173,9 +172,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 	}
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for names
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -248,9 +247,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for instant observation names
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -326,9 +325,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 	}
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for duration observation names
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -404,9 +403,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 	}
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for data type names (used to type local variables)
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -482,9 +481,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 	}
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for property call expressions
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -541,9 +540,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 	}
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for operation call expressions
-	 * 
+	 *
 	 * ************************************************
 	 */
 
@@ -599,9 +598,9 @@ public class CopyOfVSLProposalProvider extends AbstractVSLProposalProvider {
 
 
 	/* *************************************************
-	 * 
+	 *
 	 * Custom completion for ValueNamePair_property
-	 * 
+	 *
 	 * ************************************************
 	 */
 

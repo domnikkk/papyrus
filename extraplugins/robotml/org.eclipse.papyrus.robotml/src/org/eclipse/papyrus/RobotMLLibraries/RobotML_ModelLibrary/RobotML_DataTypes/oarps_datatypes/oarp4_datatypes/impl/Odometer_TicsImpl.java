@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Odometer_Tics;
 
@@ -30,7 +27,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -41,7 +38,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Odometer_TicsImpl() {
@@ -61,7 +58,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +69,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -82,7 +79,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(int newValue) {
@@ -96,7 +93,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +108,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +124,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +140,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +155,7 @@ public class Odometer_TicsImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

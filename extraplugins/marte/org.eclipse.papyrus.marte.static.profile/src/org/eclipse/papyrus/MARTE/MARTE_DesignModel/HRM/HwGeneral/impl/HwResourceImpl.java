@@ -53,7 +53,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The cached value of the '{@link #getP_HW_Services() <em>PHW Services</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getP_HW_Services()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The cached value of the '{@link #getR_HW_Services() <em>RHW Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getR_HW_Services()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The cached value of the '{@link #getOwnedHW() <em>Owned HW</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedHW()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The cached value of the '{@link #getEndPoints() <em>End Points</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEndPoints()
 	 * @generated
 	 * @ordered
@@ -119,7 +119,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrequency()
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	 * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrequency()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwResourceImpl() {
@@ -150,7 +150,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -345,7 +345,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -376,7 +376,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -401,7 +401,7 @@ public class HwResourceImpl extends ResourceImpl implements HwResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

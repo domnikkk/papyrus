@@ -7,37 +7,21 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.Diagnostic_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.Geometry_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Oarp4_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.ChannelFloat32;
@@ -59,25 +43,22 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesFactory;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_datatypesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass regionOfInterestEClass = null;
@@ -85,7 +66,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rangeEClass = null;
@@ -93,7 +74,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass cameraInfoEClass = null;
@@ -101,7 +82,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass imuEClass = null;
@@ -109,7 +90,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass laserScanEClass = null;
@@ -117,7 +98,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass imageEClass = null;
@@ -125,7 +106,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass channelFloat32EClass = null;
@@ -133,7 +114,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compressedImageEClass = null;
@@ -141,7 +122,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass pointCloudEClass = null;
@@ -149,7 +130,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass pointFieldEClass = null;
@@ -157,7 +138,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass pointCloud2EClass = null;
@@ -165,7 +146,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jointStateEClass = null;
@@ -173,7 +154,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass navSatStatusEClass = null;
@@ -181,7 +162,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass navSatFixEClass = null;
@@ -189,7 +170,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass joyEClass = null;
@@ -197,7 +178,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass joyFeedbackEClass = null;
@@ -205,7 +186,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass joyFeedbackArrayEClass = null;
@@ -213,7 +194,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass carLikeOdometryEClass = null;
@@ -221,7 +202,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass differentialOdometryEClass = null;
@@ -229,7 +210,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum statuS_TYPEEEnum = null;
@@ -237,7 +218,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum servicE_TYPEEEnum = null;
@@ -245,7 +226,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum covariancE_TYPEEEnum = null;
@@ -255,7 +236,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#eNS_URI
 	 * @see #init()
@@ -268,7 +249,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -279,7 +260,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <p>
 	 * This method is used to initialize {@link Sensor_datatypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -349,7 +330,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getRegionOfInterest() {
@@ -359,7 +340,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_X_offset() {
@@ -369,7 +350,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Y_offset() {
@@ -379,7 +360,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Height() {
@@ -389,7 +370,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Do_rectify() {
@@ -399,7 +380,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRegionOfInterest_Width() {
@@ -409,7 +390,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getRange() {
@@ -419,7 +400,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRange_ULTRASOUND() {
@@ -429,7 +410,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRange_INFRARED() {
@@ -439,7 +420,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getRange_Header() {
@@ -449,7 +430,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Radiation_type() {
@@ -459,7 +440,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Field_of_view() {
@@ -469,7 +450,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Min_range() {
@@ -479,7 +460,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Max_range() {
@@ -489,7 +470,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRange_Range() {
@@ -499,7 +480,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCameraInfo() {
@@ -509,7 +490,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCameraInfo_Header() {
@@ -519,7 +500,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Height() {
@@ -529,7 +510,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Width() {
@@ -539,7 +520,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Distorsion_model() {
@@ -549,7 +530,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_D() {
@@ -559,7 +540,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_K() {
@@ -569,7 +550,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_R() {
@@ -579,7 +560,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_P() {
@@ -589,7 +570,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Binning_x() {
@@ -599,7 +580,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCameraInfo_Binning_y() {
@@ -609,7 +590,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCameraInfo_Roi() {
@@ -619,7 +600,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getImu() {
@@ -629,7 +610,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getImu_Header() {
@@ -639,7 +620,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getImu_Orientation() {
@@ -649,7 +630,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImu_Orientation_covariance() {
@@ -659,7 +640,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getImu_Angular_velocity() {
@@ -669,7 +650,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImu_Angular_velocity_covariance() {
@@ -679,7 +660,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getImu_Linear_acceleration() {
@@ -689,7 +670,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImu_Linear_acceleration_covariance() {
@@ -699,7 +680,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getLaserScan() {
@@ -709,7 +690,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getLaserScan_Header() {
@@ -719,7 +700,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Angle_min() {
@@ -729,7 +710,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Angle_max() {
@@ -739,7 +720,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Angle_increment() {
@@ -749,7 +730,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Time_increment() {
@@ -759,7 +740,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Scan_time() {
@@ -769,7 +750,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Range_min() {
@@ -779,7 +760,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Range_max() {
@@ -789,7 +770,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Range() {
@@ -799,7 +780,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLaserScan_Intensities() {
@@ -809,7 +790,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getImage() {
@@ -819,7 +800,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getImage_Header() {
@@ -829,7 +810,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Height() {
@@ -839,7 +820,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Width() {
@@ -849,7 +830,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Encoding() {
@@ -859,7 +840,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Is_bigendian() {
@@ -869,7 +850,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Step() {
@@ -879,7 +860,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getImage_Data() {
@@ -889,7 +870,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getChannelFloat32() {
@@ -899,7 +880,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getChannelFloat32_Name() {
@@ -909,7 +890,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getChannelFloat32_Values() {
@@ -919,7 +900,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCompressedImage() {
@@ -929,7 +910,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCompressedImage_Header() {
@@ -939,7 +920,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCompressedImage_Format() {
@@ -949,7 +930,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCompressedImage_Data() {
@@ -959,7 +940,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPointCloud() {
@@ -969,7 +950,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPointCloud_Header() {
@@ -979,7 +960,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPointCloud_Points() {
@@ -989,7 +970,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPointCloud_Channels() {
@@ -999,7 +980,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPointField() {
@@ -1009,7 +990,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Name() {
@@ -1019,7 +1000,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Offset() {
@@ -1029,7 +1010,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Datatype() {
@@ -1039,7 +1020,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointField_Count() {
@@ -1049,7 +1030,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPointCloud2() {
@@ -1059,7 +1040,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPointCloud2_Header() {
@@ -1069,7 +1050,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Height() {
@@ -1079,7 +1060,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Width() {
@@ -1089,7 +1070,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPointCloud2_Fields() {
@@ -1099,7 +1080,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Is_bigendian() {
@@ -1109,7 +1090,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Point_step() {
@@ -1119,7 +1100,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Row_step() {
@@ -1129,7 +1110,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Data() {
@@ -1139,7 +1120,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPointCloud2_Is_dense() {
@@ -1149,7 +1130,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getJointState() {
@@ -1159,7 +1140,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Name() {
@@ -1169,7 +1150,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Position() {
@@ -1179,7 +1160,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Velocity() {
@@ -1189,7 +1170,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJointState_Effort() {
@@ -1199,7 +1180,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNavSatStatus() {
@@ -1209,7 +1190,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_NO_FIX() {
@@ -1219,7 +1200,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_FIX() {
@@ -1229,7 +1210,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_SBAS_FIX() {
@@ -1239,7 +1220,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_STATUS_GBAS_FIX() {
@@ -1249,7 +1230,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_Status() {
@@ -1259,7 +1240,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_GPS() {
@@ -1269,7 +1250,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_GLONASS() {
@@ -1279,7 +1260,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_COMPASS() {
@@ -1289,7 +1270,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_SERVICE_GALILEO() {
@@ -1299,7 +1280,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatStatus_Service() {
@@ -1309,7 +1290,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNavSatFix() {
@@ -1319,7 +1300,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Status() {
@@ -1329,7 +1310,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Service() {
@@ -1339,7 +1320,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNavSatFix_Header() {
@@ -1349,7 +1330,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Latitude() {
@@ -1359,7 +1340,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Longitude() {
@@ -1369,7 +1350,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Altitude() {
@@ -1379,7 +1360,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Position_covariance() {
@@ -1389,7 +1370,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Position_covariance_type() {
@@ -1399,7 +1380,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getJoy() {
@@ -1409,7 +1390,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getJoy_Header() {
@@ -1419,7 +1400,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoy_Axes() {
@@ -1429,7 +1410,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoy_Buttons() {
@@ -1439,7 +1420,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getJoyFeedback() {
@@ -1449,7 +1430,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_TYPE_LED() {
@@ -1459,7 +1440,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_TYPE_RUMBLE() {
@@ -1469,7 +1450,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_TYPE_BUZZER() {
@@ -1479,7 +1460,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_Type() {
@@ -1489,7 +1470,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_Id() {
@@ -1499,7 +1480,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJoyFeedback_Intensity() {
@@ -1509,7 +1490,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getJoyFeedbackArray() {
@@ -1519,7 +1500,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getJoyFeedbackArray_Array() {
@@ -1529,7 +1510,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCarLikeOdometry() {
@@ -1539,7 +1520,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCarLikeOdometry_Header() {
@@ -1549,7 +1530,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Steering_angle() {
@@ -1559,7 +1540,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Left_rear_wheel_distance() {
@@ -1569,7 +1550,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Right_rear_wheel_distance() {
@@ -1579,7 +1560,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Right_rear_wheel_velocity() {
@@ -1589,7 +1570,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCarLikeOdometry_Left_rear_wheel_velocity() {
@@ -1599,7 +1580,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDifferentialOdometry() {
@@ -1609,7 +1590,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDifferentialOdometry_Header() {
@@ -1619,7 +1600,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Right_distance() {
@@ -1629,7 +1610,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Left_distance() {
@@ -1639,7 +1620,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Left_velocity() {
@@ -1649,7 +1630,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDifferentialOdometry_Right_velocity() {
@@ -1659,7 +1640,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getSTATUS_TYPE() {
@@ -1669,7 +1650,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getSERVICE_TYPE() {
@@ -1679,7 +1660,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getCOVARIANCE_TYPE() {
@@ -1689,7 +1670,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Sensor_datatypesFactory getSensor_datatypesFactory() {
@@ -1699,7 +1680,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1709,7 +1690,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1878,7 +1859,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1888,7 +1869,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

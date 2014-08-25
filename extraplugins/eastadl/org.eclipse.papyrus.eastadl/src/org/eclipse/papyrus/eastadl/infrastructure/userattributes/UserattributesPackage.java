@@ -52,7 +52,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * entities might be enhanced with user-defined attributes. Of course in a UML model one is allowed to add attributes to the classes and UML elements on which stereotypes are applied, yet this mechanism enables to distinguish between attributes meant to be
  * interpreted as compliant with EASt-ADL2 language and other if any.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesFactory
  * @model kind="package"
  * @generated
@@ -68,7 +68,7 @@ public interface UserattributesPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -76,7 +76,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeElementTypeImpl <em>User Attribute Element Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeElementTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeElementType()
 		 * @generated
@@ -87,7 +87,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extended Element Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_ELEMENT_TYPE__EXTENDED_ELEMENT_TYPE = eINSTANCE.getUserAttributeElementType_ExtendedElementType();
@@ -96,7 +96,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_ELEMENT_TYPE__ATTRIBUTE = eINSTANCE.getUserAttributeElementType_Attribute();
@@ -105,7 +105,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_ELEMENT_TYPE__BASE_CLASS = eINSTANCE.getUserAttributeElementType_Base_Class();
@@ -114,7 +114,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Valid For</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute USER_ATTRIBUTE_ELEMENT_TYPE__VALID_FOR = eINSTANCE.getUserAttributeElementType_ValidFor();
@@ -123,7 +123,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeDefinitionImpl <em>User Attribute Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeDefinitionImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeDefinition()
 		 * @generated
@@ -134,7 +134,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_DEFINITION__BASE_PROPERTY = eINSTANCE.getUserAttributeDefinition_Base_Property();
@@ -143,7 +143,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_DEFINITION__BASE_CLASS = eINSTANCE.getUserAttributeDefinition_Base_Class();
@@ -152,7 +152,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute USER_ATTRIBUTE_DEFINITION__DEFAULT_VALUE = eINSTANCE.getUserAttributeDefinition_DefaultValue();
@@ -161,7 +161,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_DEFINITION__TYPE = eINSTANCE.getUserAttributeDefinition_Type();
@@ -170,7 +170,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeableElementImpl <em>User Attributeable Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeableElementImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeableElement()
 		 * @generated
@@ -181,7 +181,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ua Value</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTEABLE_ELEMENT__UA_VALUE = eINSTANCE.getUserAttributeableElement_UaValue();
@@ -190,7 +190,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ua Type</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTEABLE_ELEMENT__UA_TYPE = eINSTANCE.getUserAttributeableElement_UaType();
@@ -199,7 +199,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attributed Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTEABLE_ELEMENT__ATTRIBUTED_ELEMENT = eINSTANCE.getUserAttributeableElement_AttributedElement();
@@ -208,7 +208,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTEABLE_ELEMENT__BASE_NAMED_ELEMENT = eINSTANCE.getUserAttributeableElement_Base_NamedElement();
@@ -217,7 +217,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeValueImpl <em>User Attribute Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeValueImpl
 		 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeValue()
 		 * @generated
@@ -228,7 +228,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_VALUE__BASE_CLASS = eINSTANCE.getUserAttributeValue_Base_Class();
@@ -237,7 +237,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute USER_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getUserAttributeValue_Value();
@@ -246,7 +246,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_VALUE__BASE_PROPERTY = eINSTANCE.getUserAttributeValue_Base_Property();
@@ -255,7 +255,7 @@ public interface UserattributesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Definition</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference USER_ATTRIBUTE_VALUE__DEFINITION = eINSTANCE.getUserAttributeValue_Definition();
@@ -266,7 +266,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "userattributes";
@@ -275,7 +275,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Infrastructure/UserAttributes/1";
@@ -284,7 +284,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "UserAttributes";
@@ -293,7 +293,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UserattributesPackage eINSTANCE = org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl.init();
@@ -302,7 +302,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeableElementImpl <em>User Attributeable Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeableElementImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeableElement()
 	 * @generated
@@ -313,7 +313,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeElementTypeImpl <em>User Attribute Element Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeElementTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeElementType()
 	 * @generated
@@ -324,7 +324,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeDefinitionImpl <em>User Attribute Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeDefinitionImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeDefinition()
 	 * @generated
@@ -335,7 +335,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeValueImpl <em>User Attribute Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserAttributeValueImpl
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl#getUserAttributeValue()
 	 * @generated
@@ -346,7 +346,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -356,7 +356,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -366,7 +366,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -376,7 +376,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Extended Element Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -386,7 +386,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -396,7 +396,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -406,7 +406,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Valid For</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -416,7 +416,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of structural features of the '<em>User Attribute Element Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -426,7 +426,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of operations of the '<em>User Attribute Element Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -436,7 +436,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -446,7 +446,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -456,7 +456,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -466,7 +466,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -476,7 +476,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -486,7 +486,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -496,7 +496,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -506,7 +506,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of structural features of the '<em>User Attribute Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -516,7 +516,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of operations of the '<em>User Attribute Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -526,7 +526,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Ua Value</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -536,7 +536,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Ua Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -546,7 +546,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Attributed Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -556,7 +556,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -566,7 +566,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of structural features of the '<em>User Attributeable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -576,7 +576,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of operations of the '<em>User Attributeable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -586,7 +586,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -596,7 +596,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -606,7 +606,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -616,7 +616,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -626,7 +626,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -636,7 +636,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -646,7 +646,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The feature id for the '<em><b>Definition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -656,7 +656,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of structural features of the '<em>User Attribute Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -666,7 +666,7 @@ public interface UserattributesPackage extends EPackage {
 	 * The number of operations of the '<em>User Attribute Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -676,7 +676,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement <em>User Attributeable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>User Attributeable Element</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement
 	 * @generated
@@ -687,7 +687,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getUaType <em>Ua Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Ua Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getUaType()
 	 * @see #getUserAttributeableElement()
@@ -699,7 +699,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getAttributedElement <em>Attributed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Attributed Element</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getAttributedElement()
 	 * @see #getUserAttributeableElement()
@@ -711,7 +711,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getBase_NamedElement <em>Base Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Named Element</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getBase_NamedElement()
 	 * @see #getUserAttributeableElement()
@@ -723,7 +723,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getUaValue <em>Ua Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Ua Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getUaValue()
 	 * @see #getUserAttributeableElement()
@@ -735,7 +735,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition <em>User Attribute Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>User Attribute Definition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition
 	 * @generated
@@ -746,7 +746,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getBase_Class()
 	 * @see #getUserAttributeDefinition()
@@ -758,7 +758,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Default Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getDefaultValue()
 	 * @see #getUserAttributeDefinition()
@@ -770,7 +770,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getType()
 	 * @see #getUserAttributeDefinition()
@@ -782,7 +782,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeDefinition#getBase_Property()
 	 * @see #getUserAttributeDefinition()
@@ -794,7 +794,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType <em>User Attribute Element Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>User Attribute Element Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType
 	 * @generated
@@ -805,7 +805,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getAttribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Attribute</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getAttribute()
 	 * @see #getUserAttributeElementType()
@@ -817,7 +817,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getBase_Class()
 	 * @see #getUserAttributeElementType()
@@ -829,7 +829,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getExtendedElementType <em>Extended Element Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Extended Element Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getExtendedElementType()
 	 * @see #getUserAttributeElementType()
@@ -841,7 +841,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getValidFor <em>Valid For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Valid For</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getValidFor()
 	 * @see #getUserAttributeElementType()
@@ -853,7 +853,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -863,7 +863,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue <em>User Attribute Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>User Attribute Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue
 	 * @generated
@@ -874,7 +874,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getBase_Class()
 	 * @see #getUserAttributeValue()
@@ -886,7 +886,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getDefinition <em>Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Definition</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getDefinition()
 	 * @see #getUserAttributeValue()
@@ -898,7 +898,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getValue()
 	 * @see #getUserAttributeValue()
@@ -910,7 +910,7 @@ public interface UserattributesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeValue#getBase_Property()
 	 * @see #getUserAttributeValue()

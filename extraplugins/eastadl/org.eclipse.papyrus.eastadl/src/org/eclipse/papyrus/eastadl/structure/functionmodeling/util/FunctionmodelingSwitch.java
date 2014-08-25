@@ -56,7 +56,7 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage
  * @generated
  */
@@ -65,7 +65,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static FunctionmodelingPackage modelPackage;
@@ -73,7 +73,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionmodelingSwitch() {
@@ -86,7 +86,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -100,7 +100,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Allocateable Element</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Allocateable Element</em>'.
@@ -117,7 +117,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Allocation</em>'.
@@ -134,7 +134,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Analysis Function Prototype</em>'.
@@ -151,7 +151,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Analysis Function Type</em>'.
@@ -168,7 +168,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Basic Software Function Type</em>'.
@@ -185,7 +185,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Type</em>'.
@@ -202,7 +202,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Port</em>'.
@@ -219,7 +219,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Connector</em>'.
@@ -236,7 +236,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Prototype</em>'.
@@ -253,7 +253,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Packageable Element</em>'.
@@ -270,7 +270,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Traceable Specification</em>'.
@@ -287,7 +287,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
@@ -304,7 +304,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Design Function Prototype</em>'.
@@ -321,7 +321,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Design Function Type</em>'.
@@ -336,7 +336,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Functional Device</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
 	 * terminate the switch. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Functional Device</em>'.
@@ -353,7 +353,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Allocation</em>'.
@@ -370,7 +370,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Client Server Interface</em>'.
@@ -387,7 +387,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Client Server Port</em>'.
@@ -404,7 +404,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Connector</em>'.
@@ -421,7 +421,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Flow Port</em>'.
@@ -438,7 +438,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Port</em>'.
@@ -455,7 +455,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Power Port</em>'.
@@ -472,7 +472,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
@@ -489,7 +489,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Prototype</em>'.
@@ -506,7 +506,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Type</em>'.
@@ -523,7 +523,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hardware Function Type</em>'.
@@ -538,7 +538,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>Local Device Manager</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Local Device Manager</em>'.
@@ -555,7 +555,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
@@ -572,7 +572,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Port Group</em>'.
@@ -602,7 +602,7 @@ public class FunctionmodelingSwitch<T> extends Switch<T> {
 	/**
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */

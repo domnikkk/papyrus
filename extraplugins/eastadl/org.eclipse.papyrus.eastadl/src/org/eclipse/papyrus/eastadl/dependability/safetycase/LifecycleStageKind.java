@@ -43,7 +43,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getLifecycleStageKind()
  * @model
  * @generated
@@ -53,7 +53,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * The '<em><b>Preliminary Safety Case</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #PRELIMINARY_SAFETY_CASE_VALUE
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * The '<em><b>Interim Safety Case</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERIM_SAFETY_CASE_VALUE
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * The '<em><b>Operational Safety Case</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OPERATIONAL_SAFETY_CASE_VALUE
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * If the meaning of '<em><b>Preliminary Safety Case</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #PRELIMINARY_SAFETY_CASE
 	 * @model name="PreliminarySafetyCase"
 	 * @generated
@@ -104,7 +104,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * If the meaning of '<em><b>Interim Safety Case</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERIM_SAFETY_CASE
 	 * @model name="InterimSafetyCase"
 	 * @generated
@@ -119,7 +119,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * If the meaning of '<em><b>Operational Safety Case</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OPERATIONAL_SAFETY_CASE
 	 * @model name="OperationalSafetyCase"
 	 * @generated
@@ -131,7 +131,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * An array of all the '<em><b>Lifecycle Stage Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final LifecycleStageKind[] VALUES_ARRAY =
@@ -145,7 +145,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Lifecycle Stage Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<LifecycleStageKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -154,7 +154,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * Returns the '<em><b>Lifecycle Stage Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LifecycleStageKind get(int value) {
@@ -173,7 +173,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * Returns the '<em><b>Lifecycle Stage Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LifecycleStageKind get(String literal) {
@@ -190,7 +190,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * Returns the '<em><b>Lifecycle Stage Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LifecycleStageKind getByName(String name) {
@@ -206,7 +206,7 @@ public enum LifecycleStageKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -214,7 +214,7 @@ public enum LifecycleStageKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -222,7 +222,7 @@ public enum LifecycleStageKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -231,7 +231,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private LifecycleStageKind(int value, String name, String literal) {
@@ -243,7 +243,7 @@ public enum LifecycleStageKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public enum LifecycleStageKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public enum LifecycleStageKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public enum LifecycleStageKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

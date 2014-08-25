@@ -16,7 +16,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance) <em>Set Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class PropertySetterTest extends TestCase {
@@ -25,7 +25,7 @@ public abstract class PropertySetterTest extends TestCase {
 	 * The fixture for this Property Setter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertySetter fixture = null;
@@ -34,7 +34,7 @@ public abstract class PropertySetterTest extends TestCase {
 	 * Constructs a new Property Setter test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertySetterTest(String name) {
@@ -45,7 +45,7 @@ public abstract class PropertySetterTest extends TestCase {
 	 * Sets the fixture for this Property Setter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(PropertySetter fixture) {
@@ -56,7 +56,7 @@ public abstract class PropertySetterTest extends TestCase {
 	 * Returns the fixture for this Property Setter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertySetter getFixture() {
@@ -67,7 +67,7 @@ public abstract class PropertySetterTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance) <em>Set Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 * @generated
 	 */

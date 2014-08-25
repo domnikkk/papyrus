@@ -56,7 +56,7 @@ public interface TraceableSpecification extends EAPackageableElement {
 	 * If the meaning of the '<em>Note</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Note</em>' attribute.
 	 * @see #setNote(String)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getTraceableSpecification_Note()
@@ -69,7 +69,7 @@ public interface TraceableSpecification extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification#getNote <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Note</em>' attribute.
 	 * @see #getNote()

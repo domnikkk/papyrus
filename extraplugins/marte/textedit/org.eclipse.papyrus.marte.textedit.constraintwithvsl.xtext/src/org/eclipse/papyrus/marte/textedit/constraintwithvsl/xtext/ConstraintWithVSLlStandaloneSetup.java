@@ -14,7 +14,6 @@
 
 package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext;
 
-import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ConstraintWithVSLlStandaloneSetupGenerated;
 
 /**
  * Initialization support for running Xtext languages

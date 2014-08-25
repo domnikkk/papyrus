@@ -150,7 +150,7 @@ public class SynchJDTGetterSetter extends SynchJDTMethod {
 					 * SingleVariableDeclaration param = (SingleVariableDeclaration) paramObj;
 					 * if(!param.getType().toString().equals(this.method.getParameters().get(numParam).getType().getElementName()))
 					 * goodSignature = false;
-					 * 
+					 *
 					 * numParam++;
 					 * }
 					 * }

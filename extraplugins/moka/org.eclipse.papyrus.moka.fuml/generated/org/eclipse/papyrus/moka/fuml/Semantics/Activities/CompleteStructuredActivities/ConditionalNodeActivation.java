@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.Token;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ChoiceStrategy;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Clause;
 import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.ExecutableNode;

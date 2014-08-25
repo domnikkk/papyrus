@@ -7,31 +7,27 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Mode;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRuleFactory;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRulePackage;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Severity;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.ValidationRule;
-
 import org.eclipse.uml2.types.TypesPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implements PapyrusDSMLValidationRulePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass validationRuleEClass = null;
@@ -39,7 +35,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum severityEEnum = null;
@@ -47,7 +43,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum modeEEnum = null;
@@ -57,7 +53,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRulePackage#eNS_URI
 	 * @see #init()
@@ -70,7 +66,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -81,7 +77,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	 * <p>
 	 * This method is used to initialize {@link PapyrusDSMLValidationRulePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -119,7 +115,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getValidationRule() {
@@ -129,7 +125,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Severity() {
@@ -139,7 +135,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Mode() {
@@ -149,7 +145,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_IsEnabledByDefault() {
@@ -159,7 +155,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getValidationRule_Base_Constraint() {
@@ -169,7 +165,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_StatusCode() {
@@ -179,7 +175,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Message() {
@@ -189,7 +185,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Description() {
@@ -199,7 +195,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Target() {
@@ -209,7 +205,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Class() {
@@ -219,7 +215,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Id() {
@@ -229,7 +225,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getSeverity() {
@@ -239,7 +235,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getMode() {
@@ -249,7 +245,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusDSMLValidationRuleFactory getPapyrusDSMLValidationRuleFactory() {
@@ -259,7 +255,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -269,7 +265,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -299,7 +295,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -309,7 +305,7 @@ public class PapyrusDSMLValidationRulePackageImpl extends EPackageImpl implement
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

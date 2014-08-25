@@ -4,12 +4,9 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
 import org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -27,7 +24,7 @@ public class ValueSpecificationImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ValueSpecificationImpl()
@@ -38,7 +35,7 @@ public class ValueSpecificationImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -50,7 +47,7 @@ public class ValueSpecificationImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -62,7 +59,7 @@ public class ValueSpecificationImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +71,7 @@ public class ValueSpecificationImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

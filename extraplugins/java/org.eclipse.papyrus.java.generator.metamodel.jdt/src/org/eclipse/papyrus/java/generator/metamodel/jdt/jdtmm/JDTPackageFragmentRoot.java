@@ -58,7 +58,7 @@ public interface JDTPackageFragmentRoot extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Java Project</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Java Project</em>' container reference.
 	 * @see #setJavaProject(JDTJavaProject)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTPackageFragmentRoot_JavaProject()
@@ -72,7 +72,7 @@ public interface JDTPackageFragmentRoot extends JDTParentJavaElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot#getJavaProject <em>Java Project</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Java Project</em>' container reference.
 	 * @see #getJavaProject()
@@ -95,7 +95,7 @@ public interface JDTPackageFragmentRoot extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Package Fragments</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Package Fragments</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTPackageFragmentRoot_PackageFragments()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment#getPackageFragmentRoot

@@ -43,7 +43,7 @@ public interface Var extends EObject {
 	 * If the meaning of the '<em>Dir</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Dir</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.VariableDirectionKind
 	 * @see #setDir(VariableDirectionKind)
@@ -57,7 +57,7 @@ public interface Var extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.Var#getDir <em>Dir</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Dir</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.VariableDirectionKind
@@ -73,7 +73,7 @@ public interface Var extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.VariablesPackage#getVar_Base_Property()
@@ -86,7 +86,7 @@ public interface Var extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.Var#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()

@@ -36,7 +36,7 @@ public class VSL_NFP_VS_CompletionProposal implements ICompletionProposalCompute
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)

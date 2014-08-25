@@ -41,7 +41,7 @@ public interface PaResPassStep extends GaStep {
 	 * If the meaning of the '<em>Resource</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Resource</em>' reference.
 	 * @see #setResource(Resource)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaResPassStep_Resource()
@@ -54,7 +54,7 @@ public interface PaResPassStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep#getResource <em>Resource</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Resource</em>' reference.
 	 * @see #getResource()
@@ -70,7 +70,7 @@ public interface PaResPassStep extends GaStep {
 	 * If the meaning of the '<em>Res Units</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Res Units</em>' attribute.
 	 * @see #setResUnits(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaResPassStep_ResUnits()
@@ -83,7 +83,7 @@ public interface PaResPassStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaResPassStep#getResUnits <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Res Units</em>' attribute.
 	 * @see #getResUnits()

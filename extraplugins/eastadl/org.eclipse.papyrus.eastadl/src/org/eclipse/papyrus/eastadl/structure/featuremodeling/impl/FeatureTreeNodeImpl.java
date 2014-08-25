@@ -32,7 +32,7 @@ public abstract class FeatureTreeNodeImpl extends ContextImpl implements Feature
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureTreeNodeImpl() {
@@ -41,7 +41,7 @@ public abstract class FeatureTreeNodeImpl extends ContextImpl implements Feature
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

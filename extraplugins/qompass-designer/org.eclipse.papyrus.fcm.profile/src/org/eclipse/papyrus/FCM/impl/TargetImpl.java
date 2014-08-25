@@ -15,24 +15,18 @@ package org.eclipse.papyrus.FCM.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.CompilerChain;
 import org.eclipse.papyrus.FCM.ConfigOption;
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.OperatingSystem;
 import org.eclipse.papyrus.FCM.Target;
 import org.eclipse.papyrus.FCM.TargetArchitecture;
-
 import org.eclipse.uml2.uml.Node;
 
 /**
@@ -59,7 +53,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The cached value of the '{@link #getTargetArch() <em>Target Arch</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetArch()
 	 * @generated
 	 * @ordered
@@ -70,7 +64,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The cached value of the '{@link #getOptions() <em>Options</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOptions()
 	 * @generated
 	 * @ordered
@@ -81,7 +75,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The cached value of the '{@link #getBase_Node() <em>Base Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Node()
 	 * @generated
 	 * @ordered
@@ -92,7 +86,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The cached value of the '{@link #getUsedOS() <em>Used OS</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUsedOS()
 	 * @generated
 	 * @ordered
@@ -103,7 +97,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The default value of the '{@link #getAvailRAM() <em>Avail RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAvailRAM()
 	 * @generated
 	 * @ordered
@@ -114,7 +108,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The cached value of the '{@link #getAvailRAM() <em>Avail RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAvailRAM()
 	 * @generated
 	 * @ordered
@@ -125,7 +119,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The default value of the '{@link #getAvailROM() <em>Avail ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAvailROM()
 	 * @generated
 	 * @ordered
@@ -136,7 +130,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The cached value of the '{@link #getAvailROM() <em>Avail ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAvailROM()
 	 * @generated
 	 * @ordered
@@ -147,7 +141,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	 * The cached value of the '{@link #getCompiler() <em>Compiler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCompiler()
 	 * @generated
 	 * @ordered
@@ -157,7 +151,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TargetImpl() {
@@ -167,7 +161,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +172,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +192,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TargetArchitecture basicGetTargetArch() {
@@ -208,7 +202,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +217,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +231,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +251,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Node basicGetBase_Node() {
@@ -267,7 +261,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +276,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +296,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OperatingSystem basicGetUsedOS() {
@@ -312,7 +306,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +321,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +332,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +347,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -364,7 +358,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +373,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -399,7 +393,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CompilerChain basicGetCompiler() {
@@ -409,7 +403,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -424,7 +418,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -463,7 +457,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -499,7 +493,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -533,7 +527,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -560,7 +554,7 @@ public class TargetImpl extends EObjectImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

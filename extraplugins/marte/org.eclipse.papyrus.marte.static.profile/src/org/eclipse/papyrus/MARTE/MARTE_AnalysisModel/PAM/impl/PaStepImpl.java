@@ -48,7 +48,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	 * The default value of the '{@link #getNoSync() <em>No Sync</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNoSync()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	 * The cached value of the '{@link #getNoSync() <em>No Sync</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNoSync()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	 * The cached value of the '{@link #getExtOpDemand() <em>Ext Op Demand</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtOpDemand()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	 * The cached value of the '{@link #getExtOpCount() <em>Ext Op Count</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtOpCount()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	 * The cached value of the '{@link #getBehavDemand() <em>Behav Demand</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBehavDemand()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	 * The cached value of the '{@link #getBehavCount() <em>Behav Count</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBehavCount()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PaStepImpl() {
@@ -123,7 +123,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -272,7 +272,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class PaStepImpl extends GaStepImpl implements PaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

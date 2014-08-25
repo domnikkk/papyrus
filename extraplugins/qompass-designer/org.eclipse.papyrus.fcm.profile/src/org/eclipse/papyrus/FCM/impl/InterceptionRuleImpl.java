@@ -15,21 +15,15 @@ package org.eclipse.papyrus.FCM.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.InterceptionKind;
 import org.eclipse.papyrus.FCM.InterceptionRule;
-
 import org.eclipse.uml2.uml.Feature;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
@@ -55,7 +49,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	 * The default value of the '{@link #getInterceptionKind() <em>Interception Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterceptionKind()
 	 * @generated
 	 * @ordered
@@ -66,7 +60,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	 * The cached value of the '{@link #getInterceptionKind() <em>Interception Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterceptionKind()
 	 * @generated
 	 * @ordered
@@ -77,7 +71,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	 * The cached value of the '{@link #getInterceptionSet() <em>Interception Set</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterceptionSet()
 	 * @generated
 	 * @ordered
@@ -88,7 +82,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -99,7 +93,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	 * The cached value of the '{@link #getBase_Operation() <em>Base Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Operation()
 	 * @generated
 	 * @ordered
@@ -109,7 +103,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InterceptionRuleImpl() {
@@ -119,7 +113,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +124,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +135,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +150,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +164,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +184,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -200,7 +194,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +209,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +229,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetBase_Operation() {
@@ -245,7 +239,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +254,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +281,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -314,7 +308,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +333,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +354,7 @@ public class InterceptionRuleImpl extends EObjectImpl implements InterceptionRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

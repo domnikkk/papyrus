@@ -38,7 +38,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	 * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	 * The default value of the '{@link #getArity() <em>Arity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArity()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OperatorImpl() {
@@ -91,7 +91,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -194,7 +194,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class OperatorImpl extends EObjectImpl implements Operator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -31,14 +31,14 @@ import org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafe
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SafetyrequirementFactoryImpl extends EFactoryImpl implements SafetyrequirementFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -51,7 +51,7 @@ public class SafetyrequirementFactoryImpl extends EFactoryImpl implements Safety
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SafetyrequirementFactory init() {
@@ -70,7 +70,7 @@ public class SafetyrequirementFactoryImpl extends EFactoryImpl implements Safety
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SafetyrequirementFactoryImpl() {
@@ -80,7 +80,7 @@ public class SafetyrequirementFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class SafetyrequirementFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class SafetyrequirementFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class SafetyrequirementFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class SafetyrequirementFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

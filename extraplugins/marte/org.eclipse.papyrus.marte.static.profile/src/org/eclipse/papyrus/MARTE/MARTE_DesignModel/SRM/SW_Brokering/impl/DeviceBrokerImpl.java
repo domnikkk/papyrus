@@ -52,7 +52,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The default value of the '{@link #getAccessPolicy() <em>Access Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccessPolicy()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getAccessPolicy() <em>Access Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccessPolicy()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The default value of the '{@link #isIsBuffered() <em>Is Buffered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBuffered()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #isIsBuffered() <em>Is Buffered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBuffered()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getDevices() <em>Devices</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDevices()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getCloseServices() <em>Close Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCloseServices()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getControlServices() <em>Control Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getControlServices()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getOpenServices() <em>Open Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOpenServices()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getReadServices() <em>Read Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReadServices()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	 * The cached value of the '{@link #getWriteServices() <em>Write Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWriteServices()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DeviceBrokerImpl() {
@@ -171,7 +171,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +318,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +347,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -391,7 +391,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -457,7 +457,7 @@ public class DeviceBrokerImpl extends SwResourceImpl implements DeviceBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

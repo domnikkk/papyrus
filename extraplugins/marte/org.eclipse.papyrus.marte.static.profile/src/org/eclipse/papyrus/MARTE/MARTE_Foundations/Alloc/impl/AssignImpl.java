@@ -53,7 +53,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The default value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getImpliedConstraint() <em>Implied Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImpliedConstraint()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrom()
 	 * @generated
 	 * @ordered
@@ -119,7 +119,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTo()
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	 * The cached value of the '{@link #getBase_Comment() <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Comment()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AssignImpl() {
@@ -150,7 +150,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment basicGetBase_Comment() {
@@ -285,7 +285,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +328,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -363,7 +363,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,7 +394,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -419,7 +419,7 @@ public class AssignImpl extends EObjectImpl implements Assign {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

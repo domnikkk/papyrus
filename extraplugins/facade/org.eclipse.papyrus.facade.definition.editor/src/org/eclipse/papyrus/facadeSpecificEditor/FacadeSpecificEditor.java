@@ -15,8 +15,6 @@ package org.eclipse.papyrus.facadeSpecificEditor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -38,14 +36,12 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.TreeViewerColumn;
-import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.facade.Facade;
 import org.eclipse.papyrus.facade.FacadePackage;
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
@@ -82,6 +78,8 @@ import org.eclipse.papyrus.facadeSpecificEditor.providers.TypedElementLabelProvi
 import org.eclipse.papyrus.facadeSpecificEditor.utils.ProfileUtils;
 import org.eclipse.papyrus.facadeSpecificEditor.utils.StereotypeUtils;
 import org.eclipse.papyrus.facadeSpecificEditor.utils.UMLModelUtils;
+import org.eclipse.papyrus.infra.widgets.providers.CollectionContentProvider;
+import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.profile.RegisteredProfile;
 import org.eclipse.papyrus.uml.extensionpoints.standard.ExtensionLabelProvider;
 import org.eclipse.swt.SWT;
@@ -248,22 +246,8 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		 * Open profiles to start the definition of the facade.
 		 */
 		protected void openProfile() {
-			RegisteredProfile[] regProfiles = RegisteredProfile.getRegisteredProfiles();
-			ListSelectionDialog dlg = new ListSelectionDialog(Display.getCurrent().getActiveShell(), Arrays.asList(regProfiles), new IStructuredContentProvider() {
-
-				public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-				}
-
-				public void dispose() {
-				}
-
-				public Object[] getElements(Object inputElement) {
-					if (inputElement instanceof List) {
-						return ((List<?>) inputElement).toArray();
-					}
-					return Collections.emptyList().toArray();
-				}
-			}, new ExtensionLabelProvider(), Messages.FacadeSpecificEditor_1);
+			List<IRegisteredProfile> regProfiles = RegisteredProfile.getRegisteredProfiles();
+			ListSelectionDialog dlg = new ListSelectionDialog(Display.getCurrent().getActiveShell(), regProfiles, CollectionContentProvider.instance, new ExtensionLabelProvider(), Messages.FacadeSpecificEditor_1);
 			dlg.setTitle(Messages.FacadeSpecificEditor_2);
 			dlg.open();
 			if (dlg.getResult() != null) {
@@ -347,6 +331,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		try {
 			dialog.run(false, false, new IRunnableWithProgress() {
 
+				@Override
 				public void run(IProgressMonitor monitor) {
 					monitor.beginTask(Messages.FacadeSpecificEditor_15, IProgressMonitor.UNKNOWN);
 
@@ -484,6 +469,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 		getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				updateProblemIndication();
 			}
@@ -517,6 +503,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		}
 		metamodelName.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				SetCommand commandName = new SetCommand(editingDomain, facade.getVirtualmetamodel(), VirtualmetamodelPackage.eINSTANCE.getVirtualMetamodel_Name(), metamodelName.getText());
 				editingDomain.getCommandStack().execute(commandName);
@@ -536,6 +523,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		}
 		nsPrefix.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				SetCommand commandName = new SetCommand(editingDomain, facade.getVirtualmetamodel(), VirtualmetamodelPackage.eINSTANCE.getVirtualMetamodel_NsPrefix(), nsPrefix.getText());
 				editingDomain.getCommandStack().execute(commandName);
@@ -556,6 +544,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 		}
 		nsURI.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				SetCommand commandName = new SetCommand(editingDomain, facade.getVirtualmetamodel(), VirtualmetamodelPackage.eINSTANCE.getVirtualMetamodel_NsURI(), nsURI.getText());
 				editingDomain.getCommandStack().execute(commandName);
@@ -635,6 +624,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 		metamodelTreeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (event.getSelection() instanceof IStructuredSelection) {
 					Object first = ((IStructuredSelection) event.getSelection()).getFirstElement();
@@ -731,6 +721,7 @@ public class FacadeSpecificEditor extends FacadeEditor {
 
 		extensionDefintionTreeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (event.getSelection() instanceof IStructuredSelection) {
 					Object first = ((IStructuredSelection) event.getSelection()).getFirstElement();

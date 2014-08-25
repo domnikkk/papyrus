@@ -12,11 +12,8 @@
 package org.eclipse.papyrus.umldi.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlLabel;
 import org.eclipse.papyrus.umldi.UmlLabelKind;

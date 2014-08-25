@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.runtime;
 
+import static org.eclipse.papyrus.layers.runtime.Activator.log;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +23,6 @@ import org.eclipse.papyrus.layers.runtime.model.LayersModel;
 import org.eclipse.papyrus.layers.runtime.model.LayersModelEventRootNotifier;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
-import static org.eclipse.papyrus.layers.runtime.Activator.log;
 
 
 /**
@@ -278,7 +279,7 @@ public class LayerStackApplicationSynchronizer implements ILayersModelRootEventL
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean isDisposed() {
@@ -287,7 +288,7 @@ public class LayerStackApplicationSynchronizer implements ILayersModelRootEventL
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	@Override
@@ -323,7 +324,7 @@ public class LayerStackApplicationSynchronizer implements ILayersModelRootEventL
 
 	/**
 	 * Lookup a {@link LayerStackSynchronizer} by its diagram.
-	 * 
+	 *
 	 * @param diagram
 	 * @return
 	 */
@@ -333,7 +334,7 @@ public class LayerStackApplicationSynchronizer implements ILayersModelRootEventL
 
 	/**
 	 * Lookup a {@link LayerStackSynchronizer} by its diagram.
-	 * 
+	 *
 	 * @param diagram
 	 * @return
 	 */
@@ -345,7 +346,7 @@ public class LayerStackApplicationSynchronizer implements ILayersModelRootEventL
 
 	/**
 	 * Called by events when a {@link LayersStack} is removed from the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	@Override
@@ -366,7 +367,7 @@ public class LayerStackApplicationSynchronizer implements ILayersModelRootEventL
 
 	/**
 	 * Called by events when a {@link Diagram} is removed from the {@link NotationModel}
-	 * 
+	 *
 	 * @param msg
 	 */
 	@Override

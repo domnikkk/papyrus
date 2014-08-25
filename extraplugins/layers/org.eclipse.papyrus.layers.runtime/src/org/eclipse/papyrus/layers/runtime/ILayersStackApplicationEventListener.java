@@ -25,14 +25,14 @@ public interface ILayersStackApplicationEventListener {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	public void layerStackAdded(Notification msg);
 
 	/**
 	 * Called by events when a {@link LayersStack} is removed from the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	public void layerStackRemoved(Notification msg);

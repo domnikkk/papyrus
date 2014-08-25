@@ -13,10 +13,13 @@ package org.eclipse.papyrus.dd.di.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.dd.di.*;
+import org.eclipse.papyrus.dd.di.DIPackage;
+import org.eclipse.papyrus.dd.di.Diagram;
+import org.eclipse.papyrus.dd.di.DiagramElement;
+import org.eclipse.papyrus.dd.di.Edge;
+import org.eclipse.papyrus.dd.di.Shape;
+import org.eclipse.papyrus.dd.di.Style;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance

@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion;
 
@@ -33,7 +30,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getX()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getX()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getY()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getY()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The default value of the '{@link #getZ() <em>Z</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getZ()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The cached value of the '{@link #getZ() <em>Z</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getZ()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The default value of the '{@link #getW() <em>W</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getW()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	 * The cached value of the '{@link #getW() <em>W</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getW()
 	 * @generated
 	 * @ordered
@@ -120,7 +117,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected QuaternionImpl() {
@@ -130,7 +127,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getX() {
@@ -151,7 +148,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setX(double newX) {
@@ -165,7 +162,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getY() {
@@ -175,7 +172,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setY(double newY) {
@@ -189,7 +186,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getZ() {
@@ -199,7 +196,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setZ(double newZ) {
@@ -213,7 +210,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getW() {
@@ -223,7 +220,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setW(double newW) {
@@ -237,7 +234,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +255,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +280,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +305,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +326,7 @@ public class QuaternionImpl extends MinimalEObjectImpl.Container implements Quat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,9 +13,7 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.FolderElement;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 
@@ -32,7 +30,7 @@ public abstract class FolderElementImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FolderElementImpl() {
@@ -42,7 +40,7 @@ public abstract class FolderElementImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -46,7 +46,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	 * The default value of the '{@link #getClientServerKind() <em>Client Server Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClientServerKind()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	 * The cached value of the '{@link #getClientServerKind() <em>Client Server Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClientServerKind()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionClientServerPortImpl() {
@@ -97,7 +97,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class FunctionClientServerPortImpl extends FunctionPortImpl implements Fu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

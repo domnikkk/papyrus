@@ -12,9 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,7 +23,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.java.profile.java.JavaNamedElement;
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 
@@ -33,7 +30,7 @@ import org.eclipse.papyrus.java.profile.java.JavaPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaNamedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaNamedElementItemProvider
@@ -48,7 +45,7 @@ public class JavaNamedElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaNamedElementItemProvider(AdapterFactory adapterFactory) {
@@ -59,7 +56,7 @@ public class JavaNamedElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +77,7 @@ public class JavaNamedElementItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -103,7 +100,7 @@ public class JavaNamedElementItemProvider
 	 * This adds a property descriptor for the Author feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAuthorPropertyDescriptor(Object object) {
@@ -126,7 +123,7 @@ public class JavaNamedElementItemProvider
 	 * This adds a property descriptor for the Version feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addVersionPropertyDescriptor(Object object) {
@@ -149,7 +146,7 @@ public class JavaNamedElementItemProvider
 	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
@@ -172,7 +169,7 @@ public class JavaNamedElementItemProvider
 	 * This adds a property descriptor for the Is Generated feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsGeneratedPropertyDescriptor(Object object) {
@@ -195,7 +192,7 @@ public class JavaNamedElementItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +208,7 @@ public class JavaNamedElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +232,7 @@ public class JavaNamedElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +244,7 @@ public class JavaNamedElementItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

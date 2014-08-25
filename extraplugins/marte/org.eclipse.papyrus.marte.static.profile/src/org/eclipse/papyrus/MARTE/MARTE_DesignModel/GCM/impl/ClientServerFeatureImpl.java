@@ -42,7 +42,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	 * The cached value of the '{@link #getBase_BehavioralFeature() <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClientServerFeatureImpl() {
@@ -84,7 +84,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetBase_BehavioralFeature() {
@@ -151,7 +151,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class ClientServerFeatureImpl extends EObjectImpl implements ClientServer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

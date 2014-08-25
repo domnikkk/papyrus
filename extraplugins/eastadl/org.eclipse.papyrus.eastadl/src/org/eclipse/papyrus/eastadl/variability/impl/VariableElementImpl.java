@@ -56,7 +56,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	 * The cached value of the '{@link #getRequiredBindingTime() <em>Required Binding Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRequiredBindingTime()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	 * The cached value of the '{@link #getActualBindingTime() <em>Actual Binding Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActualBindingTime()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	 * The cached value of the '{@link #getOptionalElement() <em>Optional Element</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOptionalElement()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VariableElementImpl() {
@@ -109,7 +109,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingTime basicGetActualBindingTime() {
@@ -119,7 +119,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingTime basicGetRequiredBindingTime() {
@@ -129,7 +129,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public ReuseMetaInformation basicGetReuseMetaInformation() {
@@ -152,7 +152,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -238,7 +238,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +308,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +328,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,7 +375,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -385,7 +385,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class VariableElementImpl extends EAElementImpl implements VariableElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

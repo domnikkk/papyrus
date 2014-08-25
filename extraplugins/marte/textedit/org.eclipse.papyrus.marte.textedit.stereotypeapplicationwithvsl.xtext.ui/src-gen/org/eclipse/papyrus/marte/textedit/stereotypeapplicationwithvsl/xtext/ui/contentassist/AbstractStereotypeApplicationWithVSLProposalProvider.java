@@ -4,10 +4,12 @@
 package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.contentassist;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.*;
 import org.eclipse.papyrus.marte.vsl.ui.contentassist.VSLProposalProvider;
-import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 /**
  * Represents a generated, default implementation of interface {@link IProposalProvider}.

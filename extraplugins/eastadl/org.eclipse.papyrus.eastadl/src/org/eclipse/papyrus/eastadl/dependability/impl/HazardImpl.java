@@ -50,7 +50,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	 * The cached value of the '{@link #getMalfunction() <em>Malfunction</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMalfunction()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	 * The cached value of the '{@link #getItem() <em>Item</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getItem()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HazardImpl() {
@@ -92,7 +92,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -158,7 +158,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -199,7 +199,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class HazardImpl extends TraceableSpecificationImpl implements Hazard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -48,7 +48,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * The ADLSystemModel is the top level container of an EAST-ADL2 model. It represents the electronics & software of the vehicle, and its environment, and concepts related to the various abstraction level of models used in EAST-ADL2. It is mainly based on both
  * concepts: Models and architectures.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingFactory
  * @model kind="package"
  * @generated
@@ -64,7 +64,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -72,7 +72,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemModelImpl <em>System Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemModelImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getSystemModel()
 		 * @generated
@@ -83,7 +83,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Implementation Level</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM_MODEL__IMPLEMENTATION_LEVEL = eINSTANCE.getSystemModel_ImplementationLevel();
@@ -92,7 +92,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Analysis Level</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM_MODEL__ANALYSIS_LEVEL = eINSTANCE.getSystemModel_AnalysisLevel();
@@ -101,7 +101,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Design Level</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM_MODEL__DESIGN_LEVEL = eINSTANCE.getSystemModel_DesignLevel();
@@ -110,7 +110,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vehicle Level</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM_MODEL__VEHICLE_LEVEL = eINSTANCE.getSystemModel_VehicleLevel();
@@ -119,7 +119,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM_MODEL__BASE_CLASS = eINSTANCE.getSystemModel_Base_Class();
@@ -128,7 +128,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SYSTEM_MODEL__BASE_PACKAGE = eINSTANCE.getSystemModel_Base_Package();
@@ -137,7 +137,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.ImplementationLevelImpl <em>Implementation Level</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.ImplementationLevelImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getImplementationLevel()
 		 * @generated
@@ -148,7 +148,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Autosar System</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference IMPLEMENTATION_LEVEL__AUTOSAR_SYSTEM = eINSTANCE.getImplementationLevel_AutosarSystem();
@@ -157,7 +157,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference IMPLEMENTATION_LEVEL__BASE_CLASS = eINSTANCE.getImplementationLevel_Base_Class();
@@ -166,7 +166,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference IMPLEMENTATION_LEVEL__BASE_PACKAGE = eINSTANCE.getImplementationLevel_Base_Package();
@@ -175,7 +175,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.AnalysisLevelImpl <em>Analysis Level</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.AnalysisLevelImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getAnalysisLevel()
 		 * @generated
@@ -186,7 +186,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ANALYSIS_LEVEL__BASE_CLASS = eINSTANCE.getAnalysisLevel_Base_Class();
@@ -195,7 +195,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ANALYSIS_LEVEL__BASE_PACKAGE = eINSTANCE.getAnalysisLevel_Base_Package();
@@ -204,7 +204,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Functional Analysis Architecture</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ANALYSIS_LEVEL__FUNCTIONAL_ANALYSIS_ARCHITECTURE = eINSTANCE.getAnalysisLevel_FunctionalAnalysisArchitecture();
@@ -213,7 +213,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.DesignLevelImpl <em>Design Level</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.DesignLevelImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getDesignLevel()
 		 * @generated
@@ -224,7 +224,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DESIGN_LEVEL__BASE_CLASS = eINSTANCE.getDesignLevel_Base_Class();
@@ -233,7 +233,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DESIGN_LEVEL__BASE_PACKAGE = eINSTANCE.getDesignLevel_Base_Package();
@@ -242,7 +242,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Functional Design Architecture</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DESIGN_LEVEL__FUNCTIONAL_DESIGN_ARCHITECTURE = eINSTANCE.getDesignLevel_FunctionalDesignArchitecture();
@@ -251,7 +251,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hardware Design Architecture</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DESIGN_LEVEL__HARDWARE_DESIGN_ARCHITECTURE = eINSTANCE.getDesignLevel_HardwareDesignArchitecture();
@@ -260,7 +260,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Allocation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DESIGN_LEVEL__ALLOCATION = eINSTANCE.getDesignLevel_Allocation();
@@ -269,7 +269,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.VehicleLevelImpl <em>Vehicle Level</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.VehicleLevelImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getVehicleLevel()
 		 * @generated
@@ -280,7 +280,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VEHICLE_LEVEL__BASE_PACKAGE = eINSTANCE.getVehicleLevel_Base_Package();
@@ -289,7 +289,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VEHICLE_LEVEL__BASE_CLASS = eINSTANCE.getVehicleLevel_Base_Class();
@@ -298,7 +298,7 @@ public interface SystemmodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Technical Feature Model</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VEHICLE_LEVEL__TECHNICAL_FEATURE_MODEL = eINSTANCE.getVehicleLevel_TechnicalFeatureModel();
@@ -309,7 +309,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "systemmodeling";
@@ -318,7 +318,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Structure/SystemModeling/1";
@@ -327,7 +327,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "SystemModeling";
@@ -336,7 +336,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SystemmodelingPackage eINSTANCE = org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl.init();
@@ -345,7 +345,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemModelImpl <em>System Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemModelImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getSystemModel()
 	 * @generated
@@ -356,7 +356,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.ImplementationLevelImpl <em>Implementation Level</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.ImplementationLevelImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getImplementationLevel()
 	 * @generated
@@ -367,7 +367,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.AnalysisLevelImpl <em>Analysis Level</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.AnalysisLevelImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getAnalysisLevel()
 	 * @generated
@@ -378,7 +378,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.DesignLevelImpl <em>Design Level</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.DesignLevelImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getDesignLevel()
 	 * @generated
@@ -389,7 +389,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -399,7 +399,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -409,7 +409,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -419,7 +419,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -429,7 +429,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -439,7 +439,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -449,7 +449,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Implementation Level</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -459,7 +459,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Analysis Level</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -469,7 +469,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Design Level</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -479,7 +479,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Vehicle Level</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -489,7 +489,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -499,7 +499,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -509,7 +509,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>System Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -519,7 +519,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of operations of the '<em>System Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -529,7 +529,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -539,7 +539,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -549,7 +549,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -559,7 +559,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -569,7 +569,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -579,7 +579,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -589,7 +589,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Autosar System</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -599,7 +599,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -609,7 +609,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -619,7 +619,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Implementation Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -629,7 +629,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Implementation Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -639,7 +639,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -649,7 +649,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -659,7 +659,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -669,7 +669,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -679,7 +679,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -689,7 +689,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -699,7 +699,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -709,7 +709,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -719,7 +719,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Functional Analysis Architecture</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -729,7 +729,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Analysis Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -739,7 +739,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Analysis Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -749,7 +749,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -759,7 +759,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -769,7 +769,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -779,7 +779,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -789,7 +789,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -799,7 +799,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -809,7 +809,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -819,7 +819,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -829,7 +829,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Functional Design Architecture</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -839,7 +839,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Hardware Design Architecture</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -849,7 +849,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Allocation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -859,7 +859,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Design Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -869,7 +869,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Design Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -879,7 +879,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.VehicleLevelImpl <em>Vehicle Level</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.VehicleLevelImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl#getVehicleLevel()
 	 * @generated
@@ -890,7 +890,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -900,7 +900,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -910,7 +910,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -920,7 +920,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -930,7 +930,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -940,7 +940,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -950,7 +950,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -960,7 +960,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -970,7 +970,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Technical Feature Model</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -980,7 +980,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Vehicle Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -990,7 +990,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Vehicle Level</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1000,7 +1000,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel <em>Analysis Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Analysis Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel
 	 * @generated
@@ -1011,7 +1011,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getBase_Class()
 	 * @see #getAnalysisLevel()
@@ -1023,7 +1023,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getBase_Package()
 	 * @see #getAnalysisLevel()
@@ -1035,7 +1035,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getFunctionalAnalysisArchitecture <em>Functional Analysis Architecture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Functional Analysis Architecture</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getFunctionalAnalysisArchitecture()
 	 * @see #getAnalysisLevel()
@@ -1047,7 +1047,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel <em>Design Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Design Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel
 	 * @generated
@@ -1058,7 +1058,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getBase_Class()
 	 * @see #getDesignLevel()
@@ -1070,7 +1070,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getBase_Package()
 	 * @see #getDesignLevel()
@@ -1082,7 +1082,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getAllocation <em>Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Allocation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getAllocation()
 	 * @see #getDesignLevel()
@@ -1094,7 +1094,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getFunctionalDesignArchitecture <em>Functional Design Architecture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Functional Design Architecture</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getFunctionalDesignArchitecture()
 	 * @see #getDesignLevel()
@@ -1106,7 +1106,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getHardwareDesignArchitecture <em>Hardware Design Architecture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Hardware Design Architecture</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getHardwareDesignArchitecture()
 	 * @see #getDesignLevel()
@@ -1118,7 +1118,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel <em>Implementation Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Implementation Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel
 	 * @generated
@@ -1129,7 +1129,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel#getAutosarSystem <em>Autosar System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Autosar System</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel#getAutosarSystem()
 	 * @see #getImplementationLevel()
@@ -1141,7 +1141,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel#getBase_Class()
 	 * @see #getImplementationLevel()
@@ -1153,7 +1153,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.ImplementationLevel#getBase_Package()
 	 * @see #getImplementationLevel()
@@ -1165,7 +1165,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel <em>System Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>System Model</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel
 	 * @generated
@@ -1176,7 +1176,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getAnalysisLevel <em>Analysis Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Analysis Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getAnalysisLevel()
 	 * @see #getSystemModel()
@@ -1188,7 +1188,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getDesignLevel <em>Design Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Design Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getDesignLevel()
 	 * @see #getSystemModel()
@@ -1200,7 +1200,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getImplementationLevel <em>Implementation Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Implementation Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getImplementationLevel()
 	 * @see #getSystemModel()
@@ -1212,7 +1212,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getVehicleLevel <em>Vehicle Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Vehicle Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getVehicleLevel()
 	 * @see #getSystemModel()
@@ -1224,7 +1224,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getBase_Class()
 	 * @see #getSystemModel()
@@ -1236,7 +1236,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getBase_Package()
 	 * @see #getSystemModel()
@@ -1248,7 +1248,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1258,7 +1258,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel <em>Vehicle Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Vehicle Level</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel
 	 * @generated
@@ -1269,7 +1269,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getBase_Package()
 	 * @see #getVehicleLevel()
@@ -1281,7 +1281,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getBase_Class()
 	 * @see #getVehicleLevel()
@@ -1293,7 +1293,7 @@ public interface SystemmodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getTechnicalFeatureModel <em>Technical Feature Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Technical Feature Model</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getTechnicalFeatureModel()
 	 * @see #getVehicleLevel()

@@ -40,7 +40,7 @@ public interface HwTimer extends HwTimingResource {
 	 * If the meaning of the '<em>Nb Counters</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb Counters</em>' attribute.
 	 * @see #setNbCounters(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimingPackage#getHwTimer_NbCounters()
@@ -53,7 +53,7 @@ public interface HwTimer extends HwTimingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getNbCounters <em>Nb Counters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb Counters</em>' attribute.
 	 * @see #getNbCounters()
@@ -68,7 +68,7 @@ public interface HwTimer extends HwTimingResource {
 	 * If the meaning of the '<em>Counter Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Counter Width</em>' attribute.
 	 * @see #setCounterWidth(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimingPackage#getHwTimer_CounterWidth()
@@ -81,7 +81,7 @@ public interface HwTimer extends HwTimingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getCounterWidth <em>Counter Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Counter Width</em>' attribute.
 	 * @see #getCounterWidth()
@@ -96,7 +96,7 @@ public interface HwTimer extends HwTimingResource {
 	 * If the meaning of the '<em>Input Clock</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Input Clock</em>' reference.
 	 * @see #setInputClock(HwClock)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimingPackage#getHwTimer_InputClock()
@@ -109,7 +109,7 @@ public interface HwTimer extends HwTimingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getInputClock <em>Input Clock</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Input Clock</em>' reference.
 	 * @see #getInputClock()

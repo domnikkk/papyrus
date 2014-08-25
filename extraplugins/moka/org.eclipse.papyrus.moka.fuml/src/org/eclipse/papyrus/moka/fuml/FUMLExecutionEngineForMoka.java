@@ -56,7 +56,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#init(org.eclipse.emf.ecore.EObject, java.lang.String[],
 	 * org.eclipse.papyrus.moka.debug.MokaDebugTarget, int, int, int)
 	 */
@@ -75,7 +75,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#initializeArguments(java.lang.String[])
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine#getControlDelegate()
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#addBreakpoint(org.eclipse.papyrus.moka.debug.MokaBreakpoint)
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#removeBreakpoint(org.eclipse.papyrus.moka.debug.MokaBreakpoint)
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#disconnect()
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#resume(org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request)
 	 */
@@ -241,7 +241,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#suspend(org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request)
 	 */
@@ -252,7 +252,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#terminate(org.eclipse.papyrus.moka.communication.request.iterminate.Terminate_Request)
 	 */
@@ -263,7 +263,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#getThreads()
 	 */
 	public MokaThread[] getThreads() {
@@ -272,7 +272,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.AbstractExecutionEngine#getStackFrames(org.eclipse.debug.core.model.IThread)
 	 */
 	@Override

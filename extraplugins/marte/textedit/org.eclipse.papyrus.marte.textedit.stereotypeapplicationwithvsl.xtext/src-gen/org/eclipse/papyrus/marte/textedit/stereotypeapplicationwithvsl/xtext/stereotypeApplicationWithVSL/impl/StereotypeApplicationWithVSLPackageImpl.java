@@ -5,25 +5,21 @@ package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.st
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.ExpressionValueRule;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLFactory;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationsRule;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule;
-
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implements StereotypeApplicationWithVSLPackage
@@ -31,7 +27,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stereotypeApplicationsRuleEClass = null;
@@ -39,7 +35,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stereotypeApplicationRuleEClass = null;
@@ -47,7 +43,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass tagSpecificationRuleEClass = null;
@@ -55,7 +51,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass expressionValueRuleEClass = null;
@@ -65,7 +61,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage#eNS_URI
 	 * @see #init()
@@ -79,7 +75,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -90,7 +86,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	 * <p>
 	 * This method is used to initialize {@link StereotypeApplicationWithVSLPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -129,7 +125,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +137,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +149,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +161,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +173,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +185,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +197,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +209,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +221,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +233,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +245,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +257,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -271,7 +267,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -300,7 +296,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -310,7 +306,7 @@ public class StereotypeApplicationWithVSLPackageImpl extends EPackageImpl implem
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

@@ -21,7 +21,7 @@ import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TransitionEvent;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TemporalconstraintFactoryImpl extends EFactoryImpl implements TemporalconstraintFactory {
@@ -29,7 +29,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TemporalconstraintFactory init() {
@@ -48,7 +48,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TemporalconstraintFactoryImpl() {
@@ -58,7 +58,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class TemporalconstraintFactoryImpl extends EFactoryImpl implements Tempo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

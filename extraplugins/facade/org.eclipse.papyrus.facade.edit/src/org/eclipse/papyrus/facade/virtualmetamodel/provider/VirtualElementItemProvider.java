@@ -19,9 +19,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,9 +30,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.facade.provider.FacadeEditPlugin;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
@@ -42,7 +38,7 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VirtualElementItemProvider
@@ -57,7 +53,7 @@ public class VirtualElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VirtualElementItemProvider(AdapterFactory adapterFactory) {
@@ -68,7 +64,7 @@ public class VirtualElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +84,7 @@ public class VirtualElementItemProvider
 	 * This adds a property descriptor for the Alias Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAliasNamePropertyDescriptor(Object object) {
@@ -111,7 +107,7 @@ public class VirtualElementItemProvider
 	 * This adds a property descriptor for the Kept feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addKeptPropertyDescriptor(Object object) {
@@ -134,7 +130,7 @@ public class VirtualElementItemProvider
 	 * This adds a property descriptor for the Represented Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addRepresentedElementPropertyDescriptor(Object object) {
@@ -157,7 +153,7 @@ public class VirtualElementItemProvider
 	 * This adds a property descriptor for the Use Represented feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addUseRepresentedPropertyDescriptor(Object object) {
@@ -180,7 +176,7 @@ public class VirtualElementItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +193,7 @@ public class VirtualElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +215,7 @@ public class VirtualElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +227,7 @@ public class VirtualElementItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

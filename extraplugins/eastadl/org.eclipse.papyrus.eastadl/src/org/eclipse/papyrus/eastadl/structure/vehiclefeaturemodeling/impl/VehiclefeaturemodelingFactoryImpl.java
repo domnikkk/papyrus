@@ -30,14 +30,14 @@ import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.Vehiclefeatu
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements VehiclefeaturemodelingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -49,7 +49,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VehiclefeaturemodelingFactory init() {
@@ -67,7 +67,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VehiclefeaturemodelingFactoryImpl() {
@@ -76,7 +76,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDeviationPermissionKindToString(EDataType eDataType, Object instanceValue) {
@@ -85,7 +85,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DeviationPermissionKind createDeviationPermissionKindFromString(EDataType eDataType, String initialValue) {
@@ -141,7 +141,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class VehiclefeaturemodelingFactoryImpl extends EFactoryImpl implements V
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

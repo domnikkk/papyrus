@@ -39,7 +39,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	 * The default value of the '{@link #isIsBidirectional() <em>Is Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBidirectional()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	 * The cached value of the '{@link #isIsBidirectional() <em>Is Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBidirectional()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Dependency()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RequirementsLinkImpl() {
@@ -81,7 +81,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency basicGetBase_Dependency() {
@@ -198,7 +198,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class RequirementsLinkImpl extends RequirementsRelationshipImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

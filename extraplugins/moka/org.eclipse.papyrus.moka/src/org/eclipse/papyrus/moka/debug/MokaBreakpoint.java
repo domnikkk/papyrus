@@ -58,7 +58,7 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IBreakpoint#getModelIdentifier()
 	 */
 	public String getModelIdentifier() {
@@ -139,7 +139,7 @@ public class MokaBreakpoint extends Breakpoint {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.Breakpoint#setMarker(org.eclipse.core.resources.IMarker)
 	 */
 	@Override

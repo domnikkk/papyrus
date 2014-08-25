@@ -18,7 +18,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,7 +27,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.CustomType;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 
@@ -36,7 +34,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.CustomType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomTypeItemProvider
@@ -51,7 +49,7 @@ public class CustomTypeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomTypeItemProvider(AdapterFactory adapterFactory) {
@@ -62,7 +60,7 @@ public class CustomTypeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +77,7 @@ public class CustomTypeItemProvider
 	 * This adds a property descriptor for the Classifier feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addClassifierPropertyDescriptor(Object object) {
@@ -102,7 +100,7 @@ public class CustomTypeItemProvider
 	 * This returns CustomType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +112,7 @@ public class CustomTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +128,7 @@ public class CustomTypeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +148,7 @@ public class CustomTypeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

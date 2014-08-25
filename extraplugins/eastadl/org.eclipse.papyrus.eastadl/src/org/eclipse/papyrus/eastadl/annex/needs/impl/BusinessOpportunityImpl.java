@@ -64,7 +64,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	 * The cached value of the '{@link #getProblemStatement() <em>Problem Statement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProblemStatement()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	 * The cached value of the '{@link #getProductPositioning() <em>Product Positioning</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProductPositioning()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	 * The default value of the '{@link #getBusinessOpportunity() <em>Business Opportunity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBusinessOpportunity()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	 * The cached value of the '{@link #getBusinessOpportunity() <em>Business Opportunity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBusinessOpportunity()
 	 * @generated
 	 * @ordered
@@ -119,7 +119,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	 * The cached value of the '{@link #getMotivatesDevelopmentOf() <em>Motivates Development Of</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMotivatesDevelopmentOf()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BusinessOpportunityImpl() {
@@ -139,7 +139,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -220,7 +220,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -261,7 +261,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +329,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +343,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +358,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class BusinessOpportunityImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

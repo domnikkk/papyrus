@@ -8,19 +8,39 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.*;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportContainer;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportDeclaration;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMember;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethodBody;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParentJavaElement;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeRoot;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage
  * @generated
  */
@@ -30,7 +50,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static JdtmmPackage modelPackage;
@@ -39,7 +59,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JdtmmAdapterFactory() {
@@ -53,7 +73,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -72,7 +92,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JdtmmSwitch<Adapter> modelSwitch =
@@ -202,7 +222,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -220,7 +240,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethodBody
 	 * @generated
@@ -235,7 +255,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement
 	 * @generated
@@ -250,7 +270,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent
 	 * @generated
@@ -265,7 +285,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMember
 	 * @generated
@@ -280,7 +300,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParentJavaElement
 	 * @generated
@@ -295,7 +315,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter
 	 * @generated
@@ -310,7 +330,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField
 	 * @generated
@@ -325,7 +345,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType
 	 * @generated
@@ -340,7 +360,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod
 	 * @generated
@@ -355,7 +375,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter
 	 * @generated
@@ -370,7 +390,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit
 	 * @generated
@@ -385,7 +405,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeRoot
 	 * @generated
@@ -400,7 +420,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment
 	 * @generated
@@ -415,7 +435,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot
 	 * @generated
@@ -430,7 +450,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject
 	 * @generated
@@ -445,7 +465,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel
 	 * @generated
@@ -460,7 +480,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass
 	 * @generated
@@ -475,7 +495,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface
 	 * @generated
@@ -490,7 +510,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum
 	 * @generated
@@ -505,7 +525,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportDeclaration
 	 * @generated
@@ -520,7 +540,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportContainer
 	 * @generated
@@ -535,7 +555,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException
 	 * @generated
@@ -550,7 +570,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody
 	 * @generated
@@ -564,7 +584,7 @@ public class JdtmmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

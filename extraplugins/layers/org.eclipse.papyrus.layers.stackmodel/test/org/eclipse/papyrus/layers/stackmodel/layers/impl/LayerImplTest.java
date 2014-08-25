@@ -105,7 +105,7 @@ public class LayerImplTest {
 
 	/**
 	 * Test method .
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test
@@ -133,7 +133,7 @@ public class LayerImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -149,7 +149,7 @@ public class LayerImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

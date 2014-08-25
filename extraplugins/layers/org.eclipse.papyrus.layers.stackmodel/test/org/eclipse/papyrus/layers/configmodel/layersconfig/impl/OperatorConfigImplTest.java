@@ -74,7 +74,7 @@ public class OperatorConfigImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorConfigImpl#createPojoInstance()}.
-	 * 
+	 *
 	 * @throws InstanciationException
 	 */
 	@Test
@@ -100,7 +100,7 @@ public class OperatorConfigImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorConfigImpl#createEmfInstance()}.
-	 * 
+	 *
 	 * @throws InstanciationException
 	 */
 	@Test

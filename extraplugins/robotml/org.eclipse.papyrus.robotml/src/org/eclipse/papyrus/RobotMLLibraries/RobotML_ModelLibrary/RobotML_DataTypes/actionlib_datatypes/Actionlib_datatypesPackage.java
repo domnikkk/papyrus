@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesFactory
  * @model kind="package"
  * @generated
@@ -29,7 +29,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "actionlib_datatypes";
@@ -38,7 +38,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/actionlib_datatypes.ecore";
@@ -47,7 +47,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes";
@@ -56,7 +56,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	Actionlib_datatypesPackage eINSTANCE = org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl.init();
@@ -65,7 +65,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalIDImpl <em>Goal ID</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalIDImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl#getGoalID()
 	 * @generated
@@ -76,7 +76,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -86,7 +86,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +96,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Goal ID</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,7 +106,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Goal ID</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -116,7 +116,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusImpl <em>Goal Status</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl#getGoalStatus()
 	 * @generated
@@ -127,7 +127,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>PENDING</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>ACTIVE</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>PREEMPTED</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>SUCCEEDED</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>ABORTED</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +177,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>REJECTED</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>PREEMPTING</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -197,7 +197,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>RECALLING</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -207,7 +207,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>RECALLED</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +217,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>LOST</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -227,7 +227,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -237,7 +237,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -247,7 +247,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Goal Status</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -257,7 +257,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Goal Status</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -267,7 +267,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusArrayImpl <em>Goal Status Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl#getGoalStatusArray()
 	 * @generated
@@ -278,7 +278,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Header</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -288,7 +288,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Status list</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -298,7 +298,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Goal Status Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -308,7 +308,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * The number of operations of the '<em>Goal Status Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +319,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID <em>Goal ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Goal ID</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID
 	 * @generated
@@ -330,7 +330,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID#getStamp <em>Stamp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stamp</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID#getStamp()
 	 * @see #getGoalID()
@@ -342,7 +342,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Id</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID#getId()
 	 * @see #getGoalID()
@@ -354,7 +354,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus <em>Goal Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Goal Status</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus
 	 * @generated
@@ -365,7 +365,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPENDING <em>PENDING</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>PENDING</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPENDING()
 	 * @see #getGoalStatus()
@@ -377,7 +377,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getACTIVE <em>ACTIVE</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>ACTIVE</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getACTIVE()
 	 * @see #getGoalStatus()
@@ -389,7 +389,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPREEMPTED <em>PREEMPTED</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>PREEMPTED</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPREEMPTED()
 	 * @see #getGoalStatus()
@@ -401,7 +401,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getSUCCEEDED <em>SUCCEEDED</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>SUCCEEDED</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getSUCCEEDED()
 	 * @see #getGoalStatus()
@@ -413,7 +413,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getABORTED <em>ABORTED</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>ABORTED</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getABORTED()
 	 * @see #getGoalStatus()
@@ -425,7 +425,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getREJECTED <em>REJECTED</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>REJECTED</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getREJECTED()
 	 * @see #getGoalStatus()
@@ -437,7 +437,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPREEMPTING <em>PREEMPTING</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>PREEMPTING</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPREEMPTING()
 	 * @see #getGoalStatus()
@@ -449,7 +449,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getRECALLING <em>RECALLING</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>RECALLING</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getRECALLING()
 	 * @see #getGoalStatus()
@@ -461,7 +461,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getRECALLED <em>RECALLED</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>RECALLED</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getRECALLED()
 	 * @see #getGoalStatus()
@@ -473,7 +473,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getLOST <em>LOST</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>LOST</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getLOST()
 	 * @see #getGoalStatus()
@@ -485,7 +485,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Text</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getText()
 	 * @see #getGoalStatus()
@@ -497,7 +497,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Status</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getStatus()
 	 * @see #getGoalStatus()
@@ -509,7 +509,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatusArray <em>Goal Status Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Goal Status Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatusArray
 	 * @generated
@@ -520,7 +520,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatusArray#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Header</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatusArray#getHeader()
 	 * @see #getGoalStatusArray()
@@ -532,7 +532,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatusArray#getStatus_list <em>Status list</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Status list</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatusArray#getStatus_list()
 	 * @see #getGoalStatusArray()
@@ -544,7 +544,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -561,7 +561,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -569,7 +569,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalIDImpl <em>Goal ID</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalIDImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl#getGoalID()
 		 * @generated
@@ -580,7 +580,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stamp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_ID__STAMP = eINSTANCE.getGoalID_Stamp();
@@ -589,7 +589,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_ID__ID = eINSTANCE.getGoalID_Id();
@@ -598,7 +598,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusImpl <em>Goal Status</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl#getGoalStatus()
 		 * @generated
@@ -609,7 +609,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>PENDING</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__PENDING = eINSTANCE.getGoalStatus_PENDING();
@@ -618,7 +618,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>ACTIVE</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__ACTIVE = eINSTANCE.getGoalStatus_ACTIVE();
@@ -627,7 +627,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>PREEMPTED</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__PREEMPTED = eINSTANCE.getGoalStatus_PREEMPTED();
@@ -636,7 +636,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>SUCCEEDED</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__SUCCEEDED = eINSTANCE.getGoalStatus_SUCCEEDED();
@@ -645,7 +645,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>ABORTED</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__ABORTED = eINSTANCE.getGoalStatus_ABORTED();
@@ -654,7 +654,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>REJECTED</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__REJECTED = eINSTANCE.getGoalStatus_REJECTED();
@@ -663,7 +663,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>PREEMPTING</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__PREEMPTING = eINSTANCE.getGoalStatus_PREEMPTING();
@@ -672,7 +672,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>RECALLING</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__RECALLING = eINSTANCE.getGoalStatus_RECALLING();
@@ -681,7 +681,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>RECALLED</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__RECALLED = eINSTANCE.getGoalStatus_RECALLED();
@@ -690,7 +690,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>LOST</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__LOST = eINSTANCE.getGoalStatus_LOST();
@@ -699,7 +699,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__TEXT = eINSTANCE.getGoalStatus_Text();
@@ -708,7 +708,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GOAL_STATUS__STATUS = eINSTANCE.getGoalStatus_Status();
@@ -717,7 +717,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusArrayImpl <em>Goal Status Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.GoalStatusArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl#getGoalStatusArray()
 		 * @generated
@@ -728,7 +728,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GOAL_STATUS_ARRAY__HEADER = eINSTANCE.getGoalStatusArray_Header();
@@ -737,7 +737,7 @@ public interface Actionlib_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Status list</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GOAL_STATUS_ARRAY__STATUS_LIST = eINSTANCE.getGoalStatusArray_Status_list();

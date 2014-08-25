@@ -34,7 +34,7 @@ public interface JoyFeedback extends EObject {
 	 * If the meaning of the '<em>TYPE LED</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>TYPE LED</em>' attribute.
 	 * @see #setTYPE_LED(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getJoyFeedback_TYPE_LED()
@@ -47,7 +47,7 @@ public interface JoyFeedback extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback#getTYPE_LED <em>TYPE LED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>TYPE LED</em>' attribute.
 	 * @see #getTYPE_LED()
@@ -63,7 +63,7 @@ public interface JoyFeedback extends EObject {
 	 * If the meaning of the '<em>TYPE RUMBLE</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>TYPE RUMBLE</em>' attribute.
 	 * @see #setTYPE_RUMBLE(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getJoyFeedback_TYPE_RUMBLE()
@@ -76,7 +76,7 @@ public interface JoyFeedback extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback#getTYPE_RUMBLE <em>TYPE RUMBLE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>TYPE RUMBLE</em>' attribute.
 	 * @see #getTYPE_RUMBLE()
@@ -92,7 +92,7 @@ public interface JoyFeedback extends EObject {
 	 * If the meaning of the '<em>TYPE BUZZER</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>TYPE BUZZER</em>' attribute.
 	 * @see #setTYPE_BUZZER(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getJoyFeedback_TYPE_BUZZER()
@@ -105,7 +105,7 @@ public interface JoyFeedback extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback#getTYPE_BUZZER <em>TYPE BUZZER</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>TYPE BUZZER</em>' attribute.
 	 * @see #getTYPE_BUZZER()
@@ -120,7 +120,7 @@ public interface JoyFeedback extends EObject {
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getJoyFeedback_Type()
@@ -133,7 +133,7 @@ public interface JoyFeedback extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see #getType()
@@ -148,7 +148,7 @@ public interface JoyFeedback extends EObject {
 	 * If the meaning of the '<em>Id</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getJoyFeedback_Id()
@@ -161,7 +161,7 @@ public interface JoyFeedback extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Id</em>' attribute.
 	 * @see #getId()
@@ -176,7 +176,7 @@ public interface JoyFeedback extends EObject {
 	 * If the meaning of the '<em>Intensity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Intensity</em>' attribute.
 	 * @see #setIntensity(float)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getJoyFeedback_Intensity()
@@ -189,7 +189,7 @@ public interface JoyFeedback extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback#getIntensity <em>Intensity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Intensity</em>' attribute.
 	 * @see #getIntensity()

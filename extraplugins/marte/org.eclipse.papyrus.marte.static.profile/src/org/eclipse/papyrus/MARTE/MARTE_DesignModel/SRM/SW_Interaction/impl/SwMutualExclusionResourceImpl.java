@@ -59,7 +59,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The default value of the '{@link #getProtectKind() <em>Protect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProtectKind()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getProtectKind() <em>Protect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProtectKind()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The default value of the '{@link #getCeiling() <em>Ceiling</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCeiling()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getCeiling() <em>Ceiling</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCeiling()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The default value of the '{@link #getOtherProtectProtocol() <em>Other Protect Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOtherProtectProtocol()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getOtherProtectProtocol() <em>Other Protect Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOtherProtectProtocol()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getScheduler() <em>Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScheduler()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The default value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMechanism()
 	 * @generated
 	 * @ordered
@@ -147,7 +147,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMechanism()
 	 * @generated
 	 * @ordered
@@ -158,7 +158,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The default value of the '{@link #getConcurrentAccessProtocol() <em>Concurrent Access Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcurrentAccessProtocol()
 	 * @generated
 	 * @ordered
@@ -169,7 +169,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getConcurrentAccessProtocol() <em>Concurrent Access Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcurrentAccessProtocol()
 	 * @generated
 	 * @ordered
@@ -180,7 +180,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getAccessTokenElements() <em>Access Token Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccessTokenElements()
 	 * @generated
 	 * @ordered
@@ -191,7 +191,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getReleaseServices() <em>Release Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReleaseServices()
 	 * @generated
 	 * @ordered
@@ -202,7 +202,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	 * The cached value of the '{@link #getAcquireServices() <em>Acquire Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAcquireServices()
 	 * @generated
 	 * @ordered
@@ -212,7 +212,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwMutualExclusionResourceImpl() {
@@ -222,7 +222,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +233,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetScheduler() {
@@ -341,7 +341,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetScheduler(Scheduler newScheduler, NotificationChain msgs) {
@@ -361,7 +361,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +387,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -398,7 +398,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -413,7 +413,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -424,7 +424,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +439,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,7 +453,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -467,7 +467,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +481,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -499,7 +499,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -514,7 +514,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +548,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -592,7 +592,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -632,7 +632,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -663,7 +663,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -688,7 +688,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -713,7 +713,7 @@ public class SwMutualExclusionResourceImpl extends SwSynchronizationResourceImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

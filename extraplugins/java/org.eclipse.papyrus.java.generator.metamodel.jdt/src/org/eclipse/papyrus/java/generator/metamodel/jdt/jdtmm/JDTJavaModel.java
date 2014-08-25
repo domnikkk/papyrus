@@ -52,7 +52,7 @@ public interface JDTJavaModel extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Java Project</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Java Project</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaModel_JavaProject()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject#getJavaModel

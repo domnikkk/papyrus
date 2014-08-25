@@ -66,7 +66,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_Base_Class()
@@ -79,7 +79,7 @@ public interface Dependability extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.Dependability#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -94,7 +94,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_Base_Package()
@@ -107,7 +107,7 @@ public interface Dependability extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.Dependability#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -123,7 +123,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Error Model Type</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Error Model Type</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_ErrorModelType()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -139,7 +139,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Hazard</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hazard</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_Hazard()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -155,7 +155,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Fault Failure</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fault Failure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_FaultFailure()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -171,7 +171,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Feature Flaw</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Feature Flaw</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_FeatureFlaw()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -187,7 +187,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Functional Safety Concept</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Functional Safety Concept</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_FunctionalSafetyConcept()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -203,7 +203,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Hazardous Event</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hazardous Event</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_HazardousEvent()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -219,7 +219,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Item</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Item</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_Item()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -235,7 +235,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>EA Datatype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>EA Datatype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_EADatatype()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -251,7 +251,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Quantitative Safety Constraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Quantitative Safety Constraint</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_QuantitativeSafetyConstraint()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -267,7 +267,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Safety Case</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Safety Case</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_SafetyCase()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -283,7 +283,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Safety Constraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Safety Constraint</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_SafetyConstraint()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -299,7 +299,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Safety Goal</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Safety Goal</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_SafetyGoal()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -315,7 +315,7 @@ public interface Dependability extends Context {
 	 * If the meaning of the '<em>Technical Safety Concept</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Technical Safety Concept</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDependability_TechnicalSafetyConcept()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

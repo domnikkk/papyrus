@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwSto
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwStorageManagerXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class HwStorageManagerXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwStorageManagerXMLProcessor() {
@@ -45,7 +45,7 @@ public class HwStorageManagerXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the HwStorageManagerResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

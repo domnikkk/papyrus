@@ -53,7 +53,7 @@ public interface Satisfy extends RequirementsRelationship, org.eclipse.papyrus.s
 	 * List of satisfied ADL requirements, which are satisfied by the client ADL entities.
 	 * {derived from UML::DirectedRelationship::target}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Satisfied Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getSatisfy_SatisfiedRequirement()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -66,7 +66,7 @@ public interface Satisfy extends RequirementsRelationship, org.eclipse.papyrus.s
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.SatisfyInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Satisfied By</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getSatisfy_SatisfiedBy()
 	 * @model containment="true" ordered="false"
@@ -82,7 +82,7 @@ public interface Satisfy extends RequirementsRelationship, org.eclipse.papyrus.s
 	 * If the meaning of the '<em>Satisfied Use Case</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Satisfied Use Case</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getSatisfy_SatisfiedUseCase()
 	 * @model ordered="false"

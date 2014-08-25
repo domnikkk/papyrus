@@ -22,7 +22,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 /**
  * Factory used to create a {@link ValueChangedEventNotifier}.
  * The factory ensures that there is only one Notifier for a given {@link LayersStack}.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -35,7 +35,7 @@ public class ValueChangedEventNotifierFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Convenience method.
-	 * 
+	 *
 	 * @param target
 	 * @return
 	 */

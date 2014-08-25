@@ -31,7 +31,7 @@ public interface BehaviorConstraintInternalBinding_throughHardwareConnectorInsta
 	 * If the meaning of the '<em>Hardware Connector</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Connector</em>' reference.
 	 * @see #setHardwareConnector(HardwareConnector)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareConnector()
@@ -44,7 +44,7 @@ public interface BehaviorConstraintInternalBinding_throughHardwareConnectorInsta
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef#getHardwareConnector <em>Hardware Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hardware Connector</em>' reference.
 	 * @see #getHardwareConnector()
@@ -60,7 +60,7 @@ public interface BehaviorConstraintInternalBinding_throughHardwareConnectorInsta
 	 * If the meaning of the '<em>Hardware Component Prototype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Component Prototype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef_HardwareComponentPrototype()
 	 * @model ordered="false"

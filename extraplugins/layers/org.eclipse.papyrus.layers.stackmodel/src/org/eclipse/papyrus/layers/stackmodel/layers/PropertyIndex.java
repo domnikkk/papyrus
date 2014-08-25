@@ -39,7 +39,7 @@ public interface PropertyIndex extends EObject {
 	 * If the meaning of the '<em>Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property</em>' reference.
 	 * @see #setProperty(Property)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getPropertyIndex_Property()
@@ -52,7 +52,7 @@ public interface PropertyIndex extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex#getProperty <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Property</em>' reference.
 	 * @see #getProperty()
@@ -67,7 +67,7 @@ public interface PropertyIndex extends EObject {
 	 * If the meaning of the '<em>Index</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Index</em>' attribute.
 	 * @see #setIndex(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getPropertyIndex_Index()
@@ -80,7 +80,7 @@ public interface PropertyIndex extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex#getIndex <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Index</em>' attribute.
 	 * @see #getIndex()

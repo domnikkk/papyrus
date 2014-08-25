@@ -6,160 +6,92 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.eastadl.EastadlPackage;
-
 import org.eclipse.papyrus.eastadl.annex.AnnexPackage;
-
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage;
-
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributequantificationconstraintPackageImpl;
-
 import org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage;
-
 import org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl;
-
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintFactory;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalPath;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence;
-
 import org.eclipse.papyrus.eastadl.annex.impl.AnnexPackageImpl;
-
 import org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage;
-
 import org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl;
-
 import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage;
-
 import org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TemporalconstraintPackageImpl;
-
 import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
-
 import org.eclipse.papyrus.eastadl.behavior.impl.BehaviorPackageImpl;
-
 import org.eclipse.papyrus.eastadl.dependability.DependabilityPackage;
-
 import org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage;
-
 import org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl;
-
 import org.eclipse.papyrus.eastadl.dependability.impl.DependabilityPackageImpl;
-
 import org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage;
-
 import org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl;
-
 import org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage;
-
 import org.eclipse.papyrus.eastadl.dependability.safetyconstraints.impl.SafetyconstraintsPackageImpl;
-
 import org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage;
-
 import org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl;
-
 import org.eclipse.papyrus.eastadl.environment.EnvironmentPackage;
-
 import org.eclipse.papyrus.eastadl.environment.impl.EnvironmentPackageImpl;
-
 import org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage;
-
 import org.eclipse.papyrus.eastadl.genericconstraints.impl.GenericconstraintsPackageImpl;
-
 import org.eclipse.papyrus.eastadl.impl.EastadlPackageImpl;
-
 import org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage;
-
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage;
-
 import org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesPackageImpl;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.ElementsPackageImpl;
-
 import org.eclipse.papyrus.eastadl.infrastructure.impl.InfrastructurePackageImpl;
-
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage;
-
 import org.eclipse.papyrus.eastadl.infrastructure.userattributes.impl.UserattributesPackageImpl;
-
 import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
-
 import org.eclipse.papyrus.eastadl.infrastructure.values.impl.ValuesPackageImpl;
-
 import org.eclipse.papyrus.eastadl.requirements.RequirementsPackage;
-
 import org.eclipse.papyrus.eastadl.requirements.impl.RequirementsPackageImpl;
-
 import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
-
 import org.eclipse.papyrus.eastadl.requirements.usecases.impl.UsecasesPackageImpl;
-
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage;
-
 import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl;
-
 import org.eclipse.papyrus.eastadl.structure.StructurePackage;
-
 import org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage;
-
 import org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl;
-
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage;
-
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingPackageImpl;
-
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage;
-
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl;
-
 import org.eclipse.papyrus.eastadl.structure.impl.StructurePackageImpl;
-
 import org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage;
-
 import org.eclipse.papyrus.eastadl.structure.systemmodeling.impl.SystemmodelingPackageImpl;
-
 import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage;
-
 import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.impl.VehiclefeaturemodelingPackageImpl;
-
 import org.eclipse.papyrus.eastadl.timing.TimingPackage;
-
 import org.eclipse.papyrus.eastadl.timing.events.EventsPackage;
-
 import org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl;
-
 import org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl;
-
 import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage;
-
 import org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.TimingconstraintsPackageImpl;
-
 import org.eclipse.papyrus.eastadl.variability.VariabilityPackage;
-
 import org.eclipse.papyrus.eastadl.variability.impl.VariabilityPackageImpl;
-
 import org.eclipse.papyrus.sysml.SysmlPackage;
-
 import org.eclipse.uml2.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ComputationconstraintPackageImpl extends EPackageImpl implements ComputationconstraintPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass computationConstraintEClass = null;
@@ -167,7 +99,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass logicalPathEClass = null;
@@ -175,7 +107,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass logicalTransformationEClass = null;
@@ -183,7 +115,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass transformationOccurrenceEClass = null;
@@ -193,7 +125,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#eNS_URI
 	 * @see #init()
@@ -206,7 +138,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -217,7 +149,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	 * <p>
 	 * This method is used to initialize {@link ComputationconstraintPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -259,7 +191,8 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
+				: VehiclefeaturemodelingPackage.eINSTANCE);
 		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
@@ -277,7 +210,8 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI)
+				: VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -294,7 +228,8 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
+				: AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
@@ -384,7 +319,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +330,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +341,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +352,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +363,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +374,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -450,7 +385,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -461,7 +396,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -472,7 +407,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -483,7 +418,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -494,7 +429,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -505,7 +440,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +451,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -527,7 +462,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -538,7 +473,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -549,7 +484,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -560,7 +495,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -571,7 +506,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -582,7 +517,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -593,7 +528,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -604,7 +539,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -615,7 +550,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -626,7 +561,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -637,7 +572,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -648,7 +583,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -659,7 +594,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -670,7 +605,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -681,7 +616,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -692,7 +627,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -703,7 +638,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -713,7 +648,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -759,7 +694,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -769,7 +704,7 @@ public class ComputationconstraintPackageImpl extends EPackageImpl implements Co
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

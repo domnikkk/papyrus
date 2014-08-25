@@ -38,6 +38,8 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.UniqueEList;
+import org.eclipse.emf.eef.codegen.flow.Step;
+import org.eclipse.emf.eef.codegen.flow.Workflow;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.facade.codegen.FacadeCodeGenPlugin;
 import org.eclipse.papyrus.facade.codegen.Messages;

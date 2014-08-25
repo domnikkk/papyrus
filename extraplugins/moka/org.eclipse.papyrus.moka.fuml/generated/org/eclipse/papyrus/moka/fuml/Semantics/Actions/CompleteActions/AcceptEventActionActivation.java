@@ -16,12 +16,12 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.ActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.Token;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Signal;

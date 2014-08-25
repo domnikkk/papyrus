@@ -42,7 +42,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getLatency() <em>Latency</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLatency()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getMiss() <em>Miss</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMiss()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getUtility() <em>Utility</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtility()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getMaxJitter() <em>Max Jitter</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxJitter()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaLatencyObsImpl() {
@@ -95,7 +95,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -213,7 +213,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

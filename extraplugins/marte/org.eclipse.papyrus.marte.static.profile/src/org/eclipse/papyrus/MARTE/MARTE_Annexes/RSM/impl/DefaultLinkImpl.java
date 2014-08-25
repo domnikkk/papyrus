@@ -30,7 +30,7 @@ public class DefaultLinkImpl extends LinkTopologyImpl implements DefaultLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DefaultLinkImpl() {
@@ -40,7 +40,7 @@ public class DefaultLinkImpl extends LinkTopologyImpl implements DefaultLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

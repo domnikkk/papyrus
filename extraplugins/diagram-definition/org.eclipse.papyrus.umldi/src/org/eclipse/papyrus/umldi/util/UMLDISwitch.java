@@ -13,16 +13,20 @@ package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.papyrus.dd.di.Diagram;
 import org.eclipse.papyrus.dd.di.DiagramElement;
 import org.eclipse.papyrus.dd.di.Edge;
 import org.eclipse.papyrus.dd.di.Shape;
 import org.eclipse.papyrus.dd.di.Style;
-
-import org.eclipse.papyrus.umldi.*;
+import org.eclipse.papyrus.umldi.UMLDIPackage;
+import org.eclipse.papyrus.umldi.UmlCompartment;
+import org.eclipse.papyrus.umldi.UmlDiagram;
+import org.eclipse.papyrus.umldi.UmlDiagramElement;
+import org.eclipse.papyrus.umldi.UmlEdge;
+import org.eclipse.papyrus.umldi.UmlLabel;
+import org.eclipse.papyrus.umldi.UmlShape;
+import org.eclipse.papyrus.umldi.UmlStyle;
 
 /**
  * <!-- begin-user-doc -->

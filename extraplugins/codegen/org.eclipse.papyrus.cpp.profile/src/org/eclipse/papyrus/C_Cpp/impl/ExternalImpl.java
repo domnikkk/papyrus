@@ -40,7 +40,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	 * The cached value of the '{@link #getBase_Classifier() <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Classifier()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExternalImpl() {
@@ -82,7 +82,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Classifier basicGetBase_Classifier() {
@@ -149,7 +149,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class ExternalImpl extends MinimalEObjectImpl.Container implements Extern
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -18,7 +18,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,7 +27,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
 
@@ -36,7 +34,7 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InstanciableElementItemProvider
@@ -51,7 +49,7 @@ public class InstanciableElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InstanciableElementItemProvider(AdapterFactory adapterFactory) {
@@ -62,7 +60,7 @@ public class InstanciableElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +81,7 @@ public class InstanciableElementItemProvider
 	 * This adds a property descriptor for the Classname feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addClassnamePropertyDescriptor(Object object) {
@@ -106,7 +104,7 @@ public class InstanciableElementItemProvider
 	 * This adds a property descriptor for the Bundle ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBundleIDPropertyDescriptor(Object object) {
@@ -129,7 +127,7 @@ public class InstanciableElementItemProvider
 	 * This adds a property descriptor for the Display Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDisplayNamePropertyDescriptor(Object object) {
@@ -152,7 +150,7 @@ public class InstanciableElementItemProvider
 	 * This adds a property descriptor for the Icon Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIconPathPropertyDescriptor(Object object) {
@@ -175,7 +173,7 @@ public class InstanciableElementItemProvider
 	 * This adds a property descriptor for the Classname Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addClassnameKindPropertyDescriptor(Object object) {
@@ -198,7 +196,7 @@ public class InstanciableElementItemProvider
 	 * This returns InstanciableElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +208,7 @@ public class InstanciableElementItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +224,7 @@ public class InstanciableElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +248,7 @@ public class InstanciableElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

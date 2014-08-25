@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.C_Cpp;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
@@ -45,7 +44,7 @@ public interface Array extends EObject {
 	 * If the meaning of the '<em>Base parameter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base parameter</em>' reference.
 	 * @see #setBase_parameter(Parameter)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getArray_Base_parameter()
@@ -58,7 +57,7 @@ public interface Array extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Array#getBase_parameter <em>Base parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base parameter</em>' reference.
 	 * @see #getBase_parameter()
@@ -73,7 +72,7 @@ public interface Array extends EObject {
 	 * If the meaning of the '<em>Definition</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Definition</em>' attribute.
 	 * @see #setDefinition(String)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getArray_Definition()
@@ -86,7 +85,7 @@ public interface Array extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Array#getDefinition <em>Definition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Definition</em>' attribute.
 	 * @see #getDefinition()
@@ -101,7 +100,7 @@ public interface Array extends EObject {
 	 * If the meaning of the '<em>Base property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base property</em>' reference.
 	 * @see #setBase_property(Property)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getArray_Base_property()
@@ -114,7 +113,7 @@ public interface Array extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Array#getBase_property <em>Base property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base property</em>' reference.
 	 * @see #getBase_property()
@@ -129,7 +128,7 @@ public interface Array extends EObject {
 	 * If the meaning of the '<em>Base association</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base association</em>' reference.
 	 * @see #setBase_association(Association)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getArray_Base_association()
@@ -142,7 +141,7 @@ public interface Array extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Array#getBase_association <em>Base association</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base association</em>' reference.
 	 * @see #getBase_association()

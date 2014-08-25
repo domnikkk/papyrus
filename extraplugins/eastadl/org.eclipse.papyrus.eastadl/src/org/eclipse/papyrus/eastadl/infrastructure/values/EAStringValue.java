@@ -27,7 +27,7 @@ public interface EAStringValue extends EAValue {
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage#getEAStringValue_Value()
@@ -40,7 +40,7 @@ public interface EAStringValue extends EAValue {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAStringValue#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()

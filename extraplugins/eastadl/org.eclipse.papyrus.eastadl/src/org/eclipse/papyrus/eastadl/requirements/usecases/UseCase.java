@@ -32,7 +32,7 @@ public interface UseCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Use Case</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Use Case</em>' reference.
 	 * @see #setBase_UseCase(org.eclipse.uml2.uml.UseCase)
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getUseCase_Base_UseCase()
@@ -45,7 +45,7 @@ public interface UseCase extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.usecases.UseCase#getBase_UseCase <em>Base Use Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Use Case</em>' reference.
 	 * @see #getBase_UseCase()
@@ -61,7 +61,7 @@ public interface UseCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Include</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Include</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getUseCase_Include()
 	 * @model ordered="false"
@@ -77,7 +77,7 @@ public interface UseCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Extend</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extend</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getUseCase_Extend()
 	 * @model ordered="false"
@@ -93,7 +93,7 @@ public interface UseCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Extension Point</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extension Point</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getUseCase_ExtensionPoint()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

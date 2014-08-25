@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.qompass.modellibs.core.mappingrules;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.papyrus.FCM.Port;
 import org.eclipse.papyrus.FCM.util.IMappingRule;
 import org.eclipse.papyrus.FCM.util.MapUtil;

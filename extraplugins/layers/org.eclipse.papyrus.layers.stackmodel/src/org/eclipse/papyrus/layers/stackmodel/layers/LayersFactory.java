@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage
  * @generated
  */
@@ -28,7 +28,7 @@ public interface LayersFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	LayersFactory eINSTANCE = org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryImpl.init();
@@ -37,7 +37,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer Named Style</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer Named Style</em>'.
 	 * @generated
 	 */
@@ -47,7 +47,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Stack</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Stack</em>'.
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer</em>'.
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Color</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Color</em>'.
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Color Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Color Instance</em>'.
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Fill Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Fill Instance</em>'.
 	 * @generated
 	 */
@@ -97,7 +97,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Fill</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Fill</em>'.
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Fill Property Setter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Fill Property Setter</em>'.
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Is Valid Property Setter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Is Valid Property Setter</em>'.
 	 * @generated
 	 */
@@ -127,7 +127,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Null Property Setter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Null Property Setter</em>'.
 	 * @generated
 	 */
@@ -137,7 +137,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Line Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Line Type</em>'.
 	 * @generated
 	 */
@@ -147,7 +147,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Line Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Line Instance</em>'.
 	 * @generated
 	 */
@@ -157,7 +157,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Line Property Setter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Line Property Setter</em>'.
 	 * @generated
 	 */
@@ -167,7 +167,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Font Property Setter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Font Property Setter</em>'.
 	 * @generated
 	 */
@@ -177,7 +177,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Font Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Font Instance</em>'.
 	 * @generated
 	 */
@@ -187,7 +187,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Font Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Font Type</em>'.
 	 * @generated
 	 */
@@ -197,7 +197,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Is Visible Property Setter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Is Visible Property Setter</em>'.
 	 * @generated
 	 */
@@ -207,7 +207,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer Operator Descriptor Registry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer Operator Descriptor Registry</em>'.
 	 * @generated
 	 */
@@ -217,7 +217,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Top Layer Operator Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Top Layer Operator Descriptor</em>'.
 	 * @generated
 	 */
@@ -227,7 +227,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Stacked Layer Operator Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Stacked Layer Operator Descriptor</em>'.
 	 * @generated
 	 */
@@ -237,7 +237,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Custom Property Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Custom Property Operator</em>'.
 	 * @generated
 	 */
@@ -247,7 +247,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>And Stacked Layer Operator Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>And Stacked Layer Operator Descriptor</em>'.
 	 * @generated
 	 */
@@ -257,7 +257,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Or Stacked Layer Operator Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Or Stacked Layer Operator Descriptor</em>'.
 	 * @generated
 	 */
@@ -267,7 +267,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Is Abstract Uml Setter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Is Abstract Uml Setter</em>'.
 	 * @generated
 	 */
@@ -277,7 +277,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>All Views Derived Layer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>All Views Derived Layer</em>'.
 	 * @generated
 	 */
@@ -287,7 +287,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer Descriptor</em>'.
 	 * @generated
 	 */
@@ -297,7 +297,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer Application Factory</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer Application Factory</em>'.
 	 * @generated
 	 */
@@ -307,7 +307,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Property Setter Registry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Property Setter Registry</em>'.
 	 * @generated
 	 */
@@ -317,7 +317,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Property</em>'.
 	 * @generated
 	 */
@@ -327,7 +327,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Metamodel</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Metamodel</em>'.
 	 * @generated
 	 */
@@ -337,7 +337,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Folder</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Folder</em>'.
 	 * @generated
 	 */
@@ -347,7 +347,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Int Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Int Instance</em>'.
 	 * @generated
 	 */
@@ -357,7 +357,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Boolean Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Boolean Instance</em>'.
 	 * @generated
 	 */
@@ -367,7 +367,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>String Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>String Instance</em>'.
 	 * @generated
 	 */
@@ -377,7 +377,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Int Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Int Type</em>'.
 	 * @generated
 	 */
@@ -387,7 +387,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Boolean Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Boolean Type</em>'.
 	 * @generated
 	 */
@@ -397,7 +397,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>String Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>String Type</em>'.
 	 * @generated
 	 */
@@ -407,7 +407,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Custom Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Custom Type</em>'.
 	 * @generated
 	 */
@@ -417,7 +417,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer Operator Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer Operator Descriptor</em>'.
 	 * @generated
 	 */
@@ -427,7 +427,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Property Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Property Operator</em>'.
 	 * @generated
 	 */
@@ -437,7 +437,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Default Property Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Default Property Operator</em>'.
 	 * @generated
 	 */
@@ -447,7 +447,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Stack Application</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Stack Application</em>'.
 	 * @generated
 	 */
@@ -457,7 +457,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer Stack Descriptor Registry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer Stack Descriptor Registry</em>'.
 	 * @generated
 	 */
@@ -467,7 +467,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Property Registry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Property Registry</em>'.
 	 * @generated
 	 */
@@ -477,7 +477,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Property Index</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Property Index</em>'.
 	 * @generated
 	 */
@@ -487,7 +487,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Simple Layer Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Simple Layer Descriptor</em>'.
 	 * @generated
 	 */
@@ -497,7 +497,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Reg Exp Layer Descriptor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Reg Exp Layer Descriptor</em>'.
 	 * @generated
 	 */
@@ -507,7 +507,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Null Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Null Instance</em>'.
 	 * @generated
 	 */
@@ -517,7 +517,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Reg Exp Layer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Reg Exp Layer</em>'.
 	 * @generated
 	 */
@@ -527,7 +527,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Type Registry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Type Registry</em>'.
 	 * @generated
 	 */
@@ -537,7 +537,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Layer Descriptor Registry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer Descriptor Registry</em>'.
 	 * @generated
 	 */
@@ -547,7 +547,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Top Layer Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Top Layer Operator</em>'.
 	 * @generated
 	 */
@@ -557,7 +557,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Stacked Layer Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Stacked Layer Operator</em>'.
 	 * @generated
 	 */
@@ -567,7 +567,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns a new object of class '<em>Custom Layer Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Custom Layer Operator</em>'.
 	 * @generated
 	 */
@@ -577,7 +577,7 @@ public interface LayersFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

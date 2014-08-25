@@ -47,7 +47,7 @@ public interface HwPLD extends HwComputingResource {
 	 * If the meaning of the '<em>Technology</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Technology</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.PLD_Technology
 	 * @see #setTechnology(PLD_Technology)
@@ -61,7 +61,7 @@ public interface HwPLD extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwPLD#getTechnology <em>Technology</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Technology</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.PLD_Technology
@@ -77,7 +77,7 @@ public interface HwPLD extends HwComputingResource {
 	 * If the meaning of the '<em>Organization</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Organization</em>' attribute.
 	 * @see #setOrganization(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwPLD_Organization()
@@ -90,7 +90,7 @@ public interface HwPLD extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwPLD#getOrganization <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Organization</em>' attribute.
 	 * @see #getOrganization()
@@ -105,7 +105,7 @@ public interface HwPLD extends HwComputingResource {
 	 * If the meaning of the '<em>Nb LU Ts</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb LU Ts</em>' attribute.
 	 * @see #setNbLUTs(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwPLD_NbLUTs()
@@ -118,7 +118,7 @@ public interface HwPLD extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwPLD#getNbLUTs <em>Nb LU Ts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb LU Ts</em>' attribute.
 	 * @see #getNbLUTs()
@@ -133,7 +133,7 @@ public interface HwPLD extends HwComputingResource {
 	 * If the meaning of the '<em>Nd LUT Inputs</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nd LUT Inputs</em>' attribute.
 	 * @see #setNdLUT_Inputs(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwPLD_NdLUT_Inputs()
@@ -146,7 +146,7 @@ public interface HwPLD extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwPLD#getNdLUT_Inputs <em>Nd LUT Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nd LUT Inputs</em>' attribute.
 	 * @see #getNdLUT_Inputs()
@@ -161,7 +161,7 @@ public interface HwPLD extends HwComputingResource {
 	 * If the meaning of the '<em>Nb Flip Flops</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb Flip Flops</em>' attribute.
 	 * @see #setNbFlipFlops(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwPLD_NbFlipFlops()
@@ -174,7 +174,7 @@ public interface HwPLD extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwPLD#getNbFlipFlops <em>Nb Flip Flops</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb Flip Flops</em>' attribute.
 	 * @see #getNbFlipFlops()
@@ -190,7 +190,7 @@ public interface HwPLD extends HwComputingResource {
 	 * If the meaning of the '<em>Blocks RAM</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Blocks RAM</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwPLD_BlocksRAM()
 	 * @model ordered="false"
@@ -206,7 +206,7 @@ public interface HwPLD extends HwComputingResource {
 	 * If the meaning of the '<em>Blocks Computing</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Blocks Computing</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwPLD_BlocksComputing()
 	 * @model ordered="false"

@@ -14,19 +14,25 @@ package org.eclipse.papyrus.layers.configmodel.layersconfig.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.layers.configmodel.layersconfig.*;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.Folder;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId;
+import org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage
  * @generated
  */
@@ -35,7 +41,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static LayersconfigPackage modelPackage;
@@ -44,7 +50,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersconfigAdapterFactory() {
@@ -58,7 +64,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -77,7 +83,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayersconfigSwitch<Adapter> modelSwitch =
@@ -137,7 +143,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -155,7 +161,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.Folder
 	 * @generated
@@ -170,7 +176,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement
 	 * @generated
@@ -185,7 +191,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig
 	 * @generated
@@ -200,7 +206,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement
 	 * @generated
@@ -215,7 +221,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig
 	 * @generated
@@ -230,7 +236,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId
 	 * @generated
@@ -245,7 +251,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig
 	 * @generated
@@ -260,7 +266,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding
 	 * @generated
@@ -275,7 +281,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding
 	 * @generated
@@ -289,7 +295,7 @@ public class LayersconfigAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

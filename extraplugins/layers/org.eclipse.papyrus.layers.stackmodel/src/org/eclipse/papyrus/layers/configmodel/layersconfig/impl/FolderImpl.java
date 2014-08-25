@@ -15,15 +15,11 @@ package org.eclipse.papyrus.layers.configmodel.layersconfig.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.layers.configmodel.layersconfig.Folder;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
@@ -46,7 +42,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	 * The cached value of the '{@link #getFolderElements() <em>Folder Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFolderElements()
 	 * @generated
 	 * @ordered
@@ -56,7 +52,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FolderImpl() {
@@ -66,7 +62,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +73,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +87,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +102,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +117,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -139,7 +135,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +151,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -47,7 +47,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultValue()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultValue()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UserAttributeDefinitionImpl() {
@@ -111,7 +111,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -228,7 +228,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +268,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -324,7 +324,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +339,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +359,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -369,7 +369,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +384,7 @@ public class UserAttributeDefinitionImpl extends EAElementImpl implements UserAt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

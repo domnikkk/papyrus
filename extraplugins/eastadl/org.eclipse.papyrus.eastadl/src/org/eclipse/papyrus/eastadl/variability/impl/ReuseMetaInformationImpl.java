@@ -83,7 +83,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ReuseMetaInformationImpl() {
@@ -101,7 +101,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -271,7 +271,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class ReuseMetaInformationImpl extends TraceableSpecificationImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

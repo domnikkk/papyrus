@@ -41,7 +41,7 @@ public class NotationItemProviderAdapterFactory extends org.eclipse.gmf.runtime.
 
 	/**
 	 * Use our DiagramAdapter.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.notation.provider.NotationItemProviderAdapterFactory#createDiagramAdapter()
 	 *
 	 * @return

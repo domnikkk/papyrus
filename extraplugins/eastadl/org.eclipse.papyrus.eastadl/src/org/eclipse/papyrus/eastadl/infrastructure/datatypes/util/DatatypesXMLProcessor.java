@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DatatypesXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class DatatypesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DatatypesXMLProcessor() {
@@ -48,7 +48,7 @@ public class DatatypesXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the DatatypesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

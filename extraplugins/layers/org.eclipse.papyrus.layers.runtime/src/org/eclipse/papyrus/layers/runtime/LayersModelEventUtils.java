@@ -45,7 +45,7 @@ public class LayersModelEventUtils {
 
 		/**
 		 * Get the name of the property concerned by the event.
-		 * 
+		 *
 		 * @return
 		 */
 		static public String getPropertyNameFromValueAdd(Notification notification) {
@@ -56,7 +56,7 @@ public class LayersModelEventUtils {
 
 		/**
 		 * Get the name of the property concerned by the event.
-		 * 
+		 *
 		 * @return
 		 */
 		static public String getPropertyNameFromValueRemove(Notification notification) {
@@ -67,7 +67,7 @@ public class LayersModelEventUtils {
 
 		/**
 		 * Get the name of the property concerned by the event.
-		 * 
+		 *
 		 * @return
 		 * @throws NotFoundException
 		 */

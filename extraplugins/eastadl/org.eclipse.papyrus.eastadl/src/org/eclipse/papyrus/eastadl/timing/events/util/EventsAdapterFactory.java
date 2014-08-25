@@ -40,7 +40,7 @@ import org.eclipse.papyrus.eastadl.timing.events.ModeEvent;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage
  * @generated
  */
@@ -49,7 +49,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static EventsPackage modelPackage;
@@ -58,7 +58,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EventsSwitch<Adapter> modelSwitch =
@@ -138,7 +138,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventsAdapterFactory() {
@@ -151,7 +151,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -167,7 +167,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -181,7 +181,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.Event
 	 * @generated
@@ -196,7 +196,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAValue
 	 * @generated
@@ -211,7 +211,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression
 	 * @generated
@@ -226,7 +226,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunction
 	 * @generated
@@ -241,7 +241,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent
 	 * @generated
@@ -256,7 +256,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFaultFailure
 	 * @generated
@@ -271,7 +271,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw
 	 * @generated
@@ -286,7 +286,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.ExternalEvent
 	 * @generated
@@ -301,7 +301,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.ModeEvent
 	 * @generated
@@ -316,7 +316,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -331,7 +331,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort
 	 * @generated
@@ -346,7 +346,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort
 	 * @generated
@@ -361,7 +361,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingDescription
 	 * @generated
@@ -375,7 +375,7 @@ public class EventsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */

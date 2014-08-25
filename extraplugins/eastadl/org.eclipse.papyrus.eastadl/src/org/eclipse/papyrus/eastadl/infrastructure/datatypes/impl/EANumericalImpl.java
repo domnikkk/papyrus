@@ -30,7 +30,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnit()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EANumericalImpl() {
@@ -94,7 +94,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Unit basicGetUnit() {
@@ -187,7 +187,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +268,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

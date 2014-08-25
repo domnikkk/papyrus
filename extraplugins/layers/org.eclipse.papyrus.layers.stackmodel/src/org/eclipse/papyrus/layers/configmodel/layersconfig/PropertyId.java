@@ -38,7 +38,7 @@ public interface PropertyId extends FolderElement {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(TypeConfig)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getPropertyId_Type()
@@ -51,7 +51,7 @@ public interface PropertyId extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()

@@ -30,7 +30,7 @@ public class HwASICImpl extends HwComputingResourceImpl implements HwASIC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwASICImpl() {
@@ -40,7 +40,7 @@ public class HwASICImpl extends HwComputingResourceImpl implements HwASIC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

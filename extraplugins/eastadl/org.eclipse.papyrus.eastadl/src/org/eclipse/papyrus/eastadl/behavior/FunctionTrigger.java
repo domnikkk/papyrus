@@ -85,7 +85,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * If the meaning of the '<em>Function</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function</em>' reference.
 	 * @see #setFunction(FunctionType)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionTrigger_Function()
@@ -101,7 +101,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * If the meaning of the '<em>Function Prototype</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Prototype</em>' reference.
 	 * @see #setFunctionPrototype(FunctionPrototype)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionTrigger_FunctionPrototype()
@@ -118,7 +118,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * If the meaning of the '<em>Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionTrigger_Mode()
 	 * @model ordered="false"
@@ -134,7 +134,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * If the meaning of the '<em>Port</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionTrigger_Port()
 	 * @model ordered="false"
@@ -150,7 +150,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * <!-- begin-model-doc -->
 	 * Defines whether time or trigger events on ports makes the Function execute
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Trigger Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.behavior.TriggerPolicyKind
 	 * @see #setTriggerPolicy(TriggerPolicyKind)
@@ -164,7 +164,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionTrigger#getFunction <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function</em>' reference.
 	 * @see #getFunction()
@@ -176,7 +176,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionTrigger#getFunctionPrototype <em>Function Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function Prototype</em>' reference.
 	 * @see #getFunctionPrototype()
@@ -191,7 +191,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionTrigger_Base_Class()
@@ -204,7 +204,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionTrigger#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -216,7 +216,7 @@ public interface FunctionTrigger extends EAElement, EAExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionTrigger#getTriggerPolicy <em>Trigger Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Trigger Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.behavior.TriggerPolicyKind

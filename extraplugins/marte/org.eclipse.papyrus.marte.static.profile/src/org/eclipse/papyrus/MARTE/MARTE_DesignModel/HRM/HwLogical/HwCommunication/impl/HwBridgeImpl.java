@@ -40,7 +40,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	 * The cached value of the '{@link #getSides() <em>Sides</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSides()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwBridgeImpl() {
@@ -60,7 +60,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -118,7 +118,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class HwBridgeImpl extends HwMediaImpl implements HwBridge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

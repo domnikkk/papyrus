@@ -4,18 +4,14 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.ListOfValues;
 import org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall;
 import org.eclipse.papyrus.marte.vsl.vSL.QualifiedName;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Type;
@@ -41,7 +37,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -52,7 +48,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	 * The cached value of the '{@link #getId() <em>Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -63,7 +59,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArguments()
 	 * @generated
 	 * @ordered
@@ -73,7 +69,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NameOrChoiceOrBehaviorCallImpl()
@@ -84,7 +80,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +92,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +104,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPath(QualifiedName newPath, NotificationChain msgs)
@@ -130,7 +126,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +154,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +177,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetId()
@@ -192,7 +188,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +204,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +216,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetArguments(ListOfValues newArguments, NotificationChain msgs)
@@ -242,7 +238,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +266,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +278,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +290,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +302,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +321,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +345,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +369,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +393,7 @@ public class NameOrChoiceOrBehaviorCallImpl extends ValueSpecificationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

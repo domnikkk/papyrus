@@ -5,18 +5,19 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.*;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesFactory;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatusArray;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Actionlib_datatypesFactory {
@@ -24,7 +25,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Actionlib_datatypesFactory init() {
@@ -43,7 +44,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Actionlib_datatypesFactoryImpl() {
@@ -53,7 +54,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +74,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GoalID createGoalID() {
@@ -84,7 +85,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GoalStatus createGoalStatus() {
@@ -95,7 +96,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GoalStatusArray createGoalStatusArray() {
@@ -106,7 +107,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Actionlib_datatypesPackage getActionlib_datatypesPackage() {
@@ -116,7 +117,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

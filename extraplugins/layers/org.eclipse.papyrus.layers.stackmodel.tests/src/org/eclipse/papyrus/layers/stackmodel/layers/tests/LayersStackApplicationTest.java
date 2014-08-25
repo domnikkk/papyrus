@@ -21,7 +21,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#lookupLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Lookup Layers Stack For</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class LayersStackApplicationTest extends FolderElementTest {
@@ -29,7 +29,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -40,7 +40,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	 * Constructs a new Stack Application test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersStackApplicationTest(String name) {
@@ -51,7 +51,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	 * Returns the fixture for this Stack Application test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -62,7 +62,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -74,7 +74,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Get Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
 	 */
@@ -101,7 +101,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#removeLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Remove Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#removeLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
 	 */
@@ -115,7 +115,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#isLayersStackAttachedFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Is Layers Stack Attached For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#isLayersStackAttachedFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
 	 */
@@ -129,7 +129,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#createLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Create Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#createLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
 	 */
@@ -143,7 +143,7 @@ public class LayersStackApplicationTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#lookupLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Lookup Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#lookupLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
 	 */

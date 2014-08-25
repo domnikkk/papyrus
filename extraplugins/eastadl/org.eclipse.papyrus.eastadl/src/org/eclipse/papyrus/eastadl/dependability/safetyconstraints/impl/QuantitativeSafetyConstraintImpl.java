@@ -52,7 +52,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 * The cached value of the '{@link #getConstrainedFaultFailure() <em>Constrained Fault Failure</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstrainedFaultFailure()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 * The default value of the '{@link #getFailureRate() <em>Failure Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFailureRate()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 * The cached value of the '{@link #getFailureRate() <em>Failure Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFailureRate()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 * The default value of the '{@link #getRepairRate() <em>Repair Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepairRate()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 * The cached value of the '{@link #getRepairRate() <em>Repair Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepairRate()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected QuantitativeSafetyConstraintImpl() {
@@ -138,7 +138,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -220,7 +220,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +295,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -310,7 +310,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -355,7 +355,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -390,7 +390,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -400,7 +400,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +415,7 @@ public class QuantitativeSafetyConstraintImpl extends TraceableSpecificationImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

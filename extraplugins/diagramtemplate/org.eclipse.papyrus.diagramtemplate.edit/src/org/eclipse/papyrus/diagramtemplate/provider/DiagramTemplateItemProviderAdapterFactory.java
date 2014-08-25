@@ -32,7 +32,7 @@ import org.eclipse.papyrus.diagramtemplate.util.DiagramTemplateAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -40,7 +40,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -49,7 +49,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -58,7 +58,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -67,7 +67,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagramTemplateItemProviderAdapterFactory() {
@@ -82,7 +82,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.DiagramDefinition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DiagramDefinitionItemProvider diagramDefinitionItemProvider;
@@ -91,7 +91,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This creates an adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.DiagramDefinition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.Selection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SelectionItemProvider selectionItemProvider;
@@ -116,7 +116,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This creates an adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.Selection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.SelectionRef} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SelectionRefItemProvider selectionRefItemProvider;
@@ -141,7 +141,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This creates an adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.SelectionRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.Template} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TemplateItemProvider templateItemProvider;
@@ -166,7 +166,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This creates an adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.Template}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -193,7 +193,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -203,7 +203,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -256,7 +256,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -267,7 +267,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -282,7 +282,7 @@ public class DiagramTemplateItemProviderAdapterFactory extends DiagramTemplateAd
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void dispose() {

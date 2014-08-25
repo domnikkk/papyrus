@@ -3,8 +3,8 @@
  */
 package javagen.umlparser;
 
-import japa.parser.ParseException;
 import japa.parser.JavaParser;
+import japa.parser.ParseException;
 import japa.parser.ast.CompilationUnit;
 
 import java.io.FileInputStream;

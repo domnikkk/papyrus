@@ -43,7 +43,7 @@ public interface PpUnit extends EObject {
 	 * If the meaning of the '<em>Conc Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Conc Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.CallConcurrencyKind
 	 * @see #setConcPolicy(CallConcurrencyKind)
@@ -57,7 +57,7 @@ public interface PpUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.PpUnit#getConcPolicy <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Conc Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.CallConcurrencyKind
@@ -73,7 +73,7 @@ public interface PpUnit extends EObject {
 	 * If the meaning of the '<em>Memory Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Size</em>' attribute.
 	 * @see #setMemorySize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getPpUnit_MemorySize()
@@ -86,7 +86,7 @@ public interface PpUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.PpUnit#getMemorySize <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Memory Size</em>' attribute.
 	 * @see #getMemorySize()
@@ -101,7 +101,7 @@ public interface PpUnit extends EObject {
 	 * If the meaning of the '<em>Base Behaviored Classifier</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behaviored Classifier</em>' reference.
 	 * @see #setBase_BehavioredClassifier(BehavioredClassifier)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getPpUnit_Base_BehavioredClassifier()
@@ -114,7 +114,7 @@ public interface PpUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.PpUnit#getBase_BehavioredClassifier <em>Base Behaviored Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behaviored Classifier</em>' reference.
 	 * @see #getBase_BehavioredClassifier()

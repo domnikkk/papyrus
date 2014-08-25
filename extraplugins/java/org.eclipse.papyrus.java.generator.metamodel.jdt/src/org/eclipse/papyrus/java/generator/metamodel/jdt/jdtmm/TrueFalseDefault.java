@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>True False Default</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getTrueFalseDefault()
  * @model
  * @generated
@@ -43,7 +43,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * The '<em><b>True</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TRUE_VALUE
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * The '<em><b>False</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FALSE_VALUE
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * The '<em><b>Default</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DEFAULT_VALUE
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * If the meaning of '<em><b>True</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TRUE
 	 * @model name="true"
 	 * @generated
@@ -94,7 +94,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * If the meaning of '<em><b>False</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FALSE
 	 * @model name="false"
 	 * @generated
@@ -109,7 +109,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * If the meaning of '<em><b>Default</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DEFAULT
 	 * @model name="default"
 	 * @generated
@@ -121,7 +121,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * An array of all the '<em><b>True False Default</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final TrueFalseDefault[] VALUES_ARRAY =
@@ -135,7 +135,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * A public read-only list of all the '<em><b>True False Default</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<TrueFalseDefault> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -144,7 +144,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * Returns the '<em><b>True False Default</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TrueFalseDefault get(String literal) {
@@ -161,7 +161,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * Returns the '<em><b>True False Default</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TrueFalseDefault getByName(String name) {
@@ -178,7 +178,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * Returns the '<em><b>True False Default</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TrueFalseDefault get(int value) {
@@ -196,7 +196,7 @@ public enum TrueFalseDefault implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -204,7 +204,7 @@ public enum TrueFalseDefault implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -212,7 +212,7 @@ public enum TrueFalseDefault implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -221,7 +221,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private TrueFalseDefault(int value, String name, String literal) {
@@ -233,7 +233,7 @@ public enum TrueFalseDefault implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public enum TrueFalseDefault implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public enum TrueFalseDefault implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public enum TrueFalseDefault implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

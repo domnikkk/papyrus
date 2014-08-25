@@ -30,7 +30,7 @@ public interface OrderConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Source</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getOrderConstraint_Source()
@@ -43,7 +43,7 @@ public interface OrderConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.OrderConstraint#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()
@@ -58,7 +58,7 @@ public interface OrderConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getOrderConstraint_Target()
@@ -71,7 +71,7 @@ public interface OrderConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.OrderConstraint#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target</em>' reference.
 	 * @see #getTarget()

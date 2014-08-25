@@ -117,13 +117,13 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 
 	/**
 	 * Return a list of package-imports for standard Qompass model libraries
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -161,7 +161,7 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 
 	/**
 	 * Initialize import list. Must be called, before the command gets executed.
-	 * 
+	 *
 	 * @param importList
 	 *            a list of package-imports that will be added to the selectedPkg when
 	 *            the command gets executed.

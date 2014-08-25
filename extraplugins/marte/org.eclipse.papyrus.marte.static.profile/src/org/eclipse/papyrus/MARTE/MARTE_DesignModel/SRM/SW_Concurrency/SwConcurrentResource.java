@@ -60,7 +60,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_Type()
@@ -73,7 +73,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see #getType()
@@ -88,7 +88,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Activation Capacity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Activation Capacity</em>' attribute.
 	 * @see #setActivationCapacity(int)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_ActivationCapacity()
@@ -101,7 +101,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getActivationCapacity <em>Activation Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Activation Capacity</em>' attribute.
 	 * @see #getActivationCapacity()
@@ -117,7 +117,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Entry Points</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Entry Points</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_EntryPoints()
 	 * @model ordered="false"
@@ -133,7 +133,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Adress Space</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Adress Space</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_AdressSpace()
 	 * @model ordered="false"
@@ -149,7 +149,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Period Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Period Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_PeriodElements()
 	 * @model ordered="false"
@@ -165,7 +165,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Priority Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Priority Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_PriorityElements()
 	 * @model ordered="false"
@@ -181,7 +181,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Stack Size Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stack Size Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_StackSizeElements()
 	 * @model ordered="false"
@@ -197,7 +197,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Activate Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Activate Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_ActivateServices()
 	 * @model ordered="false"
@@ -213,7 +213,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Enable Concurrency Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Enable Concurrency Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_EnableConcurrencyServices()
 	 * @model ordered="false"
@@ -229,7 +229,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Resume Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Resume Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_ResumeServices()
 	 * @model ordered="false"
@@ -245,7 +245,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Suspend Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Suspend Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_SuspendServices()
 	 * @model ordered="false"
@@ -261,7 +261,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Terminate Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Terminate Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_TerminateServices()
 	 * @model ordered="false"
@@ -277,7 +277,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Disable Concurrency Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Disable Concurrency Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_DisableConcurrencyServices()
 	 * @model ordered="false"
@@ -293,7 +293,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Share Data Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Share Data Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_ShareDataResources()
 	 * @model ordered="false"
@@ -309,7 +309,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Message Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Message Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_MessageResources()
 	 * @model ordered="false"
@@ -325,7 +325,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Mutual Exclusion Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mutual Exclusion Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_MutualExclusionResources()
 	 * @model ordered="false"
@@ -341,7 +341,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Notification Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Notification Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_NotificationResources()
 	 * @model ordered="false"
@@ -357,7 +357,7 @@ public interface SwConcurrentResource extends SwResource {
 	 * If the meaning of the '<em>Heap Size Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Heap Size Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwConcurrentResource_HeapSizeElements()
 	 * @model ordered="false"

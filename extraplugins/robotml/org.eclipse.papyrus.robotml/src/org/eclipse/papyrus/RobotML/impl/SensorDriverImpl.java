@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.SensorDriver;
 
@@ -20,7 +19,7 @@ public class SensorDriverImpl extends SoftwareImpl implements SensorDriver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SensorDriverImpl() {
@@ -30,7 +29,7 @@ public class SensorDriverImpl extends SoftwareImpl implements SensorDriver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -34,7 +34,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	 * The cached value of the '{@link #getFunctionPort() <em>Function Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionPort()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	 * The cached value of the '{@link #getFunctionPrototype() <em>Function Prototype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClampConnectorInstanceRefImpl() {
@@ -65,7 +65,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionPort basicGetFunctionPort() {
@@ -106,7 +106,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -176,7 +176,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

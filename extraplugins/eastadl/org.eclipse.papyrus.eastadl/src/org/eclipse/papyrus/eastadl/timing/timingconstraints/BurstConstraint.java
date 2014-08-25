@@ -33,7 +33,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Max Occurrences</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Max Occurrences</em>' attribute.
 	 * @see #setMaxOccurrences(int)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getBurstConstraint_MaxOccurrences()
@@ -46,7 +46,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.BurstConstraint#getMaxOccurrences <em>Max Occurrences</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Max Occurrences</em>' attribute.
 	 * @see #getMaxOccurrences()
@@ -61,7 +61,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Event</em>' reference.
 	 * @see #setEvent(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getBurstConstraint_Event()
@@ -74,7 +74,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.BurstConstraint#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Event</em>' reference.
 	 * @see #getEvent()
@@ -89,7 +89,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Lenght</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lenght</em>' reference.
 	 * @see #setLenght(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getBurstConstraint_Lenght()
@@ -102,7 +102,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.BurstConstraint#getLenght <em>Lenght</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lenght</em>' reference.
 	 * @see #getLenght()
@@ -117,7 +117,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Minimum</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Minimum</em>' reference.
 	 * @see #setMinimum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getBurstConstraint_Minimum()
@@ -130,7 +130,7 @@ public interface BurstConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.BurstConstraint#getMinimum <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Minimum</em>' reference.
 	 * @see #getMinimum()

@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers3.ui.view;
 
+import static org.eclipse.papyrus.layers.ui.Activator.log;
+
 import javax.imageio.spi.ServiceRegistry;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -62,7 +64,6 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.wb.swt.SWTResourceManager;
-import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 
 /**
@@ -581,7 +582,7 @@ public class LayersExplorerView extends ViewPart implements ITabbedPropertySheet
 
 	/**
 	 * Change the input of the tree
-	 * 
+	 *
 	 * @param layerStackApplication
 	 */
 	private void setTreeInput(Object input) {
@@ -631,7 +632,7 @@ public class LayersExplorerView extends ViewPart implements ITabbedPropertySheet
 	 * This creates a context menu for the viewer and adds a listener as well registering the menu for extension.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected void createContextMenuFor(StructuredViewer viewer) {
@@ -676,7 +677,7 @@ public class LayersExplorerView extends ViewPart implements ITabbedPropertySheet
 	 * diagram associated to the current page.
 	 * Return the {@link LayersStack} if there is one, or null if there is none.
 	 * The {@link #currentServicesRegistry} and {@link #currentLayersModel} should be already set.
-	 * 
+	 *
 	 * @return the current {@link LayersStack} or null.
 	 */
 	private LayersStack lookupCurrentLayersStack() {

@@ -80,7 +80,7 @@ public class LayersFactoryForStackImpl implements LayersFactoryForStack {
 
 	/**
 	 * Get a layer by its name.
-	 * 
+	 *
 	 * @param parentOperator
 	 *            The container containing layers
 	 * @param name

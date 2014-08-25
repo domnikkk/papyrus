@@ -112,7 +112,7 @@ public class RegistriesLoaderTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.loaders.RegistriesLoader#loadLayerOperatorDescriptorRegistry(org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry, org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry)}
 	 * .
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test
@@ -154,7 +154,7 @@ public class RegistriesLoaderTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.loaders.RegistriesLoader#loadLayerOperatorDescriptorRegistry(org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry, org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry)}
 	 * .
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test

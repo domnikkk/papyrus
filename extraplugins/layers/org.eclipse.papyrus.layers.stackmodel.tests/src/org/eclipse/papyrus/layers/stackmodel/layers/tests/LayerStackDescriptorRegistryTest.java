@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry;
@@ -13,7 +12,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Layer Stack Descriptor Registry</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayerStackDescriptorRegistryTest extends TestCase {
@@ -22,7 +21,7 @@ public class LayerStackDescriptorRegistryTest extends TestCase {
 	 * The fixture for this Layer Stack Descriptor Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerStackDescriptorRegistry fixture = null;
@@ -30,7 +29,7 @@ public class LayerStackDescriptorRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -41,7 +40,7 @@ public class LayerStackDescriptorRegistryTest extends TestCase {
 	 * Constructs a new Layer Stack Descriptor Registry test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerStackDescriptorRegistryTest(String name) {
@@ -52,7 +51,7 @@ public class LayerStackDescriptorRegistryTest extends TestCase {
 	 * Sets the fixture for this Layer Stack Descriptor Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(LayerStackDescriptorRegistry fixture) {
@@ -63,7 +62,7 @@ public class LayerStackDescriptorRegistryTest extends TestCase {
 	 * Returns the fixture for this Layer Stack Descriptor Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerStackDescriptorRegistry getFixture() {
@@ -73,7 +72,7 @@ public class LayerStackDescriptorRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -85,7 +84,7 @@ public class LayerStackDescriptorRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

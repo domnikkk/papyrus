@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -75,7 +76,7 @@ public class StackedLayerOperatorImplGetComputePropertyCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorImpl#StackedLayerOperatorImpl()}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -102,7 +103,7 @@ public class StackedLayerOperatorImplGetComputePropertyCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -161,7 +162,7 @@ public class StackedLayerOperatorImplGetComputePropertyCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl#getViewsComputePropertyValueCommand(java.util.List, org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -245,7 +246,7 @@ public class StackedLayerOperatorImplGetComputePropertyCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, java.util.List)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

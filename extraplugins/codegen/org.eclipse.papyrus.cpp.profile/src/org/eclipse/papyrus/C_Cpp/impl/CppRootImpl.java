@@ -38,7 +38,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	 * The cached value of the '{@link #getBase_package() <em>Base package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_package()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CppRootImpl() {
@@ -58,7 +58,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_package() {
@@ -99,7 +99,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class CppRootImpl extends MinimalEObjectImpl.Container implements CppRoot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

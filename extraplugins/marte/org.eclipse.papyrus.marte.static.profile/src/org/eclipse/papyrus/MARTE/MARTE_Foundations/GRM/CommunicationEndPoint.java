@@ -38,7 +38,7 @@ public interface CommunicationEndPoint extends Resource {
 	 * If the meaning of the '<em>Packet Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Packet Size</em>' attribute.
 	 * @see #setPacketSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getCommunicationEndPoint_PacketSize()
@@ -51,7 +51,7 @@ public interface CommunicationEndPoint extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.CommunicationEndPoint#getPacketSize <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Packet Size</em>' attribute.
 	 * @see #getPacketSize()

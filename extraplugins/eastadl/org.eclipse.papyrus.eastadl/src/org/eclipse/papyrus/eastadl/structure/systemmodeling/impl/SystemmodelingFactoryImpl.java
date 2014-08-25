@@ -33,14 +33,14 @@ import org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SystemmodelingFactoryImpl extends EFactoryImpl implements SystemmodelingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -53,7 +53,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SystemmodelingFactory init() {
@@ -72,7 +72,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SystemmodelingFactoryImpl() {
@@ -82,7 +82,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class SystemmodelingFactoryImpl extends EFactoryImpl implements Systemmod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

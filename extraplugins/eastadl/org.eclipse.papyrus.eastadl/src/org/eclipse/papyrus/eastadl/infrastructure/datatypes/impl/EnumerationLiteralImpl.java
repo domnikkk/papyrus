@@ -33,7 +33,7 @@ public class EnumerationLiteralImpl extends EAElementImpl implements Enumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EnumerationLiteralImpl() {
@@ -43,7 +43,7 @@ public class EnumerationLiteralImpl extends EAElementImpl implements Enumeration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

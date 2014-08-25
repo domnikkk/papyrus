@@ -38,7 +38,7 @@ public class VSL_Real_CompletionProposal implements ICompletionProposalComputer 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)

@@ -41,7 +41,7 @@ public interface SecondaryScheduler extends Scheduler {
 	 * If the meaning of the '<em>Virtual Processing Units</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Virtual Processing Units</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getSecondaryScheduler_VirtualProcessingUnits()
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getDependentScheduler

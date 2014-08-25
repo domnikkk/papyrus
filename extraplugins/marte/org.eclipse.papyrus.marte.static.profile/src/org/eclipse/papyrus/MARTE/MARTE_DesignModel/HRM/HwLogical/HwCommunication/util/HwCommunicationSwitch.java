@@ -38,7 +38,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Resource;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage
  * @generated
  */
@@ -47,7 +47,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static HwCommunicationPackage modelPackage;
@@ -56,7 +56,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwCommunicationSwitch() {
@@ -69,7 +69,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -83,7 +83,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -227,7 +227,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
@@ -244,7 +244,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hw Arbiter</em>'.
@@ -261,7 +261,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hw Media</em>'.
@@ -278,7 +278,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hw Bus</em>'.
@@ -295,7 +295,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hw Bridge</em>'.
@@ -312,7 +312,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hw End Point</em>'.
@@ -329,7 +329,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
@@ -346,7 +346,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hw Resource</em>'.
@@ -363,7 +363,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Processing Resource</em>'.
@@ -380,7 +380,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Communication Media</em>'.
@@ -397,7 +397,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Communication End Point</em>'.
@@ -414,7 +414,7 @@ public class HwCommunicationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

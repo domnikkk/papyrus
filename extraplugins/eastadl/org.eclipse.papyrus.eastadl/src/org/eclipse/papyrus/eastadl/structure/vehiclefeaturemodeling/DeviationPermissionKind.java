@@ -37,7 +37,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	/**
 	 * The '<em><b>Yes</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #YES_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	YES(0, "yes", "yes"), /**
 	 * The '<em><b>No</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NO_VALUE
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	NO(1, "no", "no"), /**
 	 * The '<em><b>Subtree</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SUBTREE_VALUE
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	SUBTREE(2, "subtree", "subtree"), /**
 	 * The '<em><b>Append</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #APPEND_VALUE
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	APPEND(3, "append", "append"), /**
 	 * The '<em><b>Subset</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SUBSET_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	 * The '<em><b>Widen</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #WIDEN_VALUE
 	 * @generated
 	 * @ordered
@@ -167,7 +167,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Feature groups may only be widened, i.e. it is only legal to add features into a feature group that were not grouped before, but not to ungroup features. This kind is only applicable to deviation attribute 'allowRegrouping'.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #WIDEN
 	 * @model name="widen"
 	 * @generated
@@ -193,7 +193,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	/**
 	 * A public read-only list of all the '<em><b>Deviation Permission Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<DeviationPermissionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -201,7 +201,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	/**
 	 * Returns the '<em><b>Deviation Permission Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DeviationPermissionKind get(int value) {
@@ -225,7 +225,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	/**
 	 * Returns the '<em><b>Deviation Permission Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DeviationPermissionKind get(String literal) {
@@ -256,21 +256,21 @@ public enum DeviationPermissionKind implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -278,7 +278,7 @@ public enum DeviationPermissionKind implements Enumerator {
 	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private DeviationPermissionKind(int value, String name, String literal) {
@@ -289,7 +289,7 @@ public enum DeviationPermissionKind implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +299,7 @@ public enum DeviationPermissionKind implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public enum DeviationPermissionKind implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -41,7 +41,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TimedElementImpl() {
@@ -61,7 +61,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -119,7 +119,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

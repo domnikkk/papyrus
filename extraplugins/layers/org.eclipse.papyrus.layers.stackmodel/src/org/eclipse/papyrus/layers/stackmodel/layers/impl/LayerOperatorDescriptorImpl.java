@@ -50,7 +50,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getPropertyOperators() <em>Property Operators</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyOperators()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorDescriptorImpl() {
@@ -92,7 +92,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * Set the operator at the property's index.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	 * Increase the actual list in order that they can contains the specified number of properties.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -255,7 +255,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +318,7 @@ public class LayerOperatorDescriptorImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

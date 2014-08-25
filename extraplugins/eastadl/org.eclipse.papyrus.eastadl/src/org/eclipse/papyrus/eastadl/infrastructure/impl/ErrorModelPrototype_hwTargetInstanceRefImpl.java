@@ -33,7 +33,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	 * The cached value of the '{@link #getHardwareComponentProtype() <em>Hardware Component Protype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareComponentProtype()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	 * The cached value of the '{@link #getHardwareComponentProtype_context() <em>Hardware Component Protype context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareComponentProtype_context()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ErrorModelPrototype_hwTargetInstanceRefImpl() {
@@ -64,7 +64,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HardwareComponentPrototype basicGetHardwareComponentProtype() {
@@ -105,7 +105,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -175,7 +175,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class ErrorModelPrototype_hwTargetInstanceRefImpl extends InstanceRefImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

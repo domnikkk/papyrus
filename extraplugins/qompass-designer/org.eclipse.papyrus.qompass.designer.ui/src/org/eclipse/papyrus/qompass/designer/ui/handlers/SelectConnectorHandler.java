@@ -43,7 +43,7 @@ public class SelectConnectorHandler extends CmdHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	@Override

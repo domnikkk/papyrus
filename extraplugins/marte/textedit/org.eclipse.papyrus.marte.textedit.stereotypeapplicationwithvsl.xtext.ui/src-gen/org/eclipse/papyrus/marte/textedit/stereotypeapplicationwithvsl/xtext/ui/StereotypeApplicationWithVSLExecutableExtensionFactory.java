@@ -3,12 +3,11 @@
  */
 package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui;
 
+import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.internal.StereotypeApplicationWithVSLActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
-
-import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.internal.StereotypeApplicationWithVSLActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

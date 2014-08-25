@@ -45,6 +45,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 	 * @param listener
 	 */
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
@@ -54,6 +55,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 	 *
 	 */
 
+	@Override
 	public void dispose() {
 
 	}
@@ -66,6 +68,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 	 * @return
 	 */
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
@@ -76,6 +79,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 	 * @param listener
 	 */
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
@@ -88,6 +92,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 	 * @return
 	 */
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -161,6 +166,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 	 * @return
 	 */
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -200,6 +206,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 	 * @return
 	 */
 
+	@Override
 	public Font getFont(Object element) {
 		if (element instanceof ExtensionDefinition) {
 			if (((ExtensionDefinition) element).getStereotype().isAbstract()) {

@@ -17,7 +17,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#resetOperatorInstance() <em>Reset Operator Instance</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CustomPropertyOperatorTest extends PropertyOperatorTest {
@@ -25,7 +25,7 @@ public class CustomPropertyOperatorTest extends PropertyOperatorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class CustomPropertyOperatorTest extends PropertyOperatorTest {
 	 * Constructs a new Custom Property Operator test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomPropertyOperatorTest(String name) {
@@ -47,7 +47,7 @@ public class CustomPropertyOperatorTest extends PropertyOperatorTest {
 	 * Returns the fixture for this Custom Property Operator test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class CustomPropertyOperatorTest extends PropertyOperatorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public class CustomPropertyOperatorTest extends PropertyOperatorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -83,7 +83,7 @@ public class CustomPropertyOperatorTest extends PropertyOperatorTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#resetOperatorInstance() <em>Reset Operator Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#resetOperatorInstance()
 	 * @generated
 	 */

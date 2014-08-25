@@ -13,20 +13,16 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.eclipse.gmf.runtime.notation.NotationEditPlugin;
 
 /**
  * This is the central singleton for the Layers editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public final class LayersEditorPlugin extends EMFPlugin {
@@ -34,7 +30,7 @@ public final class LayersEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final LayersEditorPlugin INSTANCE = new LayersEditorPlugin();
@@ -43,7 +39,7 @@ public final class LayersEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -52,7 +48,7 @@ public final class LayersEditorPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersEditorPlugin() {
@@ -66,7 +62,7 @@ public final class LayersEditorPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -79,7 +75,7 @@ public final class LayersEditorPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -91,7 +87,7 @@ public final class LayersEditorPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipseUIPlugin {
@@ -99,7 +95,7 @@ public final class LayersEditorPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public Implementation() {

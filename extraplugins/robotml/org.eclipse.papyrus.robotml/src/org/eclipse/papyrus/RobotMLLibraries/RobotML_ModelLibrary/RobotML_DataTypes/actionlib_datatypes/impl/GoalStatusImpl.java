@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus;
 
@@ -41,7 +38,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getPENDING() <em>PENDING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPENDING()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getPENDING() <em>PENDING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPENDING()
 	 * @generated
 	 * @ordered
@@ -63,7 +60,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getACTIVE() <em>ACTIVE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getACTIVE()
 	 * @generated
 	 * @ordered
@@ -74,7 +71,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getACTIVE() <em>ACTIVE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getACTIVE()
 	 * @generated
 	 * @ordered
@@ -85,7 +82,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getPREEMPTED() <em>PREEMPTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPREEMPTED()
 	 * @generated
 	 * @ordered
@@ -96,7 +93,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getPREEMPTED() <em>PREEMPTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPREEMPTED()
 	 * @generated
 	 * @ordered
@@ -107,7 +104,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getSUCCEEDED() <em>SUCCEEDED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSUCCEEDED()
 	 * @generated
 	 * @ordered
@@ -118,7 +115,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getSUCCEEDED() <em>SUCCEEDED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSUCCEEDED()
 	 * @generated
 	 * @ordered
@@ -129,7 +126,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getABORTED() <em>ABORTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getABORTED()
 	 * @generated
 	 * @ordered
@@ -140,7 +137,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getABORTED() <em>ABORTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getABORTED()
 	 * @generated
 	 * @ordered
@@ -151,7 +148,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getREJECTED() <em>REJECTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getREJECTED()
 	 * @generated
 	 * @ordered
@@ -162,7 +159,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getREJECTED() <em>REJECTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getREJECTED()
 	 * @generated
 	 * @ordered
@@ -173,7 +170,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getPREEMPTING() <em>PREEMPTING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPREEMPTING()
 	 * @generated
 	 * @ordered
@@ -184,7 +181,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getPREEMPTING() <em>PREEMPTING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPREEMPTING()
 	 * @generated
 	 * @ordered
@@ -195,7 +192,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getRECALLING() <em>RECALLING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRECALLING()
 	 * @generated
 	 * @ordered
@@ -206,7 +203,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getRECALLING() <em>RECALLING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRECALLING()
 	 * @generated
 	 * @ordered
@@ -217,7 +214,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getRECALLED() <em>RECALLED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRECALLED()
 	 * @generated
 	 * @ordered
@@ -228,7 +225,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getRECALLED() <em>RECALLED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRECALLED()
 	 * @generated
 	 * @ordered
@@ -239,7 +236,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getLOST() <em>LOST</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLOST()
 	 * @generated
 	 * @ordered
@@ -250,7 +247,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getLOST() <em>LOST</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLOST()
 	 * @generated
 	 * @ordered
@@ -261,7 +258,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getText()
 	 * @generated
 	 * @ordered
@@ -272,7 +269,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getText()
 	 * @generated
 	 * @ordered
@@ -283,7 +280,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -294,7 +291,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -304,7 +301,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GoalStatusImpl() {
@@ -314,7 +311,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +322,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getPENDING() {
@@ -335,7 +332,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPENDING(char newPENDING) {
@@ -349,7 +346,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getACTIVE() {
@@ -359,7 +356,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setACTIVE(char newACTIVE) {
@@ -373,7 +370,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getPREEMPTED() {
@@ -383,7 +380,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPREEMPTED(char newPREEMPTED) {
@@ -397,7 +394,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getSUCCEEDED() {
@@ -407,7 +404,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSUCCEEDED(char newSUCCEEDED) {
@@ -421,7 +418,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getABORTED() {
@@ -431,7 +428,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setABORTED(char newABORTED) {
@@ -445,7 +442,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getREJECTED() {
@@ -455,7 +452,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setREJECTED(char newREJECTED) {
@@ -469,7 +466,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getPREEMPTING() {
@@ -479,7 +476,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPREEMPTING(char newPREEMPTING) {
@@ -493,7 +490,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getRECALLING() {
@@ -503,7 +500,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRECALLING(char newRECALLING) {
@@ -517,7 +514,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getRECALLED() {
@@ -527,7 +524,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRECALLED(char newRECALLED) {
@@ -541,7 +538,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getLOST() {
@@ -551,7 +548,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLOST(char newLOST) {
@@ -565,7 +562,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getText() {
@@ -575,7 +572,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setText(String newText) {
@@ -589,7 +586,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getStatus() {
@@ -599,7 +596,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatus(char newStatus) {
@@ -613,7 +610,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -650,7 +647,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -699,7 +696,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -748,7 +745,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -785,7 +782,7 @@ public class GoalStatusImpl extends MinimalEObjectImpl.Container implements Goal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

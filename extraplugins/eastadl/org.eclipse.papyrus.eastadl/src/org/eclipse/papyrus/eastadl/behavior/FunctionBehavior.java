@@ -91,7 +91,7 @@ public interface FunctionBehavior extends Context {
 	 * If the meaning of the '<em>Base Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavior</em>' reference.
 	 * @see #setBase_Behavior(Behavior)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionBehavior_Base_Behavior()
@@ -104,7 +104,7 @@ public interface FunctionBehavior extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionBehavior#getBase_Behavior <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavior</em>' reference.
 	 * @see #getBase_Behavior()
@@ -119,7 +119,7 @@ public interface FunctionBehavior extends Context {
 	 * If the meaning of the '<em>Function</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function</em>' reference.
 	 * @see #setFunction(FunctionType)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionBehavior_Function()
@@ -136,7 +136,7 @@ public interface FunctionBehavior extends Context {
 	 * If the meaning of the '<em>Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionBehavior_Mode()
 	 * @model ordered="false"
@@ -151,7 +151,7 @@ public interface FunctionBehavior extends Context {
 	 * <!-- begin-model-doc -->
 	 * The path to the file or model entity containing the ExternalBehavior
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Path</em>' attribute.
 	 * @see #setPath(String)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionBehavior_Path()
@@ -168,7 +168,7 @@ public interface FunctionBehavior extends Context {
 	 * <!-- begin-model-doc -->
 	 * The type of behavior that the ExternalBehavior represents.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Representation</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.behavior.FunctionBehaviorKind
 	 * @see #setRepresentation(FunctionBehaviorKind)
@@ -182,7 +182,7 @@ public interface FunctionBehavior extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionBehavior#getFunction <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function</em>' reference.
 	 * @see #getFunction()
@@ -194,7 +194,7 @@ public interface FunctionBehavior extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionBehavior#getPath <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Path</em>' attribute.
 	 * @see #getPath()
@@ -206,7 +206,7 @@ public interface FunctionBehavior extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.FunctionBehavior#getRepresentation <em>Representation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Representation</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.behavior.FunctionBehaviorKind

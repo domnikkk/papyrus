@@ -45,7 +45,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	 * The cached value of the '{@link #getTraceableSpecification() <em>Traceable Specification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTraceableSpecification()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	 * The cached value of the '{@link #getOwnedRelationship() <em>Owned Relationship</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedRelationship()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -76,7 +76,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -132,7 +132,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public abstract class ContextImpl extends EAPackageableElementImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

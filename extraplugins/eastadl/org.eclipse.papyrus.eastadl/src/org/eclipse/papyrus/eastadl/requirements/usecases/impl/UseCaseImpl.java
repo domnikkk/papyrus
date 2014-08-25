@@ -43,7 +43,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	 * The cached value of the '{@link #getBase_UseCase() <em>Base Use Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_UseCase()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	 * The cached value of the '{@link #getInclude() <em>Include</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInclude()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	 * The cached value of the '{@link #getExtend() <em>Extend</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtend()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UseCaseImpl() {
@@ -85,7 +85,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.UseCase basicGetBase_UseCase() {
@@ -126,7 +126,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -243,7 +243,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

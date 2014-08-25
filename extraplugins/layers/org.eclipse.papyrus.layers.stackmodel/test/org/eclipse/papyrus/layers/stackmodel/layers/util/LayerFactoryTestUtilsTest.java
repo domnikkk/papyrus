@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.util;
 
 import static org.junit.Assert.assertNotNull;
+
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.papyrus.layers.stackmodel.layers.Layer;
@@ -23,7 +24,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry;
 import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator;
-import org.eclipse.papyrus.layers.stackmodel.layers.util.LayersFactoryTestUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

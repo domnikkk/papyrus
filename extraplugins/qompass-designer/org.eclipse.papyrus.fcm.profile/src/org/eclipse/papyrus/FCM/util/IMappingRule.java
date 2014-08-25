@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Interface;
 public interface IMappingRule {
 	/**
 	 * Return a list of provided interfaces for a given port
-	 * 
+	 *
 	 * @param p
 	 *            the port
 	 * @param update
@@ -34,7 +34,7 @@ public interface IMappingRule {
 
 	/**
 	 * Return a list of provided interfaces for a given port
-	 * 
+	 *
 	 * @param p
 	 *            the port
 	 * @param update

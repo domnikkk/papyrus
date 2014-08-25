@@ -27,7 +27,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	 * The cached value of the '{@link #getBase_ExtensionPoint() <em>Base Extension Point</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ExtensionPoint()
 	 * @generated
 	 * @ordered
@@ -37,7 +37,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtensionPointImpl() {
@@ -47,7 +47,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.ExtensionPoint basicGetBase_ExtensionPoint() {
@@ -88,7 +88,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class ExtensionPointImpl extends RedefinableElementImpl implements Extens
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

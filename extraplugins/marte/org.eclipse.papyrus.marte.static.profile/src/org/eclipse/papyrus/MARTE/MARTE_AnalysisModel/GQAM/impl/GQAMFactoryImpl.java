@@ -44,7 +44,7 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
@@ -52,7 +52,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static GQAMFactory init() {
@@ -71,7 +71,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GQAMFactoryImpl() {
@@ -81,7 +81,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +233,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +293,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +305,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +329,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +341,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +353,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +365,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LaxityKind createLaxityKindFromString(EDataType eDataType, String initialValue) {
@@ -379,7 +379,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertLaxityKindToString(EDataType eDataType, Object instanceValue) {
@@ -389,7 +389,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class GQAMFactoryImpl extends EFactoryImpl implements GQAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

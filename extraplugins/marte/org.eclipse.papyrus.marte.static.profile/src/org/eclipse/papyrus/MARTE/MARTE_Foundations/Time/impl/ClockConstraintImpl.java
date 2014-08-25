@@ -47,7 +47,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The default value of the '{@link #isIsCoincidenceBased() <em>Is Coincidence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsCoincidenceBased()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #isIsCoincidenceBased() <em>Is Coincidence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsCoincidenceBased()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The default value of the '{@link #isIsPrecedenceBased() <em>Is Precedence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPrecedenceBased()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #isIsPrecedenceBased() <em>Is Precedence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPrecedenceBased()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The default value of the '{@link #isIsChronometricBased() <em>Is Chronometric Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsChronometricBased()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	 * The cached value of the '{@link #isIsChronometricBased() <em>Is Chronometric Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsChronometricBased()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClockConstraintImpl() {
@@ -133,7 +133,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -284,7 +284,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +330,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +368,7 @@ public class ClockConstraintImpl extends NfpConstraintImpl implements ClockConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -11,9 +11,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.importer;
 
-import org.eclipse.papyrus.cdo.core.importer.IModelTransferConfiguration;
 import org.eclipse.papyrus.cdo.core.importer.IModelImportMapping;
 import org.eclipse.papyrus.cdo.core.importer.IModelImportMapping.Factory;
+import org.eclipse.papyrus.cdo.core.importer.IModelTransferConfiguration;
 
 /**
  * This is the OneToOneModelImportMappingFactory type. Enjoy.

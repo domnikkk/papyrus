@@ -3,16 +3,12 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.State;
-
 import org.eclipse.uml2.uml.Behavior;
 
 /**
@@ -34,7 +30,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * The cached value of the '{@link #getBase_State() <em>Base State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_State()
 	 * @generated
 	 * @ordered
@@ -45,7 +41,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
@@ -55,7 +51,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StateImpl() {
@@ -65,7 +61,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +72,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.State getBase_State() {
@@ -95,7 +91,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.State basicGetBase_State() {
@@ -105,7 +101,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_State(org.eclipse.uml2.uml.State newBase_State) {
@@ -119,7 +115,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior getBehavior() {
@@ -138,7 +134,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBehavior() {
@@ -148,7 +144,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBehavior(Behavior newBehavior) {
@@ -162,7 +158,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +181,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +200,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +219,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

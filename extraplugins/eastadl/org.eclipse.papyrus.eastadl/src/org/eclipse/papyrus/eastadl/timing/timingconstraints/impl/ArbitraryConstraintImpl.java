@@ -36,7 +36,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	 * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaximum()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArbitraryConstraintImpl() {
@@ -78,7 +78,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -147,7 +147,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -209,7 +209,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

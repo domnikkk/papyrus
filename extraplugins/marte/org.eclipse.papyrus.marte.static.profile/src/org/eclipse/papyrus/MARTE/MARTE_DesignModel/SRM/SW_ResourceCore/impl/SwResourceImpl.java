@@ -50,7 +50,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	 * The cached value of the '{@link #getIdentifierElements() <em>Identifier Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifierElements()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	 * The cached value of the '{@link #getStateElements() <em>State Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStateElements()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	 * The cached value of the '{@link #getMemorySizeFootprint() <em>Memory Size Footprint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySizeFootprint()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	 * The cached value of the '{@link #getCreateServices() <em>Create Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCreateServices()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	 * The cached value of the '{@link #getDeleteServices() <em>Delete Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeleteServices()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	 * The cached value of the '{@link #getInitializeServices() <em>Initialize Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInitializeServices()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwResourceImpl() {
@@ -125,7 +125,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TypedElement basicGetMemorySizeFootprint() {
@@ -194,7 +194,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -316,7 +316,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +347,7 @@ public abstract class SwResourceImpl extends ResourceImpl implements SwResource 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

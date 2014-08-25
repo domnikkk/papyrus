@@ -32,7 +32,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The cached value of the '{@link #getRightOperand() <em>Right Operand</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRightOperand()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The cached value of the '{@link #getLeftOperand() <em>Left Operand</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeftOperand()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperator()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperator()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComparisonConstraintImpl() {
@@ -85,7 +85,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetRightOperand() {
@@ -126,7 +126,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetLeftOperand() {
@@ -171,7 +171,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

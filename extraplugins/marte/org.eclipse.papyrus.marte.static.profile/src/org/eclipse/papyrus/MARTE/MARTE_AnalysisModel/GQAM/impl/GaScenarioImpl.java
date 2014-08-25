@@ -77,7 +77,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getBase_Action() <em>Base Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Action()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getBase_Message() <em>Base Message</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Message()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDuration()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getFinish() <em>Finish</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFinish()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getCause() <em>Cause</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCause()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getHostDemand() <em>Host Demand</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHostDemand()
 	 * @generated
 	 * @ordered
@@ -176,7 +176,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getHostDemandOps() <em>Host Demand Ops</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHostDemandOps()
 	 * @generated
 	 * @ordered
@@ -187,7 +187,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getInterOccT() <em>Inter Occ T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterOccT()
 	 * @generated
 	 * @ordered
@@ -198,7 +198,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -209,7 +209,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getRespT() <em>Resp T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRespT()
 	 * @generated
 	 * @ordered
@@ -220,7 +220,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -231,7 +231,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getUtilizationOnHost() <em>Utilization On Host</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtilizationOnHost()
 	 * @generated
 	 * @ordered
@@ -242,7 +242,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getRoot() <em>Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRoot()
 	 * @generated
 	 * @ordered
@@ -253,7 +253,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getSteps() <em>Steps</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSteps()
 	 * @generated
 	 * @ordered
@@ -264,7 +264,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getParentStep() <em>Parent Step</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParentStep()
 	 * @generated
 	 * @ordered
@@ -275,7 +275,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	 * The cached value of the '{@link #getTiming() <em>Timing</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTiming()
 	 * @generated
 	 * @ordered
@@ -285,7 +285,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaScenarioImpl() {
@@ -295,7 +295,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +320,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Action basicGetBase_Action() {
@@ -350,7 +350,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +365,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -385,7 +385,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -395,7 +395,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -410,7 +410,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +430,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Message basicGetBase_Message() {
@@ -440,7 +440,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -455,7 +455,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -466,7 +466,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDuration(ValueSpecification newDuration, NotificationChain msgs) {
@@ -486,7 +486,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -512,7 +512,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -532,7 +532,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetStart() {
@@ -542,7 +542,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -557,7 +557,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -577,7 +577,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetFinish() {
@@ -587,7 +587,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -602,7 +602,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -622,7 +622,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaWorkloadEvent basicGetCause() {
@@ -632,7 +632,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -647,7 +647,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -661,7 +661,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -675,7 +675,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -689,7 +689,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -703,7 +703,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -717,7 +717,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -731,7 +731,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -745,7 +745,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -765,7 +765,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaStep basicGetRoot() {
@@ -775,7 +775,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -790,7 +790,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -804,7 +804,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -818,7 +818,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -832,7 +832,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -850,7 +850,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -869,7 +869,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -941,7 +941,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -1023,7 +1023,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1093,7 +1093,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1144,7 +1144,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1181,7 +1181,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1218,7 +1218,7 @@ public class GaScenarioImpl extends ResourceUsageImpl implements GaScenario {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

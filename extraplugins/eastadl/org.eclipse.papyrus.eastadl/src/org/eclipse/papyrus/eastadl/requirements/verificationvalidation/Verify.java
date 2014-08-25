@@ -47,7 +47,7 @@ public interface Verify extends RequirementsRelationship, org.eclipse.papyrus.sy
 	 * <!-- begin-model-doc -->
 	 * The procedures used to verify the requirements.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Verified By Procedure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerify_VerifiedByProcedure()
 	 * @model ordered="false"
@@ -64,7 +64,7 @@ public interface Verify extends RequirementsRelationship, org.eclipse.papyrus.sy
 	 * The verification that verifies the supplier requirement(s).
 	 * {derived from UML::DirectedRelationship::source}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Verified By Case</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerify_VerifiedByCase()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -81,7 +81,7 @@ public interface Verify extends RequirementsRelationship, org.eclipse.papyrus.sy
 	 * The set of ADL requirements which the client VV cases verify.
 	 * {derived from UML::DirectedRelationship::target}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Verified Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVerify_VerifiedRequirement()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"

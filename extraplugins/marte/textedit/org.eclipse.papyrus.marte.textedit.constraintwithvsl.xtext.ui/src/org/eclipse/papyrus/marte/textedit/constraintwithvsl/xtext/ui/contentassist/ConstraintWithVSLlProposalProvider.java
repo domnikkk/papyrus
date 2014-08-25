@@ -13,7 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.contentassist;
 
-import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.contentassist.AbstractConstraintWithVSLlProposalProvider;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant

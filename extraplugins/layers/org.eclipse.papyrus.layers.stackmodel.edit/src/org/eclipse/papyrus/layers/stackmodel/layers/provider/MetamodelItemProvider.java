@@ -18,7 +18,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,7 +27,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.Metamodel;
 
@@ -36,7 +34,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Metamodel;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MetamodelItemProvider
@@ -51,7 +49,7 @@ public class MetamodelItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MetamodelItemProvider(AdapterFactory adapterFactory) {
@@ -62,7 +60,7 @@ public class MetamodelItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +82,7 @@ public class MetamodelItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -107,7 +105,7 @@ public class MetamodelItemProvider
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
@@ -130,7 +128,7 @@ public class MetamodelItemProvider
 	 * This adds a property descriptor for the Nsuri feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNsuriPropertyDescriptor(Object object) {
@@ -153,7 +151,7 @@ public class MetamodelItemProvider
 	 * This adds a property descriptor for the Plugin ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPluginIDPropertyDescriptor(Object object) {
@@ -176,7 +174,7 @@ public class MetamodelItemProvider
 	 * This adds a property descriptor for the EPackage Instance Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addEPackageInstanceNamePropertyDescriptor(Object object) {
@@ -199,7 +197,7 @@ public class MetamodelItemProvider
 	 * This adds a property descriptor for the Is Type Valid feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsTypeValidPropertyDescriptor(Object object) {
@@ -222,7 +220,7 @@ public class MetamodelItemProvider
 	 * This returns Metamodel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +232,7 @@ public class MetamodelItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +248,7 @@ public class MetamodelItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +273,7 @@ public class MetamodelItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

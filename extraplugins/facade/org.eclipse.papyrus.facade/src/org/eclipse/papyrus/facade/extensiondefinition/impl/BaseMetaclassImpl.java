@@ -17,20 +17,15 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 import org.eclipse.papyrus.facade.extensiondefinition.Combination;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition;
@@ -58,7 +53,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #getIncompatibleStereotypes() <em>Incompatible Stereotypes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIncompatibleStereotypes()
 	 * @generated
 	 * @ordered
@@ -69,7 +64,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #getBase() <em>Base</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase()
 	 * @generated
 	 * @ordered
@@ -80,7 +75,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #getCompatibleStereotypes() <em>Compatible Stereotypes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCompatibleStereotypes()
 	 * @generated
 	 * @ordered
@@ -91,7 +86,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The default value of the '{@link #isPossible() <em>Possible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isPossible()
 	 * @generated
 	 * @ordered
@@ -102,7 +97,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #isPossible() <em>Possible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isPossible()
 	 * @generated
 	 * @ordered
@@ -112,7 +107,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BaseMetaclassImpl() {
@@ -122,7 +117,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +128,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +142,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +162,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetBase() {
@@ -177,7 +172,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +187,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +201,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetExtensionDefinition(ExtensionDefinition newExtensionDefinition, NotificationChain msgs) {
@@ -217,7 +212,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +241,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +255,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +266,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +281,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +299,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +318,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +333,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -364,7 +359,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -395,7 +390,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -423,7 +418,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -446,7 +441,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

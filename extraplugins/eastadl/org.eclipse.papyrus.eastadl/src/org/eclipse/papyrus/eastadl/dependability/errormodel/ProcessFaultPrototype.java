@@ -51,7 +51,7 @@ public interface ProcessFaultPrototype extends Anomaly {
 	 * If the meaning of the '<em>Base Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Event</em>' reference.
 	 * @see #setBase_Event(Event)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getProcessFaultPrototype_Base_Event()
@@ -64,7 +64,7 @@ public interface ProcessFaultPrototype extends Anomaly {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype#getBase_Event <em>Base Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Event</em>' reference.
 	 * @see #getBase_Event()

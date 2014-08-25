@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_Brokering
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SW_BrokeringXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class SW_BrokeringXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SW_BrokeringXMLProcessor() {
@@ -45,7 +45,7 @@ public class SW_BrokeringXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the SW_BrokeringResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

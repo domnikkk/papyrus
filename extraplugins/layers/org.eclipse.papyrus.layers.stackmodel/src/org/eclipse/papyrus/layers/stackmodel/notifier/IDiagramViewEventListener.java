@@ -27,7 +27,7 @@ public interface IDiagramViewEventListener {
 	/**
 	 * Called by events when a {@link View} is added to the {@link Diagram} or one of its contained
 	 * elements.
-	 * 
+	 *
 	 * @param msg
 	 */
 	public void diagramViewAdded(Notification msg);
@@ -35,7 +35,7 @@ public interface IDiagramViewEventListener {
 	/**
 	 * Called by events when a {@link View} is removed from the {@link Diagram} or one of its contained
 	 * elements.
-	 * 
+	 *
 	 * @param msg
 	 */
 	public void diagramViewRemoved(Notification msg);

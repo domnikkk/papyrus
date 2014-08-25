@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getASILKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL A</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASIL_A_VALUE
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL D</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASIL_D_VALUE
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASIL_C_VALUE
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL B</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASIL_B_VALUE
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>QM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #QM_VALUE
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL A, Lowest Safety Integrity Level.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #ASIL_A
 	 * @model
 	 * @generated
@@ -110,7 +110,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL D, Highest Safety Integrity Level.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #ASIL_D
 	 * @model
 	 * @generated
@@ -125,7 +125,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL C, second highest Safety Integrity Level.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #ASIL_C
 	 * @model
 	 * @generated
@@ -140,7 +140,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL B, second lowest Safety Integrity Level.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #ASIL_B
 	 * @model
 	 * @generated
@@ -155,7 +155,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Quality Management only, no requirement according to ISO 26262.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #QM
 	 * @model
 	 * @generated
@@ -167,7 +167,7 @@ public enum ASILKind implements Enumerator {
 	 * An array of all the '<em><b>ASIL Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ASILKind[] VALUES_ARRAY =
@@ -183,7 +183,7 @@ public enum ASILKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>ASIL Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ASILKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -192,7 +192,7 @@ public enum ASILKind implements Enumerator {
 	 * Returns the '<em><b>ASIL Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ASILKind get(int value) {
@@ -215,7 +215,7 @@ public enum ASILKind implements Enumerator {
 	 * Returns the '<em><b>ASIL Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ASILKind get(String literal) {
@@ -232,7 +232,7 @@ public enum ASILKind implements Enumerator {
 	 * Returns the '<em><b>ASIL Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ASILKind getByName(String name) {
@@ -248,7 +248,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -256,7 +256,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -264,7 +264,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -273,7 +273,7 @@ public enum ASILKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ASILKind(int value, String name, String literal) {
@@ -285,7 +285,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +319,7 @@ public enum ASILKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

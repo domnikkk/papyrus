@@ -48,7 +48,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #isUnbddPool() <em>Unbdd Pool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUnbddPool()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #isUnbddPool() <em>Unbdd Pool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUnbddPool()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getInstance() <em>Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInstance()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -147,7 +147,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -158,7 +158,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -168,7 +168,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PaRunTInstanceImpl() {
@@ -178,7 +178,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SchedulableResource basicGetInstance() {
@@ -271,7 +271,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaExecHost basicGetHost() {
@@ -316,7 +316,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -357,7 +357,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +368,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +383,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -413,7 +413,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +464,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -498,7 +498,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -532,7 +532,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -559,7 +559,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

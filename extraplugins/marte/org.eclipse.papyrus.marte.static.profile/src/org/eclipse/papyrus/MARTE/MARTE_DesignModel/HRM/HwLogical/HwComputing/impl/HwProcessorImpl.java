@@ -58,7 +58,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getArchitecture() <em>Architecture</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArchitecture()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getMips() <em>Mips</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMips()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getMips() <em>Mips</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMips()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getIpc() <em>Ipc</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIpc()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbCores() <em>Nb Cores</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbCores()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbCores() <em>Nb Cores</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbCores()
 	 * @generated
 	 * @ordered
@@ -124,7 +124,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbPipelines() <em>Nb Pipelines</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbPipelines()
 	 * @generated
 	 * @ordered
@@ -135,7 +135,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbPipelines() <em>Nb Pipelines</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbPipelines()
 	 * @generated
 	 * @ordered
@@ -146,7 +146,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbStages() <em>Nb Stages</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbStages()
 	 * @generated
 	 * @ordered
@@ -157,7 +157,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbStages() <em>Nb Stages</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbStages()
 	 * @generated
 	 * @ordered
@@ -168,7 +168,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbALUs() <em>Nb AL Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbALUs()
 	 * @generated
 	 * @ordered
@@ -179,7 +179,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbALUs() <em>Nb AL Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbALUs()
 	 * @generated
 	 * @ordered
@@ -190,7 +190,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The default value of the '{@link #getNbFPUs() <em>Nb FP Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbFPUs()
 	 * @generated
 	 * @ordered
@@ -201,7 +201,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getNbFPUs() <em>Nb FP Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbFPUs()
 	 * @generated
 	 * @ordered
@@ -212,7 +212,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getOwnedISAs() <em>Owned IS As</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedISAs()
 	 * @generated
 	 * @ordered
@@ -223,7 +223,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getPredictors() <em>Predictors</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPredictors()
 	 * @generated
 	 * @ordered
@@ -234,7 +234,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getCaches() <em>Caches</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCaches()
 	 * @generated
 	 * @ordered
@@ -245,7 +245,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	 * The cached value of the '{@link #getOwnedMMUs() <em>Owned MM Us</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedMMUs()
 	 * @generated
 	 * @ordered
@@ -255,7 +255,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwProcessorImpl() {
@@ -265,7 +265,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +339,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -350,7 +350,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +365,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -401,7 +401,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +414,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -425,7 +425,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +440,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -451,7 +451,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -466,7 +466,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -477,7 +477,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +492,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +503,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -518,7 +518,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -529,7 +529,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -544,7 +544,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -558,7 +558,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -572,7 +572,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -586,7 +586,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -600,7 +600,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -637,7 +637,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -691,7 +691,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -740,7 +740,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -777,7 +777,7 @@ public class HwProcessorImpl extends HwComputingResourceImpl implements HwProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

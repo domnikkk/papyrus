@@ -38,7 +38,7 @@ import org.eclipse.uml2.uml.Package;
  * <ul>
  * <li>defaultCreationPackage: path*.'*'</li>
  * </ul
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -168,7 +168,7 @@ public class CreationPackageCatalog {
 	/**
 	 * Used by the UI to show the default values.
 	 * Return one line for each packageCreationPatterns
-	 * 
+	 *
 	 * @return the defaultPackageCreationPatterns
 	 */
 	public static String[] getDefaultPackageCreationPatterns(String separator) {
@@ -186,7 +186,7 @@ public class CreationPackageCatalog {
 
 	/**
 	 * Transform a String with dot in a List of String
-	 * 
+	 *
 	 * @param key
 	 * @return
 	 */
@@ -437,7 +437,7 @@ public class CreationPackageCatalog {
 	/**
 	 * A {@link CreationModelPathEntry} returning the registered path.
 	 * The path should not contain {@value #WILDCARD}
-	 * 
+	 *
 	 * @author dumoulin
 	 *
 	 */
@@ -529,7 +529,7 @@ public class CreationPackageCatalog {
 
 	/**
 	 * Validate the creation paths. The list contains one pattern by element
-	 * 
+	 *
 	 * @param paths
 	 * @throws Exception
 	 *             If the path is not valid. The message describes the error.
@@ -566,7 +566,7 @@ public class CreationPackageCatalog {
 	/**
 	 * Transform a creation package with one single pattern by element to
 	 * an array of creationPatterns (one creationPattern by line).
-	 * 
+	 *
 	 * @return the defaultPackageCreationPatterns
 	 */
 	public static String[] toLineCreationPattern(String[] elements, String separator) {
@@ -592,7 +592,7 @@ public class CreationPackageCatalog {
 
 	/**
 	 * Get all the creationPath of the specified creation patterns (one path by element);
-	 * 
+	 *
 	 * @param creationPattern
 	 *            A splitted creation pattern array
 	 * @return
@@ -613,7 +613,7 @@ public class CreationPackageCatalog {
 
 	/**
 	 * Get an array containing the specified colon of the provided array
-	 * 
+	 *
 	 * @return the defaultPackageCreationPatterns
 	 */
 	private static String[] extractColumn(String[] inputArray, int columnCount, int extractedColumn) {

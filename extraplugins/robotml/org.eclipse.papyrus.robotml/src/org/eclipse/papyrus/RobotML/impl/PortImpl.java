@@ -3,13 +3,10 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotML.Port;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.SynchronizationKind;
@@ -33,7 +30,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	 * The default value of the '{@link #getSynchronizationPolicy() <em>Synchronization Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSynchronizationPolicy()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getSynchronizationPolicy() <em>Synchronization Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSynchronizationPolicy()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PortImpl() {
@@ -75,7 +72,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +83,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Port getBase_Port() {
@@ -105,7 +102,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Port basicGetBase_Port() {
@@ -115,7 +112,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Port(org.eclipse.uml2.uml.Port newBase_Port) {
@@ -129,7 +126,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SynchronizationKind getSynchronizationPolicy() {
@@ -139,7 +136,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSynchronizationPolicy(SynchronizationKind newSynchronizationPolicy) {
@@ -153,7 +150,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +170,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +189,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +208,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +225,7 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -31,7 +31,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModeEventImpl() {
@@ -62,7 +62,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -140,7 +140,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class ModeEventImpl extends EventImpl implements ModeEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

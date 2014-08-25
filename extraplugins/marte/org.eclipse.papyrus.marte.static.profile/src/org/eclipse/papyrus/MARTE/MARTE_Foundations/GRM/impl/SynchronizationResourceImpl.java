@@ -30,7 +30,7 @@ public class SynchronizationResourceImpl extends ResourceImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SynchronizationResourceImpl() {
@@ -40,7 +40,7 @@ public class SynchronizationResourceImpl extends ResourceImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

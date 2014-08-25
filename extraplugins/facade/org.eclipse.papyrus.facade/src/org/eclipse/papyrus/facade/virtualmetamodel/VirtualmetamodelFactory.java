@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	VirtualmetamodelFactory eINSTANCE = org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Metamodel</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Metamodel</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Metaclass</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Metaclass</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Property</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Operation</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Parameter</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Datatype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Datatype</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Enum</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Enum</em>'.
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Virtual Literal</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Virtual Literal</em>'.
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface VirtualmetamodelFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

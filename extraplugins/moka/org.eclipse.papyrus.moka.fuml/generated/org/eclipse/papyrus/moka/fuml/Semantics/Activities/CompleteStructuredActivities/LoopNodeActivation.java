@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.CompleteStructuredAct
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.OutputPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.InputPin;

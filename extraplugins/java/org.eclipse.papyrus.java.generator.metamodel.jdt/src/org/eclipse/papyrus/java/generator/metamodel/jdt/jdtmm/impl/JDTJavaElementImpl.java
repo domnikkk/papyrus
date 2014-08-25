@@ -23,17 +23,13 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitorException;
 
@@ -60,7 +56,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementName()
 	 * @generated
 	 * @ordered
@@ -71,7 +67,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementName()
 	 * @generated
 	 * @ordered
@@ -82,7 +78,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -93,7 +89,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -104,7 +100,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -115,7 +111,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -126,7 +122,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The default value of the '{@link #isGenerated() <em>Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -137,7 +133,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	 * The cached value of the '{@link #isGenerated() <em>Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -147,7 +143,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTJavaElementImpl() {
@@ -157,7 +153,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +164,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +176,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JDTParent basicGetParent() {
@@ -193,7 +189,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +200,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +215,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +226,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +241,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +252,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +267,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +278,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +316,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +329,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +355,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +380,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -409,7 +405,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -432,7 +428,7 @@ public abstract class JDTJavaElementImpl extends EObjectImpl implements JDTJavaE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

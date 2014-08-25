@@ -54,7 +54,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * The default value of the '{@link #isImmediatePropagation() <em>Immediate Propagation</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isImmediatePropagation()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * The cached value of the '{@link #isImmediatePropagation() <em>Immediate Propagation</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isImmediatePropagation()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	 * The cached value of the '{@link #getToPort() <em>To Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getToPort()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	 * The cached value of the '{@link #getFromPort() <em>From Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFromPort()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FaultFailurePropagationLinkImpl() {
@@ -161,7 +161,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +266,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -307,7 +307,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +321,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +356,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetFromPort(FaultFailurePropagationLink_fromPortInstanceRef newFromPort, NotificationChain msgs) {
@@ -376,7 +376,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,7 +402,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -418,7 +418,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -429,7 +429,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetToPort(FaultFailurePropagationLink_toPortInstanceRef newToPort, NotificationChain msgs) {
@@ -449,7 +449,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -474,7 +474,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -484,7 +484,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -498,7 +498,7 @@ public class FaultFailurePropagationLinkImpl extends EAElementImpl implements Fa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

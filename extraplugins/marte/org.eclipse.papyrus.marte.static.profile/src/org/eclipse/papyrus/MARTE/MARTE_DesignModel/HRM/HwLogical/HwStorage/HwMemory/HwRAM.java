@@ -43,7 +43,7 @@ public interface HwRAM extends HwMemory {
 	 * If the meaning of the '<em>Organization</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Organization</em>' attribute.
 	 * @see #setOrganization(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwRAM_Organization()
@@ -56,7 +56,7 @@ public interface HwRAM extends HwMemory {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getOrganization <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Organization</em>' attribute.
 	 * @see #getOrganization()
@@ -71,7 +71,7 @@ public interface HwRAM extends HwMemory {
 	 * If the meaning of the '<em>Is Synchronous</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Synchronous</em>' attribute.
 	 * @see #setIsSynchronous(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwRAM_IsSynchronous()
@@ -84,7 +84,7 @@ public interface HwRAM extends HwMemory {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsSynchronous <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Synchronous</em>' attribute.
 	 * @see #getIsSynchronous()
@@ -99,7 +99,7 @@ public interface HwRAM extends HwMemory {
 	 * If the meaning of the '<em>Is Static</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Static</em>' attribute.
 	 * @see #setIsStatic(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwRAM_IsStatic()
@@ -112,7 +112,7 @@ public interface HwRAM extends HwMemory {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsStatic <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Static</em>' attribute.
 	 * @see #getIsStatic()
@@ -127,7 +127,7 @@ public interface HwRAM extends HwMemory {
 	 * If the meaning of the '<em>Is Non Volatile</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Non Volatile</em>' attribute.
 	 * @see #setIsNonVolatile(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwRAM_IsNonVolatile()
@@ -140,7 +140,7 @@ public interface HwRAM extends HwMemory {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getIsNonVolatile <em>Is Non Volatile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Non Volatile</em>' attribute.
 	 * @see #getIsNonVolatile()
@@ -156,7 +156,7 @@ public interface HwRAM extends HwMemory {
 	 * If the meaning of the '<em>Repl Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Repl Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy
 	 * @see #setRepl_Policy(Repl_Policy)
@@ -170,7 +170,7 @@ public interface HwRAM extends HwMemory {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getRepl_Policy <em>Repl Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Repl Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Repl_Policy
@@ -187,7 +187,7 @@ public interface HwRAM extends HwMemory {
 	 * If the meaning of the '<em>Write Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Write Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy
 	 * @see #setWritePolicy(WritePolicy)
@@ -201,7 +201,7 @@ public interface HwRAM extends HwMemory {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwRAM#getWritePolicy <em>Write Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Write Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.WritePolicy

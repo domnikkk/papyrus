@@ -113,7 +113,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HardwaremodelingPackageImpl extends EPackageImpl implements HardwaremodelingPackage {
@@ -121,7 +121,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwareComponentTypeEClass = null;
@@ -129,7 +129,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum ioHardwarePinKindEEnum = null;
@@ -137,7 +137,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwareConnectorEClass = null;
@@ -145,7 +145,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwarePinEClass = null;
@@ -153,7 +153,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwareComponentPrototypeEClass = null;
@@ -161,7 +161,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwarePortConnectorEClass = null;
@@ -169,7 +169,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hardwarePortEClass = null;
@@ -177,7 +177,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass allocationTargetEClass = null;
@@ -185,7 +185,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum hardwareBusKindEEnum = null;
@@ -193,7 +193,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass powerHardwarePinEClass = null;
@@ -201,7 +201,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass ioHardwarePinEClass = null;
@@ -209,7 +209,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass communicationHardwarePinEClass = null;
@@ -217,7 +217,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
@@ -225,7 +225,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass electricalComponentEClass = null;
@@ -233,7 +233,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass sensorEClass = null;
@@ -241,7 +241,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass actuatorEClass = null;
@@ -249,7 +249,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -260,7 +260,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	 * <p>
 	 * This method is used to initialize {@link HardwaremodelingPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -301,7 +301,8 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
 		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI)
+				: VehiclefeaturemodelingPackage.eINSTANCE);
 		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
 		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE
@@ -317,7 +318,8 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
 				: UsecasesPackage.eINSTANCE);
 		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+				.getEPackage(VerificationvalidationPackage.eNS_URI)
+				: VerificationvalidationPackage.eINSTANCE);
 		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
@@ -334,11 +336,13 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(BehaviordescriptionPackage.eNS_URI) : BehaviordescriptionPackage.eINSTANCE);
 		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI)
+				: AttributequantificationconstraintPackage.eINSTANCE);
 		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
 		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
+				.getEPackage(ComputationconstraintPackage.eNS_URI)
+				: ComputationconstraintPackage.eINSTANCE);
 		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
@@ -426,7 +430,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -434,7 +438,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -444,7 +448,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#eNS_URI
 	 * @see #init()
@@ -459,7 +463,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -528,7 +532,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -539,7 +543,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -550,7 +554,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -561,7 +565,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -572,7 +576,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -583,7 +587,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -594,7 +598,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -605,7 +609,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -616,7 +620,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -627,7 +631,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -638,7 +642,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -649,7 +653,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -660,7 +664,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -671,7 +675,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -682,7 +686,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -693,7 +697,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -704,7 +708,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -715,7 +719,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -726,7 +730,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -737,7 +741,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -748,7 +752,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -759,7 +763,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -770,7 +774,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -781,7 +785,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -792,7 +796,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -803,7 +807,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -814,7 +818,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -825,7 +829,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -836,7 +840,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -847,7 +851,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -858,7 +862,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -869,7 +873,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -880,7 +884,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -891,7 +895,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -902,7 +906,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -913,7 +917,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -924,7 +928,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -935,7 +939,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -946,7 +950,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -957,7 +961,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -970,7 +974,7 @@ public class HardwaremodelingPackageImpl extends EPackageImpl implements Hardwar
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

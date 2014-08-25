@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.design.profile.architecture.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage;
 import org.eclipse.papyrus.design.profile.architecture.Project;
 
@@ -40,7 +37,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The default value of the '{@link #isDeprecated() <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDeprecated()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The cached value of the '{@link #isDeprecated() <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDeprecated()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The default value of the '{@link #getDeprecatedComment() <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeprecatedComment()
 	 * @generated
 	 * @ordered
@@ -73,7 +70,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The cached value of the '{@link #getDeprecatedComment() <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeprecatedComment()
 	 * @generated
 	 * @ordered
@@ -84,7 +81,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -95,7 +92,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -106,7 +103,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The default value of the '{@link #getReferent() <em>Referent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReferent()
 	 * @generated
 	 * @ordered
@@ -117,7 +114,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The cached value of the '{@link #getReferent() <em>Referent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReferent()
 	 * @generated
 	 * @ordered
@@ -128,7 +125,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The default value of the '{@link #getParentFolder() <em>Parent Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParentFolder()
 	 * @generated
 	 * @ordered
@@ -139,7 +136,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The cached value of the '{@link #getParentFolder() <em>Parent Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParentFolder()
 	 * @generated
 	 * @ordered
@@ -150,7 +147,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The default value of the '{@link #getOriginalParentFolder() <em>Original Parent Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOriginalParentFolder()
 	 * @generated
 	 * @ordered
@@ -161,7 +158,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The cached value of the '{@link #getOriginalParentFolder() <em>Original Parent Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOriginalParentFolder()
 	 * @generated
 	 * @ordered
@@ -172,7 +169,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -182,7 +179,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProjectImpl() {
@@ -192,7 +189,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +200,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +211,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +226,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +252,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +263,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +278,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +289,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +304,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +315,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +330,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +341,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +356,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +376,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -389,7 +386,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +401,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -434,7 +431,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -468,7 +465,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -502,7 +499,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -529,7 +526,7 @@ public class ProjectImpl extends ElementImpl implements Project {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

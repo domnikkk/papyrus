@@ -35,7 +35,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
@@ -43,7 +43,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TimeFactory init() {
@@ -62,7 +62,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeFactoryImpl() {
@@ -72,7 +72,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class TimeFactoryImpl extends EFactoryImpl implements TimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

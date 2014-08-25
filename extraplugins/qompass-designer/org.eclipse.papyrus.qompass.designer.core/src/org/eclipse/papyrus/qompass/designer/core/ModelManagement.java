@@ -32,7 +32,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**

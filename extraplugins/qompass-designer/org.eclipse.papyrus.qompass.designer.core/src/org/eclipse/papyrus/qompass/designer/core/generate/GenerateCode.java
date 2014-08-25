@@ -72,10 +72,10 @@ public class GenerateCode {
 			 * // Computing differences
 			 * DiffModel diffModel = DiffService.doDiff(match, false);
 			 * deleteRemovedClasses(diffModel);
-			 * 
+			 *
 			 * Map<PackageableElement, Boolean> alreadyGenerated = new HashMap<PackageableElement, Boolean>();
 			 * monitor.subTask("generate code");
-			 * 
+			 *
 			 * for(DiffElement diff : diffModel.getDifferences()) {
 			 * if((diff.getKind() == DifferenceKind.ADDITION) ||
 			 * (diff.getKind() == DifferenceKind.CHANGE)) {
@@ -161,7 +161,7 @@ public class GenerateCode {
 	 * }
 	 * for(DiffElement diff : diffs) {
 	 * EObject modifiedEObj = null;
-	 * 
+	 *
 	 * if(diff.getKind() == DifferenceKind.DELETION) {
 	 * if(diff instanceof AttributeChange) {
 	 * modifiedEObj = ((AttributeChange)diff).getRightElement();

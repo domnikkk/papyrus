@@ -5,18 +5,32 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.*;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Angular;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Art_Set_Point;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Distance;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Metric;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Milli_Amp;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesFactory;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Odometer_Linear_Left_Right;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Odometer_Tics;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Odometer_Tics_Left_Right;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Op_Set_Point;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Proxi_Left_Right;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Speed_Tics;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Speed_Tics_Left_Right;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity_Angular;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity_Angular_Left_Right;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity_Linear;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_datatypesFactory {
@@ -24,7 +38,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Oarp4_datatypesFactory init() {
@@ -43,7 +57,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Oarp4_datatypesFactoryImpl() {
@@ -53,7 +67,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +113,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Linear createVelocity_Linear() {
@@ -110,7 +124,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Art_Set_Point createArt_Set_Point() {
@@ -121,7 +135,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Angular createVelocity_Angular() {
@@ -132,7 +146,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Distance createDistance() {
@@ -143,7 +157,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Metric createMetric() {
@@ -154,7 +168,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Angular createAngular() {
@@ -165,7 +179,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Op_Set_Point createOp_Set_Point() {
@@ -176,7 +190,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Speed_Tics_Left_Right createSpeed_Tics_Left_Right() {
@@ -187,7 +201,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Speed_Tics createSpeed_Tics() {
@@ -198,7 +212,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Odometer_Tics createOdometer_Tics() {
@@ -209,7 +223,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Odometer_Tics_Left_Right createOdometer_Tics_Left_Right() {
@@ -220,7 +234,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Proxi_Left_Right createProxi_Left_Right() {
@@ -231,7 +245,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Milli_Amp createMilli_Amp() {
@@ -242,7 +256,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Odometer_Linear_Left_Right createOdometer_Linear_Left_Right() {
@@ -253,7 +267,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Angular_Left_Right createVelocity_Angular_Left_Right() {
@@ -264,7 +278,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity createVelocity() {
@@ -275,7 +289,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Oarp4_datatypesPackage getOarp4_datatypesPackage() {
@@ -285,7 +299,7 @@ public class Oarp4_datatypesFactoryImpl extends EFactoryImpl implements Oarp4_da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

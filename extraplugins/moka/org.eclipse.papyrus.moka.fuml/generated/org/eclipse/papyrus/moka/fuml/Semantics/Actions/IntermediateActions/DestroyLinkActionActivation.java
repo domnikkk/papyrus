@@ -16,10 +16,10 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Link;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ChoiceStrategy;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.DestroyLinkAction;
 import org.eclipse.uml2.uml.LinkEndData;
 import org.eclipse.uml2.uml.LinkEndDestructionData;

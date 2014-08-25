@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
-import org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter;
 import org.eclipse.uml2.uml.Classifier;
 
 /**
@@ -34,7 +34,7 @@ public class IsAbstractUmlSetterImpl extends PropertySetterImpl implements IsAbs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected IsAbstractUmlSetterImpl() {
@@ -46,7 +46,7 @@ public class IsAbstractUmlSetterImpl extends PropertySetterImpl implements IsAbs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -56,7 +56,7 @@ public class IsAbstractUmlSetterImpl extends PropertySetterImpl implements IsAbs
 
 	/**
 	 * Set the property of the specified view.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view

@@ -31,7 +31,7 @@ public class CppDefaultPanel extends CppAbstractPanel {
 	/**
 	 * Constructs a new instance of this class given its parent and a style
 	 * value describing its behavior and appearance.
-	 * 
+	 *
 	 * @param parent
 	 *            the composite parent of this element
 	 * @param style
@@ -44,7 +44,7 @@ public class CppDefaultPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#createContent()
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class CppDefaultPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#save()
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class CppDefaultPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class CppDefaultPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#setSelectedElement(org.eclipse.uml2.uml.Element)
 	 */
 	@Override

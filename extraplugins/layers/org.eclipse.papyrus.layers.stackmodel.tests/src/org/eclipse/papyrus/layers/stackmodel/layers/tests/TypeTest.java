@@ -14,7 +14,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Type;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.Type#createInstance() <em>Create Instance</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class TypeTest extends FolderElementTest {
@@ -23,7 +23,7 @@ public abstract class TypeTest extends FolderElementTest {
 	 * Constructs a new Type test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TypeTest(String name) {
@@ -34,7 +34,7 @@ public abstract class TypeTest extends FolderElementTest {
 	 * Returns the fixture for this Type test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -46,7 +46,7 @@ public abstract class TypeTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Type#createInstance() <em>Create Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Type#createInstance()
 	 * @generated
 	 */

@@ -49,7 +49,7 @@ import org.eclipse.papyrus.cdo.validation.problems.util.ProblemsAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
@@ -57,7 +57,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -74,7 +74,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This helps manage the child creation extenders.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ProblemsEditPlugin.INSTANCE, ProblemsPackage.eNS_URI);
@@ -83,7 +83,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -114,7 +114,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.cdo.validation.problems.EProblem} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EProblemItemProvider eProblemItemProvider;
@@ -137,7 +137,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EProblemsContainerItemProvider eProblemsContainerItemProvider;
@@ -145,7 +145,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This creates an adapter for a {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AttributeItemProvider attributeItemProvider;
@@ -170,7 +170,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	 * This creates an adapter for a {@link java.util.Map.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public List<IChildCreationExtender> getChildCreationExtenders() {
@@ -253,7 +253,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class ProblemsItemProviderAdapterFactory extends ProblemsAdapterFactory i
 	/**
 	 * This removes a listener.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

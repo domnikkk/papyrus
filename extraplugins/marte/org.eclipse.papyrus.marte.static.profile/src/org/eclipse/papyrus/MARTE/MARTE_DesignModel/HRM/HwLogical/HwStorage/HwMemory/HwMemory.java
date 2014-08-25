@@ -44,7 +44,7 @@ public interface HwMemory extends HwResource, StorageResource {
 	 * If the meaning of the '<em>Memory Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Size</em>' attribute.
 	 * @see #setMemorySize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwMemory_MemorySize()
@@ -57,7 +57,7 @@ public interface HwMemory extends HwResource, StorageResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getMemorySize <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Memory Size</em>' attribute.
 	 * @see #getMemorySize()
@@ -72,7 +72,7 @@ public interface HwMemory extends HwResource, StorageResource {
 	 * If the meaning of the '<em>Adress Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Adress Size</em>' attribute.
 	 * @see #setAdressSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwMemory_AdressSize()
@@ -85,7 +85,7 @@ public interface HwMemory extends HwResource, StorageResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getAdressSize <em>Adress Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Adress Size</em>' attribute.
 	 * @see #getAdressSize()
@@ -101,7 +101,7 @@ public interface HwMemory extends HwResource, StorageResource {
 	 * If the meaning of the '<em>Timings</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Timings</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwMemory_Timings()
 	 * @model dataType="org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.Timing" ordered="false"
@@ -116,7 +116,7 @@ public interface HwMemory extends HwResource, StorageResource {
 	 * If the meaning of the '<em>Throughput</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Throughput</em>' attribute.
 	 * @see #setThroughput(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getHwMemory_Throughput()
@@ -129,7 +129,7 @@ public interface HwMemory extends HwResource, StorageResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemory#getThroughput <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Throughput</em>' attribute.
 	 * @see #getThroughput()

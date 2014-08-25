@@ -101,7 +101,7 @@ public class CreateAssociationFromPropertyHandler extends AbstractHandler implem
 
 	/**
 	 * Filter the list, and only retain objects that can be adapted to the specified type
-	 * 
+	 *
 	 * @param objects
 	 * @param class1
 	 * @return
@@ -253,7 +253,7 @@ public class CreateAssociationFromPropertyHandler extends AbstractHandler implem
 
 	/**
 	 * Lookup selected objects in UI.
-	 * 
+	 *
 	 * @return
 	 */
 	private List<Object> lookupSelectedElements() {

@@ -23,7 +23,6 @@ package org.eclipse.papyrus.qompass.designer.core.transformations;
  */
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.FCM.InteractionComponent;
@@ -306,7 +305,7 @@ public class ConnectorReification {
 	 * InstanceSpecification instanceOfPart = getInstanceForPart(owner,
 	 * ConnectorUtils.connEndNotPart(connection, null)
 	 * .getPartWithPort());
-	 * 
+	 *
 	 * if (instanceOfPart != null) {
 	 * return (!ConnectorUtils.isAssembly(connection) && (AllocUtils
 	 * .getNode(instanceOfPart) == node));

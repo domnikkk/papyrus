@@ -6,23 +6,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -50,7 +44,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -61,7 +55,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -72,7 +66,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The default value of the '{@link #getService() <em>Service</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getService()
 	 * @generated
 	 * @ordered
@@ -83,7 +77,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getService() <em>Service</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getService()
 	 * @generated
 	 * @ordered
@@ -94,7 +88,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -105,7 +99,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The default value of the '{@link #getLatitude() <em>Latitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLatitude()
 	 * @generated
 	 * @ordered
@@ -116,7 +110,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getLatitude() <em>Latitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLatitude()
 	 * @generated
 	 * @ordered
@@ -127,7 +121,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The default value of the '{@link #getLongitude() <em>Longitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLongitude()
 	 * @generated
 	 * @ordered
@@ -138,7 +132,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getLongitude() <em>Longitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLongitude()
 	 * @generated
 	 * @ordered
@@ -149,7 +143,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The default value of the '{@link #getAltitude() <em>Altitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAltitude()
 	 * @generated
 	 * @ordered
@@ -160,7 +154,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getAltitude() <em>Altitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAltitude()
 	 * @generated
 	 * @ordered
@@ -171,7 +165,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getPosition_covariance() <em>Position covariance</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition_covariance()
 	 * @generated
 	 * @ordered
@@ -182,7 +176,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The default value of the '{@link #getPosition_covariance_type() <em>Position covariance type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition_covariance_type()
 	 * @generated
 	 * @ordered
@@ -193,7 +187,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	 * The cached value of the '{@link #getPosition_covariance_type() <em>Position covariance type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition_covariance_type()
 	 * @generated
 	 * @ordered
@@ -203,7 +197,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NavSatFixImpl() {
@@ -213,7 +207,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +218,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public STATUS_TYPE getStatus() {
@@ -234,7 +228,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatus(STATUS_TYPE newStatus) {
@@ -248,7 +242,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SERVICE_TYPE getService() {
@@ -258,7 +252,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setService(SERVICE_TYPE newService) {
@@ -272,7 +266,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -282,7 +276,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -302,7 +296,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -327,7 +321,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getLatitude() {
@@ -337,7 +331,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLatitude(double newLatitude) {
@@ -351,7 +345,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getLongitude() {
@@ -361,7 +355,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLongitude(double newLongitude) {
@@ -375,7 +369,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getAltitude() {
@@ -385,7 +379,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAltitude(double newAltitude) {
@@ -399,7 +393,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getPosition_covariance() {
@@ -412,7 +406,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public COVARIANCE_TYPE getPosition_covariance_type() {
@@ -422,7 +416,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPosition_covariance_type(COVARIANCE_TYPE newPosition_covariance_type) {
@@ -436,7 +430,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -451,7 +445,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -480,7 +474,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -519,7 +513,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -556,7 +550,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -585,7 +579,7 @@ public class NavSatFixImpl extends MinimalEObjectImpl.Container implements NavSa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

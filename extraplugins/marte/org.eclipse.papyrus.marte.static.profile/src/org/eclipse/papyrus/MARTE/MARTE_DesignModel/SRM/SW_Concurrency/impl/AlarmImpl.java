@@ -43,7 +43,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	 * The default value of the '{@link #isIsWatchdog() <em>Is Watchdog</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsWatchdog()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	 * The cached value of the '{@link #isIsWatchdog() <em>Is Watchdog</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsWatchdog()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	 * The cached value of the '{@link #getTimers() <em>Timers</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimers()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AlarmImpl() {
@@ -85,7 +85,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -174,7 +174,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class AlarmImpl extends InterruptResourceImpl implements Alarm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -29,7 +29,7 @@ import org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.StatisticalQualifierKind
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_TypesFactory {
@@ -37,7 +37,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static BasicNFP_TypesFactory init() {
@@ -56,7 +56,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BasicNFP_TypesFactoryImpl() {
@@ -66,7 +66,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SourceKind createSourceKindFromString(EDataType eDataType, String initialValue) {
@@ -238,7 +238,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSourceKindToString(EDataType eDataType, Object instanceValue) {
@@ -248,7 +248,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DirectionKind createDirectionKindFromString(EDataType eDataType, String initialValue) {
@@ -262,7 +262,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -272,7 +272,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StatisticalQualifierKind createStatisticalQualifierKindFromString(EDataType eDataType, String initialValue) {
@@ -286,7 +286,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStatisticalQualifierKindToString(EDataType eDataType, Object instanceValue) {
@@ -296,7 +296,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_CommonTypeFromString(EDataType eDataType, String initialValue) {
@@ -306,7 +306,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_CommonTypeToString(EDataType eDataType, Object instanceValue) {
@@ -316,7 +316,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_BooleanFromString(EDataType eDataType, String initialValue) {
@@ -326,7 +326,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_BooleanToString(EDataType eDataType, Object instanceValue) {
@@ -336,7 +336,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_NaturalFromString(EDataType eDataType, String initialValue) {
@@ -346,7 +346,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_NaturalToString(EDataType eDataType, Object instanceValue) {
@@ -356,7 +356,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_StringFromString(EDataType eDataType, String initialValue) {
@@ -366,7 +366,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_StringToString(EDataType eDataType, Object instanceValue) {
@@ -376,7 +376,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_RealFromString(EDataType eDataType, String initialValue) {
@@ -386,7 +386,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_RealToString(EDataType eDataType, Object instanceValue) {
@@ -396,7 +396,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_IntegerFromString(EDataType eDataType, String initialValue) {
@@ -406,7 +406,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_IntegerToString(EDataType eDataType, Object instanceValue) {
@@ -416,7 +416,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_DateTimeFromString(EDataType eDataType, String initialValue) {
@@ -426,7 +426,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_DateTimeToString(EDataType eDataType, Object instanceValue) {
@@ -436,7 +436,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_DurationFromString(EDataType eDataType, String initialValue) {
@@ -446,7 +446,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
@@ -456,7 +456,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_DataTxRateFromString(EDataType eDataType, String initialValue) {
@@ -466,7 +466,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_DataTxRateToString(EDataType eDataType, Object instanceValue) {
@@ -476,7 +476,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_FrequencyFromString(EDataType eDataType, String initialValue) {
@@ -486,7 +486,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_FrequencyToString(EDataType eDataType, Object instanceValue) {
@@ -496,7 +496,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_PowerFromString(EDataType eDataType, String initialValue) {
@@ -506,7 +506,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_PowerToString(EDataType eDataType, Object instanceValue) {
@@ -516,7 +516,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_DataSizeFromString(EDataType eDataType, String initialValue) {
@@ -526,7 +526,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_DataSizeToString(EDataType eDataType, Object instanceValue) {
@@ -536,7 +536,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_EnergyFromString(EDataType eDataType, String initialValue) {
@@ -546,7 +546,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_EnergyToString(EDataType eDataType, Object instanceValue) {
@@ -556,7 +556,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_LengthFromString(EDataType eDataType, String initialValue) {
@@ -566,7 +566,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_LengthToString(EDataType eDataType, Object instanceValue) {
@@ -576,7 +576,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_AreaFromString(EDataType eDataType, String initialValue) {
@@ -586,7 +586,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_AreaToString(EDataType eDataType, Object instanceValue) {
@@ -596,7 +596,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createArrivalPatternFromString(EDataType eDataType, String initialValue) {
@@ -606,7 +606,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertArrivalPatternToString(EDataType eDataType, Object instanceValue) {
@@ -616,7 +616,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createPeriodicPatternFromString(EDataType eDataType, String initialValue) {
@@ -626,7 +626,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPeriodicPatternToString(EDataType eDataType, Object instanceValue) {
@@ -636,7 +636,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createAperiodicPatternFromString(EDataType eDataType, String initialValue) {
@@ -646,7 +646,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAperiodicPatternToString(EDataType eDataType, Object instanceValue) {
@@ -656,7 +656,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createClosedPatternFromString(EDataType eDataType, String initialValue) {
@@ -666,7 +666,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertClosedPatternToString(EDataType eDataType, Object instanceValue) {
@@ -676,7 +676,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createSporadicPatternFromString(EDataType eDataType, String initialValue) {
@@ -686,7 +686,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSporadicPatternToString(EDataType eDataType, Object instanceValue) {
@@ -696,7 +696,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createBurstPatternFromString(EDataType eDataType, String initialValue) {
@@ -706,7 +706,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertBurstPatternToString(EDataType eDataType, Object instanceValue) {
@@ -716,7 +716,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createIrregularPatternFromString(EDataType eDataType, String initialValue) {
@@ -726,7 +726,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIrregularPatternToString(EDataType eDataType, Object instanceValue) {
@@ -736,7 +736,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_PercentageFromString(EDataType eDataType, String initialValue) {
@@ -746,7 +746,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_PercentageToString(EDataType eDataType, Object instanceValue) {
@@ -756,7 +756,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createOpenPatternFromString(EDataType eDataType, String initialValue) {
@@ -766,7 +766,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertOpenPatternToString(EDataType eDataType, Object instanceValue) {
@@ -776,7 +776,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_PriceFromString(EDataType eDataType, String initialValue) {
@@ -786,7 +786,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_PriceToString(EDataType eDataType, Object instanceValue) {
@@ -796,7 +796,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_WeightFromString(EDataType eDataType, String initialValue) {
@@ -806,7 +806,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_WeightToString(EDataType eDataType, Object instanceValue) {
@@ -816,7 +816,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -827,7 +827,7 @@ public class BasicNFP_TypesFactoryImpl extends EFactoryImpl implements BasicNFP_
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

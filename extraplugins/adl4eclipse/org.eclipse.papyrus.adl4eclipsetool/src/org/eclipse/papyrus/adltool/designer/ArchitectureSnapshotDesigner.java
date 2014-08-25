@@ -160,7 +160,7 @@ public abstract class ArchitectureSnapshotDesigner {
 
 	/**
 	 * model all bundle contained in the workspaces
-	 * 
+	 *
 	 * @param pluginPackage
 	 *            the name of UML package that represent the plugin
 	 */
@@ -332,7 +332,7 @@ public abstract class ArchitectureSnapshotDesigner {
 
 	/**
 	 * create a model element between 2 elements that represents relation between two extension point
-	 * 
+	 *
 	 * @param bundleComponent
 	 *            the component that use extension
 	 * @param extension
@@ -353,7 +353,7 @@ public abstract class ArchitectureSnapshotDesigner {
 
 	/**
 	 * fill the list of referenced plug-ins of a feature. for each plug-in a property will be created
-	 * 
+	 *
 	 * @param pluginPackage
 	 *            the package that will contain plug-ins
 	 * @param bundleProject
@@ -457,7 +457,7 @@ public abstract class ArchitectureSnapshotDesigner {
 	/**
 	 * Model the required bundle. if it not exist the bundle is modeling.
 	 * It create a stereotyped dependency to the required element
-	 * 
+	 *
 	 * @param bundleComponent
 	 *            the description of the bundle
 	 * @param bundleProject

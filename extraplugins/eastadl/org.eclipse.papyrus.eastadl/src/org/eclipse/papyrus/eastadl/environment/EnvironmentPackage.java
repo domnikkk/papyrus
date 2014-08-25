@@ -35,7 +35,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * <!-- begin-model-doc -->
  * The Environment model is used to describe the environment of the vehicle electric and electronic architecture. It is modeled by continuous functions representing the system environment.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.environment.EnvironmentFactory
  * @model kind="package"
  * @generated
@@ -51,7 +51,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -59,7 +59,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.environment.impl.EnvironmentImpl <em>Environment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.environment.impl.EnvironmentImpl
 		 * @see org.eclipse.papyrus.eastadl.environment.impl.EnvironmentPackageImpl#getEnvironment()
 		 * @generated
@@ -69,7 +69,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Environment Model</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ENVIRONMENT__ENVIRONMENT_MODEL = eINSTANCE.getEnvironment_EnvironmentModel();
@@ -77,7 +77,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Clamp Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ENVIRONMENT__CLAMP_CONNECTOR = eINSTANCE.getEnvironment_ClampConnector();
@@ -85,7 +85,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ENVIRONMENT__BASE_CLASS = eINSTANCE.getEnvironment_Base_Class();
@@ -93,7 +93,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ENVIRONMENT__BASE_PACKAGE = eINSTANCE.getEnvironment_Base_Package();
@@ -101,7 +101,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl <em>Clamp Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl
 		 * @see org.eclipse.papyrus.eastadl.environment.impl.EnvironmentPackageImpl#getClampConnector()
 		 * @generated
@@ -111,7 +111,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAMP_CONNECTOR__PORT = eINSTANCE.getClampConnector_Port();
@@ -119,7 +119,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Connector</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAMP_CONNECTOR__BASE_CONNECTOR = eINSTANCE.getClampConnector_Base_Connector();
@@ -130,7 +130,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "environment";
@@ -139,7 +139,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Environment/1";
@@ -148,7 +148,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Environment";
@@ -157,7 +157,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	EnvironmentPackage eINSTANCE = org.eclipse.papyrus.eastadl.environment.impl.EnvironmentPackageImpl.init();
@@ -166,7 +166,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.environment.impl.EnvironmentImpl <em>Environment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.environment.impl.EnvironmentImpl
 	 * @see org.eclipse.papyrus.eastadl.environment.impl.EnvironmentPackageImpl#getEnvironment()
 	 * @generated
@@ -177,7 +177,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -197,7 +197,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -207,7 +207,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +217,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -227,7 +227,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -237,7 +237,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Environment Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -247,7 +247,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Clamp Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -257,7 +257,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -267,7 +267,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -277,7 +277,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -287,7 +287,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of operations of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -297,7 +297,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl <em>Clamp Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.environment.impl.ClampConnectorImpl
 	 * @see org.eclipse.papyrus.eastadl.environment.impl.EnvironmentPackageImpl#getClampConnector()
 	 * @generated
@@ -308,7 +308,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -318,7 +318,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -328,7 +328,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -338,7 +338,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -348,7 +348,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -358,7 +358,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Clamp Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -368,7 +368,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of operations of the '<em>Clamp Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -378,7 +378,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.environment.ClampConnector <em>Clamp Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Clamp Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.ClampConnector
 	 * @generated
@@ -389,7 +389,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.ClampConnector#getPort()
 	 * @see #getClampConnector()
@@ -401,7 +401,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.environment.ClampConnector#getBase_Connector <em>Base Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.ClampConnector#getBase_Connector()
 	 * @see #getClampConnector()
@@ -413,7 +413,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.environment.Environment <em>Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Environment</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.Environment
 	 * @generated
@@ -424,7 +424,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.environment.Environment#getClampConnector <em>Clamp Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Clamp Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.Environment#getClampConnector()
 	 * @see #getEnvironment()
@@ -436,7 +436,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.environment.Environment#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.Environment#getBase_Class()
 	 * @see #getEnvironment()
@@ -448,7 +448,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.environment.Environment#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.Environment#getBase_Package()
 	 * @see #getEnvironment()
@@ -460,7 +460,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.environment.Environment#getEnvironmentModel <em>Environment Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Environment Model</em>'.
 	 * @see org.eclipse.papyrus.eastadl.environment.Environment#getEnvironmentModel()
 	 * @see #getEnvironment()
@@ -472,7 +472,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

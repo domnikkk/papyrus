@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface HLAMFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HLAMFactory eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.impl.HLAMFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface HLAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Rt Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Rt Unit</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface HLAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Pp Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Pp Unit</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface HLAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Rt Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Rt Feature</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface HLAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Rt Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Rt Specification</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface HLAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Rt Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Rt Action</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface HLAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Rt Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Rt Service</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface HLAMFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

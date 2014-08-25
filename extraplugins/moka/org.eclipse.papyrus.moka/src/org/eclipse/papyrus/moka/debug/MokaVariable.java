@@ -53,7 +53,7 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IVariable#getValue()
 	 */
 	public IValue getValue() throws DebugException {
@@ -67,7 +67,7 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IVariable#getName()
 	 */
 	public String getName() throws DebugException {
@@ -89,7 +89,7 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IVariable#getReferenceTypeName()
 	 */
 	public String getReferenceTypeName() throws DebugException {
@@ -113,7 +113,7 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IVariable#hasValueChanged()
 	 */
 	public boolean hasValueChanged() throws DebugException {

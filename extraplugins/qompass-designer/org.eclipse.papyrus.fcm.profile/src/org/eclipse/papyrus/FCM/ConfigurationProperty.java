@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -44,7 +43,7 @@ public interface ConfigurationProperty extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getConfigurationProperty_Base_Property()
@@ -57,7 +56,7 @@ public interface ConfigurationProperty extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ConfigurationProperty#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()

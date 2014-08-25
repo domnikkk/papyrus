@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.C_Cpp.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +48,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	 * The cached value of the '{@link #getIncludePaths() <em>Include Paths</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIncludePaths()
 	 * @generated
 	 * @ordered
@@ -58,7 +59,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	 * The cached value of the '{@link #getBase_package() <em>Base package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_package()
 	 * @generated
 	 * @ordered
@@ -69,7 +70,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	 * The cached value of the '{@link #getLibPaths() <em>Lib Paths</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLibPaths()
 	 * @generated
 	 * @ordered
@@ -80,7 +81,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	 * The cached value of the '{@link #getMacros() <em>Macros</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMacros()
 	 * @generated
 	 * @ordered
@@ -91,7 +92,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	 * The cached value of the '{@link #getLibs() <em>Libs</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLibs()
 	 * @generated
 	 * @ordered
@@ -102,7 +103,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	 * The cached value of the '{@link #getIncludes() <em>Includes</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIncludes()
 	 * @generated
 	 * @ordered
@@ -112,7 +113,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExternLibraryImpl() {
@@ -122,7 +123,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +134,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +148,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +168,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_package() {
@@ -177,7 +178,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +193,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +207,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +221,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +235,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +249,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +277,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -313,7 +314,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +345,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +370,7 @@ public class ExternLibraryImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,7 +21,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.java.profile.java.JavaMethod;
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 
@@ -30,7 +28,7 @@ import org.eclipse.papyrus.java.profile.java.JavaPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaMethod} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaMethodItemProvider
@@ -45,7 +43,7 @@ public class JavaMethodItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaMethodItemProvider(AdapterFactory adapterFactory) {
@@ -56,7 +54,7 @@ public class JavaMethodItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +79,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Is Static feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsStaticPropertyDescriptor(Object object) {
@@ -104,7 +102,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Is Final feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsFinalPropertyDescriptor(Object object) {
@@ -127,7 +125,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Is Abstract feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsAbstractPropertyDescriptor(Object object) {
@@ -150,7 +148,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Is Native feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsNativePropertyDescriptor(Object object) {
@@ -173,7 +171,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Is Synchronized feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsSynchronizedPropertyDescriptor(Object object) {
@@ -196,7 +194,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Is Constructor feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsConstructorPropertyDescriptor(Object object) {
@@ -219,7 +217,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Base Operation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_OperationPropertyDescriptor(Object object) {
@@ -242,7 +240,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Explicit Plain Text Required Imports feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addExplicitPlainTextRequiredImportsPropertyDescriptor(Object object) {
@@ -265,7 +263,7 @@ public class JavaMethodItemProvider
 	 * This adds a property descriptor for the Explicit Required Imports feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addExplicitRequiredImportsPropertyDescriptor(Object object) {
@@ -288,7 +286,7 @@ public class JavaMethodItemProvider
 	 * This returns JavaMethod.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +298,7 @@ public class JavaMethodItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +314,7 @@ public class JavaMethodItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +340,7 @@ public class JavaMethodItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

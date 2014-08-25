@@ -4,18 +4,14 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression;
 import org.eclipse.papyrus.marte.vsl.vSL.DurationObsName;
 import org.eclipse.papyrus.marte.vsl.vSL.Expression;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -40,7 +36,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -51,7 +47,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -62,7 +58,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCondition()
 	 * @generated
 	 * @ordered
@@ -72,7 +68,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DurationObsExpressionImpl()
@@ -83,7 +79,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +91,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +103,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetId(DurationObsName newId, NotificationChain msgs)
@@ -129,7 +125,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +153,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +165,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetIndex(Expression newIndex, NotificationChain msgs)
@@ -191,7 +187,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +215,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +227,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
@@ -253,7 +249,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +277,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +289,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +301,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +313,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +334,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +355,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +379,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +403,7 @@ public class DurationObsExpressionImpl extends TimeExpressionImpl implements Dur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

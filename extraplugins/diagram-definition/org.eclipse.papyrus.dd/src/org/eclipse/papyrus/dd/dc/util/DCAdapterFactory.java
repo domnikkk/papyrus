@@ -13,12 +13,12 @@ package org.eclipse.papyrus.dd.dc.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.dd.dc.*;
+import org.eclipse.papyrus.dd.dc.Bounds;
+import org.eclipse.papyrus.dd.dc.DCPackage;
+import org.eclipse.papyrus.dd.dc.Dimension;
+import org.eclipse.papyrus.dd.dc.Point;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides

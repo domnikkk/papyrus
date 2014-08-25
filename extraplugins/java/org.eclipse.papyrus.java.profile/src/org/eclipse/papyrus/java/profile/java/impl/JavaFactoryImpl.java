@@ -10,18 +10,25 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.java.profile.java.*;
+import org.eclipse.papyrus.java.profile.java.JavaClass;
+import org.eclipse.papyrus.java.profile.java.JavaFactory;
+import org.eclipse.papyrus.java.profile.java.JavaMethod;
+import org.eclipse.papyrus.java.profile.java.JavaPackage;
+import org.eclipse.papyrus.java.profile.java.JavaPackage_;
+import org.eclipse.papyrus.java.profile.java.JavaParameter;
+import org.eclipse.papyrus.java.profile.java.JavaProject;
+import org.eclipse.papyrus.java.profile.java.JavaProperty;
+import org.eclipse.papyrus.java.profile.java.JavaSrcFolder;
+import org.eclipse.papyrus.java.profile.java.PrimitiveType;
+import org.eclipse.papyrus.java.profile.java.TrueFalseDefault;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
@@ -29,7 +36,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static JavaFactory init() {
@@ -48,7 +55,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaFactoryImpl() {
@@ -58,7 +65,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +95,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +111,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +127,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +139,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +151,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +163,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +175,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +187,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +199,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +211,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +223,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TrueFalseDefault createTrueFalseDefaultFromString(EDataType eDataType, String initialValue) {
@@ -230,7 +237,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTrueFalseDefaultToString(EDataType eDataType, Object instanceValue) {
@@ -240,7 +247,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +258,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

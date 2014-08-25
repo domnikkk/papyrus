@@ -30,7 +30,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * If the meaning of the '<em>Debug Mode</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Debug Mode</em>' attribute.
 	 * @see #setDebugMode(boolean)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getBlenderMorse_DebugMode()
@@ -43,7 +43,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.BlenderMorse#isDebugMode <em>Debug Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Debug Mode</em>' attribute.
 	 * @see #isDebugMode()
@@ -58,7 +58,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * If the meaning of the '<em>Debug Display</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Debug Display</em>' attribute.
 	 * @see #setDebugDisplay(boolean)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getBlenderMorse_DebugDisplay()
@@ -71,7 +71,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.BlenderMorse#isDebugDisplay <em>Debug Display</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Debug Display</em>' attribute.
 	 * @see #isDebugDisplay()
@@ -86,7 +86,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * If the meaning of the '<em>Gravity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Gravity</em>' attribute.
 	 * @see #setGravity(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getBlenderMorse_Gravity()
@@ -99,7 +99,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.BlenderMorse#getGravity <em>Gravity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Gravity</em>' attribute.
 	 * @see #getGravity()
@@ -116,7 +116,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * If the meaning of the '<em>viewport shade</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>viewport shade</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.Shade
 	 * @see #set_viewport_shade(Shade)
@@ -130,7 +130,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.BlenderMorse#get_viewport_shade <em>viewport shade</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>viewport shade</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.Shade

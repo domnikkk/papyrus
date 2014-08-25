@@ -14,41 +14,29 @@
 
 package org.eclipse.papyrus.layers.integrationtests;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
-import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.papyrus.infra.core.resource.BadArgumentExcetion;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationModel;
 import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
+import org.eclipse.papyrus.integrationtests.editor.DiagramCreator;
+import org.eclipse.papyrus.integrationtests.editor.EclipseProject;
+import org.eclipse.papyrus.integrationtests.editor.ExecutionException;
+import org.eclipse.papyrus.integrationtests.editor.ProgramaticPapyrusEditor;
 import org.eclipse.papyrus.layers.runtime.model.LayersModel;
 import org.eclipse.papyrus.layers.stackmodel.LayersException;
-import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.Layer;
-import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator;
-import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerState;
-import org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer;
-import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
-import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactoryForStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
 import org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer;
 import org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator;
-import org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -71,26 +59,11 @@ public class LayersStateAfterReloadTest {
 	 */
 	final protected String BUNDLE_NAME = "org.eclipse.papyrus.layers.integrationtests";
 
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	/**
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 * @throws ServiceException
 	 * @throws BadArgumentExcetion
@@ -142,7 +115,7 @@ public class LayersStateAfterReloadTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createRegExpLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 * @throws ExecutionException
 	 * @throws ServiceException
@@ -189,7 +162,7 @@ public class LayersStateAfterReloadTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createTopLayerOperator(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 * @throws ServiceException
 	 * @throws ExecutionException
@@ -236,7 +209,7 @@ public class LayersStateAfterReloadTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createStackedLayerOperator(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 * @throws ExecutionException
 	 * @throws ServiceException

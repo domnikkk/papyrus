@@ -36,7 +36,7 @@ public class VSL_NumberLiteral_CompletionProposal implements ICompletionProposal
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)

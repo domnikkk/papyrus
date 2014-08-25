@@ -4,10 +4,27 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.*;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.ChannelFloat32;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CompressedImage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Image;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Imu;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JointState;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Joy;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedbackArray;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.LaserScan;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatStatus;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.PointCloud;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.PointCloud2;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.PointField;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Range;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +35,7 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage
  * @generated
  */
@@ -27,7 +44,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static Sensor_datatypesPackage modelPackage;
@@ -36,7 +53,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Sensor_datatypesSwitch() {
@@ -49,7 +66,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -63,7 +80,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -233,7 +250,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Region Of Interest</em>'.
@@ -250,7 +267,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Range</em>'.
@@ -267,7 +284,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Camera Info</em>'.
@@ -284,7 +301,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Imu</em>'.
@@ -301,7 +318,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Laser Scan</em>'.
@@ -318,7 +335,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Image</em>'.
@@ -335,7 +352,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Channel Float32</em>'.
@@ -352,7 +369,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Compressed Image</em>'.
@@ -369,7 +386,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Point Cloud</em>'.
@@ -386,7 +403,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Point Field</em>'.
@@ -403,7 +420,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Point Cloud2</em>'.
@@ -420,7 +437,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Joint State</em>'.
@@ -437,7 +454,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Nav Sat Status</em>'.
@@ -454,7 +471,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Nav Sat Fix</em>'.
@@ -471,7 +488,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Joy</em>'.
@@ -488,7 +505,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Joy Feedback</em>'.
@@ -505,7 +522,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Joy Feedback Array</em>'.
@@ -522,7 +539,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Car Like Odometry</em>'.
@@ -539,7 +556,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Differential Odometry</em>'.
@@ -556,7 +573,7 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

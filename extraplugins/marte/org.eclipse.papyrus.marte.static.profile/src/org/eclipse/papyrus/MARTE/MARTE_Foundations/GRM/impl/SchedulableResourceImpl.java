@@ -47,7 +47,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	 * The cached value of the '{@link #getSchedParams() <em>Sched Params</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedParams()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	 * The cached value of the '{@link #getDependentScheduler() <em>Dependent Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDependentScheduler()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SchedulableResourceImpl() {
@@ -89,7 +89,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SecondaryScheduler basicGetDependentScheduler() {
@@ -144,7 +144,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDependentScheduler(SecondaryScheduler newDependentScheduler, NotificationChain msgs) {
@@ -164,7 +164,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetHost() {
@@ -220,7 +220,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHost(Scheduler newHost, NotificationChain msgs) {
@@ -240,7 +240,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +266,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -355,7 +355,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +396,7 @@ public class SchedulableResourceImpl extends ResourceImpl implements Schedulable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

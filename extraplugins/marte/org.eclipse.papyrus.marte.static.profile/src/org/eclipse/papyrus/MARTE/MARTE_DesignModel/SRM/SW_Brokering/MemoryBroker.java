@@ -50,7 +50,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Access Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Access Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind
 	 * @see #setAccessPolicy(AccessPolicyKind)
@@ -64,7 +64,7 @@ public interface MemoryBroker extends SwResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getAccessPolicy <em>Access Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Access Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind
@@ -81,7 +81,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Memories</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memories</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringPackage#getMemoryBroker_Memories()
 	 * @model ordered="false"
@@ -97,7 +97,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Memory Block Adress Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Block Adress Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringPackage#getMemoryBroker_MemoryBlockAdressElements()
 	 * @model ordered="false"
@@ -113,7 +113,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Memory Block Size Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Block Size Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringPackage#getMemoryBroker_MemoryBlockSizeElements()
 	 * @model ordered="false"
@@ -129,7 +129,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Lock Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lock Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringPackage#getMemoryBroker_LockServices()
 	 * @model ordered="false"
@@ -145,7 +145,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Unlock Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unlock Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringPackage#getMemoryBroker_UnlockServices()
 	 * @model ordered="false"
@@ -161,7 +161,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Map Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Map Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringPackage#getMemoryBroker_MapServices()
 	 * @model ordered="false"
@@ -177,7 +177,7 @@ public interface MemoryBroker extends SwResource {
 	 * If the meaning of the '<em>Un Map Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Un Map Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringPackage#getMemoryBroker_UnMapServices()
 	 * @model ordered="false"

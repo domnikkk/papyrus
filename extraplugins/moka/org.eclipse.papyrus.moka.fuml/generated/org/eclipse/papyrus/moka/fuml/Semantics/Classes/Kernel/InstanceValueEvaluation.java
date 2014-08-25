@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
-
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;

@@ -12,6 +12,8 @@
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +23,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.query.conditions.eobjects.EObjectCondition;
 import org.eclipse.emf.query.statements.FROM;
@@ -43,7 +44,6 @@ import org.eclipse.papyrus.layers.stackmodel.notifier.IDiagramViewEventListener;
 import org.eclipse.papyrus.layers.stackmodel.util.ObservableListView;
 
 import com.google.common.eventbus.Subscribe;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The default value of the '{@link #getExpr() <em>Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpr()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The cached value of the '{@link #getExpr() <em>Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpr()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The default value of the '{@link #isDomainChangedEventDependant() <em>Is Domain Changed Event Dependant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDomainChangedEventDependant()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The cached value of the '{@link #isDomainChangedEventDependant() <em>Is Domain Changed Event Dependant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDomainChangedEventDependant()
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The default value of the '{@link #getDomainChangedEventLevel() <em>Domain Changed Event Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDomainChangedEventLevel()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The cached value of the '{@link #getDomainChangedEventLevel() <em>Domain Changed Event Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDomainChangedEventLevel()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The default value of the '{@link #isDiagramChangedEventDependant() <em>Is Diagram Changed Event Dependant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDiagramChangedEventDependant()
 	 * @generated
 	 * @ordered
@@ -160,7 +160,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The cached value of the '{@link #isDiagramChangedEventDependant() <em>Is Diagram Changed Event Dependant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDiagramChangedEventDependant()
 	 * @generated
 	 * @ordered
@@ -170,7 +170,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The default value of the '{@link #getDiagramChangedEventLevel() <em>Diagram Changed Event Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDiagramChangedEventLevel()
 	 * @generated
 	 * @ordered
@@ -180,7 +180,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The cached value of the '{@link #getDiagramChangedEventLevel() <em>Diagram Changed Event Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDiagramChangedEventLevel()
 	 * @generated
 	 * @ordered
@@ -190,7 +190,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The default value of the '{@link #getExpressionContextObjectType() <em>Expression Context Object Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpressionContextObjectType()
 	 * @generated
 	 * @ordered
@@ -200,7 +200,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * The cached value of the '{@link #getExpressionContextObjectType() <em>Expression Context Object Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpressionContextObjectType()
 	 * @generated
 	 * @ordered
@@ -217,7 +217,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected RegExpLayerImpl() {
@@ -269,7 +269,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -322,7 +322,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * they can be unsync after the model was loaded by EMF.
 	 * <b>
 	 * This method is used to correct the bug where both list are unsync after the model was loaded by EMF.
-	 * 
+	 *
 	 * @Deprecated Not needed anymore
 	 */
 	private void checkViewsAndMatchingElementsSync() {
@@ -351,7 +351,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +362,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -388,7 +388,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +414,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -429,7 +429,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +440,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -455,7 +455,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -466,7 +466,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +481,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +492,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -592,7 +592,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param newLayerParent
 	 * @generated NOT
 	 * @deprecated not used
@@ -622,7 +622,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param oldParentLayer
 	 * @generated NOT
 	 * @deprecated
@@ -649,7 +649,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -679,7 +679,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 *
 	 *
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -718,7 +718,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * Detach each view that do not satisfy the condition.
 	 * TODO rename to updateDerivedViews() ?
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -787,7 +787,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	 * of views to add to layer. Then, we preform two operations; removeAll(toRemove) and addAll(toAdd);
 	 *
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -845,7 +845,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -872,7 +872,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -899,7 +899,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -933,7 +933,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -967,7 +967,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -994,7 +994,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1047,7 +1047,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1077,7 +1077,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 
 	/**
 	 * Called by the observers when a view is added.
-	 * 
+	 *
 	 * @param view
 	 */
 	protected void viewAdded(View view) {
@@ -1086,7 +1086,7 @@ public class RegExpLayerImpl extends AbstractLayerImpl implements RegExpLayer {
 
 	/**
 	 * Called by the observers when a view is removed.
-	 * 
+	 *
 	 * @param view
 	 */
 	protected void viewRemoved(View view) {

@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor;
 
@@ -30,7 +29,7 @@ public class RegExpLayerDescriptorImpl extends LayerDescriptorImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RegExpLayerDescriptorImpl() {
@@ -40,7 +39,7 @@ public class RegExpLayerDescriptorImpl extends LayerDescriptorImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

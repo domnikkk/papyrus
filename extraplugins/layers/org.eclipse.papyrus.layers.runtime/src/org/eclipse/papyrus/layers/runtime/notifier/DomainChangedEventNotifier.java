@@ -42,7 +42,7 @@ public class DomainChangedEventNotifier extends AbstractDerivedViewLayerNotifier
 
 	/**
 	 * Start listening on externals events that should be relayed by this Notifier.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.notifier.AbstractDerivedViewLayerNotifier#startListening()
 	 *
 	 */
@@ -54,7 +54,7 @@ public class DomainChangedEventNotifier extends AbstractDerivedViewLayerNotifier
 
 	/**
 	 * Start listening on externals events that should be relayed by this Notifier.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.notifier.AbstractDerivedViewLayerNotifier#stopListening()
 	 *
 	 */

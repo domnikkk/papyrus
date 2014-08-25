@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.C_Cpp;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Operation;
 
 /**
@@ -40,7 +39,7 @@ public interface Virtual extends EObject {
 	 * If the meaning of the '<em>Base operation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base operation</em>' reference.
 	 * @see #setBase_operation(Operation)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getVirtual_Base_operation()
@@ -53,7 +52,7 @@ public interface Virtual extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Virtual#getBase_operation <em>Base operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base operation</em>' reference.
 	 * @see #getBase_operation()

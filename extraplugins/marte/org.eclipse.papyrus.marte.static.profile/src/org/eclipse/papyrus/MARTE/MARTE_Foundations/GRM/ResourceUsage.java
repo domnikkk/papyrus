@@ -50,7 +50,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Exec Time</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exec Time</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_ExecTime()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration"
@@ -66,7 +66,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Allocated Memory</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocated Memory</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_AllocatedMemory()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_DataSize"
@@ -82,7 +82,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Used Memory</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Used Memory</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_UsedMemory()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_DataSize"
@@ -98,7 +98,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Power Peak</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Power Peak</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_PowerPeak()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Power"
@@ -114,7 +114,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Energy</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Energy</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_Energy()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Energy"
@@ -129,7 +129,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_Base_NamedElement()
@@ -142,7 +142,7 @@ public interface ResourceUsage extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ResourceUsage#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()
@@ -158,7 +158,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Sub Usage</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sub Usage</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_SubUsage()
 	 * @model ordered="false"
@@ -174,7 +174,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Used Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Used Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_UsedResources()
 	 * @model
@@ -190,7 +190,7 @@ public interface ResourceUsage extends EObject {
 	 * If the meaning of the '<em>Msg Size</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Msg Size</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getResourceUsage_MsgSize()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_DataSize"

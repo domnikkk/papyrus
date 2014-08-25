@@ -16,16 +16,11 @@ package org.eclipse.papyrus.facademapping.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.facademapping.ExtensionDefinitionKind;
 import org.eclipse.papyrus.facademapping.FacademappingPackage;
 import org.eclipse.papyrus.facademapping.StereotypedMapping;
@@ -49,7 +44,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	 * The cached value of the '{@link #getAppliedStereotypes() <em>Applied Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAppliedStereotypes()
 	 * @generated
 	 * @ordered
@@ -60,7 +55,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -71,7 +66,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -81,7 +76,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypedMappingImpl() {
@@ -91,7 +86,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +97,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +111,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +122,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +137,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +154,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -180,7 +175,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +194,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +211,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

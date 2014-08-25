@@ -62,7 +62,7 @@ public interface SafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Asil Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Asil Value</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
 	 * @see #setAsilValue(ASILKind)
@@ -76,7 +76,7 @@ public interface SafetyConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getAsilValue <em>Asil Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Asil Value</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
@@ -93,7 +93,7 @@ public interface SafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Constrained Fault Failure</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constrained Fault Failure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getSafetyConstraint_ConstrainedFaultFailure()
 	 * @model required="true" ordered="false"
@@ -108,7 +108,7 @@ public interface SafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getSafetyConstraint_Base_Class()
@@ -121,7 +121,7 @@ public interface SafetyConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -136,7 +136,7 @@ public interface SafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Constraint</em>' reference.
 	 * @see #setBase_Constraint(Constraint)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getSafetyConstraint_Base_Constraint()
@@ -149,7 +149,7 @@ public interface SafetyConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyConstraint#getBase_Constraint <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Constraint</em>' reference.
 	 * @see #getBase_Constraint()

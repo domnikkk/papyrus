@@ -40,7 +40,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	 * The cached value of the '{@link #getAcqRes() <em>Acq Res</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAcqRes()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	 * The default value of the '{@link #getResUnits() <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResUnits()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	 * The cached value of the '{@link #getResUnits() <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResUnits()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaAcqStepImpl() {
@@ -82,7 +82,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Resource basicGetAcqRes() {
@@ -123,7 +123,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class GaAcqStepImpl extends GaStepImpl implements GaAcqStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

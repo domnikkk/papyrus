@@ -15,6 +15,7 @@ package org.eclipse.papyrus.layers.stackmodel.layers.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -33,7 +34,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayerExpressionItemProvider
@@ -49,7 +50,7 @@ public class LayerExpressionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerExpressionItemProvider(AdapterFactory adapterFactory) {
@@ -60,7 +61,7 @@ public class LayerExpressionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +84,7 @@ public class LayerExpressionItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -106,7 +107,7 @@ public class LayerExpressionItemProvider
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
@@ -129,7 +130,7 @@ public class LayerExpressionItemProvider
 	 * This adds a property descriptor for the Is Layer Enabled Internal feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsLayerEnabledInternalPropertyDescriptor(Object object) {
@@ -152,7 +153,7 @@ public class LayerExpressionItemProvider
 	 * This adds a property descriptor for the Is Layer Enabled feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsLayerEnabledPropertyDescriptor(Object object) {
@@ -175,7 +176,7 @@ public class LayerExpressionItemProvider
 	 * This adds a property descriptor for the Is Branch Enabled feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsBranchEnabledPropertyDescriptor(Object object) {
@@ -198,7 +199,7 @@ public class LayerExpressionItemProvider
 	 * This adds a property descriptor for the Owning Layers Stack feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOwningLayersStackPropertyDescriptor(Object object) {
@@ -221,7 +222,7 @@ public class LayerExpressionItemProvider
 	 * This adds a property descriptor for the State feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addStatePropertyDescriptor(Object object) {
@@ -244,7 +245,7 @@ public class LayerExpressionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +261,7 @@ public class LayerExpressionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +286,7 @@ public class LayerExpressionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

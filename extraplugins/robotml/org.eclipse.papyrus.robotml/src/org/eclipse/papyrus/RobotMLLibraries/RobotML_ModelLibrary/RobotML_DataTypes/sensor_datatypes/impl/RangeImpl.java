@@ -4,16 +4,12 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Range;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -41,7 +37,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The default value of the '{@link #getULTRASOUND() <em>ULTRASOUND</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getULTRASOUND()
 	 * @generated
 	 * @ordered
@@ -52,7 +48,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getULTRASOUND() <em>ULTRASOUND</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getULTRASOUND()
 	 * @generated
 	 * @ordered
@@ -63,7 +59,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The default value of the '{@link #getINFRARED() <em>INFRARED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getINFRARED()
 	 * @generated
 	 * @ordered
@@ -74,7 +70,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getINFRARED() <em>INFRARED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getINFRARED()
 	 * @generated
 	 * @ordered
@@ -85,7 +81,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -96,7 +92,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The default value of the '{@link #getRadiation_type() <em>Radiation type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRadiation_type()
 	 * @generated
 	 * @ordered
@@ -107,7 +103,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getRadiation_type() <em>Radiation type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRadiation_type()
 	 * @generated
 	 * @ordered
@@ -118,7 +114,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The default value of the '{@link #getField_of_view() <em>Field of view</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getField_of_view()
 	 * @generated
 	 * @ordered
@@ -129,7 +125,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getField_of_view() <em>Field of view</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getField_of_view()
 	 * @generated
 	 * @ordered
@@ -140,7 +136,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The default value of the '{@link #getMin_range() <em>Min range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMin_range()
 	 * @generated
 	 * @ordered
@@ -151,7 +147,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getMin_range() <em>Min range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMin_range()
 	 * @generated
 	 * @ordered
@@ -162,7 +158,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The default value of the '{@link #getMax_range() <em>Max range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMax_range()
 	 * @generated
 	 * @ordered
@@ -173,7 +169,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getMax_range() <em>Max range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMax_range()
 	 * @generated
 	 * @ordered
@@ -184,7 +180,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The default value of the '{@link #getRange() <em>Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRange()
 	 * @generated
 	 * @ordered
@@ -195,7 +191,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	 * The cached value of the '{@link #getRange() <em>Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRange()
 	 * @generated
 	 * @ordered
@@ -205,7 +201,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RangeImpl() {
@@ -215,7 +211,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +222,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getULTRASOUND() {
@@ -236,7 +232,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setULTRASOUND(char newULTRASOUND) {
@@ -250,7 +246,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getINFRARED() {
@@ -260,7 +256,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setINFRARED(char newINFRARED) {
@@ -274,7 +270,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -284,7 +280,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -304,7 +300,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -329,7 +325,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getRadiation_type() {
@@ -339,7 +335,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRadiation_type(char newRadiation_type) {
@@ -353,7 +349,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getField_of_view() {
@@ -363,7 +359,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setField_of_view(float newField_of_view) {
@@ -377,7 +373,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getMin_range() {
@@ -387,7 +383,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMin_range(float newMin_range) {
@@ -401,7 +397,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getMax_range() {
@@ -411,7 +407,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMax_range(float newMax_range) {
@@ -425,7 +421,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getRange() {
@@ -435,7 +431,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRange(float newRange) {
@@ -449,7 +445,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +460,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -493,7 +489,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -530,7 +526,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -567,7 +563,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -596,7 +592,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

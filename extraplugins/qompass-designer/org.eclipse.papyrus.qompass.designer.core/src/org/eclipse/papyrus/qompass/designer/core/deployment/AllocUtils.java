@@ -17,7 +17,6 @@ package org.eclipse.papyrus.qompass.designer.core.deployment;
 import java.util.Iterator;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.papyrus.FCM.Fragment;

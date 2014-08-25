@@ -28,7 +28,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwSto
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStorageManagerFactory {
@@ -36,7 +36,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwStorageManagerFactory init() {
@@ -55,7 +55,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwStorageManagerFactoryImpl() {
@@ -65,7 +65,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class HwStorageManagerFactoryImpl extends EFactoryImpl implements HwStora
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

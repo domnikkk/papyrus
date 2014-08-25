@@ -13,11 +13,8 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.CustomType;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 
@@ -39,7 +36,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	 * The default value of the '{@link #getClassifier() <em>Classifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassifier()
 	 * @generated
 	 * @ordered
@@ -50,7 +47,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassifier()
 	 * @generated
 	 * @ordered
@@ -60,7 +57,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CustomTypeImpl() {
@@ -70,7 +67,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +78,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +89,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +104,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +119,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +135,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +151,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +166,7 @@ public class CustomTypeImpl extends TypeImpl implements CustomType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

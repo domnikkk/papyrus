@@ -29,7 +29,7 @@ public interface Include extends Relationship {
 	 * If the meaning of the '<em>Base Include</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Include</em>' reference.
 	 * @see #setBase_Include(org.eclipse.uml2.uml.Include)
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getInclude_Base_Include()
@@ -42,7 +42,7 @@ public interface Include extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.usecases.Include#getBase_Include <em>Base Include</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Include</em>' reference.
 	 * @see #getBase_Include()
@@ -57,7 +57,7 @@ public interface Include extends Relationship {
 	 * If the meaning of the '<em>Addition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Addition</em>' reference.
 	 * @see #setAddition(UseCase)
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getInclude_Addition()
@@ -70,7 +70,7 @@ public interface Include extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.usecases.Include#getAddition <em>Addition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Addition</em>' reference.
 	 * @see #getAddition()

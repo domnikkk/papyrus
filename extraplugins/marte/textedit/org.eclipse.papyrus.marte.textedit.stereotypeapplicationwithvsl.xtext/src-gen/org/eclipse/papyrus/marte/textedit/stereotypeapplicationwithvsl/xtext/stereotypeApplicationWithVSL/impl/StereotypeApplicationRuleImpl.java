@@ -6,22 +6,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
@@ -46,7 +40,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	 * The cached value of the '{@link #getStereotype() <em>Stereotype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotype()
 	 * @generated
 	 * @ordered
@@ -57,7 +51,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	 * The cached value of the '{@link #getTagSpecification() <em>Tag Specification</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTagSpecification()
 	 * @generated
 	 * @ordered
@@ -67,7 +61,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypeApplicationRuleImpl()
@@ -78,7 +72,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +84,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +107,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Stereotype basicGetStereotype()
@@ -124,7 +118,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +134,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +150,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +162,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +174,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +191,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +213,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -242,7 +236,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +257,7 @@ public class StereotypeApplicationRuleImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,10 +13,11 @@
  */
 package org.eclipse.papyrus.layers3.ui.commands;
 
+import static org.eclipse.papyrus.layers.ui.Activator.log;
+
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.papyrus.layers.runtime.NotationDiagramHelper;
-import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 
 /**

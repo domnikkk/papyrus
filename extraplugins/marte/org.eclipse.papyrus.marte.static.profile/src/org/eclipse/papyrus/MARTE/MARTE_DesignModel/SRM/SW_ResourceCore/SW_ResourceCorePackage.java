@@ -30,7 +30,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_ResourceCoreFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "SW_ResourceCore";
@@ -49,7 +49,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/SW_ResourceCore/1";
@@ -58,7 +58,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "SW_ResourceCore";
@@ -67,7 +67,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SW_ResourceCorePackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SW_ResourceCorePackageImpl.init();
@@ -76,7 +76,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwResourceImpl <em>Sw Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SW_ResourceCorePackageImpl#getSwResource()
 	 * @generated
@@ -87,7 +87,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +177,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -197,7 +197,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -207,7 +207,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +217,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -227,7 +227,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -237,7 +237,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl <em>Sw Access Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SW_ResourceCorePackageImpl#getSwAccessService()
 	 * @generated
@@ -248,7 +248,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -258,7 +258,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Execution Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -268,7 +268,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavioral Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -278,7 +278,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -288,7 +288,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Collaboration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -298,7 +298,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Collaboration Use</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -308,7 +308,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Modifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -318,7 +318,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The feature id for the '<em><b>Accessed Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -328,7 +328,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Access Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,7 +339,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource <em>Sw Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource
 	 * @generated
@@ -350,7 +350,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getIdentifierElements <em>Identifier Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Identifier Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getIdentifierElements()
 	 * @see #getSwResource()
@@ -362,7 +362,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getStateElements <em>State Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>State Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getStateElements()
 	 * @see #getSwResource()
@@ -374,7 +374,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getMemorySizeFootprint <em>Memory Size Footprint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Memory Size Footprint</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getMemorySizeFootprint()
 	 * @see #getSwResource()
@@ -386,7 +386,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getCreateServices <em>Create Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Create Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getCreateServices()
 	 * @see #getSwResource()
@@ -398,7 +398,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getDeleteServices <em>Delete Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Delete Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getDeleteServices()
 	 * @see #getSwResource()
@@ -410,7 +410,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getInitializeServices <em>Initialize Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Initialize Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getInitializeServices()
 	 * @see #getSwResource()
@@ -422,7 +422,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwAccessService <em>Sw Access Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Access Service</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwAccessService
 	 * @generated
@@ -433,7 +433,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwAccessService#isIsModifier <em>Is Modifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Modifier</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwAccessService#isIsModifier()
 	 * @see #getSwAccessService()
@@ -445,7 +445,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwAccessService#getAccessedElement <em>Accessed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Accessed Element</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwAccessService#getAccessedElement()
 	 * @see #getSwAccessService()
@@ -457,7 +457,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -473,7 +473,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -481,7 +481,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwResourceImpl <em>Sw Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SW_ResourceCorePackageImpl#getSwResource()
 		 * @generated
@@ -492,7 +492,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifier Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_RESOURCE__IDENTIFIER_ELEMENTS = eINSTANCE.getSwResource_IdentifierElements();
@@ -501,7 +501,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>State Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_RESOURCE__STATE_ELEMENTS = eINSTANCE.getSwResource_StateElements();
@@ -510,7 +510,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Memory Size Footprint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_RESOURCE__MEMORY_SIZE_FOOTPRINT = eINSTANCE.getSwResource_MemorySizeFootprint();
@@ -519,7 +519,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_RESOURCE__CREATE_SERVICES = eINSTANCE.getSwResource_CreateServices();
@@ -528,7 +528,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Delete Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_RESOURCE__DELETE_SERVICES = eINSTANCE.getSwResource_DeleteServices();
@@ -537,7 +537,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Initialize Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_RESOURCE__INITIALIZE_SERVICES = eINSTANCE.getSwResource_InitializeServices();
@@ -546,7 +546,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl <em>Sw Access Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SW_ResourceCorePackageImpl#getSwAccessService()
 		 * @generated
@@ -557,7 +557,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Modifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_ACCESS_SERVICE__IS_MODIFIER = eINSTANCE.getSwAccessService_IsModifier();
@@ -566,7 +566,7 @@ public interface SW_ResourceCorePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Accessed Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_ACCESS_SERVICE__ACCESSED_ELEMENT = eINSTANCE.getSwAccessService_AccessedElement();

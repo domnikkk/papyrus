@@ -2,12 +2,13 @@
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.util.DiagramViewToListSynchronizer;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ public class AllViewsDerivedLayerImpl extends AbstractLayerImpl implements AllVi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected AllViewsDerivedLayerImpl() {
@@ -41,7 +42,7 @@ public class AllViewsDerivedLayerImpl extends AbstractLayerImpl implements AllVi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

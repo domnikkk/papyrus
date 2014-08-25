@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Layer State</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerState()
  * @model
  * @generated
@@ -23,7 +23,7 @@ public enum LayerState implements Enumerator {
 	 * The '<em><b>Detached</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DETACHED_VALUE
 	 * @generated
 	 * @ordered
@@ -34,7 +34,7 @@ public enum LayerState implements Enumerator {
 	 * The '<em><b>Attached</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ATTACHED_VALUE
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public enum LayerState implements Enumerator {
 	 * If the meaning of '<em><b>Detached</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DETACHED
 	 * @model name="detached"
 	 * @generated
@@ -63,7 +63,7 @@ public enum LayerState implements Enumerator {
 	 * If the meaning of '<em><b>Attached</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ATTACHED
 	 * @model name="attached"
 	 * @generated
@@ -75,7 +75,7 @@ public enum LayerState implements Enumerator {
 	 * An array of all the '<em><b>Layer State</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final LayerState[] VALUES_ARRAY =
@@ -88,7 +88,7 @@ public enum LayerState implements Enumerator {
 	 * A public read-only list of all the '<em><b>Layer State</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<LayerState> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -97,7 +97,7 @@ public enum LayerState implements Enumerator {
 	 * Returns the '<em><b>Layer State</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LayerState get(String literal) {
@@ -114,7 +114,7 @@ public enum LayerState implements Enumerator {
 	 * Returns the '<em><b>Layer State</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LayerState getByName(String name) {
@@ -131,7 +131,7 @@ public enum LayerState implements Enumerator {
 	 * Returns the '<em><b>Layer State</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LayerState get(int value) {
@@ -147,7 +147,7 @@ public enum LayerState implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -155,7 +155,7 @@ public enum LayerState implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -163,7 +163,7 @@ public enum LayerState implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -172,7 +172,7 @@ public enum LayerState implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private LayerState(int value, String name, String literal) {
@@ -184,7 +184,7 @@ public enum LayerState implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public enum LayerState implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public enum LayerState implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public enum LayerState implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

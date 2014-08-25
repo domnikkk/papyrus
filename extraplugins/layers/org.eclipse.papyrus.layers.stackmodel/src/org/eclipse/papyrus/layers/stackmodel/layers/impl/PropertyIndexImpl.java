@@ -13,13 +13,10 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
@@ -43,7 +40,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -54,7 +51,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -75,7 +72,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyIndexImpl() {
@@ -85,7 +82,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +93,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +113,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetProperty() {
@@ -126,7 +123,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +149,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +164,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +184,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +203,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +222,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +239,7 @@ public class PropertyIndexImpl extends MinimalEObjectImpl.Container implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

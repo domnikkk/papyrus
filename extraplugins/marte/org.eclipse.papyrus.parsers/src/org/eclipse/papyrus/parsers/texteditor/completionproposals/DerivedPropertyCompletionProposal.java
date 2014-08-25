@@ -41,7 +41,7 @@ public class DerivedPropertyCompletionProposal implements ICompletionProposalCom
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)

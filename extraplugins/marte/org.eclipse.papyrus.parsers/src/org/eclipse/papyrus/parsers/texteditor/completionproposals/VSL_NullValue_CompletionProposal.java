@@ -34,7 +34,7 @@ public class VSL_NullValue_CompletionProposal implements ICompletionProposalComp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)

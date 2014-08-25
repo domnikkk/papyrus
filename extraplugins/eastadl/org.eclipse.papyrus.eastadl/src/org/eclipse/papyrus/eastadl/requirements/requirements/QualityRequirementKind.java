@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getQualityRequirementKind()
  * @model
  * @generated
@@ -29,7 +29,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Ergonomy</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ERGONOMY_VALUE
 	 * @generated
 	 * @ordered
@@ -40,7 +40,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Configurability</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONFIGURABILITY_VALUE
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Integrity</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTEGRITY_VALUE
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Safety</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SAFETY_VALUE
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Security</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SECURITY_VALUE
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Human Machine Interface</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HUMAN_MACHINE_INTERFACE_VALUE
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Timing</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TIMING_VALUE
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Availability</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AVAILABILITY_VALUE
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Reliability</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #RELIABILITY_VALUE
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Confidentiality</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONFIDENTIALITY_VALUE
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * The '<em><b>Maintainability</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MAINTAINABILITY_VALUE
 	 * @generated
 	 * @ordered
@@ -164,7 +164,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Ergonomy</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ERGONOMY
 	 * @model name="ergonomy"
 	 * @generated
@@ -179,7 +179,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Configurability</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONFIGURABILITY
 	 * @model name="configurability"
 	 * @generated
@@ -194,7 +194,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Integrity</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTEGRITY
 	 * @model name="integrity"
 	 * @generated
@@ -209,7 +209,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Safety</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SAFETY
 	 * @model name="safety"
 	 * @generated
@@ -224,7 +224,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -239,7 +239,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Security</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SECURITY
 	 * @model name="security"
 	 * @generated
@@ -254,7 +254,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Human Machine Interface</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HUMAN_MACHINE_INTERFACE
 	 * @model name="humanMachineInterface"
 	 * @generated
@@ -269,7 +269,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Timing</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TIMING
 	 * @model name="timing"
 	 * @generated
@@ -284,7 +284,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Availability</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AVAILABILITY
 	 * @model name="availability"
 	 * @generated
@@ -299,7 +299,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Reliability</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #RELIABILITY
 	 * @model name="reliability"
 	 * @generated
@@ -314,7 +314,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Confidentiality</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONFIDENTIALITY
 	 * @model name="confidentiality"
 	 * @generated
@@ -329,7 +329,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * If the meaning of '<em><b>Maintainability</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MAINTAINABILITY
 	 * @model name="maintainability"
 	 * @generated
@@ -341,7 +341,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * An array of all the '<em><b>Quality Requirement Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final QualityRequirementKind[] VALUES_ARRAY =
@@ -364,7 +364,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Quality Requirement Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<QualityRequirementKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -373,7 +373,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * Returns the '<em><b>Quality Requirement Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static QualityRequirementKind get(String literal) {
@@ -390,7 +390,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * Returns the '<em><b>Quality Requirement Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static QualityRequirementKind getByName(String name) {
@@ -407,7 +407,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * Returns the '<em><b>Quality Requirement Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static QualityRequirementKind get(int value) {
@@ -443,7 +443,7 @@ public enum QualityRequirementKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -451,7 +451,7 @@ public enum QualityRequirementKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -459,7 +459,7 @@ public enum QualityRequirementKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -468,7 +468,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private QualityRequirementKind(int value, String name, String literal) {
@@ -480,7 +480,7 @@ public enum QualityRequirementKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -491,7 +491,7 @@ public enum QualityRequirementKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -502,7 +502,7 @@ public enum QualityRequirementKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -514,7 +514,7 @@ public enum QualityRequirementKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

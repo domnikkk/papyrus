@@ -32,7 +32,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAttribute()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	 * The cached value of the '{@link #getQuantification() <em>Quantification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQuantification()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AttributeQuantificationconstraintImpl() {
@@ -63,7 +63,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -141,7 +141,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

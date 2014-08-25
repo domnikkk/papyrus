@@ -5,22 +5,16 @@ package org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Mode;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRulePackage;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Severity;
 import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.ValidationRule;
-
 import org.eclipse.uml2.uml.Constraint;
 
 /**
@@ -50,7 +44,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -61,7 +55,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -72,7 +66,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -83,7 +77,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -94,7 +88,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #isEnabledByDefault() <em>Is Enabled By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isEnabledByDefault()
 	 * @generated
 	 * @ordered
@@ -105,7 +99,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #isEnabledByDefault() <em>Is Enabled By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isEnabledByDefault()
 	 * @generated
 	 * @ordered
@@ -116,7 +110,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -127,7 +121,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getStatusCode() <em>Status Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatusCode()
 	 * @generated
 	 * @ordered
@@ -138,7 +132,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getStatusCode() <em>Status Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStatusCode()
 	 * @generated
 	 * @ordered
@@ -149,7 +143,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -160,7 +154,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -171,7 +165,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -182,7 +176,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -193,7 +187,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -204,7 +198,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -215,7 +209,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -226,7 +220,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -237,7 +231,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -247,7 +241,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ValidationRuleImpl() {
@@ -257,7 +251,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +262,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Severity getSeverity() {
@@ -278,7 +272,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSeverity(Severity newSeverity) {
@@ -292,7 +286,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Mode getMode() {
@@ -302,7 +296,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMode(Mode newMode) {
@@ -316,7 +310,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isEnabledByDefault() {
@@ -326,7 +320,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIsEnabledByDefault(boolean newIsEnabledByDefault) {
@@ -340,7 +334,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint getBase_Constraint() {
@@ -359,7 +353,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -369,7 +363,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Constraint(Constraint newBase_Constraint) {
@@ -383,7 +377,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getStatusCode() {
@@ -393,7 +387,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatusCode(int newStatusCode) {
@@ -407,7 +401,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getMessage() {
@@ -417,7 +411,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
@@ -431,7 +425,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -441,7 +435,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -455,7 +449,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getTarget() {
@@ -468,7 +462,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getClass_() {
@@ -478,7 +472,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setClass_(String newClass) {
@@ -492,7 +486,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getId() {
@@ -502,7 +496,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setId(String newId) {
@@ -516,7 +510,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -552,7 +546,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -597,7 +591,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -640,7 +634,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -673,7 +667,7 @@ public class ValidationRuleImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

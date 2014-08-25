@@ -45,7 +45,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionPortImpl() {
@@ -65,7 +65,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -106,7 +106,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public abstract class FunctionPortImpl extends EAElementImpl implements Function
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

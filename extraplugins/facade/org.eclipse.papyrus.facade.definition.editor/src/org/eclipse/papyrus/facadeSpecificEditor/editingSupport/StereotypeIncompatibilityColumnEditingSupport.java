@@ -207,6 +207,7 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 			try {
 				dialog.run(false, false, new IRunnableWithProgress() {
 
+					@Override
 					public void run(IProgressMonitor monitor) {
 						monitor.beginTask(Messages.StereotypeIncompatibilityColumnEditingSupport_2, IProgressMonitor.UNKNOWN);
 

@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>ROM Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getROM_Type()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum ROM_Type implements Enumerator {
 	 * The '<em><b>Masked ROM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MASKED_ROM_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum ROM_Type implements Enumerator {
 	 * The '<em><b>EPROM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EPROM_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum ROM_Type implements Enumerator {
 	 * The '<em><b>OTP EPROM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTP_EPROM_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum ROM_Type implements Enumerator {
 	 * The '<em><b>EEPROM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EEPROM_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum ROM_Type implements Enumerator {
 	 * The '<em><b>Flash</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FLASH_VALUE
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public enum ROM_Type implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public enum ROM_Type implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public enum ROM_Type implements Enumerator {
 	 * If the meaning of '<em><b>Masked ROM</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MASKED_ROM
 	 * @model name="maskedROM"
 	 * @generated
@@ -129,7 +129,7 @@ public enum ROM_Type implements Enumerator {
 	 * If the meaning of '<em><b>EPROM</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EPROM
 	 * @model
 	 * @generated
@@ -144,7 +144,7 @@ public enum ROM_Type implements Enumerator {
 	 * If the meaning of '<em><b>OTP EPROM</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTP_EPROM
 	 * @model
 	 * @generated
@@ -159,7 +159,7 @@ public enum ROM_Type implements Enumerator {
 	 * If the meaning of '<em><b>EEPROM</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EEPROM
 	 * @model
 	 * @generated
@@ -174,7 +174,7 @@ public enum ROM_Type implements Enumerator {
 	 * If the meaning of '<em><b>Flash</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FLASH
 	 * @model name="Flash"
 	 * @generated
@@ -189,7 +189,7 @@ public enum ROM_Type implements Enumerator {
 	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -204,7 +204,7 @@ public enum ROM_Type implements Enumerator {
 	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF
 	 * @model name="undef"
 	 * @generated
@@ -216,7 +216,7 @@ public enum ROM_Type implements Enumerator {
 	 * An array of all the '<em><b>ROM Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ROM_Type[] VALUES_ARRAY =
@@ -234,7 +234,7 @@ public enum ROM_Type implements Enumerator {
 	 * A public read-only list of all the '<em><b>ROM Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ROM_Type> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -243,7 +243,7 @@ public enum ROM_Type implements Enumerator {
 	 * Returns the '<em><b>ROM Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ROM_Type get(String literal) {
@@ -260,7 +260,7 @@ public enum ROM_Type implements Enumerator {
 	 * Returns the '<em><b>ROM Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ROM_Type getByName(String name) {
@@ -277,7 +277,7 @@ public enum ROM_Type implements Enumerator {
 	 * Returns the '<em><b>ROM Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ROM_Type get(int value) {
@@ -303,7 +303,7 @@ public enum ROM_Type implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -311,7 +311,7 @@ public enum ROM_Type implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -319,7 +319,7 @@ public enum ROM_Type implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -328,7 +328,7 @@ public enum ROM_Type implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ROM_Type(int value, String name, String literal) {
@@ -340,7 +340,7 @@ public enum ROM_Type implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +351,7 @@ public enum ROM_Type implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +362,7 @@ public enum ROM_Type implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +374,7 @@ public enum ROM_Type implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Interface;
 
 /**
@@ -43,7 +42,7 @@ public interface PortKind extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPortKind_Base_Class()
@@ -56,7 +55,7 @@ public interface PortKind extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.PortKind#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -71,7 +70,7 @@ public interface PortKind extends EObject {
 	 * If the meaning of the '<em>Provided Interface</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Provided Interface</em>' reference.
 	 * @see #setProvidedInterface(Interface)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPortKind_ProvidedInterface()
@@ -84,7 +83,7 @@ public interface PortKind extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.PortKind#getProvidedInterface <em>Provided Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Provided Interface</em>' reference.
 	 * @see #getProvidedInterface()
@@ -99,7 +98,7 @@ public interface PortKind extends EObject {
 	 * If the meaning of the '<em>Required Interface</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Required Interface</em>' reference.
 	 * @see #setRequiredInterface(Interface)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPortKind_RequiredInterface()
@@ -112,7 +111,7 @@ public interface PortKind extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.PortKind#getRequiredInterface <em>Required Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Required Interface</em>' reference.
 	 * @see #getRequiredInterface()
@@ -127,7 +126,7 @@ public interface PortKind extends EObject {
 	 * If the meaning of the '<em>Extended Port</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extended Port</em>' attribute.
 	 * @see #isSetExtendedPort()
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPortKind_ExtendedPort()
@@ -140,7 +139,7 @@ public interface PortKind extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.FCM.PortKind#isExtendedPort <em>Extended Port</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether the value of the '<em>Extended Port</em>' attribute is set.
 	 * @see #isExtendedPort()
 	 * @generated

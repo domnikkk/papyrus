@@ -29,7 +29,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -39,7 +39,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EAConnectorImpl() {
@@ -49,7 +49,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,7 +60,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -90,7 +90,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public abstract class EAConnectorImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

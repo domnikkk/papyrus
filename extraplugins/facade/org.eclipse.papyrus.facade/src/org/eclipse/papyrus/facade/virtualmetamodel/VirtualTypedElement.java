@@ -40,7 +40,7 @@ public interface VirtualTypedElement extends VirtualElement {
 	 * If the meaning of the '<em>Lower</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lower</em>' attribute.
 	 * @see #setLower(int)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualTypedElement_Lower()
@@ -53,7 +53,7 @@ public interface VirtualTypedElement extends VirtualElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getLower <em>Lower</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lower</em>' attribute.
 	 * @see #getLower()
@@ -68,7 +68,7 @@ public interface VirtualTypedElement extends VirtualElement {
 	 * If the meaning of the '<em>Upper</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Upper</em>' attribute.
 	 * @see #setUpper(int)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualTypedElement_Upper()
@@ -81,7 +81,7 @@ public interface VirtualTypedElement extends VirtualElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getUpper <em>Upper</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Upper</em>' attribute.
 	 * @see #getUpper()
@@ -96,7 +96,7 @@ public interface VirtualTypedElement extends VirtualElement {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(VirtualClassifier)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualTypedElement_Type()
@@ -109,7 +109,7 @@ public interface VirtualTypedElement extends VirtualElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()

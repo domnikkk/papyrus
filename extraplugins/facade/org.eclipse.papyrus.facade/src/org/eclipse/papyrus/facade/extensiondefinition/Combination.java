@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.facade.extensiondefinition;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,7 +41,7 @@ public interface Combination extends EObject {
 	 * If the meaning of the '<em>Members</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Members</em>' reference list.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getCombination_Members()
 	 * @model

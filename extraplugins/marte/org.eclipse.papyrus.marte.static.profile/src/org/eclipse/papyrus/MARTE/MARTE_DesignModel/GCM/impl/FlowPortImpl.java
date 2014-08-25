@@ -49,7 +49,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The default value of the '{@link #isIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsAtomic()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FlowPortImpl() {
@@ -102,7 +102,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -212,7 +212,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +293,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +312,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

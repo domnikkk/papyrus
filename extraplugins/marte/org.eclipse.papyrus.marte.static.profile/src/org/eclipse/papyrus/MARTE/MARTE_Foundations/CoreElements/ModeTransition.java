@@ -40,7 +40,7 @@ public interface ModeTransition extends EObject {
 	 * If the meaning of the '<em>Base Transition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Transition</em>' reference.
 	 * @see #setBase_Transition(Transition)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.CoreElementsPackage#getModeTransition_Base_Transition()
@@ -53,7 +53,7 @@ public interface ModeTransition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition#getBase_Transition <em>Base Transition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Transition</em>' reference.
 	 * @see #getBase_Transition()

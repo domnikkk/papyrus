@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.facade.virtualmetamodel.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
@@ -31,7 +30,7 @@ public class VirtualLiteralImpl extends VirtualElementImpl implements VirtualLit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualLiteralImpl() {
@@ -41,7 +40,7 @@ public class VirtualLiteralImpl extends VirtualElementImpl implements VirtualLit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

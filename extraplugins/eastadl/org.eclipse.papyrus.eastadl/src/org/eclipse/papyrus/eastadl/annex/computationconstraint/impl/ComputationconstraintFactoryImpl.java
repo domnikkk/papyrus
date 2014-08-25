@@ -5,18 +5,20 @@ package org.eclipse.papyrus.eastadl.annex.computationconstraint.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.eastadl.annex.computationconstraint.*;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintFactory;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalPath;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation;
+import org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ComputationconstraintFactoryImpl extends EFactoryImpl implements ComputationconstraintFactory {
@@ -24,7 +26,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ComputationconstraintFactory init() {
@@ -43,7 +45,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComputationconstraintFactoryImpl() {
@@ -53,7 +55,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +77,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +89,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +101,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +113,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +125,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +136,7 @@ public class ComputationconstraintFactoryImpl extends EFactoryImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

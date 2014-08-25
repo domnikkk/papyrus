@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.VariablesPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VariablesXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class VariablesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VariablesXMLProcessor() {
@@ -45,7 +45,7 @@ public class VariablesXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the VariablesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

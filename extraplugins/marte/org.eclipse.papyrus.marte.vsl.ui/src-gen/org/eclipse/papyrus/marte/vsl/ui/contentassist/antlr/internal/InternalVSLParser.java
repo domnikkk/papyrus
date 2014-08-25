@@ -1,11 +1,15 @@
 package org.eclipse.papyrus.marte.vsl.ui.contentassist.antlr.internal;
 
-import org.eclipse.xtext.*;
+import org.antlr.runtime.BaseRecognizer;
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.TokenStream;
+import org.eclipse.papyrus.marte.vsl.services.VSLGrammarAccess;
+import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
-import org.eclipse.papyrus.marte.vsl.services.VSLGrammarAccess;
-
-import org.antlr.runtime.*;
 
 @SuppressWarnings("all")
 public class InternalVSLParser extends AbstractInternalContentAssistParser {

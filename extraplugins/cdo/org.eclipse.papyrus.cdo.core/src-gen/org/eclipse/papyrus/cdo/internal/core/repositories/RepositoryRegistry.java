@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.cdo.internal.core.repositories;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -41,7 +40,7 @@ public interface RepositoryRegistry extends EObject {
 	 * If the meaning of the '<em>Repositories</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Repositories</em>' containment reference list.
 	 * @see org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage#getRepositoryRegistry_Repositories()
 	 * @model containment="true"

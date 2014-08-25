@@ -41,7 +41,7 @@ public interface HwMedia extends CommunicationMedia, HwCommunicationResource {
 	 * If the meaning of the '<em>Band Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Band Width</em>' attribute.
 	 * @see #setBandWidth(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage#getHwMedia_BandWidth()
@@ -54,7 +54,7 @@ public interface HwMedia extends CommunicationMedia, HwCommunicationResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwMedia#getBandWidth <em>Band Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Band Width</em>' attribute.
 	 * @see #getBandWidth()
@@ -71,7 +71,7 @@ public interface HwMedia extends CommunicationMedia, HwCommunicationResource {
 	 * If the meaning of the '<em>Arbiters</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Arbiters</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage#getHwMedia_Arbiters()
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter#getControlledMedias

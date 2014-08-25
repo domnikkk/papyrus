@@ -41,7 +41,7 @@ public interface LayerOperator extends LayerExpression, LayersContainer {
 	 * If the meaning of the '<em>Layers</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Layers</em>' containment reference list.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerOperator_Layers()
 	 * @model containment="true"

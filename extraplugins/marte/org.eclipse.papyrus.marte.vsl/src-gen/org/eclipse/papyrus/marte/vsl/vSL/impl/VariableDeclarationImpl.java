@@ -4,18 +4,14 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.DataTypeName;
 import org.eclipse.papyrus.marte.vsl.vSL.Expression;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
 import org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -41,7 +37,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	 * The default value of the '{@link #getVariableDeclaration() <em>Variable Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVariableDeclaration()
 	 * @generated
 	 * @ordered
@@ -52,7 +48,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	 * The cached value of the '{@link #getVariableDeclaration() <em>Variable Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVariableDeclaration()
 	 * @generated
 	 * @ordered
@@ -63,7 +59,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -74,7 +70,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -85,7 +81,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -96,7 +92,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	 * The cached value of the '{@link #getInitValue() <em>Init Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInitValue()
 	 * @generated
 	 * @ordered
@@ -106,7 +102,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VariableDeclarationImpl()
@@ -117,7 +113,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +125,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +137,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +153,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +165,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +181,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +193,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetType(DataTypeName newType, NotificationChain msgs)
@@ -219,7 +215,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +243,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +255,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetInitValue(Expression newInitValue, NotificationChain msgs)
@@ -281,7 +277,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +305,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +317,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +329,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +341,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -364,7 +360,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +383,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +410,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +437,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +460,7 @@ public class VariableDeclarationImpl extends ValueSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

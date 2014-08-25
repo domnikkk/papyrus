@@ -40,7 +40,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProcessingResourceImpl() {
@@ -82,7 +82,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -149,7 +149,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class ProcessingResourceImpl extends ResourceImpl implements ProcessingRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

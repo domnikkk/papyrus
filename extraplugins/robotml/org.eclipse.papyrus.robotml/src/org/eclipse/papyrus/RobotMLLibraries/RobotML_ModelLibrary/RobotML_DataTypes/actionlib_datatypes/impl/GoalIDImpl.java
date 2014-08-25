@@ -5,12 +5,9 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalID;
 
@@ -33,7 +30,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	 * The default value of the '{@link #getStamp() <em>Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStamp()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	 * The cached value of the '{@link #getStamp() <em>Stamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStamp()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GoalIDImpl() {
@@ -86,7 +83,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +94,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Date getStamp() {
@@ -107,7 +104,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStamp(Date newStamp) {
@@ -121,7 +118,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getId() {
@@ -131,7 +128,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setId(String newId) {
@@ -145,7 +142,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +159,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +178,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +197,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +214,7 @@ public class GoalIDImpl extends MinimalEObjectImpl.Container implements GoalID {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

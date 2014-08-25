@@ -44,7 +44,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getIsStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsStatic()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getIsStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsStatic()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getIsNonVolatile() <em>Is Non Volatile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsNonVolatile()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getIsNonVolatile() <em>Is Non Volatile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsNonVolatile()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getRepl_Policy() <em>Repl Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepl_Policy()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getRepl_Policy() <em>Repl Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepl_Policy()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getWritePolicy() <em>Write Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWritePolicy()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getWritePolicy() <em>Write Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWritePolicy()
 	 * @generated
 	 * @ordered
@@ -175,7 +175,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwRAMImpl() {
@@ -185,7 +185,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +233,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +337,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -408,7 +408,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +439,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +464,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

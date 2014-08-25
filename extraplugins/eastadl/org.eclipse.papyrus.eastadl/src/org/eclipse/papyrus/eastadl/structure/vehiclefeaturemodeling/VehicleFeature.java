@@ -80,7 +80,7 @@ public interface VehicleFeature extends Feature {
 	 * If the meaning of the '<em>Is Customer Visible</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Customer Visible</em>' attribute.
 	 * @see #setIsCustomerVisible(boolean)
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage#getVehicleFeature_IsCustomerVisible()
@@ -96,7 +96,7 @@ public interface VehicleFeature extends Feature {
 	 * If the meaning of the '<em>Is Design Variability Rationale</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Design Variability Rationale</em>' attribute.
 	 * @see #setIsDesignVariabilityRationale(boolean)
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage#getVehicleFeature_IsDesignVariabilityRationale()
@@ -112,7 +112,7 @@ public interface VehicleFeature extends Feature {
 	 * If the meaning of the '<em>Is Removed</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Removed</em>' attribute.
 	 * @see #setIsRemoved(boolean)
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage#getVehicleFeature_IsRemoved()
@@ -125,7 +125,7 @@ public interface VehicleFeature extends Feature {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehicleFeature#getDeviationAttributeSet <em>Deviation Attribute Set</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Deviation Attribute Set</em>' reference.
 	 * @see #getDeviationAttributeSet()
@@ -136,7 +136,7 @@ public interface VehicleFeature extends Feature {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehicleFeature#isIsCustomerVisible <em>Is Customer Visible</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Customer Visible</em>' attribute.
 	 * @see #isIsCustomerVisible()
@@ -148,7 +148,7 @@ public interface VehicleFeature extends Feature {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehicleFeature#isIsDesignVariabilityRationale <em>Is Design Variability Rationale</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Design Variability Rationale</em>' attribute.
 	 * @see #isIsDesignVariabilityRationale()
@@ -159,7 +159,7 @@ public interface VehicleFeature extends Feature {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehicleFeature#isIsRemoved <em>Is Removed</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Removed</em>' attribute.
 	 * @see #isIsRemoved()

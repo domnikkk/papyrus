@@ -43,7 +43,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Behavior Constraint Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Behavior Constraint Type</em>' reference.
 	 * @see #setBehaviorConstraintType(BehaviorConstraintType)
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_BehaviorConstraintType()
@@ -56,7 +56,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getBehaviorConstraintType <em>Behavior Constraint Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Behavior Constraint Type</em>' reference.
 	 * @see #getBehaviorConstraintType()
@@ -72,7 +72,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Targeted Vehicle Feature</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Targeted Vehicle Feature</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_TargetedVehicleFeature()
 	 * @model ordered="false"
@@ -88,7 +88,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Targeted Function Type</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Targeted Function Type</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_TargetedFunctionType()
 	 * @model ordered="false"
@@ -104,7 +104,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Constrained Error Model</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constrained Error Model</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_ConstrainedErrorModel()
 	 * @model ordered="false"
@@ -120,7 +120,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Targeted Hardware Component Type</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Targeted Hardware Component Type</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_TargetedHardwareComponentType()
 	 * @model ordered="false"
@@ -136,7 +136,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Constrained Function Triggering</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constrained Function Triggering</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_ConstrainedFunctionTriggering()
 	 * @model ordered="false"
@@ -152,7 +152,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Constrained Mode Behavior</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constrained Mode Behavior</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_ConstrainedModeBehavior()
 	 * @model ordered="false"
@@ -168,7 +168,7 @@ public interface BehaviorConstraintTargetBinding extends Relationship {
 	 * If the meaning of the '<em>Constrained Function Behavior</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constrained Function Behavior</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintTargetBinding_ConstrainedFunctionBehavior()
 	 * @model ordered="false"

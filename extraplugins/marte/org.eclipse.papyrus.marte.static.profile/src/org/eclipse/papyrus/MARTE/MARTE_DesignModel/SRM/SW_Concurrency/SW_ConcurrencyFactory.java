@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SW_ConcurrencyFactory eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * Returns a new object of class '<em>Entry Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Entry Point</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * Returns a new object of class '<em>Interrupt Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Interrupt Resource</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * Returns a new object of class '<em>Sw Schedulable Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Sw Schedulable Resource</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * Returns a new object of class '<em>Sw Timer Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Sw Timer Resource</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * Returns a new object of class '<em>Memory Partition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Memory Partition</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * Returns a new object of class '<em>Alarm</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Alarm</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface SW_ConcurrencyFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

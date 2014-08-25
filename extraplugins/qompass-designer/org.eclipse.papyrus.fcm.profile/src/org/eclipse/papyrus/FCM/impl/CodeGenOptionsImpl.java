@@ -13,13 +13,10 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.FCM.CodeGenOptions;
 import org.eclipse.papyrus.FCM.CompToOOmapping;
 import org.eclipse.papyrus.FCM.FCMPackage;
@@ -45,7 +42,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	 * The cached value of the '{@link #getCompToOOmapping() <em>Comp To OOmapping</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCompToOOmapping()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	 * The cached value of the '{@link #getProgLanguage() <em>Prog Language</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProgLanguage()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CodeGenOptionsImpl() {
@@ -87,7 +84,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +95,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +115,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -128,7 +125,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +140,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +160,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CompToOOmapping basicGetCompToOOmapping() {
@@ -173,7 +170,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +185,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +205,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ProgLanguage basicGetProgLanguage() {
@@ -218,7 +215,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +230,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +258,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +280,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +302,7 @@ public class CodeGenOptionsImpl extends EObjectImpl implements CodeGenOptions {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

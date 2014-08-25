@@ -33,7 +33,7 @@ public abstract class RelationshipImpl extends EAElementImpl implements Relation
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RelationshipImpl() {
@@ -43,7 +43,7 @@ public abstract class RelationshipImpl extends EAElementImpl implements Relation
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

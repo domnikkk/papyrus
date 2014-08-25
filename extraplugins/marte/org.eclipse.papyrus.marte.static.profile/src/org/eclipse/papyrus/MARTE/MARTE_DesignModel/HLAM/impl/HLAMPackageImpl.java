@@ -29,11 +29,11 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SAMPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl;
+import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.VSLPackage;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.OperatorsPackage;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorsPackageImpl;
-import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.VSLPackage;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.VariablesPackage;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.impl.VariablesPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.impl.VSLPackageImpl;
@@ -55,25 +55,25 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HRMPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwGeneralPackageImpl;
+import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwLogicalPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwComputingPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwDevicePackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwLogicalPackage;
+import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStoragePackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.impl.HwStorageManagerPackageImpl;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStoragePackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.impl.HwStoragePackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimingPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.impl.HwLogicalPackageImpl;
+import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPhysicalPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.HwLayoutPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwLayoutPackageImpl;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPhysicalPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwPowerPackage;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.impl.HwPowerPackageImpl;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.impl.HwPhysicalPackageImpl;
@@ -121,14 +121,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rtUnitEClass = null;
@@ -136,7 +136,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass ppUnitEClass = null;
@@ -144,7 +144,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rtFeatureEClass = null;
@@ -152,7 +152,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rtSpecificationEClass = null;
@@ -160,7 +160,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rtActionEClass = null;
@@ -168,7 +168,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rtServiceEClass = null;
@@ -176,7 +176,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum poolMgtPolicyKindEEnum = null;
@@ -184,7 +184,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum callConcurrencyKindEEnum = null;
@@ -192,7 +192,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum synchronizationKindEEnum = null;
@@ -200,7 +200,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum executionKindEEnum = null;
@@ -208,7 +208,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum concurrencyKindEEnum = null;
@@ -218,7 +218,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#eNS_URI
 	 * @see #init()
@@ -231,7 +231,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -241,7 +241,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link HLAMPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -328,7 +328,8 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 		RS_LibraryPackageImpl theRS_LibraryPackage = (RS_LibraryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI) instanceof RS_LibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI)
 				: RS_LibraryPackage.eINSTANCE);
 		MARTE_PrimitivesTypesPackageImpl theMARTE_PrimitivesTypesPackage = (MARTE_PrimitivesTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) instanceof MARTE_PrimitivesTypesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) : MARTE_PrimitivesTypesPackage.eINSTANCE);
+				.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI)
+				: MARTE_PrimitivesTypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theHLAMPackage.createPackageContents();
@@ -430,7 +431,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +442,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -452,7 +453,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -463,7 +464,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -474,7 +475,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -485,7 +486,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -496,7 +497,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -507,7 +508,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -518,7 +519,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -529,7 +530,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -540,7 +541,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -551,7 +552,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -562,7 +563,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -573,7 +574,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -584,7 +585,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -595,7 +596,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -606,7 +607,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -617,7 +618,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -628,7 +629,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -639,7 +640,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -650,7 +651,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -661,7 +662,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -672,7 +673,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -683,7 +684,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -694,7 +695,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -705,7 +706,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -716,7 +717,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -727,7 +728,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -738,7 +739,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -749,7 +750,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -760,7 +761,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -771,7 +772,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -782,7 +783,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -793,7 +794,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -804,7 +805,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -815,7 +816,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -826,7 +827,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -837,7 +838,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -848,7 +849,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -859,7 +860,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -870,7 +871,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -881,7 +882,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -892,7 +893,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -903,7 +904,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -914,7 +915,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -925,7 +926,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -936,7 +937,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -947,7 +948,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -958,7 +959,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -969,7 +970,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -980,7 +981,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -991,7 +992,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1002,7 +1003,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1013,7 +1014,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1024,7 +1025,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1034,7 +1035,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1109,7 +1110,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1119,7 +1120,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -1254,7 +1255,7 @@ public class HLAMPackageImpl extends EPackageImpl implements HLAMPackage {
 	 * Initializes the annotations for <b>subsets</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createSubsetsAnnotations() {

@@ -99,7 +99,7 @@ public class ValidationPluginGenerator {
 
 	/**
 	 * generate the java code form constraints contained in the profile
-	 * 
+	 *
 	 * @param project
 	 *            the project eclipse
 	 * @param wizard
@@ -226,7 +226,7 @@ public class ValidationPluginGenerator {
 
 	/**
 	 * create the extension point for constraint of emf validation
-	 * 
+	 *
 	 * @param validation
 	 *            the validation rule
 	 * @param parentElement
@@ -321,7 +321,7 @@ public class ValidationPluginGenerator {
 
 	/**
 	 * create the constraint provider extension point
-	 * 
+	 *
 	 * @param constraintProvider
 	 * @param parentElement
 	 * @param editor
@@ -396,7 +396,7 @@ public class ValidationPluginGenerator {
 	 * Create a new extension with a given name or reuse an existing extension if an extension with the given
 	 * name already exists. In case of the latter, the existing extensions will be clean first, i.e. all of its
 	 * children are removed. This function enables the multiple generation phases without duplicating elements.
-	 * 
+	 *
 	 * @param editor
 	 *            the plugin editor
 	 * @param extensionName
@@ -424,7 +424,7 @@ public class ValidationPluginGenerator {
 
 	/**
 	 * create the extension point categories
-	 * 
+	 *
 	 * @param projectName
 	 *            the name of the project
 	 * @param category

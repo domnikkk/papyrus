@@ -218,7 +218,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * Get active object from model. Then, add them on the registeredObject list.
-	 * 
+	 *
 	 * @param object
 	 * @throws FileNotFoundException
 	 */
@@ -444,7 +444,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 		/*
 		 * Listener on listSignals If signal has property, create TableItem which represent them.
-		 * 
+		 *
 		 * Activate sending button.
 		 */
 		this.signalsList.addSelectionListener(new SelectionAdapter() {
@@ -815,7 +815,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * Return the instance of ActiveObjectControllerUI
-	 * 
+	 *
 	 * @return instance of ActiveObjectControllerUI
 	 */
 	public static ActiveObjectControllerUI getInstance() {

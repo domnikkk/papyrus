@@ -42,7 +42,7 @@ public interface SharedDataComResource extends SwCommunicationResource {
 	 * If the meaning of the '<em>Read Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Read Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getSharedDataComResource_ReadServices()
 	 * @model ordered="false"
@@ -58,7 +58,7 @@ public interface SharedDataComResource extends SwCommunicationResource {
 	 * If the meaning of the '<em>Write Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Write Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getSharedDataComResource_WriteServices()
 	 * @model ordered="false"

@@ -15,6 +15,7 @@ package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -56,7 +57,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	 * The cached value of the '{@link #getPropertySetters() <em>Property Setters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertySetters()
 	 * @generated
 	 * @ordered
@@ -67,7 +68,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	 * The cached value of the '{@link #getSetterMap() <em>Setter Map</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSetterMap()
 	 * @generated
 	 * @ordered
@@ -77,7 +78,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected PropertySetterRegistryImpl() {
@@ -101,7 +102,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +113,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -129,7 +130,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +144,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +158,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetApplication(LayersStackApplication newApplication, NotificationChain msgs) {
@@ -168,7 +169,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -206,7 +207,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -227,7 +228,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -238,7 +239,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -255,7 +256,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +274,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +291,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +306,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +329,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -352,7 +353,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +375,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +394,7 @@ public class PropertySetterRegistryImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

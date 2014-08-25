@@ -33,7 +33,7 @@ import org.eclipse.papyrus.diagramtemplate.SelectionKind;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.AbstractSelection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AbstractSelectionItemProvider
@@ -48,7 +48,7 @@ public class AbstractSelectionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AbstractSelectionItemProvider(AdapterFactory adapterFactory) {
@@ -59,7 +59,7 @@ public class AbstractSelectionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class AbstractSelectionItemProvider
 	 * This adds a property descriptor for the Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
@@ -101,7 +101,7 @@ public class AbstractSelectionItemProvider
 	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addKindPropertyDescriptor(Object object) {
@@ -124,7 +124,7 @@ public class AbstractSelectionItemProvider
 	 * This adds a property descriptor for the Sub Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSubTypesPropertyDescriptor(Object object) {
@@ -148,7 +148,7 @@ public class AbstractSelectionItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class AbstractSelectionItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class AbstractSelectionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class AbstractSelectionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class AbstractSelectionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class AbstractSelectionItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

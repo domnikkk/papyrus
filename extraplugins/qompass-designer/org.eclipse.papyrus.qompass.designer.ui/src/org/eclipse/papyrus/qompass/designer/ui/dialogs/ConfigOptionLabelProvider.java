@@ -29,7 +29,7 @@ public class ConfigOptionLabelProvider extends LabelProvider implements ITableLa
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
 	 */
 	@Override

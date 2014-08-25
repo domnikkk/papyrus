@@ -43,7 +43,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	 * The cached value of the '{@link #getControlledMedias() <em>Controlled Medias</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getControlledMedias()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwArbiterImpl() {
@@ -63,7 +63,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -104,7 +104,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -152,7 +152,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

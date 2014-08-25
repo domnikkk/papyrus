@@ -57,7 +57,7 @@ public interface FunctionPrototype extends EAElement, EAPrototype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */

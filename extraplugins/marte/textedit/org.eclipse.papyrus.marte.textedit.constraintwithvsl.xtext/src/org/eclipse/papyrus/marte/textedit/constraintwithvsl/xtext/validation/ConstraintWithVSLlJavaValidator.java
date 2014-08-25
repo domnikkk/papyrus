@@ -15,7 +15,6 @@ package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.validation;
 
 import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification;
 import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintWithVSLlPackage;
-import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.validation.AbstractConstraintWithVSLlJavaValidator;
 import org.eclipse.papyrus.marte.vsl.validation.VSLJavaValidator;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Namespace;

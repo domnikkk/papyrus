@@ -23,11 +23,11 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -62,7 +62,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	 * The cached value of the '{@link #getCompilationUnits() <em>Compilation Units</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCompilationUnits()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTPackageFragmentImpl() {
@@ -82,7 +82,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	 * The array of subset feature identifiers for the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPackageFragmentRoot(JDTPackageFragmentRoot newPackageFragmentRoot, NotificationChain msgs) {
@@ -140,7 +140,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetPackageFragmentRoot() {
@@ -179,7 +179,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	 * The array of superset feature identifiers for the '{@link #getCompilationUnits() <em>Compilation Units</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCompilationUnits()
 	 * @generated
 	 * @ordered
@@ -205,7 +205,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -226,7 +226,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -296,7 +296,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +332,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +344,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class JDTPackageFragmentImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetParent() {

@@ -55,7 +55,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * The default value of the '{@link #isIsBidirectional() <em>Is Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBidirectional()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * The cached value of the '{@link #isIsBidirectional() <em>Is Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBidirectional()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Dependency()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	 * The cached value of the '{@link #getBase_AssociationClass() <em>Base Association Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_AssociationClass()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -138,7 +138,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureLinkImpl() {
@@ -147,7 +147,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public Feature basicGetEnd() {
@@ -167,7 +167,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public Feature basicGetStart() {
@@ -187,7 +187,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +327,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +337,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +348,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +358,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +369,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +379,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,7 +394,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +414,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency basicGetBase_Dependency() {
@@ -424,7 +424,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +438,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -451,7 +451,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -471,7 +471,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AssociationClass basicGetBase_AssociationClass() {
@@ -481,7 +481,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -495,7 +495,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -509,7 +509,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -523,7 +523,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -535,7 +535,7 @@ public class FeatureLinkImpl extends RelationshipImpl implements FeatureLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.SteeredWheelHardware;
 
@@ -20,7 +19,7 @@ public class SteeredWheelHardwareImpl extends LocomotionHardwareImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SteeredWheelHardwareImpl() {
@@ -30,7 +29,7 @@ public class SteeredWheelHardwareImpl extends LocomotionHardwareImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

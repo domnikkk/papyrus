@@ -38,7 +38,7 @@ public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry#instantiateServices()
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry#instantiateService(org.eclipse.uml2.uml.Class)
 	 */
 	@Override

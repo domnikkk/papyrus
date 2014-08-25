@@ -48,7 +48,7 @@ public interface MemoryPartition extends SwResource {
 	 * If the meaning of the '<em>Concurrent Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Concurrent Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getMemoryPartition_ConcurrentResources()
 	 * @model ordered="false"
@@ -64,7 +64,7 @@ public interface MemoryPartition extends SwResource {
 	 * If the meaning of the '<em>Memory Spaces</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Spaces</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getMemoryPartition_MemorySpaces()
 	 * @model ordered="false"
@@ -80,7 +80,7 @@ public interface MemoryPartition extends SwResource {
 	 * If the meaning of the '<em>Fork</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fork</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getMemoryPartition_Fork()
 	 * @model ordered="false"
@@ -96,7 +96,7 @@ public interface MemoryPartition extends SwResource {
 	 * If the meaning of the '<em>Exit</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exit</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getMemoryPartition_Exit()
 	 * @model ordered="false"
@@ -111,7 +111,7 @@ public interface MemoryPartition extends SwResource {
 	 * If the meaning of the '<em>Base Namespace</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Namespace</em>' reference.
 	 * @see #setBase_Namespace(Namespace)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getMemoryPartition_Base_Namespace()
@@ -124,7 +124,7 @@ public interface MemoryPartition extends SwResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getBase_Namespace <em>Base Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Namespace</em>' reference.
 	 * @see #getBase_Namespace()

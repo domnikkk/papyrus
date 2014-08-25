@@ -16,18 +16,15 @@ package org.eclipse.papyrus.facade.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.eclipse.papyrus.facade.FacadePackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FacadeXMLProcessor extends XMLProcessor {
@@ -36,7 +33,7 @@ public class FacadeXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacadeXMLProcessor() {
@@ -48,7 +45,7 @@ public class FacadeXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the FacadeResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

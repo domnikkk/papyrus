@@ -58,7 +58,7 @@ public interface EADatatype extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Data Type</em>' reference.
 	 * @see #setBase_DataType(DataType)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEADatatype_Base_DataType()
@@ -71,7 +71,7 @@ public interface EADatatype extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatype#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Data Type</em>' reference.
 	 * @see #getBase_DataType()

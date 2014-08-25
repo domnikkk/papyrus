@@ -17,18 +17,20 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.facade.extensiondefinition.*;
+import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
+import org.eclipse.papyrus.facade.extensiondefinition.Combination;
+import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition;
+import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind;
+import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionFactory;
+import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements ExtensiondefinitionFactory {
@@ -36,7 +38,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExtensiondefinitionFactory init() {
@@ -55,7 +57,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtensiondefinitionFactoryImpl() {
@@ -65,7 +67,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +87,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +103,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +119,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +131,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +143,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +155,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtensionDefinitionKind createExtensionDefinitionKindFromString(EDataType eDataType, String initialValue) {
@@ -167,7 +169,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertExtensionDefinitionKindToString(EDataType eDataType, Object instanceValue) {
@@ -177,7 +179,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +190,7 @@ public class ExtensiondefinitionFactoryImpl extends EFactoryImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

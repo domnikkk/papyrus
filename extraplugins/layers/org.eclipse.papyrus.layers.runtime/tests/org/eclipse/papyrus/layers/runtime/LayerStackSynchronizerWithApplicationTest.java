@@ -94,7 +94,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#LayerStackSynchronizer(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -208,7 +208,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#propertyValueAdded(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -253,7 +253,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#propertyValueRemoved(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -297,7 +297,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#propertyValueChanged(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -391,7 +391,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewAddedToLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -437,7 +437,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewAddedToLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -495,7 +495,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewRemovedFromLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -541,7 +541,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewRemovedFromLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -656,7 +656,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link #createLayer(List, List)}
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

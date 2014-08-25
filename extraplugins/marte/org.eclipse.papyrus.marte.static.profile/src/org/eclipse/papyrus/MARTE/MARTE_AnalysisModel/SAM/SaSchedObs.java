@@ -43,7 +43,7 @@ public interface SaSchedObs extends GaTimedObs {
 	 * If the meaning of the '<em>Suspentions</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Suspentions</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaSchedObs_Suspentions()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Integer" ordered="false"
@@ -59,7 +59,7 @@ public interface SaSchedObs extends GaTimedObs {
 	 * If the meaning of the '<em>Block T</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Block T</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaSchedObs_BlockT()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -75,7 +75,7 @@ public interface SaSchedObs extends GaTimedObs {
 	 * If the meaning of the '<em>Overlaps</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Overlaps</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaSchedObs_Overlaps()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Integer" ordered="false"

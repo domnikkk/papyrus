@@ -4,15 +4,11 @@ package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.RoboticSystem;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
 
 /**
@@ -34,7 +30,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	 * The cached value of the '{@link #getLocalPosition() <em>Local Position</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocalPosition()
 	 * @generated
 	 * @ordered
@@ -45,7 +41,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	 * The cached value of the '{@link #getLocalOrientation() <em>Local Orientation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocalOrientation()
 	 * @generated
 	 * @ordered
@@ -55,7 +51,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RoboticSystemImpl() {
@@ -65,7 +61,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +72,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Point32 getLocalPosition() {
@@ -86,7 +82,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLocalPosition(Point32 newLocalPosition, NotificationChain msgs) {
@@ -106,7 +102,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLocalPosition(Point32 newLocalPosition) {
@@ -131,7 +127,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Point32 getLocalOrientation() {
@@ -141,7 +137,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLocalOrientation(Point32 newLocalOrientation, NotificationChain msgs) {
@@ -161,7 +157,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLocalOrientation(Point32 newLocalOrientation) {
@@ -186,7 +182,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +199,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +216,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +235,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +254,7 @@ public class RoboticSystemImpl extends SystemImpl implements RoboticSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

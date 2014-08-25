@@ -39,7 +39,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	 * The cached value of the '{@link #getBindingThroughClampConnector() <em>Binding Through Clamp Connector</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindingThroughClampConnector()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	 * The cached value of the '{@link #getBindingThroughFunctionConnector() <em>Binding Through Function Connector</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindingThroughFunctionConnector()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	 * The cached value of the '{@link #getBindingThroughHardwareConnector() <em>Binding Through Hardware Connector</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindingThroughHardwareConnector()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintBindingEventImpl() {
@@ -81,7 +81,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -198,7 +198,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class BehaviorConstraintBindingEventImpl extends TransitionEventImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -15,7 +15,6 @@ package org.eclipse.papyrus.layers.stackmodel.layers.presentation;
 
 import java.io.IOException;
 import java.io.InputStream;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -34,24 +33,56 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-
+import org.eclipse.emf.common.command.BasicCommandStack;
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.common.command.CommandStackListener;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.ui.MarkerHelper;
+import org.eclipse.emf.common.ui.ViewerPane;
+import org.eclipse.emf.common.ui.editor.ProblemEditorPart;
+import org.eclipse.emf.common.ui.viewer.IViewerProvider;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EContentAdapter;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
+import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
+import org.eclipse.emf.edit.ui.celleditor.AdapterFactoryTreeEditor;
+import org.eclipse.emf.edit.ui.dnd.EditingDomainViewerDropAdapter;
+import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
+import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
+import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
+import org.eclipse.emf.edit.ui.util.EditUIUtil;
+import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
+import org.eclipse.gmf.runtime.notation.provider.NotationItemProviderAdapterFactory;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
-
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
-
 import org.eclipse.jface.util.LocalSelectionTransfer;
-
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -65,29 +96,22 @@ import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
-
+import org.eclipse.papyrus.layers.stackmodel.layers.provider.LayersItemProviderAdapterFactory;
 import org.eclipse.swt.SWT;
-
 import org.eclipse.swt.custom.CTabFolder;
-
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.FileTransfer;
 import org.eclipse.swt.dnd.Transfer;
-
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
-
 import org.eclipse.swt.graphics.Point;
-
 import org.eclipse.swt.layout.FillLayout;
-
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
-
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -95,88 +119,24 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
-
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.SaveAsDialog;
-
 import org.eclipse.ui.ide.IGotoMarker;
-
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
-
 import org.eclipse.ui.views.contentoutline.ContentOutline;
 import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
-
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
-
-import org.eclipse.emf.common.command.BasicCommandStack;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CommandStack;
-import org.eclipse.emf.common.command.CommandStackListener;
-
-import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.ui.MarkerHelper;
-import org.eclipse.emf.common.ui.ViewerPane;
-
-import org.eclipse.emf.common.ui.editor.ProblemEditorPart;
-
-import org.eclipse.emf.common.ui.viewer.IViewerProvider;
-
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.URI;
-
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-
-import org.eclipse.emf.ecore.util.EContentAdapter;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-
-import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
-
-import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
-
-import org.eclipse.emf.edit.ui.celleditor.AdapterFactoryTreeEditor;
-
-import org.eclipse.emf.edit.ui.dnd.EditingDomainViewerDropAdapter;
-import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
-import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
-
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
-
-import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
-import org.eclipse.emf.edit.ui.util.EditUIUtil;
-
-import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
-
-import org.eclipse.papyrus.layers.stackmodel.layers.provider.LayersItemProviderAdapterFactory;
-
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-
-import org.eclipse.gmf.runtime.notation.provider.NotationItemProviderAdapterFactory;
-
-import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
 /**
  * This is an example of a Layers model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayersEditor
@@ -186,7 +146,7 @@ public class LayersEditor
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AdapterFactoryEditingDomain editingDomain;
@@ -195,7 +155,7 @@ public class LayersEditor
 	 * This is the one adapter factory used for providing views of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory adapterFactory;
@@ -204,7 +164,7 @@ public class LayersEditor
 	 * This is the content outline page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IContentOutlinePage contentOutlinePage;
@@ -213,7 +173,7 @@ public class LayersEditor
 	 * This is a kludge...
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IStatusLineManager contentOutlineStatusLineManager;
@@ -222,7 +182,7 @@ public class LayersEditor
 	 * This is the content outline page's viewer.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TreeViewer contentOutlineViewer;
@@ -231,7 +191,7 @@ public class LayersEditor
 	 * This is the property sheet page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected List<PropertySheetPage> propertySheetPages = new ArrayList<PropertySheetPage>();
@@ -241,7 +201,7 @@ public class LayersEditor
 	 * The parent relation must be correctly defined for this to work.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TreeViewer selectionViewer;
@@ -250,7 +210,7 @@ public class LayersEditor
 	 * This inverts the roll of parent and child in the content provider and show parents as a tree.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TreeViewer parentViewer;
@@ -259,7 +219,7 @@ public class LayersEditor
 	 * This shows how a tree view works.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TreeViewer treeViewer;
@@ -269,7 +229,7 @@ public class LayersEditor
 	 * A list viewer doesn't support icons.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ListViewer listViewer;
@@ -279,7 +239,7 @@ public class LayersEditor
 	 * A table can be used as a list with icons.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TableViewer tableViewer;
@@ -288,7 +248,7 @@ public class LayersEditor
 	 * This shows how a tree view with columns works.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TreeViewer treeViewerWithColumns;
@@ -297,7 +257,7 @@ public class LayersEditor
 	 * This keeps track of the active viewer pane, in the book.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ViewerPane currentViewerPane;
@@ -306,7 +266,7 @@ public class LayersEditor
 	 * This keeps track of the active content viewer, which may be either one of the viewers in the pages or the content outline viewer.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Viewer currentViewer;
@@ -315,7 +275,7 @@ public class LayersEditor
 	 * This listens to which ever viewer is active.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ISelectionChangedListener selectionChangedListener;
@@ -324,7 +284,7 @@ public class LayersEditor
 	 * This keeps track of all the {@link org.eclipse.jface.viewers.ISelectionChangedListener}s that are listening to this editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<ISelectionChangedListener> selectionChangedListeners = new ArrayList<ISelectionChangedListener>();
@@ -333,7 +293,7 @@ public class LayersEditor
 	 * This keeps track of the selection of the editor as a whole.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ISelection editorSelection = StructuredSelection.EMPTY;
@@ -343,7 +303,7 @@ public class LayersEditor
 	 * in Eclipse's Problems View.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MarkerHelper markerHelper = new EditUIMarkerHelper();
@@ -352,7 +312,7 @@ public class LayersEditor
 	 * This listens for when the outline becomes active
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IPartListener partListener =
@@ -402,7 +362,7 @@ public class LayersEditor
 	 * Resources that have been removed since last activation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Resource> removedResources = new ArrayList<Resource>();
@@ -411,7 +371,7 @@ public class LayersEditor
 	 * Resources that have been changed since last activation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Resource> changedResources = new ArrayList<Resource>();
@@ -420,7 +380,7 @@ public class LayersEditor
 	 * Resources that have been saved.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Resource> savedResources = new ArrayList<Resource>();
@@ -429,7 +389,7 @@ public class LayersEditor
 	 * Map to store the diagnostic associated with a resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Map<Resource, Diagnostic> resourceToDiagnosticMap = new LinkedHashMap<Resource, Diagnostic>();
@@ -438,7 +398,7 @@ public class LayersEditor
 	 * Controls whether the problem indication should be updated.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected boolean updateProblemIndication = true;
@@ -447,7 +407,7 @@ public class LayersEditor
 	 * Adapter used to update the problem indication when resources are demanded loaded.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EContentAdapter problemIndicationAdapter =
@@ -511,7 +471,7 @@ public class LayersEditor
 	 * This listens for workspace changes.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IResourceChangeListener resourceChangeListener =
@@ -594,7 +554,7 @@ public class LayersEditor
 	 * Handles activation of the editor or it's associated views.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void handleActivate() {
@@ -630,7 +590,7 @@ public class LayersEditor
 	 * Handles what to do with changed resources on activation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void handleChangedResources() {
@@ -667,7 +627,7 @@ public class LayersEditor
 	 * Updates the problems indication with the information described in the specified diagnostic.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void updateProblemIndication() {
@@ -723,7 +683,7 @@ public class LayersEditor
 	 * Shows a dialog that asks if conflicting changes should be discarded.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected boolean handleDirtyConflict() {
@@ -737,7 +697,7 @@ public class LayersEditor
 	 * This creates a model editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersEditor() {
@@ -749,7 +709,7 @@ public class LayersEditor
 	 * This sets up the editing domain for the model editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void initializeEditingDomain() {
@@ -808,7 +768,7 @@ public class LayersEditor
 	 * This is here for the listener to be able to call it.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -820,7 +780,7 @@ public class LayersEditor
 	 * This sets the selection into whichever viewer is active.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSelectionToViewer(Collection<?> collection) {
@@ -848,7 +808,7 @@ public class LayersEditor
 	 * This is important for implementing the static methods of {@link AdapterFactoryEditingDomain} and for supporting {@link org.eclipse.emf.edit.ui.action.CommandAction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -859,14 +819,14 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public class ReverseAdapterFactoryContentProvider extends AdapterFactoryContentProvider {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public ReverseAdapterFactoryContentProvider(AdapterFactory adapterFactory) {
@@ -876,7 +836,7 @@ public class LayersEditor
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
@@ -888,7 +848,7 @@ public class LayersEditor
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
@@ -900,7 +860,7 @@ public class LayersEditor
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
@@ -912,7 +872,7 @@ public class LayersEditor
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
@@ -924,7 +884,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCurrentViewerPane(ViewerPane viewerPane) {
@@ -942,7 +902,7 @@ public class LayersEditor
 	 * is the current one.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCurrentViewer(Viewer viewer) {
@@ -989,7 +949,7 @@ public class LayersEditor
 	 * This returns the viewer as required by the {@link IViewerProvider} interface.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1001,7 +961,7 @@ public class LayersEditor
 	 * This creates a context menu for the viewer and adds a listener as well registering the menu for extension.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected void createContextMenuFor(StructuredViewer viewer) {
@@ -1026,7 +986,7 @@ public class LayersEditor
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createModel() {
@@ -1054,7 +1014,7 @@ public class LayersEditor
 	 * and the specified exception (if any).
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
@@ -1085,7 +1045,7 @@ public class LayersEditor
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1344,7 +1304,7 @@ public class LayersEditor
 	 * this hides the single tab at the bottom.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void hideTabs() {
@@ -1363,7 +1323,7 @@ public class LayersEditor
 	 * this shows the tabs at the bottom.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void showTabs() {
@@ -1381,7 +1341,7 @@ public class LayersEditor
 	 * This is used to track the active viewer.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1397,7 +1357,7 @@ public class LayersEditor
 	 * This is how the framework determines which interfaces we implement.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("rawtypes")
@@ -1421,7 +1381,7 @@ public class LayersEditor
 	 * This accesses a cached version of the content outliner.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IContentOutlinePage getContentOutlinePage() {
@@ -1487,7 +1447,7 @@ public class LayersEditor
 	 * This accesses a cached version of the property sheet.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
@@ -1515,7 +1475,7 @@ public class LayersEditor
 	 * This deals with how we want selection in the outliner to affect the other views.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void handleContentOutlineSelection(ISelection selection) {
@@ -1555,7 +1515,7 @@ public class LayersEditor
 	 * This is for implementing {@link IEditorPart} and simply tests the command stack.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1567,7 +1527,7 @@ public class LayersEditor
 	 * This is for implementing {@link IEditorPart} and simply saves the model file.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1631,7 +1591,7 @@ public class LayersEditor
 	 * The implementation uses the URI converter from the editor's resource set to try to open an input stream.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected boolean isPersisted(Resource resource) {
@@ -1652,7 +1612,7 @@ public class LayersEditor
 	 * This always returns true because it is not currently supported.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1664,7 +1624,7 @@ public class LayersEditor
 	 * This also changes the editor's input.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1683,7 +1643,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void doSaveAs(URI uri, IEditorInput editorInput) {
@@ -1700,7 +1660,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1715,7 +1675,7 @@ public class LayersEditor
 	 * This is called during startup.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1731,7 +1691,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1748,7 +1708,7 @@ public class LayersEditor
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1760,7 +1720,7 @@ public class LayersEditor
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1772,7 +1732,7 @@ public class LayersEditor
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to return this editor's overall selection.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1785,7 +1745,7 @@ public class LayersEditor
 	 * Calling this result will notify the listeners.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1801,7 +1761,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStatusLineManager(ISelection selection) {
@@ -1837,7 +1797,7 @@ public class LayersEditor
 	 * This looks up a string in the plugin's plugin.properties file.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static String getString(String key) {
@@ -1848,7 +1808,7 @@ public class LayersEditor
 	 * This looks up a string in plugin.properties, making a substitution.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
@@ -1859,7 +1819,7 @@ public class LayersEditor
 	 * This implements {@link org.eclipse.jface.action.IMenuListener} to help fill the context menus with contributions from the Edit menu.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1870,7 +1830,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EditingDomainActionBarContributor getActionBarContributor() {
@@ -1880,7 +1840,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IActionBars getActionBars() {
@@ -1890,7 +1850,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AdapterFactory getAdapterFactory() {
@@ -1900,7 +1860,7 @@ public class LayersEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1932,7 +1892,7 @@ public class LayersEditor
 	 * Returns whether the outline view should be presented to the user.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected boolean showOutlineView() {

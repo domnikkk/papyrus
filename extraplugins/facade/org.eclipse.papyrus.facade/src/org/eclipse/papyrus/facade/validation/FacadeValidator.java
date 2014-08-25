@@ -14,9 +14,7 @@
 package org.eclipse.papyrus.facade.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
 
 /**

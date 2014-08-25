@@ -10,7 +10,9 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.papyrus.layers.stackmodel.BadStateException;
@@ -81,7 +83,7 @@ public class PropertyIndexedListTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.util.PropertyIndexedList#get(org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test
@@ -107,7 +109,7 @@ public class PropertyIndexedListTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.util.PropertyIndexedList#set(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.Object)}.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test

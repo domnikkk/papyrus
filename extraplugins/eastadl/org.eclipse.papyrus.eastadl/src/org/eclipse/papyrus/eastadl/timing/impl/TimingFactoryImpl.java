@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.timing.*;
 import org.eclipse.papyrus.eastadl.timing.EventChain;
 import org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint;
 import org.eclipse.papyrus.eastadl.timing.Timing;
+import org.eclipse.papyrus.eastadl.timing.TimingExpression;
 import org.eclipse.papyrus.eastadl.timing.TimingFactory;
 import org.eclipse.papyrus.eastadl.timing.TimingPackage;
 
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -49,7 +49,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TimingFactory init() {
@@ -67,7 +67,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingFactoryImpl() {
@@ -76,7 +76,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class TimingFactoryImpl extends EFactoryImpl implements TimingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

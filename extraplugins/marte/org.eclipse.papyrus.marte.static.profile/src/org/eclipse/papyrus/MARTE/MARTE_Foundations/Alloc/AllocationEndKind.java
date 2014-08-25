@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Allocation End Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocationEndKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * The '<em><b>Application</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #APPLICATION_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * The '<em><b>Execution Platform</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EXECUTION_PLATFORM_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * The '<em><b>Both</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #BOTH_VALUE
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF
 	 * @model name="undef"
 	 * @generated
@@ -96,7 +96,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * If the meaning of '<em><b>Application</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #APPLICATION
 	 * @model name="application"
 	 * @generated
@@ -111,7 +111,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * If the meaning of '<em><b>Execution Platform</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EXECUTION_PLATFORM
 	 * @model name="executionPlatform"
 	 * @generated
@@ -126,7 +126,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * If the meaning of '<em><b>Both</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #BOTH
 	 * @model name="both"
 	 * @generated
@@ -138,7 +138,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * An array of all the '<em><b>Allocation End Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final AllocationEndKind[] VALUES_ARRAY =
@@ -153,7 +153,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Allocation End Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<AllocationEndKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -162,7 +162,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * Returns the '<em><b>Allocation End Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocationEndKind get(String literal) {
@@ -179,7 +179,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * Returns the '<em><b>Allocation End Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocationEndKind getByName(String name) {
@@ -196,7 +196,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * Returns the '<em><b>Allocation End Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocationEndKind get(int value) {
@@ -216,7 +216,7 @@ public enum AllocationEndKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -224,7 +224,7 @@ public enum AllocationEndKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -232,7 +232,7 @@ public enum AllocationEndKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -241,7 +241,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private AllocationEndKind(int value, String name, String literal) {
@@ -253,7 +253,7 @@ public enum AllocationEndKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public enum AllocationEndKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public enum AllocationEndKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public enum AllocationEndKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

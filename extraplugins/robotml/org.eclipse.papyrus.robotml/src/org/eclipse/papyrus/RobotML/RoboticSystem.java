@@ -29,7 +29,7 @@ public interface RoboticSystem extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Local Position</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Local Position</em>' containment reference.
 	 * @see #setLocalPosition(Point32)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getRoboticSystem_LocalPosition()
@@ -42,7 +42,7 @@ public interface RoboticSystem extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.RoboticSystem#getLocalPosition <em>Local Position</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Local Position</em>' containment reference.
 	 * @see #getLocalPosition()
@@ -57,7 +57,7 @@ public interface RoboticSystem extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Local Orientation</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Local Orientation</em>' containment reference.
 	 * @see #setLocalOrientation(Point32)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getRoboticSystem_LocalOrientation()
@@ -70,7 +70,7 @@ public interface RoboticSystem extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.RoboticSystem#getLocalOrientation <em>Local Orientation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Local Orientation</em>' containment reference.
 	 * @see #getLocalOrientation()

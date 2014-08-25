@@ -113,7 +113,7 @@ public class SimplePluginImport extends Wizard implements IImportWizard {
 
 	/**
 	 * getSelected element in the diagram or in the model explorer
-	 * 
+	 *
 	 * @return Element or null
 	 */
 	protected ArrayList<Element> getSelectionSet() {

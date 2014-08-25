@@ -13,16 +13,12 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.FCM.ConfigurableElementInstance;
 import org.eclipse.papyrus.FCM.FCMPackage;
-
 import org.eclipse.uml2.uml.InstanceSpecification;
 
 /**
@@ -43,7 +39,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	 * The cached value of the '{@link #getConfiguration() <em>Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConfiguration()
 	 * @generated
 	 * @ordered
@@ -53,7 +49,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurableElementInstanceImpl() {
@@ -63,7 +59,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +70,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +90,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InstanceSpecification basicGetConfiguration() {
@@ -104,7 +100,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +115,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +133,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +149,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +165,7 @@ public abstract class ConfigurableElementInstanceImpl extends EObjectImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

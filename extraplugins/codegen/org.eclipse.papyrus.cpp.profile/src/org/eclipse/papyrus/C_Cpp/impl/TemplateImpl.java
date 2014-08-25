@@ -39,7 +39,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	 * The default value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	 * The cached value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	 * The cached value of the '{@link #getBase_class() <em>Base class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_class()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TemplateImpl() {
@@ -81,7 +81,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_class() {
@@ -148,7 +148,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

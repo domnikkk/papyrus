@@ -14,7 +14,9 @@
 
 package org.eclipse.papyrus.layers.stackmodel.notifier;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.Diagram;

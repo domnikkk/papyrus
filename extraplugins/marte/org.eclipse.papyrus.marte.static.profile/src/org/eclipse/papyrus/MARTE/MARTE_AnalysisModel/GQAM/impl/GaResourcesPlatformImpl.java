@@ -46,7 +46,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	 * The cached value of the '{@link #getResources() <em>Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResources()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	 * The cached value of the '{@link #getBase_Classifier() <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Classifier()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaResourcesPlatformImpl() {
@@ -77,7 +77,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Classifier basicGetBase_Classifier() {
@@ -132,7 +132,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -188,7 +188,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class GaResourcesPlatformImpl extends EObjectImpl implements GaResourcesP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

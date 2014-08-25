@@ -46,7 +46,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	 * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunction()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	 * The cached value of the '{@link #getFunctionType() <em>Function Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionType()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EventFunctionImpl() {
@@ -77,7 +77,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionType basicGetFunctionType() {
@@ -87,7 +87,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetFunction(EventFunctionInstanceRef newFunction, NotificationChain msgs) {
@@ -204,7 +204,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class EventFunctionImpl extends EventImpl implements EventFunction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

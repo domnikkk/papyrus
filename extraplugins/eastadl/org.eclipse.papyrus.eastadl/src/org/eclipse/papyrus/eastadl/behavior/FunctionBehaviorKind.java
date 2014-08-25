@@ -38,7 +38,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getFunctionBehaviorKind()
  * @model
  * @generated
@@ -48,7 +48,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>ASCET</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASCET_VALUE
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>OTHER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>SCADE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SCADE_VALUE
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>SDL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SDL_VALUE
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>SIMULINK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SIMULINK_VALUE
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>STATEMATE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STATEMATE_VALUE
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>MARTE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MARTE_VALUE
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>UML</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UML_VALUE
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * The '<em><b>SCILAB</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SCILAB_VALUE
 	 * @generated
 	 * @ordered
@@ -144,7 +144,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>ASCET</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASCET
 	 * @model
 	 * @generated
@@ -159,7 +159,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>OTHER</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER
 	 * @model
 	 * @generated
@@ -174,7 +174,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>SCADE</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SCADE
 	 * @model
 	 * @generated
@@ -189,7 +189,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>SDL</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SDL
 	 * @model
 	 * @generated
@@ -204,7 +204,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>SIMULINK</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SIMULINK
 	 * @model
 	 * @generated
@@ -219,7 +219,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>STATEMATE</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STATEMATE
 	 * @model
 	 * @generated
@@ -234,7 +234,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>MARTE</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MARTE
 	 * @model
 	 * @generated
@@ -249,7 +249,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>UML</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UML
 	 * @model
 	 * @generated
@@ -264,7 +264,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>SCILAB</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SCILAB
 	 * @model
 	 * @generated
@@ -276,7 +276,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * An array of all the '<em><b>Function Behavior Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final FunctionBehaviorKind[] VALUES_ARRAY =
@@ -296,7 +296,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Function Behavior Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<FunctionBehaviorKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -305,7 +305,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Function Behavior Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FunctionBehaviorKind get(int value) {
@@ -336,7 +336,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Function Behavior Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FunctionBehaviorKind get(String literal) {
@@ -353,7 +353,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Function Behavior Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FunctionBehaviorKind getByName(String name) {
@@ -369,7 +369,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -377,7 +377,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -385,7 +385,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -394,7 +394,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private FunctionBehaviorKind(int value, String name, String literal) {
@@ -406,7 +406,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +440,7 @@ public enum FunctionBehaviorKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

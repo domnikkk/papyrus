@@ -8,15 +8,11 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethodBody;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
@@ -38,7 +34,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTMethodBodyImpl() {
@@ -48,7 +44,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -59,7 +55,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +69,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(JDTMethod newOwner, NotificationChain msgs) {
@@ -84,7 +80,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +109,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +122,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +140,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +155,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +170,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +185,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +201,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +217,7 @@ public abstract class JDTMethodBodyImpl extends EObjectImpl implements JDTMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

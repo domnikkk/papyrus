@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
 
@@ -34,7 +31,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getX_offset() <em>Xoffset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getX_offset()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getX_offset() <em>Xoffset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getX_offset()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getY_offset() <em>Yoffset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getY_offset()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getY_offset() <em>Yoffset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getY_offset()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -89,7 +86,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -100,7 +97,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isDo_rectify() <em>Do rectify</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDo_rectify()
 	 * @generated
 	 * @ordered
@@ -111,7 +108,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isDo_rectify() <em>Do rectify</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDo_rectify()
 	 * @generated
 	 * @ordered
@@ -122,7 +119,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -133,7 +130,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -143,7 +140,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RegionOfInterestImpl() {
@@ -153,7 +150,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +161,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getX_offset() {
@@ -174,7 +171,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setX_offset(long newX_offset) {
@@ -188,7 +185,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getY_offset() {
@@ -198,7 +195,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setY_offset(long newY_offset) {
@@ -212,7 +209,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getHeight() {
@@ -222,7 +219,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeight(long newHeight) {
@@ -236,7 +233,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isDo_rectify() {
@@ -246,7 +243,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDo_rectify(boolean newDo_rectify) {
@@ -260,7 +257,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getWidth() {
@@ -270,7 +267,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
@@ -284,7 +281,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +304,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +332,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +360,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +383,7 @@ public class RegionOfInterestImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

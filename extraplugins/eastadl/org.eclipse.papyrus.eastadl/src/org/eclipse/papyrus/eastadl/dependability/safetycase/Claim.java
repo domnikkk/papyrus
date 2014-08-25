@@ -61,7 +61,7 @@ public interface Claim extends TraceableSpecification {
 	 * If the meaning of the '<em>Evidence</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Evidence</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getClaim_Evidence()
 	 * @model required="true" ordered="false"
@@ -77,7 +77,7 @@ public interface Claim extends TraceableSpecification {
 	 * If the meaning of the '<em>Goal Decomposition Strategy</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Goal Decomposition Strategy</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getClaim_GoalDecompositionStrategy()
 	 * @model ordered="false"
@@ -92,7 +92,7 @@ public interface Claim extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getClaim_Base_Class()
@@ -105,7 +105,7 @@ public interface Claim extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -121,7 +121,7 @@ public interface Claim extends TraceableSpecification {
 	 * If the meaning of the '<em>Justification</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Justification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getClaim_Justification()
 	 * @model ordered="false"
@@ -137,7 +137,7 @@ public interface Claim extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * Safety requirements and objectives in system model.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Safety Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getClaim_SafetyRequirement()
 	 * @model ordered="false"
@@ -153,7 +153,7 @@ public interface Claim extends TraceableSpecification {
 	 * If the meaning of the '<em>Supported Argument</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Supported Argument</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getClaim_SupportedArgument()
 	 * @model ordered="false"

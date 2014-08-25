@@ -42,7 +42,7 @@ public interface FlowPort extends EObject {
 	 * If the meaning of the '<em>Is Atomic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Atomic</em>' attribute.
 	 * @see #setIsAtomic(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getFlowPort_IsAtomic()
@@ -55,7 +55,7 @@ public interface FlowPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#isIsAtomic <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Atomic</em>' attribute.
 	 * @see #isIsAtomic()
@@ -72,7 +72,7 @@ public interface FlowPort extends EObject {
 	 * If the meaning of the '<em>Direction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind
 	 * @see #setDirection(FlowDirectionKind)
@@ -86,7 +86,7 @@ public interface FlowPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#getDirection <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind
@@ -102,7 +102,7 @@ public interface FlowPort extends EObject {
 	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getFlowPort_Base_Port()
@@ -115,7 +115,7 @@ public interface FlowPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()

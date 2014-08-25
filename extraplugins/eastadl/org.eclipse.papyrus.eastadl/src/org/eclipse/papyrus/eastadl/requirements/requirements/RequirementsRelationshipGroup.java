@@ -36,7 +36,7 @@ public interface RequirementsRelationshipGroup extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * The relations that are grouped by this relation group. Note that this is not a containment association, i.e. a single relation may be grouped by several ReqRelationGroups.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Requirements Relationship</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsRelationshipGroup_RequirementsRelationship()
 	 * @model required="true" ordered="false"
@@ -51,7 +51,7 @@ public interface RequirementsRelationshipGroup extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsRelationshipGroup_Base_Class()
@@ -64,7 +64,7 @@ public interface RequirementsRelationshipGroup extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -79,7 +79,7 @@ public interface RequirementsRelationshipGroup extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsRelationshipGroup_Base_Package()
@@ -92,7 +92,7 @@ public interface RequirementsRelationshipGroup extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()

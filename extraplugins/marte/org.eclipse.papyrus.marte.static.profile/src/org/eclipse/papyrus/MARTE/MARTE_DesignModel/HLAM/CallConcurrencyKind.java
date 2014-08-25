@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Call Concurrency Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getCallConcurrencyKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * The '<em><b>Sequential</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SEQUENTIAL_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * The '<em><b>Guarded</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GUARDED_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * The '<em><b>Concurrent</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONCURRENT_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * If the meaning of '<em><b>Sequential</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SEQUENTIAL
 	 * @model name="sequential"
 	 * @generated
@@ -85,7 +85,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * If the meaning of '<em><b>Guarded</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GUARDED
 	 * @model name="guarded"
 	 * @generated
@@ -100,7 +100,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * If the meaning of '<em><b>Concurrent</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONCURRENT
 	 * @model name="concurrent"
 	 * @generated
@@ -112,7 +112,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * An array of all the '<em><b>Call Concurrency Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final CallConcurrencyKind[] VALUES_ARRAY =
@@ -126,7 +126,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Call Concurrency Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<CallConcurrencyKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -135,7 +135,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * Returns the '<em><b>Call Concurrency Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CallConcurrencyKind get(String literal) {
@@ -152,7 +152,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * Returns the '<em><b>Call Concurrency Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CallConcurrencyKind getByName(String name) {
@@ -169,7 +169,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * Returns the '<em><b>Call Concurrency Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CallConcurrencyKind get(int value) {
@@ -187,7 +187,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -195,7 +195,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -203,7 +203,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -212,7 +212,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private CallConcurrencyKind(int value, String name, String literal) {
@@ -224,7 +224,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public enum CallConcurrencyKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

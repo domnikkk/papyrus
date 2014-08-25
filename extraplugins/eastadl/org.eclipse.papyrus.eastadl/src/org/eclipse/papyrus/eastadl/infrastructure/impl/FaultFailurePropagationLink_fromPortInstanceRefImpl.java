@@ -34,7 +34,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	 * The cached value of the '{@link #getFaultFairelurePort() <em>Fault Fairelure Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFaultFairelurePort()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	 * The cached value of the '{@link #getErrorModelPrototype() <em>Error Model Prototype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getErrorModelPrototype()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FaultFailurePropagationLink_fromPortInstanceRefImpl() {
@@ -65,7 +65,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FaultFailurePort basicGetFaultFairelurePort() {
@@ -106,7 +106,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -176,7 +176,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class FaultFailurePropagationLink_fromPortInstanceRefImpl extends Instanc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

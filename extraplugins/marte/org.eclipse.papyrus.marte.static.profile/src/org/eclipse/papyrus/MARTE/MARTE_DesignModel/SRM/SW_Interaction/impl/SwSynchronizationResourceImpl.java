@@ -30,7 +30,7 @@ public abstract class SwSynchronizationResourceImpl extends SwInteractionResourc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwSynchronizationResourceImpl() {
@@ -40,7 +40,7 @@ public abstract class SwSynchronizationResourceImpl extends SwInteractionResourc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

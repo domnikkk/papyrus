@@ -19,7 +19,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.OperatorsPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class OperatorsFactoryImpl extends EFactoryImpl implements OperatorsFactory {
@@ -27,7 +27,7 @@ public class OperatorsFactoryImpl extends EFactoryImpl implements OperatorsFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static OperatorsFactory init() {
@@ -46,7 +46,7 @@ public class OperatorsFactoryImpl extends EFactoryImpl implements OperatorsFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OperatorsFactoryImpl() {
@@ -56,7 +56,7 @@ public class OperatorsFactoryImpl extends EFactoryImpl implements OperatorsFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class OperatorsFactoryImpl extends EFactoryImpl implements OperatorsFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class OperatorsFactoryImpl extends EFactoryImpl implements OperatorsFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class OperatorsFactoryImpl extends EFactoryImpl implements OperatorsFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

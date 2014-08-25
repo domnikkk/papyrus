@@ -14,12 +14,9 @@
 package org.eclipse.papyrus.facade.extensiondefinition.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.facade.Facade;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind;
-
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Stereotype;
 

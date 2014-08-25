@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PAMXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class PAMXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PAMXMLProcessor() {
@@ -45,7 +45,7 @@ public class PAMXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the PAMResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -21,7 +20,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#addPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter) <em>Add Property Setter</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PropertySetterRegistryTest extends TestCase {
@@ -30,7 +29,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	 * The fixture for this Property Setter Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertySetterRegistry fixture = null;
@@ -38,7 +37,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -49,7 +48,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	 * Constructs a new Property Setter Registry test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertySetterRegistryTest(String name) {
@@ -60,7 +59,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	 * Sets the fixture for this Property Setter Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(PropertySetterRegistry fixture) {
@@ -71,7 +70,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	 * Returns the fixture for this Property Setter Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertySetterRegistry getFixture() {
@@ -81,7 +80,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -93,7 +92,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -106,7 +105,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Setter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -120,7 +119,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(java.lang.String) <em>Get Property Setter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(java.lang.String)
 	 * @generated
 	 */
@@ -134,7 +133,7 @@ public class PropertySetterRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#addPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter) <em>Add Property Setter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#addPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter)
 	 * @generated
 	 */

@@ -51,7 +51,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The cached value of the '{@link #getAffects() <em>Affects</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAffects()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The default value of the '{@link #getImpact() <em>Impact</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImpact()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The cached value of the '{@link #getImpact() <em>Impact</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImpact()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The default value of the '{@link #getProblem() <em>Problem</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProblem()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The cached value of the '{@link #getProblem() <em>Problem</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProblem()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The default value of the '{@link #getSolutionBenefits() <em>Solution Benefits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSolutionBenefits()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	 * The cached value of the '{@link #getSolutionBenefits() <em>Solution Benefits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSolutionBenefits()
 	 * @generated
 	 * @ordered
@@ -138,7 +138,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProblemStatementImpl() {
@@ -148,7 +148,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -227,7 +227,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -268,7 +268,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +283,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +336,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +347,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +358,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +373,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -388,7 +388,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public class ProblemStatementImpl extends TraceableSpecificationImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

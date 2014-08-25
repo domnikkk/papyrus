@@ -38,7 +38,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The default value of the '{@link #getLineColor() <em>Line Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLineColor()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The cached value of the '{@link #getLineColor() <em>Line Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLineColor()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The default value of the '{@link #getLineWith() <em>Line With</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLineWith()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The cached value of the '{@link #getLineWith() <em>Line With</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLineWith()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LineInstanceImpl() {
@@ -91,7 +91,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

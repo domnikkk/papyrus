@@ -73,7 +73,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReturnType()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParameters()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The cached value of the '{@link #getExceptions() <em>Exceptions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExceptions()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The default value of the '{@link #isSynchronized() <em>Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSynchronized()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The default value of the '{@link #isConstructor() <em>Constructor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isConstructor()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The cached value of the '{@link #isConstructor() <em>Constructor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isConstructor()
 	 * @generated
 	 * @ordered
@@ -172,7 +172,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	 * The cached value of the '{@link #getBodies() <em>Bodies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBodies()
 	 * @generated
 	 * @ordered
@@ -182,7 +182,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTMethodImpl() {
@@ -192,7 +192,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetReturnType(JDTParameter newReturnType, NotificationChain msgs) {
@@ -234,7 +234,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +312,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +338,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(JDTType newOwner, NotificationChain msgs) {
@@ -377,7 +377,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +406,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetOwner() {
@@ -416,7 +416,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -444,7 +444,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -465,7 +465,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -480,7 +480,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -513,7 +513,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -560,7 +560,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -603,7 +603,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -636,7 +636,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -655,7 +655,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -666,7 +666,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -677,7 +677,7 @@ public class JDTMethodImpl extends JDTMemberImpl implements JDTMethod {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetParent() {

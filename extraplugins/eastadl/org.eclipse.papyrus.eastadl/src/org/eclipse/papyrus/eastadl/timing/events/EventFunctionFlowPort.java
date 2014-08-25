@@ -48,7 +48,7 @@ public interface EventFunctionFlowPort extends Event, EAExpression {
 	 * If the meaning of the '<em>Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port</em>' containment reference.
 	 * @see #setPort(EventFunctionFlowPortInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunctionFlowPort_Port()
@@ -61,7 +61,7 @@ public interface EventFunctionFlowPort extends Event, EAExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Port</em>' containment reference.
 	 * @see #getPort()

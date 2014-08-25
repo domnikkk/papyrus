@@ -4,7 +4,6 @@ package org.eclipse.papyrus.marte.vsl.vSL;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Type;
@@ -35,7 +34,7 @@ public interface QualifiedName extends EObject
 	 * If the meaning of the '<em>Path</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Path</em>' reference.
 	 * @see #setPath(Namespace)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getQualifiedName_Path()
@@ -48,7 +47,7 @@ public interface QualifiedName extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.QualifiedName#getPath <em>Path</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Path</em>' reference.
 	 * @see #getPath()
@@ -63,7 +62,7 @@ public interface QualifiedName extends EObject
 	 * If the meaning of the '<em>Remaining</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Remaining</em>' containment reference.
 	 * @see #setRemaining(QualifiedName)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getQualifiedName_Remaining()
@@ -76,7 +75,7 @@ public interface QualifiedName extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.QualifiedName#getRemaining <em>Remaining</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Remaining</em>' containment reference.
 	 * @see #getRemaining()
@@ -87,7 +86,7 @@ public interface QualifiedName extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;'"
 	 * @generated
 	 */
@@ -96,7 +95,7 @@ public interface QualifiedName extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;'"
 	 * @generated
@@ -106,7 +105,7 @@ public interface QualifiedName extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;'"
 	 * @generated

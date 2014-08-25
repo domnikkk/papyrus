@@ -42,7 +42,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The cached value of the '{@link #getBase_parameter() <em>Base parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_parameter()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The cached value of the '{@link #getBase_property() <em>Base property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_property()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The default value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The cached value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PtrImpl() {
@@ -95,7 +95,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_parameter() {
@@ -136,7 +136,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_property() {
@@ -181,7 +181,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -310,7 +310,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

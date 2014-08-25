@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Abstraction;
 
 /**
@@ -30,7 +29,7 @@ public interface Allocate extends EObject {
 	 * If the meaning of the '<em>Base Abstraction</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Abstraction</em>' reference.
 	 * @see #setBase_Abstraction(Abstraction)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getAllocate_Base_Abstraction()
@@ -43,7 +42,7 @@ public interface Allocate extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Allocate#getBase_Abstraction <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Abstraction</em>' reference.
 	 * @see #getBase_Abstraction()

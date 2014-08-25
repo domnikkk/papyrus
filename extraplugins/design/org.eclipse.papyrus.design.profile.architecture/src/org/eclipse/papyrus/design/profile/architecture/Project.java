@@ -41,7 +41,7 @@ public interface Project extends Element {
 	 * If the meaning of the '<em>Is Deprecated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #setIsDeprecated(boolean)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getProject_IsDeprecated()
@@ -54,7 +54,7 @@ public interface Project extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Project#isDeprecated <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #isDeprecated()
@@ -71,7 +71,7 @@ public interface Project extends Element {
 	 * A comment associated to the isDeprecated=true
 	 * </p>
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #setDeprecatedComment(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getProject_DeprecatedComment()
@@ -84,7 +84,7 @@ public interface Project extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Project#getDeprecatedComment <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #getDeprecatedComment()
@@ -101,7 +101,7 @@ public interface Project extends Element {
 	 * An alternative name to be used in place of the stereotyped element's name.
 	 * </p>
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getProject_Name()
@@ -114,7 +114,7 @@ public interface Project extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Project#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -129,7 +129,7 @@ public interface Project extends Element {
 	 * If the meaning of the '<em>Referent</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Referent</em>' attribute.
 	 * @see #setReferent(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getProject_Referent()
@@ -142,7 +142,7 @@ public interface Project extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Project#getReferent <em>Referent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Referent</em>' attribute.
 	 * @see #getReferent()
@@ -165,7 +165,7 @@ public interface Project extends Element {
 	 * Ex: plugins
 	 * </p>
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parent Folder</em>' attribute.
 	 * @see #setParentFolder(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getProject_ParentFolder()
@@ -178,7 +178,7 @@ public interface Project extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Project#getParentFolder <em>Parent Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Parent Folder</em>' attribute.
 	 * @see #getParentFolder()
@@ -196,7 +196,7 @@ public interface Project extends Element {
 	 * </p>
 	 *
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Original Parent Folder</em>' attribute.
 	 * @see #setOriginalParentFolder(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getProject_OriginalParentFolder()
@@ -209,7 +209,7 @@ public interface Project extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Project#getOriginalParentFolder <em>Original Parent Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Original Parent Folder</em>' attribute.
 	 * @see #getOriginalParentFolder()
@@ -224,7 +224,7 @@ public interface Project extends Element {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getProject_Base_Package()
@@ -237,7 +237,7 @@ public interface Project extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Project#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()

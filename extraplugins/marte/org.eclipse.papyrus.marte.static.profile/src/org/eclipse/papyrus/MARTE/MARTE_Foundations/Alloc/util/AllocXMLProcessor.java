@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AllocXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class AllocXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocXMLProcessor() {
@@ -45,7 +45,7 @@ public class AllocXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the AllocResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

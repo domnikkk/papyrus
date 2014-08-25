@@ -46,14 +46,14 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FunctionmodelingFactoryImpl extends EFactoryImpl implements FunctionmodelingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FunctionmodelingFactory init() {
@@ -83,7 +83,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionmodelingFactoryImpl() {
@@ -93,7 +93,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertClientServerKindToString(EDataType eDataType, Object instanceValue) {
@@ -103,7 +103,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADirectionKind createEADirectionKindFromString(EDataType eDataType, String initialValue) {
@@ -117,7 +117,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEADirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -127,7 +127,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ClientServerKind createClientServerKindFromString(EDataType eDataType, String initialValue) {
@@ -254,7 +254,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +266,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +278,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +295,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +319,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +343,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -367,7 +367,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +379,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -390,7 +390,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,7 +402,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +414,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -425,7 +425,7 @@ public class FunctionmodelingFactoryImpl extends EFactoryImpl implements Functio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

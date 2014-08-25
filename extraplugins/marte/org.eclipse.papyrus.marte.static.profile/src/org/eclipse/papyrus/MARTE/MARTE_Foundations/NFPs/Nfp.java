@@ -40,7 +40,7 @@ public interface Nfp extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getNfp_Base_Property()
@@ -53,7 +53,7 @@ public interface Nfp extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Nfp#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()

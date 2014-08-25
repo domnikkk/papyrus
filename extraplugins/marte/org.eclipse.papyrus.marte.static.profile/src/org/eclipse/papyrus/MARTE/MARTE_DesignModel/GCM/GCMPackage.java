@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface GCMPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "GCM";
@@ -49,7 +49,7 @@ public interface GCMPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/GCM/1";
@@ -58,7 +58,7 @@ public interface GCMPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "GCM";
@@ -67,7 +67,7 @@ public interface GCMPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	GCMPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl.init();
@@ -76,7 +76,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPropertyImpl <em>Flow Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPropertyImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowProperty()
 	 * @generated
@@ -87,7 +87,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Flow Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl <em>Flow Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowPort()
 	 * @generated
@@ -128,7 +128,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +148,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Flow Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +168,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerPortImpl <em>Client Server Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerPortImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerPort()
 	 * @generated
@@ -179,7 +179,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Specification Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Prov Interface</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Req Interface</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Features Spec</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Client Server Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerSpecificationImpl <em>Client Server Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerSpecificationImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerSpecification()
 	 * @generated
@@ -260,7 +260,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +270,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Client Server Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -280,7 +280,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowSpecificationImpl <em>Flow Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowSpecificationImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowSpecification()
 	 * @generated
@@ -291,7 +291,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Flow Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -311,7 +311,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerFeatureImpl <em>Client Server Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerFeatureImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerFeature()
 	 * @generated
@@ -322,7 +322,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +332,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavioral Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -342,7 +342,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Client Server Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -352,7 +352,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl <em>Trigger</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getGCMTrigger()
 	 * @generated
@@ -363,7 +363,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Trigger</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -373,7 +373,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -383,7 +383,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Trigger</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -393,7 +393,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl <em>Invocation Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getGCMInvocationAction()
 	 * @generated
@@ -404,7 +404,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Invocation Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -414,7 +414,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>On Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -424,7 +424,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Invocation Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -434,7 +434,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataEventImpl <em>Data Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataEventImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getDataEvent()
 	 * @generated
@@ -445,7 +445,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Any Receive Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -455,7 +455,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -465,7 +465,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Data Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -475,7 +475,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataPoolImpl <em>Data Pool</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataPoolImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getDataPool()
 	 * @generated
@@ -486,7 +486,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -496,7 +496,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -506,7 +506,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Insertion</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -516,7 +516,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -526,7 +526,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Data Pool</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -536,7 +536,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocatingBehaviorImpl <em>Invocating Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocatingBehaviorImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getGCMInvocatingBehavior()
 	 * @generated
@@ -547,7 +547,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -557,7 +557,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>On Ports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -567,7 +567,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>On Features</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -577,7 +577,7 @@ public interface GCMPackage extends EPackage {
 	 * The feature id for the '<em><b>Invocations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -587,7 +587,7 @@ public interface GCMPackage extends EPackage {
 	 * The number of structural features of the '<em>Invocating Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -597,7 +597,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind <em>Flow Direction Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowDirectionKind()
 	 * @generated
@@ -608,7 +608,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind <em>Port Specification Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getPortSpecificationKind()
 	 * @generated
@@ -619,7 +619,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind <em>Client Server Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerKind()
 	 * @generated
@@ -630,7 +630,7 @@ public interface GCMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind <em>Data Pool Ordering Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getDataPoolOrderingKind()
 	 * @generated
@@ -642,7 +642,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowProperty <em>Flow Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Flow Property</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowProperty
 	 * @generated
@@ -653,7 +653,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowProperty#getDirection <em>Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Direction</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowProperty#getDirection()
 	 * @see #getFlowProperty()
@@ -665,7 +665,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowProperty#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowProperty#getBase_Property()
 	 * @see #getFlowProperty()
@@ -677,7 +677,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort <em>Flow Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Flow Port</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort
 	 * @generated
@@ -688,7 +688,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#isIsAtomic <em>Is Atomic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Atomic</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#isIsAtomic()
 	 * @see #getFlowPort()
@@ -700,7 +700,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#getDirection <em>Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Direction</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#getDirection()
 	 * @see #getFlowPort()
@@ -712,7 +712,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#getBase_Port <em>Base Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Port</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowPort#getBase_Port()
 	 * @see #getFlowPort()
@@ -724,7 +724,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort <em>Client Server Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Client Server Port</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort
 	 * @generated
@@ -735,7 +735,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getBase_Port <em>Base Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Port</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getBase_Port()
 	 * @see #getClientServerPort()
@@ -747,7 +747,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getSpecificationKind <em>Specification Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Specification Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getSpecificationKind()
 	 * @see #getClientServerPort()
@@ -759,7 +759,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getKind()
 	 * @see #getClientServerPort()
@@ -771,7 +771,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getProvInterface <em>Prov Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Prov Interface</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getProvInterface()
 	 * @see #getClientServerPort()
@@ -783,7 +783,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getReqInterface <em>Req Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Req Interface</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getReqInterface()
 	 * @see #getClientServerPort()
@@ -795,7 +795,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getFeaturesSpec <em>Features Spec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Features Spec</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getFeaturesSpec()
 	 * @see #getClientServerPort()
@@ -807,7 +807,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerSpecification <em>Client Server Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Client Server Specification</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerSpecification
 	 * @generated
@@ -818,7 +818,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerSpecification#getBase_Interface <em>Base Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Interface</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerSpecification#getBase_Interface()
 	 * @see #getClientServerSpecification()
@@ -830,7 +830,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowSpecification <em>Flow Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Flow Specification</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowSpecification
 	 * @generated
@@ -841,7 +841,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowSpecification#getBase_Interface <em>Base Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Interface</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowSpecification#getBase_Interface()
 	 * @see #getFlowSpecification()
@@ -853,7 +853,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerFeature <em>Client Server Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Client Server Feature</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerFeature
 	 * @generated
@@ -864,7 +864,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerFeature#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerFeature#getKind()
 	 * @see #getClientServerFeature()
@@ -876,7 +876,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerFeature#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Behavioral Feature</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerFeature#getBase_BehavioralFeature()
 	 * @see #getClientServerFeature()
@@ -888,7 +888,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger <em>Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Trigger</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger
 	 * @generated
@@ -899,7 +899,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger#getBase_Trigger <em>Base Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Trigger</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger#getBase_Trigger()
 	 * @see #getGCMTrigger()
@@ -911,7 +911,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Feature</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger#getFeature()
 	 * @see #getGCMTrigger()
@@ -923,7 +923,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction <em>Invocation Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Invocation Action</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction
 	 * @generated
@@ -934,7 +934,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction#getBase_InvocationAction <em>Base Invocation Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Invocation Action</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction#getBase_InvocationAction()
 	 * @see #getGCMInvocationAction()
@@ -946,7 +946,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction#getOnFeature <em>On Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>On Feature</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction#getOnFeature()
 	 * @see #getGCMInvocationAction()
@@ -958,7 +958,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent <em>Data Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Data Event</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent
 	 * @generated
@@ -969,7 +969,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent#getBase_AnyReceiveEvent <em>Base Any Receive Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Any Receive Event</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent#getBase_AnyReceiveEvent()
 	 * @see #getDataEvent()
@@ -981,7 +981,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent#getClassifier <em>Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Classifier</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataEvent#getClassifier()
 	 * @see #getDataEvent()
@@ -993,7 +993,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool <em>Data Pool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Data Pool</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool
 	 * @generated
@@ -1004,7 +1004,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getOrdering <em>Ordering</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Ordering</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getOrdering()
 	 * @see #getDataPool()
@@ -1016,7 +1016,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getBase_Property()
 	 * @see #getDataPool()
@@ -1028,7 +1028,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getInsertion <em>Insertion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Insertion</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getInsertion()
 	 * @see #getDataPool()
@@ -1040,7 +1040,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getSelection <em>Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Selection</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getSelection()
 	 * @see #getDataPool()
@@ -1052,7 +1052,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior <em>Invocating Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Invocating Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior
 	 * @generated
@@ -1063,7 +1063,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getBase_Behavior <em>Base Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getBase_Behavior()
 	 * @see #getGCMInvocatingBehavior()
@@ -1075,7 +1075,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getOnPorts <em>On Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>On Ports</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getOnPorts()
 	 * @see #getGCMInvocatingBehavior()
@@ -1087,7 +1087,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getOnFeatures <em>On Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>On Features</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getOnFeatures()
 	 * @see #getGCMInvocatingBehavior()
@@ -1099,7 +1099,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getInvocations <em>Invocations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Invocations</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getInvocations()
 	 * @see #getGCMInvocatingBehavior()
@@ -1111,7 +1111,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind <em>Flow Direction Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Flow Direction Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind
 	 * @generated
@@ -1122,7 +1122,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind <em>Port Specification Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Port Specification Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind
 	 * @generated
@@ -1133,7 +1133,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind <em>Client Server Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Client Server Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind
 	 * @generated
@@ -1144,7 +1144,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind <em>Data Pool Ordering Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Data Pool Ordering Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind
 	 * @generated
@@ -1155,7 +1155,7 @@ public interface GCMPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1171,7 +1171,7 @@ public interface GCMPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1179,7 +1179,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPropertyImpl <em>Flow Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPropertyImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowProperty()
 		 * @generated
@@ -1190,7 +1190,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FLOW_PROPERTY__DIRECTION = eINSTANCE.getFlowProperty_Direction();
@@ -1199,7 +1199,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FLOW_PROPERTY__BASE_PROPERTY = eINSTANCE.getFlowProperty_Base_Property();
@@ -1208,7 +1208,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl <em>Flow Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowPort()
 		 * @generated
@@ -1219,7 +1219,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Atomic</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FLOW_PORT__IS_ATOMIC = eINSTANCE.getFlowPort_IsAtomic();
@@ -1228,7 +1228,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FLOW_PORT__DIRECTION = eINSTANCE.getFlowPort_Direction();
@@ -1237,7 +1237,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FLOW_PORT__BASE_PORT = eINSTANCE.getFlowPort_Base_Port();
@@ -1246,7 +1246,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerPortImpl <em>Client Server Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerPortImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerPort()
 		 * @generated
@@ -1257,7 +1257,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLIENT_SERVER_PORT__BASE_PORT = eINSTANCE.getClientServerPort_Base_Port();
@@ -1266,7 +1266,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Specification Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CLIENT_SERVER_PORT__SPECIFICATION_KIND = eINSTANCE.getClientServerPort_SpecificationKind();
@@ -1275,7 +1275,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CLIENT_SERVER_PORT__KIND = eINSTANCE.getClientServerPort_Kind();
@@ -1284,7 +1284,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Prov Interface</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLIENT_SERVER_PORT__PROV_INTERFACE = eINSTANCE.getClientServerPort_ProvInterface();
@@ -1293,7 +1293,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Req Interface</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLIENT_SERVER_PORT__REQ_INTERFACE = eINSTANCE.getClientServerPort_ReqInterface();
@@ -1302,7 +1302,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Features Spec</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLIENT_SERVER_PORT__FEATURES_SPEC = eINSTANCE.getClientServerPort_FeaturesSpec();
@@ -1311,7 +1311,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerSpecificationImpl <em>Client Server Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerSpecificationImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerSpecification()
 		 * @generated
@@ -1322,7 +1322,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLIENT_SERVER_SPECIFICATION__BASE_INTERFACE = eINSTANCE.getClientServerSpecification_Base_Interface();
@@ -1331,7 +1331,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowSpecificationImpl <em>Flow Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowSpecificationImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowSpecification()
 		 * @generated
@@ -1342,7 +1342,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FLOW_SPECIFICATION__BASE_INTERFACE = eINSTANCE.getFlowSpecification_Base_Interface();
@@ -1351,7 +1351,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerFeatureImpl <em>Client Server Feature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.ClientServerFeatureImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerFeature()
 		 * @generated
@@ -1362,7 +1362,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CLIENT_SERVER_FEATURE__KIND = eINSTANCE.getClientServerFeature_Kind();
@@ -1371,7 +1371,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Behavioral Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLIENT_SERVER_FEATURE__BASE_BEHAVIORAL_FEATURE = eINSTANCE.getClientServerFeature_Base_BehavioralFeature();
@@ -1380,7 +1380,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl <em>Trigger</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getGCMTrigger()
 		 * @generated
@@ -1391,7 +1391,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Trigger</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_TRIGGER__BASE_TRIGGER = eINSTANCE.getGCMTrigger_Base_Trigger();
@@ -1400,7 +1400,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_TRIGGER__FEATURE = eINSTANCE.getGCMTrigger_Feature();
@@ -1409,7 +1409,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl <em>Invocation Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocationActionImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getGCMInvocationAction()
 		 * @generated
@@ -1420,7 +1420,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Invocation Action</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_INVOCATION_ACTION__BASE_INVOCATION_ACTION = eINSTANCE.getGCMInvocationAction_Base_InvocationAction();
@@ -1429,7 +1429,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>On Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_INVOCATION_ACTION__ON_FEATURE = eINSTANCE.getGCMInvocationAction_OnFeature();
@@ -1438,7 +1438,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataEventImpl <em>Data Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataEventImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getDataEvent()
 		 * @generated
@@ -1449,7 +1449,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Any Receive Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DATA_EVENT__BASE_ANY_RECEIVE_EVENT = eINSTANCE.getDataEvent_Base_AnyReceiveEvent();
@@ -1458,7 +1458,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DATA_EVENT__CLASSIFIER = eINSTANCE.getDataEvent_Classifier();
@@ -1467,7 +1467,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataPoolImpl <em>Data Pool</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.DataPoolImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getDataPool()
 		 * @generated
@@ -1478,7 +1478,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ordering</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DATA_POOL__ORDERING = eINSTANCE.getDataPool_Ordering();
@@ -1487,7 +1487,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DATA_POOL__BASE_PROPERTY = eINSTANCE.getDataPool_Base_Property();
@@ -1496,7 +1496,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Insertion</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DATA_POOL__INSERTION = eINSTANCE.getDataPool_Insertion();
@@ -1505,7 +1505,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DATA_POOL__SELECTION = eINSTANCE.getDataPool_Selection();
@@ -1514,7 +1514,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocatingBehaviorImpl <em>Invocating Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMInvocatingBehaviorImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getGCMInvocatingBehavior()
 		 * @generated
@@ -1525,7 +1525,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_INVOCATING_BEHAVIOR__BASE_BEHAVIOR = eINSTANCE.getGCMInvocatingBehavior_Base_Behavior();
@@ -1534,7 +1534,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>On Ports</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_INVOCATING_BEHAVIOR__ON_PORTS = eINSTANCE.getGCMInvocatingBehavior_OnPorts();
@@ -1543,7 +1543,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>On Features</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_INVOCATING_BEHAVIOR__ON_FEATURES = eINSTANCE.getGCMInvocatingBehavior_OnFeatures();
@@ -1552,7 +1552,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Invocations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GCM_INVOCATING_BEHAVIOR__INVOCATIONS = eINSTANCE.getGCMInvocatingBehavior_Invocations();
@@ -1561,7 +1561,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind <em>Flow Direction Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.FlowDirectionKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getFlowDirectionKind()
 		 * @generated
@@ -1572,7 +1572,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind <em>Port Specification Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getPortSpecificationKind()
 		 * @generated
@@ -1583,7 +1583,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind <em>Client Server Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getClientServerKind()
 		 * @generated
@@ -1594,7 +1594,7 @@ public interface GCMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind <em>Data Pool Ordering Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMPackageImpl#getDataPoolOrderingKind()
 		 * @generated

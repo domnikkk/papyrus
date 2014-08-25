@@ -30,7 +30,7 @@ public class TimingResourceImpl extends ResourceImpl implements TimingResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TimingResourceImpl() {
@@ -40,7 +40,7 @@ public class TimingResourceImpl extends ResourceImpl implements TimingResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

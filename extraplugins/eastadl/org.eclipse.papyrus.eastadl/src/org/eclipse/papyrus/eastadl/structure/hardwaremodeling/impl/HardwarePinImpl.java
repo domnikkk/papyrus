@@ -48,7 +48,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HardwarePinImpl() {
@@ -106,7 +106,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -245,7 +245,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +305,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +329,7 @@ public abstract class HardwarePinImpl extends EAElementImpl implements HardwareP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

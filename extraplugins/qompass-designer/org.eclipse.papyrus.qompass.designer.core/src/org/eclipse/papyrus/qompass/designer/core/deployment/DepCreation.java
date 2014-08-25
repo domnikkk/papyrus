@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Stack;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.papyrus.FCM.AutoIndex;
 import org.eclipse.papyrus.FCM.AutoIndexPerNode;

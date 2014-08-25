@@ -250,7 +250,7 @@ public class MokaProcess extends PlatformObject implements IProcess {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
 	@Override

@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.BindTemplate;
 import org.eclipse.papyrus.FCM.FCMPackage;
-
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 
@@ -50,7 +45,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	 * The cached value of the '{@link #getActual() <em>Actual</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActual()
 	 * @generated
 	 * @ordered
@@ -61,7 +56,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -71,7 +66,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BindTemplateImpl() {
@@ -81,7 +76,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +87,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +101,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +121,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -136,7 +131,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +146,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +166,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -192,7 +187,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +206,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

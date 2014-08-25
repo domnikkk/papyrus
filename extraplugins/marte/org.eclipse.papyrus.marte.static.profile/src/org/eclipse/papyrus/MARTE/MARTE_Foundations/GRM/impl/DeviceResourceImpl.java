@@ -30,7 +30,7 @@ public class DeviceResourceImpl extends ProcessingResourceImpl implements Device
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DeviceResourceImpl() {
@@ -40,7 +40,7 @@ public class DeviceResourceImpl extends ProcessingResourceImpl implements Device
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

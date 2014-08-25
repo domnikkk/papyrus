@@ -13,17 +13,13 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.FCM.Connector;
 import org.eclipse.papyrus.FCM.ConnectorConfiguration;
 import org.eclipse.papyrus.FCM.FCMPackage;
-
 import org.eclipse.uml2.uml.Slot;
 
 /**
@@ -45,7 +41,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	 * The cached value of the '{@link #getBase_Slot() <em>Base Slot</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Slot()
 	 * @generated
 	 * @ordered
@@ -56,7 +52,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	 * The cached value of the '{@link #getConnector() <em>Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConnector()
 	 * @generated
 	 * @ordered
@@ -66,7 +62,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConnectorConfigurationImpl() {
@@ -76,7 +72,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +83,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +103,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Slot basicGetBase_Slot() {
@@ -117,7 +113,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +128,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +148,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetConnector() {
@@ -162,7 +158,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +173,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +196,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +215,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +234,7 @@ public class ConnectorConfigurationImpl extends EObjectImpl implements Connector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

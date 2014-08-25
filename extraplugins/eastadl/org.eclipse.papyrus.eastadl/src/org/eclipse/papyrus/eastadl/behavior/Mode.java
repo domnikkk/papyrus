@@ -57,7 +57,7 @@ public interface Mode extends EAElement {
 	 * If the meaning of the '<em>Condition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Condition</em>' attribute.
 	 * @see #setCondition(String)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getMode_Condition()
@@ -70,7 +70,7 @@ public interface Mode extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.Mode#getCondition <em>Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Condition</em>' attribute.
 	 * @see #getCondition()
@@ -85,7 +85,7 @@ public interface Mode extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getMode_Base_Class()
@@ -98,7 +98,7 @@ public interface Mode extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.Mode#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()

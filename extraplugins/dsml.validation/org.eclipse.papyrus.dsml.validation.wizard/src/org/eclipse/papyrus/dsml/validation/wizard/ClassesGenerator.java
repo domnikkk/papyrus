@@ -64,7 +64,7 @@ public class ClassesGenerator {
 
 	/**
 	 * execute the generation
-	 * 
+	 *
 	 * @param monitor
 	 * @throws IOException
 	 */

@@ -30,7 +30,7 @@ public interface BehaviorConstraintPrototype_errorModelTargetInstanceRef extends
 	 * If the meaning of the '<em>Error Model Prototype target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Error Model Prototype target</em>' reference.
 	 * @see #setErrorModelPrototype_target(ErrorModelPrototype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_target()
@@ -43,7 +43,7 @@ public interface BehaviorConstraintPrototype_errorModelTargetInstanceRef extends
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_errorModelTargetInstanceRef#getErrorModelPrototype_target <em>Error Model Prototype target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Error Model Prototype target</em>' reference.
 	 * @see #getErrorModelPrototype_target()
@@ -59,7 +59,7 @@ public interface BehaviorConstraintPrototype_errorModelTargetInstanceRef extends
 	 * If the meaning of the '<em>Error Model Prototype context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Error Model Prototype context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintPrototype_errorModelTargetInstanceRef_ErrorModelPrototype_context()
 	 * @model ordered="false"

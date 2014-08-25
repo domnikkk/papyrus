@@ -31,7 +31,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationFactory
  * @model kind="package"
  * @generated
@@ -41,7 +41,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "HwCommunication";
@@ -50,7 +50,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/HwCommunication/1";
@@ -59,7 +59,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "HwCommunication";
@@ -68,7 +68,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HwCommunicationPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl.init();
@@ -77,7 +77,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationResourceImpl <em>Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwCommunicationResource()
 	 * @generated
@@ -88,7 +88,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +148,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +168,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +188,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -218,7 +218,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -228,7 +228,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The number of structural features of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -238,7 +238,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwArbiterImpl <em>Hw Arbiter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwArbiterImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwArbiter()
 	 * @generated
@@ -249,7 +249,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +259,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +289,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +299,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +309,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +319,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -329,7 +329,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,7 +339,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -349,7 +349,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -359,7 +359,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -369,7 +369,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -379,7 +379,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -389,7 +389,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Controlled Medias</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -399,7 +399,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Arbiter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -409,7 +409,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwMediaImpl <em>Hw Media</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwMediaImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwMedia()
 	 * @generated
@@ -420,7 +420,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +430,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +440,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -450,7 +450,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -460,7 +460,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -470,7 +470,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -480,7 +480,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -490,7 +490,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -500,7 +500,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -510,7 +510,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -520,7 +520,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -530,7 +530,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -540,7 +540,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Transm Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -550,7 +550,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -560,7 +560,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -570,7 +570,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Capacity</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -580,7 +580,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -590,7 +590,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -600,7 +600,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -610,7 +610,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -620,7 +620,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -630,7 +630,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -640,7 +640,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Band Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,7 +650,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Arbiters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -660,7 +660,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Media</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -670,7 +670,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl <em>Hw Bus</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwBus()
 	 * @generated
@@ -681,7 +681,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -691,7 +691,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -701,7 +701,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -711,7 +711,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -721,7 +721,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -731,7 +731,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -741,7 +741,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -751,7 +751,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -761,7 +761,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -771,7 +771,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -781,7 +781,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -791,7 +791,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -801,7 +801,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Transm Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -811,7 +811,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -821,7 +821,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -831,7 +831,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Capacity</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -841,7 +841,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -851,7 +851,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -861,7 +861,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -871,7 +871,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -881,7 +881,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -891,7 +891,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -901,7 +901,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Band Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -911,7 +911,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Arbiters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -921,7 +921,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -931,7 +931,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Word Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -941,7 +941,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Synchronous</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -951,7 +951,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Serial</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -961,7 +961,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Bus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -971,7 +971,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBridgeImpl <em>Hw Bridge</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBridgeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwBridge()
 	 * @generated
@@ -982,7 +982,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -992,7 +992,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1002,7 +1002,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1012,7 +1012,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1022,7 +1022,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1032,7 +1032,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1042,7 +1042,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1052,7 +1052,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1062,7 +1062,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1072,7 +1072,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1082,7 +1082,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1092,7 +1092,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1102,7 +1102,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Transm Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1112,7 +1112,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1122,7 +1122,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1132,7 +1132,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Capacity</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1142,7 +1142,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1152,7 +1152,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1162,7 +1162,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1172,7 +1172,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1182,7 +1182,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1192,7 +1192,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1202,7 +1202,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Band Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1212,7 +1212,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Arbiters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1222,7 +1222,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Sides</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1232,7 +1232,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Bridge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1242,7 +1242,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl <em>Hw End Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwEndPoint()
 	 * @generated
@@ -1253,7 +1253,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1263,7 +1263,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1273,7 +1273,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1283,7 +1283,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1293,7 +1293,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1303,7 +1303,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1313,7 +1313,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1323,7 +1323,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1333,7 +1333,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1343,7 +1343,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1353,7 +1353,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1363,7 +1363,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1373,7 +1373,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1383,7 +1383,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1393,7 +1393,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1403,7 +1403,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The feature id for the '<em><b>Connected To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1413,7 +1413,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw End Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1424,7 +1424,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationResource
 	 * @generated
@@ -1435,7 +1435,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter <em>Hw Arbiter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Arbiter</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter
 	 * @generated
@@ -1446,7 +1446,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter#getControlledMedias <em>Controlled Medias</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Controlled Medias</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter#getControlledMedias()
 	 * @see #getHwArbiter()
@@ -1458,7 +1458,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwMedia <em>Hw Media</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Media</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwMedia
 	 * @generated
@@ -1469,7 +1469,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwMedia#getBandWidth <em>Band Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Band Width</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwMedia#getBandWidth()
 	 * @see #getHwMedia()
@@ -1481,7 +1481,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwMedia#getArbiters <em>Arbiters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Arbiters</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwMedia#getArbiters()
 	 * @see #getHwMedia()
@@ -1493,7 +1493,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus <em>Hw Bus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Bus</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus
 	 * @generated
@@ -1504,7 +1504,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getAdressWidth <em>Adress Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Adress Width</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getAdressWidth()
 	 * @see #getHwBus()
@@ -1516,7 +1516,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getWordWidth <em>Word Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Word Width</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getWordWidth()
 	 * @see #getHwBus()
@@ -1528,7 +1528,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getIsSynchronous <em>Is Synchronous</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Synchronous</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getIsSynchronous()
 	 * @see #getHwBus()
@@ -1540,7 +1540,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getIsSerial <em>Is Serial</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Serial</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getIsSerial()
 	 * @see #getHwBus()
@@ -1552,7 +1552,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBridge <em>Hw Bridge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Bridge</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBridge
 	 * @generated
@@ -1563,7 +1563,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBridge#getSides <em>Sides</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Sides</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBridge#getSides()
 	 * @see #getHwBridge()
@@ -1575,7 +1575,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwEndPoint <em>Hw End Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw End Point</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwEndPoint
 	 * @generated
@@ -1586,7 +1586,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwEndPoint#getConnectedTo <em>Connected To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Connected To</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwEndPoint#getConnectedTo()
 	 * @see #getHwEndPoint()
@@ -1598,7 +1598,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1614,7 +1614,7 @@ public interface HwCommunicationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1622,7 +1622,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationResourceImpl <em>Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwCommunicationResource()
 		 * @generated
@@ -1633,7 +1633,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwArbiterImpl <em>Hw Arbiter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwArbiterImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwArbiter()
 		 * @generated
@@ -1644,7 +1644,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Controlled Medias</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_ARBITER__CONTROLLED_MEDIAS = eINSTANCE.getHwArbiter_ControlledMedias();
@@ -1653,7 +1653,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwMediaImpl <em>Hw Media</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwMediaImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwMedia()
 		 * @generated
@@ -1664,7 +1664,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Band Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_MEDIA__BAND_WIDTH = eINSTANCE.getHwMedia_BandWidth();
@@ -1673,7 +1673,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Arbiters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_MEDIA__ARBITERS = eINSTANCE.getHwMedia_Arbiters();
@@ -1682,7 +1682,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl <em>Hw Bus</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBusImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwBus()
 		 * @generated
@@ -1693,7 +1693,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Adress Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_BUS__ADRESS_WIDTH = eINSTANCE.getHwBus_AdressWidth();
@@ -1702,7 +1702,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Word Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_BUS__WORD_WIDTH = eINSTANCE.getHwBus_WordWidth();
@@ -1711,7 +1711,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Synchronous</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_BUS__IS_SYNCHRONOUS = eINSTANCE.getHwBus_IsSynchronous();
@@ -1720,7 +1720,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Serial</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_BUS__IS_SERIAL = eINSTANCE.getHwBus_IsSerial();
@@ -1729,7 +1729,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBridgeImpl <em>Hw Bridge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwBridgeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwBridge()
 		 * @generated
@@ -1740,7 +1740,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Sides</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_BRIDGE__SIDES = eINSTANCE.getHwBridge_Sides();
@@ -1749,7 +1749,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl <em>Hw End Point</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationPackageImpl#getHwEndPoint()
 		 * @generated
@@ -1760,7 +1760,7 @@ public interface HwCommunicationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Connected To</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_END_POINT__CONNECTED_TO = eINSTANCE.getHwEndPoint_ConnectedTo();

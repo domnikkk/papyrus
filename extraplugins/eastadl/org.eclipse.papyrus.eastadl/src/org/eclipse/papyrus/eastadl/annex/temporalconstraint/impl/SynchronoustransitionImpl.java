@@ -29,7 +29,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	 * The cached value of the '{@link #getReadTransitionEvent() <em>Read Transition Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReadTransitionEvent()
 	 * @generated
 	 * @ordered
@@ -40,7 +40,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	 * The cached value of the '{@link #getWriteTransitionEvent() <em>Write Transition Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWriteTransitionEvent()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SynchronoustransitionImpl() {
@@ -60,7 +60,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TransitionEvent basicGetReadTransitionEvent() {
@@ -101,7 +101,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TransitionEvent basicGetWriteTransitionEvent() {
@@ -146,7 +146,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class SynchronoustransitionImpl extends TransitionImpl implements Synchro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -40,7 +40,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDate()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDate()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	 * The cached value of the '{@link #getPerformedVVProcedure() <em>Performed VV Procedure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPerformedVVProcedure()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VVLogImpl() {
@@ -93,7 +93,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -185,7 +185,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VVProcedure basicGetPerformedVVProcedure() {
@@ -230,7 +230,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +337,7 @@ public class VVLogImpl extends TraceableSpecificationImpl implements VVLog {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

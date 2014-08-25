@@ -66,7 +66,7 @@ public interface ErrorBehavior extends EAElement {
 	 * If the meaning of the '<em>Base Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavior</em>' reference.
 	 * @see #setBase_Behavior(Behavior)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehavior_Base_Behavior()
@@ -79,7 +79,7 @@ public interface ErrorBehavior extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getBase_Behavior <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavior</em>' reference.
 	 * @see #getBase_Behavior()
@@ -95,7 +95,7 @@ public interface ErrorBehavior extends EAElement {
 	 * If the meaning of the '<em>External Failure</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>External Failure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehavior_ExternalFailure()
 	 * @model required="true" ordered="false"
@@ -111,7 +111,7 @@ public interface ErrorBehavior extends EAElement {
 	 * If the meaning of the '<em>External Fault</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>External Fault</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehavior_ExternalFault()
 	 * @model ordered="false"
@@ -126,7 +126,7 @@ public interface ErrorBehavior extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * The error logic description based on an external formalism or the path to the file or model entity containing the external error logic description.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Failure Logic</em>' attribute.
 	 * @see #setFailureLogic(String)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehavior_FailureLogic()
@@ -139,7 +139,7 @@ public interface ErrorBehavior extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getFailureLogic <em>Failure Logic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Failure Logic</em>' attribute.
 	 * @see #getFailureLogic()
@@ -155,7 +155,7 @@ public interface ErrorBehavior extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * The occurrences of internal faults.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Internal Fault</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehavior_InternalFault()
 	 * @model ordered="false"
@@ -171,7 +171,7 @@ public interface ErrorBehavior extends EAElement {
 	 * If the meaning of the '<em>Process Fault</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Process Fault</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehavior_ProcessFault()
 	 * @model ordered="false"
@@ -186,7 +186,7 @@ public interface ErrorBehavior extends EAElement {
 	 * If the meaning of the '<em>Internal Failure</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Internal Failure</em>' reference.
 	 * @see #setInternalFailure(FailureOutPort)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehavior_InternalFailure()
@@ -199,7 +199,7 @@ public interface ErrorBehavior extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getInternalFailure <em>Internal Failure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Internal Failure</em>' reference.
 	 * @see #getInternalFailure()
@@ -215,7 +215,7 @@ public interface ErrorBehavior extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * The type of formalism applied for the error behavior description.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind
 	 * @see #setType(ErrorBehaviorKind)
@@ -229,7 +229,7 @@ public interface ErrorBehavior extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind

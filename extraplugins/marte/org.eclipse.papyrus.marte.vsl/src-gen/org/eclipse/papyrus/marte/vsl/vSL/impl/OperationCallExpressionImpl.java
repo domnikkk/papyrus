@@ -4,17 +4,13 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.ListOfValues;
 import org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Type;
@@ -39,7 +35,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperation()
 	 * @generated
 	 * @ordered
@@ -50,7 +46,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArguments()
 	 * @generated
 	 * @ordered
@@ -60,7 +56,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OperationCallExpressionImpl()
@@ -71,7 +67,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +79,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +102,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetOperation()
@@ -117,7 +113,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +129,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +141,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetArguments(ListOfValues newArguments, NotificationChain msgs)
@@ -167,7 +163,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +191,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +203,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +215,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +227,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +244,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +266,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +287,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +308,7 @@ public class OperationCallExpressionImpl extends SuffixExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

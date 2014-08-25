@@ -35,7 +35,7 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected LinePropertySetterImpl() {
@@ -46,7 +46,7 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -56,7 +56,7 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 
 	/**
 	 * Set the property of the specified view.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view

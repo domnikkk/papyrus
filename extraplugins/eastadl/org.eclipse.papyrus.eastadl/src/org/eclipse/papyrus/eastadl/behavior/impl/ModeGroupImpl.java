@@ -52,7 +52,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	 * The default value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrecondition()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	 * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrecondition()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModeGroupImpl() {
@@ -94,7 +94,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -239,7 +239,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class ModeGroupImpl extends TraceableSpecificationImpl implements ModeGro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

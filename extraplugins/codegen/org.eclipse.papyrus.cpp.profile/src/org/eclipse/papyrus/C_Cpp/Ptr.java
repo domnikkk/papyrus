@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.C_Cpp;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
 
@@ -47,7 +46,7 @@ public interface Ptr extends EObject {
 	 * If the meaning of the '<em>Base parameter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base parameter</em>' reference.
 	 * @see #setBase_parameter(Parameter)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getPtr_Base_parameter()
@@ -60,7 +59,7 @@ public interface Ptr extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Ptr#getBase_parameter <em>Base parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base parameter</em>' reference.
 	 * @see #getBase_parameter()
@@ -75,7 +74,7 @@ public interface Ptr extends EObject {
 	 * If the meaning of the '<em>Base property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base property</em>' reference.
 	 * @see #setBase_property(Property)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getPtr_Base_property()
@@ -88,7 +87,7 @@ public interface Ptr extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Ptr#getBase_property <em>Base property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base property</em>' reference.
 	 * @see #getBase_property()
@@ -103,7 +102,7 @@ public interface Ptr extends EObject {
 	 * If the meaning of the '<em>Declaration</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Declaration</em>' attribute.
 	 * @see #setDeclaration(String)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getPtr_Declaration()
@@ -116,7 +115,7 @@ public interface Ptr extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Ptr#getDeclaration <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Declaration</em>' attribute.
 	 * @see #getDeclaration()

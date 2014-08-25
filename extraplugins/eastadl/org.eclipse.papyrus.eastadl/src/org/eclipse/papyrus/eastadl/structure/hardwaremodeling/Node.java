@@ -60,7 +60,7 @@ public interface Node extends HardwareComponentType {
 	 * <!-- begin-model-doc -->
 	 * ExecutionRate is used to compute an approximate execution time. A nominal execution time divided by executionRate provides the actual execution time to be used e.g. for timing analysis in feasibility studies.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Execution Rate</em>' attribute.
 	 * @see #setExecutionRate(Float)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getNode_ExecutionRate()
@@ -73,7 +73,7 @@ public interface Node extends HardwareComponentType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node#getExecutionRate <em>Execution Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Execution Rate</em>' attribute.
 	 * @see #getExecutionRate()

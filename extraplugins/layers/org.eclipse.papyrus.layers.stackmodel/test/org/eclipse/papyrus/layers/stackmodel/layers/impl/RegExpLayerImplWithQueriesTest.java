@@ -14,9 +14,9 @@
 
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 
 import java.io.IOException;
 
@@ -93,7 +93,7 @@ public class RegExpLayerImplWithQueriesTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerImpl#evaluateExpr()}.
-	 * 
+	 *
 	 * @throws ParserException
 	 */
 	@Test

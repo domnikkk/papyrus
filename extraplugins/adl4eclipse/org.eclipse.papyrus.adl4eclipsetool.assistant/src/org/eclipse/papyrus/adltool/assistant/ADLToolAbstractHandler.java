@@ -42,7 +42,7 @@ public abstract class ADLToolAbstractHandler extends AbstractHandler {
 
 	/**
 	 * getSelected element in the diagram or in hte model explorer
-	 * 
+	 *
 	 * @return Element or null
 	 */
 	protected Element getSelection() {
@@ -81,7 +81,7 @@ public abstract class ADLToolAbstractHandler extends AbstractHandler {
 
 	/**
 	 * getSelected element in the diagram or in hte model explorer
-	 * 
+	 *
 	 * @return Element or null
 	 */
 	protected ArrayList<Element> getSelectionSet() {

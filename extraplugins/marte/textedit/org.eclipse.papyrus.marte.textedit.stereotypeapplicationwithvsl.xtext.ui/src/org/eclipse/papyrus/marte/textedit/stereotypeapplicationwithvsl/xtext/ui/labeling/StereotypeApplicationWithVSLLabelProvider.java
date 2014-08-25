@@ -32,11 +32,11 @@ public class StereotypeApplicationWithVSLLabelProvider extends DefaultEObjectLab
 
 	/*
 	 * //Labels and icons can be computed like this:
-	 * 
+	 *
 	 * String text(MyModel ele) {
 	 * return "my "+ele.getName();
 	 * }
-	 * 
+	 *
 	 * String image(MyModel ele) {
 	 * return "MyModel.gif";
 	 * }

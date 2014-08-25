@@ -46,7 +46,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -56,7 +56,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#setSelectedElement(java.lang.Element)
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContentHI()
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#refreshPanel()
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#checkModifications()
 	 */
 	@Override

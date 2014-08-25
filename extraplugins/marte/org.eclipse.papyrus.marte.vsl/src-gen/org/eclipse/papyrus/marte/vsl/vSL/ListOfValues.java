@@ -3,10 +3,8 @@
 package org.eclipse.papyrus.marte.vsl.vSL;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -36,7 +34,7 @@ public interface ListOfValues extends EObject
 	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getListOfValues_Values()
 	 * @model containment="true"
@@ -47,7 +45,7 @@ public interface ListOfValues extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;'"
 	 * @generated
 	 */
@@ -56,7 +54,7 @@ public interface ListOfValues extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;'"
 	 * @generated
@@ -66,7 +64,7 @@ public interface ListOfValues extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;'"
 	 * @generated

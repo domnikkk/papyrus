@@ -18,21 +18,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.uml2.uml.Behavior;
-import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.MultiplicityElement;
-import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Namespace;
-import org.eclipse.uml2.uml.Operation;
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Parameter;
-import org.eclipse.uml2.uml.ParameterDirectionKind;
-import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.Type;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -70,6 +55,20 @@ import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
 import org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair;
 import org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification;
 import org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.MultiplicityElement;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.ParameterDirectionKind;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 
 public class VSLJavaValidator extends AbstractVSLJavaValidator {
 

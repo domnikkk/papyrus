@@ -44,7 +44,7 @@ public interface GaWorkloadBehavior extends EObject {
 	 * If the meaning of the '<em>Behavior</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Behavior</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadBehavior_Behavior()
 	 * @model ordered="false"
@@ -60,7 +60,7 @@ public interface GaWorkloadBehavior extends EObject {
 	 * If the meaning of the '<em>Demand</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Demand</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadBehavior_Demand()
 	 * @model ordered="false"
@@ -75,7 +75,7 @@ public interface GaWorkloadBehavior extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadBehavior_Base_NamedElement()
@@ -88,7 +88,7 @@ public interface GaWorkloadBehavior extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadBehavior#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()

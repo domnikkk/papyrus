@@ -388,9 +388,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for qualified names
-	 * 
+	 *
 	 * ***************************************************
 	 */
 
@@ -421,9 +421,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for names
-	 * 
+	 *
 	 * ***************************************************
 	 */
 	private IScope scope_Name_ifExpectingAStereotype(NameOrChoiceOrBehaviorCall ctx, EReference ref) {
@@ -619,9 +619,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for names of time observation
-	 * 
+	 *
 	 * ***************************************************
 	 */
 
@@ -687,9 +687,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for names of duration observation
-	 * 
+	 *
 	 * ***************************************************
 	 */
 
@@ -753,9 +753,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for data types (used to type local variables)
-	 * 
+	 *
 	 * ***************************************************
 	 */
 
@@ -818,9 +818,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for PropertyCallExpression
-	 * 
+	 *
 	 * ***************************************************
 	 */
 
@@ -856,9 +856,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for OperationCallExpression
-	 * 
+	 *
 	 * ***************************************************
 	 */
 
@@ -893,9 +893,9 @@ public class VSLScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	/* ****************************************************
-	 * 
+	 *
 	 * Scope for ValueNamePair
-	 * 
+	 *
 	 * ***************************************************
 	 */
 

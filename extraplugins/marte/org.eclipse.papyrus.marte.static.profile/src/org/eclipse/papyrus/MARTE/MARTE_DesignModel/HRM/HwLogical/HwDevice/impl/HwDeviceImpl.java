@@ -44,7 +44,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwDeviceImpl() {
@@ -86,7 +86,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -153,7 +153,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class HwDeviceImpl extends HwResourceImpl implements HwDevice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

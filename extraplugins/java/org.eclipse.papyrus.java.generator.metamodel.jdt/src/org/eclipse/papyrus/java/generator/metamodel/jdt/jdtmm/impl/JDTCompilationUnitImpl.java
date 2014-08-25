@@ -23,11 +23,11 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -62,7 +62,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTCompilationUnitImpl() {
@@ -82,7 +82,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	 * The array of subset feature identifiers for the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPackageFragment(JDTPackageFragment newPackageFragment, NotificationChain msgs) {
@@ -140,7 +140,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetPackageFragment() {
@@ -179,7 +179,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	 * The array of superset feature identifiers for the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -204,7 +204,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -225,7 +225,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -295,7 +295,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +343,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -354,7 +354,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +365,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetParent() {

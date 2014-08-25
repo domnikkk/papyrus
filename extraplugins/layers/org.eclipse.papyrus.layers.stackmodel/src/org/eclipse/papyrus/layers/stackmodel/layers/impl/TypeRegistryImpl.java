@@ -43,7 +43,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected TypeRegistryImpl() {
@@ -84,7 +84,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 
 	/**
 	 * Add the type in the registry
-	 * 
+	 *
 	 * @param type
 	 */
 	public void addType(Type type) {
@@ -96,7 +96,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class TypeRegistryImpl extends MinimalEObjectImpl.Container implements Ty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

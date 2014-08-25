@@ -33,14 +33,14 @@ import org.eclipse.papyrus.eastadl.dependability.safetyconstraints.Safetyconstra
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements SafetyconstraintsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -53,7 +53,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SafetyconstraintsFactory init() {
@@ -72,7 +72,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SafetyconstraintsFactoryImpl() {
@@ -82,7 +82,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ASILKind createASILKindFromString(EDataType eDataType, String initialValue) {
@@ -172,7 +172,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertASILKindToString(EDataType eDataType, Object instanceValue) {
@@ -182,7 +182,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class SafetyconstraintsFactoryImpl extends EFactoryImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

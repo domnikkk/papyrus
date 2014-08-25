@@ -76,7 +76,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EventChainImpl() {
@@ -85,7 +85,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -150,7 +150,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetResponse() {
@@ -211,7 +211,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetStimulus() {
@@ -268,7 +268,7 @@ public class EventChainImpl extends TimingDescriptionImpl implements EventChain 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

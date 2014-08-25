@@ -43,7 +43,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The default value of the '{@link #getConcPolicy() <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcPolicy()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The cached value of the '{@link #getConcPolicy() <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcPolicy()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The default value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The cached value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The cached value of the '{@link #getBase_BehavioredClassifier() <em>Base Behaviored Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioredClassifier()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PpUnitImpl() {
@@ -107,7 +107,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioredClassifier basicGetBase_BehavioredClassifier() {
@@ -200,7 +200,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

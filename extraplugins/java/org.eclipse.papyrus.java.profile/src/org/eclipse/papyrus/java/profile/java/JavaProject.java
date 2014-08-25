@@ -31,7 +31,7 @@ public interface JavaProject extends JavaGen {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaProject_Base_Package()
@@ -44,7 +44,7 @@ public interface JavaProject extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaProject#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()

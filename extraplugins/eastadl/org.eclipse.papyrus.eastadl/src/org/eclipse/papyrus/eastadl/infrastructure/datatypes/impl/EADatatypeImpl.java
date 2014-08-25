@@ -43,7 +43,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EADatatypeImpl() {
@@ -63,7 +63,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataType basicGetBase_DataType() {
@@ -73,7 +73,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public abstract class EADatatypeImpl extends TraceableSpecificationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

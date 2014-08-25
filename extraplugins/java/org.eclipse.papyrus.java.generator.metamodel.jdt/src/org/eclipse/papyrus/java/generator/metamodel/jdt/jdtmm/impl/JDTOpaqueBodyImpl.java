@@ -7,11 +7,8 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
 
@@ -33,7 +30,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	 * The default value of the '{@link #get_body() <em>body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #get_body()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	 * The cached value of the '{@link #get_body() <em>body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #get_body()
 	 * @generated
 	 * @ordered
@@ -54,7 +51,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTOpaqueBodyImpl() {
@@ -64,7 +61,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +72,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +83,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +98,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -113,7 +110,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +125,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +141,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +157,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +172,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

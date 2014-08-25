@@ -31,7 +31,7 @@ public class StringTypeImpl extends TypeImpl implements StringType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected StringTypeImpl() {
@@ -42,7 +42,7 @@ public class StringTypeImpl extends TypeImpl implements StringType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -53,7 +53,7 @@ public class StringTypeImpl extends TypeImpl implements StringType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

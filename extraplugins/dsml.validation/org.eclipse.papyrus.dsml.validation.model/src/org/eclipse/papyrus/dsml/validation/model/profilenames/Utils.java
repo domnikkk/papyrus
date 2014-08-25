@@ -108,7 +108,7 @@ public class Utils {
 
 	/**
 	 * return the qualified name of the stereotype that is the context of the constraint.
-	 * 
+	 *
 	 * @param constraint
 	 *            the constraint
 	 * @return the qualified name of the constraint or ""
@@ -125,7 +125,7 @@ public class Utils {
 	/**
 	 * /**
 	 * return true if the constraint is to validate something about a stereotype
-	 * 
+	 *
 	 * @param constraint
 	 *            the constraint
 	 * @return true if the context of the constraint is a stereotype

@@ -60,7 +60,7 @@ public class LayersStackImpl extends
 	 * The cached value of the '{@link #getLayers() <em>Layers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayers()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class LayersStackImpl extends
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class LayersStackImpl extends
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class LayersStackImpl extends
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class LayersStackImpl extends
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class LayersStackImpl extends
 	 * The cached value of the '{@link #getDiagram() <em>Diagram</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDiagram()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class LayersStackImpl extends
 	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getState()
 	 * @generated
 	 * @ordered
@@ -134,7 +134,7 @@ public class LayersStackImpl extends
 	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getState()
 	 * @generated
 	 * @ordered
@@ -174,7 +174,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected LayersStackImpl() {
@@ -198,7 +198,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayers(LayerExpression newLayers, NotificationChain msgs) {
@@ -240,7 +240,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +266,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +303,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +318,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +338,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Diagram basicGetDiagram() {
@@ -348,7 +348,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +363,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +374,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +389,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws LayersException
 	 * @generated NOT
 	 */
@@ -417,7 +417,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +430,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -445,7 +445,7 @@ public class LayersStackImpl extends
 	 * Start this LayersStack after its creation. This method should be explicitly called by
 	 * user after the creation of a LayersStack.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated Not used anymore
 	 * @generated NOT
 	 */
@@ -465,7 +465,7 @@ public class LayersStackImpl extends
 	 * <!-- begin-user-doc -->
 	 * Attach recursively the tree of layers.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws LayersException
 	 * @generated NOT
 	 */
@@ -480,7 +480,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -507,7 +507,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -525,7 +525,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -536,7 +536,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -549,7 +549,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws LayersException
 	 * @generated NOT
 	 */
@@ -566,7 +566,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws BadStateException
 	 * @generated NOT
 	 */
@@ -584,7 +584,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -599,7 +599,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -625,7 +625,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -653,7 +653,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -681,7 +681,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -704,7 +704,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -773,7 +773,7 @@ public class LayersStackImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

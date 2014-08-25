@@ -30,7 +30,7 @@ public class HwClockImpl extends HwTimingResourceImpl implements HwClock {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwClockImpl() {
@@ -40,7 +40,7 @@ public class HwClockImpl extends HwTimingResourceImpl implements HwClock {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

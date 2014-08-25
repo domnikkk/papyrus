@@ -34,14 +34,14 @@ import org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -54,7 +54,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SafetycaseFactory init() {
@@ -73,7 +73,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SafetycaseFactoryImpl() {
@@ -83,7 +83,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertLifecycleStageKindToString(EDataType eDataType, Object instanceValue) {
@@ -93,7 +93,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LifecycleStageKind createLifecycleStageKindFromString(EDataType eDataType, String initialValue) {
@@ -185,7 +185,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class SafetycaseFactoryImpl extends EFactoryImpl implements SafetycaseFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

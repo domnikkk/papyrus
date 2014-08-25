@@ -47,7 +47,7 @@ public interface GCMInvocatingBehavior extends EObject {
 	 * If the meaning of the '<em>Base Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavior</em>' reference.
 	 * @see #setBase_Behavior(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMInvocatingBehavior_Base_Behavior()
@@ -60,7 +60,7 @@ public interface GCMInvocatingBehavior extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocatingBehavior#getBase_Behavior <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavior</em>' reference.
 	 * @see #getBase_Behavior()
@@ -76,7 +76,7 @@ public interface GCMInvocatingBehavior extends EObject {
 	 * If the meaning of the '<em>On Ports</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>On Ports</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMInvocatingBehavior_OnPorts()
 	 * @model ordered="false"
@@ -92,7 +92,7 @@ public interface GCMInvocatingBehavior extends EObject {
 	 * If the meaning of the '<em>On Features</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>On Features</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMInvocatingBehavior_OnFeatures()
 	 * @model ordered="false"
@@ -108,7 +108,7 @@ public interface GCMInvocatingBehavior extends EObject {
 	 * If the meaning of the '<em>Invocations</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Invocations</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMInvocatingBehavior_Invocations()
 	 * @model ordered="false"

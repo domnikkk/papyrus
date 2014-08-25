@@ -26,7 +26,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	 * The default value of the '{@link #isIsActive() <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsActive()
 	 * @generated
 	 * @ordered
@@ -37,7 +37,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	 * The cached value of the '{@link #isIsActive() <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsActive()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElectricalComponentImpl() {
@@ -57,7 +57,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class ElectricalComponentImpl extends HardwareComponentTypeImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

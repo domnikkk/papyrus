@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.cdo.validation.problems.impl;
 
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -27,7 +28,7 @@ import org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory {
@@ -36,7 +37,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ProblemsFactory init() {
@@ -55,7 +56,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ProblemsFactoryImpl() {
@@ -64,7 +65,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +84,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +99,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +114,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +125,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +137,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Map.Entry<String, String> createAttribute() {
@@ -146,7 +147,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ESeverity createESeverityFromString(EDataType eDataType, String initialValue) {
@@ -160,7 +161,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertESeverityToString(EDataType eDataType, Object instanceValue) {
@@ -169,7 +170,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +180,7 @@ public class ProblemsFactoryImpl extends EFactoryImpl implements ProblemsFactory
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

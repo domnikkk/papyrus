@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -51,7 +52,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -61,7 +62,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	 * The cached value of the '{@link #getPin() <em>Pin</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPin()
 	 * @generated
 	 * @ordered
@@ -70,7 +71,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HardwareConnectorImpl() {
@@ -79,7 +80,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +99,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +116,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +135,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +153,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -172,7 +173,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +184,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +204,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -213,7 +214,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +228,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +246,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +260,7 @@ public class HardwareConnectorImpl extends EAElementImpl implements HardwareConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

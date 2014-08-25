@@ -39,7 +39,7 @@ public class OpenPapyrusEditorRunnable implements Runnable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {

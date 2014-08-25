@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Folder</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FolderTest extends FolderElementTest {
@@ -19,7 +19,7 @@ public class FolderTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class FolderTest extends FolderElementTest {
 	 * Constructs a new Folder test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FolderTest(String name) {
@@ -41,7 +41,7 @@ public class FolderTest extends FolderElementTest {
 	 * Returns the fixture for this Folder test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class FolderTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class FolderTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

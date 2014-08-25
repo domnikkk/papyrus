@@ -34,7 +34,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ColorInstanceItemProvider
@@ -49,7 +49,7 @@ public class ColorInstanceItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ColorInstanceItemProvider(AdapterFactory adapterFactory) {
@@ -60,7 +60,7 @@ public class ColorInstanceItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class ColorInstanceItemProvider
 	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
@@ -100,7 +100,7 @@ public class ColorInstanceItemProvider
 	 * This returns ColorInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class ColorInstanceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class ColorInstanceItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class ColorInstanceItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

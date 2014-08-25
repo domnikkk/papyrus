@@ -34,7 +34,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	 * The default value of the '{@link #getSpan() <em>Span</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpan()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	 * The cached value of the '{@link #getSpan() <em>Span</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpan()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	 * The cached value of the '{@link #getJitter() <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJitter()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RepetitionConstraintImpl() {
@@ -109,7 +109,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetLower() {
@@ -176,7 +176,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetUpper() {
@@ -221,7 +221,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetJitter() {
@@ -266,7 +266,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +301,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -311,7 +311,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +361,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +389,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +440,7 @@ public class RepetitionConstraintImpl extends TimingConstraintImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

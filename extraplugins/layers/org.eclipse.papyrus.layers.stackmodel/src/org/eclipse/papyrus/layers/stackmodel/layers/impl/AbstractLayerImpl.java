@@ -12,6 +12,8 @@
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
@@ -44,7 +46,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
 import org.eclipse.papyrus.layers.stackmodel.layers.NullInstance;
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
 import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,7 +69,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	 * The cached value of the '{@link #getPropertyValues() <em>Property Values</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyValues()
 	 * @generated
 	 * @ordered
@@ -79,7 +80,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	 * The cached value of the '{@link #getPropertyValueMap() <em>Property Value Map</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyValueMap()
 	 * @generated
 	 * @ordered
@@ -90,7 +91,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	 * The cached value of the '{@link #getLayerDescriptor() <em>Layer Descriptor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerDescriptor()
 	 * @generated
 	 * @ordered
@@ -101,7 +102,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	 * The cached value of the '{@link #getViews() <em>Views</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getViews()
 	 * @generated
 	 * @ordered
@@ -111,7 +112,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected AbstractLayerImpl() {
@@ -136,7 +137,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +148,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -169,7 +170,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +184,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +204,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerDescriptor basicGetLayerDescriptor() {
@@ -213,7 +214,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +229,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +243,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -276,7 +277,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -300,7 +301,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -311,7 +312,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -322,7 +323,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -339,7 +340,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -354,7 +355,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +385,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -416,7 +417,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +445,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -467,7 +468,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +504,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 	 * The #application proerty must be set.
 	 * Set the list size to the number of availale property
 	 * Synchronize the values with instances found in {@link #propertyValueMap}.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	protected void resetAllPropertyValuesFromRegistry() throws BadStateException {
@@ -545,7 +546,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 
 	/**
 	 * Synchronize the specified propertyName with the value in the {@link #propertyValues} list.
-	 * 
+	 *
 	 * @param propertyName
 	 * @param value
 	 * @throws NotFoundException
@@ -595,7 +596,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 
 		/**
 		 * The {@link LayerImpl#propertyValueMap} has changed. Synchronize the {@link LayerImpl#propertyValues} list.
-		 * 
+		 *
 		 * @param msg
 		 */
 		protected void notifyLayerPropertyValueMapChanged(Notification msg) {
@@ -680,7 +681,7 @@ public abstract class AbstractLayerImpl extends LayerExpressionImpl implements A
 
 		/**
 		 * The {@link LayerImpl#propertyValueMap} has changed. Synchronize the {@link LayerImpl#propertyValues} list.
-		 * 
+		 *
 		 * @param msg
 		 */
 		protected void notifyLayerApplicationFeatureChanged(Notification msg) {

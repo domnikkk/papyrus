@@ -50,7 +50,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	 * The cached value of the '{@link #getExtendedElementType() <em>Extended Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtendedElementType()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAttribute()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	 * The default value of the '{@link #getValidFor() <em>Valid For</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValidFor()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	 * The cached value of the '{@link #getValidFor() <em>Valid For</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValidFor()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UserAttributeElementTypeImpl() {
@@ -114,7 +114,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UserAttributeElementType basicGetExtendedElementType() {
@@ -124,7 +124,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -199,7 +199,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -279,7 +279,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class UserAttributeElementTypeImpl extends EAElementImpl implements UserA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

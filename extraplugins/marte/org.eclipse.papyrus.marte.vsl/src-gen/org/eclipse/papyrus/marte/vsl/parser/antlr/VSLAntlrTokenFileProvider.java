@@ -4,6 +4,7 @@
 package org.eclipse.papyrus.marte.vsl.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class VSLAntlrTokenFileProvider implements IAntlrTokenFileProvider {

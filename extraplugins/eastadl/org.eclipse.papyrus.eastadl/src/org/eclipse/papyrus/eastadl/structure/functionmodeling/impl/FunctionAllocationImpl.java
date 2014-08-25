@@ -47,7 +47,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	 * The cached value of the '{@link #getAllocatedElement() <em>Allocated Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllocatedElement()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionAllocationImpl() {
@@ -86,7 +86,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetAllocatedElement(AllocatedElementInstanceRef newAllocatedElement, NotificationChain msgs) {
@@ -208,7 +208,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -264,7 +264,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +295,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTarget(TargetInstanceRef newTarget, NotificationChain msgs) {
@@ -326,7 +326,7 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

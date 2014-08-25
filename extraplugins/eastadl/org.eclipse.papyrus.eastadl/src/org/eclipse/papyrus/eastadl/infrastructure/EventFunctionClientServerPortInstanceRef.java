@@ -31,7 +31,7 @@ public interface EventFunctionClientServerPortInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Function Client Server Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Client Server Port</em>' reference.
 	 * @see #setFunctionClientServerPort(FunctionClientServerPort)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getEventFunctionClientServerPortInstanceRef_FunctionClientServerPort()
@@ -44,7 +44,7 @@ public interface EventFunctionClientServerPortInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.EventFunctionClientServerPortInstanceRef#getFunctionClientServerPort <em>Function Client Server Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function Client Server Port</em>' reference.
 	 * @see #getFunctionClientServerPort()
@@ -60,7 +60,7 @@ public interface EventFunctionClientServerPortInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Function Prototype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Prototype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getEventFunctionClientServerPortInstanceRef_FunctionPrototype()
 	 * @model ordered="false"

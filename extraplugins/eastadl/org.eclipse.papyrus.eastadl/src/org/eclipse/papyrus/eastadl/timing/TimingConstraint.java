@@ -58,7 +58,7 @@ public interface TimingConstraint extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * The mode where the TimingConstraint is valid.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode</em>' reference.
 	 * @see #setMode(Mode)
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getTimingConstraint_Mode()
@@ -71,7 +71,7 @@ public interface TimingConstraint extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.TimingConstraint#getMode <em>Mode</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Mode</em>' reference.
 	 * @see #getMode()
@@ -86,7 +86,7 @@ public interface TimingConstraint extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getTimingConstraint_Base_Class()
@@ -99,7 +99,7 @@ public interface TimingConstraint extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.TimingConstraint#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -114,7 +114,7 @@ public interface TimingConstraint extends EAElement {
 	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Constraint</em>' reference.
 	 * @see #setBase_Constraint(Constraint)
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getTimingConstraint_Base_Constraint()
@@ -127,7 +127,7 @@ public interface TimingConstraint extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.TimingConstraint#getBase_Constraint <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Constraint</em>' reference.
 	 * @see #getBase_Constraint()

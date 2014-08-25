@@ -55,7 +55,7 @@ public interface RangeableValueType extends EADatatype {
 	 * If the meaning of the '<em>Accuracy</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Accuracy</em>' attribute.
 	 * @see #setAccuracy(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_Accuracy()
@@ -71,7 +71,7 @@ public interface RangeableValueType extends EADatatype {
 	 * If the meaning of the '<em>Resolution</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Resolution</em>' attribute.
 	 * @see #setResolution(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_Resolution()
@@ -87,7 +87,7 @@ public interface RangeableValueType extends EADatatype {
 	 * If the meaning of the '<em>Significant Digits</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Significant Digits</em>' attribute.
 	 * @see #setSignificantDigits(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_SignificantDigits()
@@ -100,7 +100,7 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getAccuracy <em>Accuracy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Accuracy</em>' attribute.
 	 * @see #getAccuracy()
@@ -112,7 +112,7 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getResolution <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Resolution</em>' attribute.
 	 * @see #getResolution()
@@ -124,7 +124,7 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getSignificantDigits <em>Significant Digits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Significant Digits</em>' attribute.
 	 * @see #getSignificantDigits()
@@ -139,7 +139,7 @@ public interface RangeableValueType extends EADatatype {
 	 * If the meaning of the '<em>Base Rangeable</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Rangeable</em>' reference.
 	 * @see #setBaseRangeable(EANumerical)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getRangeableValueType_BaseRangeable()
@@ -152,7 +152,7 @@ public interface RangeableValueType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.RangeableValueType#getBaseRangeable <em>Base Rangeable</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Rangeable</em>' reference.
 	 * @see #getBaseRangeable()

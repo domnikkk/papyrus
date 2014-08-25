@@ -17,7 +17,6 @@ package org.eclipse.papyrus.qompass.designer.core.sync;
 import java.util.Iterator;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.papyrus.FCM.DeploymentPlan;
 import org.eclipse.papyrus.qompass.designer.core.Log;
 import org.eclipse.papyrus.qompass.designer.core.Utils;

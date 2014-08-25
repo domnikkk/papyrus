@@ -29,7 +29,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_Brokering
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_BrokeringFactory {
@@ -37,7 +37,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SW_BrokeringFactory init() {
@@ -56,7 +56,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SW_BrokeringFactoryImpl() {
@@ -66,7 +66,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AccessPolicyKind createAccessPolicyKindFromString(EDataType eDataType, String initialValue) {
@@ -154,7 +154,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAccessPolicyKindToString(EDataType eDataType, Object instanceValue) {
@@ -164,7 +164,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class SW_BrokeringFactoryImpl extends EFactoryImpl implements SW_Brokerin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

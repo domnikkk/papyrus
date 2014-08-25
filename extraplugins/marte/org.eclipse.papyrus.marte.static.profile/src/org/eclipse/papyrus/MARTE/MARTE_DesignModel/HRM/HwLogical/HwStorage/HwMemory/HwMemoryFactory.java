@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface HwMemoryFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HwMemoryFactory eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface HwMemoryFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw Memory</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw Memory</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface HwMemoryFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw RAM</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw RAM</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface HwMemoryFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw ROM</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw ROM</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface HwMemoryFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw Drive</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw Drive</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface HwMemoryFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw Cache</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw Cache</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface HwMemoryFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

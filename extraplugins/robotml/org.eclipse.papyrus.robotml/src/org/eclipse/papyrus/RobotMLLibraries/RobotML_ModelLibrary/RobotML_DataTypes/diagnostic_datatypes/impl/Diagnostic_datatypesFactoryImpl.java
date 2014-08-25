@@ -5,18 +5,19 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.*;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.DiagnosticArray;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.DiagnosticStatus;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesFactory;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.KeyValue;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Diagnostic_datatypesFactory {
@@ -24,7 +25,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Diagnostic_datatypesFactory init() {
@@ -43,7 +44,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Diagnostic_datatypesFactoryImpl() {
@@ -53,7 +54,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +74,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagnosticArray createDiagnosticArray() {
@@ -84,7 +85,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagnosticStatus createDiagnosticStatus() {
@@ -95,7 +96,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public KeyValue createKeyValue() {
@@ -106,7 +107,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Diagnostic_datatypesPackage getDiagnostic_datatypesPackage() {
@@ -116,7 +117,7 @@ public class Diagnostic_datatypesFactoryImpl extends EFactoryImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

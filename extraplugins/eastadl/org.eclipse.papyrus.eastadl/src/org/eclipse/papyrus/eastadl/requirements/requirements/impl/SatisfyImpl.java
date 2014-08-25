@@ -48,7 +48,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	 * The cached value of the '{@link #getSatisfiedUseCase() <em>Satisfied Use Case</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSatisfiedUseCase()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	 * The cached value of the '{@link #getSatisfiedBy() <em>Satisfied By</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSatisfiedBy()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SatisfyImpl() {
@@ -90,7 +90,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -131,7 +131,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -270,7 +270,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +338,7 @@ public class SatisfyImpl extends RequirementsRelationshipImpl implements Satisfy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

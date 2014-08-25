@@ -74,7 +74,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ErrorModelTypeImpl() {
@@ -112,7 +112,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -241,7 +241,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -282,7 +282,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -432,7 +432,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -541,7 +541,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

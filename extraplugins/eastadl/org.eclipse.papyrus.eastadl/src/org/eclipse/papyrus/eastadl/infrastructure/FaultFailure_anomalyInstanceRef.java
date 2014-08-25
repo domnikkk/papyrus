@@ -31,7 +31,7 @@ public interface FaultFailure_anomalyInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Anomaly</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Anomaly</em>' reference.
 	 * @see #setAnomaly(Anomaly)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getFaultFailure_anomalyInstanceRef_Anomaly()
@@ -44,7 +44,7 @@ public interface FaultFailure_anomalyInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.FaultFailure_anomalyInstanceRef#getAnomaly <em>Anomaly</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Anomaly</em>' reference.
 	 * @see #getAnomaly()
@@ -60,7 +60,7 @@ public interface FaultFailure_anomalyInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Error Model Prototype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Error Model Prototype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getFaultFailure_anomalyInstanceRef_ErrorModelPrototype()
 	 * @model ordered="false"

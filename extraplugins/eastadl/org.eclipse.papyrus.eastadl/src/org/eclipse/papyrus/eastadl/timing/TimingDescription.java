@@ -46,7 +46,7 @@ public interface TimingDescription extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getTimingDescription_Base_Class()
@@ -59,7 +59,7 @@ public interface TimingDescription extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.TimingDescription#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()

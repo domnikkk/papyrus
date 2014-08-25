@@ -47,7 +47,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	 * The cached value of the '{@link #getProvidedInterface() <em>Provided Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProvidedInterface()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	 * The cached value of the '{@link #getRequiredInterface() <em>Required Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRequiredInterface()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	 * The default value of the '{@link #isExtendedPort() <em>Extended Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isExtendedPort()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PortKindImpl() {
@@ -100,7 +100,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -141,7 +141,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Interface basicGetProvidedInterface() {
@@ -186,7 +186,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Interface basicGetRequiredInterface() {
@@ -231,7 +231,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +301,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class PortKindImpl extends EObjectImpl implements PortKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

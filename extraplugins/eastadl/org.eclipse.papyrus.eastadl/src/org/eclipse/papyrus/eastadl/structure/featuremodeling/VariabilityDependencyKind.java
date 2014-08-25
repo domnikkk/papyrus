@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getVariabilityDependencyKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * The '<em><b>Needs</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NEEDS_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * The '<em><b>Optional Alternative</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OPTIONAL_ALTERNATIVE_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * The '<em><b>Custom</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CUSTOM_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * The '<em><b>Mandatory Alternative</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MANDATORY_ALTERNATIVE_VALUE
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * The '<em><b>Suggests</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SUGGESTS_VALUE
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * The '<em><b>Impedes</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #IMPEDES_VALUE
 	 * @generated
 	 * @ordered
@@ -116,7 +116,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 *
 	 * When used in a VariationGroup: assuming the ordered association variableElement in meta-class VariationGroup refers to elements VE1, VE2, ..., VEn, this kind states that VE1 requires (i.e. may not appear without) all other elements VE2, VE3, ..., VEn.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #NEEDS
 	 * @model name="needs"
 	 * @generated
@@ -133,7 +133,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 *
 	 * When used in a VariationGroup: this kind states that at most(!) one element of the elements denoted by association variableElement of the VariationGroup must be selected in any valid final system configuration.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #OPTIONAL_ALTERNATIVE
 	 * @model name="optionalAlternative"
 	 * @generated
@@ -150,7 +150,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 *
 	 * When used in a VariationGroup: this kind states that the dependency between the elements denoted by association variableElement of the VariationGroup will be defined by a logical expression in attribute 'constraint' of the VariationGroup.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #CUSTOM
 	 * @model name="custom"
 	 * @generated
@@ -167,7 +167,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 *
 	 * When used in a VariationGroup: this kind states that exactly(!) one element of the elements denoted by association variableElement of the VariationGroup must be selected in any valid final system configuration.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #MANDATORY_ALTERNATIVE
 	 * @model name="mandatoryAlternative"
 	 * @generated
@@ -186,7 +186,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 *
 	 * When used in a VariationGroup: accordingly as above.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #SUGGESTS
 	 * @model name="suggests"
 	 * @generated
@@ -205,7 +205,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 *
 	 * When used in a VariationGroup: accordingly as above.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #IMPEDES
 	 * @model name="impedes"
 	 * @generated
@@ -217,7 +217,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * An array of all the '<em><b>Variability Dependency Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final VariabilityDependencyKind[] VALUES_ARRAY =
@@ -234,7 +234,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Variability Dependency Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<VariabilityDependencyKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -243,7 +243,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * Returns the '<em><b>Variability Dependency Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VariabilityDependencyKind get(int value) {
@@ -268,7 +268,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * Returns the '<em><b>Variability Dependency Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VariabilityDependencyKind get(String literal) {
@@ -285,7 +285,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * Returns the '<em><b>Variability Dependency Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VariabilityDependencyKind getByName(String name) {
@@ -301,7 +301,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -309,7 +309,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -317,7 +317,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -326,7 +326,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private VariabilityDependencyKind(int value, String name, String literal) {
@@ -338,7 +338,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public enum VariabilityDependencyKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

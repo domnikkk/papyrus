@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.CoreElementsFactory
  * @model kind="package"
  * @generated
@@ -38,7 +38,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "CoreElements";
@@ -47,7 +47,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/CoreElements/1";
@@ -56,7 +56,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "CoreElements";
@@ -65,7 +65,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	CoreElementsPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl.init();
@@ -74,7 +74,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeTransitionImpl <em>Mode Transition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeTransitionImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getModeTransition()
 	 * @generated
@@ -85,7 +85,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Transition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -95,7 +95,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Mode Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -105,7 +105,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeBehaviorImpl <em>Mode Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeBehaviorImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getModeBehavior()
 	 * @generated
@@ -116,7 +116,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base State Machine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -126,7 +126,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Mode Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,7 +136,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ConfigurationImpl <em>Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ConfigurationImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getConfiguration()
 	 * @generated
@@ -147,7 +147,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Structured Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +177,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeImpl <em>Mode</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getMode()
 	 * @generated
@@ -198,7 +198,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Mode</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition <em>Mode Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Mode Transition</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition
 	 * @generated
@@ -230,7 +230,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition#getBase_Transition <em>Base Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Transition</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition#getBase_Transition()
 	 * @see #getModeTransition()
@@ -242,7 +242,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeBehavior <em>Mode Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Mode Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeBehavior
 	 * @generated
@@ -253,7 +253,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeBehavior#getBase_StateMachine <em>Base State Machine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base State Machine</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeBehavior#getBase_StateMachine()
 	 * @see #getModeBehavior()
@@ -265,7 +265,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Configuration</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration
 	 * @generated
@@ -276,7 +276,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration#getBase_StructuredClassifier <em>Base Structured Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Structured Classifier</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration#getBase_StructuredClassifier()
 	 * @see #getConfiguration()
@@ -288,7 +288,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration#getBase_Package()
 	 * @see #getConfiguration()
@@ -300,7 +300,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration#getMode <em>Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Mode</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration#getMode()
 	 * @see #getConfiguration()
@@ -312,7 +312,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Mode <em>Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Mode</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Mode
 	 * @generated
@@ -323,7 +323,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Mode#getBase_State <em>Base State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base State</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Mode#getBase_State()
 	 * @see #getMode()
@@ -335,7 +335,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -351,7 +351,7 @@ public interface CoreElementsPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -359,7 +359,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeTransitionImpl <em>Mode Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeTransitionImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getModeTransition()
 		 * @generated
@@ -370,7 +370,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Transition</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODE_TRANSITION__BASE_TRANSITION = eINSTANCE.getModeTransition_Base_Transition();
@@ -379,7 +379,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeBehaviorImpl <em>Mode Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeBehaviorImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getModeBehavior()
 		 * @generated
@@ -390,7 +390,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base State Machine</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODE_BEHAVIOR__BASE_STATE_MACHINE = eINSTANCE.getModeBehavior_Base_StateMachine();
@@ -399,7 +399,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ConfigurationImpl <em>Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ConfigurationImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getConfiguration()
 		 * @generated
@@ -410,7 +410,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Structured Classifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONFIGURATION__BASE_STRUCTURED_CLASSIFIER = eINSTANCE.getConfiguration_Base_StructuredClassifier();
@@ -419,7 +419,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONFIGURATION__BASE_PACKAGE = eINSTANCE.getConfiguration_Base_Package();
@@ -428,7 +428,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mode</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONFIGURATION__MODE = eINSTANCE.getConfiguration_Mode();
@@ -437,7 +437,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeImpl <em>Mode</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.CoreElementsPackageImpl#getMode()
 		 * @generated
@@ -448,7 +448,7 @@ public interface CoreElementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODE__BASE_STATE = eINSTANCE.getMode_Base_State();

@@ -49,7 +49,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PortImpl() {
@@ -80,7 +80,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Port basicGetBase_Port() {
@@ -121,7 +121,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PortKind basicGetKind() {
@@ -166,7 +166,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +334,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

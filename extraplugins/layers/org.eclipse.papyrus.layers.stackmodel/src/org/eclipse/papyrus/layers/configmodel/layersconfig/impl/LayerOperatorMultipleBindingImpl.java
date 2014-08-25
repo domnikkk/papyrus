@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.layers.configmodel.layersconfig.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -45,7 +46,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getLayerOperatorConfig() <em>Layer Operator Config</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerOperatorConfig()
 	 * @generated
 	 * @ordered
@@ -56,7 +57,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getBindings() <em>Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindings()
 	 * @generated
 	 * @ordered
@@ -66,7 +67,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorMultipleBindingImpl() {
@@ -76,7 +77,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +88,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +108,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerOperatorConfig basicGetLayerOperatorConfig() {
@@ -117,7 +118,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +133,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +147,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -162,7 +163,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +178,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +198,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -218,7 +219,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +238,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

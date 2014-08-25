@@ -21,7 +21,7 @@ import com.google.common.collect.Collections2;
 
 /**
  * Set of utility methods for Collections.
- * 
+ *
  * @see Collections2
  *
  * @author cedric dumoulin

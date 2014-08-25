@@ -44,7 +44,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The default value of the '{@link #getProtectKind() <em>Protect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProtectKind()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getProtectKind() <em>Protect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProtectKind()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The default value of the '{@link #getCeiling() <em>Ceiling</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCeiling()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getCeiling() <em>Ceiling</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCeiling()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The default value of the '{@link #getOtherProtectProtocol() <em>Other Protect Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOtherProtectProtocol()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getOtherProtectProtocol() <em>Other Protect Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOtherProtectProtocol()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getScheduler() <em>Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScheduler()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MutualExclusionResourceImpl() {
@@ -130,7 +130,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetScheduler() {
@@ -249,7 +249,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetScheduler(Scheduler newScheduler, NotificationChain msgs) {
@@ -269,7 +269,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +295,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +328,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,7 +402,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -423,7 +423,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -40,7 +40,7 @@ public interface GaCommChannel extends SchedulableResource {
 	 * If the meaning of the '<em>Packet Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Packet Size</em>' attribute.
 	 * @see #setPacketSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaCommChannel_PacketSize()
@@ -53,7 +53,7 @@ public interface GaCommChannel extends SchedulableResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel#getPacketSize <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Packet Size</em>' attribute.
 	 * @see #getPacketSize()
@@ -68,7 +68,7 @@ public interface GaCommChannel extends SchedulableResource {
 	 * If the meaning of the '<em>Utilization</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utilization</em>' attribute.
 	 * @see #setUtilization(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaCommChannel_Utilization()
@@ -81,7 +81,7 @@ public interface GaCommChannel extends SchedulableResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommChannel#getUtilization <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Utilization</em>' attribute.
 	 * @see #getUtilization()

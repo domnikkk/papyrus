@@ -32,7 +32,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.timing.TimingFactory
  * @model kind="package"
  * @generated
@@ -48,7 +48,7 @@ public interface TimingPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -56,7 +56,7 @@ public interface TimingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingDescriptionImpl <em>Description</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingDescriptionImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTimingDescription()
 		 * @generated
@@ -74,7 +74,7 @@ public interface TimingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTimingConstraint()
 		 * @generated
@@ -93,7 +93,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TIMING_CONSTRAINT__BASE_CLASS = eINSTANCE.getTimingConstraint_Base_Class();
@@ -102,7 +102,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TIMING_CONSTRAINT__BASE_CONSTRAINT = eINSTANCE.getTimingConstraint_Base_Constraint();
@@ -110,7 +110,7 @@ public interface TimingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl <em>Event Chain</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getEventChain()
 		 * @generated
@@ -144,7 +144,7 @@ public interface TimingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.EventImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getEvent()
 		 * @generated
@@ -155,7 +155,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingExpressionImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTimingExpression()
 		 * @generated
@@ -166,7 +166,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl <em>Precedence Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getPrecedenceConstraint()
 		 * @generated
@@ -177,7 +177,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Successive</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PRECEDENCE_CONSTRAINT__SUCCESSIVE = eINSTANCE.getPrecedenceConstraint_Successive();
@@ -186,7 +186,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Preceding</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PRECEDENCE_CONSTRAINT__PRECEDING = eINSTANCE.getPrecedenceConstraint_Preceding();
@@ -194,7 +194,7 @@ public interface TimingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl <em>Timing</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTiming()
 		 * @generated
@@ -205,7 +205,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Constraint</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TIMING__CONSTRAINT = eINSTANCE.getTiming_Constraint();
@@ -214,7 +214,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TIMING__DESCRIPTION = eINSTANCE.getTiming_Description();
@@ -231,7 +231,7 @@ public interface TimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TIMING__BASE_PACKAGE = eINSTANCE.getTiming_Base_Package();
@@ -241,7 +241,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "timing";
@@ -249,7 +249,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Timing/1";
@@ -257,7 +257,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Timing";
@@ -265,7 +265,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	TimingPackage eINSTANCE = org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl.init();
@@ -273,7 +273,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingDescriptionImpl <em>Description</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingDescriptionImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTimingDescription()
 	 * @generated
@@ -284,7 +284,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -294,7 +294,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -304,7 +304,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -314,7 +314,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -324,7 +324,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Description</em>' class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -334,7 +334,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of operations of the '<em>Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -343,7 +343,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTimingConstraint()
 	 * @generated
@@ -354,7 +354,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -364,7 +364,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -374,7 +374,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -384,7 +384,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -394,7 +394,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -404,7 +404,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -414,7 +414,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -424,7 +424,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of operations of the '<em>Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -433,7 +433,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl <em>Event Chain</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.EventChainImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getEventChain()
 	 * @generated
@@ -443,7 +443,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.impl.EventImpl <em>Event</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.EventImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getEvent()
 	 * @generated
@@ -453,7 +453,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl <em>Timing</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTiming()
 	 * @generated
@@ -464,7 +464,7 @@ public interface TimingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl <em>Precedence Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.PrecedenceConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getPrecedenceConstraint()
 	 * @generated
@@ -475,7 +475,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -485,7 +485,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -495,7 +495,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -505,7 +505,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -515,7 +515,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -525,7 +525,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -535,7 +535,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -545,7 +545,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -555,7 +555,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -565,7 +565,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -575,7 +575,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Timing</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -585,7 +585,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of operations of the '<em>Timing</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -595,7 +595,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -605,7 +605,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -615,7 +615,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -625,7 +625,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -635,7 +635,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Segment</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -645,7 +645,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Response</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -655,7 +655,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Stimulus</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -665,7 +665,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Event Chain</em>' class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -675,7 +675,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of operations of the '<em>Event Chain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -685,7 +685,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -695,7 +695,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -705,7 +705,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -715,7 +715,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -725,7 +725,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -735,7 +735,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of operations of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -745,7 +745,7 @@ public interface TimingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.impl.TimingExpressionImpl <em>Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingExpressionImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.impl.TimingPackageImpl#getTimingExpression()
 	 * @generated
@@ -756,7 +756,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -766,7 +766,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -776,7 +776,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -786,7 +786,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of operations of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -796,7 +796,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -806,7 +806,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -816,7 +816,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -826,7 +826,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -836,7 +836,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -846,7 +846,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -856,7 +856,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Preceding</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -866,7 +866,7 @@ public interface TimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Successive</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -876,7 +876,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Precedence Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -886,7 +886,7 @@ public interface TimingPackage extends EPackage {
 	 * The number of operations of the '<em>Precedence Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -895,7 +895,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.Event
 	 * @generated
@@ -906,7 +906,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.TimingExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Expression</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingExpression
 	 * @generated
@@ -926,7 +926,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.EventChain#getResponse <em>Response</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Response</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.EventChain#getResponse()
 	 * @see #getEventChain()
@@ -937,7 +937,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.timing.EventChain#getSegment <em>Segment</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Segment</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.EventChain#getSegment()
 	 * @see #getEventChain()
@@ -948,7 +948,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.EventChain#getStimulus <em>Stimulus</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Stimulus</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.EventChain#getStimulus()
 	 * @see #getEventChain()
@@ -960,7 +960,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint <em>Precedence Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Precedence Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint
 	 * @generated
@@ -971,7 +971,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getPreceding <em>Preceding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Preceding</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getPreceding()
 	 * @see #getPrecedenceConstraint()
@@ -983,7 +983,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getSuccessive <em>Successive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Successive</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getSuccessive()
 	 * @see #getPrecedenceConstraint()
@@ -994,7 +994,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.Timing <em>Timing</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Timing</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.Timing
 	 * @generated
@@ -1005,7 +1005,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.timing.Timing#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.Timing#getConstraint()
 	 * @see #getTiming()
@@ -1017,7 +1017,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.timing.Timing#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.Timing#getDescription()
 	 * @see #getTiming()
@@ -1029,7 +1029,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.Timing#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.Timing#getBase_Class()
 	 * @see #getTiming()
@@ -1041,7 +1041,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.Timing#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.Timing#getBase_Package()
 	 * @see #getTiming()
@@ -1052,7 +1052,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.TimingConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingConstraint
 	 * @generated
@@ -1063,7 +1063,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.TimingConstraint#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingConstraint#getBase_Class()
 	 * @see #getTimingConstraint()
@@ -1075,7 +1075,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.TimingConstraint#getBase_Constraint <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingConstraint#getBase_Constraint()
 	 * @see #getTimingConstraint()
@@ -1086,7 +1086,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.TimingConstraint#getMode <em>Mode</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Mode</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingConstraint#getMode()
 	 * @see #getTimingConstraint()
@@ -1097,7 +1097,7 @@ public interface TimingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.TimingDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingDescription
 	 * @generated
@@ -1108,7 +1108,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.TimingDescription#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingDescription#getBase_Class()
 	 * @see #getTimingDescription()
@@ -1120,7 +1120,7 @@ public interface TimingPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

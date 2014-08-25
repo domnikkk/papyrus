@@ -7,11 +7,8 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaGen;
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 
@@ -34,7 +31,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The default value of the '{@link #getSrcName() <em>Src Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrcName()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The cached value of the '{@link #getSrcName() <em>Src Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrcName()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The default value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProjectName()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The cached value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProjectName()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaGenImpl() {
@@ -87,7 +84,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +95,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +106,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +121,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +132,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +147,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +164,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +183,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +202,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +219,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

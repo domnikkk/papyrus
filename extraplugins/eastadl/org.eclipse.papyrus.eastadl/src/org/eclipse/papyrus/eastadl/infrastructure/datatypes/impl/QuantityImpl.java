@@ -33,7 +33,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The default value of the '{@link #getAmountOfSubstanceExp() <em>Amount Of Substance Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAmountOfSubstanceExp()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The cached value of the '{@link #getAmountOfSubstanceExp() <em>Amount Of Substance Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAmountOfSubstanceExp()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The default value of the '{@link #getElectricCurrentExp() <em>Electric Current Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElectricCurrentExp()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The cached value of the '{@link #getElectricCurrentExp() <em>Electric Current Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElectricCurrentExp()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The default value of the '{@link #getLenghtExp() <em>Lenght Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLenghtExp()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The cached value of the '{@link #getLenghtExp() <em>Lenght Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLenghtExp()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The default value of the '{@link #getLuminousIntensityExp() <em>Luminous Intensity Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLuminousIntensityExp()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The cached value of the '{@link #getLuminousIntensityExp() <em>Luminous Intensity Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLuminousIntensityExp()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The default value of the '{@link #getMassExp() <em>Mass Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMassExp()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The cached value of the '{@link #getMassExp() <em>Mass Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMassExp()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The default value of the '{@link #getThermodynamicTemperatureExp() <em>Thermodynamic Temperature Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThermodynamicTemperatureExp()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The cached value of the '{@link #getThermodynamicTemperatureExp() <em>Thermodynamic Temperature Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThermodynamicTemperatureExp()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The default value of the '{@link #getTimeExp() <em>Time Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeExp()
 	 * @generated
 	 * @ordered
@@ -176,7 +176,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	 * The cached value of the '{@link #getTimeExp() <em>Time Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeExp()
 	 * @generated
 	 * @ordered
@@ -186,7 +186,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected QuantityImpl() {
@@ -196,7 +196,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +233,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +322,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +337,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +348,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +363,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +374,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +389,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +416,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -450,7 +450,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -484,7 +484,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -511,7 +511,7 @@ public class QuantityImpl extends EAPackageableElementImpl implements Quantity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

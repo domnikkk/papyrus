@@ -34,7 +34,7 @@ public abstract class AllocationTargetImpl extends EAElementImpl implements Allo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AllocationTargetImpl() {
@@ -44,7 +44,7 @@ public abstract class AllocationTargetImpl extends EAElementImpl implements Allo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

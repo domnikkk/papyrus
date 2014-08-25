@@ -6,18 +6,19 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.*;
+import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Mode;
+import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRuleFactory;
+import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.PapyrusDSMLValidationRulePackage;
+import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.Severity;
+import org.eclipse.papyrus.dsml.validation.PapyrusDSMLValidationRule.ValidationRule;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implements PapyrusDSMLValidationRuleFactory {
@@ -25,7 +26,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PapyrusDSMLValidationRuleFactory init() {
@@ -44,7 +45,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusDSMLValidationRuleFactoryImpl() {
@@ -54,7 +55,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,7 +71,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +89,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +107,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValidationRule createValidationRule() {
@@ -117,7 +118,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Severity createSeverityFromString(EDataType eDataType, String initialValue) {
@@ -131,7 +132,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSeverityToString(EDataType eDataType, Object instanceValue) {
@@ -141,7 +142,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Mode createModeFromString(EDataType eDataType, String initialValue) {
@@ -155,7 +156,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertModeToString(EDataType eDataType, Object instanceValue) {
@@ -165,7 +166,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusDSMLValidationRulePackage getPapyrusDSMLValidationRulePackage() {
@@ -175,7 +176,7 @@ public class PapyrusDSMLValidationRuleFactoryImpl extends EFactoryImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

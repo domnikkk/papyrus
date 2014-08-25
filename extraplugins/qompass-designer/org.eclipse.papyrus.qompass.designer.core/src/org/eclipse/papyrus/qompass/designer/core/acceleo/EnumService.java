@@ -118,7 +118,7 @@ public class EnumService {
 	 * Create a dependency between the passed classifier, target pair. The objective
 	 * of this function is that code generators do the necessary to assure that the
 	 * target is known within the classifier (e.g. include directives)
-	 * 
+	 *
 	 * @param classifier
 	 *            a classifier
 	 * @param target

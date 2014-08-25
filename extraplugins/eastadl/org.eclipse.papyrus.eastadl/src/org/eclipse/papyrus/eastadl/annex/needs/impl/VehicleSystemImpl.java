@@ -50,7 +50,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	 * The cached value of the '{@link #getFulfills() <em>Fulfills</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFulfills()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	 * The cached value of the '{@link #getHasAn() <em>Has An</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHasAn()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	 * The cached value of the '{@link #getHas() <em>Has</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHas()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VehicleSystemImpl() {
@@ -92,7 +92,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Architecture basicGetHasAn() {
@@ -102,7 +102,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -168,7 +168,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class VehicleSystemImpl extends ConceptImpl implements VehicleSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

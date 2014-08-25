@@ -15,18 +15,17 @@ package org.eclipse.papyrus.texteditor.model.texteditormodel.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.texteditor.model.texteditormodel.*;
+import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel;
+import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelFactory;
+import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TextEditorModelFactoryImpl extends EFactoryImpl implements TextEditorModelFactory {
@@ -34,7 +33,7 @@ public class TextEditorModelFactoryImpl extends EFactoryImpl implements TextEdit
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TextEditorModelFactory init() {
@@ -53,7 +52,7 @@ public class TextEditorModelFactoryImpl extends EFactoryImpl implements TextEdit
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TextEditorModelFactoryImpl() {
@@ -63,7 +62,7 @@ public class TextEditorModelFactoryImpl extends EFactoryImpl implements TextEdit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +78,7 @@ public class TextEditorModelFactoryImpl extends EFactoryImpl implements TextEdit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +90,7 @@ public class TextEditorModelFactoryImpl extends EFactoryImpl implements TextEdit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +101,7 @@ public class TextEditorModelFactoryImpl extends EFactoryImpl implements TextEdit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

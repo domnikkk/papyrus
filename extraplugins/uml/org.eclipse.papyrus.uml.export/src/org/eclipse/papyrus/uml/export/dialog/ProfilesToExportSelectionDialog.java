@@ -103,7 +103,7 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#createFilter()
 	 */
 	/**

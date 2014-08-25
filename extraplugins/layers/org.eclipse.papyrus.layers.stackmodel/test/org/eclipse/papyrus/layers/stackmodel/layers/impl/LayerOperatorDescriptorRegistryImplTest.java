@@ -10,7 +10,10 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.layers.stackmodel.NotFoundException;
 import org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator;
@@ -153,7 +156,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl#getLayerOperatorDescriptor(java.lang.String)}.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test
@@ -206,7 +209,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl#getPropertyOperator(java.lang.String)}.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test
@@ -237,7 +240,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String)}.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test

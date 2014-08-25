@@ -46,7 +46,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The default value of the '{@link #isIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsAtomic()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The cached value of the '{@link #isIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsAtomic()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The default value of the '{@link #getSynchKind() <em>Synch Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSynchKind()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The cached value of the '{@link #getSynchKind() <em>Synch Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSynchKind()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The default value of the '{@link #getMsgSize() <em>Msg Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMsgSize()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The cached value of the '{@link #getMsgSize() <em>Msg Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMsgSize()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The cached value of the '{@link #getBase_BehavioralFeature() <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	 * The cached value of the '{@link #getBase_InvocationAction() <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_InvocationAction()
 	 * @generated
 	 * @ordered
@@ -133,7 +133,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RtActionImpl() {
@@ -143,7 +143,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetBase_BehavioralFeature() {
@@ -262,7 +262,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvocationAction basicGetBase_InvocationAction() {
@@ -307,7 +307,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +322,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +351,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +379,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +407,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +430,7 @@ public class RtActionImpl extends EObjectImpl implements RtAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

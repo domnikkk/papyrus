@@ -52,7 +52,7 @@ public class StateMachineUtil {
 	 * Declares a dependency from the current classifier which is produced by template instantiation
 	 * to the element (enum) "OperationIDs", if found within the passed package.
 	 * Called by Acceleo script "acceptableEvents.mtl".
-	 * 
+	 *
 	 * @param pkg
 	 * @return
 	 */
@@ -67,7 +67,7 @@ public class StateMachineUtil {
 	 * Declares a dependency from the current classifier which is produced by template instantiation
 	 * to the element (enum) "SignalIDs", if found within the passed package.
 	 * Called by Acceleo script "acceptableEvents.mtl".
-	 * 
+	 *
 	 * @param pkg
 	 *            the package in which an enumeration is looked up
 	 * @return

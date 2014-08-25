@@ -4,18 +4,14 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.marte.vsl.vSL.DataTypeName;
 import org.eclipse.papyrus.marte.vsl.vSL.QualifiedName;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
-
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
@@ -40,7 +36,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -51,7 +47,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -61,7 +57,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataTypeNameImpl()
@@ -72,7 +68,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +80,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +92,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPath(QualifiedName newPath, NotificationChain msgs)
@@ -118,7 +114,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +142,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +165,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataType basicGetType()
@@ -180,7 +176,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +192,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +204,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +216,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +228,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +245,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +267,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +288,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +309,7 @@ public class DataTypeNameImpl extends MinimalEObjectImpl.Container implements Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 import org.eclipse.papyrus.java.profile.java.PrimitiveType;
 
@@ -36,7 +33,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The default value of the '{@link #getImplementationClass() <em>Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationClass()
 	 * @generated
 	 * @ordered
@@ -47,7 +44,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The cached value of the '{@link #getImplementationClass() <em>Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationClass()
 	 * @generated
 	 * @ordered
@@ -58,7 +55,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The cached value of the '{@link #getBase_PrimitiveType() <em>Base Primitive Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_PrimitiveType()
 	 * @generated
 	 * @ordered
@@ -69,7 +66,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The default value of the '{@link #getCollectionImplementationClass() <em>Collection Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCollectionImplementationClass()
 	 * @generated
 	 * @ordered
@@ -80,7 +77,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The cached value of the '{@link #getCollectionImplementationClass() <em>Collection Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCollectionImplementationClass()
 	 * @generated
 	 * @ordered
@@ -90,7 +87,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PrimitiveTypeImpl() {
@@ -100,7 +97,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +108,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +119,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +134,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.PrimitiveType basicGetBase_PrimitiveType() {
@@ -167,7 +164,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +179,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +190,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +205,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +227,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +249,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +271,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +290,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

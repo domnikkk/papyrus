@@ -30,7 +30,7 @@ public class ConcurrencyResourceImpl extends ResourceImpl implements Concurrency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConcurrencyResourceImpl() {
@@ -40,7 +40,7 @@ public class ConcurrencyResourceImpl extends ResourceImpl implements Concurrency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

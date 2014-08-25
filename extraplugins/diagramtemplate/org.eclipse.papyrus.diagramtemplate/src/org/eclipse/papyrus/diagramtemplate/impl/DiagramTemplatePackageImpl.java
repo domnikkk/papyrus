@@ -25,14 +25,14 @@ import org.eclipse.papyrus.diagramtemplate.Template;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramTemplatePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass diagramDefinitionEClass = null;
@@ -40,7 +40,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass selectionEClass = null;
@@ -48,7 +48,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass selectionRefEClass = null;
@@ -56,7 +56,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass templateEClass = null;
@@ -64,7 +64,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractSelectionEClass = null;
@@ -72,7 +72,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum selectionKindEEnum = null;
@@ -82,7 +82,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#eNS_URI
 	 * @see #init()
@@ -95,7 +95,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -106,7 +106,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	 * <p>
 	 * This method is used to initialize {@link DiagramTemplatePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -140,7 +140,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDiagramDefinition() {
@@ -150,7 +150,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_Description() {
@@ -160,7 +160,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagramDefinition_FromRoot() {
@@ -170,7 +170,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagramDefinition_Selection() {
@@ -180,7 +180,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_DiagramKind() {
@@ -190,7 +190,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_LayoutToApply() {
@@ -200,7 +200,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_Name() {
@@ -210,7 +210,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_Prefix() {
@@ -220,7 +220,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSelection() {
@@ -230,7 +230,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getSelection_Recursively() {
@@ -240,7 +240,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSelectionRef() {
@@ -250,7 +250,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getSelectionRef_EReference() {
@@ -260,7 +260,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getTemplate() {
@@ -270,7 +270,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getTemplate_DiagramDefinitions() {
@@ -280,7 +280,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getTemplate_TargetRoot() {
@@ -290,7 +290,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getAbstractSelection() {
@@ -300,7 +300,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getAbstractSelection_Element() {
@@ -310,7 +310,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getAbstractSelection_Kind() {
@@ -320,7 +320,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getAbstractSelection_SelectionRef() {
@@ -330,7 +330,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getAbstractSelection_SubTypes() {
@@ -340,7 +340,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getAbstractSelection_StereotypedBy() {
@@ -350,7 +350,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getSelectionKind() {
@@ -360,7 +360,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagramTemplateFactory getDiagramTemplateFactory() {
@@ -370,7 +370,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -380,7 +380,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -423,7 +423,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -433,7 +433,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

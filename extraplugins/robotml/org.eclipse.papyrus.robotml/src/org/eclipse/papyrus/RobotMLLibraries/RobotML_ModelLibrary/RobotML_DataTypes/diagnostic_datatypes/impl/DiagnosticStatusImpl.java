@@ -6,18 +6,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.DiagnosticStatus;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.KeyValue;
@@ -47,7 +42,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getOK() <em>OK</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOK()
 	 * @generated
 	 * @ordered
@@ -58,7 +53,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getOK() <em>OK</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOK()
 	 * @generated
 	 * @ordered
@@ -69,7 +64,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getWARN() <em>WARN</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWARN()
 	 * @generated
 	 * @ordered
@@ -80,7 +75,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getWARN() <em>WARN</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWARN()
 	 * @generated
 	 * @ordered
@@ -91,7 +86,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getERROR() <em>ERROR</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getERROR()
 	 * @generated
 	 * @ordered
@@ -102,7 +97,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getERROR() <em>ERROR</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getERROR()
 	 * @generated
 	 * @ordered
@@ -113,7 +108,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLevel()
 	 * @generated
 	 * @ordered
@@ -124,7 +119,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLevel()
 	 * @generated
 	 * @ordered
@@ -135,7 +130,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -146,7 +141,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -157,7 +152,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -168,7 +163,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -179,7 +174,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getHardware_id() <em>Hardware id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardware_id()
 	 * @generated
 	 * @ordered
@@ -190,7 +185,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getHardware_id() <em>Hardware id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardware_id()
 	 * @generated
 	 * @ordered
@@ -201,7 +196,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValues()
 	 * @generated
 	 * @ordered
@@ -211,7 +206,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DiagnosticStatusImpl() {
@@ -221,7 +216,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +227,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public byte getOK() {
@@ -242,7 +237,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOK(byte newOK) {
@@ -256,7 +251,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public byte getWARN() {
@@ -266,7 +261,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWARN(byte newWARN) {
@@ -280,7 +275,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public byte getERROR() {
@@ -290,7 +285,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setERROR(byte newERROR) {
@@ -304,7 +299,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public byte getLevel() {
@@ -314,7 +309,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLevel(byte newLevel) {
@@ -328,7 +323,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -338,7 +333,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -352,7 +347,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getMessage() {
@@ -362,7 +357,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
@@ -376,7 +371,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getHardware_id() {
@@ -386,7 +381,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHardware_id(String newHardware_id) {
@@ -400,7 +395,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<KeyValue> getValues() {
@@ -413,7 +408,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +423,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -457,7 +452,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -496,7 +491,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -533,7 +528,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -562,7 +557,7 @@ public class DiagnosticStatusImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

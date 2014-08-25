@@ -26,7 +26,7 @@ import org.eclipse.papyrus.diagramtemplate.Template;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage
  * @generated
  */
@@ -35,7 +35,7 @@ public class DiagramTemplateSwitch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static DiagramTemplatePackage modelPackage;
@@ -44,7 +44,7 @@ public class DiagramTemplateSwitch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagramTemplateSwitch() {
@@ -57,7 +57,7 @@ public class DiagramTemplateSwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -69,7 +69,7 @@ public class DiagramTemplateSwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -89,7 +89,7 @@ public class DiagramTemplateSwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -152,7 +152,7 @@ public class DiagramTemplateSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Diagram Definition</em>'.
@@ -169,7 +169,7 @@ public class DiagramTemplateSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Selection</em>'.
@@ -186,7 +186,7 @@ public class DiagramTemplateSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Selection Ref</em>'.
@@ -203,7 +203,7 @@ public class DiagramTemplateSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Template</em>'.
@@ -220,7 +220,7 @@ public class DiagramTemplateSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Selection</em>'.
@@ -237,7 +237,7 @@ public class DiagramTemplateSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

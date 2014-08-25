@@ -46,7 +46,7 @@ public class AnalysisFunctionTypeImpl extends FunctionTypeImpl implements Analys
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AnalysisFunctionTypeImpl() {
@@ -55,7 +55,7 @@ public class AnalysisFunctionTypeImpl extends FunctionTypeImpl implements Analys
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class AnalysisFunctionTypeImpl extends FunctionTypeImpl implements Analys
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class AnalysisFunctionTypeImpl extends FunctionTypeImpl implements Analys
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

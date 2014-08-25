@@ -44,7 +44,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	 * The cached value of the '{@link #getPrivateElement() <em>Private Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrivateElement()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PrivateContentImpl() {
@@ -75,7 +75,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetPrivateElement() {
@@ -85,7 +85,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -185,7 +185,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class PrivateContentImpl extends EAElementImpl implements PrivateContent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -59,7 +59,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	 * The cached value of the '{@link #getBase_BehavioralFeature() <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	 * The cached value of the '{@link #getBase_Message() <em>Base Message</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Message()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	 * The cached value of the '{@link #getBase_Signal() <em>Base Signal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Signal()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	 * The cached value of the '{@link #getBase_InvocationAction() <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_InvocationAction()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RtFeatureImpl() {
@@ -123,7 +123,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetBase_BehavioralFeature() {
@@ -164,7 +164,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Message basicGetBase_Message() {
@@ -209,7 +209,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Signal basicGetBase_Signal() {
@@ -254,7 +254,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -299,7 +299,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +334,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvocationAction basicGetBase_InvocationAction() {
@@ -344,7 +344,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +359,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -406,7 +406,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -446,7 +446,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -479,7 +479,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -510,7 +510,7 @@ public class RtFeatureImpl extends EObjectImpl implements RtFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

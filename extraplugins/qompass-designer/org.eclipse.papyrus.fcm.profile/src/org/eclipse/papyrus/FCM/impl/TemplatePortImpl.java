@@ -35,7 +35,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TemplatePortImpl() {
@@ -45,7 +45,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -56,7 +56,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PortKind basicGetBoundType() {
@@ -81,7 +81,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

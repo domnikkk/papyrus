@@ -46,7 +46,7 @@ public interface DataPool extends EObject {
 	 * If the meaning of the '<em>Ordering</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ordering</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind
 	 * @see #setOrdering(DataPoolOrderingKind)
@@ -60,7 +60,7 @@ public interface DataPool extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getOrdering <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Ordering</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPoolOrderingKind
@@ -76,7 +76,7 @@ public interface DataPool extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getDataPool_Base_Property()
@@ -89,7 +89,7 @@ public interface DataPool extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
@@ -104,7 +104,7 @@ public interface DataPool extends EObject {
 	 * If the meaning of the '<em>Insertion</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Insertion</em>' reference.
 	 * @see #setInsertion(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getDataPool_Insertion()
@@ -117,7 +117,7 @@ public interface DataPool extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getInsertion <em>Insertion</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Insertion</em>' reference.
 	 * @see #getInsertion()
@@ -132,7 +132,7 @@ public interface DataPool extends EObject {
 	 * If the meaning of the '<em>Selection</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Selection</em>' reference.
 	 * @see #setSelection(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getDataPool_Selection()
@@ -145,7 +145,7 @@ public interface DataPool extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.DataPool#getSelection <em>Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Selection</em>' reference.
 	 * @see #getSelection()

@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Synchronization Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getSynchronizationKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>Synchronous</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SYNCHRONOUS_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>Asynchronous</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASYNCHRONOUS_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>Delayed Synchronous</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DELAYED_SYNCHRONOUS_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>Rendez Vous</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #RENDEZ_VOUS_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * If the meaning of '<em><b>Synchronous</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SYNCHRONOUS
 	 * @model name="synchronous"
 	 * @generated
@@ -107,7 +107,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * If the meaning of '<em><b>Asynchronous</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASYNCHRONOUS
 	 * @model name="asynchronous"
 	 * @generated
@@ -122,7 +122,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * If the meaning of '<em><b>Delayed Synchronous</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DELAYED_SYNCHRONOUS
 	 * @model name="delayedSynchronous"
 	 * @generated
@@ -137,7 +137,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * If the meaning of '<em><b>Rendez Vous</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #RENDEZ_VOUS
 	 * @model name="rendezVous"
 	 * @generated
@@ -152,7 +152,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -164,7 +164,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * An array of all the '<em><b>Synchronization Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final SynchronizationKind[] VALUES_ARRAY =
@@ -180,7 +180,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Synchronization Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<SynchronizationKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -189,7 +189,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * Returns the '<em><b>Synchronization Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SynchronizationKind get(String literal) {
@@ -206,7 +206,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * Returns the '<em><b>Synchronization Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SynchronizationKind getByName(String name) {
@@ -223,7 +223,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * Returns the '<em><b>Synchronization Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SynchronizationKind get(int value) {
@@ -245,7 +245,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -253,7 +253,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -261,7 +261,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -270,7 +270,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private SynchronizationKind(int value, String name, String literal) {
@@ -282,7 +282,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +293,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

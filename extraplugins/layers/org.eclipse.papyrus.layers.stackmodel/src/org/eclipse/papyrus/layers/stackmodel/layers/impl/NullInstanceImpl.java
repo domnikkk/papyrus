@@ -13,9 +13,9 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.NullInstance;
 
@@ -32,7 +32,7 @@ public class NullInstanceImpl extends TypeInstanceImpl implements NullInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NullInstanceImpl() {
@@ -42,7 +42,7 @@ public class NullInstanceImpl extends TypeInstanceImpl implements NullInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -53,7 +53,7 @@ public class NullInstanceImpl extends TypeInstanceImpl implements NullInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class NullInstanceImpl extends TypeInstanceImpl implements NullInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

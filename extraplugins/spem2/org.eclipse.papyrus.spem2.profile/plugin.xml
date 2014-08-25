@@ -8,7 +8,7 @@
             target="platform:/plugin/org.ecclipse.papyrus.spem2.profile/profiles/"/>
    </extension>
    <extension
-         point="org.eclipse.papyrus.extensionpoints.uml2.UMLProfile">
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
       <profile
             description="SPEM2 profile implementation (Software &amp; Systems Process Engineering Metamodel-07-11-01)"
             iconpath="resources/icons/Activity.jpg"
@@ -16,5 +16,4 @@
             path="pathmap://PROFILES/spem2.profile.uml"
             provider="Eclipse.org"/>
    </extension>
-
 </plugin>

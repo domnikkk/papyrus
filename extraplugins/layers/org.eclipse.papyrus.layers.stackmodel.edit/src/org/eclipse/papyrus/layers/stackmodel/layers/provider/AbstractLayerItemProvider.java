@@ -18,9 +18,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,7 +27,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
@@ -38,7 +35,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AbstractLayerItemProvider
@@ -53,7 +50,7 @@ public class AbstractLayerItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AbstractLayerItemProvider(AdapterFactory adapterFactory) {
@@ -64,7 +61,7 @@ public class AbstractLayerItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +81,7 @@ public class AbstractLayerItemProvider
 	 * This adds a property descriptor for the Property Values feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPropertyValuesPropertyDescriptor(Object object) {
@@ -107,7 +104,7 @@ public class AbstractLayerItemProvider
 	 * This adds a property descriptor for the Layer Descriptor feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLayerDescriptorPropertyDescriptor(Object object) {
@@ -130,7 +127,7 @@ public class AbstractLayerItemProvider
 	 * This adds a property descriptor for the Views feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addViewsPropertyDescriptor(Object object) {
@@ -153,7 +150,7 @@ public class AbstractLayerItemProvider
 	 * This adds a property descriptor for the Attached Properties feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAttachedPropertiesPropertyDescriptor(Object object) {
@@ -177,7 +174,7 @@ public class AbstractLayerItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +189,7 @@ public class AbstractLayerItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +204,7 @@ public class AbstractLayerItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +220,7 @@ public class AbstractLayerItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +240,7 @@ public class AbstractLayerItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

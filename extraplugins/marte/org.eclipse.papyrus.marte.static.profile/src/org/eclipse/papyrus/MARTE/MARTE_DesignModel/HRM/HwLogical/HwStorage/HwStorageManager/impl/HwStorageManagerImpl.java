@@ -46,7 +46,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	 * The default value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	 * The cached value of the '{@link #getManagedMemories() <em>Managed Memories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getManagedMemories()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwStorageManagerImpl() {
@@ -88,7 +88,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -177,7 +177,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class HwStorageManagerImpl extends HwResourceImpl implements HwStorageMan
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

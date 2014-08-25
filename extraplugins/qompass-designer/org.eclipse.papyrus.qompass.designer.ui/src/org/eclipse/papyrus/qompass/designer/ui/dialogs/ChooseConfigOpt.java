@@ -93,7 +93,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.ChooseSetAssistedDialog#createDialogArea(org.eclipse.swt.widgets.Composite)
 	 */
 	/**
@@ -145,7 +145,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.ChooseSetAssistedDialog#runAddElement(java.lang.String)
 	 */
 	/**
@@ -172,7 +172,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.ChooseSetAssistedDialog#isSelectableElement(java.lang.String)
 	 */
 	/**
@@ -205,7 +205,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.ChooseSetAssistedDialog.DecoratedContentProposalProvider#getProposals(java.lang.String, int)
 		 */
 		/**

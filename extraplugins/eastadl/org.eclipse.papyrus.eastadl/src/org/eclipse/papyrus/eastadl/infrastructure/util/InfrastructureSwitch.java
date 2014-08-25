@@ -5,7 +5,37 @@ package org.eclipse.papyrus.eastadl.infrastructure.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.papyrus.eastadl.infrastructure.*;
+import org.eclipse.papyrus.eastadl.infrastructure.AllocatedElementInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_errorModelTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_functionTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.ClampConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_functionTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_hwTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.EventFunctionClientServerPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.EventFunctionInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePort_functionTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePort_hwTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePropagationLink_fromPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePropagationLink_toPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailure_anomalyInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FunctionConnectorPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.HardwareConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.HardwarePortConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage;
+import org.eclipse.papyrus.eastadl.infrastructure.InstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_precedingInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_successiveInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.Realization_realizedByInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.Realization_realizedInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.RefineInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.SatisfyInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.TargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.VVCaseInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.VVTargetInstanceRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +46,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage
  * @generated
  */
@@ -25,7 +55,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static InfrastructurePackage modelPackage;
@@ -34,7 +64,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InfrastructureSwitch() {
@@ -47,7 +77,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -61,7 +91,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -406,7 +436,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Instance Ref</em>'.
@@ -423,7 +453,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Target Instance Ref</em>'.
@@ -440,7 +470,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Function Connector Port Instance Ref</em>'.
@@ -457,7 +487,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hardware Connector Instance Ref</em>'.
@@ -474,7 +504,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Hardware Port Connector Instance Ref</em>'.
@@ -491,7 +521,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Allocated Element Instance Ref</em>'.
@@ -508,7 +538,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Clamp Connector Instance Ref</em>'.
@@ -525,7 +555,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Refine Instance Ref</em>'.
@@ -542,7 +572,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Satisfy Instance Ref</em>'.
@@ -559,7 +589,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>VV Case Instance Ref</em>'.
@@ -576,7 +606,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>VV Target Instance Ref</em>'.
@@ -593,7 +623,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Realization realized Instance Ref</em>'.
@@ -610,7 +640,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Realization realized By Instance Ref</em>'.
@@ -627,7 +657,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Function Instance Ref</em>'.
@@ -644,7 +674,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Function Client Server Port Instance Ref</em>'.
@@ -661,7 +691,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event Function Flow Port Instance Ref</em>'.
@@ -678,7 +708,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Precedence Constraint preceding Instance Ref</em>'.
@@ -695,7 +725,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Precedence Constraint successive Instance Ref</em>'.
@@ -712,7 +742,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Error Model Prototype function Target Instance Ref</em>'.
@@ -729,7 +759,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Error Model Prototype hw Target Instance Ref</em>'.
@@ -746,7 +776,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault Failure Port hw Target Instance Ref</em>'.
@@ -763,7 +793,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault Failure Port function Target Instance Ref</em>'.
@@ -780,7 +810,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault Failure Propagation Link from Port Instance Ref</em>'.
@@ -797,7 +827,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault Failure anomaly Instance Ref</em>'.
@@ -814,7 +844,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault Failure Propagation Link to Port Instance Ref</em>'.
@@ -831,7 +861,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Internal Binding through Function Connector Instance Ref</em>'.
@@ -848,7 +878,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Internal Binding through Hardware Connector Instance Ref</em>'.
@@ -865,7 +895,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Prototype function Target Instance Ref</em>'.
@@ -882,7 +912,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Prototype hardware Component Target Instance Ref</em>'.
@@ -899,7 +929,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Prototype error Model Target Instance Ref</em>'.
@@ -916,7 +946,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

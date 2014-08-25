@@ -121,7 +121,7 @@ public abstract class AbstractDerivedViewLayerNotifier {
 
 	/**
 	 * Return true if this Notifier is listening on externals events.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isListening() {

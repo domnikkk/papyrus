@@ -56,7 +56,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	 * The cached value of the '{@link #getDescriptors() <em>Descriptors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescriptors()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	 * The cached value of the '{@link #getPropertyOperators() <em>Property Operators</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyOperators()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	 * The default value of the '{@link #getPropertyCollectionSize() <em>Property Collection Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyCollectionSize()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	 * The cached value of the '{@link #getPropertyCollectionSize() <em>Property Collection Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyCollectionSize()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	 * The cached value of the '{@link #getDefaultOperator() <em>Default Operator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultOperator()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected LayerOperatorDescriptorRegistryImpl() {
@@ -122,7 +122,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DefaultPropertyOperator basicGetDefaultOperator() {
@@ -224,7 +224,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -293,7 +293,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws NotFoundException
 	 * @generated NOT
 	 */
@@ -315,7 +315,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -332,7 +332,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +373,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -398,7 +398,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -420,7 +420,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +441,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -485,7 +485,7 @@ public class LayerOperatorDescriptorRegistryImpl extends MinimalEObjectImpl.Cont
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

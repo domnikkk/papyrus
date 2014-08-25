@@ -13,12 +13,9 @@
 package org.eclipse.papyrus.cdo.internal.core.repositories.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage;
 import org.eclipse.papyrus.cdo.internal.core.repositories.Repository;
 
@@ -43,7 +40,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,7 +51,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getURL() <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getURL()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getURL() <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getURL()
 	 * @generated
 	 * @ordered
@@ -87,7 +84,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -98,7 +95,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -109,7 +106,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getUUID() <em>UUID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUUID()
 	 * @generated
 	 * @ordered
@@ -120,7 +117,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getUUID() <em>UUID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUUID()
 	 * @generated
 	 * @ordered
@@ -130,7 +127,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RepositoryImpl() {
@@ -140,7 +137,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +148,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +159,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +174,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +185,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +200,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +211,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +226,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +252,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +273,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +298,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +323,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +344,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -40,7 +40,7 @@ public interface TransitionEvent extends EAElement, BehaviorConstraintParameter 
 	 * If the meaning of the '<em>Occurred Feature Flaw</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occurred Feature Flaw</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTransitionEvent_OccurredFeatureFlaw()
 	 * @model ordered="false"
@@ -56,7 +56,7 @@ public interface TransitionEvent extends EAElement, BehaviorConstraintParameter 
 	 * If the meaning of the '<em>Occurred Hazardous Event</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occurred Hazardous Event</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTransitionEvent_OccurredHazardousEvent()
 	 * @model ordered="false"
@@ -72,7 +72,7 @@ public interface TransitionEvent extends EAElement, BehaviorConstraintParameter 
 	 * If the meaning of the '<em>Occurred Fault Failure</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occurred Fault Failure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTransitionEvent_OccurredFaultFailure()
 	 * @model ordered="false"
@@ -88,7 +88,7 @@ public interface TransitionEvent extends EAElement, BehaviorConstraintParameter 
 	 * If the meaning of the '<em>Occurred Execution Event</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occurred Execution Event</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTransitionEvent_OccurredExecutionEvent()
 	 * @model ordered="false"
@@ -104,7 +104,7 @@ public interface TransitionEvent extends EAElement, BehaviorConstraintParameter 
 	 * If the meaning of the '<em>Occurred Logical Event</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occurred Logical Event</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTransitionEvent_OccurredLogicalEvent()
 	 * @model ordered="false"

@@ -52,7 +52,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The default value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getNature() <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNature()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getUnitType() <em>Unit Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnitType()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The default value of the '{@link #isIsLogical() <em>Is Logical</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsLogical()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #isIsLogical() <em>Is Logical</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsLogical()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getResolAttr() <em>Resol Attr</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResolAttr()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getMaxValAttr() <em>Max Val Attr</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxValAttr()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getOffsetAttr() <em>Offset Attr</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOffsetAttr()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getGetTime() <em>Get Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGetTime()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getSetTime() <em>Set Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSetTime()
 	 * @generated
 	 * @ordered
@@ -162,7 +162,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getIndexToValue() <em>Index To Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIndexToValue()
 	 * @generated
 	 * @ordered
@@ -173,7 +173,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -183,7 +183,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClockTypeImpl() {
@@ -193,7 +193,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Enumeration basicGetUnitType() {
@@ -260,7 +260,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +301,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +321,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetResolAttr() {
@@ -331,7 +331,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -346,7 +346,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetMaxValAttr() {
@@ -376,7 +376,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -391,7 +391,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -411,7 +411,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetOffsetAttr() {
@@ -421,7 +421,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -436,7 +436,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -456,7 +456,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetGetTime() {
@@ -466,7 +466,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +481,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -501,7 +501,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetSetTime() {
@@ -511,7 +511,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -526,7 +526,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -546,7 +546,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetIndexToValue() {
@@ -556,7 +556,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -571,7 +571,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -591,7 +591,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -601,7 +601,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -616,7 +616,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -673,7 +673,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -716,7 +716,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -759,7 +759,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -792,7 +792,7 @@ public class ClockTypeImpl extends EObjectImpl implements ClockType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

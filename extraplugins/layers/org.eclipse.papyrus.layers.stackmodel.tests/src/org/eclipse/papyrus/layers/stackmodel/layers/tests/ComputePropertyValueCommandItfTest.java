@@ -16,7 +16,7 @@ import org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue() <em>Get Cmd Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ComputePropertyValueCommandItfTest extends TestCase {
@@ -25,7 +25,7 @@ public abstract class ComputePropertyValueCommandItfTest extends TestCase {
 	 * The fixture for this Compute Property Value Command Itf test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComputePropertyValueCommand fixture = null;
@@ -34,7 +34,7 @@ public abstract class ComputePropertyValueCommandItfTest extends TestCase {
 	 * Constructs a new Compute Property Value Command Itf test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComputePropertyValueCommandItfTest(String name) {
@@ -45,7 +45,7 @@ public abstract class ComputePropertyValueCommandItfTest extends TestCase {
 	 * Sets the fixture for this Compute Property Value Command Itf test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(ComputePropertyValueCommand fixture) {
@@ -56,7 +56,7 @@ public abstract class ComputePropertyValueCommandItfTest extends TestCase {
 	 * Returns the fixture for this Compute Property Value Command Itf test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComputePropertyValueCommand getFixture() {
@@ -67,7 +67,7 @@ public abstract class ComputePropertyValueCommandItfTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue() <em>Get Cmd Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue()
 	 * @generated
 	 */

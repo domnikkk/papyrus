@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3;
 
@@ -32,7 +29,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getX()
 	 * @generated
 	 * @ordered
@@ -43,7 +40,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getX()
 	 * @generated
 	 * @ordered
@@ -54,7 +51,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getY()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getY()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	 * The default value of the '{@link #getZ() <em>Z</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getZ()
 	 * @generated
 	 * @ordered
@@ -87,7 +84,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	 * The cached value of the '{@link #getZ() <em>Z</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getZ()
 	 * @generated
 	 * @ordered
@@ -97,7 +94,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Vector3Impl() {
@@ -107,7 +104,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +115,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getX() {
@@ -128,7 +125,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setX(double newX) {
@@ -142,7 +139,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getY() {
@@ -152,7 +149,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setY(double newY) {
@@ -166,7 +163,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getZ() {
@@ -176,7 +173,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setZ(double newZ) {
@@ -190,7 +187,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +206,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +228,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +250,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +269,7 @@ public class Vector3Impl extends MinimalEObjectImpl.Container implements Vector3
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

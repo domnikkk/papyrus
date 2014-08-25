@@ -55,7 +55,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The default value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The default value of the '{@link #getTransmMode() <em>Transm Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransmMode()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getTransmMode() <em>Transm Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransmMode()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getBlockT() <em>Block T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getPacketT() <em>Packet T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPacketT()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCapacity()
 	 * @generated
 	 * @ordered
@@ -175,7 +175,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwCommunicationResourceImpl() {
@@ -185,7 +185,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -252,7 +252,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +278,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +293,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -323,7 +323,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +338,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -364,7 +364,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -378,7 +378,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +406,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +441,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -482,7 +482,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -519,7 +519,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +548,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -587,7 +587,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -626,7 +626,7 @@ public abstract class SwCommunicationResourceImpl extends SwInteractionResourceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

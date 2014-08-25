@@ -13,7 +13,7 @@ import org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPa
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TemporalconstraintXMLProcessor extends XMLProcessor {
@@ -22,7 +22,7 @@ public class TemporalconstraintXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TemporalconstraintXMLProcessor() {
@@ -34,7 +34,7 @@ public class TemporalconstraintXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the TemporalconstraintResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

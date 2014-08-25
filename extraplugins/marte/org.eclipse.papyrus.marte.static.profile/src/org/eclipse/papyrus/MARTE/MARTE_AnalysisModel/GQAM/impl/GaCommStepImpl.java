@@ -30,7 +30,7 @@ public class GaCommStepImpl extends GaStepImpl implements GaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaCommStepImpl() {
@@ -40,7 +40,7 @@ public class GaCommStepImpl extends GaStepImpl implements GaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

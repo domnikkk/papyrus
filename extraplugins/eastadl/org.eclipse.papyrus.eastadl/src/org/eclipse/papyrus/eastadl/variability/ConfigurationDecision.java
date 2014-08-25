@@ -68,7 +68,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * <!-- begin-model-doc -->
 	 * The inclusionCriterion gives the criterion to select the respective products (e.g. Northern American cars).
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Criterion</em>' attribute.
 	 * @see #setCriterion(String)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecision_Criterion()
@@ -84,7 +84,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * <!-- begin-model-doc -->
 	 * The rationale gives the reason for the specified product decision, especially for the inclusion criterion and the selection of included and excluded features.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Effect</em>' attribute.
 	 * @see #setEffect(String)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecision_Effect()
@@ -100,7 +100,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * If the meaning of the '<em>Selection Criterion</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Selection Criterion</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecision_SelectionCriterion()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -116,7 +116,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * If the meaning of the '<em>Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecision_Target()
 	 * @model
@@ -131,7 +131,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * <!-- begin-model-doc -->
 	 * Means that the included and excluded features are selected if and only if the specified inclusion criterion holds.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Equivalence</em>' attribute.
 	 * @see #setIsEquivalence(boolean)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecision_IsEquivalence()
@@ -144,7 +144,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecision#getCriterion <em>Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Criterion</em>' attribute.
 	 * @see #getCriterion()
@@ -156,7 +156,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecision#getEffect <em>Effect</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Effect</em>' attribute.
 	 * @see #getEffect()
@@ -168,7 +168,7 @@ public interface ConfigurationDecision extends ConfigurationDecisionModelEntry {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecision#isIsEquivalence <em>Is Equivalence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Equivalence</em>' attribute.
 	 * @see #isIsEquivalence()

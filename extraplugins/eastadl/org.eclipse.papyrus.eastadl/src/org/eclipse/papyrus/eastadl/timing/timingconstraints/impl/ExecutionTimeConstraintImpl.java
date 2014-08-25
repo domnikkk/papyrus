@@ -39,7 +39,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	 * The cached value of the '{@link #getStop() <em>Stop</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStop()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	 * The cached value of the '{@link #getPreemption() <em>Preemption</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreemption()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	 * The cached value of the '{@link #getResume() <em>Resume</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResume()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExecutionTimeConstraintImpl() {
@@ -114,7 +114,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetStart() {
@@ -155,7 +155,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetStop() {
@@ -200,7 +200,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetUpper() {
@@ -273,7 +273,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +288,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +308,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetLower() {
@@ -318,7 +318,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +333,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -404,7 +404,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -435,7 +435,7 @@ public class ExecutionTimeConstraintImpl extends TimingConstraintImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

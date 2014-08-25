@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.SteeredWheelSystem;
 
@@ -44,7 +41,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelRadius() <em>Wheel Radius</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelRadius()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelRadius() <em>Wheel Radius</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelRadius()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelWidth() <em>Wheel Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelWidth()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelWidth() <em>Wheel Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelWidth()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getSuspensionRestLength() <em>Suspension Rest Length</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionRestLength()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getSuspensionRestLength() <em>Suspension Rest Length</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionRestLength()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelConnectionHeight() <em>Wheel Connection Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelConnectionHeight()
 	 * @generated
 	 * @ordered
@@ -121,7 +118,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelConnectionHeight() <em>Wheel Connection Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelConnectionHeight()
 	 * @generated
 	 * @ordered
@@ -132,7 +129,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getTypeOfWheel() <em>Type Of Wheel</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeOfWheel()
 	 * @generated
 	 * @ordered
@@ -143,7 +140,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getTypeOfWheel() <em>Type Of Wheel</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeOfWheel()
 	 * @generated
 	 * @ordered
@@ -154,7 +151,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelVelocityPIDkp() <em>Wheel Velocity PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDkp()
 	 * @generated
 	 * @ordered
@@ -165,7 +162,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelVelocityPIDkp() <em>Wheel Velocity PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDkp()
 	 * @generated
 	 * @ordered
@@ -176,7 +173,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelVelocityPIDki() <em>Wheel Velocity PI Dki</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDki()
 	 * @generated
 	 * @ordered
@@ -187,7 +184,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelVelocityPIDki() <em>Wheel Velocity PI Dki</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDki()
 	 * @generated
 	 * @ordered
@@ -198,7 +195,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelVelocityPIDkd() <em>Wheel Velocity PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDkd()
 	 * @generated
 	 * @ordered
@@ -209,7 +206,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelVelocityPIDkd() <em>Wheel Velocity PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDkd()
 	 * @generated
 	 * @ordered
@@ -220,7 +217,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelSteeringPIDkp() <em>Wheel Steering PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelSteeringPIDkp()
 	 * @generated
 	 * @ordered
@@ -231,7 +228,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelSteeringPIDkp() <em>Wheel Steering PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelSteeringPIDkp()
 	 * @generated
 	 * @ordered
@@ -242,7 +239,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelSteeringPIDkd() <em>Wheel Steering PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelSteeringPIDkd()
 	 * @generated
 	 * @ordered
@@ -253,7 +250,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelSteeringPIDkd() <em>Wheel Steering PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelSteeringPIDkd()
 	 * @generated
 	 * @ordered
@@ -264,7 +261,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelFriction() <em>Wheel Friction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelFriction()
 	 * @generated
 	 * @ordered
@@ -275,7 +272,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelFriction() <em>Wheel Friction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelFriction()
 	 * @generated
 	 * @ordered
@@ -286,7 +283,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getSuspensionStiffness() <em>Suspension Stiffness</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionStiffness()
 	 * @generated
 	 * @ordered
@@ -297,7 +294,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getSuspensionStiffness() <em>Suspension Stiffness</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionStiffness()
 	 * @generated
 	 * @ordered
@@ -308,7 +305,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getSuspensionDamping() <em>Suspension Damping</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionDamping()
 	 * @generated
 	 * @ordered
@@ -319,7 +316,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getSuspensionDamping() <em>Suspension Damping</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionDamping()
 	 * @generated
 	 * @ordered
@@ -330,7 +327,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getSuspensionCompression() <em>Suspension Compression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionCompression()
 	 * @generated
 	 * @ordered
@@ -341,7 +338,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getSuspensionCompression() <em>Suspension Compression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspensionCompression()
 	 * @generated
 	 * @ordered
@@ -352,7 +349,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelVelocityPIDmaxSum() <em>Wheel Velocity PI Dmax Sum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDmaxSum()
 	 * @generated
 	 * @ordered
@@ -363,7 +360,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelVelocityPIDmaxSum() <em>Wheel Velocity PI Dmax Sum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDmaxSum()
 	 * @generated
 	 * @ordered
@@ -374,7 +371,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The default value of the '{@link #getWheelVelocityPIDmaxVal() <em>Wheel Velocity PI Dmax Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDmaxVal()
 	 * @generated
 	 * @ordered
@@ -385,7 +382,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	 * The cached value of the '{@link #getWheelVelocityPIDmaxVal() <em>Wheel Velocity PI Dmax Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWheelVelocityPIDmaxVal()
 	 * @generated
 	 * @ordered
@@ -395,7 +392,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SteeredWheelSystemImpl() {
@@ -405,7 +402,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +413,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelRadius() {
@@ -426,7 +423,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelRadius(float newWheelRadius) {
@@ -440,7 +437,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelWidth() {
@@ -450,7 +447,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelWidth(float newWheelWidth) {
@@ -464,7 +461,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getSuspensionRestLength() {
@@ -474,7 +471,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSuspensionRestLength(float newSuspensionRestLength) {
@@ -488,7 +485,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelConnectionHeight() {
@@ -498,7 +495,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelConnectionHeight(float newWheelConnectionHeight) {
@@ -512,7 +509,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTypeOfWheel() {
@@ -522,7 +519,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypeOfWheel(String newTypeOfWheel) {
@@ -536,7 +533,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelVelocityPIDkp() {
@@ -546,7 +543,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelVelocityPIDkp(float newWheelVelocityPIDkp) {
@@ -560,7 +557,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelVelocityPIDki() {
@@ -570,7 +567,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelVelocityPIDki(float newWheelVelocityPIDki) {
@@ -584,7 +581,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelVelocityPIDkd() {
@@ -594,7 +591,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelVelocityPIDkd(float newWheelVelocityPIDkd) {
@@ -608,7 +605,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelSteeringPIDkp() {
@@ -618,7 +615,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelSteeringPIDkp(float newWheelSteeringPIDkp) {
@@ -632,7 +629,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelSteeringPIDkd() {
@@ -642,7 +639,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelSteeringPIDkd(float newWheelSteeringPIDkd) {
@@ -656,7 +653,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelFriction() {
@@ -666,7 +663,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelFriction(float newWheelFriction) {
@@ -680,7 +677,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getSuspensionStiffness() {
@@ -690,7 +687,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSuspensionStiffness(float newSuspensionStiffness) {
@@ -704,7 +701,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getSuspensionDamping() {
@@ -714,7 +711,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSuspensionDamping(float newSuspensionDamping) {
@@ -728,7 +725,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getSuspensionCompression() {
@@ -738,7 +735,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSuspensionCompression(float newSuspensionCompression) {
@@ -752,7 +749,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelVelocityPIDmaxSum() {
@@ -762,7 +759,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelVelocityPIDmaxSum(float newWheelVelocityPIDmaxSum) {
@@ -776,7 +773,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWheelVelocityPIDmaxVal() {
@@ -786,7 +783,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWheelVelocityPIDmaxVal(float newWheelVelocityPIDmaxVal) {
@@ -800,7 +797,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -845,7 +842,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -906,7 +903,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -967,7 +964,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1012,7 +1009,7 @@ public class SteeredWheelSystemImpl extends LocomotionSystemImpl implements Stee
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

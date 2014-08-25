@@ -54,7 +54,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 * The default value of the '{@link #getRepresentation() <em>Representation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepresentation()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 * The cached value of the '{@link #getRepresentation() <em>Representation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepresentation()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunction()
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionBehaviorImpl() {
@@ -140,7 +140,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionType basicGetFunction() {
@@ -150,7 +150,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -232,7 +232,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -273,7 +273,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +288,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +336,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -350,7 +350,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +361,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +387,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,7 +402,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class FunctionBehaviorImpl extends ContextImpl implements FunctionBehavio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

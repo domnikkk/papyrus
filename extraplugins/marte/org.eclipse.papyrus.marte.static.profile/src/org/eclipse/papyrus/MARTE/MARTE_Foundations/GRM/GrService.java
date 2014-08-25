@@ -49,7 +49,7 @@ public interface GrService extends EObject {
 	 * If the meaning of the '<em>Owner</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' reference.
 	 * @see #setOwner(Resource)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getGrService_Owner()
@@ -62,7 +62,7 @@ public interface GrService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GrService#getOwner <em>Owner</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owner</em>' reference.
 	 * @see #getOwner()
@@ -77,7 +77,7 @@ public interface GrService extends EObject {
 	 * If the meaning of the '<em>Base Execution Specification</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Execution Specification</em>' reference.
 	 * @see #setBase_ExecutionSpecification(ExecutionSpecification)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getGrService_Base_ExecutionSpecification()
@@ -90,7 +90,7 @@ public interface GrService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GrService#getBase_ExecutionSpecification <em>Base Execution Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Execution Specification</em>' reference.
 	 * @see #getBase_ExecutionSpecification()
@@ -105,7 +105,7 @@ public interface GrService extends EObject {
 	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #setBase_BehavioralFeature(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getGrService_Base_BehavioralFeature()
@@ -118,7 +118,7 @@ public interface GrService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GrService#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #getBase_BehavioralFeature()
@@ -133,7 +133,7 @@ public interface GrService extends EObject {
 	 * If the meaning of the '<em>Base Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavior</em>' reference.
 	 * @see #setBase_Behavior(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getGrService_Base_Behavior()
@@ -146,7 +146,7 @@ public interface GrService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GrService#getBase_Behavior <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavior</em>' reference.
 	 * @see #getBase_Behavior()
@@ -161,7 +161,7 @@ public interface GrService extends EObject {
 	 * If the meaning of the '<em>Base Collaboration</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Collaboration</em>' reference.
 	 * @see #setBase_Collaboration(Collaboration)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getGrService_Base_Collaboration()
@@ -174,7 +174,7 @@ public interface GrService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GrService#getBase_Collaboration <em>Base Collaboration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Collaboration</em>' reference.
 	 * @see #getBase_Collaboration()
@@ -189,7 +189,7 @@ public interface GrService extends EObject {
 	 * If the meaning of the '<em>Base Collaboration Use</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Collaboration Use</em>' reference.
 	 * @see #setBase_CollaborationUse(CollaborationUse)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getGrService_Base_CollaborationUse()
@@ -202,7 +202,7 @@ public interface GrService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GrService#getBase_CollaborationUse <em>Base Collaboration Use</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Collaboration Use</em>' reference.
 	 * @see #getBase_CollaborationUse()

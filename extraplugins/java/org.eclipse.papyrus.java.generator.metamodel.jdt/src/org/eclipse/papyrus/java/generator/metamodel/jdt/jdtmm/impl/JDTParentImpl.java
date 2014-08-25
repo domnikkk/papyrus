@@ -24,12 +24,9 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
@@ -55,7 +52,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	 * The default value of the '{@link #getFlags() <em>Flags</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFlags()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	 * The cached value of the '{@link #getFlags() <em>Flags</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFlags()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTParentImpl() {
@@ -86,7 +83,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +94,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +105,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +116,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +159,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +176,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +192,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +208,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +225,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +244,7 @@ public abstract class JDTParentImpl extends EObjectImpl implements JDTParent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetChildren() {

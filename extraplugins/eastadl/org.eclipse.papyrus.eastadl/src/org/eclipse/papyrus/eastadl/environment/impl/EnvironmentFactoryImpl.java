@@ -30,14 +30,14 @@ import org.eclipse.papyrus.eastadl.environment.EnvironmentPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -50,7 +50,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EnvironmentFactory init() {
@@ -69,7 +69,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnvironmentFactoryImpl() {
@@ -79,7 +79,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

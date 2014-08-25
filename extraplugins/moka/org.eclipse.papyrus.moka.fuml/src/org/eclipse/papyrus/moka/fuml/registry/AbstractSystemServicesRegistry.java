@@ -42,7 +42,7 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry#init(java.lang.Object)
 	 */
 	public ISystemServicesRegistry init(Object parameters) {
@@ -54,7 +54,7 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry#registerSystemServices(org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus
 	 * )

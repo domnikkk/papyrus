@@ -40,7 +40,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getAdressWidth() <em>Adress Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdressWidth()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getAdressWidth() <em>Adress Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdressWidth()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getWordWidth() <em>Word Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWordWidth()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getWordWidth() <em>Word Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWordWidth()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The default value of the '{@link #getIsSerial() <em>Is Serial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSerial()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	 * The cached value of the '{@link #getIsSerial() <em>Is Serial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSerial()
 	 * @generated
 	 * @ordered
@@ -127,7 +127,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwBusImpl() {
@@ -137,7 +137,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +344,7 @@ public class HwBusImpl extends HwMediaImpl implements HwBus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

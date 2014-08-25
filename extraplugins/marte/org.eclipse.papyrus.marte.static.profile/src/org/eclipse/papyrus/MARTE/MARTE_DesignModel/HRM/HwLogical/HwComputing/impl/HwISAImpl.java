@@ -41,7 +41,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	 * The default value of the '{@link #getFamily() <em>Family</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFamily()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	 * The cached value of the '{@link #getFamily() <em>Family</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFamily()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	 * The default value of the '{@link #getInst_Width() <em>Inst Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInst_Width()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	 * The cached value of the '{@link #getInst_Width() <em>Inst Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInst_Width()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwISAImpl() {
@@ -116,7 +116,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +268,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class HwISAImpl extends HwResourceImpl implements HwISA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

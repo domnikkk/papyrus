@@ -117,7 +117,7 @@ public class InputListDialog {
 
 	/**
 	 * Set the tooltips if not null.
-	 * 
+	 *
 	 * @param parent
 	 * @param tooltips
 	 */

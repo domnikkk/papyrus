@@ -34,7 +34,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	 * The cached value of the '{@link #getJitter() <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJitter()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SporadicConstraintImpl() {
@@ -98,7 +98,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -139,7 +139,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetLower() {
@@ -184,7 +184,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetUpper() {
@@ -229,7 +229,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetJitter() {
@@ -274,7 +274,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -319,7 +319,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +334,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public class SporadicConstraintImpl extends TimingConstraintImpl implements Spor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

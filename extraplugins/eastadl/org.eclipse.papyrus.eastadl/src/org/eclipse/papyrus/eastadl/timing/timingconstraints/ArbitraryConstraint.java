@@ -43,7 +43,7 @@ public interface ArbitraryConstraint extends TimingConstraint {
 	 * The set of minimum inter-arrival times specifies the minimum inter-arrival time between two and more subsequent occurrences of the event. The first element in the set specifies the minimum inter-arrival time between two subsequent occurrences of the
 	 * event among the given occurrences. The second element in the set specifies the minimum inter-arrival time between three subsequent occurrences of the event among the given occurrences; and so forth.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Minimum</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getArbitraryConstraint_Minimum()
 	 * @model required="true" ordered="false"
@@ -60,7 +60,7 @@ public interface ArbitraryConstraint extends TimingConstraint {
 	 * The set of maximum inter-arrival times specifies the maximum inter-arrival time between two and more subsequent occurrences of the event. The first element in the set specifies the maximum inter-arrival time between two subsequent occurrences of the
 	 * event among the given occurrences. The second element in the set specifies the maximum inter-arrival time between three subsequent occurrences of the event among the given occurrences; and so forth.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Maximum</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getArbitraryConstraint_Maximum()
 	 * @model required="true" ordered="false"
@@ -75,7 +75,7 @@ public interface ArbitraryConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Event</em>' reference.
 	 * @see #setEvent(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getArbitraryConstraint_Event()
@@ -88,7 +88,7 @@ public interface ArbitraryConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ArbitraryConstraint#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Event</em>' reference.
 	 * @see #getEvent()

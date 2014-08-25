@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.dd.dc.impl;
 
 import java.awt.Color;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;

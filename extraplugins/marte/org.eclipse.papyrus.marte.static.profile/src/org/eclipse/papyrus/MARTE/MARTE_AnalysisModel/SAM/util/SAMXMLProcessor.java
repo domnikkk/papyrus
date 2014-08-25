@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SAMXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class SAMXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SAMXMLProcessor() {
@@ -45,7 +45,7 @@ public class SAMXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the SAMResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

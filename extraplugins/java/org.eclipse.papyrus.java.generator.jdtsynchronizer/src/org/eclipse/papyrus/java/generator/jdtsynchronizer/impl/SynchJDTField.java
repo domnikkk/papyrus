@@ -138,7 +138,7 @@ public class SynchJDTField extends SynchJDTCommentable {
 
 	/**
 	 * Propagate a {@link JDTVisitorException} if the flag is not set
-	 * 
+	 *
 	 * @param msg
 	 * @param e
 	 * @throws JDTVisitorException
@@ -184,7 +184,7 @@ public class SynchJDTField extends SynchJDTCommentable {
 
 	/**
 	 * Generate imports that are explicitly declared in the type
-	 * 
+	 *
 	 * @param field2
 	 *            The src type to be transformed
 	 * @param destType

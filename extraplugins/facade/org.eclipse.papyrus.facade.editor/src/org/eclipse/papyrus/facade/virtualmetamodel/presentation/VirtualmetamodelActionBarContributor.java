@@ -17,17 +17,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-
 import org.eclipse.emf.edit.ui.action.ControlAction;
 import org.eclipse.emf.edit.ui.action.CreateChildAction;
 import org.eclipse.emf.edit.ui.action.CreateSiblingAction;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.action.ValidateAction;
-
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
@@ -39,16 +36,13 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.SubContributionItem;
-
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
-
 import org.eclipse.papyrus.facade.presentation.FacadeEditorPlugin;
-
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
@@ -56,7 +50,7 @@ import org.eclipse.ui.PartInitException;
  * This is the action bar contributor for the Virtualmetamodel model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VirtualmetamodelActionBarContributor
@@ -66,7 +60,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IEditorPart activeEditorPart;
@@ -75,7 +69,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This keeps track of the current selection provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ISelectionProvider selectionProvider;
@@ -84,7 +78,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This action opens the Properties view.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction =
@@ -105,7 +99,7 @@ public class VirtualmetamodelActionBarContributor
 	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IAction refreshViewerAction =
@@ -131,7 +125,7 @@ public class VirtualmetamodelActionBarContributor
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> createChildActions;
@@ -140,7 +134,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IMenuManager createChildMenuManager;
@@ -150,7 +144,7 @@ public class VirtualmetamodelActionBarContributor
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> createSiblingActions;
@@ -159,7 +153,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IMenuManager createSiblingMenuManager;
@@ -168,7 +162,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This creates an instance of the contributor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VirtualmetamodelActionBarContributor() {
@@ -182,7 +176,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This adds Separators for editor additions to the tool bar.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +190,7 @@ public class VirtualmetamodelActionBarContributor
 	 * as well as the sub-menus for object creation items.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +231,7 @@ public class VirtualmetamodelActionBarContributor
 	 * When the active editor changes, this remembers the change and registers with it as a selection provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +265,7 @@ public class VirtualmetamodelActionBarContributor
 	 * that can be added to the selected object and updating the menus accordingly.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +314,7 @@ public class VirtualmetamodelActionBarContributor
 	 * and returns the collection of these actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
@@ -338,7 +332,7 @@ public class VirtualmetamodelActionBarContributor
 	 * and returns the collection of these actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
@@ -358,7 +352,7 @@ public class VirtualmetamodelActionBarContributor
 	 * If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
@@ -379,7 +373,7 @@ public class VirtualmetamodelActionBarContributor
 	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
@@ -409,7 +403,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This populates the pop-up menu before it appears.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +424,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This inserts global actions before the "additions-end" separator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +442,7 @@ public class VirtualmetamodelActionBarContributor
 	 * This ensures that a delete action will clean up all references to deleted objects.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

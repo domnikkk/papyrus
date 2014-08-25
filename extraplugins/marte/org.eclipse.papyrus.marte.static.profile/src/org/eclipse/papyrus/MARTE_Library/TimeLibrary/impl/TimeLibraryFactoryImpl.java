@@ -29,7 +29,7 @@ import org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeUnitKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryFactory {
@@ -37,7 +37,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TimeLibraryFactory init() {
@@ -56,7 +56,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeLibraryFactoryImpl() {
@@ -66,7 +66,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeUnitKind createTimeUnitKindFromString(EDataType eDataType, String initialValue) {
@@ -152,7 +152,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTimeUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -162,7 +162,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LogicalTimeUnit createLogicalTimeUnitFromString(EDataType eDataType, String initialValue) {
@@ -176,7 +176,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertLogicalTimeUnitToString(EDataType eDataType, Object instanceValue) {
@@ -186,7 +186,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createTimedValueTypeFromString(EDataType eDataType, String initialValue) {
@@ -196,7 +196,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTimedValueTypeToString(EDataType eDataType, Object instanceValue) {
@@ -206,7 +206,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createClockedValueSpecificationFromString(EDataType eDataType, String initialValue) {
@@ -216,7 +216,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertClockedValueSpecificationToString(EDataType eDataType, Object instanceValue) {
@@ -226,7 +226,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class TimeLibraryFactoryImpl extends EFactoryImpl implements TimeLibraryF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

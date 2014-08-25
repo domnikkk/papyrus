@@ -4,19 +4,14 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PoseWithCovariance;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.TwistWithCovariance;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Odometry;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -40,7 +35,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -51,7 +46,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	 * The default value of the '{@link #getChild_frame_id() <em>Child frame id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChild_frame_id()
 	 * @generated
 	 * @ordered
@@ -62,7 +57,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	 * The cached value of the '{@link #getChild_frame_id() <em>Child frame id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChild_frame_id()
 	 * @generated
 	 * @ordered
@@ -73,7 +68,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	 * The cached value of the '{@link #getPose() <em>Pose</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPose()
 	 * @generated
 	 * @ordered
@@ -84,7 +79,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	 * The cached value of the '{@link #getTwist() <em>Twist</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTwist()
 	 * @generated
 	 * @ordered
@@ -94,7 +89,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OdometryImpl() {
@@ -104,7 +99,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +110,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -125,7 +120,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -145,7 +140,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -170,7 +165,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getChild_frame_id() {
@@ -180,7 +175,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setChild_frame_id(String newChild_frame_id) {
@@ -194,7 +189,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PoseWithCovariance getPose() {
@@ -204,7 +199,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPose(PoseWithCovariance newPose, NotificationChain msgs) {
@@ -224,7 +219,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPose(PoseWithCovariance newPose) {
@@ -249,7 +244,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TwistWithCovariance getTwist() {
@@ -259,7 +254,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTwist(TwistWithCovariance newTwist, NotificationChain msgs) {
@@ -279,7 +274,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTwist(TwistWithCovariance newTwist) {
@@ -304,7 +299,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +318,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +339,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +364,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,7 +389,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +410,7 @@ public class OdometryImpl extends MinimalEObjectImpl.Container implements Odomet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

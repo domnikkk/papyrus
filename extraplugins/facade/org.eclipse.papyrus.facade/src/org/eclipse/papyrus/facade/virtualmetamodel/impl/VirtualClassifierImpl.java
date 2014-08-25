@@ -15,14 +15,10 @@ package org.eclipse.papyrus.facade.virtualmetamodel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
@@ -44,7 +40,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualClassifierImpl() {
@@ -54,7 +50,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,7 +61,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +75,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetMetamodel(VirtualMetamodel newMetamodel, NotificationChain msgs) {
@@ -90,7 +86,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +115,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +133,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +148,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +163,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +178,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +194,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +210,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -41,7 +41,7 @@ public interface FontInstance extends TypeInstance {
 	 * If the meaning of the '<em>Font Color</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Font Color</em>' attribute.
 	 * @see #setFontColor(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_FontColor()
@@ -54,7 +54,7 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontColor <em>Font Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Font Color</em>' attribute.
 	 * @see #getFontColor()
@@ -70,7 +70,7 @@ public interface FontInstance extends TypeInstance {
 	 * If the meaning of the '<em>Font Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Font Name</em>' attribute.
 	 * @see #setFontName(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_FontName()
@@ -83,7 +83,7 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontName <em>Font Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Font Name</em>' attribute.
 	 * @see #getFontName()
@@ -99,7 +99,7 @@ public interface FontInstance extends TypeInstance {
 	 * If the meaning of the '<em>Font Heigh</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Font Heigh</em>' attribute.
 	 * @see #setFontHeigh(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_FontHeigh()
@@ -112,7 +112,7 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontHeigh <em>Font Heigh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Font Heigh</em>' attribute.
 	 * @see #getFontHeigh()
@@ -128,7 +128,7 @@ public interface FontInstance extends TypeInstance {
 	 * If the meaning of the '<em>Bold</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bold</em>' attribute.
 	 * @see #setBold(boolean)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFontInstance_Bold()
@@ -141,7 +141,7 @@ public interface FontInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#isBold <em>Bold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Bold</em>' attribute.
 	 * @see #isBold()

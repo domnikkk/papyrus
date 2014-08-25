@@ -46,7 +46,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getFromRoot() <em>From Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFromRoot()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelection()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getDiagramKind() <em>Diagram Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDiagramKind()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getDiagramKind() <em>Diagram Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDiagramKind()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getLayoutToApply() <em>Layout To Apply</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayoutToApply()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getLayoutToApply() <em>Layout To Apply</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayoutToApply()
 	 * @generated
 	 * @ordered
@@ -134,7 +134,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -145,7 +145,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -156,7 +156,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrefix()
 	 * @generated
 	 * @ordered
@@ -167,7 +167,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrefix()
 	 * @generated
 	 * @ordered
@@ -177,7 +177,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DiagramDefinitionImpl() {
@@ -187,7 +187,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -208,7 +208,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -222,7 +222,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getFromRoot() {
@@ -241,7 +241,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetFromRoot() {
@@ -251,7 +251,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setFromRoot(EObject newFromRoot) {
@@ -265,7 +265,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Selection> getSelection() {
@@ -278,7 +278,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDiagramKind() {
@@ -288,7 +288,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDiagramKind(String newDiagramKind) {
@@ -302,7 +302,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLayoutToApply() {
@@ -312,7 +312,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLayoutToApply(String newLayoutToApply) {
@@ -326,7 +326,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -336,7 +336,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -350,7 +350,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getPrefix() {
@@ -360,7 +360,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPrefix(String newPrefix) {
@@ -374,7 +374,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +389,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -419,7 +419,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -455,7 +455,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -489,7 +489,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +516,7 @@ public class DiagramDefinitionImpl extends EObjectImpl implements DiagramDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

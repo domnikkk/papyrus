@@ -133,7 +133,7 @@ public class LayersStackApplicationEventNotifier {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean isDisposed() {
@@ -162,7 +162,7 @@ public class LayersStackApplicationEventNotifier {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeLayersModelEventListener(ILayersStackApplicationEventListener listener) {
@@ -172,7 +172,7 @@ public class LayersStackApplicationEventNotifier {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void layerStackAdded(Notification msg) {
@@ -183,7 +183,7 @@ public class LayersStackApplicationEventNotifier {
 
 	/**
 	 * Called by events when a {@link LayersStack} is removed from the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void layerStackRemoved(Notification msg) {
@@ -194,7 +194,7 @@ public class LayersStackApplicationEventNotifier {
 
 	/**
 	 * Utility method returning the layer stack in case of addedLayer event.
-	 * 
+	 *
 	 * @param msg
 	 * @return
 	 */
@@ -204,7 +204,7 @@ public class LayersStackApplicationEventNotifier {
 
 	/**
 	 * Utility method returning the layer stack in case of removeLayer event.
-	 * 
+	 *
 	 * @param msg
 	 * @return
 	 */

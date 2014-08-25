@@ -16,10 +16,10 @@ package org.eclipse.papyrus.qompass.designer.ui.preferences;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringFieldEditor;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.papyrus.qompass.designer.core.Activator;
 import org.eclipse.papyrus.qompass.designer.core.preferences.QompassPreferenceConstants;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPreferencePage;
 
 /**
  * This class represents the EC3M preference page
@@ -67,7 +67,7 @@ public class QompassPreferencePage
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	@Override

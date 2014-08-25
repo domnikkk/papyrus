@@ -13,13 +13,10 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.ApplicationDependantElement;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
@@ -42,7 +39,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	 * The cached value of the '{@link #getApplication() <em>Application</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getApplication()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ApplicationDependantElementImpl() {
@@ -62,7 +59,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +70,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +90,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersStackApplication basicGetApplication() {
@@ -103,7 +100,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +115,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +133,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +149,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +165,7 @@ public abstract class ApplicationDependantElementImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

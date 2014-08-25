@@ -4,13 +4,10 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity_Angular;
@@ -35,7 +32,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	 * The cached value of the '{@link #getVelocity_linear() <em>Velocity linear</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVelocity_linear()
 	 * @generated
 	 * @ordered
@@ -46,7 +43,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	 * The cached value of the '{@link #getVelocity_angular() <em>Velocity angular</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVelocity_angular()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VelocityImpl() {
@@ -66,7 +63,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +74,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Linear getVelocity_linear() {
@@ -87,7 +84,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetVelocity_linear(Velocity_Linear newVelocity_linear, NotificationChain msgs) {
@@ -107,7 +104,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVelocity_linear(Velocity_Linear newVelocity_linear) {
@@ -132,7 +129,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Angular getVelocity_angular() {
@@ -142,7 +139,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetVelocity_angular(Velocity_Angular newVelocity_angular, NotificationChain msgs) {
@@ -162,7 +159,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVelocity_angular(Velocity_Angular newVelocity_angular) {
@@ -187,7 +184,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +201,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +218,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +256,7 @@ public class VelocityImpl extends MinimalEObjectImpl.Container implements Veloci
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

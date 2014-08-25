@@ -38,7 +38,7 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TopLayerOperatorImpl() {
@@ -48,7 +48,7 @@ public class TopLayerOperatorImpl extends AbstractLayerOperatorImpl implements T
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

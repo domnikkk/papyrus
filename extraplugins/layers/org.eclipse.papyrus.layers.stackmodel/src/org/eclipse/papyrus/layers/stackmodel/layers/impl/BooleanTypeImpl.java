@@ -31,7 +31,7 @@ public class BooleanTypeImpl extends TypeImpl implements BooleanType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected BooleanTypeImpl() {
@@ -42,7 +42,7 @@ public class BooleanTypeImpl extends TypeImpl implements BooleanType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -53,7 +53,7 @@ public class BooleanTypeImpl extends TypeImpl implements BooleanType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

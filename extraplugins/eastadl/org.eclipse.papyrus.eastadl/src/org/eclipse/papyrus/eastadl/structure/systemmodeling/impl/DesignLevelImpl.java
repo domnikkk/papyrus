@@ -57,7 +57,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DesignLevelImpl() {
@@ -88,7 +88,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public DesignFunctionPrototype basicGetFunctionalDesignArchitecture() {
@@ -112,7 +112,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public HardwareComponentPrototype basicGetHardwareDesignArchitecture() {
@@ -136,7 +136,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -224,7 +224,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -265,7 +265,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -310,7 +310,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +353,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -378,7 +378,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -390,7 +390,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,7 +402,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +415,7 @@ public class DesignLevelImpl extends ContextImpl implements DesignLevel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

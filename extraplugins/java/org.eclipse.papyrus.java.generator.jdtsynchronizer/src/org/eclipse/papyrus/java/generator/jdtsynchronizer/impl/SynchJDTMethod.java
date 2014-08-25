@@ -216,7 +216,7 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 	/**
 	 * Get the type of the parameter as a String. Take into account the multivalue setting.
-	 * 
+	 *
 	 * @param p
 	 * @return
 	 * @throws JavaModelException
@@ -332,7 +332,7 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 	/**
 	 * Propagate a {@link JDTVisitorException} if the flag is not set
-	 * 
+	 *
 	 * @param msg
 	 * @param e
 	 * @throws JDTVisitorException
@@ -353,7 +353,7 @@ public class SynchJDTMethod extends SynchJDTCommentable {
 
 	/**
 	 * Generate imports that are explicitly declared in the type
-	 * 
+	 *
 	 * @param srcType
 	 *            The src type to be transformed
 	 * @param destType

@@ -13,16 +13,14 @@
 package org.eclipse.papyrus.layers.configmodel.layersconfig.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
  * This is the central singleton for the Layersconfig editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public final class LayersconfigEditorPlugin extends EMFPlugin {
@@ -30,7 +28,7 @@ public final class LayersconfigEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final LayersconfigEditorPlugin INSTANCE = new LayersconfigEditorPlugin();
@@ -39,7 +37,7 @@ public final class LayersconfigEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -48,7 +46,7 @@ public final class LayersconfigEditorPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersconfigEditorPlugin() {
@@ -60,7 +58,7 @@ public final class LayersconfigEditorPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -73,7 +71,7 @@ public final class LayersconfigEditorPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -85,7 +83,7 @@ public final class LayersconfigEditorPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipseUIPlugin {
@@ -93,7 +91,7 @@ public final class LayersconfigEditorPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public Implementation() {

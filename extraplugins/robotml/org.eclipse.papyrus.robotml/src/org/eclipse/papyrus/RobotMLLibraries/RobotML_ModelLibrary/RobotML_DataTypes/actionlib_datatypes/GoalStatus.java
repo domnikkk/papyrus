@@ -40,7 +40,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>PENDING</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>PENDING</em>' attribute.
 	 * @see #setPENDING(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_PENDING()
@@ -53,7 +53,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPENDING <em>PENDING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>PENDING</em>' attribute.
 	 * @see #getPENDING()
@@ -69,7 +69,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>ACTIVE</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>ACTIVE</em>' attribute.
 	 * @see #setACTIVE(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_ACTIVE()
@@ -82,7 +82,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getACTIVE <em>ACTIVE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>ACTIVE</em>' attribute.
 	 * @see #getACTIVE()
@@ -98,7 +98,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>PREEMPTED</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>PREEMPTED</em>' attribute.
 	 * @see #setPREEMPTED(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_PREEMPTED()
@@ -111,7 +111,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPREEMPTED <em>PREEMPTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>PREEMPTED</em>' attribute.
 	 * @see #getPREEMPTED()
@@ -126,7 +126,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>SUCCEEDED</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>SUCCEEDED</em>' attribute.
 	 * @see #setSUCCEEDED(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_SUCCEEDED()
@@ -139,7 +139,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getSUCCEEDED <em>SUCCEEDED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>SUCCEEDED</em>' attribute.
 	 * @see #getSUCCEEDED()
@@ -154,7 +154,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>ABORTED</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>ABORTED</em>' attribute.
 	 * @see #setABORTED(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_ABORTED()
@@ -167,7 +167,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getABORTED <em>ABORTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>ABORTED</em>' attribute.
 	 * @see #getABORTED()
@@ -182,7 +182,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>REJECTED</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>REJECTED</em>' attribute.
 	 * @see #setREJECTED(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_REJECTED()
@@ -195,7 +195,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getREJECTED <em>REJECTED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>REJECTED</em>' attribute.
 	 * @see #getREJECTED()
@@ -210,7 +210,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>PREEMPTING</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>PREEMPTING</em>' attribute.
 	 * @see #setPREEMPTING(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_PREEMPTING()
@@ -223,7 +223,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getPREEMPTING <em>PREEMPTING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>PREEMPTING</em>' attribute.
 	 * @see #getPREEMPTING()
@@ -238,7 +238,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>RECALLING</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>RECALLING</em>' attribute.
 	 * @see #setRECALLING(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_RECALLING()
@@ -251,7 +251,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getRECALLING <em>RECALLING</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>RECALLING</em>' attribute.
 	 * @see #getRECALLING()
@@ -266,7 +266,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>RECALLED</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>RECALLED</em>' attribute.
 	 * @see #setRECALLED(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_RECALLED()
@@ -279,7 +279,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getRECALLED <em>RECALLED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>RECALLED</em>' attribute.
 	 * @see #getRECALLED()
@@ -294,7 +294,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>LOST</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>LOST</em>' attribute.
 	 * @see #setLOST(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_LOST()
@@ -307,7 +307,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getLOST <em>LOST</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>LOST</em>' attribute.
 	 * @see #getLOST()
@@ -322,7 +322,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>Text</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Text</em>' attribute.
 	 * @see #setText(String)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_Text()
@@ -335,7 +335,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getText <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Text</em>' attribute.
 	 * @see #getText()
@@ -350,7 +350,7 @@ public interface GoalStatus extends EObject {
 	 * If the meaning of the '<em>Status</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see #setStatus(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#getGoalStatus_Status()
@@ -363,7 +363,7 @@ public interface GoalStatus extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.GoalStatus#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Status</em>' attribute.
 	 * @see #getStatus()

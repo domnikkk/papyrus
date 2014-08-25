@@ -82,7 +82,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionTypeImpl() {
@@ -91,7 +91,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -100,7 +100,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +383,7 @@ public abstract class FunctionTypeImpl extends ContextImpl implements FunctionTy
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

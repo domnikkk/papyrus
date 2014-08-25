@@ -14,11 +14,8 @@
 package org.eclipse.papyrus.facade.extensiondefinition;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.facade.Facade;
-
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -50,7 +47,7 @@ public interface ExtensionDefinition extends EObject {
 	 * If the meaning of the '<em>Extension</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extension</em>' reference.
 	 * @see #setExtension(Extension)
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getExtensionDefinition_Extension()
@@ -63,7 +60,7 @@ public interface ExtensionDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getExtension <em>Extension</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Extension</em>' reference.
 	 * @see #getExtension()
@@ -80,7 +77,7 @@ public interface ExtensionDefinition extends EObject {
 	 * If the meaning of the '<em>Base Metaclasses</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Metaclasses</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getExtensionDefinition_BaseMetaclasses()
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getExtensionDefinition
@@ -97,7 +94,7 @@ public interface ExtensionDefinition extends EObject {
 	 * If the meaning of the '<em>Facade</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Facade</em>' container reference.
 	 * @see #setFacade(Facade)
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getExtensionDefinition_Facade()
@@ -111,7 +108,7 @@ public interface ExtensionDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getFacade <em>Facade</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Facade</em>' container reference.
 	 * @see #getFacade()
@@ -126,7 +123,7 @@ public interface ExtensionDefinition extends EObject {
 	 * If the meaning of the '<em>Stereotype</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotype</em>' reference.
 	 * @see #setStereotype(Stereotype)
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getExtensionDefinition_Stereotype()
@@ -139,7 +136,7 @@ public interface ExtensionDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getStereotype <em>Stereotype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Stereotype</em>' reference.
 	 * @see #getStereotype()
@@ -155,7 +152,7 @@ public interface ExtensionDefinition extends EObject {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind
 	 * @see #setKind(ExtensionDefinitionKind)
@@ -169,7 +166,7 @@ public interface ExtensionDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind

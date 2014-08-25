@@ -32,7 +32,7 @@ public class FakeObservableListListener<E> {
 
 	/**
 	 * Method listeneing to the list event.
-	 * 
+	 *
 	 * @param event
 	 */
 	@Subscribe

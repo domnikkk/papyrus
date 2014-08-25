@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.SensorSystem;
 
@@ -30,7 +27,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	 * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrequency()
 	 * @generated
 	 * @ordered
@@ -41,7 +38,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	 * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrequency()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -63,7 +60,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -73,7 +70,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SensorSystemImpl() {
@@ -83,7 +80,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +91,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getFrequency() {
@@ -104,7 +101,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setFrequency(float newFrequency) {
@@ -118,7 +115,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -128,7 +125,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
@@ -142,7 +139,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +156,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +175,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +194,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +211,7 @@ public class SensorSystemImpl extends RoboticSystemImpl implements SensorSystem 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

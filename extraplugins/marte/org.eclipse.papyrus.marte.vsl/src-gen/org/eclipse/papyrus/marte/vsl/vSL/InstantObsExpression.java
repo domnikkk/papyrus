@@ -4,7 +4,6 @@ package org.eclipse.papyrus.marte.vsl.vSL;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -35,7 +34,7 @@ public interface InstantObsExpression extends TimeExpression
 	 * If the meaning of the '<em>Id</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Id</em>' containment reference.
 	 * @see #setId(InstantObsName)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getInstantObsExpression_Id()
@@ -48,7 +47,7 @@ public interface InstantObsExpression extends TimeExpression
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getId <em>Id</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Id</em>' containment reference.
 	 * @see #getId()
@@ -63,7 +62,7 @@ public interface InstantObsExpression extends TimeExpression
 	 * If the meaning of the '<em>Index</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Index</em>' containment reference.
 	 * @see #setIndex(Expression)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getInstantObsExpression_Index()
@@ -76,7 +75,7 @@ public interface InstantObsExpression extends TimeExpression
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getIndex <em>Index</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Index</em>' containment reference.
 	 * @see #getIndex()
@@ -91,7 +90,7 @@ public interface InstantObsExpression extends TimeExpression
 	 * If the meaning of the '<em>Condition</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Condition</em>' containment reference.
 	 * @see #setCondition(Expression)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getInstantObsExpression_Condition()
@@ -104,7 +103,7 @@ public interface InstantObsExpression extends TimeExpression
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getCondition <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Condition</em>' containment reference.
 	 * @see #getCondition()
@@ -115,7 +114,7 @@ public interface InstantObsExpression extends TimeExpression
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;'"
 	 * @generated
 	 */
@@ -125,7 +124,7 @@ public interface InstantObsExpression extends TimeExpression
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;'"
 	 * @generated
@@ -136,7 +135,7 @@ public interface InstantObsExpression extends TimeExpression
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;'"
 	 * @generated

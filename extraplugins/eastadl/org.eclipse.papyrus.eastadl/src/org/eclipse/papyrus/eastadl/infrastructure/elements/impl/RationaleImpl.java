@@ -43,7 +43,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	 * The cached value of the '{@link #getBase_Comment() <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Comment()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RationaleImpl() {
@@ -63,7 +63,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment basicGetBase_Comment() {
@@ -104,7 +104,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

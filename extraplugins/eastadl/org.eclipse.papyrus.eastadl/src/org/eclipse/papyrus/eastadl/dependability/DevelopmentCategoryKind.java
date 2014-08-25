@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getDevelopmentCategoryKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * The '<em><b>Modification Of Existing Item</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MODIFICATION_OF_EXISTING_ITEM_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * The '<em><b>New Item Development</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #NEW_ITEM_DEVELOPMENT_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * In case of a modification the relevant lifecycle sub-phases and activities shall be determined.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #MODIFICATION_OF_EXISTING_ITEM
 	 * @model name="modificationOfExistingItem"
 	 * @generated
@@ -85,7 +85,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * In case of a new development, the entire lifecycle shall be passed through.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #NEW_ITEM_DEVELOPMENT
 	 * @model name="newItemDevelopment"
 	 * @generated
@@ -97,7 +97,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * An array of all the '<em><b>Development Category Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final DevelopmentCategoryKind[] VALUES_ARRAY =
@@ -110,7 +110,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Development Category Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<DevelopmentCategoryKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -119,7 +119,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Returns the '<em><b>Development Category Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DevelopmentCategoryKind get(int value) {
@@ -136,7 +136,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Returns the '<em><b>Development Category Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DevelopmentCategoryKind get(String literal) {
@@ -153,7 +153,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Returns the '<em><b>Development Category Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DevelopmentCategoryKind getByName(String name) {
@@ -169,7 +169,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -177,7 +177,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -185,7 +185,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -194,7 +194,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private DevelopmentCategoryKind(int value, String name, String literal) {
@@ -206,7 +206,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public enum DevelopmentCategoryKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

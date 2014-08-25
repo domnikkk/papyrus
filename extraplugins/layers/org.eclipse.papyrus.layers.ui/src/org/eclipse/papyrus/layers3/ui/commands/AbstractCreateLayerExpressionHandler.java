@@ -12,6 +12,8 @@ package org.eclipse.papyrus.layers3.ui.commands;
 
 
 
+import static org.eclipse.papyrus.layers.ui.Activator.log;
+
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
@@ -23,7 +25,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
-import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 public abstract class AbstractCreateLayerExpressionHandler extends AbstractLayersCommand {
 
@@ -98,7 +99,7 @@ public abstract class AbstractCreateLayerExpressionHandler extends AbstractLayer
 
 	/**
 	 * This method must create the Layer that will be populated and inserted in parent.
-	 * 
+	 *
 	 * @return
 	 */
 	protected abstract LayerExpression createLayer();

@@ -41,7 +41,7 @@ public final class ProblemsEditPlugin extends EMFPlugin {
 	/**
 	 * Create the instance.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ProblemsEditPlugin() {
@@ -52,7 +52,7 @@ public final class ProblemsEditPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public final class ProblemsEditPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -84,7 +84,7 @@ public final class ProblemsEditPlugin extends EMFPlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public Implementation() {

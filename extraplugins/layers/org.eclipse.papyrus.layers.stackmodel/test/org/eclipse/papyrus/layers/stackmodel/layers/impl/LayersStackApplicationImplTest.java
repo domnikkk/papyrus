@@ -154,7 +154,7 @@ public class LayersStackApplicationImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackApplicationImpl#lookupLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)}.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test

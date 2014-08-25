@@ -61,7 +61,7 @@ public interface InputSynchronizationConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The width of the sliding window.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Tolerance</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getInputSynchronizationConstraint_Tolerance()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -77,7 +77,7 @@ public interface InputSynchronizationConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Scope</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Scope</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getInputSynchronizationConstraint_Scope()
 	 * @model lower="2" ordered="false"

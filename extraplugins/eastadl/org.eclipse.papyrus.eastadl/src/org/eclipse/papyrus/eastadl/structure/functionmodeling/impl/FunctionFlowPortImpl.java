@@ -47,7 +47,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultValue()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionFlowPortImpl() {
@@ -107,7 +107,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAValue basicGetDefaultValue() {
@@ -137,7 +137,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class FunctionFlowPortImpl extends FunctionPortImpl implements FunctionFl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

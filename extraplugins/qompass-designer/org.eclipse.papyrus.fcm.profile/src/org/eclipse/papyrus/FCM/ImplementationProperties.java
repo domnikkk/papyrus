@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -45,7 +44,7 @@ public interface ImplementationProperties extends EObject {
 	 * If the meaning of the '<em>Size RAM</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Size RAM</em>' attribute.
 	 * @see #setSizeRAM(int)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SizeRAM()
@@ -58,7 +57,7 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeRAM <em>Size RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Size RAM</em>' attribute.
 	 * @see #getSizeRAM()
@@ -74,7 +73,7 @@ public interface ImplementationProperties extends EObject {
 	 * If the meaning of the '<em>Supported OS</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Supported OS</em>' reference list.
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SupportedOS()
 	 * @model ordered="false"
@@ -90,7 +89,7 @@ public interface ImplementationProperties extends EObject {
 	 * If the meaning of the '<em>Arch</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Arch</em>' reference list.
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_Arch()
 	 * @model ordered="false"
@@ -105,7 +104,7 @@ public interface ImplementationProperties extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_Base_Class()
@@ -118,7 +117,7 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -133,7 +132,7 @@ public interface ImplementationProperties extends EObject {
 	 * If the meaning of the '<em>Size ROM</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Size ROM</em>' attribute.
 	 * @see #setSizeROM(int)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SizeROM()
@@ -146,7 +145,7 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSizeROM <em>Size ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Size ROM</em>' attribute.
 	 * @see #getSizeROM()
@@ -161,7 +160,7 @@ public interface ImplementationProperties extends EObject {
 	 * If the meaning of the '<em>Supported Target Arch</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Supported Target Arch</em>' reference.
 	 * @see #setSupportedTargetArch(TargetArchitecture)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getImplementationProperties_SupportedTargetArch()
@@ -174,7 +173,7 @@ public interface ImplementationProperties extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ImplementationProperties#getSupportedTargetArch <em>Supported Target Arch</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Supported Target Arch</em>' reference.
 	 * @see #getSupportedTargetArch()

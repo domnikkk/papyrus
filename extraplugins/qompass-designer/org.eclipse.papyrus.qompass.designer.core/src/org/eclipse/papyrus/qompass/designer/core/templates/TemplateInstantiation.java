@@ -267,7 +267,7 @@ public class TemplateInstantiation {
 		 * // additional check, whether the ACCUMULATE information is unset)
 		 * // however: if the element is a package, existence is not sufficient
 		 * // since it might have been created via getAndCreate above
-		 * 
+		 *
 		 * //if(namedElement instanceof Package) {
 		 * // bindPackage((Package)namedElement);
 		 * //}

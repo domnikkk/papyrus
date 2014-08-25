@@ -13,16 +13,78 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.util;
 
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.Style;
-
 import org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand;
-import org.eclipse.papyrus.layers.stackmodel.layers.*;
+import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer;
+import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer;
+import org.eclipse.papyrus.layers.stackmodel.layers.AndStackedLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.ApplicationDependantElement;
+import org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.BooleanType;
+import org.eclipse.papyrus.layers.stackmodel.layers.Color;
+import org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.CustomLayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.CustomType;
+import org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.Fill;
+import org.eclipse.papyrus.layers.stackmodel.layers.FillInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.FillPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.Folder;
+import org.eclipse.papyrus.layers.stackmodel.layers.FolderElement;
+import org.eclipse.papyrus.layers.stackmodel.layers.FontInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.FontPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.FontType;
+import org.eclipse.papyrus.layers.stackmodel.layers.IntInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.IntType;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsValidPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsVisiblePropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.Layer;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
+import org.eclipse.papyrus.layers.stackmodel.layers.LineInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.LinePropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.LineType;
+import org.eclipse.papyrus.layers.stackmodel.layers.Metamodel;
+import org.eclipse.papyrus.layers.stackmodel.layers.NullInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.OrStackedLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.Property;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer;
+import org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.StringInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.StringType;
+import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.Type;
+import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +95,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage
  * @generated
  */
@@ -42,7 +104,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static LayersPackage modelPackage;
@@ -51,7 +113,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersSwitch() {
@@ -64,7 +126,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -78,7 +140,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -925,7 +987,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Named Style</em>'.
@@ -942,7 +1004,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Stack</em>'.
@@ -959,7 +1021,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer</em>'.
@@ -976,7 +1038,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Color</em>'.
@@ -993,7 +1055,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Color Instance</em>'.
@@ -1010,7 +1072,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fill Instance</em>'.
@@ -1027,7 +1089,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fill</em>'.
@@ -1044,7 +1106,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fill Property Setter</em>'.
@@ -1061,7 +1123,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Is Valid Property Setter</em>'.
@@ -1078,7 +1140,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Null Property Setter</em>'.
@@ -1095,7 +1157,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Line Type</em>'.
@@ -1112,7 +1174,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Line Instance</em>'.
@@ -1129,7 +1191,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Line Property Setter</em>'.
@@ -1146,7 +1208,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Font Property Setter</em>'.
@@ -1163,7 +1225,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Font Instance</em>'.
@@ -1180,7 +1242,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Font Type</em>'.
@@ -1197,7 +1259,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Is Visible Property Setter</em>'.
@@ -1214,7 +1276,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Operator Descriptor Registry</em>'.
@@ -1231,7 +1293,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Top Layer Operator Descriptor</em>'.
@@ -1248,7 +1310,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Stacked Layer Operator Descriptor</em>'.
@@ -1265,7 +1327,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Custom Property Operator</em>'.
@@ -1282,7 +1344,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>And Stacked Layer Operator Descriptor</em>'.
@@ -1299,7 +1361,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Or Stacked Layer Operator Descriptor</em>'.
@@ -1316,7 +1378,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Is Abstract Uml Setter</em>'.
@@ -1333,7 +1395,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>All Views Derived Layer</em>'.
@@ -1350,7 +1412,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Type Instance</em>'.
@@ -1367,7 +1429,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Compute Property Value Command Itf</em>'.
@@ -1384,7 +1446,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String To Type Instance Map</em>'.
@@ -1401,7 +1463,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Descriptor</em>'.
@@ -1418,7 +1480,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Application Factory</em>'.
@@ -1435,7 +1497,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Setter Registry</em>'.
@@ -1452,7 +1514,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Setter</em>'.
@@ -1469,7 +1531,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String To Property Setter</em>'.
@@ -1486,7 +1548,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Layer</em>'.
@@ -1503,7 +1565,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
@@ -1520,7 +1582,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Folder Element</em>'.
@@ -1537,7 +1599,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Expression</em>'.
@@ -1554,7 +1616,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Application Dependant Element</em>'.
@@ -1571,7 +1633,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Type</em>'.
@@ -1588,7 +1650,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Metamodel</em>'.
@@ -1605,7 +1667,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Folder</em>'.
@@ -1622,7 +1684,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Int Instance</em>'.
@@ -1639,7 +1701,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Boolean Instance</em>'.
@@ -1656,7 +1718,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String Instance</em>'.
@@ -1673,7 +1735,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Int Type</em>'.
@@ -1690,7 +1752,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
@@ -1707,7 +1769,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String Type</em>'.
@@ -1724,7 +1786,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Custom Type</em>'.
@@ -1741,7 +1803,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Stack Application</em>'.
@@ -1758,7 +1820,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Stack Descriptor Registry</em>'.
@@ -1775,7 +1837,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Registry</em>'.
@@ -1792,7 +1854,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String To Property Index Map</em>'.
@@ -1809,7 +1871,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Simple Layer Descriptor</em>'.
@@ -1826,7 +1888,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Reg Exp Layer Descriptor</em>'.
@@ -1843,7 +1905,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Null Instance</em>'.
@@ -1860,7 +1922,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Reg Exp Layer</em>'.
@@ -1877,7 +1939,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Index</em>'.
@@ -1894,7 +1956,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Type Registry</em>'.
@@ -1911,7 +1973,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String To Type Map</em>'.
@@ -1928,7 +1990,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Descriptor Registry</em>'.
@@ -1945,7 +2007,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Operator</em>'.
@@ -1962,7 +2024,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
@@ -1979,7 +2041,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Layer Operator</em>'.
@@ -1996,7 +2058,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Operator Descriptor</em>'.
@@ -2013,7 +2075,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Operator</em>'.
@@ -2030,7 +2092,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Default Property Operator</em>'.
@@ -2047,7 +2109,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Top Layer Operator</em>'.
@@ -2064,7 +2126,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Stacked Layer Operator</em>'.
@@ -2081,7 +2143,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Custom Layer Operator</em>'.
@@ -2098,7 +2160,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Style</em>'.
@@ -2115,7 +2177,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Named Style</em>'.
@@ -2132,7 +2194,7 @@ public class LayersSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

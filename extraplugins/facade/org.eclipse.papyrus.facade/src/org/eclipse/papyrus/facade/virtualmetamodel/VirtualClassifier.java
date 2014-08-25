@@ -39,7 +39,7 @@ public interface VirtualClassifier extends VirtualElement {
 	 * If the meaning of the '<em>Metamodel</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Metamodel</em>' container reference.
 	 * @see #setMetamodel(VirtualMetamodel)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualClassifier_Metamodel()
@@ -53,7 +53,7 @@ public interface VirtualClassifier extends VirtualElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier#getMetamodel <em>Metamodel</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Metamodel</em>' container reference.
 	 * @see #getMetamodel()

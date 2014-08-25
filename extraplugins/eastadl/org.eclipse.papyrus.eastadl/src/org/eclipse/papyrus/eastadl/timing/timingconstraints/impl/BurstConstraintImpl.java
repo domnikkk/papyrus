@@ -33,7 +33,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The default value of the '{@link #getMaxOccurrences() <em>Max Occurrences</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxOccurrences()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getMaxOccurrences() <em>Max Occurrences</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxOccurrences()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getLenght() <em>Lenght</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLenght()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BurstConstraintImpl() {
@@ -97,7 +97,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -164,7 +164,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetLenght() {
@@ -209,7 +209,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -254,7 +254,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +299,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

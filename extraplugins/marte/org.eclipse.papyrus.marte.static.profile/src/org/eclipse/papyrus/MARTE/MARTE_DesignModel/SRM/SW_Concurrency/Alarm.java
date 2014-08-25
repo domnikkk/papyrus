@@ -41,7 +41,7 @@ public interface Alarm extends InterruptResource {
 	 * If the meaning of the '<em>Is Watchdog</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Watchdog</em>' attribute.
 	 * @see #setIsWatchdog(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getAlarm_IsWatchdog()
@@ -54,7 +54,7 @@ public interface Alarm extends InterruptResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm#isIsWatchdog <em>Is Watchdog</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Watchdog</em>' attribute.
 	 * @see #isIsWatchdog()
@@ -70,7 +70,7 @@ public interface Alarm extends InterruptResource {
 	 * If the meaning of the '<em>Timers</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Timers</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getAlarm_Timers()
 	 * @model ordered="false"

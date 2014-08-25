@@ -33,7 +33,7 @@ public class BasicSoftwareFunctionTypeImpl extends DesignFunctionTypeImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BasicSoftwareFunctionTypeImpl() {
@@ -43,7 +43,7 @@ public class BasicSoftwareFunctionTypeImpl extends DesignFunctionTypeImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

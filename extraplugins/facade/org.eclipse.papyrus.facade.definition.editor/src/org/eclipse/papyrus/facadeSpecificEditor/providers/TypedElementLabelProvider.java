@@ -36,6 +36,7 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 	 * @param listener
 	 */
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
@@ -44,6 +45,7 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
 	 *
 	 */
+	@Override
 	public void dispose() {
 
 	}
@@ -56,6 +58,7 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 	 * @return
 	 */
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
@@ -66,6 +69,7 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 	 * @param listener
 	 */
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
@@ -78,6 +82,7 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 	 * @return
 	 */
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -128,6 +133,7 @@ public class TypedElementLabelProvider implements ITableLabelProvider {
 	 * @return
 	 */
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:

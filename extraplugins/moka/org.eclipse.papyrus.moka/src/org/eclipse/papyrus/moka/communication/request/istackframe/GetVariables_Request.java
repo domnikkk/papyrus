@@ -54,7 +54,7 @@ public class GetVariables_Request extends RequestMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
 	@Override

@@ -30,7 +30,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackag
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimingFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "HwTiming";
@@ -49,7 +49,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/HwTiming/1";
@@ -58,7 +58,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "HwTiming";
@@ -67,7 +67,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HwTimingPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl.init();
@@ -76,7 +76,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingResourceImpl <em>Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl#getHwTimingResource()
 	 * @generated
@@ -87,7 +87,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +177,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -197,7 +197,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -207,7 +207,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +217,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -227,7 +227,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -237,7 +237,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwClockImpl <em>Hw Clock</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwClockImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl#getHwClock()
 	 * @generated
@@ -248,7 +248,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -258,7 +258,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -268,7 +268,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -278,7 +278,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -288,7 +288,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -298,7 +298,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -308,7 +308,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -318,7 +318,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -328,7 +328,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -338,7 +338,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -348,7 +348,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -358,7 +358,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -368,7 +368,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -378,7 +378,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -388,7 +388,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Clock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -398,7 +398,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl <em>Hw Timer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl#getHwTimer()
 	 * @generated
@@ -409,7 +409,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -419,7 +419,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -429,7 +429,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -439,7 +439,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -449,7 +449,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -459,7 +459,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -469,7 +469,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -479,7 +479,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -489,7 +489,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -499,7 +499,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -509,7 +509,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -519,7 +519,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -529,7 +529,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -539,7 +539,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -549,7 +549,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Nb Counters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -559,7 +559,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Counter Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -569,7 +569,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The feature id for the '<em><b>Input Clock</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -579,7 +579,7 @@ public interface HwTimingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Timer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -590,7 +590,7 @@ public interface HwTimingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimingResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimingResource
 	 * @generated
@@ -601,7 +601,7 @@ public interface HwTimingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwClock <em>Hw Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Clock</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwClock
 	 * @generated
@@ -612,7 +612,7 @@ public interface HwTimingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer <em>Hw Timer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Timer</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer
 	 * @generated
@@ -623,7 +623,7 @@ public interface HwTimingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getNbCounters <em>Nb Counters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Nb Counters</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getNbCounters()
 	 * @see #getHwTimer()
@@ -635,7 +635,7 @@ public interface HwTimingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getCounterWidth <em>Counter Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Counter Width</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getCounterWidth()
 	 * @see #getHwTimer()
@@ -647,7 +647,7 @@ public interface HwTimingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getInputClock <em>Input Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Input Clock</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimer#getInputClock()
 	 * @see #getHwTimer()
@@ -659,7 +659,7 @@ public interface HwTimingPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -675,7 +675,7 @@ public interface HwTimingPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -683,7 +683,7 @@ public interface HwTimingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingResourceImpl <em>Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl#getHwTimingResource()
 		 * @generated
@@ -694,7 +694,7 @@ public interface HwTimingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwClockImpl <em>Hw Clock</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwClockImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl#getHwClock()
 		 * @generated
@@ -705,7 +705,7 @@ public interface HwTimingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl <em>Hw Timer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimingPackageImpl#getHwTimer()
 		 * @generated
@@ -716,7 +716,7 @@ public interface HwTimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Nb Counters</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_TIMER__NB_COUNTERS = eINSTANCE.getHwTimer_NbCounters();
@@ -725,7 +725,7 @@ public interface HwTimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Counter Width</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_TIMER__COUNTER_WIDTH = eINSTANCE.getHwTimer_CounterWidth();
@@ -734,7 +734,7 @@ public interface HwTimingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Input Clock</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_TIMER__INPUT_CLOCK = eINSTANCE.getHwTimer_InputClock();

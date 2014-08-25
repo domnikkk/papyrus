@@ -15,17 +15,12 @@ package org.eclipse.papyrus.FCM.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.ConfigOption;
 import org.eclipse.papyrus.FCM.Configuration;
 import org.eclipse.papyrus.FCM.DeploymentPlan;
@@ -51,7 +46,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -62,7 +57,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	 * The cached value of the '{@link #getConfigOptions() <em>Config Options</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConfigOptions()
 	 * @generated
 	 * @ordered
@@ -73,7 +68,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	 * The cached value of the '{@link #getDeploymentPlan() <em>Deployment Plan</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeploymentPlan()
 	 * @generated
 	 * @ordered
@@ -83,7 +78,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationImpl() {
@@ -93,7 +88,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +99,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +119,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -134,7 +129,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +144,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +158,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +178,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DeploymentPlan basicGetDeploymentPlan() {
@@ -193,7 +188,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +203,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +228,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -257,7 +252,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +274,7 @@ public class ConfigurationImpl extends EObjectImpl implements Configuration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

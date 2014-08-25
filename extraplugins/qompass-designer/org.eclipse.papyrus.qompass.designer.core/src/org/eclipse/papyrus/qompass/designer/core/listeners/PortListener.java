@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.qompass.designer.core.listeners;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.ENamedElement;

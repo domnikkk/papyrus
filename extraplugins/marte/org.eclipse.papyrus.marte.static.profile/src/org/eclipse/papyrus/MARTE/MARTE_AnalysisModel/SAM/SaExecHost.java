@@ -43,7 +43,7 @@ public interface SaExecHost extends GaExecHost {
 	 * If the meaning of the '<em>Is Sched</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Sched</em>' attribute.
 	 * @see #setIsSched(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaExecHost_IsSched()
@@ -56,7 +56,7 @@ public interface SaExecHost extends GaExecHost {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaExecHost#getIsSched <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Sched</em>' attribute.
 	 * @see #getIsSched()
@@ -71,7 +71,7 @@ public interface SaExecHost extends GaExecHost {
 	 * If the meaning of the '<em>Sch Slack</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sch Slack</em>' attribute.
 	 * @see #setSchSlack(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaExecHost_SchSlack()
@@ -84,7 +84,7 @@ public interface SaExecHost extends GaExecHost {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaExecHost#getSchSlack <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sch Slack</em>' attribute.
 	 * @see #getSchSlack()
@@ -99,7 +99,7 @@ public interface SaExecHost extends GaExecHost {
 	 * If the meaning of the '<em>Sched Utiliz</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sched Utiliz</em>' attribute.
 	 * @see #setSchedUtiliz(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaExecHost_SchedUtiliz()
@@ -112,7 +112,7 @@ public interface SaExecHost extends GaExecHost {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaExecHost#getSchedUtiliz <em>Sched Utiliz</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sched Utiliz</em>' attribute.
 	 * @see #getSchedUtiliz()
@@ -127,7 +127,7 @@ public interface SaExecHost extends GaExecHost {
 	 * If the meaning of the '<em>IS Rswitch T</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>IS Rswitch T</em>' attribute.
 	 * @see #setISRswitchT(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaExecHost_ISRswitchT()
@@ -140,7 +140,7 @@ public interface SaExecHost extends GaExecHost {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaExecHost#getISRswitchT <em>IS Rswitch T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>IS Rswitch T</em>' attribute.
 	 * @see #getISRswitchT()
@@ -155,7 +155,7 @@ public interface SaExecHost extends GaExecHost {
 	 * If the meaning of the '<em>IS Rprio Range</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>IS Rprio Range</em>' attribute.
 	 * @see #setISRprioRange(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaExecHost_ISRprioRange()
@@ -168,7 +168,7 @@ public interface SaExecHost extends GaExecHost {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaExecHost#getISRprioRange <em>IS Rprio Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>IS Rprio Range</em>' attribute.
 	 * @see #getISRprioRange()

@@ -34,7 +34,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The cached value of the '{@link #getAllocationTarget() <em>Allocation Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllocationTarget()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The cached value of the '{@link #getAllocationTarget_context() <em>Allocation Target context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllocationTarget_context()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The default value of the '{@link #getIntAttribute() <em>Int Attribute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIntAttribute()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	 * The cached value of the '{@link #getIntAttribute() <em>Int Attribute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIntAttribute()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TargetInstanceRefImpl() {
@@ -87,7 +87,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocationTarget basicGetAllocationTarget() {
@@ -128,7 +128,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -229,7 +229,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class TargetInstanceRefImpl extends InstanceRefImpl implements TargetInst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

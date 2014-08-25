@@ -91,7 +91,7 @@ public class Deploy {
 
 	/**
 	 * Distribute an instance specification to the node by this
-	 * 
+	 *
 	 * @param allocAll
 	 * @param slotPath
 	 * @param instance

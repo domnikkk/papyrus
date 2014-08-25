@@ -75,7 +75,7 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 
 	/**
 	 * Lookup for the {@link LayersStackApplication} instance
-	 * 
+	 *
 	 * @return the {@link LayersStackApplication} or null if not found.
 	 */
 	public LayersStackApplication lookupLayerStackApplication() {
@@ -85,7 +85,7 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 
 	/**
 	 * Get the {@link LayersStackApplication} object. Create it if not found.
-	 * 
+	 *
 	 * @return
 	 */
 	public LayersStackApplication getLayerStackApplication() {
@@ -102,7 +102,7 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 
 	/**
 	 * Remove the specified application from the model.
-	 * 
+	 *
 	 * @param application
 	 */
 	public void removeRoot(LayersStackApplication application) {
@@ -115,7 +115,7 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 	/**
 	 * Get the associated {@link LayersStackAndApplicationLifeCycleEventNotifier}.
 	 * There is only one such notifier associated to the model.
-	 * 
+	 *
 	 * @return
 	 */
 	public LayersStackAndApplicationLifeCycleEventNotifier getLayersStackLifeCycleEventNotifier() {

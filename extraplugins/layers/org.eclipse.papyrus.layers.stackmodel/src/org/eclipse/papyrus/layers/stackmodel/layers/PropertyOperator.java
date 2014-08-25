@@ -13,11 +13,8 @@
 package org.eclipse.papyrus.layers.stackmodel.layers;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.layers.stackmodel.LayersException;
-
 import org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand;
 
 /**
@@ -44,7 +41,7 @@ public interface PropertyOperator extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getPropertyOperator_Name()
@@ -57,7 +54,7 @@ public interface PropertyOperator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -68,7 +65,7 @@ public interface PropertyOperator extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException"
 	 *        propertyDataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" propertyMany="true"
 	 * @generated

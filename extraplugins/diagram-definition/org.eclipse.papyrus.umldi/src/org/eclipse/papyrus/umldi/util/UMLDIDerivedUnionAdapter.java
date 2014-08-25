@@ -12,15 +12,11 @@
 package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.papyrus.dd.di.DIPackage;
-
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlCompartment;
 import org.eclipse.papyrus.umldi.UmlDiagram;

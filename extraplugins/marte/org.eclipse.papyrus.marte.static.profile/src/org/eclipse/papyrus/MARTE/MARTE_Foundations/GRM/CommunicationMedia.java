@@ -46,7 +46,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * If the meaning of the '<em>Element Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Size</em>' attribute.
 	 * @see #setElementSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getCommunicationMedia_ElementSize()
@@ -59,7 +59,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.CommunicationMedia#getElementSize <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Size</em>' attribute.
 	 * @see #getElementSize()
@@ -74,7 +74,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * If the meaning of the '<em>Base Connector</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Connector</em>' reference.
 	 * @see #setBase_Connector(Connector)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getCommunicationMedia_Base_Connector()
@@ -87,7 +87,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.CommunicationMedia#getBase_Connector <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Connector</em>' reference.
 	 * @see #getBase_Connector()
@@ -103,7 +103,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * If the meaning of the '<em>Transm Mode</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Transm Mode</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind
 	 * @see #setTransmMode(TransmModeKind)
@@ -117,7 +117,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.CommunicationMedia#getTransmMode <em>Transm Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Transm Mode</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind
@@ -134,7 +134,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * If the meaning of the '<em>Block T</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Block T</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getCommunicationMedia_BlockT()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -150,7 +150,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * If the meaning of the '<em>Packet T</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Packet T</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getCommunicationMedia_PacketT()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -166,7 +166,7 @@ public interface CommunicationMedia extends ProcessingResource {
 	 * If the meaning of the '<em>Capacity</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Capacity</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getCommunicationMedia_Capacity()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_DataTxRate" ordered="false"

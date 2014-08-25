@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehaviorKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>HIP HOPS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HIP_HOPS_VALUE
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>ALTARICA</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ALTARICA_VALUE
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>AADL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AADL_VALUE
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>OTHER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>HIP HOPS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HIP_HOPS
 	 * @model
 	 * @generated
@@ -105,7 +105,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>ALTARICA</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ALTARICA
 	 * @model
 	 * @generated
@@ -120,7 +120,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>AADL</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AADL
 	 * @model
 	 * @generated
@@ -135,7 +135,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * If the meaning of '<em><b>OTHER</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER
 	 * @model
 	 * @generated
@@ -147,7 +147,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * An array of all the '<em><b>Error Behavior Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ErrorBehaviorKind[] VALUES_ARRAY =
@@ -162,7 +162,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Error Behavior Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ErrorBehaviorKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -171,7 +171,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Error Behavior Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ErrorBehaviorKind get(int value) {
@@ -192,7 +192,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Error Behavior Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ErrorBehaviorKind get(String literal) {
@@ -209,7 +209,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Error Behavior Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ErrorBehaviorKind getByName(String name) {
@@ -225,7 +225,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -233,7 +233,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -241,7 +241,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -250,7 +250,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ErrorBehaviorKind(int value, String name, String literal) {
@@ -262,7 +262,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

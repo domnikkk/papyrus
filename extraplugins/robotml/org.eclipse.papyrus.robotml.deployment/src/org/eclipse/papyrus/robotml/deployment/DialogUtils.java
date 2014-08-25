@@ -47,9 +47,9 @@ public class DialogUtils {
 	 * int width, int height, int style)
 	 * {
 	 * style = SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL | style;
-	 * 
+	 *
 	 * List list = new List (parent, style);
-	 * 
+	 *
 	 * GridData data = new GridData();
 	 * data.widthHint = width;
 	 * // data.heightHint = convertHeightInCharsToPixels(height);

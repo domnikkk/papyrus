@@ -114,7 +114,7 @@ public class RunGenerator {
 			/*
 			 * TODO : if metamodel have some root node, we make a loop
 			 * JDTJavaElement proj = (JDTJavaElement) outObjects.get(0);
-			 * 
+			 *
 			 * JDTVisitor visitor = new SynchJDTJavaModel();
 			 * proj.accept(visitor);
 			 */
@@ -131,7 +131,7 @@ public class RunGenerator {
 
 	/**
 	 * Create a new GeneratorOptions model and inject eclipse preferences on it.
-	 * 
+	 *
 	 * @param preference
 	 *            eclipse preferences
 	 * @return a new instance of Options, where options.defaultSourceFolder have been initialized.

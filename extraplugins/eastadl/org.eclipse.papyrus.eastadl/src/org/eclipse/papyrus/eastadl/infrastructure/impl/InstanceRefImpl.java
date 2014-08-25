@@ -20,7 +20,7 @@ public class InstanceRefImpl extends MinimalEObjectImpl.Container implements Ins
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InstanceRefImpl() {
@@ -30,7 +30,7 @@ public class InstanceRefImpl extends MinimalEObjectImpl.Container implements Ins
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

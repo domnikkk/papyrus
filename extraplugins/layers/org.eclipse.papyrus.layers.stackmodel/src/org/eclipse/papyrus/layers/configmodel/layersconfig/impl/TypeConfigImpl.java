@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.layers.configmodel.layersconfig.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig;
 
@@ -30,7 +29,7 @@ public class TypeConfigImpl extends FolderElementImpl implements TypeConfig {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TypeConfigImpl() {
@@ -40,7 +39,7 @@ public class TypeConfigImpl extends FolderElementImpl implements TypeConfig {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

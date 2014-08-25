@@ -51,7 +51,7 @@ public class RegisterResolver implements IStartup {
 
 					/*
 					 * (non-Javadoc)
-					 * 
+					 *
 					 * @see org.osgi.framework.BundleListener#bundleChanged(org.osgi.framework.BundleEvent)
 					 */
 					public void bundleChanged(final BundleEvent pEvent) {

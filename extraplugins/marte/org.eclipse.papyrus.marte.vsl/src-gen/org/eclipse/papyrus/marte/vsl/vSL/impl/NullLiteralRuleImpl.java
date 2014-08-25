@@ -4,10 +4,8 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.marte.vsl.vSL.NullLiteralRule;
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -25,7 +23,7 @@ public class NullLiteralRuleImpl extends LiteralImpl implements NullLiteralRule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NullLiteralRuleImpl()
@@ -36,7 +34,7 @@ public class NullLiteralRuleImpl extends LiteralImpl implements NullLiteralRule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -48,7 +46,7 @@ public class NullLiteralRuleImpl extends LiteralImpl implements NullLiteralRule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,7 +58,7 @@ public class NullLiteralRuleImpl extends LiteralImpl implements NullLiteralRule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +70,7 @@ public class NullLiteralRuleImpl extends LiteralImpl implements NullLiteralRule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

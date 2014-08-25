@@ -45,7 +45,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	 * The default value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	 * The cached value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	 * The cached value of the '{@link #getConnectedTo() <em>Connected To</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConnectedTo()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwEndPointImpl() {
@@ -87,7 +87,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -176,7 +176,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

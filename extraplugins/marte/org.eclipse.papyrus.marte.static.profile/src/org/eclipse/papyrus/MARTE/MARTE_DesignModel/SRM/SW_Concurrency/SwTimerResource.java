@@ -40,7 +40,7 @@ public interface SwTimerResource extends TimerResource {
 	 * If the meaning of the '<em>Duration Elements</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Duration Elements</em>' reference.
 	 * @see #setDurationElements(TypedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwTimerResource_DurationElements()
@@ -53,7 +53,7 @@ public interface SwTimerResource extends TimerResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwTimerResource#getDurationElements <em>Duration Elements</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Duration Elements</em>' reference.
 	 * @see #getDurationElements()

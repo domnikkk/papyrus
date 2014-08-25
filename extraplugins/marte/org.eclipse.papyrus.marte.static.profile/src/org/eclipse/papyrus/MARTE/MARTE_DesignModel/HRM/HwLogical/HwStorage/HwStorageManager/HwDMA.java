@@ -43,7 +43,7 @@ public interface HwDMA extends HwStorageManager, HwArbiter {
 	 * If the meaning of the '<em>Nb Channels</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb Channels</em>' attribute.
 	 * @see #setNbChannels(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwDMA_NbChannels()
@@ -56,7 +56,7 @@ public interface HwDMA extends HwStorageManager, HwArbiter {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwDMA#getNbChannels <em>Nb Channels</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb Channels</em>' attribute.
 	 * @see #getNbChannels()
@@ -71,7 +71,7 @@ public interface HwDMA extends HwStorageManager, HwArbiter {
 	 * If the meaning of the '<em>Transfer Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Transfer Width</em>' attribute.
 	 * @see #setTransferWidth(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwDMA_TransferWidth()
@@ -84,7 +84,7 @@ public interface HwDMA extends HwStorageManager, HwArbiter {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwDMA#getTransferWidth <em>Transfer Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Transfer Width</em>' attribute.
 	 * @see #getTransferWidth()
@@ -100,7 +100,7 @@ public interface HwDMA extends HwStorageManager, HwArbiter {
 	 * If the meaning of the '<em>Driven By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Driven By</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwDMA_DrivenBy()
 	 * @model ordered="false"

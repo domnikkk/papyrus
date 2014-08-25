@@ -43,7 +43,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocation()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocation()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -119,7 +119,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaEventTraceImpl() {
@@ -129,7 +129,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -248,7 +248,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +312,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +337,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +358,7 @@ public class GaEventTraceImpl extends EObjectImpl implements GaEventTrace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

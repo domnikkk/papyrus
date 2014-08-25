@@ -30,7 +30,7 @@ public class ClockResourceImpl extends TimingResourceImpl implements ClockResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClockResourceImpl() {
@@ -40,7 +40,7 @@ public class ClockResourceImpl extends TimingResourceImpl implements ClockResour
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

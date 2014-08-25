@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Allocation Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocationKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum AllocationKind implements Enumerator {
 	 * The '<em><b>Structural</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STRUCTURAL_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum AllocationKind implements Enumerator {
 	 * The '<em><b>Behavioral</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #BEHAVIORAL_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum AllocationKind implements Enumerator {
 	 * The '<em><b>Hybrid</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HYBRID_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum AllocationKind implements Enumerator {
 	 * If the meaning of '<em><b>Structural</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STRUCTURAL
 	 * @model name="structural"
 	 * @generated
@@ -85,7 +85,7 @@ public enum AllocationKind implements Enumerator {
 	 * If the meaning of '<em><b>Behavioral</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #BEHAVIORAL
 	 * @model name="behavioral"
 	 * @generated
@@ -100,7 +100,7 @@ public enum AllocationKind implements Enumerator {
 	 * If the meaning of '<em><b>Hybrid</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HYBRID
 	 * @model name="hybrid"
 	 * @generated
@@ -112,7 +112,7 @@ public enum AllocationKind implements Enumerator {
 	 * An array of all the '<em><b>Allocation Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final AllocationKind[] VALUES_ARRAY =
@@ -126,7 +126,7 @@ public enum AllocationKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Allocation Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<AllocationKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -135,7 +135,7 @@ public enum AllocationKind implements Enumerator {
 	 * Returns the '<em><b>Allocation Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocationKind get(String literal) {
@@ -152,7 +152,7 @@ public enum AllocationKind implements Enumerator {
 	 * Returns the '<em><b>Allocation Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocationKind getByName(String name) {
@@ -169,7 +169,7 @@ public enum AllocationKind implements Enumerator {
 	 * Returns the '<em><b>Allocation Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocationKind get(int value) {
@@ -187,7 +187,7 @@ public enum AllocationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -195,7 +195,7 @@ public enum AllocationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -203,7 +203,7 @@ public enum AllocationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -212,7 +212,7 @@ public enum AllocationKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private AllocationKind(int value, String name, String literal) {
@@ -224,7 +224,7 @@ public enum AllocationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public enum AllocationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public enum AllocationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public enum AllocationKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

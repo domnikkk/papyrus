@@ -7,20 +7,17 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 import org.eclipse.papyrus.java.profile.java.JavaProperty;
 import org.eclipse.papyrus.java.profile.java.TrueFalseDefault;
-
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
 
@@ -50,7 +47,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -61,7 +58,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -72,7 +69,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -83,7 +80,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -94,7 +91,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -105,7 +102,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isTransient() <em>Is Transient</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isTransient()
 	 * @generated
 	 * @ordered
@@ -116,7 +113,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isTransient() <em>Is Transient</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isTransient()
 	 * @generated
 	 * @ordered
@@ -127,7 +124,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #getGenerateGetter() <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateGetter()
 	 * @generated
 	 * @ordered
@@ -138,7 +135,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getGenerateGetter() <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateGetter()
 	 * @generated
 	 * @ordered
@@ -149,7 +146,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #getGenerateSetter() <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateSetter()
 	 * @generated
 	 * @ordered
@@ -160,7 +157,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getGenerateSetter() <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateSetter()
 	 * @generated
 	 * @ordered
@@ -171,7 +168,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -182,7 +179,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -193,7 +190,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getExplicitPlainTextRequiredImports() <em>Explicit Plain Text Required Imports</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExplicitPlainTextRequiredImports()
 	 * @generated
 	 * @ordered
@@ -204,7 +201,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getExplicitRequiredImports() <em>Explicit Required Imports</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExplicitRequiredImports()
 	 * @generated
 	 * @ordered
@@ -214,7 +211,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaPropertyImpl() {
@@ -224,7 +221,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +232,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +243,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +258,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +269,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +284,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +304,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -317,7 +314,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +329,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +340,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +355,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +366,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +381,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +392,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -410,7 +407,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -421,7 +418,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -436,7 +433,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -450,7 +447,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +461,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -475,7 +472,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -495,7 +492,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -529,7 +526,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -572,7 +569,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -612,7 +609,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -643,7 +640,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

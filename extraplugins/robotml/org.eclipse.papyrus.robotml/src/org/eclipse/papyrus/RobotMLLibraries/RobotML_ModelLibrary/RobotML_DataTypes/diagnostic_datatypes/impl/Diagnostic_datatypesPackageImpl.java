@@ -6,61 +6,42 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.DiagnosticArray;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.DiagnosticStatus;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesFactory;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.KeyValue;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.Geometry_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Oarp4_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Diagnostic_datatypesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass diagnosticArrayEClass = null;
@@ -68,7 +49,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass diagnosticStatusEClass = null;
@@ -76,7 +57,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass keyValueEClass = null;
@@ -86,7 +67,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage#eNS_URI
 	 * @see #init()
@@ -99,7 +80,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -110,7 +91,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	 * <p>
 	 * This method is used to initialize {@link Diagnostic_datatypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -181,7 +162,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDiagnosticArray() {
@@ -191,7 +172,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagnosticArray_Header() {
@@ -201,7 +182,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagnosticArray_Status() {
@@ -211,7 +192,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagnosticArray_Values() {
@@ -221,7 +202,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDiagnosticStatus() {
@@ -231,7 +212,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagnosticStatus_OK() {
@@ -241,7 +222,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagnosticStatus_WARN() {
@@ -251,7 +232,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagnosticStatus_ERROR() {
@@ -261,7 +242,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagnosticStatus_Level() {
@@ -271,7 +252,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagnosticStatus_Name() {
@@ -281,7 +262,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagnosticStatus_Message() {
@@ -291,7 +272,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagnosticStatus_Hardware_id() {
@@ -301,7 +282,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagnosticStatus_Values() {
@@ -311,7 +292,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getKeyValue() {
@@ -321,7 +302,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getKeyValue_Key() {
@@ -331,7 +312,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getKeyValue_Value() {
@@ -341,7 +322,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Diagnostic_datatypesFactory getDiagnostic_datatypesFactory() {
@@ -351,7 +332,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -361,7 +342,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -394,7 +375,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -404,7 +385,7 @@ public class Diagnostic_datatypesPackageImpl extends EPackageImpl implements Dia
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

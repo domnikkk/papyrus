@@ -38,7 +38,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	 * The cached value of the '{@link #getBindingThroughClampConnector() <em>Binding Through Clamp Connector</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindingThroughClampConnector()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	 * The cached value of the '{@link #getBindingThroughFunctionConnector() <em>Binding Through Function Connector</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindingThroughFunctionConnector()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	 * The cached value of the '{@link #getBindingThroughHardwareConnector() <em>Binding Through Hardware Connector</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindingThroughHardwareConnector()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintInternalBindingImpl() {
@@ -80,7 +80,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -197,7 +197,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public abstract class BehaviorConstraintInternalBindingImpl extends MinimalEObje
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

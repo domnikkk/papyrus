@@ -53,7 +53,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProductPositioning_Base_Class()
@@ -66,7 +66,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -81,7 +81,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * If the meaning of the '<em>Driving Needs</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Driving Needs</em>' attribute.
 	 * @see #setDrivingNeeds(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProductPositioning_DrivingNeeds()
@@ -97,7 +97,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * If the meaning of the '<em>Key Capabilities</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Key Capabilities</em>' attribute.
 	 * @see #setKeyCapabilities(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProductPositioning_KeyCapabilities()
@@ -113,7 +113,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * If the meaning of the '<em>Primary Competitive Alternative</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Primary Competitive Alternative</em>' attribute.
 	 * @see #setPrimaryCompetitiveAlternative(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProductPositioning_PrimaryCompetitiveAlternative()
@@ -129,7 +129,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * If the meaning of the '<em>Primary Differentiation</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Primary Differentiation</em>' attribute.
 	 * @see #setPrimaryDifferentiation(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProductPositioning_PrimaryDifferentiation()
@@ -145,7 +145,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * If the meaning of the '<em>Target Customers</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target Customers</em>' attribute.
 	 * @see #setTargetCustomers(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProductPositioning_TargetCustomers()
@@ -158,7 +158,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getDrivingNeeds <em>Driving Needs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Driving Needs</em>' attribute.
 	 * @see #getDrivingNeeds()
@@ -170,7 +170,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getKeyCapabilities <em>Key Capabilities</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Key Capabilities</em>' attribute.
 	 * @see #getKeyCapabilities()
@@ -182,7 +182,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getPrimaryCompetitiveAlternative <em>Primary Competitive Alternative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Primary Competitive Alternative</em>' attribute.
 	 * @see #getPrimaryCompetitiveAlternative()
@@ -194,7 +194,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getPrimaryDifferentiation <em>Primary Differentiation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Primary Differentiation</em>' attribute.
 	 * @see #getPrimaryDifferentiation()
@@ -206,7 +206,7 @@ public interface ProductPositioning extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getTargetCustomers <em>Target Customers</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target Customers</em>' attribute.
 	 * @see #getTargetCustomers()

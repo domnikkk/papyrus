@@ -24,7 +24,7 @@ import org.eclipse.papyrus.diagramtemplate.Template;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramTemplateFactory {
@@ -32,7 +32,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DiagramTemplateFactory init() {
@@ -51,7 +51,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagramTemplateFactoryImpl() {
@@ -61,7 +61,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagramDefinition createDiagramDefinition() {
@@ -126,7 +126,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Selection createSelection() {
@@ -137,7 +137,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SelectionRef createSelectionRef() {
@@ -148,7 +148,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Template createTemplate() {
@@ -159,7 +159,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SelectionKind createSelectionKindFromString(EDataType eDataType, String initialValue) {
@@ -173,7 +173,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSelectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -183,7 +183,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagramTemplatePackage getDiagramTemplatePackage() {
@@ -193,7 +193,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

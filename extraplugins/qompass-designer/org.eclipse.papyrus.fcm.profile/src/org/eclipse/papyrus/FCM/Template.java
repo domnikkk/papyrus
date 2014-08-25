@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -45,7 +44,7 @@ public interface Template extends EObject {
 	 * If the meaning of the '<em>Base Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Element</em>' reference.
 	 * @see #setBase_Element(Element)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getTemplate_Base_Element()
@@ -58,7 +57,7 @@ public interface Template extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Template#getBase_Element <em>Base Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Element</em>' reference.
 	 * @see #getBase_Element()
@@ -73,7 +72,7 @@ public interface Template extends EObject {
 	 * If the meaning of the '<em>Helper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Helper</em>' reference.
 	 * @see #setHelper(BindingHelper)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getTemplate_Helper()
@@ -86,7 +85,7 @@ public interface Template extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Template#getHelper <em>Helper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Helper</em>' reference.
 	 * @see #getHelper()

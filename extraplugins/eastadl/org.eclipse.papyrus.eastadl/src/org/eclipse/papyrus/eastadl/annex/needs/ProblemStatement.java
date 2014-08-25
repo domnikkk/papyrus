@@ -53,7 +53,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProblemStatement_Base_Class()
@@ -66,7 +66,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -82,7 +82,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * If the meaning of the '<em>Affects</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Affects</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProblemStatement_Affects()
 	 * @model ordered="false"
@@ -97,7 +97,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * If the meaning of the '<em>Impact</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Impact</em>' attribute.
 	 * @see #setImpact(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProblemStatement_Impact()
@@ -113,7 +113,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * If the meaning of the '<em>Problem</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Problem</em>' attribute.
 	 * @see #setProblem(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProblemStatement_Problem()
@@ -129,7 +129,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * If the meaning of the '<em>Solution Benefits</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Solution Benefits</em>' attribute.
 	 * @see #setSolutionBenefits(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getProblemStatement_SolutionBenefits()
@@ -142,7 +142,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getImpact <em>Impact</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Impact</em>' attribute.
 	 * @see #getImpact()
@@ -154,7 +154,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getProblem <em>Problem</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Problem</em>' attribute.
 	 * @see #getProblem()
@@ -166,7 +166,7 @@ public interface ProblemStatement extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getSolutionBenefits <em>Solution Benefits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Solution Benefits</em>' attribute.
 	 * @see #getSolutionBenefits()

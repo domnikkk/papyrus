@@ -43,7 +43,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	 * The cached value of the '{@link #getIsConceptFor() <em>Is Concept For</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsConceptFor()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitecturalModelImpl() {
@@ -63,7 +63,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -121,7 +121,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class ArchitecturalModelImpl extends ConceptImpl implements Architectural
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

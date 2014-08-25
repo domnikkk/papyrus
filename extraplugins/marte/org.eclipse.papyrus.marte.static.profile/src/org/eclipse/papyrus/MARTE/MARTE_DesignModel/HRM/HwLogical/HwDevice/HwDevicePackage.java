@@ -28,7 +28,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackag
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwDeviceFactory
  * @model kind="package"
  * @generated
@@ -38,7 +38,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "HwDevice";
@@ -47,7 +47,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/HwDevice/1";
@@ -56,7 +56,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "HwDevice";
@@ -65,7 +65,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HwDevicePackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl.init();
@@ -74,7 +74,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl <em>Hw Device</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHwDevice()
 	 * @generated
@@ -85,7 +85,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -95,7 +95,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -105,7 +105,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -115,7 +115,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -125,7 +125,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -135,7 +135,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -145,7 +145,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -155,7 +155,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -165,7 +165,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -175,7 +175,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -185,7 +185,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -195,7 +195,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -205,7 +205,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -215,7 +215,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -225,7 +225,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -235,7 +235,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -245,7 +245,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Device</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -255,7 +255,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwI_OImpl <em>Hw IO</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwI_OImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHwI_O()
 	 * @generated
@@ -266,7 +266,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -276,7 +276,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -286,7 +286,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -296,7 +296,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -306,7 +306,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -316,7 +316,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -326,7 +326,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -336,7 +336,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -346,7 +346,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -356,7 +356,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -366,7 +366,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -376,7 +376,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -386,7 +386,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -396,7 +396,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -406,7 +406,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -416,7 +416,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -426,7 +426,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The number of structural features of the '<em>Hw IO</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -436,7 +436,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwSupportImpl <em>Hw Support</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwSupportImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHwSupport()
 	 * @generated
@@ -447,7 +447,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -457,7 +457,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -467,7 +467,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -477,7 +477,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -487,7 +487,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -497,7 +497,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -507,7 +507,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -517,7 +517,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -527,7 +527,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -537,7 +537,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -547,7 +547,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -557,7 +557,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -567,7 +567,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -577,7 +577,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -587,7 +587,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -597,7 +597,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -607,7 +607,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Support</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -617,7 +617,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWActuatorImpl <em>HW Actuator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWActuatorImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHWActuator()
 	 * @generated
@@ -628,7 +628,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -638,7 +638,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -648,7 +648,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -658,7 +658,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -668,7 +668,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -678,7 +678,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -688,7 +688,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -698,7 +698,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -708,7 +708,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -718,7 +718,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -728,7 +728,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -738,7 +738,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -748,7 +748,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -758,7 +758,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -768,7 +768,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -778,7 +778,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -788,7 +788,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The number of structural features of the '<em>HW Actuator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -798,7 +798,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWSensorImpl <em>HW Sensor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWSensorImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHWSensor()
 	 * @generated
@@ -809,7 +809,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -819,7 +819,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -829,7 +829,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -839,7 +839,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -849,7 +849,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -859,7 +859,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -869,7 +869,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -879,7 +879,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -889,7 +889,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -899,7 +899,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -909,7 +909,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -919,7 +919,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -929,7 +929,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -939,7 +939,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -949,7 +949,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -959,7 +959,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -969,7 +969,7 @@ public interface HwDevicePackage extends EPackage {
 	 * The number of structural features of the '<em>HW Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -980,7 +980,7 @@ public interface HwDevicePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwDevice <em>Hw Device</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Device</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwDevice
 	 * @generated
@@ -991,7 +991,7 @@ public interface HwDevicePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwI_O <em>Hw IO</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw IO</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwI_O
 	 * @generated
@@ -1002,7 +1002,7 @@ public interface HwDevicePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwSupport <em>Hw Support</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Support</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwSupport
 	 * @generated
@@ -1013,7 +1013,7 @@ public interface HwDevicePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HWActuator <em>HW Actuator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>HW Actuator</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HWActuator
 	 * @generated
@@ -1024,7 +1024,7 @@ public interface HwDevicePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HWSensor <em>HW Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>HW Sensor</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HWSensor
 	 * @generated
@@ -1035,7 +1035,7 @@ public interface HwDevicePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1051,7 +1051,7 @@ public interface HwDevicePackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1059,7 +1059,7 @@ public interface HwDevicePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl <em>Hw Device</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDeviceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHwDevice()
 		 * @generated
@@ -1070,7 +1070,7 @@ public interface HwDevicePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwI_OImpl <em>Hw IO</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwI_OImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHwI_O()
 		 * @generated
@@ -1081,7 +1081,7 @@ public interface HwDevicePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwSupportImpl <em>Hw Support</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwSupportImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHwSupport()
 		 * @generated
@@ -1092,7 +1092,7 @@ public interface HwDevicePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWActuatorImpl <em>HW Actuator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWActuatorImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHWActuator()
 		 * @generated
@@ -1103,7 +1103,7 @@ public interface HwDevicePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWSensorImpl <em>HW Sensor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HWSensorImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.impl.HwDevicePackageImpl#getHWSensor()
 		 * @generated

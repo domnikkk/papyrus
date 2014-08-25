@@ -10,7 +10,7 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.configmodel.layersconfig.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigFactory;
@@ -58,7 +58,7 @@ public class LayerOperatorConfigImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorConfigImpl#createLayersOperatorDescriptor()}.
-	 * 
+	 *
 	 * @throws InstanciationException
 	 */
 	@Test

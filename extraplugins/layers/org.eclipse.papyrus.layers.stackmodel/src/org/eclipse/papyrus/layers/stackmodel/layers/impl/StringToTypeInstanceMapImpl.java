@@ -43,7 +43,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StringToTypeInstanceMapImpl() {
@@ -85,7 +85,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTypedKey() {
@@ -106,7 +106,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypedKey(String newKey) {
@@ -120,7 +120,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TypeInstance getTypedValue() {
@@ -130,7 +130,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTypedValue(TypeInstance newValue, NotificationChain msgs) {
@@ -150,7 +150,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypedValue(TypeInstance newValue) {
@@ -175,7 +175,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -248,7 +248,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +303,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +320,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +339,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected int hash = -1;
@@ -347,7 +347,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +362,7 @@ public class StringToTypeInstanceMapImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

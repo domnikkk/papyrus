@@ -40,14 +40,14 @@ import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DatatypesFactory init() {
@@ -79,7 +79,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DatatypesFactoryImpl() {
@@ -89,7 +89,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertjavalangFloatToString(EDataType eDataType, Object instanceValue) {
@@ -99,7 +99,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Float createNumericalFromString(EDataType eDataType, String initialValue) {
@@ -283,7 +283,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNumericalToString(EDataType eDataType, Object instanceValue) {
@@ -293,7 +293,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Float createjavalangFloatFromString(EDataType eDataType, String initialValue) {
@@ -321,7 +321,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +333,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

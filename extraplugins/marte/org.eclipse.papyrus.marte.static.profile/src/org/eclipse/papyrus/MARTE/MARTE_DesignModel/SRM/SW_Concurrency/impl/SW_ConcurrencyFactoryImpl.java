@@ -33,7 +33,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwTimerRes
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_ConcurrencyFactory {
@@ -41,7 +41,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SW_ConcurrencyFactory init() {
@@ -60,7 +60,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SW_ConcurrencyFactoryImpl() {
@@ -70,7 +70,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InterruptKind createInterruptKindFromString(EDataType eDataType, String initialValue) {
@@ -214,7 +214,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertInterruptKindToString(EDataType eDataType, Object instanceValue) {
@@ -224,7 +224,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class SW_ConcurrencyFactoryImpl extends EFactoryImpl implements SW_Concur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

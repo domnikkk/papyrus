@@ -52,7 +52,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 * The default value of the '{@link #getNeed() <em>Need</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNeed()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 * The cached value of the '{@link #getNeed() <em>Need</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNeed()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 * The cached value of the '{@link #getStakeHolder() <em>Stake Holder</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStakeHolder()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	 * The cached value of the '{@link #getProblemStatement() <em>Problem Statement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProblemStatement()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StakeholderNeedImpl() {
@@ -138,7 +138,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -218,7 +218,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -259,7 +259,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +338,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -367,7 +367,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +382,7 @@ public class StakeholderNeedImpl extends TraceableSpecificationImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

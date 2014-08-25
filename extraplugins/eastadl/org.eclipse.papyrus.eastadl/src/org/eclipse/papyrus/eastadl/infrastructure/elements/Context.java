@@ -57,7 +57,7 @@ public interface Context extends EAPackageableElement {
 	 * <!-- begin-model-doc -->
 	 * Relationship(s) associated to this context.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Relationship</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getContext_OwnedRelationship()
 	 * @model ordered="false"
@@ -73,7 +73,7 @@ public interface Context extends EAPackageableElement {
 	 * <!-- begin-model-doc -->
 	 * Traceable specification(s) allocated to this context.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Traceable Specification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getContext_TraceableSpecification()
 	 * @model ordered="false"

@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers3.ui.commands;
 
+import static org.eclipse.papyrus.layers.ui.Activator.log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +33,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
 import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
-
-import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 
 /**

@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPa
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FunctionmodelingXMLProcessor extends XMLProcessor {
@@ -35,7 +35,7 @@ public class FunctionmodelingXMLProcessor extends XMLProcessor {
 	/**
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionmodelingXMLProcessor() {
@@ -46,7 +46,7 @@ public class FunctionmodelingXMLProcessor extends XMLProcessor {
 	/**
 	 * Register for "*" and "xml" file extensions the FunctionmodelingResourceFactoryImpl factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -15,18 +15,15 @@ package org.eclipse.papyrus.cdo.internal.core.repositories.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RepositoriesXMLProcessor extends XMLProcessor {
@@ -35,7 +32,7 @@ public class RepositoriesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RepositoriesXMLProcessor() {
@@ -47,7 +44,7 @@ public class RepositoriesXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the RepositoriesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -21,7 +21,7 @@ public interface IExternalGenerator {
 
 	/**
 	 * generate a class by means of an external generator
-	 * 
+	 *
 	 * @param source
 	 *            A source element for the generator, e.g. an interface for a CORBA generator
 	 * @returns a list of generated classifiers:

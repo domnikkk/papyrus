@@ -44,7 +44,7 @@ public interface HwMMU extends HwStorageManager {
 	 * If the meaning of the '<em>Virtual Addr Space</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Virtual Addr Space</em>' attribute.
 	 * @see #setVirtualAddrSpace(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwMMU_VirtualAddrSpace()
@@ -57,7 +57,7 @@ public interface HwMMU extends HwStorageManager {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwMMU#getVirtualAddrSpace <em>Virtual Addr Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Virtual Addr Space</em>' attribute.
 	 * @see #getVirtualAddrSpace()
@@ -72,7 +72,7 @@ public interface HwMMU extends HwStorageManager {
 	 * If the meaning of the '<em>Physical Addr Space</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Physical Addr Space</em>' attribute.
 	 * @see #setPhysicalAddrSpace(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwMMU_PhysicalAddrSpace()
@@ -85,7 +85,7 @@ public interface HwMMU extends HwStorageManager {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwMMU#getPhysicalAddrSpace <em>Physical Addr Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Physical Addr Space</em>' attribute.
 	 * @see #getPhysicalAddrSpace()
@@ -100,7 +100,7 @@ public interface HwMMU extends HwStorageManager {
 	 * If the meaning of the '<em>Memory Protection</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Protection</em>' attribute.
 	 * @see #setMemoryProtection(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwMMU_MemoryProtection()
@@ -113,7 +113,7 @@ public interface HwMMU extends HwStorageManager {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwMMU#getMemoryProtection <em>Memory Protection</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Memory Protection</em>' attribute.
 	 * @see #getMemoryProtection()
@@ -128,7 +128,7 @@ public interface HwMMU extends HwStorageManager {
 	 * If the meaning of the '<em>Nb Entries</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb Entries</em>' attribute.
 	 * @see #setNbEntries(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwMMU_NbEntries()
@@ -141,7 +141,7 @@ public interface HwMMU extends HwStorageManager {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwMMU#getNbEntries <em>Nb Entries</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb Entries</em>' attribute.
 	 * @see #getNbEntries()
@@ -157,7 +157,7 @@ public interface HwMMU extends HwStorageManager {
 	 * If the meaning of the '<em>Owned TL Bs</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned TL Bs</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageManager.HwStorageManagerPackage#getHwMMU_OwnedTLBs()
 	 * @model ordered="false"

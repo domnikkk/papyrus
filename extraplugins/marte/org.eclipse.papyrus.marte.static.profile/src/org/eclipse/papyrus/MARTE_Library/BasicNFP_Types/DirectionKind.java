@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Direction Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.BasicNFP_TypesPackage#getDirectionKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum DirectionKind implements Enumerator {
 	 * The '<em><b>Incr</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INCR_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum DirectionKind implements Enumerator {
 	 * The '<em><b>Decr</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DECR_VALUE
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public enum DirectionKind implements Enumerator {
 	 * If the meaning of '<em><b>Incr</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INCR
 	 * @model name="incr"
 	 * @generated
@@ -74,7 +74,7 @@ public enum DirectionKind implements Enumerator {
 	 * If the meaning of '<em><b>Decr</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DECR
 	 * @model name="decr"
 	 * @generated
@@ -86,7 +86,7 @@ public enum DirectionKind implements Enumerator {
 	 * An array of all the '<em><b>Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final DirectionKind[] VALUES_ARRAY =
@@ -99,7 +99,7 @@ public enum DirectionKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<DirectionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -108,7 +108,7 @@ public enum DirectionKind implements Enumerator {
 	 * Returns the '<em><b>Direction Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DirectionKind get(String literal) {
@@ -125,7 +125,7 @@ public enum DirectionKind implements Enumerator {
 	 * Returns the '<em><b>Direction Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DirectionKind getByName(String name) {
@@ -142,7 +142,7 @@ public enum DirectionKind implements Enumerator {
 	 * Returns the '<em><b>Direction Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DirectionKind get(int value) {
@@ -158,7 +158,7 @@ public enum DirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -166,7 +166,7 @@ public enum DirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -174,7 +174,7 @@ public enum DirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -183,7 +183,7 @@ public enum DirectionKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private DirectionKind(int value, String name, String literal) {
@@ -195,7 +195,7 @@ public enum DirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public enum DirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public enum DirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public enum DirectionKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

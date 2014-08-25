@@ -36,7 +36,7 @@ public interface IConstraintsCategory extends Category {
 
 	/**
 	 * add a list of constraint
-	 * 
+	 *
 	 * @param constraints
 	 */
 	public void addConstraints(List<IValidationRule> constraints);

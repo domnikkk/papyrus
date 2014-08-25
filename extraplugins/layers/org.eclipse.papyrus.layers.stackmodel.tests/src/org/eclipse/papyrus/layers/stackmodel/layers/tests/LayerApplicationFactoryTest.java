@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory;
@@ -13,7 +12,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Layer Application Factory</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayerApplicationFactoryTest extends TestCase {
@@ -22,7 +21,7 @@ public class LayerApplicationFactoryTest extends TestCase {
 	 * The fixture for this Layer Application Factory test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerApplicationFactory fixture = null;
@@ -30,7 +29,7 @@ public class LayerApplicationFactoryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -41,7 +40,7 @@ public class LayerApplicationFactoryTest extends TestCase {
 	 * Constructs a new Layer Application Factory test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerApplicationFactoryTest(String name) {
@@ -52,7 +51,7 @@ public class LayerApplicationFactoryTest extends TestCase {
 	 * Sets the fixture for this Layer Application Factory test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(LayerApplicationFactory fixture) {
@@ -63,7 +62,7 @@ public class LayerApplicationFactoryTest extends TestCase {
 	 * Returns the fixture for this Layer Application Factory test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerApplicationFactory getFixture() {
@@ -73,7 +72,7 @@ public class LayerApplicationFactoryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -85,7 +84,7 @@ public class LayerApplicationFactoryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

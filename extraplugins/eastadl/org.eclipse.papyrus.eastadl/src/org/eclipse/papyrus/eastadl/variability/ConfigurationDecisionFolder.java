@@ -53,7 +53,7 @@ public interface ConfigurationDecisionFolder extends ConfigurationDecisionModelE
 	 * If the meaning of the '<em>Child Entry</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Child Entry</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecisionFolder_ChildEntry()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

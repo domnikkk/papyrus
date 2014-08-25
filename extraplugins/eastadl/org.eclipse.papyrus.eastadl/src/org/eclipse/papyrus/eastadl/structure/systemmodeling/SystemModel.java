@@ -61,7 +61,7 @@ public interface SystemModel extends Context {
 	 * <!-- begin-model-doc -->
 	 * The AnalysisArchitecture contained in the SystemModel and connected to the EnvironmentModel through ports-connectors
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Analysis Level</em>' reference.
 	 * @see #setAnalysisLevel(AnalysisLevel)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getSystemModel_AnalysisLevel()
@@ -77,7 +77,7 @@ public interface SystemModel extends Context {
 	 * <!-- begin-model-doc -->
 	 * The designArchitecture contained in the SystemModel and connected to the EnvironmentModel through ports-connectors
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Design Level</em>' reference.
 	 * @see #setDesignLevel(DesignLevel)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getSystemModel_DesignLevel()
@@ -93,7 +93,7 @@ public interface SystemModel extends Context {
 	 * <!-- begin-model-doc -->
 	 * The Implementation Architecture abstraction level.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Implementation Level</em>' reference.
 	 * @see #setImplementationLevel(ImplementationLevel)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getSystemModel_ImplementationLevel()
@@ -109,7 +109,7 @@ public interface SystemModel extends Context {
 	 * <!-- begin-model-doc -->
 	 * The Vehicle Feature Model contained in the SystemModel.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vehicle Level</em>' reference.
 	 * @see #setVehicleLevel(VehicleLevel)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getSystemModel_VehicleLevel()
@@ -122,7 +122,7 @@ public interface SystemModel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getAnalysisLevel <em>Analysis Level</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Analysis Level</em>' reference.
 	 * @see #getAnalysisLevel()
@@ -134,7 +134,7 @@ public interface SystemModel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getDesignLevel <em>Design Level</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Design Level</em>' reference.
 	 * @see #getDesignLevel()
@@ -146,7 +146,7 @@ public interface SystemModel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getImplementationLevel <em>Implementation Level</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Implementation Level</em>' reference.
 	 * @see #getImplementationLevel()
@@ -158,7 +158,7 @@ public interface SystemModel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getVehicleLevel <em>Vehicle Level</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Vehicle Level</em>' reference.
 	 * @see #getVehicleLevel()
@@ -173,7 +173,7 @@ public interface SystemModel extends Context {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getSystemModel_Base_Class()
@@ -186,7 +186,7 @@ public interface SystemModel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -201,7 +201,7 @@ public interface SystemModel extends Context {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getSystemModel_Base_Package()
@@ -214,7 +214,7 @@ public interface SystemModel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemModel#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()

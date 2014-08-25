@@ -5,20 +5,14 @@ package org.eclipse.papyrus.RobotML.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.RobotML.ExternalLibrary;
 import org.eclipse.papyrus.RobotML.Platform;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.uml2.uml.Node;
 
 /**
@@ -40,7 +34,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	 * The cached value of the '{@link #getBase_Node() <em>Base Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Node()
 	 * @generated
 	 * @ordered
@@ -51,7 +45,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	 * The cached value of the '{@link #getLibrary() <em>Library</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLibrary()
 	 * @generated
 	 * @ordered
@@ -61,7 +55,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PlatformImpl() {
@@ -71,7 +65,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +76,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Node getBase_Node() {
@@ -101,7 +95,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Node basicGetBase_Node() {
@@ -111,7 +105,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Node(Node newBase_Node) {
@@ -125,7 +119,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ExternalLibrary> getLibrary() {
@@ -138,7 +132,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +152,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -179,7 +173,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +192,7 @@ public class PlatformImpl extends SystemImpl implements Platform {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -14,9 +14,9 @@ package org.eclipse.papyrus.moka.fuml.registry.service.framework;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.uml2.uml.Class;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry;
+import org.eclipse.uml2.uml.Class;
 
 public abstract class AbstractServicesRegistery extends AbstractSystemServicesRegistry {
 

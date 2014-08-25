@@ -50,7 +50,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	 * The default value of the '{@link #isIsDesignVariabilityRationale() <em>Is Design Variability Rationale</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsDesignVariabilityRationale()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	 * The cached value of the '{@link #isIsDesignVariabilityRationale() <em>Is Design Variability Rationale</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsDesignVariabilityRationale()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	/**
 	 * The default value of the '{@link #isIsCustomerVisible() <em>Is Customer Visible</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsCustomerVisible()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	/**
 	 * The cached value of the '{@link #isIsCustomerVisible() <em>Is Customer Visible</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsCustomerVisible()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VehicleFeatureImpl() {
@@ -120,7 +120,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public DeviationAttributeSet basicGetDeviationAttributeSet() {
@@ -142,7 +142,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -210,7 +210,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +339,7 @@ public class VehicleFeatureImpl extends FeatureImpl implements VehicleFeature {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

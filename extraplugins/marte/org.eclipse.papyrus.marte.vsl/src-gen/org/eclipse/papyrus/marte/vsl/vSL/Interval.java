@@ -4,7 +4,6 @@ package org.eclipse.papyrus.marte.vsl.vSL;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -36,7 +35,7 @@ public interface Interval extends ValueSpecification
 	 * If the meaning of the '<em>Is Lower Included</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Lower Included</em>' attribute.
 	 * @see #setIsLowerIncluded(String)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getInterval_IsLowerIncluded()
@@ -49,7 +48,7 @@ public interface Interval extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getIsLowerIncluded <em>Is Lower Included</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Lower Included</em>' attribute.
 	 * @see #getIsLowerIncluded()
@@ -64,7 +63,7 @@ public interface Interval extends ValueSpecification
 	 * If the meaning of the '<em>Lower</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lower</em>' containment reference.
 	 * @see #setLower(Expression)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getInterval_Lower()
@@ -77,7 +76,7 @@ public interface Interval extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getLower <em>Lower</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lower</em>' containment reference.
 	 * @see #getLower()
@@ -92,7 +91,7 @@ public interface Interval extends ValueSpecification
 	 * If the meaning of the '<em>Upper</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Upper</em>' containment reference.
 	 * @see #setUpper(Expression)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getInterval_Upper()
@@ -105,7 +104,7 @@ public interface Interval extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getUpper <em>Upper</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Upper</em>' containment reference.
 	 * @see #getUpper()
@@ -120,7 +119,7 @@ public interface Interval extends ValueSpecification
 	 * If the meaning of the '<em>Is Upper Included</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Upper Included</em>' attribute.
 	 * @see #setIsUpperIncluded(String)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getInterval_IsUpperIncluded()
@@ -133,7 +132,7 @@ public interface Interval extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getIsUpperIncluded <em>Is Upper Included</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Upper Included</em>' attribute.
 	 * @see #getIsUpperIncluded()
@@ -144,7 +143,7 @@ public interface Interval extends ValueSpecification
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;'"
 	 * @generated
 	 */
@@ -154,7 +153,7 @@ public interface Interval extends ValueSpecification
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;'"
 	 * @generated
@@ -165,7 +164,7 @@ public interface Interval extends ValueSpecification
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;'"
 	 * @generated

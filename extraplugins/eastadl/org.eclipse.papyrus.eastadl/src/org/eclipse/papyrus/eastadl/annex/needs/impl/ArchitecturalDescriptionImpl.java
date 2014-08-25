@@ -45,7 +45,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	 * The cached value of the '{@link #getAggregates() <em>Aggregates</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAggregates()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	 * The cached value of the '{@link #getIdentifies() <em>Identifies</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifies()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitecturalDescriptionImpl() {
@@ -76,7 +76,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -132,7 +132,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class ArchitecturalDescriptionImpl extends ConceptImpl implements Archite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

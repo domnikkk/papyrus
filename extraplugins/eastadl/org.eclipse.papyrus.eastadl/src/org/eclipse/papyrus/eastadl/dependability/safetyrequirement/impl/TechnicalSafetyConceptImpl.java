@@ -44,7 +44,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	 * The cached value of the '{@link #getTechnicalSafetyRequirement() <em>Technical Safety Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTechnicalSafetyRequirement()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TechnicalSafetyConceptImpl() {
@@ -64,7 +64,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -112,7 +112,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

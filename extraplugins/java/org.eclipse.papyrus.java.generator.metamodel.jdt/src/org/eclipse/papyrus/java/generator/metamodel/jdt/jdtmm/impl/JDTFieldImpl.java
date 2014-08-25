@@ -24,15 +24,11 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.core.Flags;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType;
@@ -66,7 +62,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -77,7 +73,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -88,7 +84,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -99,7 +95,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The default value of the '{@link #isMultiValued() <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMultiValued()
 	 * @generated
 	 * @ordered
@@ -110,7 +106,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The cached value of the '{@link #isMultiValued() <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMultiValued()
 	 * @generated
 	 * @ordered
@@ -121,7 +117,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -132,7 +128,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -143,7 +139,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -154,7 +150,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The default value of the '{@link #getGenerateGetter() <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateGetter()
 	 * @generated
 	 * @ordered
@@ -165,7 +161,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The cached value of the '{@link #getGenerateGetter() <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateGetter()
 	 * @generated
 	 * @ordered
@@ -176,7 +172,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The default value of the '{@link #getGenerateSetter() <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateSetter()
 	 * @generated
 	 * @ordered
@@ -187,7 +183,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	 * The cached value of the '{@link #getGenerateSetter() <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerateSetter()
 	 * @generated
 	 * @ordered
@@ -197,7 +193,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTFieldImpl() {
@@ -207,7 +203,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +214,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +228,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(JDTType newOwner, NotificationChain msgs) {
@@ -243,7 +239,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +268,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetOwner() {
@@ -282,7 +278,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +291,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +302,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +317,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +337,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JDTType basicGetType() {
@@ -351,7 +347,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +362,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +373,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +388,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +399,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -418,7 +414,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -429,7 +425,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +440,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -462,7 +458,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -477,7 +473,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +488,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -526,7 +522,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -566,7 +562,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -606,7 +602,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -637,7 +633,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -662,7 +658,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -673,7 +669,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -684,7 +680,7 @@ public class JDTFieldImpl extends JDTMemberImpl implements JDTField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetParent() {

@@ -46,7 +46,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScope()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	 * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaximum()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ReactionConstraintImpl() {
@@ -86,7 +86,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventChain basicGetScope() {
@@ -127,7 +127,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMaximum() {
@@ -172,7 +172,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -217,7 +217,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class ReactionConstraintImpl extends TimingConstraintImpl implements Reac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

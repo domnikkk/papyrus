@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Layer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayerItemProvider
@@ -39,7 +39,7 @@ public class LayerItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerItemProvider(AdapterFactory adapterFactory,

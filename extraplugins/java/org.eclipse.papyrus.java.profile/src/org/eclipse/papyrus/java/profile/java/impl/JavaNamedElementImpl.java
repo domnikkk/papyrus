@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaNamedElement;
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 
@@ -38,7 +35,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -49,7 +46,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -60,7 +57,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getAuthor() <em>Author</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAuthor()
 	 * @generated
 	 * @ordered
@@ -71,7 +68,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAuthor()
 	 * @generated
 	 * @ordered
@@ -82,7 +79,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -93,7 +90,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -104,7 +101,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -115,7 +112,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -126,7 +123,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #isGenerated() <em>Is Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -137,7 +134,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #isGenerated() <em>Is Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -147,7 +144,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaNamedElementImpl() {
@@ -157,7 +154,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +165,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +176,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +191,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +202,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +217,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +228,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +243,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +254,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +269,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +280,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +295,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +318,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +346,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +374,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +397,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -27,6 +27,7 @@ public class IncompatibilitiesContentProvider implements IStructuredContentProvi
 	 *
 	 */
 
+	@Override
 	public void dispose() {
 
 	}
@@ -39,6 +40,7 @@ public class IncompatibilitiesContentProvider implements IStructuredContentProvi
 	 * @param newInput
 	 */
 
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 
 	}
@@ -50,6 +52,7 @@ public class IncompatibilitiesContentProvider implements IStructuredContentProvi
 	 * @return
 	 */
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 
 		HashSet<Combination> output = new HashSet<Combination>();

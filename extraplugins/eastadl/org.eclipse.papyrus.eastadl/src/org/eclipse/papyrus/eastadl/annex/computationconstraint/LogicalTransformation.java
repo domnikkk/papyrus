@@ -3,16 +3,11 @@
 package org.eclipse.papyrus.eastadl.annex.computationconstraint;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Attribute;
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quantification;
-
 import org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
-
 import org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression;
-
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation;
 
 /**
@@ -49,7 +44,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Is Client Server Interface</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Client Server Interface</em>' attribute.
 	 * @see #setIsClientServerInterface(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_IsClientServerInterface()
@@ -62,7 +57,7 @@ public interface LogicalTransformation extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation#isIsClientServerInterface <em>Is Client Server Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Client Server Interface</em>' attribute.
 	 * @see #isIsClientServerInterface()
@@ -78,7 +73,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Client Serverinterface Operation</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Client Serverinterface Operation</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_ClientServerinterfaceOperation()
 	 * @model ordered="false"
@@ -94,7 +89,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Contained</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Contained</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_Contained()
 	 * @model ordered="false"
@@ -110,7 +105,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Out</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Out</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_Out()
 	 * @model ordered="false"
@@ -126,7 +121,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>In</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>In</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_In()
 	 * @model ordered="false"
@@ -141,7 +136,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Expression</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Expression</em>' reference.
 	 * @see #setExpression(EAExpression)
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_Expression()
@@ -154,7 +149,7 @@ public interface LogicalTransformation extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation#getExpression <em>Expression</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Expression</em>' reference.
 	 * @see #getExpression()
@@ -170,7 +165,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Quantification Invariant</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Quantification Invariant</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_QuantificationInvariant()
 	 * @model ordered="false"
@@ -186,7 +181,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Pre Condition</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pre Condition</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_PreCondition()
 	 * @model ordered="false"
@@ -202,7 +197,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Post Condition</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Post Condition</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_PostCondition()
 	 * @model ordered="false"
@@ -217,7 +212,7 @@ public interface LogicalTransformation extends EAElement {
 	 * If the meaning of the '<em>Time Invariant</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Time Invariant</em>' reference.
 	 * @see #setTimeInvariant(LogicalTimeCondition)
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getLogicalTransformation_TimeInvariant()
@@ -230,7 +225,7 @@ public interface LogicalTransformation extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation#getTimeInvariant <em>Time Invariant</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Time Invariant</em>' reference.
 	 * @see #getTimeInvariant()

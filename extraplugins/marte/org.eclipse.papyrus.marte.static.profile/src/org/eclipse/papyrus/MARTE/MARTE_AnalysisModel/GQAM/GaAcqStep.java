@@ -40,7 +40,7 @@ public interface GaAcqStep extends GaStep {
 	 * If the meaning of the '<em>Acq Res</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Acq Res</em>' reference.
 	 * @see #setAcqRes(Resource)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaAcqStep_AcqRes()
@@ -53,7 +53,7 @@ public interface GaAcqStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep#getAcqRes <em>Acq Res</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Acq Res</em>' reference.
 	 * @see #getAcqRes()
@@ -69,7 +69,7 @@ public interface GaAcqStep extends GaStep {
 	 * If the meaning of the '<em>Res Units</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Res Units</em>' attribute.
 	 * @see #setResUnits(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaAcqStep_ResUnits()
@@ -82,7 +82,7 @@ public interface GaAcqStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAcqStep#getResUnits <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Res Units</em>' attribute.
 	 * @see #getResUnits()

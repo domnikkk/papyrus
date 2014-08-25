@@ -35,7 +35,7 @@ import org.junit.Test;
 
 /**
  * Test the {#getComputePropertyValueCommand(...)} commands
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -87,7 +87,7 @@ public class TopLayerOperatorImplGetComputeCommandTest {
 
 	/**
 	 * Test method for {@link #createLayer(List, List)}
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -124,7 +124,7 @@ public class TopLayerOperatorImplGetComputeCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorImpl#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -171,7 +171,7 @@ public class TopLayerOperatorImplGetComputeCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorImpl#getViewsComputePropertyValueCommand(java.util.List, org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -242,7 +242,7 @@ public class TopLayerOperatorImplGetComputeCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorImpl#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, java.util.List)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

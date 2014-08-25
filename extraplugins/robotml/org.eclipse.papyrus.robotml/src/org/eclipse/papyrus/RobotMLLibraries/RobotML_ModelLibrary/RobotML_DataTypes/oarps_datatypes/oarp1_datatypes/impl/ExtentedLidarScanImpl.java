@@ -4,16 +4,12 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.LaserScan;
 
 /**
@@ -36,7 +32,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getScan() <em>Scan</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScan()
 	 * @generated
 	 * @ordered
@@ -47,7 +43,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The default value of the '{@link #getLayerId() <em>Layer Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerId()
 	 * @generated
 	 * @ordered
@@ -58,7 +54,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getLayerId() <em>Layer Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerId()
 	 * @generated
 	 * @ordered
@@ -69,7 +65,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The default value of the '{@link #getLayerAngle() <em>Layer Angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerAngle()
 	 * @generated
 	 * @ordered
@@ -80,7 +76,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getLayerAngle() <em>Layer Angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerAngle()
 	 * @generated
 	 * @ordered
@@ -90,7 +86,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtentedLidarScanImpl() {
@@ -100,7 +96,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +107,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LaserScan getScan() {
@@ -121,7 +117,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetScan(LaserScan newScan, NotificationChain msgs) {
@@ -141,7 +137,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setScan(LaserScan newScan) {
@@ -166,7 +162,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getLayerId() {
@@ -176,7 +172,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLayerId(char newLayerId) {
@@ -190,7 +186,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getLayerAngle() {
@@ -200,7 +196,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLayerAngle(float newLayerAngle) {
@@ -214,7 +210,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +225,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +244,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +266,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +288,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +307,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

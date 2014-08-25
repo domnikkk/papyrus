@@ -30,7 +30,7 @@ import org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeTypesLibraryPackag
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTypesLibraryFactory {
@@ -38,7 +38,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TimeTypesLibraryFactory init() {
@@ -57,7 +57,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeTypesLibraryFactoryImpl() {
@@ -67,7 +67,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeNatureKind createTimeNatureKindFromString(EDataType eDataType, String initialValue) {
@@ -139,7 +139,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTimeNatureKindToString(EDataType eDataType, Object instanceValue) {
@@ -149,7 +149,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeInterpretationKind createTimeInterpretationKindFromString(EDataType eDataType, String initialValue) {
@@ -163,7 +163,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTimeInterpretationKindToString(EDataType eDataType, Object instanceValue) {
@@ -173,7 +173,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventKind createEventKindFromString(EDataType eDataType, String initialValue) {
@@ -187,7 +187,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEventKindToString(EDataType eDataType, Object instanceValue) {
@@ -197,7 +197,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeStandardKind createTimeStandardKindFromString(EDataType eDataType, String initialValue) {
@@ -211,7 +211,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTimeStandardKindToString(EDataType eDataType, Object instanceValue) {
@@ -221,7 +221,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class TimeTypesLibraryFactoryImpl extends EFactoryImpl implements TimeTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

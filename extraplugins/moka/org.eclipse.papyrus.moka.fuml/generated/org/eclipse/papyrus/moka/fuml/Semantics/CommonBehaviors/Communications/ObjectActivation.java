@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ChoiceStrategy;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 

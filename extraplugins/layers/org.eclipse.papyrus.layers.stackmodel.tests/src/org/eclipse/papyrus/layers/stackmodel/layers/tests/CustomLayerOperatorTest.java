@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Custom Layer Operator</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomLayerOperatorTest extends LayerOperatorTest {
@@ -19,7 +19,7 @@ public class CustomLayerOperatorTest extends LayerOperatorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class CustomLayerOperatorTest extends LayerOperatorTest {
 	 * Constructs a new Custom Layer Operator test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomLayerOperatorTest(String name) {
@@ -41,7 +41,7 @@ public class CustomLayerOperatorTest extends LayerOperatorTest {
 	 * Returns the fixture for this Custom Layer Operator test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class CustomLayerOperatorTest extends LayerOperatorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class CustomLayerOperatorTest extends LayerOperatorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

@@ -30,7 +30,7 @@ public interface MultiArrayDimension extends EObject {
 	 * If the meaning of the '<em>Label</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getMultiArrayDimension_Label()
@@ -43,7 +43,7 @@ public interface MultiArrayDimension extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getLabel <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Label</em>' attribute.
 	 * @see #getLabel()
@@ -58,7 +58,7 @@ public interface MultiArrayDimension extends EObject {
 	 * If the meaning of the '<em>Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Size</em>' attribute.
 	 * @see #setSize(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getMultiArrayDimension_Size()
@@ -71,7 +71,7 @@ public interface MultiArrayDimension extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getSize <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Size</em>' attribute.
 	 * @see #getSize()
@@ -86,7 +86,7 @@ public interface MultiArrayDimension extends EObject {
 	 * If the meaning of the '<em>Stride</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stride</em>' attribute.
 	 * @see #setStride(long)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getMultiArrayDimension_Stride()
@@ -99,7 +99,7 @@ public interface MultiArrayDimension extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getStride <em>Stride</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Stride</em>' attribute.
 	 * @see #getStride()

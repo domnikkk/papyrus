@@ -57,7 +57,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#setSelectedElement(java.lang.Element)
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContent()
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordCppAbstractPanel#save()
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class CppBehaviorPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#exitAction()
 	 */
 	@Override

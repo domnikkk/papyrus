@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.facade.extensiondefinition.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 
 /**

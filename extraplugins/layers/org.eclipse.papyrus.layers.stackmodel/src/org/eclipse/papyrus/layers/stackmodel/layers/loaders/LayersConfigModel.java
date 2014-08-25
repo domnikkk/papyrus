@@ -45,7 +45,7 @@ import org.eclipse.papyrus.layers.stackmodel.operators.FillAverageOperator;
 /**
  * This class encapsulate an LayersConfig model.
  * It provides a default instance initialized with a model.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -177,7 +177,7 @@ public class LayersConfigModel {
 	/**
 	 * Get the root folder of the model.
 	 * There is always a root folder
-	 * 
+	 *
 	 * @return
 	 */
 	public Folder getRootFolder() {
@@ -186,7 +186,7 @@ public class LayersConfigModel {
 
 	/**
 	 * Get all {@link LayerOperatorConfig} contained in the model.
-	 * 
+	 *
 	 * @return
 	 */
 	public List<LayerOperatorConfig> getAllLayerOperatorConfig() {
@@ -238,7 +238,7 @@ public class LayersConfigModel {
 
 	/**
 	 * Get all {@link OperatorBinding} declared in the model.
-	 * 
+	 *
 	 * @return
 	 */
 	public List<OperatorBinding> getAllOperatorBinding() {

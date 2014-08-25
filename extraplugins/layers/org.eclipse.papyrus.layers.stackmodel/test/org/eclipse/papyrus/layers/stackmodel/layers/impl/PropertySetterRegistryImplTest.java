@@ -10,7 +10,9 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.layers.stackmodel.NotFoundException;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -101,7 +103,7 @@ public class PropertySetterRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl#getPropertySetter(java.lang.String)}.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test
@@ -114,7 +116,7 @@ public class PropertySetterRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl#addPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter)}.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test

@@ -10,7 +10,10 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.eclipse.papyrus.layers.stackmodel.LayersException;
 import org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator;
@@ -46,7 +49,7 @@ public class CustomPropertyOperatorImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomPropertyOperatorImpl#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

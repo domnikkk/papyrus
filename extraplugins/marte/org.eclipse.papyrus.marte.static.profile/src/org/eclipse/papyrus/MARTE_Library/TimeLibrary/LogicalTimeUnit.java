@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Logical Time Unit</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeLibraryPackage#getLogicalTimeUnit()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * The '<em><b>Tick</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TICK_VALUE
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * If the meaning of '<em><b>Tick</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TICK
 	 * @model name="tick"
 	 * @generated
@@ -60,7 +60,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * An array of all the '<em><b>Logical Time Unit</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final LogicalTimeUnit[] VALUES_ARRAY =
@@ -72,7 +72,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * A public read-only list of all the '<em><b>Logical Time Unit</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<LogicalTimeUnit> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -81,7 +81,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * Returns the '<em><b>Logical Time Unit</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LogicalTimeUnit get(String literal) {
@@ -98,7 +98,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * Returns the '<em><b>Logical Time Unit</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LogicalTimeUnit getByName(String name) {
@@ -115,7 +115,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * Returns the '<em><b>Logical Time Unit</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LogicalTimeUnit get(int value) {
@@ -129,7 +129,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -137,7 +137,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -145,7 +145,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -154,7 +154,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private LogicalTimeUnit(int value, String name, String literal) {
@@ -166,7 +166,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public enum LogicalTimeUnit implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

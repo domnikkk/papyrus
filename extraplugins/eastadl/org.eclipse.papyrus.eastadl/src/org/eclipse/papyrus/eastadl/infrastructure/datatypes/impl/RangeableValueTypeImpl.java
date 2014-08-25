@@ -45,7 +45,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 * The default value of the '{@link #getAccuracy() <em>Accuracy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccuracy()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 * The cached value of the '{@link #getAccuracy() <em>Accuracy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccuracy()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 * The default value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 * The cached value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 * The default value of the '{@link #getSignificantDigits() <em>Significant Digits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSignificantDigits()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 * The cached value of the '{@link #getSignificantDigits() <em>Significant Digits</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSignificantDigits()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	 * The cached value of the '{@link #getBaseRangeable() <em>Base Rangeable</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseRangeable()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RangeableValueTypeImpl() {
@@ -131,7 +131,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EANumerical basicGetBaseRangeable() {
@@ -345,7 +345,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class RangeableValueTypeImpl extends EADatatypeImpl implements RangeableV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

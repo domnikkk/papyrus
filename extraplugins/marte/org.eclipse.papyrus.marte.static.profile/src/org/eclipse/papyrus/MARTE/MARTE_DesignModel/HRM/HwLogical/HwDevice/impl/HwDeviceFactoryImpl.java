@@ -30,7 +30,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwDevice.HwSupp
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory {
@@ -38,7 +38,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwDeviceFactory init() {
@@ -57,7 +57,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwDeviceFactoryImpl() {
@@ -67,7 +67,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class HwDeviceFactoryImpl extends EFactoryImpl implements HwDeviceFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

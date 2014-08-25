@@ -39,7 +39,7 @@ public interface StringToTypeInstanceMap extends EObject {
 	 * If the meaning of the '<em>Key</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getStringToTypeInstanceMap_Key()
@@ -52,7 +52,7 @@ public interface StringToTypeInstanceMap extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.StringToTypeInstanceMap#getKey <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Key</em>' attribute.
 	 * @see #getKey()
@@ -67,7 +67,7 @@ public interface StringToTypeInstanceMap extends EObject {
 	 * If the meaning of the '<em>Value</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' reference.
 	 * @see #setValue(TypeInstance)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getStringToTypeInstanceMap_Value()
@@ -80,7 +80,7 @@ public interface StringToTypeInstanceMap extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.StringToTypeInstanceMap#getValue <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' reference.
 	 * @see #getValue()

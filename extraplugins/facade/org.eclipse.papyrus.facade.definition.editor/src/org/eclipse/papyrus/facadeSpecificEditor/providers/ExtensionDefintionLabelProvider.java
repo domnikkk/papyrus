@@ -38,6 +38,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @param listener
 	 */
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
@@ -47,6 +48,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 *
 	 */
 
+	@Override
 	public void dispose() {
 
 	}
@@ -59,6 +61,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @return
 	 */
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
@@ -69,6 +72,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @param listener
 	 */
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
@@ -81,6 +85,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @return
 	 */
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -147,6 +152,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @return
 	 */
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -203,6 +209,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @return
 	 */
 
+	@Override
 	public Image getImage(Object element) {
 		return null;
 	}
@@ -214,6 +221,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @return
 	 */
 
+	@Override
 	public String getText(Object element) {
 		return getColumnText(element, 0);
 	}
@@ -225,6 +233,7 @@ public class ExtensionDefintionLabelProvider implements ITableLabelProvider, ILa
 	 * @return
 	 */
 
+	@Override
 	public Font getFont(Object element) {
 		if (element instanceof ExtensionDefinition) {
 			if (((ExtensionDefinition) element).getStereotype().isAbstract()) {

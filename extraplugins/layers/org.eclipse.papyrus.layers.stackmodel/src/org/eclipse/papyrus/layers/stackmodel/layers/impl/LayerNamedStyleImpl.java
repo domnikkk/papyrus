@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -42,7 +43,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	 * The cached value of the '{@link #getLayersStack() <em>Layers Stack</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayersStack()
 	 * @generated
 	 * @ordered
@@ -52,7 +53,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerNamedStyleImpl() {
@@ -62,7 +63,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +74,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +88,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +103,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +118,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -135,7 +136,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +152,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

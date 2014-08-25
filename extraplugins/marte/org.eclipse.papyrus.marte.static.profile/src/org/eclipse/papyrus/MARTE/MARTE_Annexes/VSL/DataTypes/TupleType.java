@@ -44,7 +44,7 @@ public interface TupleType extends EObject {
 	 * If the meaning of the '<em>Tuple Attrib</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Tuple Attrib</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getTupleType_TupleAttrib()
 	 * @model ordered="false"
@@ -59,7 +59,7 @@ public interface TupleType extends EObject {
 	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Data Type</em>' reference.
 	 * @see #setBase_DataType(DataType)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getTupleType_Base_DataType()
@@ -72,7 +72,7 @@ public interface TupleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.TupleType#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Data Type</em>' reference.
 	 * @see #getBase_DataType()

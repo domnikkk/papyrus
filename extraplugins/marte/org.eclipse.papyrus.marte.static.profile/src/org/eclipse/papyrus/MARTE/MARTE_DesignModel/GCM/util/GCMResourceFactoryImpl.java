@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.util.GCMResourceImpl
  * @generated
  */
@@ -31,7 +31,7 @@ public class GCMResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GCMResourceFactoryImpl() {
@@ -42,7 +42,7 @@ public class GCMResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

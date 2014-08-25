@@ -51,7 +51,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	 * The cached value of the '{@link #getBase_ValueSpecification() <em>Base Value Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ValueSpecification()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EventFunctionFlowPortImpl() {
@@ -91,7 +91,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -252,7 +252,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSpecification basicGetBase_ValueSpecification() {
@@ -297,7 +297,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +312,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +334,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPort(EventFunctionFlowPortInstanceRef newPort, NotificationChain msgs) {
@@ -365,7 +365,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -391,7 +391,7 @@ public class EventFunctionFlowPortImpl extends EventImpl implements EventFunctio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

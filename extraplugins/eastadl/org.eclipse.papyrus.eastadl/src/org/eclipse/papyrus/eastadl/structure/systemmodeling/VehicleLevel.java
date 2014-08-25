@@ -58,7 +58,7 @@ public interface VehicleLevel extends Context {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getVehicleLevel_Base_Package()
@@ -71,7 +71,7 @@ public interface VehicleLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -86,7 +86,7 @@ public interface VehicleLevel extends Context {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getVehicleLevel_Base_Class()
@@ -99,7 +99,7 @@ public interface VehicleLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.VehicleLevel#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -115,7 +115,7 @@ public interface VehicleLevel extends Context {
 	 * If the meaning of the '<em>Technical Feature Model</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Technical Feature Model</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getVehicleLevel_TechnicalFeatureModel()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"

@@ -858,6 +858,7 @@ public class EcoreGenerator extends MouseAdapter {
 			try {
 				dialog.run(false, false, new IRunnableWithProgress() {
 
+					@Override
 					public void run(IProgressMonitor monitor) {
 						monitor.beginTask(Messages.EcoreGenerator_35, IProgressMonitor.UNKNOWN);
 

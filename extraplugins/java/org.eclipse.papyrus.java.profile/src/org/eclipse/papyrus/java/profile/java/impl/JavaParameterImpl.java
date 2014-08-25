@@ -7,15 +7,11 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 import org.eclipse.papyrus.java.profile.java.JavaParameter;
-
 import org.eclipse.uml2.uml.Parameter;
 
 /**
@@ -37,7 +33,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	 * The default value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -48,7 +44,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	 * The cached value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -59,7 +55,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	 * The cached value of the '{@link #getBase_Parameter() <em>Base Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Parameter()
 	 * @generated
 	 * @ordered
@@ -69,7 +65,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaParameterImpl() {
@@ -79,7 +75,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +86,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +97,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +112,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +132,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_Parameter() {
@@ -146,7 +142,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +157,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +177,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +196,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +215,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +232,7 @@ public class JavaParameterImpl extends JavaNamedElementImpl implements JavaParam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

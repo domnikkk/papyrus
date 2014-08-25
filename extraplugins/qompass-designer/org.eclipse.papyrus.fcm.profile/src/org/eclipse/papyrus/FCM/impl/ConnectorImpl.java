@@ -13,16 +13,12 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.FCM.Connector;
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.InteractionComponent;
-
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -45,7 +41,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -56,7 +52,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	 * The cached value of the '{@link #getIc() <em>Ic</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIc()
 	 * @generated
 	 * @ordered
@@ -67,7 +63,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -77,7 +73,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConnectorImpl() {
@@ -87,7 +83,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +94,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +114,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Connector basicGetBase_Connector() {
@@ -128,7 +124,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +139,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +159,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InteractionComponent basicGetIc() {
@@ -173,7 +169,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +184,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +204,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -218,7 +214,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +229,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +257,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +279,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +301,7 @@ public class ConnectorImpl extends ConfigurableElementInstanceImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

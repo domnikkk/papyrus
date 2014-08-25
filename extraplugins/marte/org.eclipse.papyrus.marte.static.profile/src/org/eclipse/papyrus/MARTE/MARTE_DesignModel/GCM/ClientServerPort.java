@@ -47,7 +47,7 @@ public interface ClientServerPort extends EObject {
 	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getClientServerPort_Base_Port()
@@ -60,7 +60,7 @@ public interface ClientServerPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()
@@ -77,7 +77,7 @@ public interface ClientServerPort extends EObject {
 	 * If the meaning of the '<em>Specification Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Specification Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind
 	 * @see #setSpecificationKind(PortSpecificationKind)
@@ -91,7 +91,7 @@ public interface ClientServerPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getSpecificationKind <em>Specification Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Specification Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind
@@ -109,7 +109,7 @@ public interface ClientServerPort extends EObject {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind
 	 * @see #setKind(ClientServerKind)
@@ -123,7 +123,7 @@ public interface ClientServerPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerKind
@@ -140,7 +140,7 @@ public interface ClientServerPort extends EObject {
 	 * If the meaning of the '<em>Prov Interface</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Prov Interface</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getClientServerPort_ProvInterface()
 	 * @model ordered="false"
@@ -156,7 +156,7 @@ public interface ClientServerPort extends EObject {
 	 * If the meaning of the '<em>Req Interface</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Req Interface</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getClientServerPort_ReqInterface()
 	 * @model ordered="false"
@@ -171,7 +171,7 @@ public interface ClientServerPort extends EObject {
 	 * If the meaning of the '<em>Features Spec</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Features Spec</em>' reference.
 	 * @see #setFeaturesSpec(ClientServerSpecification)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getClientServerPort_FeaturesSpec()
@@ -184,7 +184,7 @@ public interface ClientServerPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.ClientServerPort#getFeaturesSpec <em>Features Spec</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Features Spec</em>' reference.
 	 * @see #getFeaturesSpec()

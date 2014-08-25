@@ -222,7 +222,7 @@ public class PapyrusCDTEditorHandler extends CmdHandler {
 
 	/**
 	 * The classifier to edit - corresponding to the selected object.
-	 * 
+	 *
 	 * @return
 	 */
 	protected Classifier getClassifierToEdit() {

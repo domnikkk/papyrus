@@ -61,7 +61,7 @@ public interface Warrant extends TraceableSpecification {
 	 * If the meaning of the '<em>Decomposed Goal</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Decomposed Goal</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getWarrant_DecomposedGoal()
 	 * @model ordered="false"
@@ -77,7 +77,7 @@ public interface Warrant extends TraceableSpecification {
 	 * If the meaning of the '<em>Evidence</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Evidence</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getWarrant_Evidence()
 	 * @model ordered="false"
@@ -92,7 +92,7 @@ public interface Warrant extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getWarrant_Base_Class()
@@ -105,7 +105,7 @@ public interface Warrant extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -121,7 +121,7 @@ public interface Warrant extends TraceableSpecification {
 	 * If the meaning of the '<em>Justification</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Justification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage#getWarrant_Justification()
 	 * @model ordered="false"

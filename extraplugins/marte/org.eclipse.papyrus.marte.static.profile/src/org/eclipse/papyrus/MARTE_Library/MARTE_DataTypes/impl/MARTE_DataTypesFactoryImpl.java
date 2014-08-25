@@ -27,7 +27,7 @@ import org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_DataTypesFactory {
@@ -35,7 +35,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static MARTE_DataTypesFactory init() {
@@ -54,7 +54,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MARTE_DataTypesFactoryImpl() {
@@ -64,7 +64,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TransmModeKind createTransmModeKindFromString(EDataType eDataType, String initialValue) {
@@ -172,7 +172,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTransmModeKindToString(EDataType eDataType, Object instanceValue) {
@@ -182,7 +182,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createIntegerVectorFromString(EDataType eDataType, String initialValue) {
@@ -192,7 +192,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIntegerVectorToString(EDataType eDataType, Object instanceValue) {
@@ -202,7 +202,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createIntegerMatrixFromString(EDataType eDataType, String initialValue) {
@@ -212,7 +212,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIntegerMatrixToString(EDataType eDataType, Object instanceValue) {
@@ -222,7 +222,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createVSL_ExpressionFromString(EDataType eDataType, String initialValue) {
@@ -232,7 +232,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVSL_ExpressionToString(EDataType eDataType, Object instanceValue) {
@@ -242,7 +242,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createIntegerIntervalFromString(EDataType eDataType, String initialValue) {
@@ -252,7 +252,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIntegerIntervalToString(EDataType eDataType, Object instanceValue) {
@@ -262,7 +262,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createUtilityTypeFromString(EDataType eDataType, String initialValue) {
@@ -272,7 +272,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertUtilityTypeToString(EDataType eDataType, Object instanceValue) {
@@ -282,7 +282,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createArrayFromString(EDataType eDataType, String initialValue) {
@@ -292,7 +292,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertArrayToString(EDataType eDataType, Object instanceValue) {
@@ -302,7 +302,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createRealntervalFromString(EDataType eDataType, String initialValue) {
@@ -312,7 +312,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRealntervalToString(EDataType eDataType, Object instanceValue) {
@@ -322,7 +322,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_FrequencyIntervalFromString(EDataType eDataType, String initialValue) {
@@ -332,7 +332,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_FrequencyIntervalToString(EDataType eDataType, Object instanceValue) {
@@ -342,7 +342,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createIntervalFromString(EDataType eDataType, String initialValue) {
@@ -352,7 +352,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIntervalToString(EDataType eDataType, Object instanceValue) {
@@ -362,7 +362,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createNFP_NaturalIntervalFromString(EDataType eDataType, String initialValue) {
@@ -372,7 +372,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNFP_NaturalIntervalToString(EDataType eDataType, Object instanceValue) {
@@ -382,7 +382,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createRealVectorFromString(EDataType eDataType, String initialValue) {
@@ -392,7 +392,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRealVectorToString(EDataType eDataType, Object instanceValue) {
@@ -402,7 +402,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createRealMatrixFromString(EDataType eDataType, String initialValue) {
@@ -412,7 +412,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRealMatrixToString(EDataType eDataType, Object instanceValue) {
@@ -422,7 +422,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -433,7 +433,7 @@ public class MARTE_DataTypesFactoryImpl extends EFactoryImpl implements MARTE_Da
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

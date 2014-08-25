@@ -38,7 +38,7 @@ public interface FillInstance extends TypeInstance {
 	 * If the meaning of the '<em>Transparency</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Transparency</em>' attribute.
 	 * @see #setTransparency(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFillInstance_Transparency()
@@ -51,7 +51,7 @@ public interface FillInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance#getTransparency <em>Transparency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Transparency</em>' attribute.
 	 * @see #getTransparency()
@@ -66,7 +66,7 @@ public interface FillInstance extends TypeInstance {
 	 * If the meaning of the '<em>Fill Color</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fill Color</em>' containment reference.
 	 * @see #setFillColor(ColorInstance)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getFillInstance_FillColor()
@@ -79,7 +79,7 @@ public interface FillInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance#getFillColor <em>Fill Color</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Fill Color</em>' containment reference.
 	 * @see #getFillColor()

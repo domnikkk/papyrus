@@ -41,7 +41,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	 * The cached value of the '{@link #getBase_Element() <em>Base Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Element()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	 * The cached value of the '{@link #getHelper() <em>Helper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHelper()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TemplateImpl() {
@@ -72,7 +72,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Element basicGetBase_Element() {
@@ -113,7 +113,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingHelper basicGetHelper() {
@@ -158,7 +158,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

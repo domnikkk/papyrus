@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Fill</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FillTest extends TypeTest {
@@ -19,7 +19,7 @@ public class FillTest extends TypeTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class FillTest extends TypeTest {
 	 * Constructs a new Fill test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FillTest(String name) {
@@ -41,7 +41,7 @@ public class FillTest extends TypeTest {
 	 * Returns the fixture for this Fill test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class FillTest extends TypeTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class FillTest extends TypeTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

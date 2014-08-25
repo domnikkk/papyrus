@@ -561,7 +561,7 @@ public class CompImplTrafos {
 
 	/**
 	 * Recursively delete all connectors in a given package package
-	 * 
+	 *
 	 * @param pkg
 	 *            the package in which connector deletion starts
 	 */

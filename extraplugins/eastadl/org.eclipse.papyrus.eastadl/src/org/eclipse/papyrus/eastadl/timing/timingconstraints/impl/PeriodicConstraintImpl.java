@@ -33,7 +33,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	 * The cached value of the '{@link #getJitter() <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJitter()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPeriod()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PeriodicConstraintImpl() {
@@ -86,7 +86,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetJitter() {
@@ -127,7 +127,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetPeriod() {
@@ -172,7 +172,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -217,7 +217,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -262,7 +262,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -310,7 +310,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class PeriodicConstraintImpl extends TimingConstraintImpl implements Peri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

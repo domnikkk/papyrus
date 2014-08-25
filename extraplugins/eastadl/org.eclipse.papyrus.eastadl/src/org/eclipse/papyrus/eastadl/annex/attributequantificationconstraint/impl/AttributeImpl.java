@@ -30,7 +30,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	 * The default value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	 * The cached value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AttributeImpl() {
@@ -72,7 +72,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -139,7 +139,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

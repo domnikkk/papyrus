@@ -49,7 +49,7 @@ public class Terminate_Event extends EventMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.event.Event#marshal()
 	 */
 	@Override
@@ -59,7 +59,7 @@ public class Terminate_Event extends EventMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.event.Event#getDebugEvent()
 	 */
 	@Override

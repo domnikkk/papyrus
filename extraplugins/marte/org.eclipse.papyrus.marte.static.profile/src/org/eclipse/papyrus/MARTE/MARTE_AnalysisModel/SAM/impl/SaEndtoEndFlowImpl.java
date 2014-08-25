@@ -51,7 +51,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The default value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The default value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getEnd2EndT() <em>End2 End T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnd2EndT()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getEnd2EndD() <em>End2 End D</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnd2EndD()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getTiming() <em>Timing</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTiming()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -138,7 +138,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SaEndtoEndFlowImpl() {
@@ -148,7 +148,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -283,7 +283,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -361,7 +361,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

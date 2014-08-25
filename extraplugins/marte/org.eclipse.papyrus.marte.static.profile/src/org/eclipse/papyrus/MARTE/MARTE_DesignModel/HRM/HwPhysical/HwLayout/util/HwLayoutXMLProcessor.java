@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.HwLay
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwLayoutXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class HwLayoutXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwLayoutXMLProcessor() {
@@ -45,7 +45,7 @@ public class HwLayoutXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the HwLayoutResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

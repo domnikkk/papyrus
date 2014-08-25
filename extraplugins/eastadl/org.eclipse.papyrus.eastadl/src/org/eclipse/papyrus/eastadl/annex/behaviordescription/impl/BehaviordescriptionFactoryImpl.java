@@ -19,7 +19,7 @@ import org.eclipse.papyrus.eastadl.annex.behaviordescription.Behaviordescription
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements BehaviordescriptionFactory {
@@ -27,7 +27,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static BehaviordescriptionFactory init() {
@@ -46,7 +46,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehaviordescriptionFactoryImpl() {
@@ -56,7 +56,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

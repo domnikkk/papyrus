@@ -40,7 +40,7 @@ public interface HwResourceService extends GrService {
 	 * If the meaning of the '<em>Consumption</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Consumption</em>' attribute.
 	 * @see #setConsumption(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResourceService_Consumption()
@@ -53,7 +53,7 @@ public interface HwResourceService extends GrService {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService#getConsumption <em>Consumption</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Consumption</em>' attribute.
 	 * @see #getConsumption()
@@ -68,7 +68,7 @@ public interface HwResourceService extends GrService {
 	 * If the meaning of the '<em>Dissipation</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Dissipation</em>' attribute.
 	 * @see #setDissipation(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResourceService_Dissipation()
@@ -81,7 +81,7 @@ public interface HwResourceService extends GrService {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService#getDissipation <em>Dissipation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Dissipation</em>' attribute.
 	 * @see #getDissipation()

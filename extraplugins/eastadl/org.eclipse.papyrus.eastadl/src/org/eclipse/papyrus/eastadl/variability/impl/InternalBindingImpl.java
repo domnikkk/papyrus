@@ -33,7 +33,7 @@ public class InternalBindingImpl extends ConfigurationDecisionModelImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InternalBindingImpl() {
@@ -43,7 +43,7 @@ public class InternalBindingImpl extends ConfigurationDecisionModelImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

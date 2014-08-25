@@ -48,7 +48,7 @@ public interface PaRunTInstance extends EObject {
 	 * If the meaning of the '<em>Pool Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pool Size</em>' attribute.
 	 * @see #setPoolSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaRunTInstance_PoolSize()
@@ -61,7 +61,7 @@ public interface PaRunTInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getPoolSize <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Pool Size</em>' attribute.
 	 * @see #getPoolSize()
@@ -77,7 +77,7 @@ public interface PaRunTInstance extends EObject {
 	 * If the meaning of the '<em>Unbdd Pool</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unbdd Pool</em>' attribute.
 	 * @see #setUnbddPool(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaRunTInstance_UnbddPool()
@@ -90,7 +90,7 @@ public interface PaRunTInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#isUnbddPool <em>Unbdd Pool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Unbdd Pool</em>' attribute.
 	 * @see #isUnbddPool()
@@ -105,7 +105,7 @@ public interface PaRunTInstance extends EObject {
 	 * If the meaning of the '<em>Instance</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Instance</em>' reference.
 	 * @see #setInstance(SchedulableResource)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaRunTInstance_Instance()
@@ -118,7 +118,7 @@ public interface PaRunTInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getInstance <em>Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Instance</em>' reference.
 	 * @see #getInstance()
@@ -133,7 +133,7 @@ public interface PaRunTInstance extends EObject {
 	 * If the meaning of the '<em>Host</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Host</em>' reference.
 	 * @see #setHost(GaExecHost)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaRunTInstance_Host()
@@ -146,7 +146,7 @@ public interface PaRunTInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getHost <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Host</em>' reference.
 	 * @see #getHost()
@@ -161,7 +161,7 @@ public interface PaRunTInstance extends EObject {
 	 * If the meaning of the '<em>Utilization</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utilization</em>' attribute.
 	 * @see #setUtilization(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaRunTInstance_Utilization()
@@ -174,7 +174,7 @@ public interface PaRunTInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getUtilization <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Utilization</em>' attribute.
 	 * @see #getUtilization()
@@ -189,7 +189,7 @@ public interface PaRunTInstance extends EObject {
 	 * If the meaning of the '<em>Throughput</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Throughput</em>' attribute.
 	 * @see #setThroughput(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaRunTInstance_Throughput()
@@ -202,7 +202,7 @@ public interface PaRunTInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getThroughput <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Throughput</em>' attribute.
 	 * @see #getThroughput()
@@ -217,7 +217,7 @@ public interface PaRunTInstance extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaRunTInstance_Base_NamedElement()
@@ -230,7 +230,7 @@ public interface PaRunTInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaRunTInstance#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()

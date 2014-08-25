@@ -16,18 +16,15 @@ package org.eclipse.papyrus.facade.extensiondefinition.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtensiondefinitionXMLProcessor extends XMLProcessor {
@@ -36,7 +33,7 @@ public class ExtensiondefinitionXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtensiondefinitionXMLProcessor() {
@@ -48,7 +45,7 @@ public class ExtensiondefinitionXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the ExtensiondefinitionResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

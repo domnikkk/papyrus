@@ -29,7 +29,7 @@ public class ReferencedOSGIElement {
 
 	/**
 	 * a reference may be optional
-	 * 
+	 *
 	 * @return true if the the reference is optional
 	 */
 	public boolean isOptional() {
@@ -38,7 +38,7 @@ public class ReferencedOSGIElement {
 
 	/**
 	 * set the reference as optional
-	 * 
+	 *
 	 * @param optional
 	 *            a boolean
 	 */
@@ -58,7 +58,7 @@ public class ReferencedOSGIElement {
 
 	/**
 	 * set the model ref as dependency to a feature or plug-in
-	 * 
+	 *
 	 * @param kindRef
 	 *            a string see FEATURE ou PLUGIN constant
 	 */

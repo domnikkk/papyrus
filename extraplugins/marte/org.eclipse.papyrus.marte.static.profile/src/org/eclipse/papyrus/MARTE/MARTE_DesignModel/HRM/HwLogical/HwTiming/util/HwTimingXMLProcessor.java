@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimi
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwTimingXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class HwTimingXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwTimingXMLProcessor() {
@@ -45,7 +45,7 @@ public class HwTimingXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the HwTimingResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

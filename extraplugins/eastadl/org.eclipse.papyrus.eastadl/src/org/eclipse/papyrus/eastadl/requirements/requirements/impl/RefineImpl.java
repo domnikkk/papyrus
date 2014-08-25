@@ -46,7 +46,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Dependency()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	 * The cached value of the '{@link #getRefinedBy() <em>Refined By</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRefinedBy()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RefineImpl() {
@@ -88,7 +88,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -129,7 +129,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency basicGetBase_Dependency() {
@@ -218,7 +218,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +233,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -299,7 +299,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +321,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +361,7 @@ public class RefineImpl extends RequirementsRelationshipImpl implements Refine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

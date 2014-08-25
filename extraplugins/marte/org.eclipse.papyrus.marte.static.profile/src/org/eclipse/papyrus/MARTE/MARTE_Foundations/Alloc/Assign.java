@@ -49,7 +49,7 @@ public interface Assign extends EObject {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AssignmentKind
 	 * @see #setKind(AssignmentKind)
@@ -63,7 +63,7 @@ public interface Assign extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Assign#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AssignmentKind
@@ -80,7 +80,7 @@ public interface Assign extends EObject {
 	 * If the meaning of the '<em>Nature</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nature</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AssignmentNature
 	 * @see #setNature(AssignmentNature)
@@ -94,7 +94,7 @@ public interface Assign extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Assign#getNature <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nature</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AssignmentNature
@@ -111,7 +111,7 @@ public interface Assign extends EObject {
 	 * If the meaning of the '<em>Implied Constraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Implied Constraint</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAssign_ImpliedConstraint()
 	 * @model ordered="false"
@@ -127,7 +127,7 @@ public interface Assign extends EObject {
 	 * If the meaning of the '<em>From</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>From</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAssign_From()
 	 * @model required="true" ordered="false"
@@ -143,7 +143,7 @@ public interface Assign extends EObject {
 	 * If the meaning of the '<em>To</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>To</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAssign_To()
 	 * @model required="true" ordered="false"
@@ -158,7 +158,7 @@ public interface Assign extends EObject {
 	 * If the meaning of the '<em>Base Comment</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Comment</em>' reference.
 	 * @see #setBase_Comment(Comment)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAssign_Base_Comment()
@@ -171,7 +171,7 @@ public interface Assign extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Assign#getBase_Comment <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Comment</em>' reference.
 	 * @see #getBase_Comment()

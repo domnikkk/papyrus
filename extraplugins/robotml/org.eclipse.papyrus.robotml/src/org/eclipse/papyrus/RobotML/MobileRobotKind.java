@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Mobile Robot Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getMobileRobotKind()
  * @model
  * @generated
@@ -23,7 +23,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * The '<em><b>Air Vehicle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AIR_VEHICLE_VALUE
 	 * @generated
 	 * @ordered
@@ -34,7 +34,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * The '<em><b>Hybrid Vehicle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HYBRID_VEHICLE_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * The '<em><b>Surface Vehicle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SURFACE_VEHICLE_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * The '<em><b>Underwater Vehicle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDERWATER_VEHICLE_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * The '<em><b>Car Like Vehicle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CAR_LIKE_VEHICLE_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * The '<em><b>Differential Vehicle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DIFFERENTIAL_VEHICLE_VALUE
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * The '<em><b>Legged Vehicle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LEGGED_VEHICLE_VALUE
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * If the meaning of '<em><b>Air Vehicle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AIR_VEHICLE
 	 * @model name="AirVehicle"
 	 * @generated
@@ -118,7 +118,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * If the meaning of '<em><b>Hybrid Vehicle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HYBRID_VEHICLE
 	 * @model name="HybridVehicle"
 	 * @generated
@@ -133,7 +133,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * If the meaning of '<em><b>Surface Vehicle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SURFACE_VEHICLE
 	 * @model name="SurfaceVehicle"
 	 * @generated
@@ -148,7 +148,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * If the meaning of '<em><b>Underwater Vehicle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDERWATER_VEHICLE
 	 * @model name="UnderwaterVehicle"
 	 * @generated
@@ -163,7 +163,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * If the meaning of '<em><b>Car Like Vehicle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CAR_LIKE_VEHICLE
 	 * @model name="CarLikeVehicle"
 	 * @generated
@@ -178,7 +178,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * If the meaning of '<em><b>Differential Vehicle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DIFFERENTIAL_VEHICLE
 	 * @model name="DifferentialVehicle"
 	 * @generated
@@ -193,7 +193,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * If the meaning of '<em><b>Legged Vehicle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LEGGED_VEHICLE
 	 * @model name="LeggedVehicle"
 	 * @generated
@@ -205,7 +205,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * An array of all the '<em><b>Mobile Robot Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final MobileRobotKind[] VALUES_ARRAY =
@@ -223,7 +223,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Mobile Robot Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<MobileRobotKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -232,7 +232,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * Returns the '<em><b>Mobile Robot Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static MobileRobotKind get(String literal) {
@@ -249,7 +249,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * Returns the '<em><b>Mobile Robot Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static MobileRobotKind getByName(String name) {
@@ -266,7 +266,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * Returns the '<em><b>Mobile Robot Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static MobileRobotKind get(int value) {
@@ -292,7 +292,7 @@ public enum MobileRobotKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -300,7 +300,7 @@ public enum MobileRobotKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -308,7 +308,7 @@ public enum MobileRobotKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -317,7 +317,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private MobileRobotKind(int value, String name, String literal) {
@@ -329,7 +329,7 @@ public enum MobileRobotKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -339,7 +339,7 @@ public enum MobileRobotKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -349,7 +349,7 @@ public enum MobileRobotKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLiteral() {
@@ -360,7 +360,7 @@ public enum MobileRobotKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,16 +13,12 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.InteractionComponent;
-
 import org.eclipse.uml2.uml.Collaboration;
 
 /**
@@ -45,7 +41,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	 * The default value of the '{@link #isForDistribution() <em>For Distribution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isForDistribution()
 	 * @generated
 	 * @ordered
@@ -56,7 +52,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	 * The cached value of the '{@link #isForDistribution() <em>For Distribution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isForDistribution()
 	 * @generated
 	 * @ordered
@@ -67,7 +63,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	 * The cached value of the '{@link #getConnectionPattern() <em>Connection Pattern</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConnectionPattern()
 	 * @generated
 	 * @ordered
@@ -78,7 +74,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -88,7 +84,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InteractionComponentImpl() {
@@ -98,7 +94,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +105,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +116,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +131,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +151,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Collaboration basicGetConnectionPattern() {
@@ -165,7 +161,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +176,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +196,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -210,7 +206,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +221,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +246,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +268,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +290,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +309,7 @@ public class InteractionComponentImpl extends EObjectImpl implements Interaction
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

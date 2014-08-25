@@ -2,7 +2,18 @@
 
 package org.eclipse.papyrus.parsers.antlr;
 
-import org.antlr.runtime.*;
+import org.antlr.runtime.BaseRecognizer;
+import org.antlr.runtime.CharStream;
+import org.antlr.runtime.CommonToken;
+import org.antlr.runtime.DFA;
+import org.antlr.runtime.EarlyExitException;
+import org.antlr.runtime.IntStream;
+import org.antlr.runtime.Lexer;
+import org.antlr.runtime.MismatchedSetException;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
 
 public class CollaborationUseLabelLexer extends Lexer {
 	public static final int COMMA = 30;

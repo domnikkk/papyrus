@@ -24,7 +24,7 @@ public interface IEmbeddingRule {
 	// TODO: application order?
 	/**
 	 * configure an instance (within a container)
-	 * 
+	 *
 	 * @param executorIS
 	 *            the instance specification of the component that is used as basis for configuring the instance
 	 * @param instance

@@ -46,7 +46,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Something happen on the tree of object
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
@@ -126,7 +126,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -155,7 +155,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeEventListener(IDiagramViewEventListener listener) {
@@ -165,7 +165,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void fireDiagramViewAddedEvent(Notification msg) {
@@ -176,7 +176,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void fireDiagramViewRemovedEvent(Notification msg) {
@@ -187,7 +187,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Get the removed diagram in case of diagramRemoved event
-	 * 
+	 *
 	 * @param msg
 	 * @return
 	 */
@@ -197,7 +197,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Get the removed diagram in case of diagramRemoved event
-	 * 
+	 *
 	 * @param msg
 	 * @return
 	 */

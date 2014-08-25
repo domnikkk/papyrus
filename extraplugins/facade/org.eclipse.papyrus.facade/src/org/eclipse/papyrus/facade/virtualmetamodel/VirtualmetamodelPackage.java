@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "virtualmetamodel";
@@ -49,7 +49,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/virtualmetamodel";
@@ -58,7 +58,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "virtualmetamodel";
@@ -67,7 +67,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	VirtualmetamodelPackage eINSTANCE = org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl.init();
@@ -76,7 +76,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl <em>Virtual Metamodel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualMetamodel()
 	 * @generated
@@ -87,7 +87,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Ns Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Ns URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Virtual Classifiers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Facade</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Metamodel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Metamodel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl <em>Virtual Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualElement()
 	 * @generated
@@ -168,7 +168,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +188,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -218,7 +218,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -228,7 +228,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualClassifierImpl <em>Virtual Classifier</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualClassifierImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualClassifier()
 	 * @generated
@@ -239,7 +239,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +259,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +289,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Classifier</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +299,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Classifier</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +309,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl <em>Virtual Metaclass</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualMetaclass()
 	 * @generated
@@ -320,7 +320,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -330,7 +330,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -340,7 +340,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -350,7 +350,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -360,7 +360,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,7 +370,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +380,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Applied Stereotypes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -390,7 +390,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -400,7 +400,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Parents</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -410,7 +410,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -420,7 +420,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype Interface</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +430,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Metaclass</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +440,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Metaclass</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -450,7 +450,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualTypedElementImpl <em>Virtual Typed Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualTypedElementImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualTypedElement()
 	 * @generated
@@ -461,7 +461,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -471,7 +471,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -481,7 +481,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -491,7 +491,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -501,7 +501,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -511,7 +511,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -521,7 +521,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -531,7 +531,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Typed Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -541,7 +541,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Typed Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -551,7 +551,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualPropertyImpl <em>Virtual Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualPropertyImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualProperty()
 	 * @generated
@@ -562,7 +562,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -572,7 +572,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -582,7 +582,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -592,7 +592,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -602,7 +602,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -612,7 +612,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -622,7 +622,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -632,7 +632,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Virtual Metaclass</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -642,7 +642,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -652,7 +652,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -662,7 +662,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualOperationImpl <em>Virtual Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualOperationImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualOperation()
 	 * @generated
@@ -673,7 +673,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -683,7 +683,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -693,7 +693,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -703,7 +703,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -713,7 +713,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -723,7 +723,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -733,7 +733,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -743,7 +743,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -753,7 +753,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -763,7 +763,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -773,7 +773,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualParameterImpl <em>Virtual Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualParameterImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualParameter()
 	 * @generated
@@ -784,7 +784,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -794,7 +794,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -804,7 +804,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -814,7 +814,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -824,7 +824,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -834,7 +834,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -844,7 +844,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -854,7 +854,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -864,7 +864,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -874,7 +874,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualDatatypeImpl <em>Virtual Datatype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualDatatypeImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualDatatype()
 	 * @generated
@@ -885,7 +885,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -895,7 +895,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -905,7 +905,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -915,7 +915,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -925,7 +925,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -935,7 +935,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Datatype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -945,7 +945,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Datatype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -955,7 +955,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualEnumImpl <em>Virtual Enum</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualEnumImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualEnum()
 	 * @generated
@@ -966,7 +966,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -976,7 +976,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -986,7 +986,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -996,7 +996,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1006,7 +1006,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1016,7 +1016,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Literals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1026,7 +1026,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Enum</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1036,7 +1036,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Enum</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1046,7 +1046,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualLiteralImpl <em>Virtual Literal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualLiteralImpl
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualLiteral()
 	 * @generated
@@ -1057,7 +1057,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Alias Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1067,7 +1067,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Kept</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1077,7 +1077,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Represented Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1087,7 +1087,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Represented</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1097,7 +1097,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1107,7 +1107,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1118,7 +1118,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel <em>Virtual Metamodel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Metamodel</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel
 	 * @generated
@@ -1129,7 +1129,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getName()
 	 * @see #getVirtualMetamodel()
@@ -1141,7 +1141,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getNsPrefix <em>Ns Prefix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Ns Prefix</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getNsPrefix()
 	 * @see #getVirtualMetamodel()
@@ -1153,7 +1153,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getNsURI <em>Ns URI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Ns URI</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getNsURI()
 	 * @see #getVirtualMetamodel()
@@ -1165,7 +1165,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getVirtualClassifiers <em>Virtual Classifiers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Virtual Classifiers</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getVirtualClassifiers()
 	 * @see #getVirtualMetamodel()
@@ -1177,7 +1177,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getFacade <em>Facade</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Facade</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel#getFacade()
 	 * @see #getVirtualMetamodel()
@@ -1189,7 +1189,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement <em>Virtual Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Element</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement
 	 * @generated
@@ -1200,7 +1200,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#getAliasName <em>Alias Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Alias Name</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#getAliasName()
 	 * @see #getVirtualElement()
@@ -1212,7 +1212,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#isKept <em>Kept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kept</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#isKept()
 	 * @see #getVirtualElement()
@@ -1224,7 +1224,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#getRepresentedElement <em>Represented Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Represented Element</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#getRepresentedElement()
 	 * @see #getVirtualElement()
@@ -1236,7 +1236,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#isUseRepresented <em>Use Represented</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Use Represented</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#isUseRepresented()
 	 * @see #getVirtualElement()
@@ -1248,7 +1248,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier <em>Virtual Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Classifier</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier
 	 * @generated
@@ -1259,7 +1259,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier#getMetamodel <em>Metamodel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Metamodel</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier#getMetamodel()
 	 * @see #getVirtualClassifier()
@@ -1271,7 +1271,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass <em>Virtual Metaclass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Metaclass</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass
 	 * @generated
@@ -1282,7 +1282,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isAbstract <em>Abstract</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Abstract</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isAbstract()
 	 * @see #getVirtualMetaclass()
@@ -1294,7 +1294,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getAppliedStereotypes <em>Applied Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Applied Stereotypes</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getAppliedStereotypes()
 	 * @see #getVirtualMetaclass()
@@ -1306,7 +1306,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getOperations <em>Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Operations</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getOperations()
 	 * @see #getVirtualMetaclass()
@@ -1318,7 +1318,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getParents <em>Parents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Parents</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getParents()
 	 * @see #getVirtualMetaclass()
@@ -1330,7 +1330,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Properties</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getProperties()
 	 * @see #getVirtualMetaclass()
@@ -1342,7 +1342,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isStereotypeInterface <em>Stereotype Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stereotype Interface</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isStereotypeInterface()
 	 * @see #getVirtualMetaclass()
@@ -1354,7 +1354,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty <em>Virtual Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Property</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty
 	 * @generated
@@ -1365,7 +1365,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty#getVirtualMetaclass <em>Virtual Metaclass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Virtual Metaclass</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty#getVirtualMetaclass()
 	 * @see #getVirtualProperty()
@@ -1377,7 +1377,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation <em>Virtual Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Operation</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation
 	 * @generated
@@ -1388,7 +1388,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation#getParameters()
 	 * @see #getVirtualOperation()
@@ -1400,7 +1400,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter <em>Virtual Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Parameter</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter
 	 * @generated
@@ -1411,7 +1411,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype <em>Virtual Datatype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Datatype</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype
 	 * @generated
@@ -1422,7 +1422,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum <em>Virtual Enum</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Enum</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum
 	 * @generated
@@ -1433,7 +1433,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum#getLiterals <em>Literals</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Literals</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum#getLiterals()
 	 * @see #getVirtualEnum()
@@ -1445,7 +1445,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral <em>Virtual Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Literal</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral
 	 * @generated
@@ -1456,7 +1456,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement <em>Virtual Typed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Virtual Typed Element</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement
 	 * @generated
@@ -1467,7 +1467,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getLower <em>Lower</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Lower</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getLower()
 	 * @see #getVirtualTypedElement()
@@ -1479,7 +1479,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getUpper <em>Upper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Upper</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getUpper()
 	 * @see #getVirtualTypedElement()
@@ -1491,7 +1491,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement#getType()
 	 * @see #getVirtualTypedElement()
@@ -1503,7 +1503,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1520,7 +1520,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1528,7 +1528,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl <em>Virtual Metamodel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetamodelImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualMetamodel()
 		 * @generated
@@ -1539,7 +1539,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_METAMODEL__NAME = eINSTANCE.getVirtualMetamodel_Name();
@@ -1548,7 +1548,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ns Prefix</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_METAMODEL__NS_PREFIX = eINSTANCE.getVirtualMetamodel_NsPrefix();
@@ -1557,7 +1557,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ns URI</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_METAMODEL__NS_URI = eINSTANCE.getVirtualMetamodel_NsURI();
@@ -1566,7 +1566,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Virtual Classifiers</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS = eINSTANCE.getVirtualMetamodel_VirtualClassifiers();
@@ -1575,7 +1575,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Facade</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_METAMODEL__FACADE = eINSTANCE.getVirtualMetamodel_Facade();
@@ -1584,7 +1584,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl <em>Virtual Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualElement()
 		 * @generated
@@ -1595,7 +1595,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Alias Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_ELEMENT__ALIAS_NAME = eINSTANCE.getVirtualElement_AliasName();
@@ -1604,7 +1604,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kept</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_ELEMENT__KEPT = eINSTANCE.getVirtualElement_Kept();
@@ -1613,7 +1613,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Represented Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_ELEMENT__REPRESENTED_ELEMENT = eINSTANCE.getVirtualElement_RepresentedElement();
@@ -1622,7 +1622,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Use Represented</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_ELEMENT__USE_REPRESENTED = eINSTANCE.getVirtualElement_UseRepresented();
@@ -1631,7 +1631,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualClassifierImpl <em>Virtual Classifier</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualClassifierImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualClassifier()
 		 * @generated
@@ -1642,7 +1642,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Metamodel</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_CLASSIFIER__METAMODEL = eINSTANCE.getVirtualClassifier_Metamodel();
@@ -1651,7 +1651,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl <em>Virtual Metaclass</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualMetaclass()
 		 * @generated
@@ -1662,7 +1662,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_METACLASS__ABSTRACT = eINSTANCE.getVirtualMetaclass_Abstract();
@@ -1671,7 +1671,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Applied Stereotypes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_METACLASS__APPLIED_STEREOTYPES = eINSTANCE.getVirtualMetaclass_AppliedStereotypes();
@@ -1680,7 +1680,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_METACLASS__OPERATIONS = eINSTANCE.getVirtualMetaclass_Operations();
@@ -1689,7 +1689,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parents</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_METACLASS__PARENTS = eINSTANCE.getVirtualMetaclass_Parents();
@@ -1698,7 +1698,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_METACLASS__PROPERTIES = eINSTANCE.getVirtualMetaclass_Properties();
@@ -1707,7 +1707,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype Interface</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_METACLASS__STEREOTYPE_INTERFACE = eINSTANCE.getVirtualMetaclass_StereotypeInterface();
@@ -1716,7 +1716,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualPropertyImpl <em>Virtual Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualPropertyImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualProperty()
 		 * @generated
@@ -1727,7 +1727,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Virtual Metaclass</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_PROPERTY__VIRTUAL_METACLASS = eINSTANCE.getVirtualProperty_VirtualMetaclass();
@@ -1736,7 +1736,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualOperationImpl <em>Virtual Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualOperationImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualOperation()
 		 * @generated
@@ -1747,7 +1747,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_OPERATION__PARAMETERS = eINSTANCE.getVirtualOperation_Parameters();
@@ -1756,7 +1756,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualParameterImpl <em>Virtual Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualParameterImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualParameter()
 		 * @generated
@@ -1767,7 +1767,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualDatatypeImpl <em>Virtual Datatype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualDatatypeImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualDatatype()
 		 * @generated
@@ -1778,7 +1778,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualEnumImpl <em>Virtual Enum</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualEnumImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualEnum()
 		 * @generated
@@ -1789,7 +1789,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Literals</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_ENUM__LITERALS = eINSTANCE.getVirtualEnum_Literals();
@@ -1798,7 +1798,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualLiteralImpl <em>Virtual Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualLiteralImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualLiteral()
 		 * @generated
@@ -1809,7 +1809,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualTypedElementImpl <em>Virtual Typed Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualTypedElementImpl
 		 * @see org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl#getVirtualTypedElement()
 		 * @generated
@@ -1820,7 +1820,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Lower</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_TYPED_ELEMENT__LOWER = eINSTANCE.getVirtualTypedElement_Lower();
@@ -1829,7 +1829,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Upper</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIRTUAL_TYPED_ELEMENT__UPPER = eINSTANCE.getVirtualTypedElement_Upper();
@@ -1838,7 +1838,7 @@ public interface VirtualmetamodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIRTUAL_TYPED_ELEMENT__TYPE = eINSTANCE.getVirtualTypedElement_Type();

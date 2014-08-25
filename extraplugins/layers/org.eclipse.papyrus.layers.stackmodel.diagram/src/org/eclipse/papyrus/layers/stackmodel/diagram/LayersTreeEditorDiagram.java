@@ -84,7 +84,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 
 			/**
 			 * called when command stack has changed
-			 * 
+			 *
 			 * @see org.eclipse.emf.common.command.CommandStackListener#commandStackChanged(java.util.EventObject)
 			 *
 			 * @param event

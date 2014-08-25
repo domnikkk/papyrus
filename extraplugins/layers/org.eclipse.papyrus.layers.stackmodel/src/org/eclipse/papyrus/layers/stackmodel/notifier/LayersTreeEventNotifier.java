@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.notifier;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 
 /**
@@ -58,7 +59,7 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -67,7 +68,7 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called when something happen on the tree.
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param notification
@@ -143,7 +144,7 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeLayersModelEventListener(ILayersTreeEventListener listener) {

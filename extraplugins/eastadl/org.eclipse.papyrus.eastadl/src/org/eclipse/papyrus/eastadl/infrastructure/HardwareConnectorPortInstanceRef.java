@@ -30,7 +30,7 @@ public interface HardwareConnectorPortInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Hardware Pin</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Pin</em>' reference.
 	 * @see #setHardwarePin(HardwarePin)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getHardwareConnectorPortInstanceRef_HardwarePin()
@@ -43,7 +43,7 @@ public interface HardwareConnectorPortInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.HardwareConnectorPortInstanceRef#getHardwarePin <em>Hardware Pin</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hardware Pin</em>' reference.
 	 * @see #getHardwarePin()
@@ -58,7 +58,7 @@ public interface HardwareConnectorPortInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Hardware Component Prototype</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Component Prototype</em>' reference.
 	 * @see #setHardwareComponentPrototype(HardwareComponentPrototype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getHardwareConnectorPortInstanceRef_HardwareComponentPrototype()
@@ -71,7 +71,7 @@ public interface HardwareConnectorPortInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.HardwareConnectorPortInstanceRef#getHardwareComponentPrototype <em>Hardware Component Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hardware Component Prototype</em>' reference.
 	 * @see #getHardwareComponentPrototype()

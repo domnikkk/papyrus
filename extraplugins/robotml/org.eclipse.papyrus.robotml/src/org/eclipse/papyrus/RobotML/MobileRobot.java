@@ -28,7 +28,7 @@ public interface MobileRobot extends Robot {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.MobileRobotKind
 	 * @see #setKind(MobileRobotKind)
@@ -42,7 +42,7 @@ public interface MobileRobot extends Robot {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.MobileRobot#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.MobileRobotKind

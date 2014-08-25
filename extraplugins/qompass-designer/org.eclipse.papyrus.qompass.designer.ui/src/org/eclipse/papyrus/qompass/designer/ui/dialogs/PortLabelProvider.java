@@ -56,7 +56,7 @@ public class PortLabelProvider extends LabelProvider implements ITableLabelProvi
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
 	 */
 	@Override

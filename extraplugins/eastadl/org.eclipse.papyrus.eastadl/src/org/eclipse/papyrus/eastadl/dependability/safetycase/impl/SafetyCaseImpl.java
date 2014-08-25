@@ -60,7 +60,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The default value of the '{@link #getStage() <em>Stage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStage()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The cached value of the '{@link #getStage() <em>Stage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStage()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SafetyCaseImpl() {
@@ -124,7 +124,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -208,7 +208,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -299,7 +299,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -350,7 +350,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -375,7 +375,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +386,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -411,7 +411,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,7 +426,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +441,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

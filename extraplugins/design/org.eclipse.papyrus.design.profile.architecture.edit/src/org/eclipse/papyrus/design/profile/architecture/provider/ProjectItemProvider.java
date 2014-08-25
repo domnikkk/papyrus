@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,7 +21,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage;
 import org.eclipse.papyrus.design.profile.architecture.Project;
 
@@ -30,7 +28,7 @@ import org.eclipse.papyrus.design.profile.architecture.Project;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.design.profile.architecture.Project} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ProjectItemProvider
@@ -45,7 +43,7 @@ public class ProjectItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ProjectItemProvider(AdapterFactory adapterFactory) {
@@ -56,7 +54,7 @@ public class ProjectItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +77,7 @@ public class ProjectItemProvider
 	 * This adds a property descriptor for the Is Deprecated feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsDeprecatedPropertyDescriptor(Object object) {
@@ -102,7 +100,7 @@ public class ProjectItemProvider
 	 * This adds a property descriptor for the Deprecated Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDeprecatedCommentPropertyDescriptor(Object object) {
@@ -125,7 +123,7 @@ public class ProjectItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -148,7 +146,7 @@ public class ProjectItemProvider
 	 * This adds a property descriptor for the Referent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addReferentPropertyDescriptor(Object object) {
@@ -171,7 +169,7 @@ public class ProjectItemProvider
 	 * This adds a property descriptor for the Parent Folder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addParentFolderPropertyDescriptor(Object object) {
@@ -194,7 +192,7 @@ public class ProjectItemProvider
 	 * This adds a property descriptor for the Original Parent Folder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOriginalParentFolderPropertyDescriptor(Object object) {
@@ -217,7 +215,7 @@ public class ProjectItemProvider
 	 * This adds a property descriptor for the Base Package feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_PackagePropertyDescriptor(Object object) {
@@ -240,7 +238,7 @@ public class ProjectItemProvider
 	 * This returns Project.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +250,7 @@ public class ProjectItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +266,7 @@ public class ProjectItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +291,7 @@ public class ProjectItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

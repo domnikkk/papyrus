@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage
  * @generated
  */
@@ -39,7 +39,7 @@ public interface JdtmmFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	JdtmmFactory eINSTANCE = org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JdtmmFactoryImpl.init();
@@ -48,7 +48,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Type Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Type Parameter</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Field</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Method</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Method</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Class</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Interface</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Enum</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Enum</em>'.
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Compilation Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Compilation Unit</em>'.
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Import Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Import Declaration</em>'.
 	 * @generated
 	 */
@@ -128,7 +128,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Import Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Import Container</em>'.
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Parameter</em>'.
 	 * @generated
 	 */
@@ -148,7 +148,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Exception</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Exception</em>'.
 	 * @generated
 	 */
@@ -158,7 +158,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Opaque Body</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Opaque Body</em>'.
 	 * @generated
 	 */
@@ -168,7 +168,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Java Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Java Model</em>'.
 	 * @generated
 	 */
@@ -178,7 +178,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Package Fragment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Package Fragment</em>'.
 	 * @generated
 	 */
@@ -188,7 +188,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Package Fragment Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Package Fragment Root</em>'.
 	 * @generated
 	 */
@@ -198,7 +198,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns a new object of class '<em>JDT Java Project</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>JDT Java Project</em>'.
 	 * @generated
 	 */
@@ -208,7 +208,7 @@ public interface JdtmmFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

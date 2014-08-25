@@ -8,7 +8,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.facade.editor;bundle-version="1.0.1",
  org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.0.1",
  org.eclipse.papyrus.infra.core.log;bundle-version="1.0.1",
- org.eclipse.papyrus.facade.utils;bundle-version="1.0.1"
+ org.eclipse.papyrus.facade.utils;bundle-version="1.0.1",
+ org.eclipse.papyrus.infra.widgets;bundle-version="1.0.1"
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.1.qualifier
 Bundle-Name: FacadeSepcificEditor

@@ -10,7 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.operators;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -45,7 +46,7 @@ public class BooleanOrOperatorTest {
 
 	/**
 	 * Create an instance of boolean value cmd.
-	 * 
+	 *
 	 * @param b
 	 * @return
 	 */
@@ -57,7 +58,7 @@ public class BooleanOrOperatorTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.operators.BooleanOrOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -83,7 +84,7 @@ public class BooleanOrOperatorTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.operators.BooleanOrOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

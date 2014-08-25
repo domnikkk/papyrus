@@ -34,7 +34,7 @@ public class IsVisiblePropertySetterImpl extends PropertySetterImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected IsVisiblePropertySetterImpl() {
@@ -45,7 +45,7 @@ public class IsVisiblePropertySetterImpl extends PropertySetterImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -55,7 +55,7 @@ public class IsVisiblePropertySetterImpl extends PropertySetterImpl implements I
 
 	/**
 	 * Set the property of the specified view.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view

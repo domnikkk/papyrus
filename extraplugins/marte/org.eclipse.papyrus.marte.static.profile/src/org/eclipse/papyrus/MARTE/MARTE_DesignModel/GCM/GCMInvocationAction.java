@@ -42,7 +42,7 @@ public interface GCMInvocationAction extends EObject {
 	 * If the meaning of the '<em>Base Invocation Action</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #setBase_InvocationAction(InvocationAction)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMInvocationAction_Base_InvocationAction()
@@ -55,7 +55,7 @@ public interface GCMInvocationAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction#getBase_InvocationAction <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #getBase_InvocationAction()
@@ -70,7 +70,7 @@ public interface GCMInvocationAction extends EObject {
 	 * If the meaning of the '<em>On Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>On Feature</em>' reference.
 	 * @see #setOnFeature(Feature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMInvocationAction_OnFeature()
@@ -83,7 +83,7 @@ public interface GCMInvocationAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMInvocationAction#getOnFeature <em>On Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>On Feature</em>' reference.
 	 * @see #getOnFeature()

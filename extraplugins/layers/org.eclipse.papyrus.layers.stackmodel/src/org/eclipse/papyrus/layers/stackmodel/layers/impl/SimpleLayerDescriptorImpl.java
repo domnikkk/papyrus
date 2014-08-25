@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor;
 
@@ -30,7 +29,7 @@ public class SimpleLayerDescriptorImpl extends LayerDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SimpleLayerDescriptorImpl() {
@@ -40,7 +39,7 @@ public class SimpleLayerDescriptorImpl extends LayerDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -43,7 +43,7 @@ public interface GaEventTrace extends EObject {
 	 * If the meaning of the '<em>Content</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Content</em>' attribute.
 	 * @see #setContent(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaEventTrace_Content()
@@ -56,7 +56,7 @@ public interface GaEventTrace extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getContent <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Content</em>' attribute.
 	 * @see #getContent()
@@ -71,7 +71,7 @@ public interface GaEventTrace extends EObject {
 	 * If the meaning of the '<em>Format</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Format</em>' attribute.
 	 * @see #setFormat(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaEventTrace_Format()
@@ -84,7 +84,7 @@ public interface GaEventTrace extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getFormat <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Format</em>' attribute.
 	 * @see #getFormat()
@@ -99,7 +99,7 @@ public interface GaEventTrace extends EObject {
 	 * If the meaning of the '<em>Location</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Location</em>' attribute.
 	 * @see #setLocation(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaEventTrace_Location()
@@ -112,7 +112,7 @@ public interface GaEventTrace extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getLocation <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Location</em>' attribute.
 	 * @see #getLocation()
@@ -127,7 +127,7 @@ public interface GaEventTrace extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaEventTrace_Base_NamedElement()
@@ -140,7 +140,7 @@ public interface GaEventTrace extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaEventTrace#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()

@@ -12,9 +12,7 @@
 package org.eclipse.papyrus.umldi;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.dd.di.DiagramElement;
-
 import org.eclipse.uml2.uml.Element;
 
 /**

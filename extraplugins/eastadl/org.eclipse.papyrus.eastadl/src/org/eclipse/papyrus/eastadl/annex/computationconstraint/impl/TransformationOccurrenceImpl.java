@@ -5,24 +5,16 @@ package org.eclipse.papyrus.eastadl.annex.computationconstraint.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quantification;
-
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence;
-
 import org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
 
 /**
@@ -46,7 +38,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	 * The cached value of the '{@link #getInQuantification() <em>In Quantification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInQuantification()
 	 * @generated
 	 * @ordered
@@ -57,7 +49,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	 * The cached value of the '{@link #getOutQuantification() <em>Out Quantification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOutQuantification()
 	 * @generated
 	 * @ordered
@@ -68,7 +60,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	 * The cached value of the '{@link #getInvokedLogicalTransformation() <em>Invoked Logical Transformation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInvokedLogicalTransformation()
 	 * @generated
 	 * @ordered
@@ -79,7 +71,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	 * The cached value of the '{@link #getTimeCondition() <em>Time Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeCondition()
 	 * @generated
 	 * @ordered
@@ -89,7 +81,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TransformationOccurrenceImpl() {
@@ -99,7 +91,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +102,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +116,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +130,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +150,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LogicalTransformation basicGetInvokedLogicalTransformation() {
@@ -168,7 +160,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +175,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +195,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LogicalTimeCondition basicGetTimeCondition() {
@@ -213,7 +205,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +220,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +247,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -283,7 +275,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +300,7 @@ public class TransformationOccurrenceImpl extends EAElementImpl implements Trans
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

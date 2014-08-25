@@ -30,7 +30,7 @@ public abstract class MokaAbstractHandler extends AbstractHandler {
 	 * <pre>
 	 * Get the selected element, the first selected element if several are selected or null
 	 * if no selection or the selection is not an {@link EObject}.
-	 * 
+	 *
 	 * @return selected {@link EObject} or null
 	 * </pre>
 	 *

@@ -31,7 +31,7 @@ public class IntTypeImpl extends TypeImpl implements IntType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected IntTypeImpl() {
@@ -42,7 +42,7 @@ public class IntTypeImpl extends TypeImpl implements IntType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -53,7 +53,7 @@ public class IntTypeImpl extends TypeImpl implements IntType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

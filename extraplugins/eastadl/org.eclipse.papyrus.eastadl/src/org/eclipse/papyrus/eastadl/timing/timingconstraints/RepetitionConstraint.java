@@ -34,7 +34,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Span</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Span</em>' attribute.
 	 * @see #setSpan(int)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getRepetitionConstraint_Span()
@@ -47,7 +47,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.RepetitionConstraint#getSpan <em>Span</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Span</em>' attribute.
 	 * @see #getSpan()
@@ -62,7 +62,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Lower</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lower</em>' reference.
 	 * @see #setLower(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getRepetitionConstraint_Lower()
@@ -75,7 +75,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.RepetitionConstraint#getLower <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lower</em>' reference.
 	 * @see #getLower()
@@ -90,7 +90,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Upper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Upper</em>' reference.
 	 * @see #setUpper(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getRepetitionConstraint_Upper()
@@ -103,7 +103,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.RepetitionConstraint#getUpper <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Upper</em>' reference.
 	 * @see #getUpper()
@@ -118,7 +118,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Jitter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Jitter</em>' reference.
 	 * @see #setJitter(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getRepetitionConstraint_Jitter()
@@ -131,7 +131,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.RepetitionConstraint#getJitter <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Jitter</em>' reference.
 	 * @see #getJitter()
@@ -146,7 +146,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Event</em>' reference.
 	 * @see #setEvent(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getRepetitionConstraint_Event()
@@ -159,7 +159,7 @@ public interface RepetitionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.RepetitionConstraint#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Event</em>' reference.
 	 * @see #getEvent()

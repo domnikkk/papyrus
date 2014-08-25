@@ -26,13 +26,28 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.*;
-
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTEnum;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTException;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportContainer;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTImportDeclaration;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmFactory;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.TrueFalseDefault;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.VisibilityKind;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitorException;
 
@@ -40,7 +55,7 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
@@ -49,7 +64,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static JdtmmFactory init() {
@@ -68,7 +83,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JdtmmFactoryImpl() {
@@ -78,7 +93,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +139,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +167,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +195,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +207,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +219,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +231,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +243,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +255,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +267,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +279,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +291,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +303,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +315,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +327,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +339,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +351,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +363,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +375,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VisibilityKind createVisibilityKindFromString(EDataType eDataType, String initialValue) {
@@ -374,7 +389,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVisibilityKindToString(EDataType eDataType, Object instanceValue) {
@@ -384,7 +399,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TrueFalseDefault createTrueFalseDefaultFromString(EDataType eDataType, String initialValue) {
@@ -398,7 +413,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTrueFalseDefaultToString(EDataType eDataType, Object instanceValue) {
@@ -408,7 +423,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -420,7 +435,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Integer createintFromString(EDataType eDataType, String initialValue) {
@@ -430,7 +445,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertintToString(EDataType eDataType, Object instanceValue) {
@@ -440,7 +455,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
@@ -450,7 +465,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -460,7 +475,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JDTVisitorException createJDTVisitorExceptionFromString(EDataType eDataType, String initialValue) {
@@ -470,7 +485,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertJDTVisitorExceptionToString(EDataType eDataType, Object instanceValue) {
@@ -480,7 +495,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JDTVisitor createVisitorFromString(EDataType eDataType, String initialValue) {
@@ -490,7 +505,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVisitorToString(EDataType eDataType, Object instanceValue) {
@@ -500,7 +515,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Boolean createbooleanFromString(EDataType eDataType, String initialValue) {
@@ -510,7 +525,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertbooleanToString(EDataType eDataType, Object instanceValue) {
@@ -520,7 +535,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -531,7 +546,7 @@ public class JdtmmFactoryImpl extends EFactoryImpl implements JdtmmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

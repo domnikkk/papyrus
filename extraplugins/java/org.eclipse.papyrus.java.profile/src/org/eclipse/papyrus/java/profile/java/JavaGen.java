@@ -32,7 +32,7 @@ public interface JavaGen extends JavaNamedElement {
 	 * If the meaning of the '<em>Src Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Src Name</em>' attribute.
 	 * @see #setSrcName(String)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaGen_SrcName()
@@ -45,7 +45,7 @@ public interface JavaGen extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaGen#getSrcName <em>Src Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Src Name</em>' attribute.
 	 * @see #getSrcName()
@@ -60,7 +60,7 @@ public interface JavaGen extends JavaNamedElement {
 	 * If the meaning of the '<em>Project Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Project Name</em>' attribute.
 	 * @see #setProjectName(String)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getJavaGen_ProjectName()
@@ -73,7 +73,7 @@ public interface JavaGen extends JavaNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.JavaGen#getProjectName <em>Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Project Name</em>' attribute.
 	 * @see #getProjectName()

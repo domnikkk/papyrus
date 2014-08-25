@@ -50,7 +50,7 @@ public interface ConfigurationDecisionModelEntry extends EAElement {
 	 * <!-- begin-model-doc -->
 	 * If active==TRUE then the entry is selected for the ProductDecisionModel.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Active</em>' attribute.
 	 * @see #setIsActive(boolean)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecisionModelEntry_IsActive()
@@ -63,7 +63,7 @@ public interface ConfigurationDecisionModelEntry extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecisionModelEntry#isIsActive <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Active</em>' attribute.
 	 * @see #isIsActive()
@@ -78,7 +78,7 @@ public interface ConfigurationDecisionModelEntry extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecisionModelEntry_Base_Class()
@@ -91,7 +91,7 @@ public interface ConfigurationDecisionModelEntry extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecisionModelEntry#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()

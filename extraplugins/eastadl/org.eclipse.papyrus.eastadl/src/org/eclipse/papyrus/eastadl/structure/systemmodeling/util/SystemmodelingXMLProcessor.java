@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackag
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SystemmodelingXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class SystemmodelingXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SystemmodelingXMLProcessor() {
@@ -48,7 +48,7 @@ public class SystemmodelingXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the SystemmodelingResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -15,6 +15,7 @@ package org.eclipse.papyrus.layers.stackmodel.layers.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -29,7 +30,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StackedLayerOperatorItemProvider
@@ -44,7 +45,7 @@ public class StackedLayerOperatorItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StackedLayerOperatorItemProvider(AdapterFactory adapterFactory) {
@@ -55,7 +56,7 @@ public class StackedLayerOperatorItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +72,7 @@ public class StackedLayerOperatorItemProvider
 	 * This returns StackedLayerOperator.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +84,7 @@ public class StackedLayerOperatorItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -117,7 +118,7 @@ public class StackedLayerOperatorItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +132,7 @@ public class StackedLayerOperatorItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

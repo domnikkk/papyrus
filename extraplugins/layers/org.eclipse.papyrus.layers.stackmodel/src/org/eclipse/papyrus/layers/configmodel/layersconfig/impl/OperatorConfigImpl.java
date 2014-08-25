@@ -44,7 +44,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OperatorConfigImpl() {
@@ -54,7 +54,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 
 	/**
 	 * Create an EMF instance from the classname.
-	 * 
+	 *
 	 * @return
 	 * @throws InstanciationException
 	 */
@@ -164,7 +164,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

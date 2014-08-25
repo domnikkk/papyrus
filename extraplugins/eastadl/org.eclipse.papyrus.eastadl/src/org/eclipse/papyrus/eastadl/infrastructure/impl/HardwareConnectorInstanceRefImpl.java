@@ -3,15 +3,11 @@
 package org.eclipse.papyrus.eastadl.infrastructure.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.eastadl.infrastructure.HardwareConnectorInstanceRef;
 import org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage;
-
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype;
 import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin;
 
@@ -34,7 +30,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	 * The cached value of the '{@link #getHardwarePin() <em>Hardware Pin</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwarePin()
 	 * @generated
 	 * @ordered
@@ -45,7 +41,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	 * The cached value of the '{@link #getHardwareComponentPrototype() <em>Hardware Component Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareComponentPrototype()
 	 * @generated
 	 * @ordered
@@ -55,7 +51,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HardwareConnectorInstanceRefImpl() {
@@ -65,7 +61,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +72,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +92,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HardwarePin basicGetHardwarePin() {
@@ -106,7 +102,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +117,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +137,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HardwareComponentPrototype basicGetHardwareComponentPrototype() {
@@ -151,7 +147,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +162,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +185,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +204,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +223,7 @@ public class HardwareConnectorInstanceRefImpl extends InstanceRefImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

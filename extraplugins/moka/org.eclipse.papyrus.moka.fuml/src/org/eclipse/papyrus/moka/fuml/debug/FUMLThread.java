@@ -48,7 +48,7 @@ public class FUMLThread extends MokaThread implements IPresentation {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getLabel()
 	 */
 	public String getLabel() {
@@ -75,7 +75,7 @@ public class FUMLThread extends MokaThread implements IPresentation {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getDetails()
 	 */
 	public String getDetails() {
@@ -85,7 +85,7 @@ public class FUMLThread extends MokaThread implements IPresentation {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getImage()
 	 */
 	public Image getImage() {
@@ -95,7 +95,7 @@ public class FUMLThread extends MokaThread implements IPresentation {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.debug.MokaThread#isTerminated()
 	 */
 	@Override

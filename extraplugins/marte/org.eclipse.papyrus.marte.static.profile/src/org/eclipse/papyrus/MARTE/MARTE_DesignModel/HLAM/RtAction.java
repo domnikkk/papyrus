@@ -46,7 +46,7 @@ public interface RtAction extends EObject {
 	 * If the meaning of the '<em>Is Atomic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Atomic</em>' attribute.
 	 * @see #setIsAtomic(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_IsAtomic()
@@ -59,7 +59,7 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#isIsAtomic <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Atomic</em>' attribute.
 	 * @see #isIsAtomic()
@@ -75,7 +75,7 @@ public interface RtAction extends EObject {
 	 * If the meaning of the '<em>Synch Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Synch Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind
 	 * @see #setSynchKind(SynchronizationKind)
@@ -89,7 +89,7 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getSynchKind <em>Synch Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Synch Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind
@@ -105,7 +105,7 @@ public interface RtAction extends EObject {
 	 * If the meaning of the '<em>Msg Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Msg Size</em>' attribute.
 	 * @see #setMsgSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_MsgSize()
@@ -118,7 +118,7 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getMsgSize <em>Msg Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Msg Size</em>' attribute.
 	 * @see #getMsgSize()
@@ -133,7 +133,7 @@ public interface RtAction extends EObject {
 	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #setBase_BehavioralFeature(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_Base_BehavioralFeature()
@@ -146,7 +146,7 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #getBase_BehavioralFeature()
@@ -161,7 +161,7 @@ public interface RtAction extends EObject {
 	 * If the meaning of the '<em>Base Invocation Action</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #setBase_InvocationAction(InvocationAction)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_Base_InvocationAction()
@@ -174,7 +174,7 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_InvocationAction <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #getBase_InvocationAction()

@@ -23,7 +23,7 @@ public class PluginImpl extends ProjectImpl implements Plugin {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PluginImpl() {
@@ -33,7 +33,7 @@ public class PluginImpl extends ProjectImpl implements Plugin {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -40,7 +40,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Event</em>' reference.
 	 * @see #setEvent(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getSporadicConstraint_Event()
@@ -53,7 +53,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.SporadicConstraint#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Event</em>' reference.
 	 * @see #getEvent()
@@ -68,7 +68,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Lower</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lower</em>' reference.
 	 * @see #setLower(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getSporadicConstraint_Lower()
@@ -81,7 +81,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.SporadicConstraint#getLower <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lower</em>' reference.
 	 * @see #getLower()
@@ -96,7 +96,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Upper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Upper</em>' reference.
 	 * @see #setUpper(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getSporadicConstraint_Upper()
@@ -109,7 +109,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.SporadicConstraint#getUpper <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Upper</em>' reference.
 	 * @see #getUpper()
@@ -124,7 +124,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Jitter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Jitter</em>' reference.
 	 * @see #setJitter(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getSporadicConstraint_Jitter()
@@ -137,7 +137,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.SporadicConstraint#getJitter <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Jitter</em>' reference.
 	 * @see #getJitter()
@@ -152,7 +152,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Minimum</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Minimum</em>' reference.
 	 * @see #setMinimum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getSporadicConstraint_Minimum()
@@ -165,7 +165,7 @@ public interface SporadicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.SporadicConstraint#getMinimum <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Minimum</em>' reference.
 	 * @see #getMinimum()

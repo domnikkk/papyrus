@@ -41,7 +41,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	 * The default value of the '{@link #isIsModifier() <em>Is Modifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsModifier()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	 * The cached value of the '{@link #isIsModifier() <em>Is Modifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsModifier()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	 * The cached value of the '{@link #getAccessedElement() <em>Accessed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccessedElement()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwAccessServiceImpl() {
@@ -83,7 +83,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetAccessedElement() {
@@ -150,7 +150,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

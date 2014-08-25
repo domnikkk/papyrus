@@ -42,7 +42,7 @@ public interface IntervalType extends EObject {
 	 * If the meaning of the '<em>Interval Attrib</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Interval Attrib</em>' reference.
 	 * @see #setIntervalAttrib(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getIntervalType_IntervalAttrib()
@@ -55,7 +55,7 @@ public interface IntervalType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType#getIntervalAttrib <em>Interval Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Interval Attrib</em>' reference.
 	 * @see #getIntervalAttrib()
@@ -70,7 +70,7 @@ public interface IntervalType extends EObject {
 	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Data Type</em>' reference.
 	 * @see #setBase_DataType(DataType)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getIntervalType_Base_DataType()
@@ -83,7 +83,7 @@ public interface IntervalType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Data Type</em>' reference.
 	 * @see #getBase_DataType()

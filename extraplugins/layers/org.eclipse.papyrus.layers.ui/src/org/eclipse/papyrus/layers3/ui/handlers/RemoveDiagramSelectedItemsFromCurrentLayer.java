@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.layers3.ui.handlers;
 
+import static org.eclipse.papyrus.layers.ui.Activator.log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -33,7 +35,6 @@ import org.eclipse.papyrus.layers3.ui.commands.AbstractLayersCommand;
 import org.eclipse.papyrus.layers3.ui.view.LayersExplorerView;
 import org.eclipse.papyrus.layers3.ui.view.LayersExplorerViewUtils;
 import org.eclipse.ui.IEditorPart;
-import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 /**
  * Remove the items selected in the diagram from the current Layer.

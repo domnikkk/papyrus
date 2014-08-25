@@ -41,7 +41,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DeriveRequirementImpl() {
@@ -61,7 +61,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -102,7 +102,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

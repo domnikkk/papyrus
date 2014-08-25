@@ -69,7 +69,7 @@ public interface EventChain extends TimingDescription {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.EventChain#getResponse <em>Response</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Response</em>' reference.
 	 * @see #getResponse()
@@ -107,7 +107,7 @@ public interface EventChain extends TimingDescription {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.EventChain#getStimulus <em>Stimulus</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Stimulus</em>' reference.
 	 * @see #getStimulus()

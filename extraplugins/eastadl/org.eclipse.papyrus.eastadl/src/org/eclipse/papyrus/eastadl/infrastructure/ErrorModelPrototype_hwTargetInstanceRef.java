@@ -30,7 +30,7 @@ public interface ErrorModelPrototype_hwTargetInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Hardware Component Protype</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Component Protype</em>' reference.
 	 * @see #setHardwareComponentProtype(HardwareComponentPrototype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype()
@@ -43,7 +43,7 @@ public interface ErrorModelPrototype_hwTargetInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_hwTargetInstanceRef#getHardwareComponentProtype <em>Hardware Component Protype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hardware Component Protype</em>' reference.
 	 * @see #getHardwareComponentProtype()
@@ -59,7 +59,7 @@ public interface ErrorModelPrototype_hwTargetInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Hardware Component Protype context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Component Protype context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getErrorModelPrototype_hwTargetInstanceRef_HardwareComponentProtype_context()
 	 * @model ordered="false"

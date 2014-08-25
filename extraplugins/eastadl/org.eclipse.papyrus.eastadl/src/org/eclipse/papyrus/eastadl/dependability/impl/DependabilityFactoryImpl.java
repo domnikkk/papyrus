@@ -38,14 +38,14 @@ import org.eclipse.papyrus.eastadl.dependability.SeverityClassKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DependabilityFactoryImpl extends EFactoryImpl implements DependabilityFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DependabilityFactory init() {
@@ -77,7 +77,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DependabilityFactoryImpl() {
@@ -87,7 +87,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertControllabilityClassKindToString(EDataType eDataType, Object instanceValue) {
@@ -97,7 +97,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDevelopmentCategoryKindToString(EDataType eDataType, Object instanceValue) {
@@ -107,7 +107,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertExposureClassKindToString(EDataType eDataType, Object instanceValue) {
@@ -117,7 +117,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSeverityClassKindToString(EDataType eDataType, Object instanceValue) {
@@ -127,7 +127,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ControllabilityClassKind createControllabilityClassKindFromString(EDataType eDataType, String initialValue) {
@@ -187,7 +187,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DevelopmentCategoryKind createDevelopmentCategoryKindFromString(EDataType eDataType, String initialValue) {
@@ -213,7 +213,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExposureClassKind createExposureClassKindFromString(EDataType eDataType, String initialValue) {
@@ -227,7 +227,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SeverityClassKind createSeverityClassKindFromString(EDataType eDataType, String initialValue) {
@@ -311,7 +311,7 @@ public class DependabilityFactoryImpl extends EFactoryImpl implements Dependabil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

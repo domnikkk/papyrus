@@ -23,16 +23,14 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
  * This is the central singleton for the Jdtmm editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public final class JdtmmEditorPlugin extends EMFPlugin {
@@ -40,7 +38,7 @@ public final class JdtmmEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final JdtmmEditorPlugin INSTANCE = new JdtmmEditorPlugin();
@@ -49,7 +47,7 @@ public final class JdtmmEditorPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -58,7 +56,7 @@ public final class JdtmmEditorPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JdtmmEditorPlugin() {
@@ -70,7 +68,7 @@ public final class JdtmmEditorPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -83,7 +81,7 @@ public final class JdtmmEditorPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -95,7 +93,7 @@ public final class JdtmmEditorPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipseUIPlugin {
@@ -103,7 +101,7 @@ public final class JdtmmEditorPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public Implementation() {

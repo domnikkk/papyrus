@@ -50,7 +50,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	 * The cached value of the '{@link #getOwner() <em>Owner</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwner()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	 * The cached value of the '{@link #getBase_ExecutionSpecification() <em>Base Execution Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ExecutionSpecification()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	 * The cached value of the '{@link #getBase_BehavioralFeature() <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	 * The cached value of the '{@link #getBase_Collaboration() <em>Base Collaboration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Collaboration()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	 * The cached value of the '{@link #getBase_CollaborationUse() <em>Base Collaboration Use</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_CollaborationUse()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GrServiceImpl() {
@@ -125,7 +125,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Resource basicGetOwner() {
@@ -166,7 +166,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExecutionSpecification basicGetBase_ExecutionSpecification() {
@@ -211,7 +211,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetBase_BehavioralFeature() {
@@ -256,7 +256,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -301,7 +301,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +336,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Collaboration basicGetBase_Collaboration() {
@@ -346,7 +346,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +361,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +381,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CollaborationUse basicGetBase_CollaborationUse() {
@@ -391,7 +391,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +406,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -449,7 +449,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -480,7 +480,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -511,7 +511,7 @@ public class GrServiceImpl extends EObjectImpl implements GrService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,10 +13,11 @@ package org.eclipse.papyrus.dd.dc.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.dd.dc.*;
+import org.eclipse.papyrus.dd.dc.Bounds;
+import org.eclipse.papyrus.dd.dc.DCPackage;
+import org.eclipse.papyrus.dd.dc.Dimension;
+import org.eclipse.papyrus.dd.dc.Point;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance

@@ -33,14 +33,14 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getLabel()
 	 */
 	abstract public String getLabel();
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getDetails()
 	 */
 	public String getDetails() {
@@ -50,7 +50,7 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.ui.presentation.IPresentation#getImage()
 	 */
 	public Image getImage() {
@@ -63,7 +63,7 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.debug.MokaStackFrame#hasVariables()
 	 */
 	@Override
@@ -73,7 +73,7 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.debug.MokaStackFrame#getVariables()
 	 */
 	@Override

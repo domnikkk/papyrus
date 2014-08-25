@@ -23,7 +23,7 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * Set of utilities methods for handlers {@link AbstractHandler}.
- * 
+ *
  * @author cedric dumoulin
  *
  */

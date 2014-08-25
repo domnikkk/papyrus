@@ -46,7 +46,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The default value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCapacity()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCapacity()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The default value of the '{@link #getIsPreemp() <em>Is Preemp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsPreemp()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The cached value of the '{@link #getIsPreemp() <em>Is Preemp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsPreemp()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The default value of the '{@link #getIsConsum() <em>Is Consum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsConsum()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The cached value of the '{@link #getIsConsum() <em>Is Consum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsConsum()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The cached value of the '{@link #getAcquisT() <em>Acquis T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAcquisT()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	 * The cached value of the '{@link #getReleaseT() <em>Release T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReleaseT()
 	 * @generated
 	 * @ordered
@@ -133,7 +133,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SaSharedResourceImpl() {
@@ -143,7 +143,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +283,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -314,7 +314,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +365,7 @@ public class SaSharedResourceImpl extends MutualExclusionResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

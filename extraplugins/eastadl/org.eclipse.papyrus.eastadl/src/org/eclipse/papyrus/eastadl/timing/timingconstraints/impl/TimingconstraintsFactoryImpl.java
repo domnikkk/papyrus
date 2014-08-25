@@ -47,14 +47,14 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TimingconstraintsFactoryImpl extends EFactoryImpl implements TimingconstraintsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TimingconstraintsFactory init() {
@@ -86,7 +86,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingconstraintsFactoryImpl() {
@@ -96,7 +96,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +308,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +320,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +332,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +344,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +356,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +368,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComparisonKind createComparisonKindFromString(EDataType eDataType, String initialValue) {
@@ -394,7 +394,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertComparisonKindToString(EDataType eDataType, Object instanceValue) {
@@ -404,7 +404,7 @@ public class TimingconstraintsFactoryImpl extends EFactoryImpl implements Timing
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -53,7 +53,7 @@ public interface ReactionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Scope</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Scope</em>' reference.
 	 * @see #setScope(EventChain)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getReactionConstraint_Scope()
@@ -66,7 +66,7 @@ public interface ReactionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ReactionConstraint#getScope <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Scope</em>' reference.
 	 * @see #getScope()
@@ -81,7 +81,7 @@ public interface ReactionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Maximum</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Maximum</em>' reference.
 	 * @see #setMaximum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getReactionConstraint_Maximum()
@@ -94,7 +94,7 @@ public interface ReactionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ReactionConstraint#getMaximum <em>Maximum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Maximum</em>' reference.
 	 * @see #getMaximum()
@@ -109,7 +109,7 @@ public interface ReactionConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Minimum</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Minimum</em>' reference.
 	 * @see #setMinimum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getReactionConstraint_Minimum()
@@ -122,7 +122,7 @@ public interface ReactionConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ReactionConstraint#getMinimum <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Minimum</em>' reference.
 	 * @see #getMinimum()

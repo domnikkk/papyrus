@@ -48,7 +48,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	 * The cached value of the '{@link #getSubPackage() <em>Sub Package</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubPackage()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EAPackageImpl() {
@@ -90,7 +90,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -159,7 +159,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -221,7 +221,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public abstract class EAPackageImpl extends EAElementImpl implements EAPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

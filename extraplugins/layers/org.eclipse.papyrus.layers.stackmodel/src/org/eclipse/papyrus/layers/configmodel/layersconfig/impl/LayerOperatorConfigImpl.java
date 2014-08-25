@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.layers.configmodel.layersconfig.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -37,7 +38,7 @@ public class LayerOperatorConfigImpl extends InstanciableElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorConfigImpl() {
@@ -47,7 +48,7 @@ public class LayerOperatorConfigImpl extends InstanciableElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +84,7 @@ public class LayerOperatorConfigImpl extends InstanciableElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

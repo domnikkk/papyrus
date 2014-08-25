@@ -50,7 +50,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 	 * The cached value of the '{@link #getBase_Interface() <em>Base Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Interface()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionClientServerInterfaceImpl() {
@@ -68,7 +68,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Interface basicGetBase_Interface() {
@@ -159,7 +159,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class FunctionClientServerInterfaceImpl extends TraceableSpecificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

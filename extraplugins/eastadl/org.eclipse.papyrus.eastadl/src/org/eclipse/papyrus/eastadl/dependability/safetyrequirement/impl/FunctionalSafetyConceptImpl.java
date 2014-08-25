@@ -44,7 +44,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	 * The cached value of the '{@link #getFunctionalSafetyRequirement() <em>Functional Safety Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionalSafetyRequirement()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionalSafetyConceptImpl() {
@@ -64,7 +64,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -112,7 +112,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class FunctionalSafetyConceptImpl extends RequirementsHierarchyImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -42,7 +42,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	 * The cached value of the '{@link #getBase_InvocationAction() <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_InvocationAction()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	 * The cached value of the '{@link #getOnFeature() <em>On Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOnFeature()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GCMInvocationActionImpl() {
@@ -73,7 +73,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvocationAction basicGetBase_InvocationAction() {
@@ -114,7 +114,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Feature basicGetOnFeature() {
@@ -159,7 +159,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class GCMInvocationActionImpl extends EObjectImpl implements GCMInvocatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

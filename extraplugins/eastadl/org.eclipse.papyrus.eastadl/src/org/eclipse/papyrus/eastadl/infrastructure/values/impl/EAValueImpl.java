@@ -31,7 +31,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getBase_ValueSpecification() <em>Base Value Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ValueSpecification()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EAValueImpl() {
@@ -62,7 +62,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -103,7 +103,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSpecification basicGetBase_ValueSpecification() {
@@ -148,7 +148,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public abstract class EAValueImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

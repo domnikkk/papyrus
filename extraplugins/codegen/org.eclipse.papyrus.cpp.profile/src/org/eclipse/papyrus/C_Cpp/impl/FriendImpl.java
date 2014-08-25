@@ -41,7 +41,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	 * The cached value of the '{@link #getBase_dependency() <em>Base dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_dependency()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	 * The cached value of the '{@link #getBase_operation() <em>Base operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_operation()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FriendImpl() {
@@ -72,7 +72,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency basicGetBase_dependency() {
@@ -113,7 +113,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetBase_operation() {
@@ -158,7 +158,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class FriendImpl extends MinimalEObjectImpl.Container implements Friend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

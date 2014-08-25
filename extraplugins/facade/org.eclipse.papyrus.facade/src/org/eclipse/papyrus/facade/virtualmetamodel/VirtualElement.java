@@ -42,7 +42,7 @@ public interface VirtualElement extends EObject {
 	 * If the meaning of the '<em>Alias Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Alias Name</em>' attribute.
 	 * @see #setAliasName(String)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualElement_AliasName()
@@ -55,7 +55,7 @@ public interface VirtualElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#getAliasName <em>Alias Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Alias Name</em>' attribute.
 	 * @see #getAliasName()
@@ -70,7 +70,7 @@ public interface VirtualElement extends EObject {
 	 * If the meaning of the '<em>Kept</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kept</em>' attribute.
 	 * @see #setKept(boolean)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualElement_Kept()
@@ -83,7 +83,7 @@ public interface VirtualElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#isKept <em>Kept</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kept</em>' attribute.
 	 * @see #isKept()
@@ -98,7 +98,7 @@ public interface VirtualElement extends EObject {
 	 * If the meaning of the '<em>Represented Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Represented Element</em>' reference.
 	 * @see #setRepresentedElement(EObject)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualElement_RepresentedElement()
@@ -111,7 +111,7 @@ public interface VirtualElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#getRepresentedElement <em>Represented Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Represented Element</em>' reference.
 	 * @see #getRepresentedElement()
@@ -126,7 +126,7 @@ public interface VirtualElement extends EObject {
 	 * If the meaning of the '<em>Use Represented</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Use Represented</em>' attribute.
 	 * @see #setUseRepresented(boolean)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualElement_UseRepresented()
@@ -139,7 +139,7 @@ public interface VirtualElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement#isUseRepresented <em>Use Represented</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Use Represented</em>' attribute.
 	 * @see #isUseRepresented()

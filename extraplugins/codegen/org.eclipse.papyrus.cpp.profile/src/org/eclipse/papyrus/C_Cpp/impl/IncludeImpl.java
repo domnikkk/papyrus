@@ -44,7 +44,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBody()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The cached value of the '{@link #getBody() <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBody()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The default value of the '{@link #getPreBody() <em>Pre Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreBody()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The cached value of the '{@link #getPreBody() <em>Pre Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreBody()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The cached value of the '{@link #getBase_package() <em>Base package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_package()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The cached value of the '{@link #getBase_class() <em>Base class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_class()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * The cached value of the '{@link #getBase_PackageImport() <em>Base Package Import</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_PackageImport()
 	 * @generated
 	 * @ordered
@@ -142,7 +142,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IncludeImpl() {
@@ -152,7 +152,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_package() {
@@ -271,7 +271,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_class() {
@@ -316,7 +316,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +351,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PackageImport basicGetBase_PackageImport() {
@@ -361,7 +361,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -376,7 +376,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -410,7 +410,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +441,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -472,7 +472,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -497,7 +497,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

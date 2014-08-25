@@ -36,7 +36,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	 * The cached value of the '{@link #getBase_Extend() <em>Base Extend</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Extend()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	 * The cached value of the '{@link #getExtensionLocation() <em>Extension Location</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtensionLocation()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	 * The cached value of the '{@link #getExtendedCase() <em>Extended Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtendedCase()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtendImpl() {
@@ -78,7 +78,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Extend basicGetBase_Extend() {
@@ -119,7 +119,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UseCase basicGetExtendedCase() {
@@ -178,7 +178,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -242,7 +242,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public class ExtendImpl extends RelationshipImpl implements Extend {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

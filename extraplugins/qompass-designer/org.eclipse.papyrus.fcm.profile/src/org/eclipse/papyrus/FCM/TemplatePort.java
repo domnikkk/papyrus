@@ -42,7 +42,7 @@ public interface TemplatePort extends Port {
 	 * If the meaning of the '<em>Bound Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bound Type</em>' reference.
 	 * @see #isSetBoundType()
 	 * @see #unsetBoundType()
@@ -57,7 +57,7 @@ public interface TemplatePort extends Port {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.TemplatePort#getBoundType <em>Bound Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Bound Type</em>' reference.
 	 * @see #isSetBoundType()
@@ -71,7 +71,7 @@ public interface TemplatePort extends Port {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.FCM.TemplatePort#getBoundType <em>Bound Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSetBoundType()
 	 * @see #getBoundType()
 	 * @see #setBoundType(PortKind)
@@ -83,7 +83,7 @@ public interface TemplatePort extends Port {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.FCM.TemplatePort#getBoundType <em>Bound Type</em>}' reference is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether the value of the '<em>Bound Type</em>' reference is set.
 	 * @see #unsetBoundType()
 	 * @see #getBoundType()

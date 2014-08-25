@@ -40,7 +40,7 @@ public class BindingUtils {
 
 	/**
 	 * Bind an operation by copying the signature from the actual.
-	 * 
+	 *
 	 * @param copy
 	 *            the copier
 	 * @param actual
@@ -76,7 +76,7 @@ public class BindingUtils {
 
 	/**
 	 * Instantiate a behavior
-	 * 
+	 *
 	 * @param copy
 	 *            copier
 	 * @param actual

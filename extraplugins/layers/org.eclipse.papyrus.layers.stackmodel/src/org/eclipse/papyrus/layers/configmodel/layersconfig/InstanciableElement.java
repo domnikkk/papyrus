@@ -42,7 +42,7 @@ public interface InstanciableElement extends FolderElement {
 	 * If the meaning of the '<em>Classname</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Classname</em>' attribute.
 	 * @see #setClassname(String)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getInstanciableElement_Classname()
@@ -55,7 +55,7 @@ public interface InstanciableElement extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getClassname <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Classname</em>' attribute.
 	 * @see #getClassname()
@@ -70,7 +70,7 @@ public interface InstanciableElement extends FolderElement {
 	 * If the meaning of the '<em>Bundle ID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bundle ID</em>' attribute.
 	 * @see #setBundleID(String)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getInstanciableElement_BundleID()
@@ -83,7 +83,7 @@ public interface InstanciableElement extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getBundleID <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Bundle ID</em>' attribute.
 	 * @see #getBundleID()
@@ -98,7 +98,7 @@ public interface InstanciableElement extends FolderElement {
 	 * If the meaning of the '<em>Display Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Name</em>' attribute.
 	 * @see #setDisplayName(String)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getInstanciableElement_DisplayName()
@@ -111,7 +111,7 @@ public interface InstanciableElement extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getDisplayName <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Display Name</em>' attribute.
 	 * @see #getDisplayName()
@@ -126,7 +126,7 @@ public interface InstanciableElement extends FolderElement {
 	 * If the meaning of the '<em>Icon Path</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Icon Path</em>' attribute.
 	 * @see #setIconPath(String)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getInstanciableElement_IconPath()
@@ -139,7 +139,7 @@ public interface InstanciableElement extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getIconPath <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Icon Path</em>' attribute.
 	 * @see #getIconPath()
@@ -156,7 +156,7 @@ public interface InstanciableElement extends FolderElement {
 	 * If the meaning of the '<em>Classname Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Classname Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind
 	 * @see #setClassnameKind(ClassnameKind)
@@ -170,7 +170,7 @@ public interface InstanciableElement extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getClassnameKind <em>Classname Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Classname Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind

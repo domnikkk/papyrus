@@ -40,7 +40,7 @@ public interface Mapping extends EObject {
 	 * If the meaning of the '<em>Uml Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Uml Element</em>' reference.
 	 * @see #setUmlElement(EObject)
 	 * @see org.eclipse.papyrus.facademapping.FacademappingPackage#getMapping_UmlElement()
@@ -53,7 +53,7 @@ public interface Mapping extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facademapping.Mapping#getUmlElement <em>Uml Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Uml Element</em>' reference.
 	 * @see #getUmlElement()
@@ -68,7 +68,7 @@ public interface Mapping extends EObject {
 	 * If the meaning of the '<em>Specific Domain Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Specific Domain Element</em>' reference.
 	 * @see #setSpecificDomainElement(EObject)
 	 * @see org.eclipse.papyrus.facademapping.FacademappingPackage#getMapping_SpecificDomainElement()
@@ -81,7 +81,7 @@ public interface Mapping extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facademapping.Mapping#getSpecificDomainElement <em>Specific Domain Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Specific Domain Element</em>' reference.
 	 * @see #getSpecificDomainElement()

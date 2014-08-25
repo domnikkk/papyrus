@@ -57,7 +57,7 @@ public interface Item extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getItem_Base_Class()
@@ -70,7 +70,7 @@ public interface Item extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.Item#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -86,7 +86,7 @@ public interface Item extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * It shall be determined whether the item is a modification of an existing item or if it is a new development.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Development Category</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DevelopmentCategoryKind
 	 * @see #setDevelopmentCategory(DevelopmentCategoryKind)
@@ -104,7 +104,7 @@ public interface Item extends TraceableSpecification {
 	 * If the meaning of the '<em>Vehicle Feature</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vehicle Feature</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getItem_VehicleFeature()
 	 * @model required="true" ordered="false"
@@ -116,7 +116,7 @@ public interface Item extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.Item#getDevelopmentCategory <em>Development Category</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Development Category</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DevelopmentCategoryKind

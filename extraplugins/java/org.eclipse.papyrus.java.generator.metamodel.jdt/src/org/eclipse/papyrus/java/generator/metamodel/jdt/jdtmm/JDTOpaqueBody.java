@@ -31,7 +31,7 @@ public interface JDTOpaqueBody extends JDTMethodBody {
 	 * If the meaning of the '<em>body</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>body</em>' attribute.
 	 * @see #set_body(String)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTOpaqueBody__body()
@@ -44,7 +44,7 @@ public interface JDTOpaqueBody extends JDTMethodBody {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody#get_body <em>body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>body</em>' attribute.
 	 * @see #get_body()

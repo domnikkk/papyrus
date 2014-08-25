@@ -60,7 +60,7 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.xtext.glue.PopupEditorConfiguration#getTextToEdit(java.lang.Object)
 	 */
 
@@ -173,7 +173,7 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor
 		 * , org.eclipse.core.runtime.IAdaptable)

@@ -41,7 +41,7 @@ public interface Repository extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage#getRepository_Name()
@@ -54,7 +54,7 @@ public interface Repository extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.internal.core.repositories.Repository#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -69,7 +69,7 @@ public interface Repository extends EObject {
 	 * If the meaning of the '<em>URL</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>URL</em>' attribute.
 	 * @see #setURL(String)
 	 * @see org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage#getRepository_URL()
@@ -83,7 +83,7 @@ public interface Repository extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.internal.core.repositories.Repository#getURL <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>URL</em>' attribute.
 	 * @see #getURL()
@@ -98,7 +98,7 @@ public interface Repository extends EObject {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage#getRepository_Description()
@@ -111,7 +111,7 @@ public interface Repository extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.internal.core.repositories.Repository#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -126,7 +126,7 @@ public interface Repository extends EObject {
 	 * If the meaning of the '<em>UUID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>UUID</em>' attribute.
 	 * @see #setUUID(String)
 	 * @see org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage#getRepository_UUID()
@@ -139,7 +139,7 @@ public interface Repository extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.internal.core.repositories.Repository#getUUID <em>UUID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>UUID</em>' attribute.
 	 * @see #getUUID()

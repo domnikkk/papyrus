@@ -57,7 +57,7 @@ public interface ContainerConfiguration extends ConfigurationDecisionModel {
 	 * If the meaning of the '<em>Configured Container</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Configured Container</em>' reference.
 	 * @see #setConfiguredContainer(ConfigurableContainer)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getContainerConfiguration_ConfiguredContainer()
@@ -70,7 +70,7 @@ public interface ContainerConfiguration extends ConfigurationDecisionModel {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ContainerConfiguration#getConfiguredContainer <em>Configured Container</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Configured Container</em>' reference.
 	 * @see #getConfiguredContainer()

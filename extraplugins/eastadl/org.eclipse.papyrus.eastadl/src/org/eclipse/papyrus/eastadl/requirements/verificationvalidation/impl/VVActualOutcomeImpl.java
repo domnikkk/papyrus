@@ -30,7 +30,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	 * The cached value of the '{@link #getIntendedOutcome() <em>Intended Outcome</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIntendedOutcome()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VVActualOutcomeImpl() {
@@ -61,7 +61,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -102,7 +102,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VVIntendedOutcome basicGetIntendedOutcome() {
@@ -147,7 +147,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class VVActualOutcomeImpl extends TraceableSpecificationImpl implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

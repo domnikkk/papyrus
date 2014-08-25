@@ -36,7 +36,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VVTargetImpl() {
@@ -67,7 +67,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -108,7 +108,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -193,7 +193,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class VVTargetImpl extends TraceableSpecificationImpl implements VVTarget
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

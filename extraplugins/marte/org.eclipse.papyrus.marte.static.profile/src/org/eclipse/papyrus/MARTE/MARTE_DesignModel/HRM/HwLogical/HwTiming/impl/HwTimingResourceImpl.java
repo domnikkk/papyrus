@@ -31,7 +31,7 @@ public class HwTimingResourceImpl extends HwResourceImpl implements HwTimingReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwTimingResourceImpl() {
@@ -41,7 +41,7 @@ public class HwTimingResourceImpl extends HwResourceImpl implements HwTimingReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

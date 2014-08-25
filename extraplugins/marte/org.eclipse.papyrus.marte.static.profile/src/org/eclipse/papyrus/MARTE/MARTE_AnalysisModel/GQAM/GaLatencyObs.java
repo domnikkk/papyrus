@@ -43,7 +43,7 @@ public interface GaLatencyObs extends GaTimedObs {
 	 * If the meaning of the '<em>Latency</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Latency</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaLatencyObs_Latency()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -59,7 +59,7 @@ public interface GaLatencyObs extends GaTimedObs {
 	 * If the meaning of the '<em>Miss</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Miss</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaLatencyObs_Miss()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" ordered="false"
@@ -75,7 +75,7 @@ public interface GaLatencyObs extends GaTimedObs {
 	 * If the meaning of the '<em>Utility</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utility</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaLatencyObs_Utility()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.UtilityType" ordered="false"
@@ -91,7 +91,7 @@ public interface GaLatencyObs extends GaTimedObs {
 	 * If the meaning of the '<em>Max Jitter</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Max Jitter</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaLatencyObs_MaxJitter()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"

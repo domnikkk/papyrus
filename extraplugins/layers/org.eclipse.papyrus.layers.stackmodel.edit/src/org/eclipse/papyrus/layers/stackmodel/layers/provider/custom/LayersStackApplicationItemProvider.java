@@ -33,7 +33,7 @@ public class LayersStackApplicationItemProvider extends org.eclipse.papyrus.laye
 
 	/**
 	 * Only return the owned stacks
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 *
 	 * @param object

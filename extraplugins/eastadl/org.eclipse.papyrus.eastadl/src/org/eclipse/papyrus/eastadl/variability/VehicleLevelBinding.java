@@ -56,7 +56,7 @@ public interface VehicleLevelBinding extends ConfigurationDecisionModel {
 	 * If the meaning of the '<em>Source Vehicle Feature Model</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source Vehicle Feature Model</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVehicleLevelBinding_SourceVehicleFeatureModel()
 	 * @model
@@ -72,7 +72,7 @@ public interface VehicleLevelBinding extends ConfigurationDecisionModel {
 	 * If the meaning of the '<em>Target Feature Model</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target Feature Model</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVehicleLevelBinding_TargetFeatureModel()
 	 * @model

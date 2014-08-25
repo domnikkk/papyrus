@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.exprmatcher;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +27,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
 import org.eclipse.papyrus.layers.stackmodel.notifier.LayersTreeEventNotifier;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLPackage;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 
 /**
@@ -50,7 +51,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Something happen on the tree of object
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
@@ -106,7 +107,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the notification indicates a change in a uml element.
-	 * 
+	 *
 	 * @param notification
 	 * @return
 	 */
@@ -133,7 +134,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the notification indicates that a Diagram root view is modifified.
-	 * 
+	 *
 	 * @param notification
 	 * @return
 	 */
@@ -199,7 +200,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -228,7 +229,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeEventListener(IValueChangedEventListener listener) {
@@ -238,7 +239,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void fireValueChangedEvent(Notification msg) {
@@ -269,7 +270,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Handle View::element hierarchy in the self adapt mechanism.
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#setTarget(org.eclipse.emf.ecore.EObject)
 	 *
 	 * @param target
@@ -305,7 +306,7 @@ public class ValueChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Handle View::element hierarchy in the self adapt mechanism.
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#unsetTarget(org.eclipse.emf.ecore.EObject)
 	 *
 	 * @param target

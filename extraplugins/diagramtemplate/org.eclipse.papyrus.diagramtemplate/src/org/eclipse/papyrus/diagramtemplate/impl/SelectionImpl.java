@@ -30,7 +30,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	 * The default value of the '{@link #isRecursively() <em>Recursively</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRecursively()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	 * The cached value of the '{@link #isRecursively() <em>Recursively</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRecursively()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SelectionImpl() {
@@ -61,7 +61,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isRecursively() {
@@ -82,7 +82,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRecursively(boolean newRecursively) {
@@ -96,7 +96,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class SelectionImpl extends AbstractSelectionImpl implements Selection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

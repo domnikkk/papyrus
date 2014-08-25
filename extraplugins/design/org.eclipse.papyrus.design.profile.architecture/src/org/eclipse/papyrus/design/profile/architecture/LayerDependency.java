@@ -45,7 +45,7 @@ public interface LayerDependency extends Element {
 	 * If the meaning of the '<em>Is Deprecated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #setIsDeprecated(boolean)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayerDependency_IsDeprecated()
@@ -58,7 +58,7 @@ public interface LayerDependency extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.LayerDependency#isDeprecated <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #isDeprecated()
@@ -75,7 +75,7 @@ public interface LayerDependency extends Element {
 	 * A comment associated to the isDeprecated=true
 	 * </p>
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #setDeprecatedComment(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayerDependency_DeprecatedComment()
@@ -88,7 +88,7 @@ public interface LayerDependency extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.LayerDependency#getDeprecatedComment <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #getDeprecatedComment()
@@ -103,7 +103,7 @@ public interface LayerDependency extends Element {
 	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Dependency</em>' reference.
 	 * @see #setBase_Dependency(Dependency)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayerDependency_Base_Dependency()
@@ -116,7 +116,7 @@ public interface LayerDependency extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.LayerDependency#getBase_Dependency <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Dependency</em>' reference.
 	 * @see #getBase_Dependency()

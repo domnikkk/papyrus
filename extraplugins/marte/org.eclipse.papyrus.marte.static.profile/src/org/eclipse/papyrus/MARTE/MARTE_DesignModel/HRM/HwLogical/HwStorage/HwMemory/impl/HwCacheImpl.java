@@ -44,7 +44,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLevel()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLevel()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The default value of the '{@link #getStructure() <em>Structure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStructure()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The cached value of the '{@link #getStructure() <em>Structure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStructure()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The default value of the '{@link #getRepl_Policy() <em>Repl Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepl_Policy()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The cached value of the '{@link #getRepl_Policy() <em>Repl Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepl_Policy()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The default value of the '{@link #getWritePolicy() <em>Write Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWritePolicy()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	 * The cached value of the '{@link #getWritePolicy() <em>Write Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWritePolicy()
 	 * @generated
 	 * @ordered
@@ -153,7 +153,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwCacheImpl() {
@@ -163,7 +163,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +278,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +327,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +383,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +406,7 @@ public class HwCacheImpl extends HwMemoryImpl implements HwCache {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

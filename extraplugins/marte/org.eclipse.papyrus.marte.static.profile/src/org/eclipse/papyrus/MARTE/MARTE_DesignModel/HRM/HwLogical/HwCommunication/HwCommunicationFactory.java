@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HwCommunicationFactory eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwCommunicationFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * Returns a new object of class '<em>Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Resource</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw Arbiter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw Arbiter</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw Media</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw Media</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw Bus</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw Bus</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw Bridge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw Bridge</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * Returns a new object of class '<em>Hw End Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hw End Point</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface HwCommunicationFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

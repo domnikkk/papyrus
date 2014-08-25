@@ -61,7 +61,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Change Attribute</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Change Attribute</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowChangeAttribute(DeviationPermissionKind)
@@ -79,7 +79,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Change Cardinality</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Change Cardinality</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowChangeCardinality(DeviationPermissionKind)
@@ -97,7 +97,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Change Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Change Description</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowChangeDescription(DeviationPermissionKind)
@@ -115,7 +115,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Change Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Change Name</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowChangeName(DeviationPermissionKind)
@@ -133,7 +133,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Move</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Move</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowMove(DeviationPermissionKind)
@@ -151,7 +151,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Reduction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Reduction</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowReduction(DeviationPermissionKind)
@@ -169,7 +169,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Refinement</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Refinement</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowRefinement(DeviationPermissionKind)
@@ -187,7 +187,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Regrouping</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Regrouping</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowRegrouping(DeviationPermissionKind)
@@ -205,7 +205,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Allow Removal</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allow Removal</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
 	 * @see #setAllowRemoval(DeviationPermissionKind)
@@ -218,7 +218,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowChangeAttribute <em>Allow Change Attribute</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Change Attribute</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -230,7 +230,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowChangeCardinality <em>Allow Change Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Change Cardinality</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -243,7 +243,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowChangeDescription <em>Allow Change Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Change Description</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -255,7 +255,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowChangeName <em>Allow Change Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Change Name</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -267,7 +267,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowMove <em>Allow Move</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Move</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -279,7 +279,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowReduction <em>Allow Reduction</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Reduction</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -291,7 +291,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowRefinement <em>Allow Refinement</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Refinement</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -303,7 +303,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowRegrouping <em>Allow Regrouping</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Regrouping</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -315,7 +315,7 @@ public interface DeviationAttributeSet extends EAElement {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getAllowRemoval <em>Allow Removal</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allow Removal</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationPermissionKind
@@ -331,7 +331,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Data Type</em>' reference.
 	 * @see #setBase_DataType(DataType)
 	 * @see org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.VehiclefeaturemodelingPackage#getDeviationAttributeSet_Base_DataType()
@@ -344,7 +344,7 @@ public interface DeviationAttributeSet extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.DeviationAttributeSet#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Data Type</em>' reference.
 	 * @see #getBase_DataType()

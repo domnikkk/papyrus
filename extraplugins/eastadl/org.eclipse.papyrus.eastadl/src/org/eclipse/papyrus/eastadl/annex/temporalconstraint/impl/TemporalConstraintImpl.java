@@ -42,7 +42,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	 * The cached value of the '{@link #getTransitionEvent() <em>Transition Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransitionEvent()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	 * The cached value of the '{@link #getTimeCondition() <em>Time Condition</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeCondition()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	 * The cached value of the '{@link #getTransition() <em>Transition</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransition()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	 * The cached value of the '{@link #getState() <em>State</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getState()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	 * The cached value of the '{@link #getInitState() <em>Init State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInitState()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	 * The cached value of the '{@link #getAssertion() <em>Assertion</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAssertion()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TemporalConstraintImpl() {
@@ -117,7 +117,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State basicGetInitState() {
@@ -214,7 +214,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAExpression basicGetAssertion() {
@@ -259,7 +259,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +305,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -341,7 +341,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class TemporalConstraintImpl extends EAElementImpl implements TemporalCon
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

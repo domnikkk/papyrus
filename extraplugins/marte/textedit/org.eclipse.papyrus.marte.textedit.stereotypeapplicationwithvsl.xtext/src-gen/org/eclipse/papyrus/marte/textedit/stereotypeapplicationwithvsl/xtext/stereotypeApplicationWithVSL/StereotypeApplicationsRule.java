@@ -3,9 +3,7 @@
 package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -35,7 +33,7 @@ public interface StereotypeApplicationsRule extends EObject
 	 * If the meaning of the '<em>Stereotype Applications</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotype Applications</em>' containment reference list.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage#getStereotypeApplicationsRule_StereotypeApplications()
 	 * @model containment="true"
@@ -46,7 +44,7 @@ public interface StereotypeApplicationsRule extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getExpectedType(this) ;'"
 	 * @generated
@@ -56,7 +54,7 @@ public interface StereotypeApplicationsRule extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getContextElement(this) ;'"
 	 * @generated

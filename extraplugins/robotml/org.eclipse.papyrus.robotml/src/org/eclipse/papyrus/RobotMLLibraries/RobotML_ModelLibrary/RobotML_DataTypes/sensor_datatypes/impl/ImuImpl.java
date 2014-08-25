@@ -6,23 +6,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Imu;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -49,7 +42,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -60,7 +53,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	 * The cached value of the '{@link #getOrientation() <em>Orientation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrientation()
 	 * @generated
 	 * @ordered
@@ -71,7 +64,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	 * The cached value of the '{@link #getOrientation_covariance() <em>Orientation covariance</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrientation_covariance()
 	 * @generated
 	 * @ordered
@@ -82,7 +75,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	 * The cached value of the '{@link #getAngular_velocity() <em>Angular velocity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAngular_velocity()
 	 * @generated
 	 * @ordered
@@ -93,7 +86,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	 * The cached value of the '{@link #getAngular_velocity_covariance() <em>Angular velocity covariance</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAngular_velocity_covariance()
 	 * @generated
 	 * @ordered
@@ -104,7 +97,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	 * The cached value of the '{@link #getLinear_acceleration() <em>Linear acceleration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLinear_acceleration()
 	 * @generated
 	 * @ordered
@@ -115,7 +108,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	 * The cached value of the '{@link #getLinear_acceleration_covariance() <em>Linear acceleration covariance</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLinear_acceleration_covariance()
 	 * @generated
 	 * @ordered
@@ -125,7 +118,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ImuImpl() {
@@ -135,7 +128,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +139,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -156,7 +149,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -176,7 +169,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -201,7 +194,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Quaternion getOrientation() {
@@ -211,7 +204,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOrientation(Quaternion newOrientation, NotificationChain msgs) {
@@ -231,7 +224,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOrientation(Quaternion newOrientation) {
@@ -256,7 +249,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getOrientation_covariance() {
@@ -269,7 +262,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Vector3 getAngular_velocity() {
@@ -279,7 +272,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetAngular_velocity(Vector3 newAngular_velocity, NotificationChain msgs) {
@@ -299,7 +292,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAngular_velocity(Vector3 newAngular_velocity) {
@@ -324,7 +317,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getAngular_velocity_covariance() {
@@ -337,7 +330,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Vector3 getLinear_acceleration() {
@@ -347,7 +340,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLinear_acceleration(Vector3 newLinear_acceleration, NotificationChain msgs) {
@@ -367,7 +360,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLinear_acceleration(Vector3 newLinear_acceleration) {
@@ -392,7 +385,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getLinear_acceleration_covariance() {
@@ -405,7 +398,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,7 +419,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,7 +446,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -491,7 +484,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -525,7 +518,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -552,7 +545,7 @@ public class ImuImpl extends MinimalEObjectImpl.Container implements Imu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

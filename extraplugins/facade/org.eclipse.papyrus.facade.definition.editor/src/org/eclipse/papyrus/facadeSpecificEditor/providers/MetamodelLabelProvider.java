@@ -48,6 +48,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @param listener
 	 */
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
@@ -57,6 +58,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 *
 	 */
 
+	@Override
 	public void dispose() {
 
 	}
@@ -69,6 +71,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
@@ -79,6 +82,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @param listener
 	 */
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
@@ -91,6 +95,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -158,6 +163,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -214,6 +220,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public Image getImage(Object element) {
 		return null;
 	}
@@ -225,6 +232,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public String getText(Object element) {
 		return getColumnText(element, 0) + getColumnText(element, 2);
 
@@ -237,6 +245,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public Font getFont(Object element) {
 		if (element instanceof VirtualMetaclass) {
 
@@ -255,6 +264,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public Color getForeground(Object element) {
 		if (element instanceof VirtualElement) {
 			if (!((VirtualElement) element).isKept()) {
@@ -271,6 +281,7 @@ public class MetamodelLabelProvider implements ITableLabelProvider, ILabelProvid
 	 * @return
 	 */
 
+	@Override
 	public Color getBackground(Object element) {
 
 		return null;

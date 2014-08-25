@@ -48,7 +48,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NfpConstraintImpl() {
@@ -101,7 +101,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -168,7 +168,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -243,7 +243,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

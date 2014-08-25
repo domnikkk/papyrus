@@ -32,6 +32,7 @@ public class MetamodelContentProvider implements ITreeContentProvider {
 	 *
 	 */
 
+	@Override
 	public void dispose() {
 
 	}
@@ -44,6 +45,7 @@ public class MetamodelContentProvider implements ITreeContentProvider {
 	 * @param newInput
 	 */
 
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 
 	}
@@ -55,6 +57,7 @@ public class MetamodelContentProvider implements ITreeContentProvider {
 	 * @return
 	 */
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 		List<VirtualElement> elements = new ArrayList<VirtualElement>();
 
@@ -72,6 +75,7 @@ public class MetamodelContentProvider implements ITreeContentProvider {
 	 * @return
 	 */
 
+	@Override
 	public Object[] getChildren(Object parentElement) {
 		List<VirtualMetaclass> children = new ArrayList<VirtualMetaclass>();
 
@@ -96,6 +100,7 @@ public class MetamodelContentProvider implements ITreeContentProvider {
 	 * @return
 	 */
 
+	@Override
 	public Object getParent(Object element) {
 		return null;
 	}
@@ -107,6 +112,7 @@ public class MetamodelContentProvider implements ITreeContentProvider {
 	 * @return
 	 */
 
+	@Override
 	public boolean hasChildren(Object element) {
 		if (getChildren(element).length == 0) {
 			return false;

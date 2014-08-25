@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.CustomLayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 
@@ -30,7 +29,7 @@ public class CustomLayerOperatorImpl extends LayerOperatorImpl implements Custom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CustomLayerOperatorImpl() {
@@ -40,7 +39,7 @@ public class CustomLayerOperatorImpl extends LayerOperatorImpl implements Custom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage
  * @generated
  */
@@ -31,7 +31,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	TimingconstraintsFactory eINSTANCE = org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.TimingconstraintsFactoryImpl.init();
@@ -40,7 +40,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Delay Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Delay Constraint</em>'.
 	 * @generated
 	 */
@@ -50,7 +50,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Age Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Age Constraint</em>'.
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Input Synchronization Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Input Synchronization Constraint</em>'.
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Output Synchronization Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Output Synchronization Constraint</em>'.
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Reaction Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Reaction Constraint</em>'.
 	 * @generated
 	 */
@@ -90,7 +90,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Sporadic Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Sporadic Constraint</em>'.
 	 * @generated
 	 */
@@ -100,7 +100,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Periodic Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Periodic Constraint</em>'.
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Pattern Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Pattern Constraint</em>'.
 	 * @generated
 	 */
@@ -120,7 +120,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Arbitrary Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Arbitrary Constraint</em>'.
 	 * @generated
 	 */
@@ -130,7 +130,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Execution Time Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Execution Time Constraint</em>'.
 	 * @generated
 	 */
@@ -140,7 +140,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Burst Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Burst Constraint</em>'.
 	 * @generated
 	 */
@@ -150,7 +150,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Comparison Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Comparison Constraint</em>'.
 	 * @generated
 	 */
@@ -160,7 +160,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Order Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Order Constraint</em>'.
 	 * @generated
 	 */
@@ -170,7 +170,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Repetition Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Repetition Constraint</em>'.
 	 * @generated
 	 */
@@ -180,7 +180,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Strong Delay Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Strong Delay Constraint</em>'.
 	 * @generated
 	 */
@@ -190,7 +190,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Strong Synchronization Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Strong Synchronization Constraint</em>'.
 	 * @generated
 	 */
@@ -200,7 +200,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns a new object of class '<em>Synchronization Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Synchronization Constraint</em>'.
 	 * @generated
 	 */
@@ -210,7 +210,7 @@ public interface TimingconstraintsFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

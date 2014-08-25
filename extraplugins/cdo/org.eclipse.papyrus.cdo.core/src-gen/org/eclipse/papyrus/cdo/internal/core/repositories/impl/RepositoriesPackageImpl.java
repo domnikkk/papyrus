@@ -16,9 +16,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesFactory;
 import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage;
 import org.eclipse.papyrus.cdo.internal.core.repositories.Repository;
@@ -28,14 +26,14 @@ import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoryRegistry;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RepositoriesPackageImpl extends EPackageImpl implements RepositoriesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass repositoryRegistryEClass = null;
@@ -43,7 +41,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass repositoryEClass = null;
@@ -53,7 +51,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage#eNS_URI
 	 * @see #init()
@@ -66,7 +64,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -77,7 +75,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	 * <p>
 	 * This method is used to initialize {@link RepositoriesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -111,7 +109,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +120,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +131,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +142,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +153,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +164,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +175,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +186,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +197,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -209,7 +207,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -232,7 +230,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -242,7 +240,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -285,7 +283,7 @@ public class RepositoriesPackageImpl extends EPackageImpl implements Repositorie
 	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {

@@ -59,7 +59,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsAtomic()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsAtomic()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getBlockT() <em>Block T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getBlockT() <em>Block T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getRep() <em>Rep</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRep()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getRep() <em>Rep</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRep()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getProb() <em>Prob</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProb()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getProb() <em>Prob</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProb()
 	 * @generated
 	 * @ordered
@@ -147,7 +147,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -158,7 +158,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -169,7 +169,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getConcurRes() <em>Concur Res</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcurRes()
 	 * @generated
 	 * @ordered
@@ -180,7 +180,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -191,7 +191,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getServDemand() <em>Serv Demand</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getServDemand()
 	 * @generated
 	 * @ordered
@@ -202,7 +202,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getServCount() <em>Serv Count</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getServCount()
 	 * @generated
 	 * @ordered
@@ -213,7 +213,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The default value of the '{@link #getSelfDelay() <em>Self Delay</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelfDelay()
 	 * @generated
 	 * @ordered
@@ -224,7 +224,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getSelfDelay() <em>Self Delay</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelfDelay()
 	 * @generated
 	 * @ordered
@@ -235,7 +235,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScenario()
 	 * @generated
 	 * @ordered
@@ -246,7 +246,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	 * The cached value of the '{@link #getChildScenario() <em>Child Scenario</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildScenario()
 	 * @generated
 	 * @ordered
@@ -256,7 +256,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaStepImpl() {
@@ -266,7 +266,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +288,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +303,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +329,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +381,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +407,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -427,7 +427,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SchedulableResource basicGetConcurRes() {
@@ -437,7 +437,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -452,7 +452,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -472,7 +472,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaExecHost basicGetHost() {
@@ -482,7 +482,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -497,7 +497,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -511,7 +511,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -525,7 +525,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +536,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -551,7 +551,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -571,7 +571,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaScenario basicGetScenario() {
@@ -581,7 +581,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetScenario(GaScenario newScenario, NotificationChain msgs) {
@@ -601,7 +601,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -627,7 +627,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -647,7 +647,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaScenario basicGetChildScenario() {
@@ -657,7 +657,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetChildScenario(GaScenario newChildScenario, NotificationChain msgs) {
@@ -677,7 +677,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -703,7 +703,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -726,7 +726,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -743,7 +743,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -792,7 +792,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -844,7 +844,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -893,7 +893,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -930,7 +930,7 @@ public class GaStepImpl extends GaScenarioImpl implements GaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

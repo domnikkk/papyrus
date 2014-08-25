@@ -4,15 +4,11 @@ package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.CameraSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
 
 /**
@@ -41,7 +37,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -52,7 +48,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -63,7 +59,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -74,7 +70,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -85,7 +81,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The default value of the '{@link #getAlpha_u() <em>Alpha u</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlpha_u()
 	 * @generated
 	 * @ordered
@@ -96,7 +92,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getAlpha_u() <em>Alpha u</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlpha_u()
 	 * @generated
 	 * @ordered
@@ -107,7 +103,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The default value of the '{@link #getAlpha_v() <em>Alpha v</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlpha_v()
 	 * @generated
 	 * @ordered
@@ -118,7 +114,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getAlpha_v() <em>Alpha v</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlpha_v()
 	 * @generated
 	 * @ordered
@@ -129,7 +125,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The default value of the '{@link #getU0() <em>U0</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getU0()
 	 * @generated
 	 * @ordered
@@ -140,7 +136,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getU0() <em>U0</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getU0()
 	 * @generated
 	 * @ordered
@@ -151,7 +147,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The default value of the '{@link #getV0() <em>V0</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getV0()
 	 * @generated
 	 * @ordered
@@ -162,7 +158,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getV0() <em>V0</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getV0()
 	 * @generated
 	 * @ordered
@@ -173,7 +169,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The default value of the '{@link #getColor_format() <em>Color format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getColor_format()
 	 * @generated
 	 * @ordered
@@ -184,7 +180,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getColor_format() <em>Color format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getColor_format()
 	 * @generated
 	 * @ordered
@@ -195,7 +191,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getTranslate() <em>Translate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTranslate()
 	 * @generated
 	 * @ordered
@@ -206,7 +202,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * The cached value of the '{@link #getRotate() <em>Rotate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRotate()
 	 * @generated
 	 * @ordered
@@ -216,7 +212,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CameraSystemImpl() {
@@ -226,7 +222,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +233,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getWidth() {
@@ -247,7 +243,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
@@ -261,7 +257,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getHeight() {
@@ -271,7 +267,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeight(long newHeight) {
@@ -285,7 +281,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getAlpha_u() {
@@ -295,7 +291,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAlpha_u(float newAlpha_u) {
@@ -309,7 +305,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getAlpha_v() {
@@ -319,7 +315,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAlpha_v(float newAlpha_v) {
@@ -333,7 +329,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getU0() {
@@ -343,7 +339,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setU0(float newU0) {
@@ -357,7 +353,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getV0() {
@@ -367,7 +363,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setV0(float newV0) {
@@ -381,7 +377,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getColor_format() {
@@ -391,7 +387,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setColor_format(String newColor_format) {
@@ -405,7 +401,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Point32 getTranslate() {
@@ -415,7 +411,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTranslate(Point32 newTranslate, NotificationChain msgs) {
@@ -435,7 +431,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTranslate(Point32 newTranslate) {
@@ -460,7 +456,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Point32 getRotate() {
@@ -470,7 +466,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetRotate(Point32 newRotate, NotificationChain msgs) {
@@ -490,7 +486,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRotate(Point32 newRotate) {
@@ -515,7 +511,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -532,7 +528,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -563,7 +559,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -603,7 +599,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -643,7 +639,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -674,7 +670,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -31,7 +31,7 @@ public interface TargetInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Allocation Target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocation Target</em>' reference.
 	 * @see #setAllocationTarget(AllocationTarget)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getTargetInstanceRef_AllocationTarget()
@@ -44,7 +44,7 @@ public interface TargetInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.TargetInstanceRef#getAllocationTarget <em>Allocation Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allocation Target</em>' reference.
 	 * @see #getAllocationTarget()
@@ -60,7 +60,7 @@ public interface TargetInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Allocation Target context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocation Target context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getTargetInstanceRef_AllocationTarget_context()
 	 * @model ordered="false"
@@ -75,7 +75,7 @@ public interface TargetInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Int Attribute</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Int Attribute</em>' attribute.
 	 * @see #setIntAttribute(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getTargetInstanceRef_IntAttribute()
@@ -88,7 +88,7 @@ public interface TargetInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.TargetInstanceRef#getIntAttribute <em>Int Attribute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Int Attribute</em>' attribute.
 	 * @see #getIntAttribute()

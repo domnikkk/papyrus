@@ -62,7 +62,7 @@ public interface UserAttributeableElement extends EObject {
 	 *
 	 * It is possible to provide more than one type. In that case, the UserAttributeDefinitions of all UAElementTypes apply. If there are several attribute definitions with an identical 'key', then the corresponding user attribute will be applied only once.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ua Type</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeableElement_UaType()
 	 * @model ordered="false"
@@ -77,7 +77,7 @@ public interface UserAttributeableElement extends EObject {
 	 * If the meaning of the '<em>Attributed Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attributed Element</em>' reference.
 	 * @see #setAttributedElement(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeableElement_AttributedElement()
@@ -90,7 +90,7 @@ public interface UserAttributeableElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getAttributedElement <em>Attributed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Attributed Element</em>' reference.
 	 * @see #getAttributedElement()
@@ -105,7 +105,7 @@ public interface UserAttributeableElement extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeableElement_Base_NamedElement()
@@ -118,7 +118,7 @@ public interface UserAttributeableElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeableElement#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()
@@ -134,7 +134,7 @@ public interface UserAttributeableElement extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The user attribute values, i.e. key-value pairs, which are attached to this element.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ua Value</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeableElement_UaValue()
 	 * @model ordered="false"

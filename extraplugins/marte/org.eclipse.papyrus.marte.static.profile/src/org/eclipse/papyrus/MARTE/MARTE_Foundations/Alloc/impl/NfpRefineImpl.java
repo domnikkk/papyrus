@@ -46,7 +46,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Dependency()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NfpRefineImpl() {
@@ -77,7 +77,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency basicGetBase_Dependency() {
@@ -118,7 +118,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -188,7 +188,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class NfpRefineImpl extends EObjectImpl implements NfpRefine {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -35,7 +35,7 @@ public interface Template extends EObject {
 	 * If the meaning of the '<em>Diagram Definitions</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Diagram Definitions</em>' containment reference list.
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getTemplate_DiagramDefinitions()
 	 * @model containment="true"
@@ -50,7 +50,7 @@ public interface Template extends EObject {
 	 * If the meaning of the '<em>Target Root</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target Root</em>' reference.
 	 * @see #setTargetRoot(EObject)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getTemplate_TargetRoot()
@@ -63,7 +63,7 @@ public interface Template extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.Template#getTargetRoot <em>Target Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target Root</em>' reference.
 	 * @see #getTargetRoot()

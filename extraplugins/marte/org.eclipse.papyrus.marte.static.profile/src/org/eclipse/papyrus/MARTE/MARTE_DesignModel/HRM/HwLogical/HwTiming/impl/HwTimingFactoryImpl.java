@@ -28,7 +28,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimi
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory {
@@ -36,7 +36,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwTimingFactory init() {
@@ -55,7 +55,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwTimingFactoryImpl() {
@@ -65,7 +65,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class HwTimingFactoryImpl extends EFactoryImpl implements HwTimingFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

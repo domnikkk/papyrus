@@ -27,14 +27,14 @@ import org.eclipse.papyrus.eastadl.structure.StructurePackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StructureFactoryImpl extends EFactoryImpl implements StructureFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -46,7 +46,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static StructureFactory init() {
@@ -64,7 +64,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StructureFactoryImpl() {
@@ -73,7 +73,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDummyToString(EDataType eDataType, Object instanceValue) {
@@ -82,7 +82,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createDummyFromString(EDataType eDataType, String initialValue) {
@@ -119,7 +119,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class StructureFactoryImpl extends EFactoryImpl implements StructureFacto
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

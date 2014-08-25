@@ -17,24 +17,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.facade.Facade;
 import org.eclipse.papyrus.facade.FacadePackage;
-
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
@@ -57,7 +50,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	 * The cached value of the '{@link #getExtensionDefinitions() <em>Extension Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtensionDefinitions()
 	 * @generated
 	 * @ordered
@@ -68,7 +61,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	 * The cached value of the '{@link #getVirtualmetamodel() <em>Virtualmetamodel</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVirtualmetamodel()
 	 * @generated
 	 * @ordered
@@ -78,7 +71,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FacadeImpl() {
@@ -88,7 +81,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +92,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +106,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +117,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetVirtualmetamodel(VirtualMetamodel newVirtualmetamodel, NotificationChain msgs) {
@@ -144,7 +137,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +163,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -191,7 +184,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +201,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +218,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -246,7 +239,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +258,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

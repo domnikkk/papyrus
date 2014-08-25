@@ -4,6 +4,7 @@
 package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class StereotypeApplicationWithVSLAntlrTokenFileProvider implements IAntlrTokenFileProvider {

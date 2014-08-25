@@ -53,7 +53,7 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage
  * @generated
  */
@@ -62,7 +62,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static FunctionmodelingPackage modelPackage;
@@ -71,7 +71,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionmodelingSwitch<Adapter> modelSwitch = new FunctionmodelingSwitch<Adapter>() {
@@ -229,7 +229,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionmodelingAdapterFactory() {
@@ -241,7 +241,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -257,7 +257,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns
 	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
 	 * catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AllocateableElement
 	 * @generated
@@ -272,7 +272,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Allocation
 	 * @generated
@@ -287,7 +287,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionPrototype
 	 * @generated
@@ -302,7 +302,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.AnalysisFunctionType
 	 * @generated
@@ -317,7 +317,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.BasicSoftwareFunctionType
 	 * @generated
@@ -332,7 +332,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAType
 	 * @generated
@@ -347,7 +347,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPort
 	 * @generated
@@ -362,7 +362,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAConnector
 	 * @generated
@@ -377,7 +377,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPrototype
 	 * @generated
@@ -392,7 +392,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement
 	 * @generated
@@ -407,7 +407,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification
 	 * @generated
@@ -422,7 +422,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.Context
 	 * @generated
@@ -437,7 +437,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionPrototype
 	 * @generated
@@ -452,7 +452,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.DesignFunctionType
 	 * @generated
@@ -465,7 +465,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc --> This default
 	 * implementation returns null. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -478,7 +478,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns
 	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
 	 * catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionalDevice
 	 * @generated
@@ -493,7 +493,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation
 	 * @generated
@@ -508,7 +508,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerInterface
 	 * @generated
@@ -523,7 +523,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort
 	 * @generated
@@ -538,7 +538,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionConnector
 	 * @generated
@@ -553,7 +553,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort
 	 * @generated
@@ -568,7 +568,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort
 	 * @generated
@@ -583,7 +583,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPowerPort
 	 * @generated
@@ -598,7 +598,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -613,7 +613,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype
 	 * @generated
@@ -628,7 +628,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionType
 	 * @generated
@@ -643,7 +643,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType
 	 * @generated
@@ -657,7 +657,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns
 	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
 	 * catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.LocalDeviceManager
 	 * @generated
@@ -672,7 +672,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation
 	 * @generated
@@ -687,7 +687,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup
 	 * @generated
@@ -701,7 +701,7 @@ public class FunctionmodelingAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc
 	 * --> This implementation returns <code>true</code> if the object is either the model's package
 	 * or is an instance object of the model. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */

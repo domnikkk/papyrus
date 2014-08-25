@@ -48,7 +48,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Is Preemptible</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Preemptible</em>' attribute.
 	 * @see #setIsPreemptible(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getScheduler_IsPreemptible()
@@ -61,7 +61,7 @@ public interface Scheduler extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler#isIsPreemptible <em>Is Preemptible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Preemptible</em>' attribute.
 	 * @see #isIsPreemptible()
@@ -78,7 +78,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Sched Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sched Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind
 	 * @see #setSchedPolicy(SchedPolicyKind)
@@ -92,7 +92,7 @@ public interface Scheduler extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler#getSchedPolicy <em>Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sched Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind
@@ -108,7 +108,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Other Sched Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Other Sched Policy</em>' attribute.
 	 * @see #setOtherSchedPolicy(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getScheduler_OtherSchedPolicy()
@@ -121,7 +121,7 @@ public interface Scheduler extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler#getOtherSchedPolicy <em>Other Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Other Sched Policy</em>' attribute.
 	 * @see #getOtherSchedPolicy()
@@ -136,7 +136,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Schedule</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Schedule</em>' attribute.
 	 * @see #setSchedule(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getScheduler_Schedule()
@@ -149,7 +149,7 @@ public interface Scheduler extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler#getSchedule <em>Schedule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Schedule</em>' attribute.
 	 * @see #getSchedule()
@@ -165,7 +165,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Processing Units</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Processing Units</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getScheduler_ProcessingUnits()
 	 * @model ordered="false"
@@ -180,7 +180,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Host</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Host</em>' reference.
 	 * @see #setHost(ComputingResource)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getScheduler_Host()
@@ -193,7 +193,7 @@ public interface Scheduler extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler#getHost <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Host</em>' reference.
 	 * @see #getHost()
@@ -210,7 +210,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Protected Shared Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Protected Shared Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getScheduler_ProtectedSharedResources()
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.MutualExclusionResource#getScheduler
@@ -228,7 +228,7 @@ public interface Scheduler extends Resource {
 	 * If the meaning of the '<em>Schedulable Resources</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Schedulable Resources</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getScheduler_SchedulableResources()
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getHost

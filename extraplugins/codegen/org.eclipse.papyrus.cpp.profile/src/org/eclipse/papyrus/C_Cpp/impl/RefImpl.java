@@ -41,7 +41,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	 * The cached value of the '{@link #getBase_parameter() <em>Base parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_parameter()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	 * The cached value of the '{@link #getBase_property() <em>Base property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_property()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RefImpl() {
@@ -72,7 +72,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_parameter() {
@@ -113,7 +113,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_property() {
@@ -158,7 +158,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class RefImpl extends MinimalEObjectImpl.Container implements Ref {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

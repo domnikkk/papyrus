@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.behavior.BehaviorPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class BehaviorXMLProcessor extends XMLProcessor {
@@ -35,7 +35,7 @@ public class BehaviorXMLProcessor extends XMLProcessor {
 	/**
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehaviorXMLProcessor() {

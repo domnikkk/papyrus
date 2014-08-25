@@ -31,7 +31,7 @@ public class LocalDeviceManagerImpl extends DesignFunctionTypeImpl implements Lo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LocalDeviceManagerImpl() {
@@ -40,7 +40,7 @@ public class LocalDeviceManagerImpl extends DesignFunctionTypeImpl implements Lo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

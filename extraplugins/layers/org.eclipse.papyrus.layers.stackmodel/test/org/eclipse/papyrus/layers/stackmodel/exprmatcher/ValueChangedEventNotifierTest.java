@@ -14,7 +14,10 @@
 
 package org.eclipse.papyrus.layers.stackmodel.exprmatcher;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.Diagram;

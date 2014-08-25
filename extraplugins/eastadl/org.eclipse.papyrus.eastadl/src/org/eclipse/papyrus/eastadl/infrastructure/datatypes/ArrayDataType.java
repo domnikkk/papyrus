@@ -29,7 +29,7 @@ public interface ArrayDataType extends EADatatype {
 	 * If the meaning of the '<em>Max Lenght</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Max Lenght</em>' attribute.
 	 * @see #setMaxLenght(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getArrayDataType_MaxLenght()
@@ -42,7 +42,7 @@ public interface ArrayDataType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMaxLenght <em>Max Lenght</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Max Lenght</em>' attribute.
 	 * @see #getMaxLenght()
@@ -57,7 +57,7 @@ public interface ArrayDataType extends EADatatype {
 	 * If the meaning of the '<em>Min Lenght</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Min Lenght</em>' attribute.
 	 * @see #setMinLenght(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getArrayDataType_MinLenght()
@@ -70,7 +70,7 @@ public interface ArrayDataType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getMinLenght <em>Min Lenght</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Min Lenght</em>' attribute.
 	 * @see #getMinLenght()
@@ -85,7 +85,7 @@ public interface ArrayDataType extends EADatatype {
 	 * If the meaning of the '<em>Element Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Type</em>' reference.
 	 * @see #setElementType(EADatatype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getArrayDataType_ElementType()
@@ -98,7 +98,7 @@ public interface ArrayDataType extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.ArrayDataType#getElementType <em>Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Type</em>' reference.
 	 * @see #getElementType()

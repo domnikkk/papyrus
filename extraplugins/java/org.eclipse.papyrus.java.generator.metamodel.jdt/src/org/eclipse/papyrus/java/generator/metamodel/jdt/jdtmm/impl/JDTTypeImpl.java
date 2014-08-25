@@ -82,7 +82,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMethods()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The default value of the '{@link #isClass() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isClass()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #isClass() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isClass()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The default value of the '{@link #isInterface() <em>Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isInterface()
 	 * @generated
 	 * @ordered
@@ -137,7 +137,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #isInterface() <em>Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isInterface()
 	 * @generated
 	 * @ordered
@@ -148,7 +148,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The default value of the '{@link #isEnum() <em>Enum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isEnum()
 	 * @generated
 	 * @ordered
@@ -159,7 +159,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #isEnum() <em>Enum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isEnum()
 	 * @generated
 	 * @ordered
@@ -170,7 +170,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -181,7 +181,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -192,7 +192,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -203,7 +203,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -214,7 +214,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #getSuperInterfaces() <em>Super Interfaces</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperInterfaces()
 	 * @generated
 	 * @ordered
@@ -225,7 +225,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperClass()
 	 * @generated
 	 * @ordered
@@ -236,7 +236,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The default value of the '{@link #getSuperClassName() <em>Super Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperClassName()
 	 * @generated
 	 * @ordered
@@ -246,7 +246,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTTypeImpl() {
@@ -256,7 +256,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The array of subset feature identifiers for the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -289,7 +289,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +303,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetCompilationUnit(JDTCompilationUnit newCompilationUnit, NotificationChain msgs) {
@@ -328,7 +328,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -357,7 +357,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetCompilationUnit() {
@@ -367,7 +367,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -378,7 +378,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +393,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +404,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -419,7 +419,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +430,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +516,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -530,7 +530,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -544,7 +544,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(JDTType newOwner, NotificationChain msgs) {
@@ -555,7 +555,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -584,7 +584,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetOwner() {
@@ -594,7 +594,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -608,7 +608,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -628,7 +628,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JDTType basicGetSuperClass() {
@@ -638,7 +638,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -712,7 +712,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -727,7 +727,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The array of superset feature identifiers for the '{@link #getMethods() <em>Methods</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMethods()
 	 * @generated
 	 * @ordered
@@ -738,7 +738,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The array of superset feature identifiers for the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -749,7 +749,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	 * The array of superset feature identifiers for the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -759,7 +759,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -789,7 +789,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -812,7 +812,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -829,7 +829,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -875,7 +875,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -932,7 +932,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -984,7 +984,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1027,7 +1027,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1050,7 +1050,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1064,7 +1064,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1075,7 +1075,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1086,7 +1086,7 @@ public abstract class JDTTypeImpl extends JDTMemberImpl implements JDTType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSetParent() {

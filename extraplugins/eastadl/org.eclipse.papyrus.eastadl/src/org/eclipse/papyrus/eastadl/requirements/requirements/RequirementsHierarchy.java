@@ -54,7 +54,7 @@ public interface RequirementsHierarchy extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * Sub hierarchy of a requirement hierarchy.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Child Hierarchy</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsHierarchy_ChildHierarchy()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -69,7 +69,7 @@ public interface RequirementsHierarchy extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsHierarchy_Base_Class()
@@ -82,7 +82,7 @@ public interface RequirementsHierarchy extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -97,7 +97,7 @@ public interface RequirementsHierarchy extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsHierarchy_Base_Package()
@@ -110,7 +110,7 @@ public interface RequirementsHierarchy extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -125,7 +125,7 @@ public interface RequirementsHierarchy extends TraceableSpecification {
 	 * If the meaning of the '<em>Contained Requirement</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Contained Requirement</em>' reference.
 	 * @see #setContainedRequirement(Requirement)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsHierarchy_ContainedRequirement()
@@ -138,7 +138,7 @@ public interface RequirementsHierarchy extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getContainedRequirement <em>Contained Requirement</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Contained Requirement</em>' reference.
 	 * @see #getContainedRequirement()

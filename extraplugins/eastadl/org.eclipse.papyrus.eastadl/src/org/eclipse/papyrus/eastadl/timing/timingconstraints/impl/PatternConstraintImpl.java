@@ -38,7 +38,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPeriod()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	 * The cached value of the '{@link #getJitter() <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJitter()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PatternConstraintImpl() {
@@ -102,7 +102,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetPeriod() {
@@ -143,7 +143,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -188,7 +188,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetJitter() {
@@ -247,7 +247,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -292,7 +292,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -372,7 +372,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class PatternConstraintImpl extends TimingConstraintImpl implements Patte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

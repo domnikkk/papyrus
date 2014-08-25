@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers3.ui.commands;
 
+import static org.eclipse.papyrus.layers.ui.Activator.log;
+
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
@@ -22,7 +24,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
-import static org.eclipse.papyrus.layers.ui.Activator.log;
 
 
 /**

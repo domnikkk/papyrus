@@ -42,7 +42,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	 * The cached value of the '{@link #getConfiguredContainer() <em>Configured Container</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConfiguredContainer()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ContainerConfigurationImpl() {
@@ -62,7 +62,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConfigurableContainer basicGetConfiguredContainer() {
@@ -72,7 +72,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class ContainerConfigurationImpl extends ConfigurationDecisionModelImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

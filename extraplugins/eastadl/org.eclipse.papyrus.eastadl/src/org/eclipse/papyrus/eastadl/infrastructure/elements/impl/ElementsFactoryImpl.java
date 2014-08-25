@@ -20,23 +20,24 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.infrastructure.elements.*;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsFactory;
 import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.Rationale;
+import org.eclipse.papyrus.eastadl.infrastructure.elements.Realization;
 
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ElementsFactoryImpl extends EFactoryImpl implements ElementsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -49,7 +50,7 @@ public class ElementsFactoryImpl extends EFactoryImpl implements ElementsFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ElementsFactory init() {
@@ -68,7 +69,7 @@ public class ElementsFactoryImpl extends EFactoryImpl implements ElementsFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementsFactoryImpl() {
@@ -78,7 +79,7 @@ public class ElementsFactoryImpl extends EFactoryImpl implements ElementsFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +97,7 @@ public class ElementsFactoryImpl extends EFactoryImpl implements ElementsFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +109,7 @@ public class ElementsFactoryImpl extends EFactoryImpl implements ElementsFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +121,7 @@ public class ElementsFactoryImpl extends EFactoryImpl implements ElementsFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

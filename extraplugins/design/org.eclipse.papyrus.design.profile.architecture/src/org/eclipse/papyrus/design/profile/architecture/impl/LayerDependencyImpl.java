@@ -8,7 +8,6 @@ package org.eclipse.papyrus.design.profile.architecture.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage;
@@ -35,7 +34,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	 * The default value of the '{@link #isDeprecated() <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDeprecated()
 	 * @generated
 	 * @ordered
@@ -45,7 +44,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	 * The cached value of the '{@link #isDeprecated() <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDeprecated()
 	 * @generated
 	 * @ordered
@@ -55,7 +54,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	 * The default value of the '{@link #getDeprecatedComment() <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeprecatedComment()
 	 * @generated
 	 * @ordered
@@ -65,7 +64,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	 * The cached value of the '{@link #getDeprecatedComment() <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeprecatedComment()
 	 * @generated
 	 * @ordered
@@ -75,7 +74,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Dependency()
 	 * @generated
 	 * @ordered
@@ -85,7 +84,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerDependencyImpl() {
@@ -95,7 +94,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +105,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +116,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +131,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +142,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +157,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +177,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency basicGetBase_Dependency() {
@@ -188,7 +187,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +202,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +224,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +246,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +268,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +287,7 @@ public class LayerDependencyImpl extends ElementImpl implements LayerDependency 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

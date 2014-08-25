@@ -214,7 +214,7 @@ public class ReverseCodeDialog extends InputDialog {
 
 	/**
 	 * Add the defaultSearchPath extracted from the splittedCreationPath to the searchPath.
-	 * 
+	 *
 	 * @param splittedCreationPaths2
 	 */
 	private List<String> addDefaultSearchPaths(List<String> searchPath, List<String> splittedCreationPaths) {
@@ -235,7 +235,7 @@ public class ReverseCodeDialog extends InputDialog {
 
 	/**
 	 * Show an error message
-	 * 
+	 *
 	 * @param message
 	 */
 	private void showError(String message) {
@@ -246,7 +246,7 @@ public class ReverseCodeDialog extends InputDialog {
 
 	/**
 	 * Compute and check the creationsPaths
-	 * 
+	 *
 	 * @param creationPaths
 	 *            An array with one creationPattern by element
 	 * @return An array with one path by elements

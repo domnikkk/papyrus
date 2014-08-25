@@ -333,7 +333,7 @@ public class MapUtil
 
 	/**
 	 * Calculate derived required interface in function of port type and kind
-	 * 
+	 *
 	 * @param port
 	 *            the port, for which the calculation should be done
 	 * @return
@@ -362,7 +362,7 @@ public class MapUtil
 
 	/**
 	 * Calculate derived required interface in function of port type and kind
-	 * 
+	 *
 	 * @param port
 	 *            the port, for which the calculation should be done
 	 * @return

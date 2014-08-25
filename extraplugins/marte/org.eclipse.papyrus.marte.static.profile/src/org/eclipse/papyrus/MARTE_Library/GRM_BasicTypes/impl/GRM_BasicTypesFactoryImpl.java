@@ -29,7 +29,7 @@ import org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_BasicTypesFactory {
@@ -37,7 +37,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static GRM_BasicTypesFactory init() {
@@ -56,7 +56,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GRM_BasicTypesFactoryImpl() {
@@ -66,7 +66,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SchedPolicyKind createSchedPolicyKindFromString(EDataType eDataType, String initialValue) {
@@ -166,7 +166,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSchedPolicyKindToString(EDataType eDataType, Object instanceValue) {
@@ -176,7 +176,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ProtectProtocolKind createProtectProtocolKindFromString(EDataType eDataType, String initialValue) {
@@ -190,7 +190,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertProtectProtocolKindToString(EDataType eDataType, Object instanceValue) {
@@ -200,7 +200,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PeriodicServerKind createPeriodicServerKindFromString(EDataType eDataType, String initialValue) {
@@ -214,7 +214,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPeriodicServerKindToString(EDataType eDataType, Object instanceValue) {
@@ -224,7 +224,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createEDF_ParametersFromString(EDataType eDataType, String initialValue) {
@@ -234,7 +234,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEDF_ParametersToString(EDataType eDataType, Object instanceValue) {
@@ -244,7 +244,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createSchedParametersFromString(EDataType eDataType, String initialValue) {
@@ -254,7 +254,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSchedParametersToString(EDataType eDataType, Object instanceValue) {
@@ -264,7 +264,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createFixedPriorityParametersFromString(EDataType eDataType, String initialValue) {
@@ -274,7 +274,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertFixedPriorityParametersToString(EDataType eDataType, Object instanceValue) {
@@ -284,7 +284,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createPeriodicServerParametersFromString(EDataType eDataType, String initialValue) {
@@ -294,7 +294,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPeriodicServerParametersToString(EDataType eDataType, Object instanceValue) {
@@ -304,7 +304,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createPoolingParametersFromString(EDataType eDataType, String initialValue) {
@@ -314,7 +314,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPoolingParametersToString(EDataType eDataType, Object instanceValue) {
@@ -324,7 +324,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createScheduleSpecificationFromString(EDataType eDataType, String initialValue) {
@@ -334,7 +334,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertScheduleSpecificationToString(EDataType eDataType, Object instanceValue) {
@@ -344,7 +344,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createTableDrivenScheduleFromString(EDataType eDataType, String initialValue) {
@@ -354,7 +354,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTableDrivenScheduleToString(EDataType eDataType, Object instanceValue) {
@@ -364,7 +364,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createTableEntryTypeFromString(EDataType eDataType, String initialValue) {
@@ -374,7 +374,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTableEntryTypeToString(EDataType eDataType, Object instanceValue) {
@@ -384,7 +384,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class GRM_BasicTypesFactoryImpl extends EFactoryImpl implements GRM_Basic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

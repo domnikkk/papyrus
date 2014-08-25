@@ -42,7 +42,7 @@ public interface VVProcedure extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVProcedure_Base_Class()
@@ -55,7 +55,7 @@ public interface VVProcedure extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -70,7 +70,7 @@ public interface VVProcedure extends TraceableSpecification {
 	 * If the meaning of the '<em>Abstract VV Procedure</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Abstract VV Procedure</em>' reference.
 	 * @see #setAbstractVVProcedure(VVProcedure)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVProcedure_AbstractVVProcedure()
@@ -83,7 +83,7 @@ public interface VVProcedure extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getAbstractVVProcedure <em>Abstract VV Procedure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Abstract VV Procedure</em>' reference.
 	 * @see #getAbstractVVProcedure()
@@ -99,7 +99,7 @@ public interface VVProcedure extends TraceableSpecification {
 	 * If the meaning of the '<em>Vv Intended Outcome</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Intended Outcome</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVProcedure_VvIntendedOutcome()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -115,7 +115,7 @@ public interface VVProcedure extends TraceableSpecification {
 	 * If the meaning of the '<em>Vv Stimuli</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Stimuli</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVProcedure_VvStimuli()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

@@ -45,7 +45,7 @@ public interface ChoiceType extends EObject {
 	 * If the meaning of the '<em>Choice Attrib</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Choice Attrib</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getChoiceType_ChoiceAttrib()
 	 * @model ordered="false"
@@ -60,7 +60,7 @@ public interface ChoiceType extends EObject {
 	 * If the meaning of the '<em>Default Attrib</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Default Attrib</em>' reference.
 	 * @see #setDefaultAttrib(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getChoiceType_DefaultAttrib()
@@ -73,7 +73,7 @@ public interface ChoiceType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getDefaultAttrib <em>Default Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Default Attrib</em>' reference.
 	 * @see #getDefaultAttrib()
@@ -88,7 +88,7 @@ public interface ChoiceType extends EObject {
 	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Data Type</em>' reference.
 	 * @see #setBase_DataType(DataType)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesPackage#getChoiceType_Base_DataType()
@@ -101,7 +101,7 @@ public interface ChoiceType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Data Type</em>' reference.
 	 * @see #getBase_DataType()

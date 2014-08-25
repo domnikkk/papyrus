@@ -190,7 +190,7 @@ public class JavaCodeReverse {
 
 	/**
 	 * Reverse a file
-	 * 
+	 *
 	 * @param resource
 	 * @throws CoreException
 	 * @throws ParseException

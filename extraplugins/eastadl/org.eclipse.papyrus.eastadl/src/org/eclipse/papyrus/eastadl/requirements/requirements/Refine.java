@@ -50,7 +50,7 @@ public interface Refine extends RequirementsRelationship, org.eclipse.uml2.uml.p
 	 * List of refined requirements.
 	 * {derived from UML::DirectedRelationship::target}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Refined Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRefine_RefinedRequirement()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -63,7 +63,7 @@ public interface Refine extends RequirementsRelationship, org.eclipse.uml2.uml.p
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.RefineInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Refined By</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRefine_RefinedBy()
 	 * @model containment="true" required="true" ordered="false"
@@ -78,7 +78,7 @@ public interface Refine extends RequirementsRelationship, org.eclipse.uml2.uml.p
 	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Dependency</em>' reference.
 	 * @see #setBase_Dependency(Dependency)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRefine_Base_Dependency()
@@ -91,7 +91,7 @@ public interface Refine extends RequirementsRelationship, org.eclipse.uml2.uml.p
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Refine#getBase_Dependency <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Dependency</em>' reference.
 	 * @see #getBase_Dependency()

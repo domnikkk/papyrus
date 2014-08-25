@@ -42,7 +42,7 @@ public interface GCMTrigger extends EObject {
 	 * If the meaning of the '<em>Base Trigger</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Trigger</em>' reference.
 	 * @see #setBase_Trigger(Trigger)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMTrigger_Base_Trigger()
@@ -55,7 +55,7 @@ public interface GCMTrigger extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger#getBase_Trigger <em>Base Trigger</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Trigger</em>' reference.
 	 * @see #getBase_Trigger()
@@ -70,7 +70,7 @@ public interface GCMTrigger extends EObject {
 	 * If the meaning of the '<em>Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Feature</em>' reference.
 	 * @see #setFeature(Feature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getGCMTrigger_Feature()
@@ -83,7 +83,7 @@ public interface GCMTrigger extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMTrigger#getFeature <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Feature</em>' reference.
 	 * @see #getFeature()

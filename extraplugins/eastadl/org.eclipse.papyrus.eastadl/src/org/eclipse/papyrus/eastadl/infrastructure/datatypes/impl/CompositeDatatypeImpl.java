@@ -46,7 +46,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	 * The cached value of the '{@link #getDatatypePrototype() <em>Datatype Prototype</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDatatypePrototype()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CompositeDatatypeImpl() {
@@ -66,7 +66,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -114,7 +114,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

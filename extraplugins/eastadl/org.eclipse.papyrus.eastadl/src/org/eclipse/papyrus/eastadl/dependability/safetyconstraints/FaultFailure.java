@@ -53,7 +53,7 @@ public interface FaultFailure extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getFaultFailure_Base_Class()
@@ -66,7 +66,7 @@ public interface FaultFailure extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.FaultFailure#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -82,7 +82,7 @@ public interface FaultFailure extends TraceableSpecification {
 	 * If the meaning of the '<em>Anomaly</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Anomaly</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getFaultFailure_Anomaly()
 	 * @model containment="true" ordered="false"
@@ -97,7 +97,7 @@ public interface FaultFailure extends TraceableSpecification {
 	 * If the meaning of the '<em>Fault Failure Value</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fault Failure Value</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getFaultFailure_FaultFailureValue()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"

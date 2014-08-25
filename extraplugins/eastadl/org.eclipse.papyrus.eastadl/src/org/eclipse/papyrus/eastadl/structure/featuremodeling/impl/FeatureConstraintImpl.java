@@ -64,7 +64,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureConstraintImpl() {
@@ -93,7 +93,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -242,7 +242,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -287,7 +287,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +301,7 @@ public class FeatureConstraintImpl extends EAElementImpl implements FeatureConst
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

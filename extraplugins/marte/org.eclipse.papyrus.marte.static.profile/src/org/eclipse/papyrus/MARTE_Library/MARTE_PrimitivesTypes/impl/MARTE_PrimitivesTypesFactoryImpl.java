@@ -26,7 +26,7 @@ import org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.MARTE_PrimitivesT
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MARTE_PrimitivesTypesFactory {
@@ -34,7 +34,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static MARTE_PrimitivesTypesFactory init() {
@@ -53,7 +53,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MARTE_PrimitivesTypesFactoryImpl() {
@@ -63,7 +63,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
@@ -139,7 +139,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
@@ -149,7 +149,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
@@ -159,7 +159,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertBooleanToString(EDataType eDataType, Object instanceValue) {
@@ -169,7 +169,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createUnlimitedNaturalFromString(EDataType eDataType, String initialValue) {
@@ -179,7 +179,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertUnlimitedNaturalToString(EDataType eDataType, Object instanceValue) {
@@ -189,7 +189,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
@@ -199,7 +199,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -209,7 +209,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createDateTimeFromString(EDataType eDataType, String initialValue) {
@@ -219,7 +219,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDateTimeToString(EDataType eDataType, Object instanceValue) {
@@ -229,7 +229,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createRealFromString(EDataType eDataType, String initialValue) {
@@ -239,7 +239,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRealToString(EDataType eDataType, Object instanceValue) {
@@ -249,7 +249,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class MARTE_PrimitivesTypesFactoryImpl extends EFactoryImpl implements MA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

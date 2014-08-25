@@ -45,7 +45,7 @@ public interface RtService extends EObject {
 	 * If the meaning of the '<em>Conc Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Conc Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.ConcurrencyKind
 	 * @see #setConcPolicy(ConcurrencyKind)
@@ -59,7 +59,7 @@ public interface RtService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtService#getConcPolicy <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Conc Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.ConcurrencyKind
@@ -76,7 +76,7 @@ public interface RtService extends EObject {
 	 * If the meaning of the '<em>Exe Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exe Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.ExecutionKind
 	 * @see #setExeKind(ExecutionKind)
@@ -90,7 +90,7 @@ public interface RtService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtService#getExeKind <em>Exe Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Exe Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.ExecutionKind
@@ -107,7 +107,7 @@ public interface RtService extends EObject {
 	 * If the meaning of the '<em>Is Atomic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Atomic</em>' attribute.
 	 * @see #setIsAtomic(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtService_IsAtomic()
@@ -120,7 +120,7 @@ public interface RtService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtService#isIsAtomic <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Atomic</em>' attribute.
 	 * @see #isIsAtomic()
@@ -136,7 +136,7 @@ public interface RtService extends EObject {
 	 * If the meaning of the '<em>Synch Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Synch Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind
 	 * @see #setSynchKind(SynchronizationKind)
@@ -150,7 +150,7 @@ public interface RtService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtService#getSynchKind <em>Synch Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Synch Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind
@@ -166,7 +166,7 @@ public interface RtService extends EObject {
 	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #setBase_BehavioralFeature(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtService_Base_BehavioralFeature()
@@ -179,7 +179,7 @@ public interface RtService extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtService#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #getBase_BehavioralFeature()

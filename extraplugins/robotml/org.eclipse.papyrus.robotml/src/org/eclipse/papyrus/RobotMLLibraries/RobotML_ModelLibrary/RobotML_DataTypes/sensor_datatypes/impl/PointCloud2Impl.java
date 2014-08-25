@@ -6,23 +6,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.PointCloud2;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.PointField;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -51,7 +45,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -62,7 +56,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -73,7 +67,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -84,7 +78,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -95,7 +89,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -106,7 +100,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -117,7 +111,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #isIs_bigendian() <em>Is bigendian</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIs_bigendian()
 	 * @generated
 	 * @ordered
@@ -128,7 +122,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #isIs_bigendian() <em>Is bigendian</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIs_bigendian()
 	 * @generated
 	 * @ordered
@@ -139,7 +133,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getPoint_step() <em>Point step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoint_step()
 	 * @generated
 	 * @ordered
@@ -150,7 +144,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getPoint_step() <em>Point step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoint_step()
 	 * @generated
 	 * @ordered
@@ -161,7 +155,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #getRow_step() <em>Row step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRow_step()
 	 * @generated
 	 * @ordered
@@ -172,7 +166,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getRow_step() <em>Row step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRow_step()
 	 * @generated
 	 * @ordered
@@ -183,7 +177,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -194,7 +188,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The default value of the '{@link #isIs_dense() <em>Is dense</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIs_dense()
 	 * @generated
 	 * @ordered
@@ -205,7 +199,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	 * The cached value of the '{@link #isIs_dense() <em>Is dense</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIs_dense()
 	 * @generated
 	 * @ordered
@@ -215,7 +209,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PointCloud2Impl() {
@@ -225,7 +219,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +230,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -246,7 +240,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -266,7 +260,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -291,7 +285,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getHeight() {
@@ -301,7 +295,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeight(long newHeight) {
@@ -315,7 +309,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getWidth() {
@@ -325,7 +319,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
@@ -339,7 +333,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<PointField> getFields() {
@@ -352,7 +346,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIs_bigendian() {
@@ -362,7 +356,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIs_bigendian(boolean newIs_bigendian) {
@@ -376,7 +370,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getPoint_step() {
@@ -386,7 +380,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPoint_step(long newPoint_step) {
@@ -400,7 +394,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getRow_step() {
@@ -410,7 +404,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRow_step(long newRow_step) {
@@ -424,7 +418,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Character> getData() {
@@ -437,7 +431,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIs_dense() {
@@ -447,7 +441,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIs_dense(boolean newIs_dense) {
@@ -461,7 +455,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -478,7 +472,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -509,7 +503,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -552,7 +546,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -592,7 +586,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -623,7 +617,7 @@ public class PointCloud2Impl extends MinimalEObjectImpl.Container implements Poi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

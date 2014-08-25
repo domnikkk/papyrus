@@ -49,7 +49,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Occurence</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occurence</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind
 	 * @see #setOccurence(NotificationKind)
@@ -63,7 +63,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getOccurence <em>Occurence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Occurence</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind
@@ -80,7 +80,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Mechanism</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mechanism</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind
 	 * @see #setMechanism(NotificationResourceKind)
@@ -94,7 +94,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getMechanism <em>Mechanism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Mechanism</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind
@@ -111,7 +111,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Occurence Count Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occurence Count Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getNotificationResource_OccurenceCountElements()
 	 * @model ordered="false"
@@ -127,7 +127,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Mask Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mask Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getNotificationResource_MaskElements()
 	 * @model ordered="false"
@@ -143,7 +143,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Flush Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Flush Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getNotificationResource_FlushServices()
 	 * @model ordered="false"
@@ -159,7 +159,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Signal Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Signal Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getNotificationResource_SignalServices()
 	 * @model ordered="false"
@@ -175,7 +175,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Wait Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Wait Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getNotificationResource_WaitServices()
 	 * @model ordered="false"
@@ -191,7 +191,7 @@ public interface NotificationResource extends SwSynchronizationResource {
 	 * If the meaning of the '<em>Clear Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Clear Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getNotificationResource_ClearServices()
 	 * @model ordered="false"

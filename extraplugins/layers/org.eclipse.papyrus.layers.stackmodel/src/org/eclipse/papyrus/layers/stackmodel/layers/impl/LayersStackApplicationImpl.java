@@ -64,7 +64,7 @@ public class LayersStackApplicationImpl extends
 	 * The cached value of the '{@link #getLayersStacks() <em>Layers Stacks</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayersStacks()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class LayersStackApplicationImpl extends
 	 * The cached value of the '{@link #getLayerStackRegistry() <em>Layer Stack Registry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerStackRegistry()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class LayersStackApplicationImpl extends
 	 * The cached value of the '{@link #getPropertyRegistry() <em>Property Registry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyRegistry()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class LayersStackApplicationImpl extends
 	 * The cached value of the '{@link #getLayerDescriptorRegistry() <em>Layer Descriptor Registry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerDescriptorRegistry()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class LayersStackApplicationImpl extends
 	 * The cached value of the '{@link #getFactory() <em>Factory</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFactory()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class LayersStackApplicationImpl extends
 	 * The cached value of the '{@link #getPropertySetterRegistry() <em>Property Setter Registry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertySetterRegistry()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class LayersStackApplicationImpl extends
 	 * The cached value of the '{@link #getLayerOperatorDescriptorRegistry() <em>Layer Operator Descriptor Registry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerOperatorDescriptorRegistry()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected LayersStackApplicationImpl() {
@@ -190,7 +190,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayerStackRegistry(LayerStackDescriptorRegistry newLayerStackRegistry, NotificationChain msgs) {
@@ -246,7 +246,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +283,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPropertyRegistry(PropertyRegistry newPropertyRegistry, NotificationChain msgs) {
@@ -303,7 +303,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +329,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayerDescriptorRegistry(LayerDescriptorRegistry newLayerDescriptorRegistry, NotificationChain msgs) {
@@ -360,7 +360,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +386,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +397,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetFactory(LayerApplicationFactory newFactory, NotificationChain msgs) {
@@ -417,7 +417,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -443,7 +443,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -454,7 +454,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPropertySetterRegistry(PropertySetterRegistry newPropertySetterRegistry, NotificationChain msgs) {
@@ -474,7 +474,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -500,7 +500,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -511,7 +511,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayerOperatorDescriptorRegistry(LayerOperatorDescriptorRegistry newLayerOperatorDescriptorRegistry, NotificationChain msgs) {
@@ -531,7 +531,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -557,7 +557,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -574,7 +574,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -591,7 +591,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -611,7 +611,7 @@ public class LayersStackApplicationImpl extends
 	 * Get the {@link LayersStack} for the specified diagram. Create it if
 	 * necessary.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -628,7 +628,7 @@ public class LayersStackApplicationImpl extends
 	 * <!-- begin-user-doc -->
 	 * Create a new LayersStack for the specified diagram.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -655,7 +655,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -678,7 +678,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -705,7 +705,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -732,7 +732,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -768,7 +768,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -802,7 +802,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -829,7 +829,7 @@ public class LayersStackApplicationImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -55,7 +55,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Is Dynamic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Dynamic</em>' attribute.
 	 * @see #setIsDynamic(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_IsDynamic()
@@ -68,7 +68,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#isIsDynamic <em>Is Dynamic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Dynamic</em>' attribute.
 	 * @see #isIsDynamic()
@@ -83,7 +83,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Is Main</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Main</em>' attribute.
 	 * @see #setIsMain(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_IsMain()
@@ -96,7 +96,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#isIsMain <em>Is Main</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Main</em>' attribute.
 	 * @see #isIsMain()
@@ -111,7 +111,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Sr Pool Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sr Pool Size</em>' attribute.
 	 * @see #setSrPoolSize(int)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_SrPoolSize()
@@ -124,7 +124,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getSrPoolSize <em>Sr Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sr Pool Size</em>' attribute.
 	 * @see #getSrPoolSize()
@@ -140,7 +140,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Sr Pool Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sr Pool Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.PoolMgtPolicyKind
 	 * @see #setSrPoolPolicy(PoolMgtPolicyKind)
@@ -154,7 +154,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getSrPoolPolicy <em>Sr Pool Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sr Pool Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.PoolMgtPolicyKind
@@ -170,7 +170,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Sr Pool Waiting Time</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sr Pool Waiting Time</em>' attribute.
 	 * @see #setSrPoolWaitingTime(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_SrPoolWaitingTime()
@@ -183,7 +183,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getSrPoolWaitingTime <em>Sr Pool Waiting Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sr Pool Waiting Time</em>' attribute.
 	 * @see #getSrPoolWaitingTime()
@@ -198,7 +198,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Operational Mode</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operational Mode</em>' reference.
 	 * @see #setOperationalMode(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_OperationalMode()
@@ -211,7 +211,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getOperationalMode <em>Operational Mode</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Operational Mode</em>' reference.
 	 * @see #getOperationalMode()
@@ -226,7 +226,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Main</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Main</em>' reference.
 	 * @see #setMain(Operation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_Main()
@@ -239,7 +239,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getMain <em>Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Main</em>' reference.
 	 * @see #getMain()
@@ -254,7 +254,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Memory Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Size</em>' attribute.
 	 * @see #setMemorySize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_MemorySize()
@@ -267,7 +267,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getMemorySize <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Memory Size</em>' attribute.
 	 * @see #getMemorySize()
@@ -282,7 +282,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Base Behaviored Classifier</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behaviored Classifier</em>' reference.
 	 * @see #setBase_BehavioredClassifier(BehavioredClassifier)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_Base_BehavioredClassifier()
@@ -295,7 +295,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getBase_BehavioredClassifier <em>Base Behaviored Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behaviored Classifier</em>' reference.
 	 * @see #getBase_BehavioredClassifier()
@@ -311,7 +311,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Queue Sched Policy</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Queue Sched Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind
 	 * @see #setQueueSchedPolicy(SchedPolicyKind)
@@ -325,7 +325,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getQueueSchedPolicy <em>Queue Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Queue Sched Policy</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedPolicyKind
@@ -341,7 +341,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Queue Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Queue Size</em>' attribute.
 	 * @see #setQueueSize(int)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_QueueSize()
@@ -354,7 +354,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getQueueSize <em>Queue Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Queue Size</em>' attribute.
 	 * @see #getQueueSize()
@@ -369,7 +369,7 @@ public interface RtUnit extends EObject {
 	 * If the meaning of the '<em>Msg Max Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Msg Max Size</em>' attribute.
 	 * @see #setMsgMaxSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtUnit_MsgMaxSize()
@@ -382,7 +382,7 @@ public interface RtUnit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtUnit#getMsgMaxSize <em>Msg Max Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Msg Max Size</em>' attribute.
 	 * @see #getMsgMaxSize()

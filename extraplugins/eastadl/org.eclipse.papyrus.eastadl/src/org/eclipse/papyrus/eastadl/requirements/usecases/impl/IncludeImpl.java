@@ -30,7 +30,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	 * The cached value of the '{@link #getBase_Include() <em>Base Include</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Include()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	 * The cached value of the '{@link #getAddition() <em>Addition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAddition()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IncludeImpl() {
@@ -61,7 +61,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Include basicGetBase_Include() {
@@ -102,7 +102,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UseCase basicGetAddition() {
@@ -147,7 +147,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class IncludeImpl extends RelationshipImpl implements Include {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

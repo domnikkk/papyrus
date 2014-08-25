@@ -12,24 +12,17 @@
 package org.eclipse.papyrus.umldi.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.dd.di.impl.StyleImpl;
-
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlStyle;
-
 import org.eclipse.papyrus.umldi.util.UMLDIValidator;
 
 /**

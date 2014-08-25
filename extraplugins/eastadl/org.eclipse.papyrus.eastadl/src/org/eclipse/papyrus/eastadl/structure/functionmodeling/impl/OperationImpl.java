@@ -52,7 +52,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 	 * The cached value of the '{@link #getBase_Operation() <em>Base Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Operation()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OperationImpl() {
@@ -90,7 +90,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Operation basicGetBase_Operation() {
@@ -188,7 +188,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class OperationImpl extends EAElementImpl implements Operation {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

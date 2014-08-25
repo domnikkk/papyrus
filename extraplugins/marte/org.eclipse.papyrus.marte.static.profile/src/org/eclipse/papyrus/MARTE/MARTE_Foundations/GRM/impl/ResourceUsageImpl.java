@@ -54,7 +54,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getExecTime() <em>Exec Time</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExecTime()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getAllocatedMemory() <em>Allocated Memory</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllocatedMemory()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getUsedMemory() <em>Used Memory</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUsedMemory()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getPowerPeak() <em>Power Peak</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPowerPeak()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getEnergy() <em>Energy</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnergy()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getSubUsage() <em>Sub Usage</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubUsage()
 	 * @generated
 	 * @ordered
@@ -131,7 +131,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getUsedResources() <em>Used Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUsedResources()
 	 * @generated
 	 * @ordered
@@ -142,7 +142,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	 * The cached value of the '{@link #getMsgSize() <em>Msg Size</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMsgSize()
 	 * @generated
 	 * @ordered
@@ -152,7 +152,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ResourceUsageImpl() {
@@ -162,7 +162,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -273,7 +273,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +288,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +330,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -364,7 +364,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -413,7 +413,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,7 +453,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -484,7 +484,7 @@ public class ResourceUsageImpl extends EObjectImpl implements ResourceUsage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

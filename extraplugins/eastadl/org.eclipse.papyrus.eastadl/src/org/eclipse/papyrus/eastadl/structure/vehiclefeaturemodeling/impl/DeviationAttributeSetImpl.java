@@ -51,7 +51,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The default value of the '{@link #getAllowChangeAttribute() <em>Allow Change Attribute</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeAttribute()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The cached value of the '{@link #getAllowChangeAttribute() <em>Allow Change Attribute</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeAttribute()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The default value of the '{@link #getAllowChangeCardinality() <em>Allow Change Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeCardinality()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The cached value of the '{@link #getAllowChangeCardinality() <em>Allow Change Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeCardinality()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	 * The default value of the '{@link #getAllowChangeDescription() <em>Allow Change Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeDescription()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	 * The cached value of the '{@link #getAllowChangeDescription() <em>Allow Change Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeDescription()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The default value of the '{@link #getAllowChangeName() <em>Allow Change Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeName()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The cached value of the '{@link #getAllowChangeName() <em>Allow Change Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowChangeName()
 	 * @generated
 	 * @ordered
@@ -153,7 +153,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The default value of the '{@link #getAllowReduction() <em>Allow Reduction</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowReduction()
 	 * @generated
 	 * @ordered
@@ -163,7 +163,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The cached value of the '{@link #getAllowReduction() <em>Allow Reduction</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowReduction()
 	 * @generated
 	 * @ordered
@@ -173,7 +173,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The default value of the '{@link #getAllowRefinement() <em>Allow Refinement</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowRefinement()
 	 * @generated
 	 * @ordered
@@ -183,7 +183,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The cached value of the '{@link #getAllowRefinement() <em>Allow Refinement</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowRefinement()
 	 * @generated
 	 * @ordered
@@ -193,7 +193,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The default value of the '{@link #getAllowRegrouping() <em>Allow Regrouping</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowRegrouping()
 	 * @generated
 	 * @ordered
@@ -203,7 +203,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * The cached value of the '{@link #getAllowRegrouping() <em>Allow Regrouping</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllowRegrouping()
 	 * @generated
 	 * @ordered
@@ -234,7 +234,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
@@ -243,7 +243,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DeviationAttributeSetImpl() {
@@ -252,7 +252,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +319,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +361,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +371,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -413,7 +413,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -423,7 +423,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -434,7 +434,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +444,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -454,7 +454,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +464,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -474,7 +474,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -484,7 +484,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -494,7 +494,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +504,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -518,7 +518,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -533,7 +533,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -547,7 +547,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -561,7 +561,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -575,7 +575,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -589,7 +589,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -603,7 +603,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -617,7 +617,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -632,7 +632,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -652,7 +652,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataType basicGetBase_DataType() {
@@ -662,7 +662,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -676,7 +676,7 @@ public class DeviationAttributeSetImpl extends EAElementImpl implements Deviatio
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

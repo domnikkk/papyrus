@@ -45,7 +45,7 @@ public interface IConstraintProvider {
 
 	/**
 	 * add categories
-	 * 
+	 *
 	 * @param constraintCategories
 	 *            a list of categories
 	 */

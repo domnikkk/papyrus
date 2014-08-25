@@ -6,18 +6,17 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.*;
+import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStorageFactory;
+import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwStoragePackage;
+import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.dummy;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFactory {
@@ -25,7 +24,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwStorageFactory init() {
@@ -44,7 +43,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwStorageFactoryImpl() {
@@ -54,7 +53,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +67,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +83,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +99,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public dummy createdummyFromString(EDataType eDataType, String initialValue) {
@@ -114,7 +113,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertdummyToString(EDataType eDataType, Object instanceValue) {
@@ -124,7 +123,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +134,7 @@ public class HwStorageFactoryImpl extends EFactoryImpl implements HwStorageFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

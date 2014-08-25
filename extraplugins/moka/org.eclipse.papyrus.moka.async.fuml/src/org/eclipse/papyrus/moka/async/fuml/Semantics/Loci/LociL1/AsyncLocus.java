@@ -50,7 +50,7 @@ public class AsyncLocus extends CS_Locus {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus#remove(org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue)
 	 */
 	@Override

@@ -27,7 +27,7 @@ import org.eclipse.papyrus.MARTE.dummy;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
@@ -35,7 +35,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static MARTEFactory init() {
@@ -54,7 +54,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MARTEFactoryImpl() {
@@ -64,7 +64,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public dummy createdummyFromString(EDataType eDataType, String initialValue) {
@@ -124,7 +124,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertdummyToString(EDataType eDataType, Object instanceValue) {
@@ -134,7 +134,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class MARTEFactoryImpl extends EFactoryImpl implements MARTEFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

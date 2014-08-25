@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.util;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +24,6 @@ import org.eclipse.papyrus.layers.stackmodel.BadStateException;
 import org.eclipse.papyrus.layers.stackmodel.LayersException;
 import org.eclipse.papyrus.layers.stackmodel.NotFoundException;
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 
 /**
@@ -132,7 +133,7 @@ public class PropertyIndexedList<T> extends EObjectResolvingEList<T> {
 
 	/**
 	 * Allows double
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EObjectEList#isUnique()
 	 *
 	 * @return
@@ -145,7 +146,7 @@ public class PropertyIndexedList<T> extends EObjectResolvingEList<T> {
 
 	/**
 	 * Allow null values in the list.
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EObjectEList#canContainNull()
 	 *
 	 * @return
@@ -173,7 +174,7 @@ public class PropertyIndexedList<T> extends EObjectResolvingEList<T> {
 	/**
 	 * Reset the elements of the list, according to the map and the
 	 * propertyList.
-	 * 
+	 *
 	 * @throws BadStateException
 	 *
 	 */
@@ -212,7 +213,7 @@ public class PropertyIndexedList<T> extends EObjectResolvingEList<T> {
 
 	/**
 	 * Get an element by its property.
-	 * 
+	 *
 	 * @param property
 	 * @return
 	 * @throws NotFoundException
@@ -229,7 +230,7 @@ public class PropertyIndexedList<T> extends EObjectResolvingEList<T> {
 
 	/**
 	 * Set the element for the specified Property.
-	 * 
+	 *
 	 * @param property
 	 * @param ele
 	 * @throws BadStateException
@@ -248,7 +249,7 @@ public class PropertyIndexedList<T> extends EObjectResolvingEList<T> {
 
 	/**
 	 * Synchronize the specified propertyName with the value in the {@link #propertyValues} list.
-	 * 
+	 *
 	 * @param propertyName
 	 * @param value
 	 * @throws NotFoundException
@@ -318,7 +319,7 @@ public class PropertyIndexedList<T> extends EObjectResolvingEList<T> {
 
 		/**
 		 * The {@link PropertyIndexedList#map} has changed. Synchronize this list.
-		 * 
+		 *
 		 * @param msg
 		 */
 		protected void notifyLayerPropertyValueMapChanged(Notification msg) {

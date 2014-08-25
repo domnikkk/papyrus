@@ -41,7 +41,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The default value of the '{@link #getNbCounters() <em>Nb Counters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbCounters()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The cached value of the '{@link #getNbCounters() <em>Nb Counters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbCounters()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The default value of the '{@link #getCounterWidth() <em>Counter Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCounterWidth()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The cached value of the '{@link #getCounterWidth() <em>Counter Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCounterWidth()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The cached value of the '{@link #getInputClock() <em>Input Clock</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInputClock()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwTimerImpl() {
@@ -105,7 +105,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwClock basicGetInputClock() {
@@ -198,7 +198,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

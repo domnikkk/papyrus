@@ -51,7 +51,7 @@ public interface EProblemsContainer extends CDOObject {
 	 * If the meaning of the '<em>Problems</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Problems</em>' containment reference list.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblemsContainer_Problems()
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getContainer
@@ -100,7 +100,7 @@ public interface EProblemsContainer extends CDOObject {
 	 * If the meaning of the '<em>Container</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Container</em>' container reference.
 	 * @see #setContainer(EProblemsContainer)
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblemsContainer_Container()
@@ -114,7 +114,7 @@ public interface EProblemsContainer extends CDOObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer <em>Container</em>}' container reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Container</em>' container reference.
 	 * @see #getContainer()
@@ -124,7 +124,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EIterator<org.eclipse.papyrus.cdo.validation.problems.EProblem>" required="true"
 	 * @generated
 	 */
@@ -132,7 +132,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EIterator<org.eclipse.papyrus.cdo.validation.problems.EProblem>" required="true" elementRequired="true"
 	 * @generated
 	 */
@@ -140,7 +140,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EDiagnostic"
 	 * @generated
 	 */
@@ -148,7 +148,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EDiagnostic" elementRequired="true"
 	 * @generated
 	 */
@@ -156,7 +156,7 @@ public interface EProblemsContainer extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model
 	 * @generated
 	 */

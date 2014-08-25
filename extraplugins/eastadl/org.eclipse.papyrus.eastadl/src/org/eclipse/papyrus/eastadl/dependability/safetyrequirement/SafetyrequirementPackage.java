@@ -40,7 +40,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage
  * Overview:
  * This subprofile defines a set of stereotypes concerning the definition of safety requirements linked to the ISO26262 norm.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementFactory
  * @model kind="package"
  * @generated
@@ -56,7 +56,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -64,7 +64,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.FunctionalSafetyConceptImpl <em>Functional Safety Concept</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.FunctionalSafetyConceptImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl#getFunctionalSafetyConcept()
 		 * @generated
@@ -75,7 +75,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Functional Safety Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FUNCTIONAL_SAFETY_CONCEPT__FUNCTIONAL_SAFETY_REQUIREMENT = eINSTANCE.getFunctionalSafetyConcept_FunctionalSafetyRequirement();
@@ -84,7 +84,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl <em>Safety Goal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl#getSafetyGoal()
 		 * @generated
@@ -95,7 +95,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Derived From</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_GOAL__DERIVED_FROM = eINSTANCE.getSafetyGoal_DerivedFrom();
@@ -104,7 +104,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_GOAL__BASE_CLASS = eINSTANCE.getSafetyGoal_Base_Class();
@@ -113,7 +113,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_GOAL__REQUIREMENT = eINSTANCE.getSafetyGoal_Requirement();
@@ -122,7 +122,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hazard Classification</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SAFETY_GOAL__HAZARD_CLASSIFICATION = eINSTANCE.getSafetyGoal_HazardClassification();
@@ -131,7 +131,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Safe State</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_GOAL__SAFE_STATE = eINSTANCE.getSafetyGoal_SafeState();
@@ -140,7 +140,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.TechnicalSafetyConceptImpl <em>Technical Safety Concept</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.TechnicalSafetyConceptImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl#getTechnicalSafetyConcept()
 		 * @generated
@@ -151,7 +151,7 @@ public interface SafetyrequirementPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Technical Safety Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT = eINSTANCE.getTechnicalSafetyConcept_TechnicalSafetyRequirement();
@@ -162,7 +162,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "safetyrequirement";
@@ -171,7 +171,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Dependability/SafetyRequirement/1";
@@ -180,7 +180,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "SafetyRequirement";
@@ -189,7 +189,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SafetyrequirementPackage eINSTANCE = org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl.init();
@@ -198,7 +198,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.FunctionalSafetyConceptImpl <em>Functional Safety Concept</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.FunctionalSafetyConceptImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl#getFunctionalSafetyConcept()
 	 * @generated
@@ -209,7 +209,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +259,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Hierarchy</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +289,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Contained Requirement</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +299,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Functional Safety Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +309,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The number of structural features of the '<em>Functional Safety Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +319,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The number of operations of the '<em>Functional Safety Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -329,7 +329,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl <em>Safety Goal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl#getSafetyGoal()
 	 * @generated
@@ -340,7 +340,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -350,7 +350,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -360,7 +360,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,7 +370,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +380,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -390,7 +390,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -400,7 +400,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Hazard Classification</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -410,7 +410,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Safe State</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -420,7 +420,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The number of structural features of the '<em>Safety Goal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +430,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The number of operations of the '<em>Safety Goal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +440,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.TechnicalSafetyConceptImpl <em>Technical Safety Concept</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.TechnicalSafetyConceptImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyrequirementPackageImpl#getTechnicalSafetyConcept()
 	 * @generated
@@ -451,7 +451,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -461,7 +461,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -471,7 +471,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -481,7 +481,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -491,7 +491,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -501,7 +501,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Hierarchy</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -511,7 +511,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -521,7 +521,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -531,7 +531,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Contained Requirement</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -541,7 +541,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The feature id for the '<em><b>Technical Safety Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -551,7 +551,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The number of structural features of the '<em>Technical Safety Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -561,7 +561,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * The number of operations of the '<em>Technical Safety Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -571,7 +571,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.FunctionalSafetyConcept <em>Functional Safety Concept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Functional Safety Concept</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.FunctionalSafetyConcept
 	 * @generated
@@ -582,7 +582,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.FunctionalSafetyConcept#getFunctionalSafetyRequirement <em>Functional Safety Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Functional Safety Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.FunctionalSafetyConcept#getFunctionalSafetyRequirement()
 	 * @see #getFunctionalSafetyConcept()
@@ -594,7 +594,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal <em>Safety Goal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Safety Goal</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal
 	 * @generated
@@ -605,7 +605,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getDerivedFrom <em>Derived From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Derived From</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getDerivedFrom()
 	 * @see #getSafetyGoal()
@@ -617,7 +617,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getHazardClassification <em>Hazard Classification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Hazard Classification</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getHazardClassification()
 	 * @see #getSafetyGoal()
@@ -629,7 +629,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getSafeState <em>Safe State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Safe State</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getSafeState()
 	 * @see #getSafetyGoal()
@@ -641,7 +641,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getRequirement <em>Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getRequirement()
 	 * @see #getSafetyGoal()
@@ -653,7 +653,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getBase_Class()
 	 * @see #getSafetyGoal()
@@ -665,7 +665,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -675,7 +675,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafetyConcept <em>Technical Safety Concept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Technical Safety Concept</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafetyConcept
 	 * @generated
@@ -686,7 +686,7 @@ public interface SafetyrequirementPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafetyConcept#getTechnicalSafetyRequirement <em>Technical Safety Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Technical Safety Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafetyConcept#getTechnicalSafetyRequirement()
 	 * @see #getTechnicalSafetyConcept()

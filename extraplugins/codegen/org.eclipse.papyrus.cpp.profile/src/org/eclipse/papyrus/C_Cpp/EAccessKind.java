@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>EAccess Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getEAccessKind()
  * @model
  * @generated
@@ -33,7 +33,7 @@ public enum EAccessKind implements Enumerator {
 	 * The '<em><b>Read</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ_VALUE
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public enum EAccessKind implements Enumerator {
 	 * The '<em><b>Write</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #WRITE_VALUE
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public enum EAccessKind implements Enumerator {
 	 * The '<em><b>Read Write</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ_WRITE_VALUE
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public enum EAccessKind implements Enumerator {
 	 * If the meaning of '<em><b>Read</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ
 	 * @model name="read"
 	 * @generated
@@ -84,7 +84,7 @@ public enum EAccessKind implements Enumerator {
 	 * If the meaning of '<em><b>Write</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #WRITE
 	 * @model name="write"
 	 * @generated
@@ -99,7 +99,7 @@ public enum EAccessKind implements Enumerator {
 	 * If the meaning of '<em><b>Read Write</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ_WRITE
 	 * @model name="readWrite"
 	 * @generated
@@ -111,7 +111,7 @@ public enum EAccessKind implements Enumerator {
 	 * An array of all the '<em><b>EAccess Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final EAccessKind[] VALUES_ARRAY =
@@ -125,7 +125,7 @@ public enum EAccessKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>EAccess Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<EAccessKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -134,7 +134,7 @@ public enum EAccessKind implements Enumerator {
 	 * Returns the '<em><b>EAccess Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EAccessKind get(String literal) {
@@ -151,7 +151,7 @@ public enum EAccessKind implements Enumerator {
 	 * Returns the '<em><b>EAccess Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EAccessKind getByName(String name) {
@@ -168,7 +168,7 @@ public enum EAccessKind implements Enumerator {
 	 * Returns the '<em><b>EAccess Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EAccessKind get(int value) {
@@ -186,7 +186,7 @@ public enum EAccessKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -194,7 +194,7 @@ public enum EAccessKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -202,7 +202,7 @@ public enum EAccessKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -211,7 +211,7 @@ public enum EAccessKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EAccessKind(int value, String name, String literal) {
@@ -223,7 +223,7 @@ public enum EAccessKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public enum EAccessKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public enum EAccessKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public enum EAccessKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

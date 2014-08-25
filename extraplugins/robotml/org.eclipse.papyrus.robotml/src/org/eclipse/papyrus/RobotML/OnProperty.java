@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
 
@@ -32,7 +31,7 @@ public interface OnProperty extends EObject {
 	 * If the meaning of the '<em>Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property</em>' reference.
 	 * @see #setProperty(Property)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getOnProperty_Property()
@@ -45,7 +44,7 @@ public interface OnProperty extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.OnProperty#getProperty <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Property</em>' reference.
 	 * @see #getProperty()
@@ -60,7 +59,7 @@ public interface OnProperty extends EObject {
 	 * If the meaning of the '<em>Base Parameter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Parameter</em>' reference.
 	 * @see #setBase_Parameter(Parameter)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getOnProperty_Base_Parameter()
@@ -73,7 +72,7 @@ public interface OnProperty extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.OnProperty#getBase_Parameter <em>Base Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Parameter</em>' reference.
 	 * @see #getBase_Parameter()

@@ -21,7 +21,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsFactory
  * @model kind="package"
  * @generated
@@ -31,7 +31,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "requirements";
@@ -40,7 +40,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Requirements/Requirements/1";
@@ -49,7 +49,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Requirements";
@@ -58,7 +58,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	RequirementsPackage eINSTANCE = org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl.init();
@@ -67,7 +67,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipImpl <em>Relationship</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsRelationship()
 	 * @generated
@@ -78,7 +78,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -88,7 +88,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl <em>Requirement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirement()
 	 * @generated
@@ -149,7 +149,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -179,7 +179,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Satisfied By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Refined By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Traced To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Verified By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Master</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +259,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +289,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +299,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Formalism</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +309,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +319,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -329,7 +329,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,7 +339,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -349,7 +349,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -359,7 +359,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -369,7 +369,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -379,7 +379,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -389,7 +389,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -399,7 +399,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.OperationalSituationImpl <em>Operational Situation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.OperationalSituationImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getOperationalSituation()
 	 * @generated
@@ -410,7 +410,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -420,7 +420,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +430,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +440,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -450,7 +450,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -460,7 +460,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -470,7 +470,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Operational Situation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -480,7 +480,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Operational Situation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -490,7 +490,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsLinkImpl <em>Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsLinkImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsLink()
 	 * @generated
@@ -501,7 +501,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -511,7 +511,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -521,7 +521,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -531,7 +531,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -541,7 +541,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Bidirectional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -551,7 +551,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Source</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -561,7 +561,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -571,7 +571,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -581,7 +581,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -591,7 +591,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -601,7 +601,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl <em>Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsModel()
 	 * @generated
@@ -612,7 +612,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -622,7 +622,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -632,7 +632,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -642,7 +642,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -652,7 +652,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -662,7 +662,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -672,7 +672,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Use Case</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -682,7 +682,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Requirements Hierachy</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -692,7 +692,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Operational Situation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -702,7 +702,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -712,7 +712,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Requirements Relationship Group</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -722,7 +722,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -732,7 +732,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -742,7 +742,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -752,7 +752,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipGroupImpl <em>Relationship Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipGroupImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsRelationshipGroup()
 	 * @generated
@@ -763,7 +763,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -773,7 +773,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -783,7 +783,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -793,7 +793,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -803,7 +803,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -813,7 +813,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Requirements Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -823,7 +823,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -833,7 +833,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -843,7 +843,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Relationship Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -853,7 +853,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Relationship Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -863,7 +863,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.SatisfyImpl <em>Satisfy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.SatisfyImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getSatisfy()
 	 * @generated
@@ -874,7 +874,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -884,7 +884,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -894,7 +894,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -904,7 +904,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -914,7 +914,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -924,7 +924,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Satisfied Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -934,7 +934,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Satisfied Use Case</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -944,7 +944,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Satisfied By</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -954,7 +954,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Satisfy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -964,7 +964,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Satisfy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -974,7 +974,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RefineImpl <em>Refine</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RefineImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRefine()
 	 * @generated
@@ -985,7 +985,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -995,7 +995,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1005,7 +1005,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1015,7 +1015,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1025,7 +1025,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1035,7 +1035,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Refined Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1045,7 +1045,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1055,7 +1055,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Refined By</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1065,7 +1065,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Refine</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1075,7 +1075,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Refine</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1085,7 +1085,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl <em>Derive Requirement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getDeriveRequirement()
 	 * @generated
@@ -1096,7 +1096,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1106,7 +1106,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1116,7 +1116,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1126,7 +1126,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1136,7 +1136,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1146,7 +1146,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1156,7 +1156,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1166,7 +1166,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Derive Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1176,7 +1176,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Derive Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1186,7 +1186,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.QualityRequirementImpl <em>Quality Requirement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.QualityRequirementImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getQualityRequirement()
 	 * @generated
@@ -1197,7 +1197,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1207,7 +1207,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1217,7 +1217,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1227,7 +1227,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1237,7 +1237,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Satisfied By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1247,7 +1247,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Refined By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1257,7 +1257,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Traced To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1267,7 +1267,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Verified By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1277,7 +1277,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Master</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1287,7 +1287,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1297,7 +1297,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1307,7 +1307,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1317,7 +1317,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1327,7 +1327,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1337,7 +1337,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1347,7 +1347,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Formalism</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1357,7 +1357,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1367,7 +1367,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1377,7 +1377,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1387,7 +1387,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Quality Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1399,7 +1399,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Quality Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1409,7 +1409,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Quality Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1419,7 +1419,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Quality Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1429,7 +1429,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Quality Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1439,7 +1439,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Quality Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1449,7 +1449,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Quality Requirement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1459,7 +1459,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsHierarchyImpl <em>Hierarchy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsHierarchyImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsHierarchy()
 	 * @generated
@@ -1470,7 +1470,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1480,7 +1480,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1490,7 +1490,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1500,7 +1500,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1510,7 +1510,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1520,7 +1520,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Hierarchy</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1530,7 +1530,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1540,7 +1540,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1550,7 +1550,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The feature id for the '<em><b>Contained Requirement</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1560,7 +1560,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of structural features of the '<em>Hierarchy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1570,7 +1570,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The number of operations of the '<em>Hierarchy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1580,7 +1580,7 @@ public interface RequirementsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind <em>Quality Requirement Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getQualityRequirementKind()
 	 * @generated
@@ -1592,7 +1592,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationship <em>Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Relationship</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationship
 	 * @generated
@@ -1603,7 +1603,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationship#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationship#getBase_Class()
 	 * @see #getRequirementsRelationship()
@@ -1615,7 +1615,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Requirement <em>Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Requirement
 	 * @generated
@@ -1626,7 +1626,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getFormalism <em>Formalism</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Formalism</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getFormalism()
 	 * @see #getRequirement()
@@ -1638,7 +1638,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getUrl <em>Url</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Url</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getUrl()
 	 * @see #getRequirement()
@@ -1650,7 +1650,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getMode <em>Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Mode</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getMode()
 	 * @see #getRequirement()
@@ -1662,7 +1662,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.OperationalSituation <em>Operational Situation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Operational Situation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.OperationalSituation
 	 * @generated
@@ -1673,7 +1673,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.OperationalSituation#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.OperationalSituation#getBase_Class()
 	 * @see #getOperationalSituation()
@@ -1685,7 +1685,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink <em>Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Link</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink
 	 * @generated
@@ -1696,7 +1696,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#isIsBidirectional <em>Is Bidirectional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Bidirectional</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#isIsBidirectional()
 	 * @see #getRequirementsLink()
@@ -1708,7 +1708,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Source</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#getSource()
 	 * @see #getRequirementsLink()
@@ -1720,7 +1720,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#getTarget()
 	 * @see #getRequirementsLink()
@@ -1732,7 +1732,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#getBase_Dependency <em>Base Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Dependency</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#getBase_Dependency()
 	 * @see #getRequirementsLink()
@@ -1744,7 +1744,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Model</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel
 	 * @generated
@@ -1755,7 +1755,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getUseCase <em>Use Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Use Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getUseCase()
 	 * @see #getRequirementsModel()
@@ -1767,7 +1767,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getRequirementsHierachy <em>Requirements Hierachy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Requirements Hierachy</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getRequirementsHierachy()
 	 * @see #getRequirementsModel()
@@ -1779,7 +1779,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getOperationalSituation <em>Operational Situation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Operational Situation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getOperationalSituation()
 	 * @see #getRequirementsModel()
@@ -1791,7 +1791,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getBase_Package()
 	 * @see #getRequirementsModel()
@@ -1803,7 +1803,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getRequirementsRelationshipGroup <em>Requirements Relationship Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Requirements Relationship Group</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getRequirementsRelationshipGroup()
 	 * @see #getRequirementsModel()
@@ -1815,7 +1815,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getRequirement <em>Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel#getRequirement()
 	 * @see #getRequirementsModel()
@@ -1827,7 +1827,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup <em>Relationship Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Relationship Group</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup
 	 * @generated
@@ -1838,7 +1838,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getRequirementsRelationship <em>Requirements Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Requirements Relationship</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getRequirementsRelationship()
 	 * @see #getRequirementsRelationshipGroup()
@@ -1850,7 +1850,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getBase_Class()
 	 * @see #getRequirementsRelationshipGroup()
@@ -1862,7 +1862,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup#getBase_Package()
 	 * @see #getRequirementsRelationshipGroup()
@@ -1874,7 +1874,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy <em>Satisfy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Satisfy</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy
 	 * @generated
@@ -1885,7 +1885,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy#getSatisfiedRequirement <em>Satisfied Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Satisfied Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy#getSatisfiedRequirement()
 	 * @see #getSatisfy()
@@ -1897,7 +1897,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy#getSatisfiedBy <em>Satisfied By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Satisfied By</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy#getSatisfiedBy()
 	 * @see #getSatisfy()
@@ -1909,7 +1909,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy#getSatisfiedUseCase <em>Satisfied Use Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Satisfied Use Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy#getSatisfiedUseCase()
 	 * @see #getSatisfy()
@@ -1921,7 +1921,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Refine <em>Refine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Refine</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Refine
 	 * @generated
@@ -1932,7 +1932,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Refine#getRefinedRequirement <em>Refined Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Refined Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Refine#getRefinedRequirement()
 	 * @see #getRefine()
@@ -1944,7 +1944,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Refine#getRefinedBy <em>Refined By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Refined By</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Refine#getRefinedBy()
 	 * @see #getRefine()
@@ -1956,7 +1956,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Refine#getBase_Dependency <em>Base Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Dependency</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Refine#getBase_Dependency()
 	 * @see #getRefine()
@@ -1968,7 +1968,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.DeriveRequirement <em>Derive Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Derive Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.DeriveRequirement
 	 * @generated
@@ -1979,7 +1979,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.DeriveRequirement#getDerived <em>Derived</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Derived</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.DeriveRequirement#getDerived()
 	 * @see #getDeriveRequirement()
@@ -1991,7 +1991,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.DeriveRequirement#getDerivedFrom <em>Derived From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Derived From</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.DeriveRequirement#getDerivedFrom()
 	 * @see #getDeriveRequirement()
@@ -2003,7 +2003,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirement <em>Quality Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Quality Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirement
 	 * @generated
@@ -2014,7 +2014,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirement#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirement#getKind()
 	 * @see #getQualityRequirement()
@@ -2026,7 +2026,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy <em>Hierarchy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hierarchy</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy
 	 * @generated
@@ -2037,7 +2037,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getChildHierarchy <em>Child Hierarchy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Child Hierarchy</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getChildHierarchy()
 	 * @see #getRequirementsHierarchy()
@@ -2049,7 +2049,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getBase_Class()
 	 * @see #getRequirementsHierarchy()
@@ -2061,7 +2061,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getBase_Package()
 	 * @see #getRequirementsHierarchy()
@@ -2073,7 +2073,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getContainedRequirement <em>Contained Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Contained Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy#getContainedRequirement()
 	 * @see #getRequirementsHierarchy()
@@ -2085,7 +2085,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind <em>Quality Requirement Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Quality Requirement Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind
 	 * @generated
@@ -2096,7 +2096,7 @@ public interface RequirementsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2113,7 +2113,7 @@ public interface RequirementsPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -2121,7 +2121,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipImpl <em>Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsRelationship()
 		 * @generated
@@ -2132,7 +2132,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_RELATIONSHIP__BASE_CLASS = eINSTANCE.getRequirementsRelationship_Base_Class();
@@ -2141,7 +2141,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl <em>Requirement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirement()
 		 * @generated
@@ -2152,7 +2152,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Formalism</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REQUIREMENT__FORMALISM = eINSTANCE.getRequirement_Formalism();
@@ -2161,7 +2161,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REQUIREMENT__URL = eINSTANCE.getRequirement_Url();
@@ -2170,7 +2170,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mode</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENT__MODE = eINSTANCE.getRequirement_Mode();
@@ -2179,7 +2179,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.OperationalSituationImpl <em>Operational Situation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.OperationalSituationImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getOperationalSituation()
 		 * @generated
@@ -2190,7 +2190,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference OPERATIONAL_SITUATION__BASE_CLASS = eINSTANCE.getOperationalSituation_Base_Class();
@@ -2199,7 +2199,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsLinkImpl <em>Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsLinkImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsLink()
 		 * @generated
@@ -2210,7 +2210,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Bidirectional</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REQUIREMENTS_LINK__IS_BIDIRECTIONAL = eINSTANCE.getRequirementsLink_IsBidirectional();
@@ -2219,7 +2219,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_LINK__SOURCE = eINSTANCE.getRequirementsLink_Source();
@@ -2228,7 +2228,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_LINK__TARGET = eINSTANCE.getRequirementsLink_Target();
@@ -2237,7 +2237,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_LINK__BASE_DEPENDENCY = eINSTANCE.getRequirementsLink_Base_Dependency();
@@ -2246,7 +2246,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl <em>Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsModelImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsModel()
 		 * @generated
@@ -2257,7 +2257,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Use Case</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_MODEL__USE_CASE = eINSTANCE.getRequirementsModel_UseCase();
@@ -2266,7 +2266,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Requirements Hierachy</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_MODEL__REQUIREMENTS_HIERACHY = eINSTANCE.getRequirementsModel_RequirementsHierachy();
@@ -2275,7 +2275,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Operational Situation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_MODEL__OPERATIONAL_SITUATION = eINSTANCE.getRequirementsModel_OperationalSituation();
@@ -2284,7 +2284,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_MODEL__BASE_PACKAGE = eINSTANCE.getRequirementsModel_Base_Package();
@@ -2293,7 +2293,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Requirements Relationship Group</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_MODEL__REQUIREMENTS_RELATIONSHIP_GROUP = eINSTANCE.getRequirementsModel_RequirementsRelationshipGroup();
@@ -2302,7 +2302,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_MODEL__REQUIREMENT = eINSTANCE.getRequirementsModel_Requirement();
@@ -2311,7 +2311,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipGroupImpl <em>Relationship Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipGroupImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsRelationshipGroup()
 		 * @generated
@@ -2322,7 +2322,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Requirements Relationship</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_RELATIONSHIP_GROUP__REQUIREMENTS_RELATIONSHIP = eINSTANCE.getRequirementsRelationshipGroup_RequirementsRelationship();
@@ -2331,7 +2331,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_RELATIONSHIP_GROUP__BASE_CLASS = eINSTANCE.getRequirementsRelationshipGroup_Base_Class();
@@ -2340,7 +2340,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_RELATIONSHIP_GROUP__BASE_PACKAGE = eINSTANCE.getRequirementsRelationshipGroup_Base_Package();
@@ -2349,7 +2349,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.SatisfyImpl <em>Satisfy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.SatisfyImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getSatisfy()
 		 * @generated
@@ -2360,7 +2360,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Satisfied Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SATISFY__SATISFIED_REQUIREMENT = eINSTANCE.getSatisfy_SatisfiedRequirement();
@@ -2369,7 +2369,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Satisfied By</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SATISFY__SATISFIED_BY = eINSTANCE.getSatisfy_SatisfiedBy();
@@ -2378,7 +2378,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Satisfied Use Case</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SATISFY__SATISFIED_USE_CASE = eINSTANCE.getSatisfy_SatisfiedUseCase();
@@ -2387,7 +2387,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RefineImpl <em>Refine</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RefineImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRefine()
 		 * @generated
@@ -2398,7 +2398,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Refined Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REFINE__REFINED_REQUIREMENT = eINSTANCE.getRefine_RefinedRequirement();
@@ -2407,7 +2407,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Refined By</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REFINE__REFINED_BY = eINSTANCE.getRefine_RefinedBy();
@@ -2416,7 +2416,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REFINE__BASE_DEPENDENCY = eINSTANCE.getRefine_Base_Dependency();
@@ -2425,7 +2425,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl <em>Derive Requirement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getDeriveRequirement()
 		 * @generated
@@ -2436,7 +2436,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Derived</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DERIVE_REQUIREMENT__DERIVED = eINSTANCE.getDeriveRequirement_Derived();
@@ -2445,7 +2445,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Derived From</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DERIVE_REQUIREMENT__DERIVED_FROM = eINSTANCE.getDeriveRequirement_DerivedFrom();
@@ -2454,7 +2454,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.QualityRequirementImpl <em>Quality Requirement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.QualityRequirementImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getQualityRequirement()
 		 * @generated
@@ -2465,7 +2465,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute QUALITY_REQUIREMENT__KIND = eINSTANCE.getQualityRequirement_Kind();
@@ -2474,7 +2474,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsHierarchyImpl <em>Hierarchy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsHierarchyImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getRequirementsHierarchy()
 		 * @generated
@@ -2485,7 +2485,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Child Hierarchy</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_HIERARCHY__CHILD_HIERARCHY = eINSTANCE.getRequirementsHierarchy_ChildHierarchy();
@@ -2494,7 +2494,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_HIERARCHY__BASE_CLASS = eINSTANCE.getRequirementsHierarchy_Base_Class();
@@ -2503,7 +2503,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_HIERARCHY__BASE_PACKAGE = eINSTANCE.getRequirementsHierarchy_Base_Package();
@@ -2512,7 +2512,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Contained Requirement</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REQUIREMENTS_HIERARCHY__CONTAINED_REQUIREMENT = eINSTANCE.getRequirementsHierarchy_ContainedRequirement();
@@ -2521,7 +2521,7 @@ public interface RequirementsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind <em>Quality Requirement Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind
 		 * @see org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl#getQualityRequirementKind()
 		 * @generated

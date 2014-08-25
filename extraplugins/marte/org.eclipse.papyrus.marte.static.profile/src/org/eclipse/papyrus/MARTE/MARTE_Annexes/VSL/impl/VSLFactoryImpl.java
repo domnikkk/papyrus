@@ -6,18 +6,17 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.*;
+import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.VSLFactory;
+import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.VSLPackage;
+import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.dummy;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
@@ -25,7 +24,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VSLFactory init() {
@@ -44,7 +43,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VSLFactoryImpl() {
@@ -54,7 +53,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +67,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +83,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +99,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public dummy createdummyFromString(EDataType eDataType, String initialValue) {
@@ -114,7 +113,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertdummyToString(EDataType eDataType, Object instanceValue) {
@@ -124,7 +123,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +134,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

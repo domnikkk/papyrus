@@ -60,7 +60,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Return Type</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Return Type</em>' containment reference.
 	 * @see #setReturnType(JDTParameter)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_ReturnType()
@@ -74,7 +74,7 @@ public interface JDTMethod extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#getReturnType <em>Return Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Return Type</em>' containment reference.
 	 * @see #getReturnType()
@@ -91,7 +91,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Parameters()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getParameterOwner
@@ -108,7 +108,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Exceptions</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exceptions</em>' reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Exceptions()
 	 * @model ordered="false"
@@ -124,7 +124,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Synchronized</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Synchronized</em>' attribute.
 	 * @see #setSynchronized(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Synchronized()
@@ -137,7 +137,7 @@ public interface JDTMethod extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#isSynchronized <em>Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Synchronized</em>' attribute.
 	 * @see #isSynchronized()
@@ -152,7 +152,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Constructor</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constructor</em>' attribute.
 	 * @see #setConstructor(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Constructor()
@@ -165,7 +165,7 @@ public interface JDTMethod extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#isConstructor <em>Constructor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Constructor</em>' attribute.
 	 * @see #isConstructor()
@@ -182,7 +182,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Bodies</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bodies</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Bodies()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethodBody#getOwner
@@ -199,7 +199,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Abstract</em>' attribute.
 	 * @see #setAbstract(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Abstract()
@@ -212,7 +212,7 @@ public interface JDTMethod extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#isAbstract <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Abstract</em>' attribute.
 	 * @see #isAbstract()
@@ -228,7 +228,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Final</em>' attribute.
 	 * @see #setFinal(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Final()
@@ -241,7 +241,7 @@ public interface JDTMethod extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#isFinal <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Final</em>' attribute.
 	 * @see #isFinal()
@@ -257,7 +257,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Static</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Static</em>' attribute.
 	 * @see #setStatic(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Static()
@@ -270,7 +270,7 @@ public interface JDTMethod extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#isStatic <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Static</em>' attribute.
 	 * @see #isStatic()
@@ -292,7 +292,7 @@ public interface JDTMethod extends JDTMember {
 	 * If the meaning of the '<em>Owner</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' container reference.
 	 * @see #setOwner(JDTType)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethod_Owner()
@@ -306,7 +306,7 @@ public interface JDTMethod extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#getOwner <em>Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()

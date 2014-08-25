@@ -17,9 +17,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Clause;
 
 public class ClauseActivation {

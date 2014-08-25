@@ -120,7 +120,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * This adds a property descriptor for the Code feature.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCodePropertyDescriptor(Object object) {
@@ -157,7 +157,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
@@ -171,7 +171,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	/**
 	 * This returns EProblem.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class EProblemItemProvider extends ProblemTypeItemProviderAdapter impleme
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 
 /**
@@ -40,7 +39,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
  * the initialisation can differ if the LayersStack is created by the user or by EMF after a reloading.
  *
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory
  * @model kind="package"
  * @generated
@@ -50,7 +49,7 @@ public interface LayersPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "layers";
@@ -59,7 +58,7 @@ public interface LayersPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "org.eclipse.papyrus.layers.0.10";
@@ -68,7 +67,7 @@ public interface LayersPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "org.eclipse.papyrus.layers.stackmodel.layers";
@@ -77,7 +76,7 @@ public interface LayersPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	LayersPackage eINSTANCE = org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl.init();
@@ -86,7 +85,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerNamedStyleImpl <em>Layer Named Style</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerNamedStyleImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerNamedStyle()
 	 * @generated
@@ -97,7 +96,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +106,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers Stack</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +116,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Named Style</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +126,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Named Style</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 * @ordered
 	 */
@@ -137,7 +136,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer <em>Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersContainer()
 	 * @generated
@@ -148,7 +147,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +157,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +167,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +177,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackImpl <em>Stack</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersStack()
 	 * @generated
@@ -189,7 +188,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl <em>Layer Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerExpression()
 	 * @generated
@@ -200,7 +199,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl <em>Layer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayer()
 	 * @generated
@@ -211,7 +210,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeInstanceImpl <em>Type Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTypeInstance()
 	 * @generated
@@ -222,7 +221,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeInstanceMapImpl <em>String To Type Instance Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeInstanceMapImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToTypeInstanceMap()
 	 * @generated
@@ -233,7 +232,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorImpl <em>Layer Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerDescriptor()
 	 * @generated
@@ -244,7 +243,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderElementImpl <em>Folder Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderElementImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFolderElement()
 	 * @generated
@@ -255,7 +254,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -265,7 +264,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -275,7 +274,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -285,7 +284,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Diagram</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -295,7 +294,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -305,7 +304,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Stack</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -315,7 +314,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -325,7 +324,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -335,7 +334,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -345,7 +344,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -355,7 +354,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Start After Creation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -365,7 +364,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach Layers</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -375,7 +374,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -385,7 +384,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -395,7 +394,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -405,7 +404,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -415,7 +414,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Stack</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -425,7 +424,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ApplicationDependantElementImpl <em>Application Dependant Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.ApplicationDependantElementImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getApplicationDependantElement()
 	 * @generated
@@ -436,7 +435,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -446,7 +445,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Application Dependant Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -456,7 +455,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Application Dependant Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -466,7 +465,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -476,7 +475,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -486,7 +485,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -496,7 +495,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -506,7 +505,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -516,7 +515,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -526,7 +525,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -536,7 +535,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -546,7 +545,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -556,7 +555,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -566,7 +565,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -576,7 +575,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -586,7 +585,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -596,7 +595,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -606,7 +605,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -616,7 +615,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -626,7 +625,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -636,7 +635,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -646,7 +645,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -656,7 +655,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerApplicationFactoryImpl <em>Layer Application Factory</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerApplicationFactoryImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerApplicationFactory()
 	 * @generated
@@ -667,7 +666,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Folder Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -677,7 +676,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Folder Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -687,7 +686,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyImpl <em>Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getProperty()
 	 * @generated
@@ -698,7 +697,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getType()
 	 * @generated
@@ -709,7 +708,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.MetamodelImpl <em>Metamodel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.MetamodelImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getMetamodel()
 	 * @generated
@@ -720,7 +719,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderImpl <em>Folder</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFolder()
 	 * @generated
@@ -731,7 +730,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IntInstanceImpl <em>Int Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IntInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIntInstance()
 	 * @generated
@@ -742,7 +741,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanInstanceImpl <em>Boolean Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getBooleanInstance()
 	 * @generated
@@ -753,7 +752,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringInstanceImpl <em>String Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringInstance()
 	 * @generated
@@ -764,7 +763,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IntTypeImpl <em>Int Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IntTypeImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIntType()
 	 * @generated
@@ -775,7 +774,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanTypeImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getBooleanType()
 	 * @generated
@@ -786,7 +785,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringTypeImpl <em>String Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringTypeImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringType()
 	 * @generated
@@ -797,7 +796,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomTypeImpl <em>Custom Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomTypeImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomType()
 	 * @generated
@@ -808,7 +807,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackApplicationImpl <em>Stack Application</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackApplicationImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersStackApplication()
 	 * @generated
@@ -819,7 +818,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers Stacks</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -829,7 +828,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Stack Registry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -839,7 +838,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Registry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -849,7 +848,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Descriptor Registry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -859,7 +858,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Factory</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -869,7 +868,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Setter Registry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -879,7 +878,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Descriptor Registry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -889,7 +888,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Stack Application</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -899,7 +898,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack For</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -909,7 +908,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Remove Layers Stack For</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -919,7 +918,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Is Layers Stack Attached For</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -929,7 +928,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Layers Stack For</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -939,7 +938,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Lookup Layers Stack For</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -949,7 +948,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Stack Application</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -959,7 +958,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerStackDescriptorRegistryImpl <em>Layer Stack Descriptor Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerStackDescriptorRegistryImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerStackDescriptorRegistry()
 	 * @generated
@@ -970,7 +969,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Stack Descriptor Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -980,7 +979,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Stack Descriptor Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -990,7 +989,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl <em>Property Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertyRegistry()
 	 * @generated
@@ -1001,7 +1000,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1011,7 +1010,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Type Registry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1021,7 +1020,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Properties Count</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1031,7 +1030,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1041,7 +1040,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Index</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1051,7 +1050,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1061,7 +1060,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Property</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1071,7 +1070,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Property Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1081,7 +1080,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1091,7 +1090,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1101,7 +1100,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1111,7 +1110,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1121,7 +1120,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1131,7 +1130,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1141,7 +1140,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1151,7 +1150,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1161,7 +1160,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1171,7 +1170,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1181,7 +1180,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1191,7 +1190,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1201,7 +1200,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1211,7 +1210,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1221,7 +1220,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1231,7 +1230,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1241,7 +1240,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Nsuri</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1251,7 +1250,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Plugin ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1261,7 +1260,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>EPackage Instance Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1271,7 +1270,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Type Valid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1281,7 +1280,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Metamodel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1291,7 +1290,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get EPackage</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1301,7 +1300,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Metamodel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1311,7 +1310,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand <em>Compute Property Value Command Itf</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getComputePropertyValueCommandItf()
 	 * @generated
@@ -1322,7 +1321,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Compute Property Value Command Itf</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1332,7 +1331,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1342,7 +1341,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Compute Property Value Command Itf</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1352,7 +1351,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Type Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1362,7 +1361,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1372,7 +1371,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1382,7 +1381,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1392,7 +1391,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Type Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1402,7 +1401,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl <em>String To Property Index Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToPropertyIndexMap()
 	 * @generated
@@ -1413,7 +1412,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl <em>Property Index</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertyIndex()
 	 * @generated
@@ -1424,7 +1423,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeRegistryImpl <em>Type Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeRegistryImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTypeRegistry()
 	 * @generated
@@ -1435,7 +1434,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Types</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1445,7 +1444,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Type Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1455,7 +1454,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Type Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1465,7 +1464,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeMapImpl <em>String To Type Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeMapImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToTypeMap()
 	 * @generated
@@ -1476,7 +1475,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1486,7 +1485,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1496,7 +1495,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>String To Type Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1506,7 +1505,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>String To Type Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1516,7 +1515,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorRegistryImpl <em>Layer Descriptor Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorRegistryImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerDescriptorRegistry()
 	 * @generated
@@ -1527,7 +1526,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Descriptors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1537,7 +1536,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Descriptor Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1547,7 +1546,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Descriptor Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1557,7 +1556,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Registry</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1567,7 +1566,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1577,7 +1576,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1587,7 +1586,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1597,7 +1596,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Application Factory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1607,7 +1606,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Application Factory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1617,7 +1616,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl <em>Property Setter Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertySetterRegistry()
 	 * @generated
@@ -1628,7 +1627,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Setters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1638,7 +1637,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Setter Map</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1648,7 +1647,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1658,7 +1657,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Setter Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1668,7 +1667,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Setter</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1678,7 +1677,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Setter</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1688,7 +1687,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Property Setter</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1698,7 +1697,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Property Setter Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1708,7 +1707,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl <em>Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertySetter()
 	 * @generated
@@ -1719,7 +1718,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1729,7 +1728,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1739,7 +1738,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1749,7 +1748,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1759,7 +1758,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1769,7 +1768,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertySetterImpl <em>String To Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToPropertySetter()
 	 * @generated
@@ -1780,7 +1779,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1790,7 +1789,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1800,7 +1799,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>String To Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1810,7 +1809,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>String To Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1820,7 +1819,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl <em>Abstract Layer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAbstractLayer()
 	 * @generated
@@ -1831,7 +1830,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorImpl <em>Layer Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerOperator()
 	 * @generated
@@ -1842,7 +1841,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl <em>Abstract Layer Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAbstractLayerOperator()
 	 * @generated
@@ -1853,7 +1852,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl <em>Layer Operator Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerOperatorDescriptor()
 	 * @generated
@@ -1864,7 +1863,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyOperatorImpl <em>Property Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertyOperator()
 	 * @generated
@@ -1875,7 +1874,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.DefaultPropertyOperatorImpl <em>Default Property Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.DefaultPropertyOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getDefaultPropertyOperator()
 	 * @generated
@@ -1886,7 +1885,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorImpl <em>Top Layer Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTopLayerOperator()
 	 * @generated
@@ -1897,7 +1896,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorImpl <em>Stacked Layer Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStackedLayerOperator()
 	 * @generated
@@ -1908,7 +1907,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomLayerOperatorImpl <em>Custom Layer Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomLayerOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomLayerOperator()
 	 * @generated
@@ -1919,7 +1918,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.SimpleLayerDescriptorImpl <em>Simple Layer Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.SimpleLayerDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getSimpleLayerDescriptor()
 	 * @generated
@@ -1930,7 +1929,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerDescriptorImpl <em>Reg Exp Layer Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getRegExpLayerDescriptor()
 	 * @generated
@@ -1941,7 +1940,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.NullInstanceImpl <em>Null Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.NullInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getNullInstance()
 	 * @generated
@@ -1952,7 +1951,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerImpl <em>Reg Exp Layer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getRegExpLayer()
 	 * @generated
@@ -1963,7 +1962,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorImpl <em>Color</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getColor()
 	 * @generated
@@ -1974,7 +1973,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorInstanceImpl <em>Color Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getColorInstance()
 	 * @generated
@@ -1985,7 +1984,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl <em>Fill Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFillInstance()
 	 * @generated
@@ -1996,7 +1995,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillImpl <em>Fill</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FillImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFill()
 	 * @generated
@@ -2007,7 +2006,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillPropertySetterImpl <em>Fill Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FillPropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFillPropertySetter()
 	 * @generated
@@ -2018,7 +2017,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IsValidPropertySetterImpl <em>Is Valid Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IsValidPropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIsValidPropertySetter()
 	 * @generated
@@ -2029,7 +2028,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.NullPropertySetterImpl <em>Null Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.NullPropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getNullPropertySetter()
 	 * @generated
@@ -2040,7 +2039,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineTypeImpl <em>Line Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LineTypeImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLineType()
 	 * @generated
@@ -2051,7 +2050,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl <em>Line Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLineInstance()
 	 * @generated
@@ -2062,7 +2061,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LinePropertySetterImpl <em>Line Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LinePropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLinePropertySetter()
 	 * @generated
@@ -2073,7 +2072,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontPropertySetterImpl <em>Font Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FontPropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFontPropertySetter()
 	 * @generated
@@ -2084,7 +2083,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl <em>Font Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFontInstance()
 	 * @generated
@@ -2095,7 +2094,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontTypeImpl <em>Font Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FontTypeImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFontType()
 	 * @generated
@@ -2106,7 +2105,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IsVisiblePropertySetterImpl <em>Is Visible Property Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IsVisiblePropertySetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIsVisiblePropertySetter()
 	 * @generated
@@ -2117,7 +2116,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl <em>Layer Operator Descriptor Registry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerOperatorDescriptorRegistry()
 	 * @generated
@@ -2128,7 +2127,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Descriptors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2138,7 +2137,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Operators</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2148,7 +2147,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Collection Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2158,7 +2157,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Operator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2168,7 +2167,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Operator Descriptor Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2178,7 +2177,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer Operator Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2188,7 +2187,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layer Operator Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2198,7 +2197,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2208,7 +2207,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2218,7 +2217,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach Operator To Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2228,7 +2227,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Layer Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2238,7 +2237,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Operator Descriptor Registry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2248,7 +2247,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Operators</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2258,7 +2257,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2268,7 +2267,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2278,7 +2277,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2288,7 +2287,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2298,7 +2297,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Layer Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2308,7 +2307,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Collection Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2318,7 +2317,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2328,7 +2327,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2338,7 +2337,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2348,7 +2347,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2358,7 +2357,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Property Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2368,7 +2367,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2378,7 +2377,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2388,7 +2387,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2398,7 +2397,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2408,7 +2407,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2418,7 +2417,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2428,7 +2427,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2438,7 +2437,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2448,7 +2447,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2458,7 +2457,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2468,7 +2467,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2478,7 +2477,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2488,7 +2487,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2498,7 +2497,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2508,7 +2507,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2518,7 +2517,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2528,7 +2527,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2538,7 +2537,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2548,7 +2547,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2558,7 +2557,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2568,7 +2567,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2578,7 +2577,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2588,7 +2587,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2598,7 +2597,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2608,7 +2607,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2618,7 +2617,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2628,7 +2627,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2638,7 +2637,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2648,7 +2647,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2658,7 +2657,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2668,7 +2667,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Descriptor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2678,7 +2677,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Descriptor Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2688,7 +2687,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2698,7 +2697,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2708,7 +2707,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2718,7 +2717,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2728,7 +2727,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2738,7 +2737,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2748,7 +2747,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2758,7 +2757,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2768,7 +2767,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2778,7 +2777,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2788,7 +2787,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2798,7 +2797,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Is Descriptor Set</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2808,7 +2807,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Reset Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2818,7 +2817,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Abstract Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2828,7 +2827,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2838,7 +2837,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Default Property Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2848,7 +2847,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2858,7 +2857,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Default Property Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2868,7 +2867,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2878,7 +2877,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2888,7 +2887,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2898,7 +2897,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2908,7 +2907,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2918,7 +2917,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2928,7 +2927,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2938,7 +2937,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2948,7 +2947,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Values</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2958,7 +2957,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Value Map</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2968,7 +2967,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Descriptor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2978,7 +2977,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Views</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2988,7 +2987,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Attached Properties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2998,7 +2997,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3008,7 +3007,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3018,7 +3017,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3028,7 +3027,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3038,7 +3037,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3048,7 +3047,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3058,7 +3057,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3068,7 +3067,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3078,7 +3077,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3088,7 +3087,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3098,7 +3097,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3108,7 +3107,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Remove Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3118,7 +3117,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3128,7 +3127,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3138,7 +3137,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Abstract Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3148,7 +3147,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3158,7 +3157,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3168,7 +3167,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>String To Type Instance Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3178,7 +3177,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>String To Type Instance Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3188,7 +3187,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3198,7 +3197,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3208,7 +3207,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Folder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3218,7 +3217,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Folder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3228,7 +3227,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3238,7 +3237,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Int Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3248,7 +3247,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3258,7 +3257,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3268,7 +3267,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3278,7 +3277,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Int Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3288,7 +3287,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3298,7 +3297,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Boolean Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3308,7 +3307,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3318,7 +3317,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3328,7 +3327,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3338,7 +3337,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Boolean Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3348,7 +3347,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3358,7 +3357,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>String Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3368,7 +3367,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3378,7 +3377,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3388,7 +3387,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3398,7 +3397,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>String Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3408,7 +3407,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3418,7 +3417,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3428,7 +3427,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3438,7 +3437,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Int Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3448,7 +3447,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3458,7 +3457,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Int Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3468,7 +3467,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3478,7 +3477,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3488,7 +3487,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3498,7 +3497,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Boolean Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3508,7 +3507,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3518,7 +3517,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Boolean Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3528,7 +3527,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3538,7 +3537,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3548,7 +3547,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3558,7 +3557,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>String Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3568,7 +3567,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3578,7 +3577,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>String Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3588,7 +3587,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3598,7 +3597,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3608,7 +3607,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3618,7 +3617,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Classifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3628,7 +3627,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Custom Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3638,7 +3637,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3648,7 +3647,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Custom Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3658,7 +3657,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3668,7 +3667,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3678,7 +3677,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3688,7 +3687,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3698,7 +3697,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3708,7 +3707,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3718,7 +3717,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3728,7 +3727,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3738,7 +3737,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3748,7 +3747,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Descriptor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3758,7 +3757,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Descriptor Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3768,7 +3767,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Top Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3778,7 +3777,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3788,7 +3787,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3798,7 +3797,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3808,7 +3807,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3818,7 +3817,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3828,7 +3827,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3838,7 +3837,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3848,7 +3847,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3858,7 +3857,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3868,7 +3867,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3878,7 +3877,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Is Descriptor Set</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3888,7 +3887,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Reset Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3898,7 +3897,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Top Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3908,7 +3907,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3918,7 +3917,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3928,7 +3927,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3938,7 +3937,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3948,7 +3947,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3958,7 +3957,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3968,7 +3967,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3978,7 +3977,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3988,7 +3987,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -3998,7 +3997,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Descriptor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4008,7 +4007,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Descriptor Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4018,7 +4017,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Stacked Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4028,7 +4027,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4038,7 +4037,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4048,7 +4047,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4058,7 +4057,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4068,7 +4067,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4078,7 +4077,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4088,7 +4087,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4098,7 +4097,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4108,7 +4107,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4118,7 +4117,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4128,7 +4127,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Is Descriptor Set</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4138,7 +4137,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Reset Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4148,7 +4147,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Stacked Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4158,7 +4157,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4168,7 +4167,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4178,7 +4177,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4188,7 +4187,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4198,7 +4197,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4208,7 +4207,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4218,7 +4217,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4228,7 +4227,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4238,7 +4237,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4248,7 +4247,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Custom Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4258,7 +4257,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4268,7 +4267,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4278,7 +4277,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4288,7 +4287,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4298,7 +4297,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4308,7 +4307,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4318,7 +4317,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4328,7 +4327,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4338,7 +4337,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4348,7 +4347,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Layer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4358,7 +4357,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Custom Layer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4368,7 +4367,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4378,7 +4377,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4388,7 +4387,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Index</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4398,7 +4397,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Property Index</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4408,7 +4407,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4418,7 +4417,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4428,7 +4427,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>String To Property Index Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4438,7 +4437,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>String To Property Index Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4448,7 +4447,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Registry</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4458,7 +4457,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Simple Layer Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4468,7 +4467,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Simple Layer Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4478,7 +4477,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Registry</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4488,7 +4487,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Reg Exp Layer Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4498,7 +4497,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Reg Exp Layer Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4508,7 +4507,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Null Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4518,7 +4517,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4528,7 +4527,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4538,7 +4537,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4548,7 +4547,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4558,7 +4557,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Null Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4568,7 +4567,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4578,7 +4577,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4588,7 +4587,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4598,7 +4597,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4608,7 +4607,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4618,7 +4617,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4628,7 +4627,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4638,7 +4637,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4648,7 +4647,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Values</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4658,7 +4657,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Value Map</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4668,7 +4667,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Descriptor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4678,7 +4677,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Views</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4688,7 +4687,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Attached Properties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4698,7 +4697,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Expr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4708,7 +4707,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4718,7 +4717,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Domain Changed Event Dependant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4728,7 +4727,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Domain Changed Event Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4738,7 +4737,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Diagram Changed Event Dependant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4748,7 +4747,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Diagram Changed Event Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4758,7 +4757,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Expression Context Object Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4768,7 +4767,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Reg Exp Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4778,7 +4777,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4788,7 +4787,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4798,7 +4797,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4808,7 +4807,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4818,7 +4817,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4828,7 +4827,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4838,7 +4837,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4848,7 +4847,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4858,7 +4857,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4868,7 +4867,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4878,7 +4877,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Remove Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4888,7 +4887,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4898,7 +4897,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4908,7 +4907,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Activate</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4918,7 +4917,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Deactivate</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4928,7 +4927,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Is Derived View</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4938,7 +4937,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach Derived View</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4948,7 +4947,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach Derived Views</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4958,7 +4957,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach Derived Views</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4968,7 +4967,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Lookup Derived Views</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4978,7 +4977,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Reg Exp Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4988,7 +4987,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -4998,7 +4997,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5008,7 +5007,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5018,7 +5017,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5028,7 +5027,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5038,7 +5037,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5048,7 +5047,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5058,7 +5057,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5068,7 +5067,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Values</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5078,7 +5077,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Value Map</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5088,7 +5087,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Descriptor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5098,7 +5097,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Views</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5108,7 +5107,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Attached Properties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5118,7 +5117,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5128,7 +5127,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5138,7 +5137,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5148,7 +5147,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5158,7 +5157,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5168,7 +5167,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5178,7 +5177,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5188,7 +5187,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5198,7 +5197,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5208,7 +5207,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5218,7 +5217,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5228,7 +5227,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Remove Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5238,7 +5237,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5248,7 +5247,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5258,7 +5257,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5268,7 +5267,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5278,7 +5277,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5288,7 +5287,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5298,7 +5297,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Color</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5308,7 +5307,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5318,7 +5317,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Color</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5328,7 +5327,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5338,7 +5337,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Color Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5348,7 +5347,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5358,7 +5357,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5368,7 +5367,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5378,7 +5377,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Color Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5388,7 +5387,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Transparency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5398,7 +5397,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Fill Color</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5408,7 +5407,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Fill Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5418,7 +5417,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5428,7 +5427,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5438,7 +5437,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5448,7 +5447,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Fill Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5458,7 +5457,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5468,7 +5467,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5478,7 +5477,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5488,7 +5487,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Fill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5498,7 +5497,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5508,7 +5507,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Fill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5518,7 +5517,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5528,7 +5527,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5538,7 +5537,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Fill Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5548,7 +5547,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5558,7 +5557,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Fill Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5568,7 +5567,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5578,7 +5577,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5588,7 +5587,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Is Valid Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5598,7 +5597,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5608,7 +5607,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Is Valid Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5618,7 +5617,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5628,7 +5627,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5638,7 +5637,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Null Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5648,7 +5647,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5658,7 +5657,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Null Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5668,7 +5667,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5678,7 +5677,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5688,7 +5687,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5698,7 +5697,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Line Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5708,7 +5707,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5718,7 +5717,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Line Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5728,7 +5727,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Line Color</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5738,7 +5737,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Line With</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5748,7 +5747,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Line Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5758,7 +5757,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5768,7 +5767,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5778,7 +5777,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5788,7 +5787,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Line Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5798,7 +5797,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5808,7 +5807,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5818,7 +5817,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Line Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5828,7 +5827,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5838,7 +5837,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Line Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5848,7 +5847,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5858,7 +5857,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5868,7 +5867,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Font Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5878,7 +5877,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5888,7 +5887,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Font Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5898,7 +5897,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Font Color</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5908,7 +5907,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Font Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5918,7 +5917,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Font Heigh</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5928,7 +5927,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Bold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5938,7 +5937,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Font Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5948,7 +5947,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Cmd Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5958,7 +5957,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5968,7 +5967,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value From Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5978,7 +5977,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Font Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5988,7 +5987,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -5998,7 +5997,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6008,7 +6007,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6018,7 +6017,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Font Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6028,7 +6027,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6038,7 +6037,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Font Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6048,7 +6047,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6058,7 +6057,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6068,7 +6067,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Is Visible Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6078,7 +6077,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6088,7 +6087,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Is Visible Property Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6098,7 +6097,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorDescriptorImpl <em>Top Layer Operator Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTopLayerOperatorDescriptor()
 	 * @generated
@@ -6109,7 +6108,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Operators</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6119,7 +6118,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6129,7 +6128,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Top Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6139,7 +6138,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6149,7 +6148,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6159,7 +6158,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Layer Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6169,7 +6168,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Collection Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6179,7 +6178,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Top Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6189,7 +6188,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorDescriptorImpl <em>Stacked Layer Operator Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStackedLayerOperatorDescriptor()
 	 * @generated
@@ -6200,7 +6199,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Operators</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6210,7 +6209,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6220,7 +6219,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Stacked Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6230,7 +6229,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6240,7 +6239,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6250,7 +6249,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Layer Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6260,7 +6259,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Collection Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6270,7 +6269,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Stacked Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6280,7 +6279,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomPropertyOperatorImpl <em>Custom Property Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomPropertyOperatorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomPropertyOperator()
 	 * @generated
@@ -6291,7 +6290,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6301,7 +6300,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6311,7 +6310,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Operator Instance</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6321,7 +6320,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Class Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6331,7 +6330,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Custom Property Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6341,7 +6340,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6351,7 +6350,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Reset Operator Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6361,7 +6360,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Custom Property Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6371,7 +6370,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AndStackedLayerOperatorDescriptorImpl <em>And Stacked Layer Operator Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AndStackedLayerOperatorDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAndStackedLayerOperatorDescriptor()
 	 * @generated
@@ -6382,7 +6381,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Operators</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6392,7 +6391,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6402,7 +6401,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>And Stacked Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6412,7 +6411,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6422,7 +6421,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6432,7 +6431,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Layer Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6442,7 +6441,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Collection Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6452,7 +6451,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>And Stacked Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6462,7 +6461,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.OrStackedLayerOperatorDescriptorImpl <em>Or Stacked Layer Operator Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.OrStackedLayerOperatorDescriptorImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getOrStackedLayerOperatorDescriptor()
 	 * @generated
@@ -6473,7 +6472,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Operators</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6483,7 +6482,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6493,7 +6492,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Or Stacked Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6503,7 +6502,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6513,7 +6512,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6523,7 +6522,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Create Layer Operator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6533,7 +6532,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Property Collection Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6543,7 +6542,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Or Stacked Layer Operator Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6553,7 +6552,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IsAbstractUmlSetterImpl <em>Is Abstract Uml Setter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IsAbstractUmlSetterImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIsAbstractUmlSetter()
 	 * @generated
@@ -6564,7 +6563,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6574,7 +6573,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6584,7 +6583,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>Is Abstract Uml Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6594,7 +6593,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Set Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6604,7 +6603,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>Is Abstract Uml Setter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6614,7 +6613,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AllViewsDerivedLayerImpl <em>All Views Derived Layer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AllViewsDerivedLayerImpl
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAllViewsDerivedLayer()
 	 * @generated
@@ -6625,7 +6624,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6635,7 +6634,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6645,7 +6644,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6655,7 +6654,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled Internal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6665,7 +6664,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Layer Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6675,7 +6674,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Branch Enabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6685,7 +6684,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Layers Stack</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6695,7 +6694,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6705,7 +6704,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Values</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6715,7 +6714,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Value Map</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6725,7 +6724,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Descriptor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6735,7 +6734,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Views</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6745,7 +6744,7 @@ public interface LayersPackage extends EPackage {
 	 * The feature id for the '<em><b>Attached Properties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6755,7 +6754,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of structural features of the '<em>All Views Derived Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6765,7 +6764,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6775,7 +6774,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6785,7 +6784,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6795,7 +6794,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach To Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6805,7 +6804,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Layers Stack</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6815,7 +6814,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Enter Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6825,7 +6824,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Attach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6835,7 +6834,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Detach</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6845,7 +6844,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Exit Attached State</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6855,7 +6854,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Add Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6865,7 +6864,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Remove Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6875,7 +6874,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6885,7 +6884,7 @@ public interface LayersPackage extends EPackage {
 	 * The operation id for the '<em>Get Property Instance</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6895,7 +6894,7 @@ public interface LayersPackage extends EPackage {
 	 * The number of operations of the '<em>All Views Derived Layer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -6905,7 +6904,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerState <em>Layer State</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerState
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerState()
 	 * @generated
@@ -6916,7 +6915,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.EventLevel <em>Event Level</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.EventLevel
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getEventLevel()
 	 * @generated
@@ -6927,7 +6926,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getString()
 	 * @generated
@@ -6938,7 +6937,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getboolean()
 	 * @generated
 	 */
@@ -6948,7 +6947,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>EPackage</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getEPackage()
 	 * @generated
@@ -6959,7 +6958,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>Not Found Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.NotFoundException
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getNotFoundException()
 	 * @generated
@@ -6970,7 +6969,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>Compute Property Value Command</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getComputePropertyValueCommand()
 	 * @generated
@@ -6981,7 +6980,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.LayersException
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersException()
 	 * @generated
@@ -6992,7 +6991,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>int</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getint()
 	 * @generated
 	 */
@@ -7003,7 +7002,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.Object
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getObject()
 	 * @generated
@@ -7015,7 +7014,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>Custom Property Opertor Instance</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomPropertyOpertorInstance()
 	 * @generated
@@ -7026,7 +7025,7 @@ public interface LayersPackage extends EPackage {
 	 * The meta object id for the '<em>Bad State Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.BadStateException
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getBadStateException()
 	 * @generated
@@ -7038,7 +7037,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle <em>Layer Named Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Named Style</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle
 	 * @generated
@@ -7049,7 +7048,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle#getLayersStack <em>Layers Stack</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Layers Stack</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle#getLayersStack()
 	 * @see #getLayerNamedStyle()
@@ -7061,7 +7060,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack <em>Stack</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stack</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack
 	 * @generated
@@ -7072,7 +7071,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getLayers <em>Layers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Layers</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getLayers()
 	 * @see #getLayersStack()
@@ -7084,7 +7083,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getName()
 	 * @see #getLayersStack()
@@ -7096,7 +7095,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getDescription()
 	 * @see #getLayersStack()
@@ -7108,7 +7107,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getDiagram <em>Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Diagram</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getDiagram()
 	 * @see #getLayersStack()
@@ -7120,7 +7119,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>State</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getState()
 	 * @see #getLayersStack()
@@ -7133,7 +7132,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Get Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Compute Property Value Command</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -7145,7 +7144,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Get Properties Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList)
 	 * @generated
@@ -7157,7 +7156,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Get Views Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -7168,7 +7167,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#startAfterCreation() <em>Start After Creation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Start After Creation</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#startAfterCreation()
 	 * @generated
@@ -7179,7 +7178,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attachLayers() <em>Attach Layers</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach Layers</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attachLayers()
 	 * @generated
@@ -7190,7 +7189,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attach() <em>Attach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#attach()
 	 * @generated
@@ -7201,7 +7200,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#detach() <em>Detach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Detach</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#detach()
 	 * @generated
@@ -7212,7 +7211,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#enterAttachedState() <em>Enter Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Enter Attached State</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#enterAttachedState()
 	 * @generated
@@ -7223,7 +7222,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#exitAttachedState() <em>Exit Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Exit Attached State</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStack#exitAttachedState()
 	 * @generated
@@ -7234,7 +7233,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.Layer <em>Layer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Layer
 	 * @generated
@@ -7245,7 +7244,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.Color <em>Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Color</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Color
 	 * @generated
@@ -7256,7 +7255,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance <em>Color Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Color Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance
 	 * @generated
@@ -7267,7 +7266,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance#getValue()
 	 * @see #getColorInstance()
@@ -7279,7 +7278,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance <em>Fill Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Fill Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FillInstance
 	 * @generated
@@ -7290,7 +7289,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance#getTransparency <em>Transparency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Transparency</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FillInstance#getTransparency()
 	 * @see #getFillInstance()
@@ -7302,7 +7301,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance#getFillColor <em>Fill Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Fill Color</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FillInstance#getFillColor()
 	 * @see #getFillInstance()
@@ -7314,7 +7313,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.Fill <em>Fill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Fill</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Fill
 	 * @generated
@@ -7325,7 +7324,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.FillPropertySetter <em>Fill Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Fill Property Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FillPropertySetter
 	 * @generated
@@ -7336,7 +7335,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.IsValidPropertySetter <em>Is Valid Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Is Valid Property Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.IsValidPropertySetter
 	 * @generated
@@ -7347,7 +7346,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter <em>Null Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Null Property Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter
 	 * @generated
@@ -7358,7 +7357,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LineType <em>Line Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Line Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LineType
 	 * @generated
@@ -7369,7 +7368,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance <em>Line Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Line Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LineInstance
 	 * @generated
@@ -7380,7 +7379,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance#getLineColor <em>Line Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Line Color</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LineInstance#getLineColor()
 	 * @see #getLineInstance()
@@ -7392,7 +7391,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance#getLineWith <em>Line With</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Line With</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LineInstance#getLineWith()
 	 * @see #getLineInstance()
@@ -7404,7 +7403,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LinePropertySetter <em>Line Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Line Property Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LinePropertySetter
 	 * @generated
@@ -7415,7 +7414,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontPropertySetter <em>Font Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Font Property Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FontPropertySetter
 	 * @generated
@@ -7426,7 +7425,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance <em>Font Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Font Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FontInstance
 	 * @generated
@@ -7437,7 +7436,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontColor <em>Font Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Font Color</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontColor()
 	 * @see #getFontInstance()
@@ -7449,7 +7448,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontName <em>Font Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Font Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontName()
 	 * @see #getFontInstance()
@@ -7461,7 +7460,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontHeigh <em>Font Heigh</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Font Heigh</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#getFontHeigh()
 	 * @see #getFontInstance()
@@ -7473,7 +7472,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#isBold <em>Bold</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Bold</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FontInstance#isBold()
 	 * @see #getFontInstance()
@@ -7485,7 +7484,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.FontType <em>Font Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Font Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FontType
 	 * @generated
@@ -7496,7 +7495,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.IsVisiblePropertySetter <em>Is Visible Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Is Visible Property Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.IsVisiblePropertySetter
 	 * @generated
@@ -7507,7 +7506,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry <em>Layer Operator Descriptor Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Operator Descriptor Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry
 	 * @generated
@@ -7518,7 +7517,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getDescriptors <em>Descriptors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Descriptors</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getDescriptors()
 	 * @see #getLayerOperatorDescriptorRegistry()
@@ -7530,7 +7529,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperators <em>Property Operators</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Property Operators</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperators()
 	 * @see #getLayerOperatorDescriptorRegistry()
@@ -7542,7 +7541,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyCollectionSize <em>Property Collection Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Property Collection Size</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyCollectionSize()
 	 * @see #getLayerOperatorDescriptorRegistry()
@@ -7554,7 +7553,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getDefaultOperator <em>Default Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Default Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getDefaultOperator()
 	 * @see #getLayerOperatorDescriptorRegistry()
@@ -7567,7 +7566,7 @@ public interface LayersPackage extends EPackage {
 	 * ' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Add Layer Operator Descriptor</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addLayerOperatorDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor)
 	 * @generated
@@ -7578,7 +7577,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getLayerOperatorDescriptor(java.lang.String) <em>Get Layer Operator Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Layer Operator Descriptor</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getLayerOperatorDescriptor(java.lang.String)
 	 * @generated
@@ -7589,7 +7588,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator) <em>Add Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Add Property Operator</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator)
 	 * @generated
@@ -7600,7 +7599,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperator(java.lang.String) <em>Get Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property Operator</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperator(java.lang.String)
 	 * @generated
@@ -7612,7 +7611,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Attach Operator To Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach Operator To Descriptor</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String)
 	 * @generated
@@ -7623,7 +7622,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#createLayerOperator(java.lang.String) <em>Create Layer Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Create Layer Operator</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#createLayerOperator(java.lang.String)
 	 * @generated
@@ -7634,7 +7633,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperatorDescriptor <em>Top Layer Operator Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Top Layer Operator Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperatorDescriptor
 	 * @generated
@@ -7645,7 +7644,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperatorDescriptor <em>Stacked Layer Operator Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stacked Layer Operator Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperatorDescriptor
 	 * @generated
@@ -7656,7 +7655,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator <em>Custom Property Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Custom Property Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator
 	 * @generated
@@ -7667,7 +7666,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#getClassname <em>Classname</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Classname</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#getClassname()
 	 * @see #getCustomPropertyOperator()
@@ -7679,7 +7678,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#getOperatorInstance <em>Operator Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Operator Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#getOperatorInstance()
 	 * @see #getCustomPropertyOperator()
@@ -7691,7 +7690,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#getClassBundleID <em>Class Bundle ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Class Bundle ID</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#getClassBundleID()
 	 * @see #getCustomPropertyOperator()
@@ -7703,7 +7702,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#resetOperatorInstance() <em>Reset Operator Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Reset Operator Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator#resetOperatorInstance()
 	 * @generated
@@ -7714,7 +7713,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.AndStackedLayerOperatorDescriptor <em>And Stacked Layer Operator Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>And Stacked Layer Operator Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AndStackedLayerOperatorDescriptor
 	 * @generated
@@ -7725,7 +7724,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.OrStackedLayerOperatorDescriptor <em>Or Stacked Layer Operator Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Or Stacked Layer Operator Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.OrStackedLayerOperatorDescriptor
 	 * @generated
@@ -7736,7 +7735,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter <em>Is Abstract Uml Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Is Abstract Uml Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter
 	 * @generated
@@ -7747,7 +7746,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer <em>All Views Derived Layer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>All Views Derived Layer</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer
 	 * @generated
@@ -7758,7 +7757,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerState <em>Layer State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Layer State</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerState
 	 * @generated
@@ -7769,7 +7768,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.layers.stackmodel.layers.EventLevel <em>Event Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Event Level</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.EventLevel
 	 * @generated
@@ -7780,7 +7779,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance <em>Type Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Type Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance
 	 * @generated
@@ -7791,7 +7790,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromString(java.lang.String) <em>Set Value From String</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Set Value From String</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromString(java.lang.String)
 	 * @generated
@@ -7802,7 +7801,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromInstance(org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance) <em>Set Value From Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Set Value From Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance#setValueFromInstance(org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 * @generated
@@ -7813,7 +7812,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand <em>Compute Property Value Command Itf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Compute Property Value Command Itf</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand"
@@ -7825,7 +7824,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue() <em>Get Cmd Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Cmd Value</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand#getCmdValue()
 	 * @generated
@@ -7836,7 +7835,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Type Instance Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String To Type Instance Map</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyDataType="org.eclipse.papyrus.layers.stackmodel.layers.String" keyRequired="true" keyOrdered="false"
@@ -7849,7 +7848,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToTypeInstanceMap()
@@ -7861,7 +7860,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToTypeInstanceMap()
@@ -7873,7 +7872,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor <em>Layer Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor
 	 * @generated
@@ -7884,7 +7883,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor#getPropertyRegistry <em>Property Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor#getPropertyRegistry()
 	 * @see #getLayerDescriptor()
@@ -7896,7 +7895,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory <em>Layer Application Factory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Application Factory</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory
 	 * @generated
@@ -7907,7 +7906,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory#getApplication <em>Application</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Application</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory#getApplication()
 	 * @see #getLayerApplicationFactory()
@@ -7919,7 +7918,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry <em>Property Setter Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Setter Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry
 	 * @generated
@@ -7930,7 +7929,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetters <em>Property Setters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Property Setters</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetters()
 	 * @see #getPropertySetterRegistry()
@@ -7942,7 +7941,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the map '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getSetterMap <em>Setter Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the map '<em>Setter Map</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getSetterMap()
 	 * @see #getPropertySetterRegistry()
@@ -7954,7 +7953,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getApplication <em>Application</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Application</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getApplication()
 	 * @see #getPropertySetterRegistry()
@@ -7966,7 +7965,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Setter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property Setter</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -7977,7 +7976,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(java.lang.String) <em>Get Property Setter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property Setter</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#getPropertySetter(java.lang.String)
 	 * @generated
@@ -7988,7 +7987,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#addPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter) <em>Add Property Setter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Add Property Setter</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry#addPropertySetter(org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter)
 	 * @generated
@@ -7999,7 +7998,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter <em>Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Setter</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter
 	 * @generated
@@ -8010,7 +8009,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#getProperty()
 	 * @see #getPropertySetter()
@@ -8022,7 +8021,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#getPropertyName <em>Property Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Property Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#getPropertyName()
 	 * @see #getPropertySetter()
@@ -8034,7 +8033,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance) <em>Set Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Set Value</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 * @generated
@@ -8045,7 +8044,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Property Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String To Property Setter</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyDataType="org.eclipse.papyrus.layers.stackmodel.layers.String" keyRequired="true" keyOrdered="false"
@@ -8058,7 +8057,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToPropertySetter()
@@ -8070,7 +8069,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToPropertySetter()
@@ -8082,7 +8081,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer <em>Abstract Layer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Abstract Layer</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer
 	 * @generated
@@ -8093,7 +8092,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyValues <em>Property Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Property Values</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyValues()
 	 * @see #getAbstractLayer()
@@ -8105,7 +8104,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the map '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyValueMap <em>Property Value Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the map '<em>Property Value Map</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyValueMap()
 	 * @see #getAbstractLayer()
@@ -8117,7 +8116,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getLayerDescriptor <em>Layer Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Layer Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getLayerDescriptor()
 	 * @see #getAbstractLayer()
@@ -8129,7 +8128,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getViews <em>Views</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Views</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getViews()
 	 * @see #getAbstractLayer()
@@ -8141,7 +8140,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getAttachedProperties <em>Attached Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Attached Properties</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getAttachedProperties()
 	 * @see #getAbstractLayer()
@@ -8153,7 +8152,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Add Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Add Property Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -8164,7 +8163,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#removePropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Remove Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Remove Property Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#removePropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -8175,7 +8174,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -8186,7 +8185,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(java.lang.String) <em>Get Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(java.lang.String)
 	 * @generated
@@ -8197,7 +8196,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property
 	 * @generated
@@ -8208,7 +8207,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property#getType()
 	 * @see #getProperty()
@@ -8220,7 +8219,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Default Value</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property#getDefaultValue()
 	 * @see #getProperty()
@@ -8232,7 +8231,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property#getName()
 	 * @see #getProperty()
@@ -8244,7 +8243,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property#getDescription()
 	 * @see #getProperty()
@@ -8256,7 +8255,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getIndex <em>Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Index</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property#getIndex()
 	 * @see #getProperty()
@@ -8268,7 +8267,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#createInstance() <em>Create Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Create Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Property#createInstance()
 	 * @generated
@@ -8279,7 +8278,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.FolderElement <em>Folder Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Folder Element</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.FolderElement
 	 * @generated
@@ -8290,7 +8289,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression <em>Layer Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Expression</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression
 	 * @generated
@@ -8301,7 +8300,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getName()
 	 * @see #getLayerExpression()
@@ -8313,7 +8312,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getDescription()
 	 * @see #getLayerExpression()
@@ -8325,7 +8324,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isLayerEnabledInternal <em>Is Layer Enabled Internal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Layer Enabled Internal</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isLayerEnabledInternal()
 	 * @see #getLayerExpression()
@@ -8337,7 +8336,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isLayerEnabled <em>Is Layer Enabled</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Layer Enabled</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isLayerEnabled()
 	 * @see #getLayerExpression()
@@ -8349,7 +8348,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isBranchEnabled <em>Is Branch Enabled</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Branch Enabled</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isBranchEnabled()
 	 * @see #getLayerExpression()
@@ -8361,7 +8360,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getOwningLayersStack <em>Owning Layers Stack</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Owning Layers Stack</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getOwningLayersStack()
 	 * @see #getLayerExpression()
@@ -8373,7 +8372,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>State</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getState()
 	 * @see #getLayerExpression()
@@ -8386,7 +8385,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Get Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Compute Property Value Command</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -8398,7 +8397,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Get Views Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Views Compute Property Value Command</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -8410,7 +8409,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Get Properties Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Properties Compute Property Value Command</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList)
 	 * @generated
@@ -8421,7 +8420,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attachToLayersStack(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack) <em>Attach To Layers Stack</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach To Layers Stack</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attachToLayersStack(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack)
 	 * @generated
@@ -8432,7 +8431,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getLayersStack() <em>Get Layers Stack</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Layers Stack</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getLayersStack()
 	 * @generated
@@ -8443,7 +8442,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#enterAttachedState() <em>Enter Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Enter Attached State</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#enterAttachedState()
 	 * @generated
@@ -8454,7 +8453,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attach() <em>Attach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attach()
 	 * @generated
@@ -8465,7 +8464,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#detach() <em>Detach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Detach</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#detach()
 	 * @generated
@@ -8476,7 +8475,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#exitAttachedState() <em>Exit Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Exit Attached State</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#exitAttachedState()
 	 * @generated
@@ -8487,7 +8486,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.ApplicationDependantElement <em>Application Dependant Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Application Dependant Element</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.ApplicationDependantElement
 	 * @generated
@@ -8498,7 +8497,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.ApplicationDependantElement#getApplication <em>Application</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Application</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.ApplicationDependantElement#getApplication()
 	 * @see #getApplicationDependantElement()
@@ -8510,7 +8509,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Type
 	 * @generated
@@ -8521,7 +8520,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.Type#getMetamodel <em>Metamodel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Metamodel</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Type#getMetamodel()
 	 * @see #getType()
@@ -8533,7 +8532,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Type#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Type#getName()
 	 * @see #getType()
@@ -8545,7 +8544,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Type#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Type#getDescription()
 	 * @see #getType()
@@ -8557,7 +8556,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Type#createInstance() <em>Create Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Create Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Type#createInstance()
 	 * @generated
@@ -8568,7 +8567,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel <em>Metamodel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Metamodel</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel
 	 * @generated
@@ -8579,7 +8578,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getName()
 	 * @see #getMetamodel()
@@ -8591,7 +8590,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getDescription()
 	 * @see #getMetamodel()
@@ -8603,7 +8602,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getNsuri <em>Nsuri</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Nsuri</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getNsuri()
 	 * @see #getMetamodel()
@@ -8615,7 +8614,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getPluginID <em>Plugin ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Plugin ID</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getPluginID()
 	 * @see #getMetamodel()
@@ -8627,7 +8626,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getEPackageInstanceName <em>EPackage Instance Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>EPackage Instance Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getEPackageInstanceName()
 	 * @see #getMetamodel()
@@ -8639,7 +8638,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#isTypeValid <em>Is Type Valid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Type Valid</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#isTypeValid()
 	 * @see #getMetamodel()
@@ -8651,7 +8650,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getEPackage() <em>Get EPackage</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get EPackage</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getEPackage()
 	 * @generated
@@ -8662,7 +8661,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.Folder <em>Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Folder</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Folder
 	 * @generated
@@ -8673,7 +8672,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.Folder#getElements <em>Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Elements</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Folder#getElements()
 	 * @see #getFolder()
@@ -8685,7 +8684,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.Folder#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Folder#getName()
 	 * @see #getFolder()
@@ -8697,7 +8696,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.IntInstance <em>Int Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Int Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.IntInstance
 	 * @generated
@@ -8708,7 +8707,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.IntInstance#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.IntInstance#getValue()
 	 * @see #getIntInstance()
@@ -8720,7 +8719,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance <em>Boolean Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Boolean Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance
 	 * @generated
@@ -8731,7 +8730,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance#isValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance#isValue()
 	 * @see #getBooleanInstance()
@@ -8743,7 +8742,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.StringInstance <em>String Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.StringInstance
 	 * @generated
@@ -8754,7 +8753,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.StringInstance#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.StringInstance#getValue()
 	 * @see #getStringInstance()
@@ -8766,7 +8765,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.IntType <em>Int Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Int Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.IntType
 	 * @generated
@@ -8777,7 +8776,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanType <em>Boolean Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Boolean Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.BooleanType
 	 * @generated
@@ -8788,7 +8787,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.StringType <em>String Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.StringType
 	 * @generated
@@ -8799,7 +8798,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomType <em>Custom Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Custom Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomType
 	 * @generated
@@ -8810,7 +8809,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomType#getClassifier <em>Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Classifier</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomType#getClassifier()
 	 * @see #getCustomType()
@@ -8822,7 +8821,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication <em>Stack Application</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stack Application</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication
 	 * @generated
@@ -8833,7 +8832,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayersStacks <em>Layers Stacks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Layers Stacks</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayersStacks()
 	 * @see #getLayersStackApplication()
@@ -8845,7 +8844,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayerStackRegistry <em>Layer Stack Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Layer Stack Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayerStackRegistry()
 	 * @see #getLayersStackApplication()
@@ -8857,7 +8856,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getPropertyRegistry <em>Property Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Property Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getPropertyRegistry()
 	 * @see #getLayersStackApplication()
@@ -8869,7 +8868,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayerDescriptorRegistry <em>Layer Descriptor Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Layer Descriptor Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayerDescriptorRegistry()
 	 * @see #getLayersStackApplication()
@@ -8881,7 +8880,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getFactory <em>Factory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Factory</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getFactory()
 	 * @see #getLayersStackApplication()
@@ -8893,7 +8892,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getPropertySetterRegistry <em>Property Setter Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Property Setter Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getPropertySetterRegistry()
 	 * @see #getLayersStackApplication()
@@ -8905,7 +8904,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayerOperatorDescriptorRegistry <em>Layer Operator Descriptor Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Layer Operator Descriptor Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayerOperatorDescriptorRegistry()
 	 * @see #getLayersStackApplication()
@@ -8917,7 +8916,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Get Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Layers Stack For</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#getLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
@@ -8928,7 +8927,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#removeLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Remove Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Remove Layers Stack For</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#removeLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
@@ -8939,7 +8938,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#isLayersStackAttachedFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Is Layers Stack Attached For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Is Layers Stack Attached For</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#isLayersStackAttachedFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
@@ -8950,7 +8949,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#createLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Create Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Create Layers Stack For</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#createLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
@@ -8961,7 +8960,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#lookupLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram) <em>Lookup Layers Stack For</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Lookup Layers Stack For</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication#lookupLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)
 	 * @generated
@@ -8972,7 +8971,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry <em>Layer Stack Descriptor Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Stack Descriptor Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry
 	 * @generated
@@ -8983,7 +8982,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry <em>Property Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry
 	 * @generated
@@ -8994,7 +8993,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Properties</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getProperties()
 	 * @see #getPropertyRegistry()
@@ -9006,7 +9005,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getTypeRegistry <em>Type Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Type Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getTypeRegistry()
 	 * @see #getPropertyRegistry()
@@ -9018,7 +9017,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertiesCount <em>Properties Count</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Properties Count</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertiesCount()
 	 * @see #getPropertyRegistry()
@@ -9030,7 +9029,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertyIndex(java.lang.String) <em>Get Property Index</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property Index</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertyIndex(java.lang.String)
 	 * @generated
@@ -9041,7 +9040,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getProperty(java.lang.String) <em>Get Property</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getProperty(java.lang.String)
 	 * @generated
@@ -9052,7 +9051,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#addProperty(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Add Property</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Add Property</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#addProperty(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -9063,7 +9062,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Property Index Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String To Property Index Map</em>'.
 	 * @see java.util.Map.Entry
 	 * @model features="value key"
@@ -9077,7 +9076,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToPropertyIndexMap()
@@ -9089,7 +9088,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToPropertyIndexMap()
@@ -9101,7 +9100,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor <em>Simple Layer Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Simple Layer Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor
 	 * @generated
@@ -9112,7 +9111,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor <em>Reg Exp Layer Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Reg Exp Layer Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor
 	 * @generated
@@ -9123,7 +9122,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.NullInstance <em>Null Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Null Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.NullInstance
 	 * @generated
@@ -9134,7 +9133,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.NullInstance#getInstance() <em>Get Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Instance</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.NullInstance#getInstance()
 	 * @generated
@@ -9145,7 +9144,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer <em>Reg Exp Layer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Reg Exp Layer</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer
 	 * @generated
@@ -9156,7 +9155,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getExpr <em>Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Expr</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getExpr()
 	 * @see #getRegExpLayer()
@@ -9168,7 +9167,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getLanguage <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Language</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getLanguage()
 	 * @see #getRegExpLayer()
@@ -9180,7 +9179,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#isDomainChangedEventDependant <em>Is Domain Changed Event Dependant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Domain Changed Event Dependant</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#isDomainChangedEventDependant()
 	 * @see #getRegExpLayer()
@@ -9192,7 +9191,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getDomainChangedEventLevel <em>Domain Changed Event Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Domain Changed Event Level</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getDomainChangedEventLevel()
 	 * @see #getRegExpLayer()
@@ -9204,7 +9203,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#isDiagramChangedEventDependant <em>Is Diagram Changed Event Dependant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Diagram Changed Event Dependant</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#isDiagramChangedEventDependant()
 	 * @see #getRegExpLayer()
@@ -9216,7 +9215,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getDiagramChangedEventLevel <em>Diagram Changed Event Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Diagram Changed Event Level</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getDiagramChangedEventLevel()
 	 * @see #getRegExpLayer()
@@ -9228,7 +9227,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getExpressionContextObjectType <em>Expression Context Object Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Expression Context Object Type</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#getExpressionContextObjectType()
 	 * @see #getRegExpLayer()
@@ -9240,7 +9239,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#activate(org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator) <em>Activate</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Activate</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#activate(org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator)
 	 * @generated
@@ -9251,7 +9250,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#deactivate(org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator) <em>Deactivate</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Deactivate</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#deactivate(org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator)
 	 * @generated
@@ -9262,7 +9261,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#isDerivedView(org.eclipse.gmf.runtime.notation.View) <em>Is Derived View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Is Derived View</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#isDerivedView(org.eclipse.gmf.runtime.notation.View)
 	 * @generated
@@ -9273,7 +9272,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#attachDerivedView(org.eclipse.gmf.runtime.notation.View) <em>Attach Derived View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach Derived View</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#attachDerivedView(org.eclipse.gmf.runtime.notation.View)
 	 * @generated
@@ -9284,7 +9283,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#attachDerivedViews(org.eclipse.emf.common.util.EList) <em>Attach Derived Views</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach Derived Views</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#attachDerivedViews(org.eclipse.emf.common.util.EList)
 	 * @generated
@@ -9295,7 +9294,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#attachDerivedViews() <em>Attach Derived Views</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Attach Derived Views</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#attachDerivedViews()
 	 * @generated
@@ -9306,7 +9305,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#lookupDerivedViews(org.eclipse.emf.common.util.EList) <em>Lookup Derived Views</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Lookup Derived Views</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer#lookupDerivedViews(org.eclipse.emf.common.util.EList)
 	 * @generated
@@ -9317,7 +9316,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex <em>Property Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Index</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex
 	 * @generated
@@ -9328,7 +9327,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex#getProperty()
 	 * @see #getPropertyIndex()
@@ -9340,7 +9339,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex#getIndex <em>Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Index</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex#getIndex()
 	 * @see #getPropertyIndex()
@@ -9352,7 +9351,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry <em>Type Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Type Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry
 	 * @generated
@@ -9363,7 +9362,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the map '{@link org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the map '<em>Types</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry#getTypes()
 	 * @see #getTypeRegistry()
@@ -9375,7 +9374,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Type Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String To Type Map</em>'.
 	 * @see java.util.Map.Entry
 	 * @model features="value key"
@@ -9389,7 +9388,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToTypeMap()
@@ -9401,7 +9400,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getStringToTypeMap()
@@ -9413,7 +9412,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry <em>Layer Descriptor Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Descriptor Registry</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry
 	 * @generated
@@ -9424,7 +9423,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry#getLayerDescriptors <em>Layer Descriptors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Layer Descriptors</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry#getLayerDescriptors()
 	 * @see #getLayerDescriptorRegistry()
@@ -9436,7 +9435,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator <em>Layer Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator
 	 * @generated
@@ -9447,7 +9446,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator#getLayers <em>Layers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Layers</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator#getLayers()
 	 * @see #getLayerOperator()
@@ -9459,7 +9458,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Container</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer
 	 * @generated
@@ -9470,7 +9469,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression) <em>Add Layer</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Add Layer</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression)
 	 * @generated
@@ -9481,7 +9480,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator <em>Abstract Layer Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Abstract Layer Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator
 	 * @generated
@@ -9492,7 +9491,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#getLayerOperatorDescriptor <em>Layer Operator Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Layer Operator Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#getLayerOperatorDescriptor()
 	 * @see #getAbstractLayerOperator()
@@ -9504,7 +9503,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#getLayerOperatorDescriptorName <em>Layer Operator Descriptor Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Layer Operator Descriptor Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#getLayerOperatorDescriptorName()
 	 * @see #getAbstractLayerOperator()
@@ -9516,7 +9515,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#isDescriptorSet() <em>Is Descriptor Set</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Is Descriptor Set</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#isDescriptorSet()
 	 * @generated
@@ -9527,7 +9526,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#resetDescriptor() <em>Reset Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Reset Descriptor</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayerOperator#resetDescriptor()
 	 * @generated
@@ -9538,7 +9537,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor <em>Layer Operator Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Operator Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor
 	 * @generated
@@ -9549,7 +9548,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperators <em>Property Operators</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Property Operators</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperators()
 	 * @see #getLayerOperatorDescriptor()
@@ -9561,7 +9560,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getName()
 	 * @see #getLayerOperatorDescriptor()
@@ -9573,7 +9572,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Property Operator</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#getPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
@@ -9585,7 +9584,7 @@ public interface LayersPackage extends EPackage {
 	 * <em>Set Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Set Property Operator</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property, org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator)
 	 * @generated
@@ -9596,7 +9595,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#createLayerOperator() <em>Create Layer Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Create Layer Operator</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#createLayerOperator()
 	 * @generated
@@ -9608,7 +9607,7 @@ public interface LayersPackage extends EPackage {
 	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Set Property Collection Size</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor#setPropertyCollectionSize(int, org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator)
 	 * @generated
@@ -9619,7 +9618,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator <em>Property Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator
 	 * @generated
@@ -9630,7 +9629,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getName()
 	 * @see #getPropertyOperator()
@@ -9642,7 +9641,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList) <em>Get Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Compute Property Value Command</em>' operation.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)
 	 * @generated
@@ -9653,7 +9652,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator <em>Default Property Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Default Property Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator
 	 * @generated
@@ -9664,7 +9663,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator <em>Top Layer Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Top Layer Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator
 	 * @generated
@@ -9675,7 +9674,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator <em>Stacked Layer Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stacked Layer Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator
 	 * @generated
@@ -9686,7 +9685,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.stackmodel.layers.CustomLayerOperator <em>Custom Layer Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Custom Layer Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.CustomLayerOperator
 	 * @generated
@@ -9697,7 +9696,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -9709,7 +9708,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '<em>boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>boolean</em>'.
 	 * @model instanceClass="boolean"
 	 * @generated
@@ -9720,7 +9719,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.emf.ecore.EPackage <em>EPackage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>EPackage</em>'.
 	 * @see org.eclipse.emf.ecore.EPackage
 	 * @model instanceClass="org.eclipse.emf.ecore.EPackage"
@@ -9732,7 +9731,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.NotFoundException <em>Not Found Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Not Found Exception</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.NotFoundException
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.NotFoundException"
@@ -9745,7 +9744,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand <em>Compute Property Value Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Compute Property Value Command</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand"
@@ -9757,7 +9756,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.LayersException <em>Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Exception</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.LayersException
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.LayersException"
@@ -9769,7 +9768,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '<em>int</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>int</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -9780,7 +9779,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Object</em>'.
 	 * @see java.lang.Object
 	 * @model instanceClass="java.lang.Object"
@@ -9792,7 +9791,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance <em>Custom Property Opertor Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Custom Property Opertor Instance</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance"
@@ -9804,7 +9803,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.BadStateException <em>Bad State Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Bad State Exception</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.BadStateException
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.BadStateException"
@@ -9817,7 +9816,7 @@ public interface LayersPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -9834,7 +9833,7 @@ public interface LayersPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -9842,7 +9841,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerNamedStyleImpl <em>Layer Named Style</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerNamedStyleImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerNamedStyle()
 		 * @generated
@@ -9853,7 +9852,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layers Stack</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_NAMED_STYLE__LAYERS_STACK = eINSTANCE.getLayerNamedStyle_LayersStack();
@@ -9862,7 +9861,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackImpl <em>Stack</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersStack()
 		 * @generated
@@ -9873,7 +9872,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK__LAYERS = eINSTANCE.getLayersStack_Layers();
@@ -9882,7 +9881,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYERS_STACK__NAME = eINSTANCE.getLayersStack_Name();
@@ -9891,7 +9890,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYERS_STACK__DESCRIPTION = eINSTANCE.getLayersStack_Description();
@@ -9900,7 +9899,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Diagram</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK__DIAGRAM = eINSTANCE.getLayersStack_Diagram();
@@ -9909,7 +9908,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>State</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYERS_STACK__STATE = eINSTANCE.getLayersStack_State();
@@ -9918,7 +9917,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Compute Property Value Command</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___GET_COMPUTE_PROPERTY_VALUE_COMMAND__VIEW_PROPERTY = eINSTANCE.getLayersStack__GetComputePropertyValueCommand__View_Property();
@@ -9927,7 +9926,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Properties Compute Property Value Command</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___GET_PROPERTIES_COMPUTE_PROPERTY_VALUE_COMMAND__VIEW_ELIST = eINSTANCE.getLayersStack__GetPropertiesComputePropertyValueCommand__View_EList();
@@ -9936,7 +9935,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Views Compute Property Value Command</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___GET_VIEWS_COMPUTE_PROPERTY_VALUE_COMMAND__ELIST_PROPERTY = eINSTANCE.getLayersStack__GetViewsComputePropertyValueCommand__EList_Property();
@@ -9945,7 +9944,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start After Creation</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___START_AFTER_CREATION = eINSTANCE.getLayersStack__StartAfterCreation();
@@ -9954,7 +9953,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach Layers</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___ATTACH_LAYERS = eINSTANCE.getLayersStack__AttachLayers();
@@ -9963,7 +9962,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___ATTACH = eINSTANCE.getLayersStack__Attach();
@@ -9972,7 +9971,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Detach</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___DETACH = eINSTANCE.getLayersStack__Detach();
@@ -9981,7 +9980,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Enter Attached State</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___ENTER_ATTACHED_STATE = eINSTANCE.getLayersStack__EnterAttachedState();
@@ -9990,7 +9989,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Exit Attached State</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK___EXIT_ATTACHED_STATE = eINSTANCE.getLayersStack__ExitAttachedState();
@@ -9999,7 +9998,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl <em>Layer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayer()
 		 * @generated
@@ -10010,7 +10009,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorImpl <em>Color</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getColor()
 		 * @generated
@@ -10021,7 +10020,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorInstanceImpl <em>Color Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.ColorInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getColorInstance()
 		 * @generated
@@ -10032,7 +10031,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute COLOR_INSTANCE__VALUE = eINSTANCE.getColorInstance_Value();
@@ -10041,7 +10040,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl <em>Fill Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFillInstance()
 		 * @generated
@@ -10052,7 +10051,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Transparency</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FILL_INSTANCE__TRANSPARENCY = eINSTANCE.getFillInstance_Transparency();
@@ -10061,7 +10060,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fill Color</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FILL_INSTANCE__FILL_COLOR = eINSTANCE.getFillInstance_FillColor();
@@ -10070,7 +10069,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillImpl <em>Fill</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FillImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFill()
 		 * @generated
@@ -10081,7 +10080,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillPropertySetterImpl <em>Fill Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FillPropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFillPropertySetter()
 		 * @generated
@@ -10092,7 +10091,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IsValidPropertySetterImpl <em>Is Valid Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IsValidPropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIsValidPropertySetter()
 		 * @generated
@@ -10103,7 +10102,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.NullPropertySetterImpl <em>Null Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.NullPropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getNullPropertySetter()
 		 * @generated
@@ -10114,7 +10113,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineTypeImpl <em>Line Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LineTypeImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLineType()
 		 * @generated
@@ -10125,7 +10124,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl <em>Line Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLineInstance()
 		 * @generated
@@ -10136,7 +10135,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Line Color</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE_INSTANCE__LINE_COLOR = eINSTANCE.getLineInstance_LineColor();
@@ -10145,7 +10144,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Line With</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE_INSTANCE__LINE_WITH = eINSTANCE.getLineInstance_LineWith();
@@ -10154,7 +10153,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LinePropertySetterImpl <em>Line Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LinePropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLinePropertySetter()
 		 * @generated
@@ -10165,7 +10164,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontPropertySetterImpl <em>Font Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FontPropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFontPropertySetter()
 		 * @generated
@@ -10176,7 +10175,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl <em>Font Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FontInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFontInstance()
 		 * @generated
@@ -10187,7 +10186,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Font Color</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FONT_INSTANCE__FONT_COLOR = eINSTANCE.getFontInstance_FontColor();
@@ -10196,7 +10195,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Font Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FONT_INSTANCE__FONT_NAME = eINSTANCE.getFontInstance_FontName();
@@ -10205,7 +10204,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Font Heigh</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FONT_INSTANCE__FONT_HEIGH = eINSTANCE.getFontInstance_FontHeigh();
@@ -10214,7 +10213,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bold</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FONT_INSTANCE__BOLD = eINSTANCE.getFontInstance_Bold();
@@ -10223,7 +10222,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FontTypeImpl <em>Font Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FontTypeImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFontType()
 		 * @generated
@@ -10234,7 +10233,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IsVisiblePropertySetterImpl <em>Is Visible Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IsVisiblePropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIsVisiblePropertySetter()
 		 * @generated
@@ -10245,7 +10244,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl <em>Layer Operator Descriptor Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerOperatorDescriptorRegistry()
 		 * @generated
@@ -10256,7 +10255,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Descriptors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_OPERATOR_DESCRIPTOR_REGISTRY__DESCRIPTORS = eINSTANCE.getLayerOperatorDescriptorRegistry_Descriptors();
@@ -10265,7 +10264,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Operators</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_OPERATOR_DESCRIPTOR_REGISTRY__PROPERTY_OPERATORS = eINSTANCE.getLayerOperatorDescriptorRegistry_PropertyOperators();
@@ -10274,7 +10273,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Collection Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_OPERATOR_DESCRIPTOR_REGISTRY__PROPERTY_COLLECTION_SIZE = eINSTANCE.getLayerOperatorDescriptorRegistry_PropertyCollectionSize();
@@ -10283,7 +10282,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Operator</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_OPERATOR_DESCRIPTOR_REGISTRY__DEFAULT_OPERATOR = eINSTANCE.getLayerOperatorDescriptorRegistry_DefaultOperator();
@@ -10292,7 +10291,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Add Layer Operator Descriptor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR_REGISTRY___ADD_LAYER_OPERATOR_DESCRIPTOR__LAYEROPERATORDESCRIPTOR = eINSTANCE.getLayerOperatorDescriptorRegistry__AddLayerOperatorDescriptor__LayerOperatorDescriptor();
@@ -10301,7 +10300,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Layer Operator Descriptor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR_REGISTRY___GET_LAYER_OPERATOR_DESCRIPTOR__STRING = eINSTANCE.getLayerOperatorDescriptorRegistry__GetLayerOperatorDescriptor__String();
@@ -10310,7 +10309,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Add Property Operator</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR_REGISTRY___ADD_PROPERTY_OPERATOR__PROPERTYOPERATOR = eINSTANCE.getLayerOperatorDescriptorRegistry__AddPropertyOperator__PropertyOperator();
@@ -10319,7 +10318,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property Operator</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR_REGISTRY___GET_PROPERTY_OPERATOR__STRING = eINSTANCE.getLayerOperatorDescriptorRegistry__GetPropertyOperator__String();
@@ -10328,7 +10327,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach Operator To Descriptor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR_REGISTRY___ATTACH_OPERATOR_TO_DESCRIPTOR__PROPERTY_STRING_STRING = eINSTANCE.getLayerOperatorDescriptorRegistry__AttachOperatorToDescriptor__Property_String_String();
@@ -10337,7 +10336,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Layer Operator</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR_REGISTRY___CREATE_LAYER_OPERATOR__STRING = eINSTANCE.getLayerOperatorDescriptorRegistry__CreateLayerOperator__String();
@@ -10346,7 +10345,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorDescriptorImpl <em>Top Layer Operator Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTopLayerOperatorDescriptor()
 		 * @generated
@@ -10357,7 +10356,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorDescriptorImpl <em>Stacked Layer Operator Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStackedLayerOperatorDescriptor()
 		 * @generated
@@ -10368,7 +10367,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomPropertyOperatorImpl <em>Custom Property Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomPropertyOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomPropertyOperator()
 		 * @generated
@@ -10379,7 +10378,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Classname</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CUSTOM_PROPERTY_OPERATOR__CLASSNAME = eINSTANCE.getCustomPropertyOperator_Classname();
@@ -10388,7 +10387,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Operator Instance</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CUSTOM_PROPERTY_OPERATOR__OPERATOR_INSTANCE = eINSTANCE.getCustomPropertyOperator_OperatorInstance();
@@ -10397,7 +10396,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Class Bundle ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CUSTOM_PROPERTY_OPERATOR__CLASS_BUNDLE_ID = eINSTANCE.getCustomPropertyOperator_ClassBundleID();
@@ -10406,7 +10405,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reset Operator Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation CUSTOM_PROPERTY_OPERATOR___RESET_OPERATOR_INSTANCE = eINSTANCE.getCustomPropertyOperator__ResetOperatorInstance();
@@ -10415,7 +10414,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AndStackedLayerOperatorDescriptorImpl <em>And Stacked Layer Operator Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AndStackedLayerOperatorDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAndStackedLayerOperatorDescriptor()
 		 * @generated
@@ -10426,7 +10425,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.OrStackedLayerOperatorDescriptorImpl <em>Or Stacked Layer Operator Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.OrStackedLayerOperatorDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getOrStackedLayerOperatorDescriptor()
 		 * @generated
@@ -10437,7 +10436,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IsAbstractUmlSetterImpl <em>Is Abstract Uml Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IsAbstractUmlSetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIsAbstractUmlSetter()
 		 * @generated
@@ -10448,7 +10447,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AllViewsDerivedLayerImpl <em>All Views Derived Layer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AllViewsDerivedLayerImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAllViewsDerivedLayer()
 		 * @generated
@@ -10459,7 +10458,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerState <em>Layer State</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerState
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerState()
 		 * @generated
@@ -10470,7 +10469,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.EventLevel <em>Event Level</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.EventLevel
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getEventLevel()
 		 * @generated
@@ -10481,7 +10480,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeInstanceImpl <em>Type Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTypeInstance()
 		 * @generated
@@ -10492,7 +10491,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Set Value From String</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation TYPE_INSTANCE___SET_VALUE_FROM_STRING__STRING = eINSTANCE.getTypeInstance__SetValueFromString__String();
@@ -10501,7 +10500,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Set Value From Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation TYPE_INSTANCE___SET_VALUE_FROM_INSTANCE__TYPEINSTANCE = eINSTANCE.getTypeInstance__SetValueFromInstance__TypeInstance();
@@ -10510,7 +10509,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand <em>Compute Property Value Command Itf</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getComputePropertyValueCommandItf()
 		 * @generated
@@ -10521,7 +10520,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Cmd Value</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation COMPUTE_PROPERTY_VALUE_COMMAND_ITF___GET_CMD_VALUE = eINSTANCE.getComputePropertyValueCommandItf__GetCmdValue();
@@ -10530,7 +10529,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeInstanceMapImpl <em>String To Type Instance Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeInstanceMapImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToTypeInstanceMap()
 		 * @generated
@@ -10541,7 +10540,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_TO_TYPE_INSTANCE_MAP__KEY = eINSTANCE.getStringToTypeInstanceMap_Key();
@@ -10550,7 +10549,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STRING_TO_TYPE_INSTANCE_MAP__VALUE = eINSTANCE.getStringToTypeInstanceMap_Value();
@@ -10559,7 +10558,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorImpl <em>Layer Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerDescriptor()
 		 * @generated
@@ -10570,7 +10569,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Registry</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_DESCRIPTOR__PROPERTY_REGISTRY = eINSTANCE.getLayerDescriptor_PropertyRegistry();
@@ -10579,7 +10578,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerApplicationFactoryImpl <em>Layer Application Factory</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerApplicationFactoryImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerApplicationFactory()
 		 * @generated
@@ -10590,7 +10589,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Application</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_APPLICATION_FACTORY__APPLICATION = eINSTANCE.getLayerApplicationFactory_Application();
@@ -10599,7 +10598,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl <em>Property Setter Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterRegistryImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertySetterRegistry()
 		 * @generated
@@ -10610,7 +10609,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Setters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS = eINSTANCE.getPropertySetterRegistry_PropertySetters();
@@ -10619,7 +10618,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Setter Map</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_SETTER_REGISTRY__SETTER_MAP = eINSTANCE.getPropertySetterRegistry_SetterMap();
@@ -10628,7 +10627,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Application</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_SETTER_REGISTRY__APPLICATION = eINSTANCE.getPropertySetterRegistry_Application();
@@ -10637,7 +10636,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property Setter</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_SETTER_REGISTRY___GET_PROPERTY_SETTER__PROPERTY = eINSTANCE.getPropertySetterRegistry__GetPropertySetter__Property();
@@ -10646,7 +10645,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property Setter</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_SETTER_REGISTRY___GET_PROPERTY_SETTER__STRING = eINSTANCE.getPropertySetterRegistry__GetPropertySetter__String();
@@ -10655,7 +10654,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Add Property Setter</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_SETTER_REGISTRY___ADD_PROPERTY_SETTER__PROPERTYSETTER = eINSTANCE.getPropertySetterRegistry__AddPropertySetter__PropertySetter();
@@ -10664,7 +10663,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl <em>Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertySetter()
 		 * @generated
@@ -10675,7 +10674,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_SETTER__PROPERTY = eINSTANCE.getPropertySetter_Property();
@@ -10684,7 +10683,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_SETTER__PROPERTY_NAME = eINSTANCE.getPropertySetter_PropertyName();
@@ -10693,7 +10692,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Set Value</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_SETTER___SET_VALUE__VIEW_TYPEINSTANCE = eINSTANCE.getPropertySetter__SetValue__View_TypeInstance();
@@ -10702,7 +10701,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertySetterImpl <em>String To Property Setter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertySetterImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToPropertySetter()
 		 * @generated
@@ -10713,7 +10712,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_TO_PROPERTY_SETTER__KEY = eINSTANCE.getStringToPropertySetter_Key();
@@ -10722,7 +10721,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STRING_TO_PROPERTY_SETTER__VALUE = eINSTANCE.getStringToPropertySetter_Value();
@@ -10731,7 +10730,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl <em>Abstract Layer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAbstractLayer()
 		 * @generated
@@ -10742,7 +10741,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Values</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_LAYER__PROPERTY_VALUES = eINSTANCE.getAbstractLayer_PropertyValues();
@@ -10751,7 +10750,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Value Map</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_LAYER__PROPERTY_VALUE_MAP = eINSTANCE.getAbstractLayer_PropertyValueMap();
@@ -10760,7 +10759,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Descriptor</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_LAYER__LAYER_DESCRIPTOR = eINSTANCE.getAbstractLayer_LayerDescriptor();
@@ -10769,7 +10768,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Views</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_LAYER__VIEWS = eINSTANCE.getAbstractLayer_Views();
@@ -10778,7 +10777,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attached Properties</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_LAYER__ATTACHED_PROPERTIES = eINSTANCE.getAbstractLayer_AttachedProperties();
@@ -10787,7 +10786,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Add Property Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation ABSTRACT_LAYER___ADD_PROPERTY_INSTANCE__PROPERTY = eINSTANCE.getAbstractLayer__AddPropertyInstance__Property();
@@ -10796,7 +10795,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Remove Property Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation ABSTRACT_LAYER___REMOVE_PROPERTY_INSTANCE__PROPERTY = eINSTANCE.getAbstractLayer__RemovePropertyInstance__Property();
@@ -10805,7 +10804,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation ABSTRACT_LAYER___GET_PROPERTY_INSTANCE__PROPERTY = eINSTANCE.getAbstractLayer__GetPropertyInstance__Property();
@@ -10814,7 +10813,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation ABSTRACT_LAYER___GET_PROPERTY_INSTANCE__STRING = eINSTANCE.getAbstractLayer__GetPropertyInstance__String();
@@ -10823,7 +10822,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyImpl <em>Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getProperty()
 		 * @generated
@@ -10834,7 +10833,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY__TYPE = eINSTANCE.getProperty_Type();
@@ -10843,7 +10842,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY__DEFAULT_VALUE = eINSTANCE.getProperty_DefaultValue();
@@ -10852,7 +10851,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY__NAME = eINSTANCE.getProperty_Name();
@@ -10861,7 +10860,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY__DESCRIPTION = eINSTANCE.getProperty_Description();
@@ -10870,7 +10869,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY__INDEX = eINSTANCE.getProperty_Index();
@@ -10879,7 +10878,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY___CREATE_INSTANCE = eINSTANCE.getProperty__CreateInstance();
@@ -10888,7 +10887,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderElementImpl <em>Folder Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderElementImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFolderElement()
 		 * @generated
@@ -10899,7 +10898,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl <em>Layer Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerExpression()
 		 * @generated
@@ -10910,7 +10909,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_EXPRESSION__NAME = eINSTANCE.getLayerExpression_Name();
@@ -10919,7 +10918,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_EXPRESSION__DESCRIPTION = eINSTANCE.getLayerExpression_Description();
@@ -10928,7 +10927,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Layer Enabled Internal</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_EXPRESSION__IS_LAYER_ENABLED_INTERNAL = eINSTANCE.getLayerExpression_IsLayerEnabledInternal();
@@ -10937,7 +10936,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Layer Enabled</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_EXPRESSION__IS_LAYER_ENABLED = eINSTANCE.getLayerExpression_IsLayerEnabled();
@@ -10946,7 +10945,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Branch Enabled</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_EXPRESSION__IS_BRANCH_ENABLED = eINSTANCE.getLayerExpression_IsBranchEnabled();
@@ -10955,7 +10954,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owning Layers Stack</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_EXPRESSION__OWNING_LAYERS_STACK = eINSTANCE.getLayerExpression_OwningLayersStack();
@@ -10964,7 +10963,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>State</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_EXPRESSION__STATE = eINSTANCE.getLayerExpression_State();
@@ -10973,7 +10972,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Compute Property Value Command</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___GET_COMPUTE_PROPERTY_VALUE_COMMAND__VIEW_PROPERTY = eINSTANCE.getLayerExpression__GetComputePropertyValueCommand__View_Property();
@@ -10982,7 +10981,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Views Compute Property Value Command</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___GET_VIEWS_COMPUTE_PROPERTY_VALUE_COMMAND__ELIST_PROPERTY = eINSTANCE.getLayerExpression__GetViewsComputePropertyValueCommand__EList_Property();
@@ -10991,7 +10990,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Properties Compute Property Value Command</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___GET_PROPERTIES_COMPUTE_PROPERTY_VALUE_COMMAND__VIEW_ELIST = eINSTANCE.getLayerExpression__GetPropertiesComputePropertyValueCommand__View_EList();
@@ -11000,7 +10999,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach To Layers Stack</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___ATTACH_TO_LAYERS_STACK__LAYERSSTACK = eINSTANCE.getLayerExpression__AttachToLayersStack__LayersStack();
@@ -11009,7 +11008,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Layers Stack</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___GET_LAYERS_STACK = eINSTANCE.getLayerExpression__GetLayersStack();
@@ -11018,7 +11017,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Enter Attached State</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___ENTER_ATTACHED_STATE = eINSTANCE.getLayerExpression__EnterAttachedState();
@@ -11027,7 +11026,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___ATTACH = eINSTANCE.getLayerExpression__Attach();
@@ -11036,7 +11035,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Detach</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___DETACH = eINSTANCE.getLayerExpression__Detach();
@@ -11045,7 +11044,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Exit Attached State</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_EXPRESSION___EXIT_ATTACHED_STATE = eINSTANCE.getLayerExpression__ExitAttachedState();
@@ -11054,7 +11053,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.ApplicationDependantElementImpl <em>Application Dependant Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.ApplicationDependantElementImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getApplicationDependantElement()
 		 * @generated
@@ -11065,7 +11064,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Application</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference APPLICATION_DEPENDANT_ELEMENT__APPLICATION = eINSTANCE.getApplicationDependantElement_Application();
@@ -11074,7 +11073,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeImpl <em>Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getType()
 		 * @generated
@@ -11085,7 +11084,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Metamodel</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TYPE__METAMODEL = eINSTANCE.getType_Metamodel();
@@ -11094,7 +11093,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute TYPE__NAME = eINSTANCE.getType_Name();
@@ -11103,7 +11102,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute TYPE__DESCRIPTION = eINSTANCE.getType_Description();
@@ -11112,7 +11111,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation TYPE___CREATE_INSTANCE = eINSTANCE.getType__CreateInstance();
@@ -11121,7 +11120,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.MetamodelImpl <em>Metamodel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.MetamodelImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getMetamodel()
 		 * @generated
@@ -11132,7 +11131,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute METAMODEL__NAME = eINSTANCE.getMetamodel_Name();
@@ -11141,7 +11140,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute METAMODEL__DESCRIPTION = eINSTANCE.getMetamodel_Description();
@@ -11150,7 +11149,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Nsuri</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute METAMODEL__NSURI = eINSTANCE.getMetamodel_Nsuri();
@@ -11159,7 +11158,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Plugin ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute METAMODEL__PLUGIN_ID = eINSTANCE.getMetamodel_PluginID();
@@ -11168,7 +11167,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>EPackage Instance Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute METAMODEL__EPACKAGE_INSTANCE_NAME = eINSTANCE.getMetamodel_EPackageInstanceName();
@@ -11177,7 +11176,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Type Valid</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute METAMODEL__IS_TYPE_VALID = eINSTANCE.getMetamodel_IsTypeValid();
@@ -11186,7 +11185,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get EPackage</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation METAMODEL___GET_EPACKAGE = eINSTANCE.getMetamodel__GetEPackage();
@@ -11195,7 +11194,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderImpl <em>Folder</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.FolderImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getFolder()
 		 * @generated
@@ -11206,7 +11205,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FOLDER__ELEMENTS = eINSTANCE.getFolder_Elements();
@@ -11215,7 +11214,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FOLDER__NAME = eINSTANCE.getFolder_Name();
@@ -11224,7 +11223,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IntInstanceImpl <em>Int Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IntInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIntInstance()
 		 * @generated
@@ -11235,7 +11234,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INT_INSTANCE__VALUE = eINSTANCE.getIntInstance_Value();
@@ -11244,7 +11243,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanInstanceImpl <em>Boolean Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getBooleanInstance()
 		 * @generated
@@ -11255,7 +11254,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute BOOLEAN_INSTANCE__VALUE = eINSTANCE.getBooleanInstance_Value();
@@ -11264,7 +11263,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringInstanceImpl <em>String Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringInstance()
 		 * @generated
@@ -11275,7 +11274,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_INSTANCE__VALUE = eINSTANCE.getStringInstance_Value();
@@ -11284,7 +11283,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.IntTypeImpl <em>Int Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.IntTypeImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getIntType()
 		 * @generated
@@ -11295,7 +11294,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.BooleanTypeImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getBooleanType()
 		 * @generated
@@ -11306,7 +11305,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringTypeImpl <em>String Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringTypeImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringType()
 		 * @generated
@@ -11317,7 +11316,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomTypeImpl <em>Custom Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomTypeImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomType()
 		 * @generated
@@ -11328,7 +11327,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Classifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CUSTOM_TYPE__CLASSIFIER = eINSTANCE.getCustomType_Classifier();
@@ -11337,7 +11336,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackApplicationImpl <em>Stack Application</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackApplicationImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersStackApplication()
 		 * @generated
@@ -11348,7 +11347,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layers Stacks</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK_APPLICATION__LAYERS_STACKS = eINSTANCE.getLayersStackApplication_LayersStacks();
@@ -11357,7 +11356,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Stack Registry</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK_APPLICATION__LAYER_STACK_REGISTRY = eINSTANCE.getLayersStackApplication_LayerStackRegistry();
@@ -11366,7 +11365,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Registry</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK_APPLICATION__PROPERTY_REGISTRY = eINSTANCE.getLayersStackApplication_PropertyRegistry();
@@ -11375,7 +11374,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Descriptor Registry</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK_APPLICATION__LAYER_DESCRIPTOR_REGISTRY = eINSTANCE.getLayersStackApplication_LayerDescriptorRegistry();
@@ -11384,7 +11383,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Factory</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK_APPLICATION__FACTORY = eINSTANCE.getLayersStackApplication_Factory();
@@ -11393,7 +11392,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Setter Registry</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK_APPLICATION__PROPERTY_SETTER_REGISTRY = eINSTANCE.getLayersStackApplication_PropertySetterRegistry();
@@ -11402,7 +11401,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Operator Descriptor Registry</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYERS_STACK_APPLICATION__LAYER_OPERATOR_DESCRIPTOR_REGISTRY = eINSTANCE.getLayersStackApplication_LayerOperatorDescriptorRegistry();
@@ -11411,7 +11410,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Layers Stack For</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK_APPLICATION___GET_LAYERS_STACK_FOR__DIAGRAM = eINSTANCE.getLayersStackApplication__GetLayersStackFor__Diagram();
@@ -11420,7 +11419,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Remove Layers Stack For</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK_APPLICATION___REMOVE_LAYERS_STACK_FOR__DIAGRAM = eINSTANCE.getLayersStackApplication__RemoveLayersStackFor__Diagram();
@@ -11429,7 +11428,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Layers Stack Attached For</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK_APPLICATION___IS_LAYERS_STACK_ATTACHED_FOR__DIAGRAM = eINSTANCE.getLayersStackApplication__IsLayersStackAttachedFor__Diagram();
@@ -11438,7 +11437,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Layers Stack For</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK_APPLICATION___CREATE_LAYERS_STACK_FOR__DIAGRAM = eINSTANCE.getLayersStackApplication__CreateLayersStackFor__Diagram();
@@ -11447,7 +11446,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Lookup Layers Stack For</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_STACK_APPLICATION___LOOKUP_LAYERS_STACK_FOR__DIAGRAM = eINSTANCE.getLayersStackApplication__LookupLayersStackFor__Diagram();
@@ -11456,7 +11455,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerStackDescriptorRegistryImpl <em>Layer Stack Descriptor Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerStackDescriptorRegistryImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerStackDescriptorRegistry()
 		 * @generated
@@ -11467,7 +11466,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl <em>Property Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertyRegistry()
 		 * @generated
@@ -11478,7 +11477,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_REGISTRY__PROPERTIES = eINSTANCE.getPropertyRegistry_Properties();
@@ -11487,7 +11486,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type Registry</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_REGISTRY__TYPE_REGISTRY = eINSTANCE.getPropertyRegistry_TypeRegistry();
@@ -11496,7 +11495,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Properties Count</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_REGISTRY__PROPERTIES_COUNT = eINSTANCE.getPropertyRegistry_PropertiesCount();
@@ -11505,7 +11504,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property Index</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_REGISTRY___GET_PROPERTY_INDEX__STRING = eINSTANCE.getPropertyRegistry__GetPropertyIndex__String();
@@ -11514,7 +11513,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_REGISTRY___GET_PROPERTY__STRING = eINSTANCE.getPropertyRegistry__GetProperty__String();
@@ -11523,7 +11522,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Add Property</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_REGISTRY___ADD_PROPERTY__PROPERTY = eINSTANCE.getPropertyRegistry__AddProperty__Property();
@@ -11532,7 +11531,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl <em>String To Property Index Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToPropertyIndexMap()
 		 * @generated
@@ -11543,7 +11542,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STRING_TO_PROPERTY_INDEX_MAP__VALUE = eINSTANCE.getStringToPropertyIndexMap_Value();
@@ -11552,7 +11551,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_TO_PROPERTY_INDEX_MAP__KEY = eINSTANCE.getStringToPropertyIndexMap_Key();
@@ -11561,7 +11560,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.SimpleLayerDescriptorImpl <em>Simple Layer Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.SimpleLayerDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getSimpleLayerDescriptor()
 		 * @generated
@@ -11572,7 +11571,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerDescriptorImpl <em>Reg Exp Layer Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getRegExpLayerDescriptor()
 		 * @generated
@@ -11583,7 +11582,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.NullInstanceImpl <em>Null Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.NullInstanceImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getNullInstance()
 		 * @generated
@@ -11594,7 +11593,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation NULL_INSTANCE___GET_INSTANCE = eINSTANCE.getNullInstance__GetInstance();
@@ -11603,7 +11602,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerImpl <em>Reg Exp Layer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getRegExpLayer()
 		 * @generated
@@ -11614,7 +11613,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Expr</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REG_EXP_LAYER__EXPR = eINSTANCE.getRegExpLayer_Expr();
@@ -11623,7 +11622,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REG_EXP_LAYER__LANGUAGE = eINSTANCE.getRegExpLayer_Language();
@@ -11632,7 +11631,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Domain Changed Event Dependant</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REG_EXP_LAYER__IS_DOMAIN_CHANGED_EVENT_DEPENDANT = eINSTANCE.getRegExpLayer_IsDomainChangedEventDependant();
@@ -11641,7 +11640,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Domain Changed Event Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REG_EXP_LAYER__DOMAIN_CHANGED_EVENT_LEVEL = eINSTANCE.getRegExpLayer_DomainChangedEventLevel();
@@ -11650,7 +11649,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Diagram Changed Event Dependant</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REG_EXP_LAYER__IS_DIAGRAM_CHANGED_EVENT_DEPENDANT = eINSTANCE.getRegExpLayer_IsDiagramChangedEventDependant();
@@ -11659,7 +11658,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Diagram Changed Event Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REG_EXP_LAYER__DIAGRAM_CHANGED_EVENT_LEVEL = eINSTANCE.getRegExpLayer_DiagramChangedEventLevel();
@@ -11668,7 +11667,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Expression Context Object Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REG_EXP_LAYER__EXPRESSION_CONTEXT_OBJECT_TYPE = eINSTANCE.getRegExpLayer_ExpressionContextObjectType();
@@ -11677,7 +11676,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Activate</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation REG_EXP_LAYER___ACTIVATE__ABSTRACTLAYEROPERATOR = eINSTANCE.getRegExpLayer__Activate__AbstractLayerOperator();
@@ -11686,7 +11685,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Deactivate</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation REG_EXP_LAYER___DEACTIVATE__ABSTRACTLAYEROPERATOR = eINSTANCE.getRegExpLayer__Deactivate__AbstractLayerOperator();
@@ -11695,7 +11694,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Derived View</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation REG_EXP_LAYER___IS_DERIVED_VIEW__VIEW = eINSTANCE.getRegExpLayer__IsDerivedView__View();
@@ -11704,7 +11703,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach Derived View</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation REG_EXP_LAYER___ATTACH_DERIVED_VIEW__VIEW = eINSTANCE.getRegExpLayer__AttachDerivedView__View();
@@ -11713,7 +11712,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach Derived Views</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation REG_EXP_LAYER___ATTACH_DERIVED_VIEWS__ELIST = eINSTANCE.getRegExpLayer__AttachDerivedViews__EList();
@@ -11722,7 +11721,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attach Derived Views</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation REG_EXP_LAYER___ATTACH_DERIVED_VIEWS = eINSTANCE.getRegExpLayer__AttachDerivedViews();
@@ -11731,7 +11730,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Lookup Derived Views</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation REG_EXP_LAYER___LOOKUP_DERIVED_VIEWS__ELIST = eINSTANCE.getRegExpLayer__LookupDerivedViews__EList();
@@ -11740,7 +11739,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl <em>Property Index</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyIndexImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertyIndex()
 		 * @generated
@@ -11751,7 +11750,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_INDEX__PROPERTY = eINSTANCE.getPropertyIndex_Property();
@@ -11760,7 +11759,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_INDEX__INDEX = eINSTANCE.getPropertyIndex_Index();
@@ -11769,7 +11768,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeRegistryImpl <em>Type Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TypeRegistryImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTypeRegistry()
 		 * @generated
@@ -11780,7 +11779,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Types</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TYPE_REGISTRY__TYPES = eINSTANCE.getTypeRegistry_Types();
@@ -11789,7 +11788,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeMapImpl <em>String To Type Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeMapImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStringToTypeMap()
 		 * @generated
@@ -11800,7 +11799,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STRING_TO_TYPE_MAP__VALUE = eINSTANCE.getStringToTypeMap_Value();
@@ -11809,7 +11808,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_TO_TYPE_MAP__KEY = eINSTANCE.getStringToTypeMap_Key();
@@ -11818,7 +11817,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorRegistryImpl <em>Layer Descriptor Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerDescriptorRegistryImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerDescriptorRegistry()
 		 * @generated
@@ -11829,7 +11828,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Descriptors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_DESCRIPTOR_REGISTRY__LAYER_DESCRIPTORS = eINSTANCE.getLayerDescriptorRegistry_LayerDescriptors();
@@ -11838,7 +11837,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorImpl <em>Layer Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerOperator()
 		 * @generated
@@ -11849,7 +11848,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layers</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_OPERATOR__LAYERS = eINSTANCE.getLayerOperator_Layers();
@@ -11858,7 +11857,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer <em>Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersContainer()
 		 * @generated
@@ -11869,7 +11868,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Add Layer</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYERS_CONTAINER___ADD_LAYER__LAYEREXPRESSION = eINSTANCE.getLayersContainer__AddLayer__LayerExpression();
@@ -11878,7 +11877,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl <em>Abstract Layer Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getAbstractLayerOperator()
 		 * @generated
@@ -11889,7 +11888,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Operator Descriptor</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR = eINSTANCE.getAbstractLayerOperator_LayerOperatorDescriptor();
@@ -11898,7 +11897,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Operator Descriptor Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_LAYER_OPERATOR__LAYER_OPERATOR_DESCRIPTOR_NAME = eINSTANCE.getAbstractLayerOperator_LayerOperatorDescriptorName();
@@ -11907,7 +11906,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Descriptor Set</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation ABSTRACT_LAYER_OPERATOR___IS_DESCRIPTOR_SET = eINSTANCE.getAbstractLayerOperator__IsDescriptorSet();
@@ -11916,7 +11915,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reset Descriptor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation ABSTRACT_LAYER_OPERATOR___RESET_DESCRIPTOR = eINSTANCE.getAbstractLayerOperator__ResetDescriptor();
@@ -11925,7 +11924,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl <em>Layer Operator Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayerOperatorDescriptor()
 		 * @generated
@@ -11936,7 +11935,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Operators</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_OPERATOR_DESCRIPTOR__PROPERTY_OPERATORS = eINSTANCE.getLayerOperatorDescriptor_PropertyOperators();
@@ -11945,7 +11944,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LAYER_OPERATOR_DESCRIPTOR__NAME = eINSTANCE.getLayerOperatorDescriptor_Name();
@@ -11954,7 +11953,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Property Operator</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR___GET_PROPERTY_OPERATOR__PROPERTY = eINSTANCE.getLayerOperatorDescriptor__GetPropertyOperator__Property();
@@ -11963,7 +11962,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Set Property Operator</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR___SET_PROPERTY_OPERATOR__PROPERTY_PROPERTYOPERATOR = eINSTANCE.getLayerOperatorDescriptor__SetPropertyOperator__Property_PropertyOperator();
@@ -11972,7 +11971,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Layer Operator</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR___CREATE_LAYER_OPERATOR = eINSTANCE.getLayerOperatorDescriptor__CreateLayerOperator();
@@ -11981,7 +11980,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Set Property Collection Size</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_DESCRIPTOR___SET_PROPERTY_COLLECTION_SIZE__INT_DEFAULTPROPERTYOPERATOR = eINSTANCE.getLayerOperatorDescriptor__SetPropertyCollectionSize__int_DefaultPropertyOperator();
@@ -11990,7 +11989,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyOperatorImpl <em>Property Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getPropertyOperator()
 		 * @generated
@@ -12001,7 +12000,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_OPERATOR__NAME = eINSTANCE.getPropertyOperator_Name();
@@ -12010,7 +12009,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Compute Property Value Command</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation PROPERTY_OPERATOR___GET_COMPUTE_PROPERTY_VALUE_COMMAND__ELIST = eINSTANCE.getPropertyOperator__GetComputePropertyValueCommand__EList();
@@ -12019,7 +12018,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.DefaultPropertyOperatorImpl <em>Default Property Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.DefaultPropertyOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getDefaultPropertyOperator()
 		 * @generated
@@ -12030,7 +12029,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorImpl <em>Top Layer Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.TopLayerOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getTopLayerOperator()
 		 * @generated
@@ -12041,7 +12040,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorImpl <em>Stacked Layer Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.StackedLayerOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getStackedLayerOperator()
 		 * @generated
@@ -12052,7 +12051,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomLayerOperatorImpl <em>Custom Layer Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.CustomLayerOperatorImpl
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomLayerOperator()
 		 * @generated
@@ -12063,7 +12062,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>String</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getString()
 		 * @generated
@@ -12074,7 +12073,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>boolean</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getboolean()
 		 * @generated
 		 */
@@ -12084,7 +12083,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>EPackage</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.emf.ecore.EPackage
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getEPackage()
 		 * @generated
@@ -12095,7 +12094,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>Not Found Exception</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.NotFoundException
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getNotFoundException()
 		 * @generated
@@ -12106,7 +12105,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>Compute Property Value Command</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getComputePropertyValueCommand()
 		 * @generated
@@ -12117,7 +12116,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>Exception</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.LayersException
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getLayersException()
 		 * @generated
@@ -12128,7 +12127,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>int</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getint()
 		 * @generated
 		 */
@@ -12138,7 +12137,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.Object
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getObject()
 		 * @generated
@@ -12149,7 +12148,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>Custom Property Opertor Instance</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getCustomPropertyOpertorInstance()
 		 * @generated
@@ -12160,7 +12159,7 @@ public interface LayersPackage extends EPackage {
 		 * The meta object literal for the '<em>Bad State Exception</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.BadStateException
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersPackageImpl#getBadStateException()
 		 * @generated

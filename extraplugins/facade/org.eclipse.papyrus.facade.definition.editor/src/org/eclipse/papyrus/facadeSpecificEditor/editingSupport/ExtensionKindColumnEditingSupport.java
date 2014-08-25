@@ -156,6 +156,7 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 			try {
 				dialog.run(false, false, new IRunnableWithProgress() {
 
+					@Override
 					public void run(IProgressMonitor monitor) {
 						monitor.beginTask(Messages.ExtensionKindColumnEditingSupport_0, IProgressMonitor.UNKNOWN);
 

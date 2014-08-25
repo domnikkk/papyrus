@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.eastadl.annex.computationconstraint;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
 
 /**
@@ -32,7 +31,7 @@ public interface ComputationConstraint extends EAElement {
 	 * If the meaning of the '<em>Logical Path</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Logical Path</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getComputationConstraint_LogicalPath()
 	 * @model ordered="false"
@@ -48,7 +47,7 @@ public interface ComputationConstraint extends EAElement {
 	 * If the meaning of the '<em>Logical Transformation</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Logical Transformation</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getComputationConstraint_LogicalTransformation()
 	 * @model ordered="false"

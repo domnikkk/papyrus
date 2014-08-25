@@ -12,7 +12,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -24,7 +23,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.design.profile.architecture.util.ArchitectureAdapterFactory;
 
 /**
@@ -34,7 +32,7 @@ import org.eclipse.papyrus.design.profile.architecture.util.ArchitectureAdapterF
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -42,7 +40,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -51,7 +49,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -60,7 +58,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -69,7 +67,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureItemProviderAdapterFactory() {
@@ -84,7 +82,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.design.profile.architecture.Layer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerItemProvider layerItemProvider;
@@ -93,7 +91,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.design.profile.architecture.Layer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +107,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.design.profile.architecture.LayerDependency} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerDependencyItemProvider layerDependencyItemProvider;
@@ -118,7 +116,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.design.profile.architecture.LayerDependency}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +132,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.design.profile.architecture.Plugin} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PluginItemProvider pluginItemProvider;
@@ -143,7 +141,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.design.profile.architecture.Plugin}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +157,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.design.profile.architecture.Project} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProjectItemProvider projectItemProvider;
@@ -168,7 +166,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.design.profile.architecture.Project}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +182,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.design.profile.architecture.ProjectDependency} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProjectDependencyItemProvider projectDependencyItemProvider;
@@ -193,7 +191,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This creates an adapter for a {@link org.eclipse.papyrus.design.profile.architecture.ProjectDependency}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +207,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +219,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +230,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +242,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +253,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +272,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +284,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +296,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +312,7 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

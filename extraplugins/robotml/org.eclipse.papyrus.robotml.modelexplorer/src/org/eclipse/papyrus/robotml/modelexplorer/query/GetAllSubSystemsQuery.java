@@ -19,8 +19,8 @@ import org.eclipse.emf.facet.infra.query.core.exception.ModelQueryExecutionExcep
 import org.eclipse.emf.facet.infra.query.core.java.IJavaModelQuery;
 import org.eclipse.emf.facet.infra.query.core.java.ParameterValueList;
 import org.eclipse.papyrus.robotml.modelexplorer.util.ProfileUtil;
-import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;

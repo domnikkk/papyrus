@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ package org.eclipse.papyrus.integrationtests.editor;
 public class DiagramCreationException extends ExecutionException {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 

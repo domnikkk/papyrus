@@ -46,7 +46,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	 * The cached value of the '{@link #getTupleAttrib() <em>Tuple Attrib</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTupleAttrib()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TupleTypeImpl() {
@@ -77,7 +77,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataType basicGetBase_DataType() {
@@ -132,7 +132,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -188,7 +188,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class TupleTypeImpl extends EObjectImpl implements TupleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

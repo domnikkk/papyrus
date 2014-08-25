@@ -26,22 +26,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragmentRoot;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
-
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 import org.eclipse.uml2.common.util.SubsetSupersetEObjectContainmentWithInverseEList;
 
@@ -66,7 +61,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	 * The cached value of the '{@link #getPackageFragmentRoots() <em>Package Fragment Roots</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPackageFragmentRoots()
 	 * @generated
 	 * @ordered
@@ -76,7 +71,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTJavaProjectImpl() {
@@ -86,7 +81,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +92,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +104,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	 * The array of subset feature identifiers for the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -119,7 +114,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +128,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetJavaModel(JDTJavaModel newJavaModel, NotificationChain msgs) {
@@ -144,7 +139,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +168,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +184,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	 * The array of superset feature identifiers for the '{@link #getPackageFragmentRoots() <em>Package Fragment Roots</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPackageFragmentRoots()
 	 * @generated
 	 * @ordered
@@ -199,7 +194,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -220,7 +215,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +232,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +247,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +264,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -290,7 +285,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +304,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +321,7 @@ public class JDTJavaProjectImpl extends JDTParentJavaElementImpl implements JDTJ
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

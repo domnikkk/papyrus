@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter;
 
@@ -30,7 +29,7 @@ public class NullPropertySetterImpl extends PropertySetterImpl implements NullPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected NullPropertySetterImpl() {
@@ -41,7 +40,7 @@ public class NullPropertySetterImpl extends PropertySetterImpl implements NullPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

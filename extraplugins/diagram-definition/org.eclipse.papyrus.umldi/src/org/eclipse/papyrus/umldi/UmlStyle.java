@@ -14,7 +14,6 @@ package org.eclipse.papyrus.umldi;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.papyrus.dd.di.Style;
 
 /**

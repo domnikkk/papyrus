@@ -60,7 +60,7 @@ public abstract class LayerExpressionImpl extends
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public abstract class LayerExpressionImpl extends
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public abstract class LayerExpressionImpl extends
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public abstract class LayerExpressionImpl extends
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public abstract class LayerExpressionImpl extends
 	 * The default value of the '{@link #isLayerEnabledInternal() <em>Is Layer Enabled Internal</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isLayerEnabledInternal()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public abstract class LayerExpressionImpl extends
 	 * The default value of the '{@link #isLayerEnabled() <em>Is Layer Enabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isLayerEnabled()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public abstract class LayerExpressionImpl extends
 	 * The cached value of the '{@link #isLayerEnabled() <em>Is Layer Enabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isLayerEnabled()
 	 * @generated
 	 * @ordered
@@ -131,7 +131,7 @@ public abstract class LayerExpressionImpl extends
 	 * The default value of the '{@link #isBranchEnabled() <em>Is Branch Enabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isBranchEnabled()
 	 * @generated
 	 * @ordered
@@ -141,7 +141,7 @@ public abstract class LayerExpressionImpl extends
 	 * The cached value of the '{@link #isBranchEnabled() <em>Is Branch Enabled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isBranchEnabled()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public abstract class LayerExpressionImpl extends
 	 * The cached value of the '{@link #getOwningLayersStack() <em>Owning Layers Stack</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwningLayersStack()
 	 * @generated
 	 * @ordered
@@ -162,7 +162,7 @@ public abstract class LayerExpressionImpl extends
 	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getState()
 	 * @generated
 	 * @ordered
@@ -172,7 +172,7 @@ public abstract class LayerExpressionImpl extends
 	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getState()
 	 * @generated
 	 * @ordered
@@ -211,7 +211,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected LayerExpressionImpl() {
@@ -235,7 +235,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +283,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -309,7 +309,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +320,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -338,7 +338,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -367,7 +367,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +387,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersStack basicGetOwningLayersStack() {
@@ -397,7 +397,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -412,7 +412,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -423,7 +423,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +438,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -455,7 +455,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -466,7 +466,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -496,7 +496,7 @@ public abstract class LayerExpressionImpl extends
 	 * <!-- begin-user-doc -->
 	 * Subclass can overload in order to stop some behaviors.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -511,7 +511,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -526,7 +526,7 @@ public abstract class LayerExpressionImpl extends
 	 * This default implementation start the associated behaviors.
 	 *
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public void startAfterReloading() {
@@ -536,7 +536,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -549,7 +549,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -562,7 +562,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -598,7 +598,7 @@ public abstract class LayerExpressionImpl extends
 	 *
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public void initLayer(LayersStack owningLayersStack) {
@@ -610,7 +610,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -623,7 +623,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -636,7 +636,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -666,7 +666,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -697,7 +697,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -728,7 +728,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -755,7 +755,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -820,7 +820,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -847,7 +847,7 @@ public abstract class LayerExpressionImpl extends
 	/**
 	 * This method is called when the container of this parent has changed.
 	 * Set the #owningLayerStack property and the {@link #isBranchEnabled()} property
-	 * 
+	 *
 	 * @param newValue
 	 * @param oldValue
 	 */

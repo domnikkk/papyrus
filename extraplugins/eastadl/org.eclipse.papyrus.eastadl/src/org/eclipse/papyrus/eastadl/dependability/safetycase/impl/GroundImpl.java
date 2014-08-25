@@ -50,7 +50,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	 * The cached value of the '{@link #getSafetyEvidence() <em>Safety Evidence</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSafetyEvidence()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	 * The cached value of the '{@link #getJustification() <em>Justification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJustification()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GroundImpl() {
@@ -92,7 +92,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -158,7 +158,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -249,7 +249,7 @@ public class GroundImpl extends TraceableSpecificationImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

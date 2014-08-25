@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Class;
 public interface ImplementationChooser {
 	/**
 	 * Choose a component implementation from a list of available implementations
-	 * 
+	 *
 	 * @param componentType
 	 *            a (abstract) component
 	 * @param implList

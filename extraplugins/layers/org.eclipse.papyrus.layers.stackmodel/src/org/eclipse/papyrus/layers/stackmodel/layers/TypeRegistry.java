@@ -41,7 +41,7 @@ public interface TypeRegistry extends EObject {
 	 * If the meaning of the '<em>Types</em>' map isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Types</em>' map.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getTypeRegistry_Types()
 	 * @model mapType="org.eclipse.papyrus.layers.stackmodel.layers.StringToTypeMap<org.eclipse.papyrus.layers.stackmodel.layers.String, org.eclipse.papyrus.layers.stackmodel.layers.Type>" ordered="false"

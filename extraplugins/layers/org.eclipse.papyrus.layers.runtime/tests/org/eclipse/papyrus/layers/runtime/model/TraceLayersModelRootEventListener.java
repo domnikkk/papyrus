@@ -11,6 +11,7 @@
 package org.eclipse.papyrus.layers.runtime.model;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.papyrus.layers.runtime.NotationDiagramRemovedFromResourceEventNotifier;
 import org.eclipse.papyrus.layers.runtime.utils.TriggeredEventTraces;
 
 

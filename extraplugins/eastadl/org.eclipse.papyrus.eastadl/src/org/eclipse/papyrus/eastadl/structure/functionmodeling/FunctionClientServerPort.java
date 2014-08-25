@@ -58,7 +58,7 @@ public interface FunctionClientServerPort extends FunctionPort {
 	 *
 	 * {derived from UML::TypedElement::type}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionClientServerPort_Type()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -74,7 +74,7 @@ public interface FunctionClientServerPort extends FunctionPort {
 	 * If the meaning of the '<em>Client Server Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Client Server Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind
 	 * @see #setClientServerKind(ClientServerKind)
@@ -88,7 +88,7 @@ public interface FunctionClientServerPort extends FunctionPort {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionClientServerPort#getClientServerKind <em>Client Server Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Client Server Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.ClientServerKind

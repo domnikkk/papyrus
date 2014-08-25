@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Comparison Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getComparisonKind()
  * @model
  * @generated
@@ -23,7 +23,7 @@ public enum ComparisonKind implements Enumerator {
 	 * The '<em><b>Equal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EQUAL_VALUE
 	 * @generated
 	 * @ordered
@@ -34,7 +34,7 @@ public enum ComparisonKind implements Enumerator {
 	 * The '<em><b>Greater Than</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GREATER_THAN_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum ComparisonKind implements Enumerator {
 	 * The '<em><b>Greater Than Or Equal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GREATER_THAN_OR_EQUAL_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum ComparisonKind implements Enumerator {
 	 * The '<em><b>Less Than</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LESS_THAN_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum ComparisonKind implements Enumerator {
 	 * The '<em><b>Less Than Or Equal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LESS_THAN_OR_EQUAL_VALUE
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public enum ComparisonKind implements Enumerator {
 	 * If the meaning of '<em><b>Equal</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EQUAL
 	 * @model name="equal"
 	 * @generated
@@ -96,7 +96,7 @@ public enum ComparisonKind implements Enumerator {
 	 * If the meaning of '<em><b>Greater Than</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GREATER_THAN
 	 * @model name="greaterThan"
 	 * @generated
@@ -111,7 +111,7 @@ public enum ComparisonKind implements Enumerator {
 	 * If the meaning of '<em><b>Greater Than Or Equal</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GREATER_THAN_OR_EQUAL
 	 * @model name="greaterThanOrEqual"
 	 * @generated
@@ -126,7 +126,7 @@ public enum ComparisonKind implements Enumerator {
 	 * If the meaning of '<em><b>Less Than</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LESS_THAN
 	 * @model name="lessThan"
 	 * @generated
@@ -141,7 +141,7 @@ public enum ComparisonKind implements Enumerator {
 	 * If the meaning of '<em><b>Less Than Or Equal</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LESS_THAN_OR_EQUAL
 	 * @model name="lessThanOrEqual"
 	 * @generated
@@ -153,7 +153,7 @@ public enum ComparisonKind implements Enumerator {
 	 * An array of all the '<em><b>Comparison Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ComparisonKind[] VALUES_ARRAY =
@@ -169,7 +169,7 @@ public enum ComparisonKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Comparison Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ComparisonKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -178,7 +178,7 @@ public enum ComparisonKind implements Enumerator {
 	 * Returns the '<em><b>Comparison Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ComparisonKind get(String literal) {
@@ -195,7 +195,7 @@ public enum ComparisonKind implements Enumerator {
 	 * Returns the '<em><b>Comparison Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ComparisonKind getByName(String name) {
@@ -212,7 +212,7 @@ public enum ComparisonKind implements Enumerator {
 	 * Returns the '<em><b>Comparison Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ComparisonKind get(int value) {
@@ -234,7 +234,7 @@ public enum ComparisonKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -242,7 +242,7 @@ public enum ComparisonKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -250,7 +250,7 @@ public enum ComparisonKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -259,7 +259,7 @@ public enum ComparisonKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ComparisonKind(int value, String name, String literal) {
@@ -271,7 +271,7 @@ public enum ComparisonKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public enum ComparisonKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +293,7 @@ public enum ComparisonKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +305,7 @@ public enum ComparisonKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EcorePackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstanceFactory
  * @model kind="package"
  * @generated
@@ -33,7 +33,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "papyrustableinstance";
@@ -42,7 +42,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/Papyrus/Table/0.8.0/papyrustableinstance";
@@ -51,7 +51,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "org.eclipse.papyrus.infra.table.instance.papyrustableinstance";
@@ -60,7 +60,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	PapyrustableinstancePackage eINSTANCE = org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrustableinstancePackageImpl.init();
@@ -69,7 +69,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl <em>Papyrus Table Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrustableinstancePackageImpl#getPapyrusTableInstance()
 	 * @generated
@@ -80,7 +80,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -90,7 +90,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,7 +100,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -110,7 +110,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Synchronized</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -120,7 +120,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,7 +130,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>Filling Queries</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -140,7 +140,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>Pasted Element Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -150,7 +150,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The feature id for the '<em><b>Pasted Element Containment Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +160,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * The number of structural features of the '<em>Papyrus Table Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -171,7 +171,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance <em>Papyrus Table Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Papyrus Table Instance</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance
 	 * @generated
@@ -182,7 +182,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getName()
 	 * @see #getPapyrusTableInstance()
@@ -194,7 +194,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getType()
 	 * @see #getPapyrusTableInstance()
@@ -206,7 +206,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#isIsSynchronized <em>Is Synchronized</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Synchronized</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#isIsSynchronized()
 	 * @see #getPapyrusTableInstance()
@@ -218,7 +218,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Table</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getTable()
 	 * @see #getPapyrusTableInstance()
@@ -230,7 +230,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getFillingQueries <em>Filling Queries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Filling Queries</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getFillingQueries()
 	 * @see #getPapyrusTableInstance()
@@ -242,7 +242,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementId <em>Pasted Element Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Pasted Element Id</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementId()
 	 * @see #getPapyrusTableInstance()
@@ -254,7 +254,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementContainmentFeature <em>Pasted Element Containment Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Pasted Element Containment Feature</em>'.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementContainmentFeature()
 	 * @see #getPapyrusTableInstance()
@@ -266,7 +266,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -282,7 +282,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -290,7 +290,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl <em>Papyrus Table Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl
 		 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrustableinstancePackageImpl#getPapyrusTableInstance()
 		 * @generated
@@ -301,7 +301,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_TABLE_INSTANCE__NAME = eINSTANCE.getPapyrusTableInstance_Name();
@@ -310,7 +310,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_TABLE_INSTANCE__TYPE = eINSTANCE.getPapyrusTableInstance_Type();
@@ -319,7 +319,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Synchronized</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED = eINSTANCE.getPapyrusTableInstance_IsSynchronized();
@@ -328,7 +328,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_TABLE_INSTANCE__TABLE = eINSTANCE.getPapyrusTableInstance_Table();
@@ -337,7 +337,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Filling Queries</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES = eINSTANCE.getPapyrusTableInstance_FillingQueries();
@@ -346,7 +346,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pasted Element Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID = eINSTANCE.getPapyrusTableInstance_PastedElementId();
@@ -355,7 +355,7 @@ public interface PapyrustableinstancePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pasted Element Containment Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE = eINSTANCE.getPapyrusTableInstance_PastedElementContainmentFeature();

@@ -28,7 +28,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#exitAttachedState() <em>Exit Attached State</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class LayerExpressionTest extends ApplicationDependantElementTest {
@@ -37,7 +37,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Constructs a new Layer Expression test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerExpressionTest(String name) {
@@ -48,7 +48,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Returns the fixture for this Layer Expression test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,7 +60,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isLayerEnabledInternal() <em>Is Layer Enabled Internal</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#isLayerEnabledInternal()
 	 * @generated
 	 */
@@ -75,7 +75,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -90,7 +90,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * <em>Get Views Compute Property Value Command</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getViewsComputePropertyValueCommand(org.eclipse.emf.common.util.EList, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -105,7 +105,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
@@ -119,7 +119,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attachToLayersStack(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack) <em>Attach To Layers Stack</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attachToLayersStack(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack)
 	 * @generated
 	 */
@@ -133,7 +133,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getLayersStack() <em>Get Layers Stack</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#getLayersStack()
 	 * @generated
 	 */
@@ -147,7 +147,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#enterAttachedState() <em>Enter Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#enterAttachedState()
 	 * @generated
 	 */
@@ -161,7 +161,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attach() <em>Attach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#attach()
 	 * @generated
 	 */
@@ -175,7 +175,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#detach() <em>Detach</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#detach()
 	 * @generated
 	 */
@@ -189,7 +189,7 @@ public abstract class LayerExpressionTest extends ApplicationDependantElementTes
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#exitAttachedState() <em>Exit Attached State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression#exitAttachedState()
 	 * @generated
 	 */

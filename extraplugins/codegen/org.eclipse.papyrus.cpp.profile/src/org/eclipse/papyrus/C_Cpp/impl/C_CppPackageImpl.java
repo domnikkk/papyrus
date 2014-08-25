@@ -17,9 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.C_Cpp.Array;
 import org.eclipse.papyrus.C_Cpp.C_CppFactory;
 import org.eclipse.papyrus.C_Cpp.C_CppPackage;
@@ -47,24 +45,22 @@ import org.eclipse.papyrus.C_Cpp.Union;
 import org.eclipse.papyrus.C_Cpp.Virtual;
 import org.eclipse.papyrus.C_Cpp.Visibility;
 import org.eclipse.papyrus.C_Cpp.VisibilityKind;
-
 import org.eclipse.papyrus.C_Cpp.Volatile;
 import org.eclipse.uml2.types.TypesPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass ptrEClass = null;
@@ -72,7 +68,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass includeEClass = null;
@@ -80,7 +76,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass manualGenerationEClass = null;
@@ -88,7 +84,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass externLibraryEClass = null;
@@ -96,7 +92,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass noCodeGenEClass = null;
@@ -104,7 +100,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass cppRootEClass = null;
@@ -112,7 +108,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass arrayEClass = null;
@@ -120,7 +116,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constEClass = null;
@@ -128,7 +124,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass refEClass = null;
@@ -136,7 +132,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass externalEClass = null;
@@ -144,7 +140,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constInitEClass = null;
@@ -152,7 +148,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass friendEClass = null;
@@ -160,7 +156,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass inlineEClass = null;
@@ -168,7 +164,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualEClass = null;
@@ -176,7 +172,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass typedefEClass = null;
@@ -184,7 +180,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass visibilityEClass = null;
@@ -192,7 +188,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass cppInitEClass = null;
@@ -200,7 +196,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass templateEClass = null;
@@ -208,7 +204,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass templateBindingEClass = null;
@@ -216,7 +212,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass templateParameterEClass = null;
@@ -224,7 +220,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass unionEClass = null;
@@ -232,7 +228,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass storageClassEClass = null;
@@ -240,7 +236,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass volatileEClass = null;
@@ -248,7 +244,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum visibilityKindEEnum = null;
@@ -256,7 +252,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum eAccessKindEEnum = null;
@@ -264,7 +260,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum eStorageClassEEnum = null;
@@ -274,7 +270,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#eNS_URI
 	 * @see #init()
@@ -287,7 +283,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -297,7 +293,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link C_CppPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -334,7 +330,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +341,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +352,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -367,7 +363,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -378,7 +374,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +385,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +396,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -411,7 +407,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -422,7 +418,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -433,7 +429,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +440,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -455,7 +451,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -466,7 +462,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -477,7 +473,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -488,7 +484,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -499,7 +495,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -510,7 +506,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -521,7 +517,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -532,7 +528,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -543,7 +539,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -554,7 +550,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -565,7 +561,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -576,7 +572,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -587,7 +583,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -598,7 +594,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -609,7 +605,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -620,7 +616,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -631,7 +627,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -642,7 +638,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -653,7 +649,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -664,7 +660,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -675,7 +671,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -686,7 +682,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -697,7 +693,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -708,7 +704,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -719,7 +715,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -730,7 +726,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -741,7 +737,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -752,7 +748,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -763,7 +759,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -774,7 +770,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -785,7 +781,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -796,7 +792,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -807,7 +803,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -818,7 +814,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -829,7 +825,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -840,7 +836,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -851,7 +847,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -862,7 +858,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -873,7 +869,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -884,7 +880,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -895,7 +891,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -906,7 +902,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -917,7 +913,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -928,7 +924,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -939,7 +935,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -950,7 +946,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -961,7 +957,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -972,7 +968,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -983,7 +979,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -994,7 +990,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1005,7 +1001,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1016,7 +1012,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1027,7 +1023,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1038,7 +1034,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1049,7 +1045,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1060,7 +1056,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1071,7 +1067,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1082,7 +1078,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1093,7 +1089,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1104,7 +1100,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1115,7 +1111,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1126,7 +1122,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1137,7 +1133,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1148,7 +1144,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1159,7 +1155,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1170,7 +1166,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1181,7 +1177,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1192,7 +1188,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1203,7 +1199,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1214,7 +1210,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1224,7 +1220,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1342,7 +1338,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1352,7 +1348,7 @@ public class C_CppPackageImpl extends EPackageImpl implements C_CppPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

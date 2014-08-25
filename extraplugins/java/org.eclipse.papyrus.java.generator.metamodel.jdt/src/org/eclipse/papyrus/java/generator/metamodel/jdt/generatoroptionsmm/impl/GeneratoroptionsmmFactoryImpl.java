@@ -16,18 +16,17 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.impl
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.*;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmFactory;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmPackage;
+import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Options;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements GeneratoroptionsmmFactory {
@@ -35,7 +34,7 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static GeneratoroptionsmmFactory init() {
@@ -54,7 +53,7 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GeneratoroptionsmmFactoryImpl() {
@@ -64,7 +63,7 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +79,7 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +91,7 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +102,7 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

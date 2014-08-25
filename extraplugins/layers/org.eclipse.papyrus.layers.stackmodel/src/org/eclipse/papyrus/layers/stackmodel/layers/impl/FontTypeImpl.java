@@ -32,7 +32,7 @@ public class FontTypeImpl extends TypeImpl implements FontType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected FontTypeImpl() {
@@ -43,7 +43,7 @@ public class FontTypeImpl extends TypeImpl implements FontType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class FontTypeImpl extends TypeImpl implements FontType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override

@@ -29,7 +29,7 @@ import org.junit.Test;
 
 /**
  * Tests applied to an instance initialied with an Application.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -85,7 +85,7 @@ public class LayerImplWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#resetAllPropertyValuesFromRegistry()}.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test
@@ -119,7 +119,7 @@ public class LayerImplWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#resetAllPropertyValuesFromRegistry()}.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test
@@ -151,7 +151,7 @@ public class LayerImplWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#resetAllPropertyValuesFromRegistry()}.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test
@@ -184,7 +184,7 @@ public class LayerImplWithApplicationTest {
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#synchronizePropertyValue(java.lang.String, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)}.
 	 * Test synchronization.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test
@@ -229,7 +229,7 @@ public class LayerImplWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#getPropertyValueMap()}.
-	 * 
+	 *
 	 * @throws BadStateException
 	 */
 	@Test

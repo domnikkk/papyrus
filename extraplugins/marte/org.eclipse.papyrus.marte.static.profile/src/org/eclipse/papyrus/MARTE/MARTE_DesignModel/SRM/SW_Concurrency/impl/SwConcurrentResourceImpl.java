@@ -62,7 +62,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The default value of the '{@link #getActivationCapacity() <em>Activation Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActivationCapacity()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getActivationCapacity() <em>Activation Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActivationCapacity()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getEntryPoints() <em>Entry Points</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEntryPoints()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getAdressSpace() <em>Adress Space</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdressSpace()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getPeriodElements() <em>Period Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPeriodElements()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getPriorityElements() <em>Priority Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriorityElements()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getStackSizeElements() <em>Stack Size Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStackSizeElements()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getActivateServices() <em>Activate Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActivateServices()
 	 * @generated
 	 * @ordered
@@ -172,7 +172,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getEnableConcurrencyServices() <em>Enable Concurrency Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnableConcurrencyServices()
 	 * @generated
 	 * @ordered
@@ -183,7 +183,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getResumeServices() <em>Resume Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResumeServices()
 	 * @generated
 	 * @ordered
@@ -194,7 +194,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getSuspendServices() <em>Suspend Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspendServices()
 	 * @generated
 	 * @ordered
@@ -205,7 +205,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getTerminateServices() <em>Terminate Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTerminateServices()
 	 * @generated
 	 * @ordered
@@ -216,7 +216,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getDisableConcurrencyServices() <em>Disable Concurrency Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDisableConcurrencyServices()
 	 * @generated
 	 * @ordered
@@ -227,7 +227,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getShareDataResources() <em>Share Data Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getShareDataResources()
 	 * @generated
 	 * @ordered
@@ -238,7 +238,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getMessageResources() <em>Message Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessageResources()
 	 * @generated
 	 * @ordered
@@ -249,7 +249,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getMutualExclusionResources() <em>Mutual Exclusion Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMutualExclusionResources()
 	 * @generated
 	 * @ordered
@@ -260,7 +260,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getNotificationResources() <em>Notification Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNotificationResources()
 	 * @generated
 	 * @ordered
@@ -271,7 +271,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	 * The cached value of the '{@link #getHeapSizeElements() <em>Heap Size Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeapSizeElements()
 	 * @generated
 	 * @ordered
@@ -281,7 +281,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwConcurrentResourceImpl() {
@@ -291,7 +291,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +328,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +339,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -354,7 +354,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +368,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +382,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +396,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -410,7 +410,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -424,7 +424,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +438,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -452,7 +452,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -466,7 +466,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -480,7 +480,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -494,7 +494,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -508,7 +508,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -522,7 +522,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +536,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -550,7 +550,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -564,7 +564,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -578,7 +578,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -627,7 +627,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -711,7 +711,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -778,7 +778,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -827,7 +827,7 @@ public abstract class SwConcurrentResourceImpl extends SwResourceImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

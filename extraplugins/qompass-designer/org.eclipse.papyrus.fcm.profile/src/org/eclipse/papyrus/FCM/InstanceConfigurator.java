@@ -39,7 +39,7 @@ public interface InstanceConfigurator extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getInstanceConfigurator_Base_Class()
@@ -52,7 +52,7 @@ public interface InstanceConfigurator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.InstanceConfigurator#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -67,7 +67,7 @@ public interface InstanceConfigurator extends EObject {
 	 * If the meaning of the '<em>On Node Model</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>On Node Model</em>' attribute.
 	 * @see #setOnNodeModel(boolean)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getInstanceConfigurator_OnNodeModel()
@@ -80,7 +80,7 @@ public interface InstanceConfigurator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.InstanceConfigurator#isOnNodeModel <em>On Node Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>On Node Model</em>' attribute.
 	 * @see #isOnNodeModel()

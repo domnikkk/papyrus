@@ -46,7 +46,7 @@ public interface PaStep extends GaStep {
 	 * If the meaning of the '<em>No Sync</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>No Sync</em>' attribute.
 	 * @see #setNoSync(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaStep_NoSync()
@@ -59,7 +59,7 @@ public interface PaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaStep#getNoSync <em>No Sync</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>No Sync</em>' attribute.
 	 * @see #getNoSync()
@@ -75,7 +75,7 @@ public interface PaStep extends GaStep {
 	 * If the meaning of the '<em>Ext Op Demand</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ext Op Demand</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaStep_ExtOpDemand()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.String"
@@ -91,7 +91,7 @@ public interface PaStep extends GaStep {
 	 * If the meaning of the '<em>Ext Op Count</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ext Op Count</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaStep_ExtOpCount()
 	 * @model default="1" dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real"
@@ -107,7 +107,7 @@ public interface PaStep extends GaStep {
 	 * If the meaning of the '<em>Behav Demand</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Behav Demand</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaStep_BehavDemand()
 	 * @model
@@ -123,7 +123,7 @@ public interface PaStep extends GaStep {
 	 * If the meaning of the '<em>Behav Count</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Behav Count</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaStep_BehavCount()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real"

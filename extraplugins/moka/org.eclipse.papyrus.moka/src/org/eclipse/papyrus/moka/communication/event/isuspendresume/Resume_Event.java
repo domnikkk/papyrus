@@ -63,7 +63,7 @@ public class Resume_Event extends EventMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.event.EventMessage#marshal()
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class Resume_Event extends EventMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.event.EventMessage#getDebugEvent()
 	 */
 	@Override

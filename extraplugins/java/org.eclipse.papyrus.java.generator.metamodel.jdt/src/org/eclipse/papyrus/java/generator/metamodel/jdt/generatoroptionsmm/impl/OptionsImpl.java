@@ -14,12 +14,9 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmPackage;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Options;
 
@@ -41,7 +38,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	 * The default value of the '{@link #getDefaultSourceFolder() <em>Default Source Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultSourceFolder()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	 * The cached value of the '{@link #getDefaultSourceFolder() <em>Default Source Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultSourceFolder()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OptionsImpl() {
@@ -72,7 +69,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +80,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +91,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +106,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +121,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +137,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +153,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +168,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

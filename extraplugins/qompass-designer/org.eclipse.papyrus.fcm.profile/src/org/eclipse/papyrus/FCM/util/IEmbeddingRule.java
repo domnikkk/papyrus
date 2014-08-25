@@ -21,7 +21,7 @@ import org.eclipse.papyrus.FCM.Connector;
 public interface IEmbeddingRule {
 	/**
 	 * Return a role binding table for a given connector
-	 * 
+	 *
 	 * @param connector
 	 *            the connector
 	 * @return role binding table

@@ -63,7 +63,7 @@ public class PropertyValueFactoryTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.PropertyValueFactory#newInstance(java.lang.String, java.lang.String)}.
-	 * 
+	 *
 	 * @throws IllegalAccessException
 	 * @throws InstantiationException
 	 * @throws ClassNotFoundException
@@ -80,7 +80,7 @@ public class PropertyValueFactoryTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.PropertyValueFactory#loadClass(java.lang.String, java.lang.String)}.
-	 * 
+	 *
 	 * @throws ClassNotFoundException
 	 */
 	@Test
@@ -96,7 +96,7 @@ public class PropertyValueFactoryTest {
 
 	/**
 	 * Test method
-	 * 
+	 *
 	 * @throws IllegalAccessException
 	 * @throws InstantiationException
 	 * @throws ClassNotFoundException
@@ -112,7 +112,7 @@ public class PropertyValueFactoryTest {
 
 	/**
 	 * Test method
-	 * 
+	 *
 	 * @throws IllegalAccessException
 	 * @throws InstantiationException
 	 * @throws ClassNotFoundException
@@ -129,7 +129,7 @@ public class PropertyValueFactoryTest {
 
 	/**
 	 * Test method
-	 * 
+	 *
 	 * @throws IllegalAccessException
 	 * @throws InstantiationException
 	 * @throws ClassNotFoundException

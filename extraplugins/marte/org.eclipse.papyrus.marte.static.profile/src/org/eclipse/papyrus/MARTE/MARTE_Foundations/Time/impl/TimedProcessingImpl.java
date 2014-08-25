@@ -49,7 +49,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	 * The cached value of the '{@link #getBase_Action() <em>Base Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Action()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	 * The cached value of the '{@link #getBase_Message() <em>Base Message</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Message()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDuration()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	 * The cached value of the '{@link #getFinish() <em>Finish</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFinish()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TimedProcessingImpl() {
@@ -124,7 +124,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Action basicGetBase_Action() {
@@ -165,7 +165,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -210,7 +210,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Message basicGetBase_Message() {
@@ -255,7 +255,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDuration(ValueSpecification newDuration, NotificationChain msgs) {
@@ -301,7 +301,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +327,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +347,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetStart() {
@@ -357,7 +357,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetFinish() {
@@ -402,7 +402,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -432,7 +432,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -472,7 +472,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +503,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -534,7 +534,7 @@ public class TimedProcessingImpl extends TimedElementImpl implements TimedProces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -33,7 +33,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	 * The cached value of the '{@link #getHardwareComponentProtype_target() <em>Hardware Component Protype target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareComponentProtype_target()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	 * The cached value of the '{@link #getHardwareComponentPrototype_context() <em>Hardware Component Prototype context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareComponentPrototype_context()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl() {
@@ -64,7 +64,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HardwareComponentPrototype basicGetHardwareComponentProtype_target() {
@@ -106,7 +106,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -178,7 +178,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class BehaviorConstraintPrototype_hardwareComponentTargetInstanceRefImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

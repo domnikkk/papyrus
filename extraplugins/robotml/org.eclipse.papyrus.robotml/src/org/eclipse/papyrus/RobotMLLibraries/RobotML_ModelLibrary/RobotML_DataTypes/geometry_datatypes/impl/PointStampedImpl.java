@@ -4,17 +4,13 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PointStamped;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -36,7 +32,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -47,7 +43,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoint()
 	 * @generated
 	 * @ordered
@@ -57,7 +53,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PointStampedImpl() {
@@ -67,7 +63,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +74,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -88,7 +84,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -108,7 +104,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -133,7 +129,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Point getPoint() {
@@ -143,7 +139,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs) {
@@ -163,7 +159,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPoint(Point newPoint) {
@@ -188,7 +184,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +201,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +218,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +237,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +256,7 @@ public class PointStampedImpl extends MinimalEObjectImpl.Container implements Po
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

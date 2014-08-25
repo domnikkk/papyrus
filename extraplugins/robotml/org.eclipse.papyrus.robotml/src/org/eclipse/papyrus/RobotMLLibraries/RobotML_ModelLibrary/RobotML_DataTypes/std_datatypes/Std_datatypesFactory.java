@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage
  * @generated
  */
@@ -18,7 +18,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	Std_datatypesFactory eINSTANCE = org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesFactoryImpl.init();
@@ -27,7 +27,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Header</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Header</em>'.
 	 * @generated
 	 */
@@ -37,7 +37,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Multi Array Dimension</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Multi Array Dimension</em>'.
 	 * @generated
 	 */
@@ -47,7 +47,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Multi Array Layout</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Multi Array Layout</em>'.
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Byte Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Byte Multi Array</em>'.
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Color RGBA</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Color RGBA</em>'.
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Float32 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Float32 Multi Array</em>'.
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Int32 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Int32 Multi Array</em>'.
 	 * @generated
 	 */
@@ -97,7 +97,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Int8 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Int8 Multi Array</em>'.
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Int16 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Int16 Multi Array</em>'.
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Int64 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Int64 Multi Array</em>'.
 	 * @generated
 	 */
@@ -127,7 +127,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Float64 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Float64 Multi Array</em>'.
 	 * @generated
 	 */
@@ -137,7 +137,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>UInt64 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>UInt64 Multi Array</em>'.
 	 * @generated
 	 */
@@ -147,7 +147,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>UIint16 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>UIint16 Multi Array</em>'.
 	 * @generated
 	 */
@@ -157,7 +157,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>UInt32 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>UInt32 Multi Array</em>'.
 	 * @generated
 	 */
@@ -167,7 +167,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>UInt8 Multi Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>UInt8 Multi Array</em>'.
 	 * @generated
 	 */
@@ -177,7 +177,7 @@ public interface Std_datatypesFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

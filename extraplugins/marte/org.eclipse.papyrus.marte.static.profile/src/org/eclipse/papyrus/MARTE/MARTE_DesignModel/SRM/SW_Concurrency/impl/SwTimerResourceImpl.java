@@ -40,7 +40,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	 * The cached value of the '{@link #getDurationElements() <em>Duration Elements</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDurationElements()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwTimerResourceImpl() {
@@ -60,7 +60,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TypedElement basicGetDurationElements() {
@@ -101,7 +101,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class SwTimerResourceImpl extends TimerResourceImpl implements SwTimerRes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

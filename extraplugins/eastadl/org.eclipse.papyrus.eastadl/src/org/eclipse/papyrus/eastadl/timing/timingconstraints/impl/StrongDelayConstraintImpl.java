@@ -33,7 +33,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StrongDelayConstraintImpl() {
@@ -86,7 +86,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetSource() {
@@ -127,7 +127,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetTarget() {
@@ -172,7 +172,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetLower() {
@@ -217,7 +217,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetUpper() {
@@ -262,7 +262,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -310,7 +310,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class StrongDelayConstraintImpl extends TimingConstraintImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

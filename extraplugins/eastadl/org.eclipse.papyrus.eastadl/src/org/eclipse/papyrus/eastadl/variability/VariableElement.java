@@ -65,7 +65,7 @@ public interface VariableElement extends EAElement {
 	 * Returns the value of the '<em><b>Actual Binding Time</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Actual Binding Time</em>' reference.
 	 * @see #setActualBindingTime(BindingTime)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariableElement_ActualBindingTime()
@@ -82,7 +82,7 @@ public interface VariableElement extends EAElement {
 	 * If the meaning of the '<em>Optional Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Optional Element</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariableElement_OptionalElement()
 	 * @model required="true" ordered="false"
@@ -97,7 +97,7 @@ public interface VariableElement extends EAElement {
 	 * If the meaning of the '<em>Required Binding Time</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Required Binding Time</em>' reference.
 	 * @see #setRequiredBindingTime(BindingTime)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariableElement_RequiredBindingTime()
@@ -110,7 +110,7 @@ public interface VariableElement extends EAElement {
 	 * Returns the value of the '<em><b>Reuse Meta Information</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Reuse Meta Information</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariableElement_ReuseMetaInformation()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -122,7 +122,7 @@ public interface VariableElement extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.VariableElement#getActualBindingTime <em>Actual Binding Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Actual Binding Time</em>' reference.
 	 * @see #getActualBindingTime()
@@ -137,7 +137,7 @@ public interface VariableElement extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getVariableElement_Base_Class()
@@ -150,7 +150,7 @@ public interface VariableElement extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.VariableElement#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -162,7 +162,7 @@ public interface VariableElement extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.VariableElement#getRequiredBindingTime <em>Required Binding Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Required Binding Time</em>' reference.
 	 * @see #getRequiredBindingTime()

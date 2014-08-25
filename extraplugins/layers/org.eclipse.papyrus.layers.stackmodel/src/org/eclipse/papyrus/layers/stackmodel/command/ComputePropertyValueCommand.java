@@ -29,7 +29,7 @@ public interface ComputePropertyValueCommand {
 	/**
 	 * Execute the command and return the computed value.
 	 * Compute the value of the Property, and return it.
-	 * 
+	 *
 	 * @return The computed value of the Property.
 	 * @throws LayersException
 	 *             If something goes wrong

@@ -14,7 +14,11 @@
 
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.List;
 
@@ -26,6 +30,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Layer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerState;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactoryForStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
@@ -61,7 +66,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#LayersFactoryForStackImpl()}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -120,7 +125,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#initLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression, org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -152,7 +157,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -181,7 +186,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -209,7 +214,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createRegExpLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -238,7 +243,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -266,7 +271,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createTopLayerOperator(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -295,7 +300,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createTopLayerOperator(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -323,7 +328,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createStackedLayerOperator(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -352,7 +357,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 	 * Test method for
 	 * {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl#createTopLayerOperator(org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, org.eclipse.papyrus.layers.stackmodel.layers.LayersStack, org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication)}
 	 * .
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -378,7 +383,7 @@ public class LayersFactoryForStackImplWithApplicationTest {
 
 	/**
 	 * Test method for {@link LayersFactoryForStackImpl#createLayerOperator(String, LayersContainer, LayersStack, LayersStackApplication)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

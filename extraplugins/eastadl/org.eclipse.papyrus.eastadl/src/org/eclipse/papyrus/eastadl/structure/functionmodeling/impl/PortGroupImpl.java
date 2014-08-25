@@ -57,7 +57,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	/**
 	 * The cached value of the '{@link #getPortGroup() <em>Port Group</em>}' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPortGroup()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PortGroupImpl() {
@@ -96,7 +96,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -165,7 +165,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -272,7 +272,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -317,7 +317,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +331,7 @@ public class PortGroupImpl extends EAElementImpl implements PortGroup {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

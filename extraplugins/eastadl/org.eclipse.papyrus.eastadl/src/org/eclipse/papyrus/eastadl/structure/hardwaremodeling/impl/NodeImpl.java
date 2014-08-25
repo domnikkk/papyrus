@@ -40,7 +40,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	 * The default value of the '{@link #getExecutionRate() <em>Execution Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExecutionRate()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	 * The cached value of the '{@link #getExecutionRate() <em>Execution Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExecutionRate()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NodeImpl() {
@@ -70,7 +70,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class NodeImpl extends HardwareComponentTypeImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

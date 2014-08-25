@@ -29,7 +29,7 @@ public class DefaultPropertyOperatorImpl extends PropertyOperatorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DefaultPropertyOperatorImpl() {
@@ -39,7 +39,7 @@ public class DefaultPropertyOperatorImpl extends PropertyOperatorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

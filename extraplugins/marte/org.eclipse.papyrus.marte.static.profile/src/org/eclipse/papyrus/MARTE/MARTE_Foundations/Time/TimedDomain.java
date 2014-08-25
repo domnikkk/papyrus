@@ -40,7 +40,7 @@ public interface TimedDomain extends EObject {
 	 * If the meaning of the '<em>Base Namespace</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Namespace</em>' reference.
 	 * @see #setBase_Namespace(Namespace)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedDomain_Base_Namespace()
@@ -53,7 +53,7 @@ public interface TimedDomain extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDomain#getBase_Namespace <em>Base Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Namespace</em>' reference.
 	 * @see #getBase_Namespace()

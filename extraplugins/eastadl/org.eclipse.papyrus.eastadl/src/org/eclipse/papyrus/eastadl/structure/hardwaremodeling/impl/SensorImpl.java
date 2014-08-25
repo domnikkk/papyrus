@@ -33,7 +33,7 @@ public class SensorImpl extends HardwareComponentTypeImpl implements Sensor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SensorImpl() {
@@ -43,7 +43,7 @@ public class SensorImpl extends HardwareComponentTypeImpl implements Sensor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

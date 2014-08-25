@@ -63,7 +63,7 @@ public class WorkspaceBundleDescriptionDesigner extends AbstractBundleDescriptio
 
 	/**
 	 * get properties files
-	 * 
+	 *
 	 * @param bundle
 	 *            the bundle description
 	 * @return the bundle properties if it exist form Bundle description
@@ -91,7 +91,7 @@ public class WorkspaceBundleDescriptionDesigner extends AbstractBundleDescriptio
 
 	/**
 	 * create package from exported Packages
-	 * 
+	 *
 	 * @param bundleComponent
 	 *            the description of the bundle
 	 * @param bundleProject

@@ -710,7 +710,7 @@ public class UmlUtils {
 
 	/**
 	 * Change the owner of the classifier
-	 * 
+	 *
 	 * @param classifier
 	 *            The classifier to change the parent
 	 * @param newParent
@@ -742,7 +742,7 @@ public class UmlUtils {
 
 	/**
 	 * Transform the element into the specified type
-	 * 
+	 *
 	 * @param toTransform
 	 *            Classifier to transform (Class or interface)
 	 * @param type

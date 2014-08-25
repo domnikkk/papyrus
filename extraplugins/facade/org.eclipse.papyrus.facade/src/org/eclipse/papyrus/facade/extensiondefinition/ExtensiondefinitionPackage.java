@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionFactory
  * @model kind="package"
  * @generated
@@ -41,7 +41,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "extensiondefinition";
@@ -50,7 +50,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/extensiondefinition";
@@ -59,7 +59,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "extensiondefinition";
@@ -68,7 +68,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ExtensiondefinitionPackage eINSTANCE = org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl.init();
@@ -77,7 +77,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl <em>Extension Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getExtensionDefinition()
 	 * @generated
@@ -88,7 +88,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Extension</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Metaclasses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Facade</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The number of structural features of the '<em>Extension Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +148,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The number of operations of the '<em>Extension Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl <em>Base Metaclass</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getBaseMetaclass()
 	 * @generated
@@ -169,7 +169,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Incompatible Stereotypes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -179,7 +179,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Extension Definition</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Compatible Stereotypes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Possible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The number of structural features of the '<em>Base Metaclass</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The number of operations of the '<em>Base Metaclass</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.extensiondefinition.impl.CombinationImpl <em>Combination</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.CombinationImpl
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getCombination()
 	 * @generated
@@ -250,7 +250,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The feature id for the '<em><b>Members</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -260,7 +260,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The number of structural features of the '<em>Combination</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +270,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The number of operations of the '<em>Combination</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -280,7 +280,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind <em>Extension Definition Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getExtensionDefinitionKind()
 	 * @generated
@@ -292,7 +292,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition <em>Extension Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Extension Definition</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition
 	 * @generated
@@ -303,7 +303,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getExtension <em>Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Extension</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getExtension()
 	 * @see #getExtensionDefinition()
@@ -315,7 +315,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getBaseMetaclasses <em>Base Metaclasses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Base Metaclasses</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getBaseMetaclasses()
 	 * @see #getExtensionDefinition()
@@ -327,7 +327,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getFacade <em>Facade</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Facade</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getFacade()
 	 * @see #getExtensionDefinition()
@@ -339,7 +339,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getStereotype <em>Stereotype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Stereotype</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getStereotype()
 	 * @see #getExtensionDefinition()
@@ -351,7 +351,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getKind()
 	 * @see #getExtensionDefinition()
@@ -363,7 +363,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass <em>Base Metaclass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Base Metaclass</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass
 	 * @generated
@@ -374,7 +374,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getIncompatibleStereotypes <em>Incompatible Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Incompatible Stereotypes</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getIncompatibleStereotypes()
 	 * @see #getBaseMetaclass()
@@ -386,7 +386,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getBase <em>Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getBase()
 	 * @see #getBaseMetaclass()
@@ -398,7 +398,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getExtensionDefinition <em>Extension Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Extension Definition</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getExtensionDefinition()
 	 * @see #getBaseMetaclass()
@@ -410,7 +410,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getCompatibleStereotypes <em>Compatible Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Compatible Stereotypes</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getCompatibleStereotypes()
 	 * @see #getBaseMetaclass()
@@ -422,7 +422,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#isPossible <em>Possible</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Possible</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#isPossible()
 	 * @see #getBaseMetaclass()
@@ -434,7 +434,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facade.extensiondefinition.Combination <em>Combination</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Combination</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.Combination
 	 * @generated
@@ -445,7 +445,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.facade.extensiondefinition.Combination#getMembers <em>Members</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Members</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.Combination#getMembers()
 	 * @see #getCombination()
@@ -457,7 +457,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind <em>Extension Definition Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Extension Definition Kind</em>'.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind
 	 * @generated
@@ -468,7 +468,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -485,7 +485,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -493,7 +493,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl <em>Extension Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getExtensionDefinition()
 		 * @generated
@@ -504,7 +504,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extension</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXTENSION_DEFINITION__EXTENSION = eINSTANCE.getExtensionDefinition_Extension();
@@ -513,7 +513,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Metaclasses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXTENSION_DEFINITION__BASE_METACLASSES = eINSTANCE.getExtensionDefinition_BaseMetaclasses();
@@ -522,7 +522,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Facade</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXTENSION_DEFINITION__FACADE = eINSTANCE.getExtensionDefinition_Facade();
@@ -531,7 +531,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXTENSION_DEFINITION__STEREOTYPE = eINSTANCE.getExtensionDefinition_Stereotype();
@@ -540,7 +540,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EXTENSION_DEFINITION__KIND = eINSTANCE.getExtensionDefinition_Kind();
@@ -549,7 +549,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl <em>Base Metaclass</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getBaseMetaclass()
 		 * @generated
@@ -560,7 +560,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Incompatible Stereotypes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BASE_METACLASS__INCOMPATIBLE_STEREOTYPES = eINSTANCE.getBaseMetaclass_IncompatibleStereotypes();
@@ -569,7 +569,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BASE_METACLASS__BASE = eINSTANCE.getBaseMetaclass_Base();
@@ -578,7 +578,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extension Definition</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BASE_METACLASS__EXTENSION_DEFINITION = eINSTANCE.getBaseMetaclass_ExtensionDefinition();
@@ -587,7 +587,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Compatible Stereotypes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BASE_METACLASS__COMPATIBLE_STEREOTYPES = eINSTANCE.getBaseMetaclass_CompatibleStereotypes();
@@ -596,7 +596,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Possible</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute BASE_METACLASS__POSSIBLE = eINSTANCE.getBaseMetaclass_Possible();
@@ -605,7 +605,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.extensiondefinition.impl.CombinationImpl <em>Combination</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.CombinationImpl
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getCombination()
 		 * @generated
@@ -616,7 +616,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Members</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMBINATION__MEMBERS = eINSTANCE.getCombination_Members();
@@ -625,7 +625,7 @@ public interface ExtensiondefinitionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind <em>Extension Definition Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind
 		 * @see org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl#getExtensionDefinitionKind()
 		 * @generated

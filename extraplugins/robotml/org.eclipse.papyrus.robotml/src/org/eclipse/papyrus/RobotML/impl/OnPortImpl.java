@@ -3,17 +3,13 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Port;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.uml2.uml.Parameter;
 
 /**
@@ -35,7 +31,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -46,7 +42,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	 * The cached value of the '{@link #getBase_Parameter() <em>Base Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Parameter()
 	 * @generated
 	 * @ordered
@@ -56,7 +52,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OnPortImpl() {
@@ -66,7 +62,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +73,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port getPort() {
@@ -96,7 +92,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetPort() {
@@ -106,7 +102,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPort(Port newPort) {
@@ -120,7 +116,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter getBase_Parameter() {
@@ -139,7 +135,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_Parameter() {
@@ -149,7 +145,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Parameter(Parameter newBase_Parameter) {
@@ -163,7 +159,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +182,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +201,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +220,7 @@ public class OnPortImpl extends MinimalEObjectImpl.Container implements OnPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

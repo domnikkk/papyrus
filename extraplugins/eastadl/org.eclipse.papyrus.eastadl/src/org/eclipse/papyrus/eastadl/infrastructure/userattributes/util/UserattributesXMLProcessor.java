@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesP
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UserattributesXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class UserattributesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UserattributesXMLProcessor() {
@@ -48,7 +48,7 @@ public class UserattributesXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the UserattributesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

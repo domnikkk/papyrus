@@ -40,7 +40,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	 * The cached value of the '{@link #getAbstractVVProcedure() <em>Abstract VV Procedure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAbstractVVProcedure()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VVProcedureImpl() {
@@ -71,7 +71,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -112,7 +112,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VVProcedure basicGetAbstractVVProcedure() {
@@ -157,7 +157,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +268,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class VVProcedureImpl extends TraceableSpecificationImpl implements VVPro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,7 +13,6 @@ package org.eclipse.papyrus.moka.ui.launch;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
 import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;

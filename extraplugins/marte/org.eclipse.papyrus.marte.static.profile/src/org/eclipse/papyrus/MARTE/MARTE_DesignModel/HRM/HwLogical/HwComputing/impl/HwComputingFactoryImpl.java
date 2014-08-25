@@ -35,7 +35,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.PLD
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingFactory {
@@ -43,7 +43,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwComputingFactory init() {
@@ -62,7 +62,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwComputingFactoryImpl() {
@@ -72,7 +72,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ISA_Type createISA_TypeFromString(EDataType eDataType, String initialValue) {
@@ -228,7 +228,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertISA_TypeToString(EDataType eDataType, Object instanceValue) {
@@ -238,7 +238,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PLD_Technology createPLD_TechnologyFromString(EDataType eDataType, String initialValue) {
@@ -252,7 +252,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPLD_TechnologyToString(EDataType eDataType, Object instanceValue) {
@@ -262,7 +262,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PLD_Class createPLD_ClassFromString(EDataType eDataType, String initialValue) {
@@ -276,7 +276,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPLD_ClassToString(EDataType eDataType, Object instanceValue) {
@@ -286,7 +286,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createPLD_OrganizationFromString(EDataType eDataType, String initialValue) {
@@ -296,7 +296,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPLD_OrganizationToString(EDataType eDataType, Object instanceValue) {
@@ -306,7 +306,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class HwComputingFactoryImpl extends EFactoryImpl implements HwComputingF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

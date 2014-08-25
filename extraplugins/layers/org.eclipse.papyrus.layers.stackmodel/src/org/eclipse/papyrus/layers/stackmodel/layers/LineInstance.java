@@ -38,7 +38,7 @@ public interface LineInstance extends TypeInstance {
 	 * If the meaning of the '<em>Line Color</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Line Color</em>' attribute.
 	 * @see #setLineColor(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLineInstance_LineColor()
@@ -51,7 +51,7 @@ public interface LineInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance#getLineColor <em>Line Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Line Color</em>' attribute.
 	 * @see #getLineColor()
@@ -66,7 +66,7 @@ public interface LineInstance extends TypeInstance {
 	 * If the meaning of the '<em>Line With</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Line With</em>' attribute.
 	 * @see #setLineWith(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLineInstance_LineWith()
@@ -79,7 +79,7 @@ public interface LineInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance#getLineWith <em>Line With</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Line With</em>' attribute.
 	 * @see #getLineWith()

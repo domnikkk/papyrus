@@ -41,7 +41,7 @@ public interface PaLogicalResource extends Resource {
 	 * If the meaning of the '<em>Utilization</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utilization</em>' attribute.
 	 * @see #setUtilization(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaLogicalResource_Utilization()
@@ -54,7 +54,7 @@ public interface PaLogicalResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getUtilization <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Utilization</em>' attribute.
 	 * @see #getUtilization()
@@ -69,7 +69,7 @@ public interface PaLogicalResource extends Resource {
 	 * If the meaning of the '<em>Throughput</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Throughput</em>' attribute.
 	 * @see #setThroughput(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaLogicalResource_Throughput()
@@ -82,7 +82,7 @@ public interface PaLogicalResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getThroughput <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Throughput</em>' attribute.
 	 * @see #getThroughput()
@@ -97,7 +97,7 @@ public interface PaLogicalResource extends Resource {
 	 * If the meaning of the '<em>Pool Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pool Size</em>' attribute.
 	 * @see #setPoolSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PAMPackage#getPaLogicalResource_PoolSize()
@@ -110,7 +110,7 @@ public interface PaLogicalResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.PaLogicalResource#getPoolSize <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Pool Size</em>' attribute.
 	 * @see #getPoolSize()

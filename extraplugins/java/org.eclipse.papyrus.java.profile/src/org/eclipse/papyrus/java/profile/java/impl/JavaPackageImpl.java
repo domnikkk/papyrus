@@ -11,9 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaClass;
 import org.eclipse.papyrus.java.profile.java.JavaFactory;
 import org.eclipse.papyrus.java.profile.java.JavaGen;
@@ -27,21 +25,20 @@ import org.eclipse.papyrus.java.profile.java.JavaProperty;
 import org.eclipse.papyrus.java.profile.java.JavaSrcFolder;
 import org.eclipse.papyrus.java.profile.java.PrimitiveType;
 import org.eclipse.papyrus.java.profile.java.TrueFalseDefault;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaClassEClass = null;
@@ -49,7 +46,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaGenEClass = null;
@@ -57,7 +54,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaNamedElementEClass = null;
@@ -65,7 +62,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaPackage_EClass = null;
@@ -73,7 +70,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaMethodEClass = null;
@@ -81,7 +78,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaParameterEClass = null;
@@ -89,7 +86,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaPropertyEClass = null;
@@ -97,7 +94,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass primitiveTypeEClass = null;
@@ -105,7 +102,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaProjectEClass = null;
@@ -113,7 +110,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaSrcFolderEClass = null;
@@ -121,7 +118,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum trueFalseDefaultEEnum = null;
@@ -131,7 +128,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#eNS_URI
 	 * @see #init()
@@ -144,7 +141,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -154,7 +151,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link JavaPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -191,7 +188,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +199,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +210,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +221,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +232,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +243,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +254,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +265,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +276,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +287,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +298,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +309,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +320,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +331,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +342,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +353,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -367,7 +364,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -378,7 +375,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +386,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +397,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -411,7 +408,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -422,7 +419,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -433,7 +430,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +441,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -455,7 +452,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -466,7 +463,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -477,7 +474,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -488,7 +485,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -499,7 +496,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -510,7 +507,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -521,7 +518,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -532,7 +529,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -543,7 +540,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -554,7 +551,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -565,7 +562,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -576,7 +573,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -587,7 +584,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -598,7 +595,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -609,7 +606,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -620,7 +617,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -631,7 +628,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -642,7 +639,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -653,7 +650,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -664,7 +661,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -675,7 +672,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -686,7 +683,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -697,7 +694,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -708,7 +705,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -719,7 +716,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -730,7 +727,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -741,7 +738,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -752,7 +749,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -763,7 +760,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -773,7 +770,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -850,7 +847,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -860,7 +857,7 @@ public class JavaPackageImpl extends EPackageImpl implements JavaPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

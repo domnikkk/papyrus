@@ -53,7 +53,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getControlledMedias() <em>Controlled Medias</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getControlledMedias()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The default value of the '{@link #getNbChannels() <em>Nb Channels</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbChannels()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getNbChannels() <em>Nb Channels</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbChannels()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The default value of the '{@link #getTransferWidth() <em>Transfer Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransferWidth()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getTransferWidth() <em>Transfer Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransferWidth()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	 * The cached value of the '{@link #getDrivenBy() <em>Driven By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDrivenBy()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwDMAImpl() {
@@ -128,7 +128,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -235,7 +235,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -299,7 +299,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class HwDMAImpl extends HwStorageManagerImpl implements HwDMA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

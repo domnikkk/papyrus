@@ -48,7 +48,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	 * The cached value of the '{@link #getLiteral() <em>Literal</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLiteral()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	 * The default value of the '{@link #isIsMultiValued() <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMultiValued()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	 * The cached value of the '{@link #isIsMultiValued() <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMultiValued()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EnumerationImpl() {
@@ -89,7 +89,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -193,7 +193,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class EnumerationImpl extends EADatatypeImpl implements Enumeration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

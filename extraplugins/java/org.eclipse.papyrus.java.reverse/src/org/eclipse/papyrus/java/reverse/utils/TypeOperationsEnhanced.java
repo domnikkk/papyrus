@@ -45,7 +45,7 @@ public class TypeOperationsEnhanced extends TypeOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TypeOperationsEnhanced() {
@@ -73,7 +73,7 @@ public class TypeOperationsEnhanced extends TypeOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Creates a(n) (binary) association between this type and the specified other type, with the specified navigabilities, aggregations, names, lower bounds, and upper bounds, and owned by this type's nearest package.
-	 * 
+	 *
 	 * @param type
 	 *            The receiving '<em><b>Type</b></em>' model object.
 	 * @param end1IsNavigable

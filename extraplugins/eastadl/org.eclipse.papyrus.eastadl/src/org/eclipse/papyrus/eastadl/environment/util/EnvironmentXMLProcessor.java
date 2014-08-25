@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.environment.EnvironmentPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EnvironmentXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class EnvironmentXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnvironmentXMLProcessor() {
@@ -48,7 +48,7 @@ public class EnvironmentXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the EnvironmentResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -39,7 +39,7 @@ public interface VirtualProperty extends VirtualTypedElement {
 	 * If the meaning of the '<em>Virtual Metaclass</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Virtual Metaclass</em>' container reference.
 	 * @see #setVirtualMetaclass(VirtualMetaclass)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualProperty_VirtualMetaclass()
@@ -53,7 +53,7 @@ public interface VirtualProperty extends VirtualTypedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty#getVirtualMetaclass <em>Virtual Metaclass</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Virtual Metaclass</em>' container reference.
 	 * @see #getVirtualMetaclass()

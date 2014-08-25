@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.FCM;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.InstanceSpecification;
 
 /**
@@ -40,7 +39,7 @@ public interface ConfigurableElementInstance extends EObject {
 	 * If the meaning of the '<em>Configuration</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Configuration</em>' reference.
 	 * @see #setConfiguration(InstanceSpecification)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getConfigurableElementInstance_Configuration()
@@ -53,7 +52,7 @@ public interface ConfigurableElementInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.ConfigurableElementInstance#getConfiguration <em>Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Configuration</em>' reference.
 	 * @see #getConfiguration()

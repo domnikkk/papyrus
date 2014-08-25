@@ -49,7 +49,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The default value of the '{@link #isIsMaskable() <em>Is Maskable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMaskable()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The cached value of the '{@link #isIsMaskable() <em>Is Maskable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMaskable()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The cached value of the '{@link #getVectorElements() <em>Vector Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVectorElements()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The cached value of the '{@link #getMaskElements() <em>Mask Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaskElements()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The cached value of the '{@link #getRoutineConnectServices() <em>Routine Connect Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRoutineConnectServices()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	 * The cached value of the '{@link #getRoutineDisconnectServices() <em>Routine Disconnect Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRoutineDisconnectServices()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InterruptResourceImpl() {
@@ -146,7 +146,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -326,7 +326,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -357,7 +357,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +382,7 @@ public class InterruptResourceImpl extends SwConcurrentResourceImpl implements I
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

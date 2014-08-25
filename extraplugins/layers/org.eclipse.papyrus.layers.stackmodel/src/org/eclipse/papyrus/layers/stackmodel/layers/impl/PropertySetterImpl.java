@@ -15,17 +15,12 @@ package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter;
@@ -50,7 +45,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -61,7 +56,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getPropertyName() <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyName()
 	 * @generated
 	 * @ordered
@@ -71,7 +66,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getPropertyName() <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyName()
 	 * @generated
 	 * @ordered
@@ -81,7 +76,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertySetterImpl() {
@@ -91,7 +86,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +97,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +117,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetProperty() {
@@ -132,7 +127,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +142,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +153,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +168,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +181,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +201,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +220,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +239,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +256,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +272,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

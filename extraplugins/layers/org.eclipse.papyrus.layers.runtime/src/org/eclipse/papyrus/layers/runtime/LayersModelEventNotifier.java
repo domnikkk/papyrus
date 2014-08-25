@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.runtime;
 
+import static org.eclipse.papyrus.layers.runtime.Activator.log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +26,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
 import org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeInstanceMapImpl;
 import org.eclipse.papyrus.layers.stackmodel.layers.util.ECoreUtils;
-import static org.eclipse.papyrus.layers.runtime.Activator.log;
 
 /**
  * This class listen to a {@link LayersStack} and send event to listeners.
@@ -254,7 +255,7 @@ public class LayersModelEventNotifier {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -283,7 +284,7 @@ public class LayersModelEventNotifier {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeLayersModelEventListener(ILayersModelEventListener listener) {

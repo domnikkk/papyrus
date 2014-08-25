@@ -29,7 +29,7 @@ public interface EventFeatureFlaw extends Event {
 	 * If the meaning of the '<em>Feature Flaw</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Feature Flaw</em>' reference.
 	 * @see #setFeatureFlaw(FeatureFlaw)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFeatureFlaw_FeatureFlaw()
@@ -42,7 +42,7 @@ public interface EventFeatureFlaw extends Event {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw#getFeatureFlaw <em>Feature Flaw</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Feature Flaw</em>' reference.
 	 * @see #getFeatureFlaw()

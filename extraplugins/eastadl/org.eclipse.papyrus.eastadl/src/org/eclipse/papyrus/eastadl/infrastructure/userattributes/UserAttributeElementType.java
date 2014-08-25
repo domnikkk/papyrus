@@ -61,7 +61,7 @@ public interface UserAttributeElementType extends EAElement {
 	 *
 	 * Note that also inherited attribute definitions need to be taken into account.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attribute</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeElementType_Attribute()
 	 * @model ordered="false"
@@ -76,7 +76,7 @@ public interface UserAttributeElementType extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeElementType_Base_Class()
@@ -89,7 +89,7 @@ public interface UserAttributeElementType extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -107,7 +107,7 @@ public interface UserAttributeElementType extends EAElement {
 	 * When UAElementType ET2 inherits from type ET1, then this means that all attributes defined for ET1 by way of UserAttributeDefinitions are available whenever ET2 is specified as the type of a user attributeable element (in addition to those directly
 	 * defined in ET2). This includes UserAttributeDefinitions which ET1 itself may inherit from other types.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extended Element Type</em>' reference.
 	 * @see #setExtendedElementType(UserAttributeElementType)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeElementType_ExtendedElementType()
@@ -123,7 +123,7 @@ public interface UserAttributeElementType extends EAElement {
 	 * If the meaning of the '<em>Valid For</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Valid For</em>' attribute.
 	 * @see #setValidFor(String)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesPackage#getUserAttributeElementType_ValidFor()
@@ -136,7 +136,7 @@ public interface UserAttributeElementType extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getExtendedElementType <em>Extended Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Extended Element Type</em>' reference.
 	 * @see #getExtendedElementType()
@@ -148,7 +148,7 @@ public interface UserAttributeElementType extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserAttributeElementType#getValidFor <em>Valid For</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Valid For</em>' attribute.
 	 * @see #getValidFor()

@@ -18,9 +18,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,7 +27,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigFactory;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
@@ -38,7 +35,7 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayerOperatorMultipleBindingItemProvider
@@ -53,7 +50,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerOperatorMultipleBindingItemProvider(AdapterFactory adapterFactory) {
@@ -64,7 +61,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +78,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * This adds a property descriptor for the Layer Operator Config feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLayerOperatorConfigPropertyDescriptor(Object object) {
@@ -105,7 +102,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +117,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +132,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * This returns LayerOperatorMultipleBinding.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +144,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +160,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +180,7 @@ public class LayerOperatorMultipleBindingItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

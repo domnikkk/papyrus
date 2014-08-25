@@ -15,17 +15,12 @@ package org.eclipse.papyrus.FCM.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.ImplementationProperties;
 import org.eclipse.papyrus.FCM.OperatingSystem;
@@ -54,7 +49,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The default value of the '{@link #getSizeRAM() <em>Size RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSizeRAM()
 	 * @generated
 	 * @ordered
@@ -65,7 +60,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSizeRAM() <em>Size RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSizeRAM()
 	 * @generated
 	 * @ordered
@@ -76,7 +71,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSupportedOS() <em>Supported OS</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSupportedOS()
 	 * @generated
 	 * @ordered
@@ -87,7 +82,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getArch() <em>Arch</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArch()
 	 * @generated
 	 * @ordered
@@ -98,7 +93,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -109,7 +104,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The default value of the '{@link #getSizeROM() <em>Size ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSizeROM()
 	 * @generated
 	 * @ordered
@@ -120,7 +115,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSizeROM() <em>Size ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSizeROM()
 	 * @generated
 	 * @ordered
@@ -131,7 +126,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSupportedTargetArch() <em>Supported Target Arch</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSupportedTargetArch()
 	 * @generated
 	 * @ordered
@@ -141,7 +136,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ImplementationPropertiesImpl() {
@@ -151,7 +146,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +157,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +168,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +183,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +197,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +211,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +231,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -246,7 +241,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +256,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +267,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +282,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +302,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TargetArchitecture basicGetSupportedTargetArch() {
@@ -317,7 +312,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +327,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +358,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -397,7 +392,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +423,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,7 +448,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -15,12 +15,18 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.umldi.*;
+import org.eclipse.papyrus.umldi.UMLDIFactory;
+import org.eclipse.papyrus.umldi.UMLDIPackage;
+import org.eclipse.papyrus.umldi.UmlCompartment;
+import org.eclipse.papyrus.umldi.UmlCompartmentKind;
+import org.eclipse.papyrus.umldi.UmlDiagram;
+import org.eclipse.papyrus.umldi.UmlEdge;
+import org.eclipse.papyrus.umldi.UmlLabel;
+import org.eclipse.papyrus.umldi.UmlLabelKind;
+import org.eclipse.papyrus.umldi.UmlShape;
+import org.eclipse.papyrus.umldi.UmlStyle;
 
 /**
  * <!-- begin-user-doc -->

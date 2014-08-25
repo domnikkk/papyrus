@@ -32,7 +32,7 @@ public abstract class EventImpl extends TimingDescriptionImpl implements Event {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EventImpl() {
@@ -41,7 +41,7 @@ public abstract class EventImpl extends TimingDescriptionImpl implements Event {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

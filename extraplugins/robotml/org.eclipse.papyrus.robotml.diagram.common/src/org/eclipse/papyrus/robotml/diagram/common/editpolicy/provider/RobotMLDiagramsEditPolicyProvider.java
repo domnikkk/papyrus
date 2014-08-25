@@ -11,7 +11,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.common.editpolicy.provider;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
@@ -29,10 +32,6 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabe
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.CompositeStructureDiagramEditPart;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortEditPart;
 import org.eclipse.uml2.uml.Element;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 public class RobotMLDiagramsEditPolicyProvider extends AbstractProvider
 		implements IEditPolicyProvider {

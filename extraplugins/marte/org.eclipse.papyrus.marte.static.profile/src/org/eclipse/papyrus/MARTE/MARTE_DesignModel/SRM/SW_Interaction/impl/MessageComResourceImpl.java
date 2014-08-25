@@ -51,7 +51,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The default value of the '{@link #isIsFixedMessageSize() <em>Is Fixed Message Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsFixedMessageSize()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The cached value of the '{@link #isIsFixedMessageSize() <em>Is Fixed Message Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsFixedMessageSize()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The default value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMechanism()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The cached value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMechanism()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The cached value of the '{@link #getMessageSizeElements() <em>Message Size Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessageSizeElements()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The cached value of the '{@link #getMessageQueueCapacityElements() <em>Message Queue Capacity Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessageQueueCapacityElements()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The default value of the '{@link #getMessageQueuePolicy() <em>Message Queue Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessageQueuePolicy()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The cached value of the '{@link #getMessageQueuePolicy() <em>Message Queue Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessageQueuePolicy()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The cached value of the '{@link #getSendServices() <em>Send Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSendServices()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	 * The cached value of the '{@link #getReceiveServices() <em>Receive Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReceiveServices()
 	 * @generated
 	 * @ordered
@@ -160,7 +160,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MessageComResourceImpl() {
@@ -170,7 +170,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +233,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +301,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -381,7 +381,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +415,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -442,7 +442,7 @@ public class MessageComResourceImpl extends SwCommunicationResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

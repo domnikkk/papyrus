@@ -44,7 +44,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	 * The cached value of the '{@link #getBase_parameter() <em>Base parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_parameter()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	 * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefinition()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	 * The cached value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefinition()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	 * The cached value of the '{@link #getBase_property() <em>Base property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_property()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	 * The cached value of the '{@link #getBase_association() <em>Base association</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_association()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArrayImpl() {
@@ -108,7 +108,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_parameter() {
@@ -149,7 +149,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_property() {
@@ -220,7 +220,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Association basicGetBase_association() {
@@ -265,7 +265,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -310,7 +310,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +381,7 @@ public class ArrayImpl extends MinimalEObjectImpl.Container implements Array {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

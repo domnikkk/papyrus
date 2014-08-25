@@ -46,7 +46,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	 * The default value of the '{@link #getTakeRate() <em>Take Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTakeRate()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	 * The cached value of the '{@link #getTakeRate() <em>Take Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTakeRate()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TakeRateConstraintImpl() {
@@ -88,7 +88,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -143,7 +143,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class TakeRateConstraintImpl extends GenericConstraintImpl implements Tak
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

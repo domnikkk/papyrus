@@ -93,7 +93,7 @@ public interface FunctionFlowPort extends FunctionPort {
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionFlowPort_Type()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -108,7 +108,7 @@ public interface FunctionFlowPort extends FunctionPort {
 	 * If the meaning of the '<em>Default Value</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Default Value</em>' reference.
 	 * @see #setDefaultValue(EAValue)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionFlowPort_DefaultValue()
@@ -121,7 +121,7 @@ public interface FunctionFlowPort extends FunctionPort {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getDefaultValue <em>Default Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Default Value</em>' reference.
 	 * @see #getDefaultValue()
@@ -137,7 +137,7 @@ public interface FunctionFlowPort extends FunctionPort {
 	 * If the meaning of the '<em>Direction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind
 	 * @see #setDirection(EADirectionKind)
@@ -151,7 +151,7 @@ public interface FunctionFlowPort extends FunctionPort {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionFlowPort#getDirection <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind

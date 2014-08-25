@@ -44,7 +44,7 @@ public interface TimedDurationObservation extends TimedElement {
 	 * If the meaning of the '<em>Obs Kind</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Obs Kind</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedDurationObservation_ObsKind()
@@ -60,7 +60,7 @@ public interface TimedDurationObservation extends TimedElement {
 	 * If the meaning of the '<em>Base Duration Observation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Duration Observation</em>' reference.
 	 * @see #setBase_DurationObservation(DurationObservation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedDurationObservation_Base_DurationObservation()
@@ -73,7 +73,7 @@ public interface TimedDurationObservation extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getBase_DurationObservation <em>Base Duration Observation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Duration Observation</em>' reference.
 	 * @see #getBase_DurationObservation()

@@ -4,13 +4,10 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Twist;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3;
@@ -34,7 +31,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	 * The cached value of the '{@link #getLinear() <em>Linear</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLinear()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	 * The cached value of the '{@link #getAngular() <em>Angular</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAngular()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TwistImpl() {
@@ -65,7 +62,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +73,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Vector3 getLinear() {
@@ -86,7 +83,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLinear(Vector3 newLinear, NotificationChain msgs) {
@@ -106,7 +103,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLinear(Vector3 newLinear) {
@@ -131,7 +128,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Vector3 getAngular() {
@@ -141,7 +138,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetAngular(Vector3 newAngular, NotificationChain msgs) {
@@ -161,7 +158,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAngular(Vector3 newAngular) {
@@ -186,7 +183,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +200,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +217,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +236,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +255,7 @@ public class TwistImpl extends MinimalEObjectImpl.Container implements Twist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

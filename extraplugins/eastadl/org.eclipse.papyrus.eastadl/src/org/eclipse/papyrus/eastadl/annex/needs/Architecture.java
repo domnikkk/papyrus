@@ -44,7 +44,7 @@ public interface Architecture extends Concept {
 	 * If the meaning of the '<em>Described By</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Described By</em>' reference.
 	 * @see #setDescribedBy(ArchitecturalDescription)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getArchitecture_DescribedBy()
@@ -57,7 +57,7 @@ public interface Architecture extends Concept {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.Architecture#getDescribedBy <em>Described By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Described By</em>' reference.
 	 * @see #getDescribedBy()

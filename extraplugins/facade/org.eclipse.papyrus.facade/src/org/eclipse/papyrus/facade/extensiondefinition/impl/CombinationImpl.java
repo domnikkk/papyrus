@@ -16,13 +16,9 @@ package org.eclipse.papyrus.facade.extensiondefinition.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 import org.eclipse.papyrus.facade.extensiondefinition.Combination;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
@@ -45,7 +41,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	 * The cached value of the '{@link #getMembers() <em>Members</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMembers()
 	 * @generated
 	 * @ordered
@@ -55,7 +51,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CombinationImpl() {
@@ -65,7 +61,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +72,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +86,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +101,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -123,7 +119,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +135,7 @@ public class CombinationImpl extends MinimalEObjectImpl.Container implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

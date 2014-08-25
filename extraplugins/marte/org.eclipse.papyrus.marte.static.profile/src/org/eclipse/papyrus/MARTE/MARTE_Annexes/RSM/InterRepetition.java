@@ -39,7 +39,7 @@ public interface InterRepetition extends LinkTopology {
 	 * If the meaning of the '<em>Repetition Shape Dependence</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Repetition Shape Dependence</em>' attribute.
 	 * @see #setRepetitionShapeDependence(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getInterRepetition_RepetitionShapeDependence()
@@ -52,7 +52,7 @@ public interface InterRepetition extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition#getRepetitionShapeDependence <em>Repetition Shape Dependence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Repetition Shape Dependence</em>' attribute.
 	 * @see #getRepetitionShapeDependence()
@@ -68,7 +68,7 @@ public interface InterRepetition extends LinkTopology {
 	 * If the meaning of the '<em>Is Modulo</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Modulo</em>' attribute.
 	 * @see #setIsModulo(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getInterRepetition_IsModulo()
@@ -81,7 +81,7 @@ public interface InterRepetition extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition#isIsModulo <em>Is Modulo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Modulo</em>' attribute.
 	 * @see #isIsModulo()

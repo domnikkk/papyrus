@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.timing.events.EventsPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EventsXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class EventsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventsXMLProcessor() {
@@ -48,7 +48,7 @@ public class EventsXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the EventsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

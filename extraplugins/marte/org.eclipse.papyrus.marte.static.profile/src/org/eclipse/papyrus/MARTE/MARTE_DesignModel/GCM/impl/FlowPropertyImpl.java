@@ -42,7 +42,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FlowPropertyImpl() {
@@ -84,7 +84,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -151,7 +151,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class FlowPropertyImpl extends EObjectImpl implements FlowProperty {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

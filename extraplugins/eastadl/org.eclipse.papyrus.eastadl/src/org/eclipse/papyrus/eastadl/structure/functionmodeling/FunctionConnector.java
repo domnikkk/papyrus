@@ -69,7 +69,7 @@ public interface FunctionConnector extends EAElement, EAConnector, AllocateableE
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.FunctionConnectorPortInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionConnector_Port()
 	 * @model containment="true" lower="2" upper="2" ordered="false"

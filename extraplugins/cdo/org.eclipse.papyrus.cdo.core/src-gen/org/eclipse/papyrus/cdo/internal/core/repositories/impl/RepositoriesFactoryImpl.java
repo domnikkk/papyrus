@@ -15,18 +15,18 @@ package org.eclipse.papyrus.cdo.internal.core.repositories.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.cdo.internal.core.repositories.*;
+import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesFactory;
+import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage;
+import org.eclipse.papyrus.cdo.internal.core.repositories.Repository;
+import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoryRegistry;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RepositoriesFactoryImpl extends EFactoryImpl implements RepositoriesFactory {
@@ -34,7 +34,7 @@ public class RepositoriesFactoryImpl extends EFactoryImpl implements Repositorie
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static RepositoriesFactory init() {
@@ -53,7 +53,7 @@ public class RepositoriesFactoryImpl extends EFactoryImpl implements Repositorie
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RepositoriesFactoryImpl() {
@@ -63,7 +63,7 @@ public class RepositoriesFactoryImpl extends EFactoryImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class RepositoriesFactoryImpl extends EFactoryImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class RepositoriesFactoryImpl extends EFactoryImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class RepositoriesFactoryImpl extends EFactoryImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class RepositoriesFactoryImpl extends EFactoryImpl implements Repositorie
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

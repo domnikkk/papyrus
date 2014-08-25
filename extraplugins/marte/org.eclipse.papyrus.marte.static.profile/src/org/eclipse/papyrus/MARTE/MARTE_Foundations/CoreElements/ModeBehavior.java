@@ -40,7 +40,7 @@ public interface ModeBehavior extends EObject {
 	 * If the meaning of the '<em>Base State Machine</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base State Machine</em>' reference.
 	 * @see #setBase_StateMachine(StateMachine)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.CoreElementsPackage#getModeBehavior_Base_StateMachine()
@@ -53,7 +53,7 @@ public interface ModeBehavior extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeBehavior#getBase_StateMachine <em>Base State Machine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base State Machine</em>' reference.
 	 * @see #getBase_StateMachine()

@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.timing.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -48,7 +49,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 	 * The cached value of the '{@link #getPreceding() <em>Preceding</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreceding()
 	 * @generated
 	 * @ordered
@@ -59,7 +60,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 	 * The cached value of the '{@link #getSuccessive() <em>Successive</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuccessive()
 	 * @generated
 	 * @ordered
@@ -68,7 +69,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PrecedenceConstraintImpl() {
@@ -77,7 +78,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +94,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +110,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -129,7 +130,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +140,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +158,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +169,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPreceding(PrecedenceConstraint_precedingInstanceRef newPreceding, NotificationChain msgs) {
@@ -188,7 +189,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +214,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +228,7 @@ public class PrecedenceConstraintImpl extends TimingConstraintImpl implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

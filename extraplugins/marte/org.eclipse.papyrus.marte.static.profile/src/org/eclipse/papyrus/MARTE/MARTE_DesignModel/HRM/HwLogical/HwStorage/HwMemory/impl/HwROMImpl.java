@@ -39,7 +39,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	 * The default value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	 * The cached value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwROMImpl() {
@@ -92,7 +92,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class HwROMImpl extends HwMemoryImpl implements HwROM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

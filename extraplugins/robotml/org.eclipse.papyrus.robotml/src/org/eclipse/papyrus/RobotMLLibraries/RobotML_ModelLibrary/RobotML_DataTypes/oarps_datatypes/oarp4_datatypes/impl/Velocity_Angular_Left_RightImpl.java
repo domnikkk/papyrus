@@ -4,13 +4,10 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity_Angular;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity_Angular_Left_Right;
@@ -34,7 +31,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	 * The cached value of the '{@link #getVelocity_angular_left() <em>Velocity angular left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVelocity_angular_left()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	 * The cached value of the '{@link #getVelocity_angular_right() <em>Velocity angular right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVelocity_angular_right()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Velocity_Angular_Left_RightImpl() {
@@ -65,7 +62,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +73,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Angular getVelocity_angular_left() {
@@ -86,7 +83,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetVelocity_angular_left(Velocity_Angular newVelocity_angular_left, NotificationChain msgs) {
@@ -106,7 +103,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVelocity_angular_left(Velocity_Angular newVelocity_angular_left) {
@@ -131,7 +128,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Angular getVelocity_angular_right() {
@@ -141,7 +138,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetVelocity_angular_right(Velocity_Angular newVelocity_angular_right, NotificationChain msgs) {
@@ -161,7 +158,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVelocity_angular_right(Velocity_Angular newVelocity_angular_right) {
@@ -186,7 +183,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +200,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +217,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +236,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +255,7 @@ public class Velocity_Angular_Left_RightImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

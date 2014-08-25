@@ -31,7 +31,7 @@ public interface EAValue extends EObject {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(EADatatype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage#getEAValue_Type()
@@ -44,7 +44,7 @@ public interface EAValue extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAValue#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()
@@ -59,7 +59,7 @@ public interface EAValue extends EObject {
 	 * If the meaning of the '<em>Base Value Specification</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Value Specification</em>' reference.
 	 * @see #setBase_ValueSpecification(ValueSpecification)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage#getEAValue_Base_ValueSpecification()
@@ -72,7 +72,7 @@ public interface EAValue extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.values.EAValue#getBase_ValueSpecification <em>Base Value Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Value Specification</em>' reference.
 	 * @see #getBase_ValueSpecification()

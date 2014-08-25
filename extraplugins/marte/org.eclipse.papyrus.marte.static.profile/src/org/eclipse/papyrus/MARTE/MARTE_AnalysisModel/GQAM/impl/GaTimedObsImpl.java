@@ -46,7 +46,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The default value of the '{@link #getLaxity() <em>Laxity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLaxity()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The cached value of the '{@link #getLaxity() <em>Laxity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLaxity()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The cached value of the '{@link #getStartObs() <em>Start Obs</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStartObs()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	 * The cached value of the '{@link #getEndObs() <em>End Obs</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEndObs()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaTimedObsImpl() {
@@ -99,7 +99,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -208,7 +208,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class GaTimedObsImpl extends NfpConstraintImpl implements GaTimedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

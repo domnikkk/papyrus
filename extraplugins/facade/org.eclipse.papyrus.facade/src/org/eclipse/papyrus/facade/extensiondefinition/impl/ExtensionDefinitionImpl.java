@@ -17,27 +17,20 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.facade.Facade;
 import org.eclipse.papyrus.facade.FacadePackage;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
-
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -63,7 +56,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getExtension() <em>Extension</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtension()
 	 * @generated
 	 * @ordered
@@ -74,7 +67,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getBaseMetaclasses() <em>Base Metaclasses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseMetaclasses()
 	 * @generated
 	 * @ordered
@@ -85,7 +78,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getStereotype() <em>Stereotype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotype()
 	 * @generated
 	 * @ordered
@@ -96,7 +89,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -107,7 +100,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -117,7 +110,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtensionDefinitionImpl() {
@@ -127,7 +120,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +131,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +151,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Extension basicGetExtension() {
@@ -168,7 +161,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +176,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +190,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +204,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetFacade(Facade newFacade, NotificationChain msgs) {
@@ -222,7 +215,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +244,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +264,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Stereotype basicGetStereotype() {
@@ -281,7 +274,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +289,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +300,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +315,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -343,7 +336,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +353,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,7 +368,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +397,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -434,7 +427,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -462,7 +455,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -485,7 +478,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

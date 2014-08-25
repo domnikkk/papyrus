@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.PointField;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
 
@@ -33,7 +30,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The default value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCount()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	 * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCount()
 	 * @generated
 	 * @ordered
@@ -120,7 +117,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PointFieldImpl() {
@@ -130,7 +127,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -151,7 +148,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -165,7 +162,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getOffset() {
@@ -175,7 +172,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOffset(long newOffset) {
@@ -189,7 +186,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getDatatype() {
@@ -199,7 +196,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDatatype(char newDatatype) {
@@ -213,7 +210,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getCount() {
@@ -223,7 +220,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCount(long newCount) {
@@ -237,7 +234,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +255,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +280,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +305,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +326,7 @@ public class PointFieldImpl extends MinimalEObjectImpl.Container implements Poin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

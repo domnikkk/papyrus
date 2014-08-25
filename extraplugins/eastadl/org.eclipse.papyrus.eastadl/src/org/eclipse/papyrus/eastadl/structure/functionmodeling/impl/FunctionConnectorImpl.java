@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.structure.functionmodeling.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -51,7 +52,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -61,7 +62,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -70,7 +71,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionConnectorImpl() {
@@ -79,7 +80,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +99,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +116,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +141,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +165,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -184,7 +185,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +196,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +216,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -225,7 +226,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +240,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +258,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +272,7 @@ public class FunctionConnectorImpl extends EAElementImpl implements FunctionConn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

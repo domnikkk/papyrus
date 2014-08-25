@@ -31,7 +31,7 @@ public interface LayerOperatorConfig extends InstanciableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorDescriptor" required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciationException"
 	 * @generated
 	 */

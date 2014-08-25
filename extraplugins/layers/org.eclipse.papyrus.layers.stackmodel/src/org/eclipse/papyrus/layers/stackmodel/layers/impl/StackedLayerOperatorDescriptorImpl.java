@@ -32,7 +32,7 @@ public class StackedLayerOperatorDescriptorImpl extends LayerOperatorDescriptorI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated not
 	 */
 	protected StackedLayerOperatorDescriptorImpl() {
@@ -55,7 +55,7 @@ public class StackedLayerOperatorDescriptorImpl extends LayerOperatorDescriptorI
 
 	/**
 	 * Create the requested {@link StackedLayerOperator} and init it.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#createLayerOperator()
 	 *
 	 * @return
@@ -75,7 +75,7 @@ public class StackedLayerOperatorDescriptorImpl extends LayerOperatorDescriptorI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

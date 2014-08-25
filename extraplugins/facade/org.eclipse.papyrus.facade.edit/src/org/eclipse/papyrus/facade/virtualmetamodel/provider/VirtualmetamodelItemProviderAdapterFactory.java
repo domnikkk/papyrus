@@ -19,7 +19,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -31,7 +30,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.util.VirtualmetamodelAdapterFactory;
 
 /**
@@ -41,7 +39,7 @@ import org.eclipse.papyrus.facade.virtualmetamodel.util.VirtualmetamodelAdapterF
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VirtualmetamodelItemProviderAdapterFactory extends VirtualmetamodelAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -49,7 +47,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -58,7 +56,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -67,7 +65,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -76,7 +74,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VirtualmetamodelItemProviderAdapterFactory() {
@@ -91,7 +89,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualMetamodelItemProvider virtualMetamodelItemProvider;
@@ -100,7 +98,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +114,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualMetaclassItemProvider virtualMetaclassItemProvider;
@@ -125,7 +123,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +139,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualPropertyItemProvider virtualPropertyItemProvider;
@@ -150,7 +148,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +164,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualOperationItemProvider virtualOperationItemProvider;
@@ -175,7 +173,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +189,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualParameterItemProvider virtualParameterItemProvider;
@@ -200,7 +198,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +214,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualDatatypeItemProvider virtualDatatypeItemProvider;
@@ -225,7 +223,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +239,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualEnumItemProvider virtualEnumItemProvider;
@@ -250,7 +248,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +264,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualLiteralItemProvider virtualLiteralItemProvider;
@@ -275,7 +273,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +289,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +301,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +312,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +324,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +335,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +354,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +366,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +378,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +394,7 @@ public class VirtualmetamodelItemProviderAdapterFactory extends Virtualmetamodel
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

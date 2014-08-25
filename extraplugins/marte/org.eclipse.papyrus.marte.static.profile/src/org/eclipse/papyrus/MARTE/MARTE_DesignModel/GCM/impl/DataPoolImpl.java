@@ -45,7 +45,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	 * The default value of the '{@link #getOrdering() <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrdering()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	 * The cached value of the '{@link #getOrdering() <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrdering()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	 * The cached value of the '{@link #getInsertion() <em>Insertion</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInsertion()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelection()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataPoolImpl() {
@@ -109,7 +109,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -176,7 +176,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetInsertion() {
@@ -221,7 +221,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetSelection() {
@@ -266,7 +266,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +336,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +361,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +382,7 @@ public class DataPoolImpl extends EObjectImpl implements DataPool {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

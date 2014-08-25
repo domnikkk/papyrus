@@ -58,7 +58,7 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.classdiagram.parsers.texteditor.LabelCompletionProcessor
 	 * #computeCompletionProposals(org.eclipse.jface.text.ITextViewer, int)
 	 */
@@ -103,7 +103,7 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.classdiagram.parsers.texteditor.LabelCompletionProcessor
 	 * #computeCompletions(org.eclipse.jface.text.ITextViewer, int, int, int)
 	 */

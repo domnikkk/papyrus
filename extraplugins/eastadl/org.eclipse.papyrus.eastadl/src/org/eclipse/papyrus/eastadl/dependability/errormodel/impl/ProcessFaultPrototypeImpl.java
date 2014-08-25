@@ -42,7 +42,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	 * The cached value of the '{@link #getBase_Event() <em>Base Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Event()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProcessFaultPrototypeImpl() {
@@ -62,7 +62,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetBase_Event() {
@@ -152,7 +152,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class ProcessFaultPrototypeImpl extends AnomalyImpl implements ProcessFau
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

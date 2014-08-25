@@ -43,7 +43,7 @@ public interface Property extends FolderElement {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(Type)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getProperty_Type()
@@ -56,7 +56,7 @@ public interface Property extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()
@@ -71,7 +71,7 @@ public interface Property extends FolderElement {
 	 * If the meaning of the '<em>Default Value</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Default Value</em>' containment reference.
 	 * @see #setDefaultValue(TypeInstance)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getProperty_DefaultValue()
@@ -84,7 +84,7 @@ public interface Property extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getDefaultValue <em>Default Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Default Value</em>' containment reference.
 	 * @see #getDefaultValue()
@@ -99,7 +99,7 @@ public interface Property extends FolderElement {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getProperty_Name()
@@ -112,7 +112,7 @@ public interface Property extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -127,7 +127,7 @@ public interface Property extends FolderElement {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getProperty_Description()
@@ -140,7 +140,7 @@ public interface Property extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -156,7 +156,7 @@ public interface Property extends FolderElement {
 	 * If the meaning of the '<em>Index</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Index</em>' attribute.
 	 * @see #setIndex(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getProperty_Index()
@@ -169,7 +169,7 @@ public interface Property extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Property#getIndex <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Index</em>' attribute.
 	 * @see #getIndex()
@@ -180,7 +180,7 @@ public interface Property extends FolderElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.BadStateException"
 	 * @generated
 	 */

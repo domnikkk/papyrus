@@ -49,7 +49,7 @@ public interface ArchitecturalModel extends Concept {
 	 * If the meaning of the '<em>Is Concept For</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Concept For</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getArchitecturalModel_IsConceptFor()
 	 * @model ordered="false"

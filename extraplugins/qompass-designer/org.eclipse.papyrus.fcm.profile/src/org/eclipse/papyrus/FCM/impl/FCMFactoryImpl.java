@@ -16,18 +16,55 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.FCM.*;
+import org.eclipse.papyrus.FCM.Assembly;
+import org.eclipse.papyrus.FCM.AutoIndex;
+import org.eclipse.papyrus.FCM.AutoIndexPerNode;
+import org.eclipse.papyrus.FCM.BindTemplate;
+import org.eclipse.papyrus.FCM.BindingHelper;
+import org.eclipse.papyrus.FCM.CodeGenOptions;
+import org.eclipse.papyrus.FCM.CompImplTemplate;
+import org.eclipse.papyrus.FCM.CompToOOmapping;
+import org.eclipse.papyrus.FCM.CompilerChain;
+import org.eclipse.papyrus.FCM.ConfigOption;
+import org.eclipse.papyrus.FCM.Configuration;
+import org.eclipse.papyrus.FCM.ConfigurationProperty;
+import org.eclipse.papyrus.FCM.Connector;
+import org.eclipse.papyrus.FCM.ConnectorConfiguration;
+import org.eclipse.papyrus.FCM.ContainerRule;
+import org.eclipse.papyrus.FCM.ContainerRuleKind;
+import org.eclipse.papyrus.FCM.CopyAttributeValue;
+import org.eclipse.papyrus.FCM.DeploymentPlan;
+import org.eclipse.papyrus.FCM.DerivedElement;
+import org.eclipse.papyrus.FCM.FCMFactory;
+import org.eclipse.papyrus.FCM.FCMPackage;
+import org.eclipse.papyrus.FCM.Flatten;
+import org.eclipse.papyrus.FCM.Fragment;
+import org.eclipse.papyrus.FCM.ImplementationGroup;
+import org.eclipse.papyrus.FCM.ImplementationProperties;
+import org.eclipse.papyrus.FCM.InitPrecedence;
+import org.eclipse.papyrus.FCM.InstanceConfigurator;
+import org.eclipse.papyrus.FCM.InteractionComponent;
+import org.eclipse.papyrus.FCM.InterceptionKind;
+import org.eclipse.papyrus.FCM.InterceptionRule;
+import org.eclipse.papyrus.FCM.OperatingSystem;
+import org.eclipse.papyrus.FCM.Port;
+import org.eclipse.papyrus.FCM.PortKind;
+import org.eclipse.papyrus.FCM.ProgLanguage;
+import org.eclipse.papyrus.FCM.RuleApplication;
+import org.eclipse.papyrus.FCM.Singleton;
+import org.eclipse.papyrus.FCM.Target;
+import org.eclipse.papyrus.FCM.TargetArchitecture;
+import org.eclipse.papyrus.FCM.Template;
+import org.eclipse.papyrus.FCM.TemplatePort;
+import org.eclipse.papyrus.FCM.UseInstanceConfigurator;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
@@ -35,7 +72,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FCMFactory init() {
@@ -54,7 +91,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FCMFactoryImpl() {
@@ -64,7 +101,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +189,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +207,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +225,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +237,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +249,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +261,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +273,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +285,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +297,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +309,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +321,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +333,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +345,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +357,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +369,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +381,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +393,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +405,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +417,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +429,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +441,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +453,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +465,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +477,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -452,7 +489,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +501,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -476,7 +513,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -488,7 +525,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -500,7 +537,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -512,7 +549,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -524,7 +561,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +573,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +585,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -560,7 +597,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -572,7 +609,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -584,7 +621,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -596,7 +633,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -608,7 +645,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -620,7 +657,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -632,7 +669,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ContainerRuleKind createContainerRuleKindFromString(EDataType eDataType, String initialValue) {
@@ -647,7 +684,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertContainerRuleKindToString(EDataType eDataType, Object instanceValue) {
@@ -657,7 +694,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InterceptionKind createInterceptionKindFromString(EDataType eDataType, String initialValue) {
@@ -672,7 +709,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertInterceptionKindToString(EDataType eDataType, Object instanceValue) {
@@ -682,7 +719,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -693,7 +730,7 @@ public class FCMFactoryImpl extends EFactoryImpl implements FCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

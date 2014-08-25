@@ -15,12 +15,49 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.dd.dg.*;
+import org.eclipse.papyrus.dd.dg.Canvas;
+import org.eclipse.papyrus.dd.dg.Circle;
+import org.eclipse.papyrus.dd.dg.ClipPath;
+import org.eclipse.papyrus.dd.dg.ClosePath;
+import org.eclipse.papyrus.dd.dg.CubicCurveTo;
+import org.eclipse.papyrus.dd.dg.DGFactory;
+import org.eclipse.papyrus.dd.dg.DGPackage;
+import org.eclipse.papyrus.dd.dg.Definitions;
+import org.eclipse.papyrus.dd.dg.ElementKind;
+import org.eclipse.papyrus.dd.dg.Ellipse;
+import org.eclipse.papyrus.dd.dg.EllipticalArcTo;
+import org.eclipse.papyrus.dd.dg.FontDecoration;
+import org.eclipse.papyrus.dd.dg.GradientStop;
+import org.eclipse.papyrus.dd.dg.Group;
+import org.eclipse.papyrus.dd.dg.Image;
+import org.eclipse.papyrus.dd.dg.Line;
+import org.eclipse.papyrus.dd.dg.LineTo;
+import org.eclipse.papyrus.dd.dg.LinearGradient;
+import org.eclipse.papyrus.dd.dg.Marker;
+import org.eclipse.papyrus.dd.dg.Matrix;
+import org.eclipse.papyrus.dd.dg.MoveTo;
+import org.eclipse.papyrus.dd.dg.Paint;
+import org.eclipse.papyrus.dd.dg.Path;
+import org.eclipse.papyrus.dd.dg.Pattern;
+import org.eclipse.papyrus.dd.dg.Polygon;
+import org.eclipse.papyrus.dd.dg.Polyline;
+import org.eclipse.papyrus.dd.dg.QuadraticCurveTo;
+import org.eclipse.papyrus.dd.dg.RadialGradient;
+import org.eclipse.papyrus.dd.dg.Rectangle;
+import org.eclipse.papyrus.dd.dg.RootCanvas;
+import org.eclipse.papyrus.dd.dg.Rotate;
+import org.eclipse.papyrus.dd.dg.Scale;
+import org.eclipse.papyrus.dd.dg.Skew;
+import org.eclipse.papyrus.dd.dg.Style;
+import org.eclipse.papyrus.dd.dg.StyleRule;
+import org.eclipse.papyrus.dd.dg.StyleSelector;
+import org.eclipse.papyrus.dd.dg.StyleSheet;
+import org.eclipse.papyrus.dd.dg.Text;
+import org.eclipse.papyrus.dd.dg.TextAnchor;
+import org.eclipse.papyrus.dd.dg.Translate;
+import org.eclipse.papyrus.dd.dg.Use;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--

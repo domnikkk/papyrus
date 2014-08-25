@@ -14,14 +14,11 @@
 package org.eclipse.papyrus.facademapping.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.facademapping.FacademappingPackage;
 import org.eclipse.papyrus.facademapping.Mapping;
 
@@ -44,7 +41,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * The cached value of the '{@link #getUmlElement() <em>Uml Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUmlElement()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * The cached value of the '{@link #getSpecificDomainElement() <em>Specific Domain Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpecificDomainElement()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MappingImpl() {
@@ -75,7 +72,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +83,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +103,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetUmlElement() {
@@ -116,7 +113,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +128,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +148,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetSpecificDomainElement() {
@@ -161,7 +158,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +173,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +196,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +215,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +234,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

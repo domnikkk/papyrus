@@ -32,7 +32,7 @@ public interface ModeEvent extends Event {
 	 * If the meaning of the '<em>Start</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Start</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getModeEvent_Start()
 	 * @model ordered="false"
@@ -48,7 +48,7 @@ public interface ModeEvent extends Event {
 	 * If the meaning of the '<em>End</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>End</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getModeEvent_End()
 	 * @model ordered="false"

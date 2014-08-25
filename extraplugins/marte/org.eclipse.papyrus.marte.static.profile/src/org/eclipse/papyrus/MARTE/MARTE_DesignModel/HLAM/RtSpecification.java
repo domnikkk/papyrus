@@ -52,7 +52,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Utility</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utility</em>' attribute.
 	 * @see #setUtility(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_Utility()
@@ -65,7 +65,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getUtility <em>Utility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Utility</em>' attribute.
 	 * @see #getUtility()
@@ -80,7 +80,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Occ Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Occ Kind</em>' attribute.
 	 * @see #setOccKind(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_OccKind()
@@ -93,7 +93,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getOccKind <em>Occ Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Occ Kind</em>' attribute.
 	 * @see #getOccKind()
@@ -108,7 +108,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>TRef</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>TRef</em>' reference.
 	 * @see #setTRef(TimedInstantObservation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_TRef()
@@ -121,7 +121,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getTRef <em>TRef</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>TRef</em>' reference.
 	 * @see #getTRef()
@@ -136,7 +136,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Rel Dl</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rel Dl</em>' attribute.
 	 * @see #setRelDl(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_RelDl()
@@ -149,7 +149,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getRelDl <em>Rel Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Rel Dl</em>' attribute.
 	 * @see #getRelDl()
@@ -164,7 +164,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Abs Dl</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Abs Dl</em>' attribute.
 	 * @see #setAbsDl(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_AbsDl()
@@ -177,7 +177,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getAbsDl <em>Abs Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Abs Dl</em>' attribute.
 	 * @see #getAbsDl()
@@ -192,7 +192,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Bound Dl</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bound Dl</em>' attribute.
 	 * @see #setBoundDl(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_BoundDl()
@@ -205,7 +205,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getBoundDl <em>Bound Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Bound Dl</em>' attribute.
 	 * @see #getBoundDl()
@@ -220,7 +220,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Rd Time</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rd Time</em>' attribute.
 	 * @see #setRdTime(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_RdTime()
@@ -233,7 +233,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getRdTime <em>Rd Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Rd Time</em>' attribute.
 	 * @see #getRdTime()
@@ -248,7 +248,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Miss</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Miss</em>' attribute.
 	 * @see #setMiss(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_Miss()
@@ -261,7 +261,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getMiss <em>Miss</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Miss</em>' attribute.
 	 * @see #getMiss()
@@ -276,7 +276,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Priority</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_Priority()
@@ -289,7 +289,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getPriority <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Priority</em>' attribute.
 	 * @see #getPriority()
@@ -304,7 +304,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Base Comment</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Comment</em>' reference.
 	 * @see #setBase_Comment(Comment)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_Base_Comment()
@@ -317,7 +317,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getBase_Comment <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Comment</em>' reference.
 	 * @see #getBase_Comment()
@@ -332,7 +332,7 @@ public interface RtSpecification extends EObject {
 	 * If the meaning of the '<em>Context</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Context</em>' reference.
 	 * @see #setContext(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtSpecification_Context()
@@ -345,7 +345,7 @@ public interface RtSpecification extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtSpecification#getContext <em>Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Context</em>' reference.
 	 * @see #getContext()

@@ -46,7 +46,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * If the meaning of the '<em>Pattern</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pattern</em>' attribute.
 	 * @see #setPattern(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadEvent_Pattern()
@@ -59,7 +59,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getPattern <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Pattern</em>' attribute.
 	 * @see #getPattern()
@@ -74,7 +74,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * If the meaning of the '<em>Generator</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Generator</em>' reference.
 	 * @see #setGenerator(GaWorkloadGenerator)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadEvent_Generator()
@@ -87,7 +87,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getGenerator <em>Generator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Generator</em>' reference.
 	 * @see #getGenerator()
@@ -102,7 +102,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * If the meaning of the '<em>Trace</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Trace</em>' reference.
 	 * @see #setTrace(GaEventTrace)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadEvent_Trace()
@@ -115,7 +115,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getTrace <em>Trace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Trace</em>' reference.
 	 * @see #getTrace()
@@ -130,7 +130,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * If the meaning of the '<em>Effect</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Effect</em>' reference.
 	 * @see #setEffect(GaScenario)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadEvent_Effect()
@@ -143,7 +143,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getEffect <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Effect</em>' reference.
 	 * @see #getEffect()
@@ -158,7 +158,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * If the meaning of the '<em>Timed Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Timed Event</em>' reference.
 	 * @see #setTimedEvent(TimeEvent)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadEvent_TimedEvent()
@@ -171,7 +171,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getTimedEvent <em>Timed Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Timed Event</em>' reference.
 	 * @see #getTimedEvent()
@@ -186,7 +186,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaWorkloadEvent_Base_NamedElement()
@@ -199,7 +199,7 @@ public interface GaWorkloadEvent extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaWorkloadEvent#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()

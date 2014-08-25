@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.EngineSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -34,7 +31,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The default value of the '{@link #getVehicleTraction() <em>Vehicle Traction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVehicleTraction()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The cached value of the '{@link #getVehicleTraction() <em>Vehicle Traction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVehicleTraction()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The default value of the '{@link #getMaxEngineForce() <em>Max Engine Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxEngineForce()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The cached value of the '{@link #getMaxEngineForce() <em>Max Engine Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxEngineForce()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The default value of the '{@link #getMaxBreakingForce() <em>Max Breaking Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxBreakingForce()
 	 * @generated
 	 * @ordered
@@ -89,7 +86,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The cached value of the '{@link #getMaxBreakingForce() <em>Max Breaking Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxBreakingForce()
 	 * @generated
 	 * @ordered
@@ -100,7 +97,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The default value of the '{@link #getMaxAllowedSteering() <em>Max Allowed Steering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxAllowedSteering()
 	 * @generated
 	 * @ordered
@@ -111,7 +108,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The cached value of the '{@link #getMaxAllowedSteering() <em>Max Allowed Steering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxAllowedSteering()
 	 * @generated
 	 * @ordered
@@ -122,7 +119,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The default value of the '{@link #getMaxAllowedVelocity() <em>Max Allowed Velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxAllowedVelocity()
 	 * @generated
 	 * @ordered
@@ -133,7 +130,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The cached value of the '{@link #getMaxAllowedVelocity() <em>Max Allowed Velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxAllowedVelocity()
 	 * @generated
 	 * @ordered
@@ -144,7 +141,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The default value of the '{@link #getGear_ration() <em>Gear ration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGear_ration()
 	 * @generated
 	 * @ordered
@@ -155,7 +152,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	 * The cached value of the '{@link #getGear_ration() <em>Gear ration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGear_ration()
 	 * @generated
 	 * @ordered
@@ -165,7 +162,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EngineSystemImpl() {
@@ -175,7 +172,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +183,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getVehicleTraction() {
@@ -196,7 +193,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVehicleTraction(String newVehicleTraction) {
@@ -210,7 +207,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getMaxEngineForce() {
@@ -220,7 +217,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMaxEngineForce(float newMaxEngineForce) {
@@ -234,7 +231,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getMaxBreakingForce() {
@@ -244,7 +241,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMaxBreakingForce(float newMaxBreakingForce) {
@@ -258,7 +255,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getMaxAllowedSteering() {
@@ -268,7 +265,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMaxAllowedSteering(float newMaxAllowedSteering) {
@@ -282,7 +279,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getMaxAllowedVelocity() {
@@ -292,7 +289,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMaxAllowedVelocity(float newMaxAllowedVelocity) {
@@ -306,7 +303,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getGear_ration() {
@@ -316,7 +313,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGear_ration(float newGear_ration) {
@@ -330,7 +327,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +352,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +383,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +414,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -442,7 +439,7 @@ public class EngineSystemImpl extends ActuatorSystemImpl implements EngineSystem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

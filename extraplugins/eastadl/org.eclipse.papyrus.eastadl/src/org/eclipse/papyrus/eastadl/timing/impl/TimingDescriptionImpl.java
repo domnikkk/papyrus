@@ -42,7 +42,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TimingDescriptionImpl() {
@@ -60,7 +60,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +77,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -147,7 +147,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public abstract class TimingDescriptionImpl extends EAElementImpl implements Tim
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

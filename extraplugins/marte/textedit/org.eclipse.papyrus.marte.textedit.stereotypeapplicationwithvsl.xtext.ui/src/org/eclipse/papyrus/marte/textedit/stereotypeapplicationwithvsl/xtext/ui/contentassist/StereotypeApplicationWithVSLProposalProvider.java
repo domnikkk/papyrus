@@ -135,9 +135,9 @@ public class StereotypeApplicationWithVSLProposalProvider extends AbstractStereo
 	}
 
 	/* *************************************************
-	 * 
+	 *
 	 * Private utility method for sorting a list of NamedElement by kind and name
-	 * 
+	 *
 	 * ************************************************
 	 */
 

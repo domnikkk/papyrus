@@ -41,7 +41,7 @@ public interface TimedConstraint extends NfpConstraint, TimedElement {
 	 * If the meaning of the '<em>Interpretation</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Interpretation</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind
 	 * @see #setInterpretation(TimeInterpretationKind)
@@ -55,7 +55,7 @@ public interface TimedConstraint extends NfpConstraint, TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedConstraint#getInterpretation <em>Interpretation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Interpretation</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind

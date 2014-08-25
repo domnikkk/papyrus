@@ -30,7 +30,7 @@ public class PaCommStepImpl extends PaStepImpl implements PaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PaCommStepImpl() {
@@ -40,7 +40,7 @@ public class PaCommStepImpl extends PaStepImpl implements PaCommStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

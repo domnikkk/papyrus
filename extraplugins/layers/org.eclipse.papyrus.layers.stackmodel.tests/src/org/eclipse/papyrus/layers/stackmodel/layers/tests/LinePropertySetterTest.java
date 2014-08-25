@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LinePropertySetter;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Line Property Setter</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LinePropertySetterTest extends PropertySetterTest {
@@ -19,7 +19,7 @@ public class LinePropertySetterTest extends PropertySetterTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class LinePropertySetterTest extends PropertySetterTest {
 	 * Constructs a new Line Property Setter test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LinePropertySetterTest(String name) {
@@ -41,7 +41,7 @@ public class LinePropertySetterTest extends PropertySetterTest {
 	 * Returns the fixture for this Line Property Setter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class LinePropertySetterTest extends PropertySetterTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class LinePropertySetterTest extends PropertySetterTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

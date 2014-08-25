@@ -14,9 +14,7 @@
 package org.eclipse.papyrus.facade.extensiondefinition.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.facade.extensiondefinition.Combination;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition;
 

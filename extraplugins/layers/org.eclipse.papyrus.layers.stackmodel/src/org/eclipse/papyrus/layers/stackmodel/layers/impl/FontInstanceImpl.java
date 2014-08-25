@@ -40,7 +40,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #getFontColor() <em>Font Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFontColor()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #getFontColor() <em>Font Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFontColor()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #getFontName() <em>Font Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFontName()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #getFontName() <em>Font Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFontName()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #getFontHeigh() <em>Font Heigh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFontHeigh()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #getFontHeigh() <em>Font Heigh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFontHeigh()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The default value of the '{@link #isBold() <em>Bold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isBold()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	 * The cached value of the '{@link #isBold() <em>Bold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isBold()
 	 * @generated
 	 * @ordered
@@ -127,7 +127,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FontInstanceImpl() {
@@ -137,7 +137,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +344,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -394,7 +394,7 @@ public class FontInstanceImpl extends TypeInstanceImpl implements FontInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

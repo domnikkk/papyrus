@@ -34,7 +34,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FontInstanceItemProvider
@@ -49,7 +49,7 @@ public class FontInstanceItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FontInstanceItemProvider(AdapterFactory adapterFactory) {
@@ -60,7 +60,7 @@ public class FontInstanceItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class FontInstanceItemProvider
 	 * This adds a property descriptor for the Font Color feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFontColorPropertyDescriptor(Object object) {
@@ -103,7 +103,7 @@ public class FontInstanceItemProvider
 	 * This adds a property descriptor for the Font Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFontNamePropertyDescriptor(Object object) {
@@ -126,7 +126,7 @@ public class FontInstanceItemProvider
 	 * This adds a property descriptor for the Font Heigh feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFontHeighPropertyDescriptor(Object object) {
@@ -149,7 +149,7 @@ public class FontInstanceItemProvider
 	 * This adds a property descriptor for the Bold feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBoldPropertyDescriptor(Object object) {
@@ -172,7 +172,7 @@ public class FontInstanceItemProvider
 	 * This returns FontInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class FontInstanceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class FontInstanceItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class FontInstanceItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

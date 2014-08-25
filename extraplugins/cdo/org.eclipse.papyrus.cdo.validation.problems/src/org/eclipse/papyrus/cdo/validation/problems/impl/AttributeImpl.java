@@ -13,12 +13,9 @@ package org.eclipse.papyrus.cdo.validation.problems.impl;
 
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
-
 import org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage;
 
 /**
@@ -40,7 +37,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AttributeImpl() {
@@ -50,7 +47,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -61,7 +58,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +69,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTypedKey() {
@@ -82,7 +79,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypedKey(String newKey) {
@@ -92,7 +89,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTypedValue() {
@@ -102,7 +99,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTypedValue(String newValue) {
@@ -112,7 +109,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected int hash = -1;
@@ -120,7 +117,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +132,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +143,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +165,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +176,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +189,7 @@ public class AttributeImpl extends CDOObjectImpl implements BasicEMap.Entry<Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")

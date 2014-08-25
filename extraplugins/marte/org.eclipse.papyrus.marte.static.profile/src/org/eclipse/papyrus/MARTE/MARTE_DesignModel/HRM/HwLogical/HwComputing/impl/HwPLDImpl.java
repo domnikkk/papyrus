@@ -50,7 +50,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getTechnology() <em>Technology</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTechnology()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getTechnology() <em>Technology</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTechnology()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getNbLUTs() <em>Nb LU Ts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbLUTs()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getNbLUTs() <em>Nb LU Ts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbLUTs()
 	 * @generated
 	 * @ordered
@@ -116,7 +116,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getNdLUT_Inputs() <em>Nd LUT Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNdLUT_Inputs()
 	 * @generated
 	 * @ordered
@@ -127,7 +127,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getNdLUT_Inputs() <em>Nd LUT Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNdLUT_Inputs()
 	 * @generated
 	 * @ordered
@@ -138,7 +138,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getNbFlipFlops() <em>Nb Flip Flops</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbFlipFlops()
 	 * @generated
 	 * @ordered
@@ -149,7 +149,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getNbFlipFlops() <em>Nb Flip Flops</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbFlipFlops()
 	 * @generated
 	 * @ordered
@@ -160,7 +160,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getBlocksRAM() <em>Blocks RAM</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBlocksRAM()
 	 * @generated
 	 * @ordered
@@ -171,7 +171,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getBlocksComputing() <em>Blocks Computing</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBlocksComputing()
 	 * @generated
 	 * @ordered
@@ -181,7 +181,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwPLDImpl() {
@@ -191,7 +191,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +332,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -346,7 +346,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +387,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -424,7 +424,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -458,7 +458,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -485,7 +485,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

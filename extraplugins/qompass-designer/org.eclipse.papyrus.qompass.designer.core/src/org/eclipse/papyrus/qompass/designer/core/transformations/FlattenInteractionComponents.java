@@ -116,7 +116,7 @@ public class FlattenInteractionComponents {
 	 * we only need to move slots.
 	 *
 	 * Well, there are different classes: first: the flattened interaction component and other components that reference the flattened interaction component.
-	 * 
+	 *
 	 * @param composite
 	 *            a composite class
 	 * @param instance

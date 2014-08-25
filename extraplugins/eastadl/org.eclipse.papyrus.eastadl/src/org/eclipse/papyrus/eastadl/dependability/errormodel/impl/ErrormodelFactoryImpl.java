@@ -39,14 +39,14 @@ import org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototyp
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -59,7 +59,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ErrormodelFactory init() {
@@ -78,7 +78,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ErrormodelFactoryImpl() {
@@ -88,7 +88,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertErrorBehaviorKindToString(EDataType eDataType, Object instanceValue) {
@@ -98,7 +98,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ErrorBehaviorKind createErrorBehaviorKindFromString(EDataType eDataType, String initialValue) {
@@ -184,7 +184,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class ErrormodelFactoryImpl extends EFactoryImpl implements ErrormodelFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

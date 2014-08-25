@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.structure.vehiclefeaturemodeling.Vehiclefeatu
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VehiclefeaturemodelingXMLProcessor extends XMLProcessor {
@@ -35,7 +35,7 @@ public class VehiclefeaturemodelingXMLProcessor extends XMLProcessor {
 	/**
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VehiclefeaturemodelingXMLProcessor() {
@@ -46,7 +46,7 @@ public class VehiclefeaturemodelingXMLProcessor extends XMLProcessor {
 	/**
 	 * Register for "*" and "xml" file extensions the VehiclefeaturemodelingResourceFactoryImpl factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -24,7 +24,7 @@ public class Ack extends ReplyMessage {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
 	@Override

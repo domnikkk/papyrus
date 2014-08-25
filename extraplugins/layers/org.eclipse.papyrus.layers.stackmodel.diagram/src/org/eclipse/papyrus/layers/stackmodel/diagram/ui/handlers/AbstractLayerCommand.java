@@ -31,7 +31,7 @@ import org.eclipse.ui.IEditorPart;
 /**
  * Base class for Commands on Layers.
  * This class provide utility methods to find the current Layer, LayerStack, ...
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -61,7 +61,7 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 
 	/**
 	 * Execute as transaction
-	 * 
+	 *
 	 * @param event
 	 */
 	private void executeTransaction(ExecutionEvent event) {
@@ -135,7 +135,7 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 
 	/**
 	 * Try to lookup the TransactionalEditingDomain.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 *             If the Editing domain can't be found.
@@ -187,7 +187,7 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 	/**
 	 * Return true if the action is enabled, false otherwise.
 	 * Subclasses should implements this method. The default implementation return true.
-	 * 
+	 *
 	 * @param notationDiagramHelper
 	 * @return
 	 */

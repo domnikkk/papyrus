@@ -65,7 +65,7 @@ public interface EAElement extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAElement_Base_NamedElement()
@@ -78,7 +78,7 @@ public interface EAElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()
@@ -93,7 +93,7 @@ public interface EAElement extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAElement_Name()
@@ -106,7 +106,7 @@ public interface EAElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -122,7 +122,7 @@ public interface EAElement extends EObject {
 	 * If the meaning of the '<em>Owned Comment</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Comment</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAElement_OwnedComment()
 	 * @model ordered="false"

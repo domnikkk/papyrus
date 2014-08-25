@@ -44,7 +44,7 @@ public interface AgeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Maximum</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Maximum</em>' reference.
 	 * @see #setMaximum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getAgeConstraint_Maximum()
@@ -57,7 +57,7 @@ public interface AgeConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.AgeConstraint#getMaximum <em>Maximum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Maximum</em>' reference.
 	 * @see #getMaximum()
@@ -72,7 +72,7 @@ public interface AgeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Minimum</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Minimum</em>' reference.
 	 * @see #setMinimum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getAgeConstraint_Minimum()
@@ -85,7 +85,7 @@ public interface AgeConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.AgeConstraint#getMinimum <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Minimum</em>' reference.
 	 * @see #getMinimum()
@@ -100,7 +100,7 @@ public interface AgeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Scope</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Scope</em>' reference.
 	 * @see #setScope(EventChain)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getAgeConstraint_Scope()
@@ -113,7 +113,7 @@ public interface AgeConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.AgeConstraint#getScope <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Scope</em>' reference.
 	 * @see #getScope()

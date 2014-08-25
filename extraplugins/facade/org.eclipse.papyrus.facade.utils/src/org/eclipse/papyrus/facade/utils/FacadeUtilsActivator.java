@@ -26,7 +26,7 @@ public class FacadeUtilsActivator implements BundleActivator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -36,7 +36,7 @@ public class FacadeUtilsActivator implements BundleActivator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
 	 */
 	@Override

@@ -50,7 +50,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScope()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OutputSynchronizationConstraintImpl() {
@@ -70,7 +70,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -125,7 +125,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public TimingExpression basicGetTolerance() {
@@ -185,7 +185,7 @@ public class OutputSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

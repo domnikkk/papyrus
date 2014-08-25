@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.layers.stackmodel.util;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -86,7 +87,7 @@ public class DiagramViewToListSynchronizer {
 
 	/**
 	 * Set the diagram synchronized to the list.
-	 * 
+	 *
 	 * @param diagram
 	 */
 	public void setDiagram(Diagram diagram) {

@@ -10,11 +10,11 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.runtime;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertEquals;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
@@ -157,7 +157,7 @@ public class LayersModelEventNotifierTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayersModelEventNotifier#firePropertyValueAddedEvent(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -197,7 +197,7 @@ public class LayersModelEventNotifierTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayersModelEventNotifier#firePropertyValueRemoved(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -242,7 +242,7 @@ public class LayersModelEventNotifierTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayersModelEventNotifier#firePropertyValueChanged(org.eclipse.emf.common.notify.Notification)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

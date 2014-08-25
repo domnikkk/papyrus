@@ -3,10 +3,10 @@
  */
 package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.parser.antlr;
 
-import com.google.inject.Inject;
-
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.services.StereotypeApplicationWithVSLGrammarAccess;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+
+import com.google.inject.Inject;
 
 public class StereotypeApplicationWithVSLParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 

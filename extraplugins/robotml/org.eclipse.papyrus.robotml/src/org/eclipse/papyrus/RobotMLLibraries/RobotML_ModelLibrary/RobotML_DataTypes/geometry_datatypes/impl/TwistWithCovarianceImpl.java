@@ -6,17 +6,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Twist;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.TwistWithCovariance;
@@ -40,7 +35,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getTwist() <em>Twist</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTwist()
 	 * @generated
 	 * @ordered
@@ -51,7 +46,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getCovariance() <em>Covariance</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCovariance()
 	 * @generated
 	 * @ordered
@@ -61,7 +56,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TwistWithCovarianceImpl() {
@@ -71,7 +66,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +77,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Twist getTwist() {
@@ -92,7 +87,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTwist(Twist newTwist, NotificationChain msgs) {
@@ -112,7 +107,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTwist(Twist newTwist) {
@@ -137,7 +132,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getCovariance() {
@@ -150,7 +145,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +160,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +177,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -203,7 +198,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +217,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +234,7 @@ public class TwistWithCovarianceImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

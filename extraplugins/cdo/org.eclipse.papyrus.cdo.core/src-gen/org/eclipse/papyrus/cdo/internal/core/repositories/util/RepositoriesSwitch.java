@@ -14,10 +14,10 @@ package org.eclipse.papyrus.cdo.internal.core.repositories.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.cdo.internal.core.repositories.*;
+import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage;
+import org.eclipse.papyrus.cdo.internal.core.repositories.Repository;
+import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoryRegistry;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.cdo.internal.core.repositories.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.cdo.internal.core.repositories.RepositoriesPackage
  * @generated
  */
@@ -37,7 +37,7 @@ public class RepositoriesSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static RepositoriesPackage modelPackage;
@@ -46,7 +46,7 @@ public class RepositoriesSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RepositoriesSwitch() {
@@ -59,7 +59,7 @@ public class RepositoriesSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -73,7 +73,7 @@ public class RepositoriesSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public class RepositoriesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Repository Registry</em>'.
@@ -124,7 +124,7 @@ public class RepositoriesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Repository</em>'.
@@ -141,7 +141,7 @@ public class RepositoriesSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage
  * @generated
  */
@@ -31,7 +31,7 @@ public interface DatatypesFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	DatatypesFactory eINSTANCE = org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.DatatypesFactoryImpl.init();
@@ -40,7 +40,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>EA Datatype Prototype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>EA Datatype Prototype</em>'.
 	 * @generated
 	 */
@@ -50,7 +50,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>EA Numerical</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>EA Numerical</em>'.
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Unit</em>'.
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Quantity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Quantity</em>'.
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Composite Datatype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Composite Datatype</em>'.
 	 * @generated
 	 */
@@ -90,7 +90,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>EA String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>EA String</em>'.
 	 * @generated
 	 */
@@ -100,7 +100,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>EA Boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>EA Boolean</em>'.
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Enumeration Literal</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Enumeration Literal</em>'.
 	 * @generated
 	 */
@@ -120,7 +120,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Enumeration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Enumeration</em>'.
 	 * @generated
 	 */
@@ -130,7 +130,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Array Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Array Data Type</em>'.
 	 * @generated
 	 */
@@ -140,7 +140,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns a new object of class '<em>Rangeable Value Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Rangeable Value Type</em>'.
 	 * @generated
 	 */
@@ -150,7 +150,7 @@ public interface DatatypesFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

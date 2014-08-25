@@ -30,7 +30,7 @@ public class ComputingResourceImpl extends ProcessingResourceImpl implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComputingResourceImpl() {
@@ -40,7 +40,7 @@ public class ComputingResourceImpl extends ProcessingResourceImpl implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

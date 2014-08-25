@@ -45,7 +45,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The default value of the '{@link #getOp_Frequencies() <em>Op Frequencies</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOp_Frequencies()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	 * The cached value of the '{@link #getOp_Frequencies() <em>Op Frequencies</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOp_Frequencies()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwComputingResourceImpl() {
@@ -109,7 +109,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -176,7 +176,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +283,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +329,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +356,7 @@ public class HwComputingResourceImpl extends HwResourceImpl implements HwComputi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

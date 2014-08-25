@@ -27,8 +27,8 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.papyrus.parsers.antlr.ParameterLabelLexer;
 import org.eclipse.papyrus.parsers.antlr.ParameterLabelParser;
 import org.eclipse.papyrus.parsers.texteditor.CompletionFilterSourceViewerConfiguration;
-import org.eclipse.papyrus.parsers.texteditor.LabelCompletionProcessor;
 import org.eclipse.papyrus.parsers.texteditor.CompletionFilterSourceViewerConfiguration.ICompletionFilter;
+import org.eclipse.papyrus.parsers.texteditor.LabelCompletionProcessor;
 import org.eclipse.papyrus.parsers.texteditor.completionproposals.DefaultValueCompletionProposal;
 import org.eclipse.papyrus.parsers.texteditor.completionproposals.DirectionCompletionProposal;
 import org.eclipse.papyrus.parsers.texteditor.completionproposals.MultiplicityCompletionProposal;
@@ -86,7 +86,7 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.classdiagram.parsers.texteditor.LabelCompletionProcessor
 	 * #computeCompletionProposals(org.eclipse.jface.text.ITextViewer, int)
 	 */
@@ -135,7 +135,7 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.classdiagram.parsers.texteditor.LabelCompletionProcessor
 	 * #computeCompletions(org.eclipse.jface.text.ITextViewer, int, int, int)
 	 */

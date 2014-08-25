@@ -71,7 +71,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#getSelectedElement()
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#setSelectedElement(java.lang.Element)
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContent()
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#refreshPanel()
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class CppParameterPanel extends CppAbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.accordcpp.core.ui.panels.AccordAbstractPanel#checkModifications()
 	 */
 	@Override

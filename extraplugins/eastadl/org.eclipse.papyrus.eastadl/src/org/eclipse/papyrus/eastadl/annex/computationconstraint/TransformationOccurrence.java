@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.eastadl.annex.computationconstraint;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quantification;
-
 import org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
 
 /**
@@ -38,7 +35,7 @@ public interface TransformationOccurrence extends EAElement {
 	 * If the meaning of the '<em>In Quantification</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>In Quantification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getTransformationOccurrence_InQuantification()
 	 * @model ordered="false"
@@ -54,7 +51,7 @@ public interface TransformationOccurrence extends EAElement {
 	 * If the meaning of the '<em>Out Quantification</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Out Quantification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getTransformationOccurrence_OutQuantification()
 	 * @model ordered="false"
@@ -69,7 +66,7 @@ public interface TransformationOccurrence extends EAElement {
 	 * If the meaning of the '<em>Invoked Logical Transformation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Invoked Logical Transformation</em>' reference.
 	 * @see #setInvokedLogicalTransformation(LogicalTransformation)
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getTransformationOccurrence_InvokedLogicalTransformation()
@@ -82,7 +79,7 @@ public interface TransformationOccurrence extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence#getInvokedLogicalTransformation <em>Invoked Logical Transformation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Invoked Logical Transformation</em>' reference.
 	 * @see #getInvokedLogicalTransformation()
@@ -97,7 +94,7 @@ public interface TransformationOccurrence extends EAElement {
 	 * If the meaning of the '<em>Time Condition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Time Condition</em>' reference.
 	 * @see #setTimeCondition(LogicalTimeCondition)
 	 * @see org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage#getTransformationOccurrence_TimeCondition()
@@ -110,7 +107,7 @@ public interface TransformationOccurrence extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence#getTimeCondition <em>Time Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Time Condition</em>' reference.
 	 * @see #getTimeCondition()

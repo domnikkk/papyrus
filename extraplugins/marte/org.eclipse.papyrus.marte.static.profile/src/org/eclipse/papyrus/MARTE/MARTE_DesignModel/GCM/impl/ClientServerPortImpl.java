@@ -57,7 +57,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	 * The default value of the '{@link #getSpecificationKind() <em>Specification Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpecificationKind()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	 * The cached value of the '{@link #getProvInterface() <em>Prov Interface</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProvInterface()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	 * The cached value of the '{@link #getReqInterface() <em>Req Interface</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReqInterface()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	 * The cached value of the '{@link #getFeaturesSpec() <em>Features Spec</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFeaturesSpec()
 	 * @generated
 	 * @ordered
@@ -133,7 +133,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClientServerPortImpl() {
@@ -143,7 +143,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -184,7 +184,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 				if (getFeaturesSpec() != null) {
 					/*
 					 * if(getProvInterface() != null)
-					 * 
+					 *
 					 * getProvInterface().clear();
 					 * if(getReqInterface() != null)
 					 * getReqInterface().clear();
@@ -261,7 +261,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +328,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +348,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ClientServerSpecification basicGetFeaturesSpec() {
@@ -358,7 +358,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +373,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +404,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -438,7 +438,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -469,7 +469,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -494,7 +494,7 @@ public class ClientServerPortImpl extends EObjectImpl implements ClientServerPor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

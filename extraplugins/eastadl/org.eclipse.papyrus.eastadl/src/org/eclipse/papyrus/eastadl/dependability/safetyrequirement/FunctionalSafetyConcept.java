@@ -57,7 +57,7 @@ public interface FunctionalSafetyConcept extends RequirementsHierarchy {
 	 * If the meaning of the '<em>Functional Safety Requirement</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Functional Safety Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage#getFunctionalSafetyConcept_FunctionalSafetyRequirement()
 	 * @model

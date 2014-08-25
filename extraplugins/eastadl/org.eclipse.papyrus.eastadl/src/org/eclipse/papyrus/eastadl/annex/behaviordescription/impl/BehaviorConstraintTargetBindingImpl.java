@@ -47,7 +47,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getBehaviorConstraintType() <em>Behavior Constraint Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBehaviorConstraintType()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getTargetedVehicleFeature() <em>Targeted Vehicle Feature</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetedVehicleFeature()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getTargetedFunctionType() <em>Targeted Function Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetedFunctionType()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getConstrainedErrorModel() <em>Constrained Error Model</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstrainedErrorModel()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getTargetedHardwareComponentType() <em>Targeted Hardware Component Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetedHardwareComponentType()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getConstrainedFunctionTriggering() <em>Constrained Function Triggering</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstrainedFunctionTriggering()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getConstrainedModeBehavior() <em>Constrained Mode Behavior</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstrainedModeBehavior()
 	 * @generated
 	 * @ordered
@@ -124,7 +124,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	 * The cached value of the '{@link #getConstrainedFunctionBehavior() <em>Constrained Function Behavior</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstrainedFunctionBehavior()
 	 * @generated
 	 * @ordered
@@ -134,7 +134,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintTargetBindingImpl() {
@@ -144,7 +144,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehaviorConstraintType basicGetBehaviorConstraintType() {
@@ -185,7 +185,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +330,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -375,7 +375,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -412,7 +412,7 @@ public class BehaviorConstraintTargetBindingImpl extends RelationshipImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

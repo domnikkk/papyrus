@@ -33,7 +33,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Source</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongDelayConstraint_Source()
@@ -46,7 +46,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongDelayConstraint#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()
@@ -61,7 +61,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongDelayConstraint_Target()
@@ -74,7 +74,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongDelayConstraint#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target</em>' reference.
 	 * @see #getTarget()
@@ -89,7 +89,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Lower</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lower</em>' reference.
 	 * @see #setLower(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongDelayConstraint_Lower()
@@ -102,7 +102,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongDelayConstraint#getLower <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lower</em>' reference.
 	 * @see #getLower()
@@ -117,7 +117,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Upper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Upper</em>' reference.
 	 * @see #setUpper(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongDelayConstraint_Upper()
@@ -130,7 +130,7 @@ public interface StrongDelayConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongDelayConstraint#getUpper <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Upper</em>' reference.
 	 * @see #getUpper()

@@ -43,7 +43,7 @@ public interface SaCommStep extends GaCommStep {
 	 * If the meaning of the '<em>Deadline</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deadline</em>' attribute.
 	 * @see #setDeadline(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaCommStep_Deadline()
@@ -56,7 +56,7 @@ public interface SaCommStep extends GaCommStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommStep#getDeadline <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Deadline</em>' attribute.
 	 * @see #getDeadline()
@@ -71,7 +71,7 @@ public interface SaCommStep extends GaCommStep {
 	 * If the meaning of the '<em>Spare Cap</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Spare Cap</em>' attribute.
 	 * @see #setSpareCap(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaCommStep_SpareCap()
@@ -84,7 +84,7 @@ public interface SaCommStep extends GaCommStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommStep#getSpareCap <em>Spare Cap</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Spare Cap</em>' attribute.
 	 * @see #getSpareCap()
@@ -99,7 +99,7 @@ public interface SaCommStep extends GaCommStep {
 	 * If the meaning of the '<em>Sch Slack</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sch Slack</em>' attribute.
 	 * @see #setSchSlack(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaCommStep_SchSlack()
@@ -112,7 +112,7 @@ public interface SaCommStep extends GaCommStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommStep#getSchSlack <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sch Slack</em>' attribute.
 	 * @see #getSchSlack()
@@ -127,7 +127,7 @@ public interface SaCommStep extends GaCommStep {
 	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #setBase_BehavioralFeature(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaCommStep_Base_BehavioralFeature()
@@ -140,7 +140,7 @@ public interface SaCommStep extends GaCommStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommStep#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #getBase_BehavioralFeature()

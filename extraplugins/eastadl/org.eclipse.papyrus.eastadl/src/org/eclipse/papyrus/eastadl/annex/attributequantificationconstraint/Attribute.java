@@ -32,7 +32,7 @@ public interface Attribute extends EAElement, BehaviorConstraintParameter {
 	 * If the meaning of the '<em>Is Extern Visible</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Extern Visible</em>' attribute.
 	 * @see #setIsExternVisible(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getAttribute_IsExternVisible()
@@ -45,7 +45,7 @@ public interface Attribute extends EAElement, BehaviorConstraintParameter {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Attribute#isIsExternVisible <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Extern Visible</em>' attribute.
 	 * @see #isIsExternVisible()
@@ -60,7 +60,7 @@ public interface Attribute extends EAElement, BehaviorConstraintParameter {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(EADatatype)
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getAttribute_Type()
@@ -73,7 +73,7 @@ public interface Attribute extends EAElement, BehaviorConstraintParameter {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Attribute#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()

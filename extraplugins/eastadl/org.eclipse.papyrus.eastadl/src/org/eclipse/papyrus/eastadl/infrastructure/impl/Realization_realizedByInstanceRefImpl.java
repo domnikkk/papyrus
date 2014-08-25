@@ -33,7 +33,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	 * The cached value of the '{@link #getIdentifiable_target() <em>Identifiable target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifiable_target()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	 * The cached value of the '{@link #getIdentifiable_context() <em>Identifiable context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIdentifiable_context()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Realization_realizedByInstanceRefImpl() {
@@ -64,7 +64,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetIdentifiable_target() {
@@ -105,7 +105,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -175,7 +175,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class Realization_realizedByInstanceRefImpl extends InstanceRefImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

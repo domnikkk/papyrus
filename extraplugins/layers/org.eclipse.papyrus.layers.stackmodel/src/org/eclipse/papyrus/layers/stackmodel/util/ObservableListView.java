@@ -33,7 +33,7 @@ import com.google.common.eventbus.EventBus;
  * <li></li>
  * <li></li>
  * </ul>
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -201,7 +201,7 @@ public class ObservableListView<E> extends ForwardingList<E> {
 
 	/**
 	 * Event used to specify that the list is changed
-	 * 
+	 *
 	 * @author cedric dumoulin
 	 *
 	 */

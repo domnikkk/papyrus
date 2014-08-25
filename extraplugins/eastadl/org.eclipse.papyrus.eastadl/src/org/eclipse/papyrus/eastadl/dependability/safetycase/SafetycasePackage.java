@@ -39,7 +39,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * faults/hour and still pose an unacceptable risk. Hence, it is only when enough field data have been collected from a system used in a particular context that it can be said to be safe enough. Nonetheless, safety must be addressed and assessed during
  * development; restricted to qualitative reasoning about the safety of a product. A structured engineering method is thus needed to approach this problem. One such method is the so called safety case, which came originally from the nuclear industry.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycaseFactory
  * @model kind="package"
  * @generated
@@ -55,7 +55,7 @@ public interface SafetycasePackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -63,7 +63,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl <em>Safety Case</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getSafetyCase()
 		 * @generated
@@ -74,7 +74,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Safety Case</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_CASE__SAFETY_CASE = eINSTANCE.getSafetyCase_SafetyCase();
@@ -83,7 +83,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stage</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SAFETY_CASE__STAGE = eINSTANCE.getSafetyCase_Stage();
@@ -92,7 +92,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Context</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SAFETY_CASE__CONTEXT = eINSTANCE.getSafetyCase_Context();
@@ -101,7 +101,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ground</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_CASE__GROUND = eINSTANCE.getSafetyCase_Ground();
@@ -110,7 +110,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Warrant</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_CASE__WARRANT = eINSTANCE.getSafetyCase_Warrant();
@@ -119,7 +119,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Claim</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_CASE__CLAIM = eINSTANCE.getSafetyCase_Claim();
@@ -128,7 +128,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SAFETY_CASE__BASE_CLASS = eINSTANCE.getSafetyCase_Base_Class();
@@ -137,7 +137,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.GroundImpl <em>Ground</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.GroundImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getGround()
 		 * @generated
@@ -148,7 +148,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Safety Evidence</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GROUND__SAFETY_EVIDENCE = eINSTANCE.getGround_SafetyEvidence();
@@ -157,7 +157,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GROUND__BASE_CLASS = eINSTANCE.getGround_Base_Class();
@@ -166,7 +166,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Justification</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GROUND__JUSTIFICATION = eINSTANCE.getGround_Justification();
@@ -175,7 +175,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.WarrantImpl <em>Warrant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.WarrantImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getWarrant()
 		 * @generated
@@ -186,7 +186,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Decomposed Goal</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference WARRANT__DECOMPOSED_GOAL = eINSTANCE.getWarrant_DecomposedGoal();
@@ -195,7 +195,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Evidence</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference WARRANT__EVIDENCE = eINSTANCE.getWarrant_Evidence();
@@ -204,7 +204,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference WARRANT__BASE_CLASS = eINSTANCE.getWarrant_Base_Class();
@@ -213,7 +213,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Justification</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference WARRANT__JUSTIFICATION = eINSTANCE.getWarrant_Justification();
@@ -222,7 +222,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.ClaimImpl <em>Claim</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.ClaimImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getClaim()
 		 * @generated
@@ -233,7 +233,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Safety Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAIM__SAFETY_REQUIREMENT = eINSTANCE.getClaim_SafetyRequirement();
@@ -242,7 +242,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Supported Argument</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAIM__SUPPORTED_ARGUMENT = eINSTANCE.getClaim_SupportedArgument();
@@ -251,7 +251,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Goal Decomposition Strategy</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAIM__GOAL_DECOMPOSITION_STRATEGY = eINSTANCE.getClaim_GoalDecompositionStrategy();
@@ -260,7 +260,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Evidence</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAIM__EVIDENCE = eINSTANCE.getClaim_Evidence();
@@ -269,7 +269,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAIM__BASE_CLASS = eINSTANCE.getClaim_Base_Class();
@@ -278,7 +278,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Justification</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CLAIM__JUSTIFICATION = eINSTANCE.getClaim_Justification();
@@ -287,7 +287,7 @@ public interface SafetycasePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind <em>Lifecycle Stage Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind
 		 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getLifecycleStageKind()
 		 * @generated
@@ -300,7 +300,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "safetycase";
@@ -309,7 +309,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Dependability/SafetyCase/1";
@@ -318,7 +318,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "SafetyCase";
@@ -327,7 +327,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SafetycasePackage eINSTANCE = org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl.init();
@@ -336,7 +336,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl <em>Safety Case</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getSafetyCase()
 	 * @generated
@@ -347,7 +347,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -357,7 +357,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -367,7 +367,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -377,7 +377,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -387,7 +387,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -397,7 +397,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Safety Case</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -407,7 +407,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Stage</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -417,7 +417,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Context</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -427,7 +427,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Ground</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -437,7 +437,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Warrant</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -447,7 +447,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Claim</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -457,7 +457,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -467,7 +467,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of structural features of the '<em>Safety Case</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -477,7 +477,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of operations of the '<em>Safety Case</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -487,7 +487,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.GroundImpl <em>Ground</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.GroundImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getGround()
 	 * @generated
@@ -498,7 +498,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -508,7 +508,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -518,7 +518,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -528,7 +528,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -538,7 +538,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -548,7 +548,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Safety Evidence</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -558,7 +558,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -568,7 +568,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Justification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -578,7 +578,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of structural features of the '<em>Ground</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -588,7 +588,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of operations of the '<em>Ground</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -598,7 +598,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.WarrantImpl <em>Warrant</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.WarrantImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getWarrant()
 	 * @generated
@@ -609,7 +609,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -619,7 +619,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -629,7 +629,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -639,7 +639,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -649,7 +649,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -659,7 +659,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Decomposed Goal</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -669,7 +669,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Evidence</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -679,7 +679,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -689,7 +689,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Justification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -699,7 +699,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of structural features of the '<em>Warrant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -709,7 +709,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of operations of the '<em>Warrant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -719,7 +719,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.ClaimImpl <em>Claim</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.ClaimImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getClaim()
 	 * @generated
@@ -730,7 +730,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -740,7 +740,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -750,7 +750,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -760,7 +760,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -770,7 +770,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -780,7 +780,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Safety Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -790,7 +790,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Supported Argument</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -800,7 +800,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -810,7 +810,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Justification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -820,7 +820,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Evidence</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -830,7 +830,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The feature id for the '<em><b>Goal Decomposition Strategy</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -840,7 +840,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of structural features of the '<em>Claim</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -851,7 +851,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The number of operations of the '<em>Claim</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -861,7 +861,7 @@ public interface SafetycasePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind <em>Lifecycle Stage Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycasePackageImpl#getLifecycleStageKind()
 	 * @generated
@@ -872,7 +872,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim <em>Claim</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Claim</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Claim
 	 * @generated
@@ -883,7 +883,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getEvidence <em>Evidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Evidence</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getEvidence()
 	 * @see #getClaim()
@@ -895,7 +895,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getGoalDecompositionStrategy <em>Goal Decomposition Strategy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Goal Decomposition Strategy</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getGoalDecompositionStrategy()
 	 * @see #getClaim()
@@ -907,7 +907,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getBase_Class()
 	 * @see #getClaim()
@@ -919,7 +919,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getJustification <em>Justification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Justification</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getJustification()
 	 * @see #getClaim()
@@ -931,7 +931,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getSafetyRequirement <em>Safety Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Safety Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getSafetyRequirement()
 	 * @see #getClaim()
@@ -943,7 +943,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getSupportedArgument <em>Supported Argument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Supported Argument</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Claim#getSupportedArgument()
 	 * @see #getClaim()
@@ -955,7 +955,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Ground <em>Ground</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Ground</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Ground
 	 * @generated
@@ -966,7 +966,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Ground#getJustification <em>Justification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Justification</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Ground#getJustification()
 	 * @see #getGround()
@@ -978,7 +978,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Ground#getSafetyEvidence <em>Safety Evidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Safety Evidence</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Ground#getSafetyEvidence()
 	 * @see #getGround()
@@ -990,7 +990,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Ground#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Ground#getBase_Class()
 	 * @see #getGround()
@@ -1002,7 +1002,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind <em>Lifecycle Stage Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Lifecycle Stage Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.LifecycleStageKind
 	 * @generated
@@ -1013,7 +1013,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase <em>Safety Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Safety Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase
 	 * @generated
@@ -1024,7 +1024,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getClaim <em>Claim</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Claim</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getClaim()
 	 * @see #getSafetyCase()
@@ -1036,7 +1036,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getBase_Class()
 	 * @see #getSafetyCase()
@@ -1048,7 +1048,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Context</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getContext()
 	 * @see #getSafetyCase()
@@ -1060,7 +1060,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getGround <em>Ground</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Ground</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getGround()
 	 * @see #getSafetyCase()
@@ -1072,7 +1072,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getSafetyCase <em>Safety Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Safety Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getSafetyCase()
 	 * @see #getSafetyCase()
@@ -1084,7 +1084,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getStage <em>Stage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stage</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getStage()
 	 * @see #getSafetyCase()
@@ -1096,7 +1096,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getWarrant <em>Warrant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Warrant</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetyCase#getWarrant()
 	 * @see #getSafetyCase()
@@ -1108,7 +1108,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1118,7 +1118,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant <em>Warrant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Warrant</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant
 	 * @generated
@@ -1129,7 +1129,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getDecomposedGoal <em>Decomposed Goal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Decomposed Goal</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getDecomposedGoal()
 	 * @see #getWarrant()
@@ -1141,7 +1141,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getEvidence <em>Evidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Evidence</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getEvidence()
 	 * @see #getWarrant()
@@ -1153,7 +1153,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getBase_Class()
 	 * @see #getWarrant()
@@ -1165,7 +1165,7 @@ public interface SafetycasePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getJustification <em>Justification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Justification</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetycase.Warrant#getJustification()
 	 * @see #getWarrant()

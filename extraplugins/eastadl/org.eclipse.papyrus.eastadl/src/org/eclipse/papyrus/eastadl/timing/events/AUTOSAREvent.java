@@ -30,7 +30,7 @@ public interface AUTOSAREvent extends Event {
 	 * If the meaning of the '<em>Ref</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ref</em>' reference.
 	 * @see #setRef(TimeEvent)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getAUTOSAREvent_Ref()
@@ -43,7 +43,7 @@ public interface AUTOSAREvent extends Event {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent#getRef <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Ref</em>' reference.
 	 * @see #getRef()

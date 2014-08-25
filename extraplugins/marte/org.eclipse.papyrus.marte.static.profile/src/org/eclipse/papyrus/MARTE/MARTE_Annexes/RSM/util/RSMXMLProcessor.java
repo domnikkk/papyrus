@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RSMXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class RSMXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RSMXMLProcessor() {
@@ -45,7 +45,7 @@ public class RSMXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the RSMResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

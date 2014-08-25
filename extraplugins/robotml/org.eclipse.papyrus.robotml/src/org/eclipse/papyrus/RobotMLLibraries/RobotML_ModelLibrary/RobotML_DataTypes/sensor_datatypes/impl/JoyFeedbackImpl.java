@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JoyFeedback;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
 
@@ -35,7 +32,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getTYPE_LED() <em>TYPE LED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTYPE_LED()
 	 * @generated
 	 * @ordered
@@ -46,7 +43,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getTYPE_LED() <em>TYPE LED</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTYPE_LED()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getTYPE_RUMBLE() <em>TYPE RUMBLE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTYPE_RUMBLE()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getTYPE_RUMBLE() <em>TYPE RUMBLE</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTYPE_RUMBLE()
 	 * @generated
 	 * @ordered
@@ -79,7 +76,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getTYPE_BUZZER() <em>TYPE BUZZER</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTYPE_BUZZER()
 	 * @generated
 	 * @ordered
@@ -90,7 +87,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getTYPE_BUZZER() <em>TYPE BUZZER</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTYPE_BUZZER()
 	 * @generated
 	 * @ordered
@@ -101,7 +98,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -112,7 +109,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -123,7 +120,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -134,7 +131,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -145,7 +142,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The default value of the '{@link #getIntensity() <em>Intensity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIntensity()
 	 * @generated
 	 * @ordered
@@ -156,7 +153,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	 * The cached value of the '{@link #getIntensity() <em>Intensity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIntensity()
 	 * @generated
 	 * @ordered
@@ -166,7 +163,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JoyFeedbackImpl() {
@@ -176,7 +173,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +184,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getTYPE_LED() {
@@ -197,7 +194,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTYPE_LED(char newTYPE_LED) {
@@ -211,7 +208,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getTYPE_RUMBLE() {
@@ -221,7 +218,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTYPE_RUMBLE(char newTYPE_RUMBLE) {
@@ -235,7 +232,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getTYPE_BUZZER() {
@@ -245,7 +242,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTYPE_BUZZER(char newTYPE_BUZZER) {
@@ -259,7 +256,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getType() {
@@ -269,7 +266,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setType(char newType) {
@@ -283,7 +280,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getId() {
@@ -293,7 +290,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setId(char newId) {
@@ -307,7 +304,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getIntensity() {
@@ -317,7 +314,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIntensity(float newIntensity) {
@@ -331,7 +328,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +353,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +384,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -418,7 +415,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -443,7 +440,7 @@ public class JoyFeedbackImpl extends MinimalEObjectImpl.Container implements Joy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

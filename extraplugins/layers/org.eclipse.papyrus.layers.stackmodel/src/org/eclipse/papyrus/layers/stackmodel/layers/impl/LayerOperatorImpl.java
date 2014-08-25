@@ -46,7 +46,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	 * The cached value of the '{@link #getLayers() <em>Layers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayers()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerOperatorImpl() {
@@ -66,7 +66,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +77,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -104,7 +104,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -152,7 +152,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 
 	/**
 	 * Propagate the change to children
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#setIsBranchEnabled(boolean)
 	 *
 	 * @param newIsBranchEnabled
@@ -275,7 +275,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	 * This method is called recursively by the parent of this element.
 	 *
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @throws LayersException
 	 * @generated NOT
 	 */
@@ -308,7 +308,7 @@ public abstract class LayerOperatorImpl extends LayerExpressionImpl implements L
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated unless we need it again
 	 * @generated NOT
 	 */

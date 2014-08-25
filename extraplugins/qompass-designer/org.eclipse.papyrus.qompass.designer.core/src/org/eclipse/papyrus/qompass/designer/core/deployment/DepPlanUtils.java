@@ -228,7 +228,7 @@ public class DepPlanUtils {
 
 	/**
 	 * Configure an attribute of an instance specification
-	 * 
+	 *
 	 * @param instance
 	 *            the instance specification
 	 * @param property
@@ -243,7 +243,7 @@ public class DepPlanUtils {
 
 	/**
 	 * Configure an attribute of an instance specification
-	 * 
+	 *
 	 * @param instance
 	 *            the instance specification
 	 * @param propertyName
@@ -263,7 +263,7 @@ public class DepPlanUtils {
 
 	/**
 	 * Configure an attribute of an instance specification
-	 * 
+	 *
 	 * @param instance
 	 *            the instance specification
 	 * @param attribute
@@ -290,7 +290,7 @@ public class DepPlanUtils {
 
 	/**
 	 * Configure an attribute of an instance specification
-	 * 
+	 *
 	 * @param instance
 	 *            the instance specification
 	 * @param property
@@ -305,7 +305,7 @@ public class DepPlanUtils {
 
 	/**
 	 * Configure an attribute of an instance specification
-	 * 
+	 *
 	 * @param instance
 	 *            the instance specification
 	 * @param propertyName
@@ -325,7 +325,7 @@ public class DepPlanUtils {
 
 	/**
 	 * Configure an attribute of an instance specification
-	 * 
+	 *
 	 * @param instance
 	 *            the instance specification
 	 * @param attribute

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface GCMFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	GCMFactory eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Flow Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Flow Property</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Flow Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Flow Port</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Client Server Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Client Server Port</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Client Server Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Client Server Specification</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Flow Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Flow Specification</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Client Server Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Client Server Feature</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Trigger</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Trigger</em>'.
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Invocation Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Invocation Action</em>'.
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Data Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Data Event</em>'.
 	 * @generated
 	 */
@@ -128,7 +128,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Data Pool</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Data Pool</em>'.
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns a new object of class '<em>Invocating Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Invocating Behavior</em>'.
 	 * @generated
 	 */
@@ -148,7 +148,7 @@ public interface GCMFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

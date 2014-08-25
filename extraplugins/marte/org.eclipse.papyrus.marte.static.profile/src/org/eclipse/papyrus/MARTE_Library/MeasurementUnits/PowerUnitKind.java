@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Power Unit Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.MeasurementUnitsPackage#getPowerUnitKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * The '<em><b>W</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #W_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * The '<em><b>MW</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MW_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * The '<em><b>KW</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #KW_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * If the meaning of '<em><b>W</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #W
 	 * @model
 	 * @generated
@@ -85,7 +85,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * If the meaning of '<em><b>MW</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MW
 	 * @model name="mW"
 	 * @generated
@@ -100,7 +100,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * If the meaning of '<em><b>KW</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #KW
 	 * @model
 	 * @generated
@@ -112,7 +112,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * An array of all the '<em><b>Power Unit Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final PowerUnitKind[] VALUES_ARRAY =
@@ -126,7 +126,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Power Unit Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<PowerUnitKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -135,7 +135,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * Returns the '<em><b>Power Unit Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PowerUnitKind get(String literal) {
@@ -152,7 +152,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * Returns the '<em><b>Power Unit Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PowerUnitKind getByName(String name) {
@@ -169,7 +169,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * Returns the '<em><b>Power Unit Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PowerUnitKind get(int value) {
@@ -187,7 +187,7 @@ public enum PowerUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -195,7 +195,7 @@ public enum PowerUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -203,7 +203,7 @@ public enum PowerUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -212,7 +212,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private PowerUnitKind(int value, String name, String literal) {
@@ -224,7 +224,7 @@ public enum PowerUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public enum PowerUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public enum PowerUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public enum PowerUnitKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

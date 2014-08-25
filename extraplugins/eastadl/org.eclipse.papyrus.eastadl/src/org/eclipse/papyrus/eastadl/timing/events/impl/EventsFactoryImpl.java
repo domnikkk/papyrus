@@ -38,14 +38,14 @@ import org.eclipse.papyrus.eastadl.timing.events.ModeEvent;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EventsFactory init() {
@@ -77,7 +77,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventsFactoryImpl() {
@@ -87,7 +87,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEventFunctionClientServerPortKindToString(EDataType eDataType, Object instanceValue) {
@@ -97,7 +97,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventFunctionClientServerPortKind createEventFunctionClientServerPortKindFromString(EDataType eDataType, String initialValue) {
@@ -241,7 +241,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

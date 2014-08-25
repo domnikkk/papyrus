@@ -14,15 +14,17 @@
 
 package org.eclipse.papyrus.layers.stackmodel.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Property;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Property;
 
 /**
  *

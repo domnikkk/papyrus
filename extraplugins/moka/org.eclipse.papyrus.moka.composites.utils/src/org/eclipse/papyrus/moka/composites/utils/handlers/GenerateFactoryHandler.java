@@ -39,7 +39,7 @@ public class GenerateFactoryHandler extends AbstractCompositeUtilsHandler {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor
 		 * , org.eclipse.core.runtime.IAdaptable)

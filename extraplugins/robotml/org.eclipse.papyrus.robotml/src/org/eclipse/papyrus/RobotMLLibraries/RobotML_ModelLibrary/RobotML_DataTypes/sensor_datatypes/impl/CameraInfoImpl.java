@@ -6,21 +6,15 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -51,7 +45,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -62,7 +56,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -73,7 +67,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -84,7 +78,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -95,7 +89,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -106,7 +100,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getDistorsion_model() <em>Distorsion model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDistorsion_model()
 	 * @generated
 	 * @ordered
@@ -117,7 +111,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getDistorsion_model() <em>Distorsion model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDistorsion_model()
 	 * @generated
 	 * @ordered
@@ -128,7 +122,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getD() <em>D</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getD()
 	 * @generated
 	 * @ordered
@@ -139,7 +133,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getK() <em>K</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getK()
 	 * @generated
 	 * @ordered
@@ -150,7 +144,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getR() <em>R</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getR()
 	 * @generated
 	 * @ordered
@@ -161,7 +155,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getP() <em>P</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getP()
 	 * @generated
 	 * @ordered
@@ -172,7 +166,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getBinning_x() <em>Binning x</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinning_x()
 	 * @generated
 	 * @ordered
@@ -183,7 +177,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getBinning_x() <em>Binning x</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinning_x()
 	 * @generated
 	 * @ordered
@@ -194,7 +188,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The default value of the '{@link #getBinning_y() <em>Binning y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinning_y()
 	 * @generated
 	 * @ordered
@@ -205,7 +199,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getBinning_y() <em>Binning y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBinning_y()
 	 * @generated
 	 * @ordered
@@ -216,7 +210,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	 * The cached value of the '{@link #getRoi() <em>Roi</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRoi()
 	 * @generated
 	 * @ordered
@@ -226,7 +220,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CameraInfoImpl() {
@@ -236,7 +230,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +241,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -257,7 +251,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -277,7 +271,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -302,7 +296,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getHeight() {
@@ -312,7 +306,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeight(long newHeight) {
@@ -326,7 +320,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getWidth() {
@@ -336,7 +330,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
@@ -350,7 +344,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDistorsion_model() {
@@ -360,7 +354,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDistorsion_model(String newDistorsion_model) {
@@ -374,7 +368,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getD() {
@@ -387,7 +381,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getK() {
@@ -400,7 +394,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getR() {
@@ -413,7 +407,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getP() {
@@ -426,7 +420,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getBinning_x() {
@@ -436,7 +430,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBinning_x(long newBinning_x) {
@@ -450,7 +444,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getBinning_y() {
@@ -460,7 +454,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBinning_y(long newBinning_y) {
@@ -474,7 +468,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RegionOfInterest getRoi() {
@@ -484,7 +478,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetRoi(RegionOfInterest newRoi, NotificationChain msgs) {
@@ -504,7 +498,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRoi(RegionOfInterest newRoi) {
@@ -529,7 +523,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -546,7 +540,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -581,7 +575,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -632,7 +626,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -678,7 +672,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -713,7 +707,7 @@ public class CameraInfoImpl extends MinimalEObjectImpl.Container implements Came
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

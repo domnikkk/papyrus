@@ -23,10 +23,10 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -53,7 +53,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	 * The cached value of the '{@link #getJavaProject() <em>Java Project</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJavaProject()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTJavaModelImpl() {
@@ -73,7 +73,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -114,7 +114,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -162,7 +162,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class JDTJavaModelImpl extends JDTParentJavaElementImpl implements JDTJav
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

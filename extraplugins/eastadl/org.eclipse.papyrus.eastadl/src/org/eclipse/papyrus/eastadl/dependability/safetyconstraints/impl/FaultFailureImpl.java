@@ -55,7 +55,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	 * The cached value of the '{@link #getAnomaly() <em>Anomaly</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAnomaly()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FaultFailureImpl() {
@@ -86,7 +86,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -151,7 +151,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -192,7 +192,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public class FaultFailureImpl extends TraceableSpecificationImpl implements Faul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EAValue basicGetFaultFailureValue() {

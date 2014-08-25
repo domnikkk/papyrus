@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintWithVSLlFactory
  * @model kind="package"
  * @generated
@@ -31,7 +31,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "constraintWithVSLl";
@@ -40,7 +40,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/marte/textedit/constraintwithvsl/xtext/ConstraintWithVSLl";
@@ -49,7 +49,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "constraintWithVSLl";
@@ -58,7 +58,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ConstraintWithVSLlPackage eINSTANCE = org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintWithVSLlPackageImpl.init();
@@ -67,7 +67,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintRuleImpl <em>Constraint Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintRuleImpl
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintWithVSLlPackageImpl#getConstraintRule()
 	 * @generated
@@ -78,7 +78,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The feature id for the '<em><b>Specification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -88,7 +88,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The number of structural features of the '<em>Constraint Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintSpecificationImpl <em>Constraint Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintSpecificationImpl
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintWithVSLlPackageImpl#getConstraintSpecification()
 	 * @generated
@@ -109,7 +109,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -119,7 +119,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * The number of structural features of the '<em>Constraint Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,7 +130,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintRule <em>Constraint Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constraint Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintRule
 	 * @generated
@@ -141,7 +141,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintRule#getSpecification <em>Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Specification</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintRule#getSpecification()
 	 * @see #getConstraintRule()
@@ -153,7 +153,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification <em>Constraint Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constraint Specification</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification
 	 * @generated
@@ -164,7 +164,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification#getExpression()
 	 * @see #getConstraintSpecification()
@@ -176,7 +176,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -192,7 +192,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -200,7 +200,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintRuleImpl <em>Constraint Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintRuleImpl
 		 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintWithVSLlPackageImpl#getConstraintRule()
 		 * @generated
@@ -211,7 +211,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Specification</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONSTRAINT_RULE__SPECIFICATION = eINSTANCE.getConstraintRule_Specification();
@@ -220,7 +220,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintSpecificationImpl <em>Constraint Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintSpecificationImpl
 		 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl.ConstraintWithVSLlPackageImpl#getConstraintSpecification()
 		 * @generated
@@ -231,7 +231,7 @@ public interface ConstraintWithVSLlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONSTRAINT_SPECIFICATION__EXPRESSION = eINSTANCE.getConstraintSpecification_Expression();

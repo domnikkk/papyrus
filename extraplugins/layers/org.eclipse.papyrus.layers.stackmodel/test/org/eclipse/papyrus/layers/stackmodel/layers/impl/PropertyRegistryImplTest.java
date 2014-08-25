@@ -10,7 +10,10 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import org.eclipse.papyrus.layers.stackmodel.NotFoundException;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -136,7 +139,7 @@ public class PropertyRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getPropertyIndex(java.lang.String)}.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test
@@ -154,7 +157,7 @@ public class PropertyRegistryImplTest {
 
 	/**
 	 * Add a new Property and test if the index is correctly set.
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	@Test

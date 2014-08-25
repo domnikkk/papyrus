@@ -17,7 +17,7 @@ import org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 
 /**
  * A fake custom operator for tests purpose.
- * 
+ *
  * @author cedric dumoulin
  *
  */

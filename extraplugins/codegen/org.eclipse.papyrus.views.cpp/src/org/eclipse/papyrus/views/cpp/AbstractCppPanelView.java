@@ -38,7 +38,7 @@ public abstract class AbstractCppPanelView extends ViewPart implements ISelectio
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#createPartControl(org.eclipse.swt.widgets.Composite)
 	 */
 	@Override
@@ -50,7 +50,7 @@ public abstract class AbstractCppPanelView extends ViewPart implements ISelectio
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
 	 */
 	@Override
@@ -90,7 +90,7 @@ public abstract class AbstractCppPanelView extends ViewPart implements ISelectio
 	 * Creates the new panel, when switching UI.
 	 * <p>
 	 * This class should be overloaded when working with RSA or other tools, using a new PanelFactory
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the new panel
 	 * @param style

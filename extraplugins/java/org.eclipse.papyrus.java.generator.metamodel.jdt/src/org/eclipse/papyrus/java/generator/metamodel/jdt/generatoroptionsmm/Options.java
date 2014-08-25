@@ -39,7 +39,7 @@ public interface Options extends EObject {
 	 * If the meaning of the '<em>Default Source Folder</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Default Source Folder</em>' attribute.
 	 * @see #setDefaultSourceFolder(String)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmPackage#getOptions_DefaultSourceFolder()
@@ -52,7 +52,7 @@ public interface Options extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Options#getDefaultSourceFolder <em>Default Source Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Default Source Folder</em>' attribute.
 	 * @see #getDefaultSourceFolder()

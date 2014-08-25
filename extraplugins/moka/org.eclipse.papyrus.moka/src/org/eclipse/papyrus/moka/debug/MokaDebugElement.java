@@ -49,7 +49,7 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugElement#getModelIdentifier()
 	 */
 	public String getModelIdentifier() {
@@ -58,7 +58,7 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugElement#getDebugTarget()
 	 */
 	public IDebugTarget getDebugTarget() {
@@ -67,7 +67,7 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugElement#getLaunch()
 	 */
 	public ILaunch getLaunch() {
@@ -76,7 +76,7 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
 	@Override

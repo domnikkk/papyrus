@@ -46,7 +46,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	 * The default value of the '{@link #getInterpretation() <em>Interpretation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterpretation()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	 * The cached value of the '{@link #getInterpretation() <em>Interpretation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterpretation()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TimedConstraintImpl() {
@@ -88,7 +88,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -177,7 +177,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

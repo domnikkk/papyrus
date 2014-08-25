@@ -5,16 +5,12 @@ package org.eclipse.papyrus.eastadl.annex.computationconstraint.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationConstraint;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalPath;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
 
 /**
@@ -36,7 +32,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	 * The cached value of the '{@link #getLogicalPath() <em>Logical Path</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLogicalPath()
 	 * @generated
 	 * @ordered
@@ -47,7 +43,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	 * The cached value of the '{@link #getLogicalTransformation() <em>Logical Transformation</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLogicalTransformation()
 	 * @generated
 	 * @ordered
@@ -57,7 +53,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComputationConstraintImpl() {
@@ -67,7 +63,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +74,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +88,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +102,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +119,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -145,7 +141,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +160,7 @@ public class ComputationConstraintImpl extends EAElementImpl implements Computat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

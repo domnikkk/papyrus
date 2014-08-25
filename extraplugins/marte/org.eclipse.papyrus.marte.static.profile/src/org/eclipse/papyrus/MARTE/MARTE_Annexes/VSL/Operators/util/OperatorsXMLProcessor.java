@@ -17,7 +17,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.OperatorsPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class OperatorsXMLProcessor extends XMLProcessor {
@@ -26,7 +26,7 @@ public class OperatorsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OperatorsXMLProcessor() {
@@ -38,7 +38,7 @@ public class OperatorsXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the OperatorsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

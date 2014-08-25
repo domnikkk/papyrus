@@ -41,7 +41,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDisplayName()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The default value of the '{@link #getClassnameKind() <em>Classname Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassnameKind()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getClassnameKind() <em>Classname Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassnameKind()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InstanciableElementImpl() {
@@ -160,7 +160,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +301,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public abstract class InstanciableElementImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

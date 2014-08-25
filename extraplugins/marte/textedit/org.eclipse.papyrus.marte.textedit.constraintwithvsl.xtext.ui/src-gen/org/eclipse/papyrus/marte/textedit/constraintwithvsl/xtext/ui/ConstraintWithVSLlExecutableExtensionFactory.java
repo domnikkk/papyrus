@@ -3,12 +3,11 @@
  */
 package org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui;
 
+import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.internal.ConstraintWithVSLlActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
-
-import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.internal.ConstraintWithVSLlActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

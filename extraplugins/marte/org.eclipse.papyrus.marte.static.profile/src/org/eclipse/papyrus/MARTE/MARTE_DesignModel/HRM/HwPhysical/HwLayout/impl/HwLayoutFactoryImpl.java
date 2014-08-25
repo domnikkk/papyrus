@@ -30,7 +30,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.HwLay
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory {
@@ -38,7 +38,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwLayoutFactory init() {
@@ -57,7 +57,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwLayoutFactoryImpl() {
@@ -67,7 +67,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComponentKind createComponentKindFromString(EDataType eDataType, String initialValue) {
@@ -153,7 +153,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertComponentKindToString(EDataType eDataType, Object instanceValue) {
@@ -163,7 +163,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConditionType createConditionTypeFromString(EDataType eDataType, String initialValue) {
@@ -177,7 +177,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertConditionTypeToString(EDataType eDataType, Object instanceValue) {
@@ -187,7 +187,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComponentState createComponentStateFromString(EDataType eDataType, String initialValue) {
@@ -201,7 +201,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertComponentStateToString(EDataType eDataType, Object instanceValue) {
@@ -211,7 +211,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createEnv_ConditionFromString(EDataType eDataType, String initialValue) {
@@ -221,7 +221,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEnv_ConditionToString(EDataType eDataType, Object instanceValue) {
@@ -231,7 +231,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class HwLayoutFactoryImpl extends EFactoryImpl implements HwLayoutFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

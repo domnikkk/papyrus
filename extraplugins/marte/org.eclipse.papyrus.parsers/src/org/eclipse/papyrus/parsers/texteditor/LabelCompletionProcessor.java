@@ -50,7 +50,7 @@ public class LabelCompletionProcessor implements IContentAssistProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.text.contentassist.IContentAssistProcessor#computeCompletionProposals(org
 	 * .eclipse.jface.text.ITextViewer, int)
@@ -69,7 +69,7 @@ public class LabelCompletionProcessor implements IContentAssistProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.text.contentassist.IContentAssistProcessor#computeContextInformation(org
 	 * .eclipse.jface.text.ITextViewer, int)

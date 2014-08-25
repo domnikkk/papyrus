@@ -30,7 +30,7 @@ public interface BehaviorConstraintPrototype_functionTargetInstanceRef extends I
 	 * If the meaning of the '<em>Function Prototype target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Prototype target</em>' reference.
 	 * @see #setFunctionPrototype_target(FunctionPrototype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_target()
@@ -43,7 +43,7 @@ public interface BehaviorConstraintPrototype_functionTargetInstanceRef extends I
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_functionTargetInstanceRef#getFunctionPrototype_target <em>Function Prototype target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function Prototype target</em>' reference.
 	 * @see #getFunctionPrototype_target()
@@ -59,7 +59,7 @@ public interface BehaviorConstraintPrototype_functionTargetInstanceRef extends I
 	 * If the meaning of the '<em>Function Prototype context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Prototype context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintPrototype_functionTargetInstanceRef_FunctionPrototype_context()
 	 * @model ordered="false"

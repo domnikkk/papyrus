@@ -66,7 +66,7 @@ public class LayerImplGetComputeCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -111,7 +111,7 @@ public class LayerImplGetComputeCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl#getViewsComputePropertyValueCommand(java.util.List, org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -177,7 +177,7 @@ public class LayerImplGetComputeCommandTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl#getPropertiesComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, java.util.List)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

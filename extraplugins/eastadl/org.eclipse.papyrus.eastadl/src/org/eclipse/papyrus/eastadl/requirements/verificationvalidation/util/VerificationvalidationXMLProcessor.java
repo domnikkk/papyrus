@@ -13,7 +13,7 @@ import org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verificat
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VerificationvalidationXMLProcessor extends XMLProcessor {
@@ -22,7 +22,7 @@ public class VerificationvalidationXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VerificationvalidationXMLProcessor() {
@@ -34,7 +34,7 @@ public class VerificationvalidationXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the VerificationvalidationResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

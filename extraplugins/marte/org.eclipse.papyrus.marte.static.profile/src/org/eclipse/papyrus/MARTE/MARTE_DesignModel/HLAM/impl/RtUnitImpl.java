@@ -55,7 +55,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #isIsDynamic() <em>Is Dynamic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsDynamic()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #isIsDynamic() <em>Is Dynamic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsDynamic()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #isIsMain() <em>Is Main</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMain()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #isIsMain() <em>Is Main</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMain()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #getSrPoolSize() <em>Sr Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrPoolSize()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getSrPoolSize() <em>Sr Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrPoolSize()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #getSrPoolPolicy() <em>Sr Pool Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrPoolPolicy()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getSrPoolPolicy() <em>Sr Pool Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrPoolPolicy()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #getSrPoolWaitingTime() <em>Sr Pool Waiting Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrPoolWaitingTime()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getSrPoolWaitingTime() <em>Sr Pool Waiting Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSrPoolWaitingTime()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getOperationalMode() <em>Operational Mode</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperationalMode()
 	 * @generated
 	 * @ordered
@@ -176,7 +176,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getMain() <em>Main</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMain()
 	 * @generated
 	 * @ordered
@@ -187,7 +187,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -198,7 +198,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -209,7 +209,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getBase_BehavioredClassifier() <em>Base Behaviored Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioredClassifier()
 	 * @generated
 	 * @ordered
@@ -220,7 +220,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #getQueueSchedPolicy() <em>Queue Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQueueSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -231,7 +231,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getQueueSchedPolicy() <em>Queue Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQueueSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -242,7 +242,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #getQueueSize() <em>Queue Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQueueSize()
 	 * @generated
 	 * @ordered
@@ -253,7 +253,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getQueueSize() <em>Queue Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQueueSize()
 	 * @generated
 	 * @ordered
@@ -264,7 +264,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The default value of the '{@link #getMsgMaxSize() <em>Msg Max Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMsgMaxSize()
 	 * @generated
 	 * @ordered
@@ -275,7 +275,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	 * The cached value of the '{@link #getMsgMaxSize() <em>Msg Max Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMsgMaxSize()
 	 * @generated
 	 * @ordered
@@ -285,7 +285,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RtUnitImpl() {
@@ -295,7 +295,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +332,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +343,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +358,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +369,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +384,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -410,7 +410,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -421,7 +421,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -436,7 +436,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -456,7 +456,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetOperationalMode() {
@@ -466,7 +466,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +481,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -501,7 +501,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetMain() {
@@ -511,7 +511,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -526,7 +526,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -537,7 +537,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -552,7 +552,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -572,7 +572,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioredClassifier basicGetBase_BehavioredClassifier() {
@@ -582,7 +582,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -597,7 +597,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -608,7 +608,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -623,7 +623,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -634,7 +634,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -649,7 +649,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -660,7 +660,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -675,7 +675,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -721,7 +721,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -770,7 +770,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -819,7 +819,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -856,7 +856,7 @@ public class RtUnitImpl extends EObjectImpl implements RtUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

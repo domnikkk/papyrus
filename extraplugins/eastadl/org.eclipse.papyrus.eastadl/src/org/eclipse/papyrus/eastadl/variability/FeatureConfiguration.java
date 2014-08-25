@@ -60,7 +60,7 @@ public interface FeatureConfiguration extends ConfigurationDecisionModel {
 	 * If the meaning of the '<em>Configured Feature Model</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Configured Feature Model</em>' reference.
 	 * @see #setConfiguredFeatureModel(FeatureModel)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getFeatureConfiguration_ConfiguredFeatureModel()
@@ -73,7 +73,7 @@ public interface FeatureConfiguration extends ConfigurationDecisionModel {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.FeatureConfiguration#getConfiguredFeatureModel <em>Configured Feature Model</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Configured Feature Model</em>' reference.
 	 * @see #getConfiguredFeatureModel()

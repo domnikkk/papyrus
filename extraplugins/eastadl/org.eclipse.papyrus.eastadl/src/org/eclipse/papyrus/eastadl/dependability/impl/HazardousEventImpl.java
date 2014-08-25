@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.dependability.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -65,7 +66,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -76,7 +77,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The default value of the '{@link #getControllability() <em>Controllability</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getControllability()
 	 * @generated
 	 * @ordered
@@ -87,7 +88,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getControllability() <em>Controllability</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getControllability()
 	 * @generated
 	 * @ordered
@@ -98,7 +99,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The default value of the '{@link #getExposure() <em>Exposure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExposure()
 	 * @generated
 	 * @ordered
@@ -109,7 +110,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getExposure() <em>Exposure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExposure()
 	 * @generated
 	 * @ordered
@@ -120,7 +121,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The default value of the '{@link #getHazardClassification() <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHazardClassification()
 	 * @generated
 	 * @ordered
@@ -131,7 +132,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getHazardClassification() <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHazardClassification()
 	 * @generated
 	 * @ordered
@@ -142,7 +143,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -153,7 +154,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -164,7 +165,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The default value of the '{@link #getClassificationAssumptions() <em>Classification Assumptions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassificationAssumptions()
 	 * @generated
 	 * @ordered
@@ -175,7 +176,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getClassificationAssumptions() <em>Classification Assumptions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassificationAssumptions()
 	 * @generated
 	 * @ordered
@@ -186,7 +187,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getHazard() <em>Hazard</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHazard()
 	 * @generated
 	 * @ordered
@@ -197,7 +198,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getTraffic() <em>Traffic</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTraffic()
 	 * @generated
 	 * @ordered
@@ -208,7 +209,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getEnvironment() <em>Environment</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnvironment()
 	 * @generated
 	 * @ordered
@@ -219,7 +220,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getOperationalSituationUseCase() <em>Operational Situation Use Case</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperationalSituationUseCase()
 	 * @generated
 	 * @ordered
@@ -230,7 +231,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getOperatingMode() <em>Operating Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperatingMode()
 	 * @generated
 	 * @ordered
@@ -241,7 +242,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	 * The cached value of the '{@link #getExternalMeasures() <em>External Measures</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExternalMeasures()
 	 * @generated
 	 * @ordered
@@ -251,7 +252,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HazardousEventImpl() {
@@ -261,7 +262,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +302,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +339,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -394,7 +395,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +406,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -425,7 +426,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -435,7 +436,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -450,7 +451,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -499,7 +500,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -510,7 +511,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -521,7 +522,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -535,7 +536,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -546,7 +547,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -560,7 +561,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -574,7 +575,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -585,7 +586,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -600,7 +601,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -614,7 +615,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -628,7 +629,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -639,7 +640,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -653,7 +654,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -668,7 +669,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -683,7 +684,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -698,7 +699,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -713,7 +714,7 @@ public class HazardousEventImpl extends TraceableSpecificationImpl implements Ha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

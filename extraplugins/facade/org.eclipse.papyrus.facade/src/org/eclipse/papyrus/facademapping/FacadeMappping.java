@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.facademapping;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,7 +41,7 @@ public interface FacadeMappping extends EObject {
 	 * If the meaning of the '<em>Mappings</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mappings</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facademapping.FacademappingPackage#getFacadeMappping_Mappings()
 	 * @model containment="true"

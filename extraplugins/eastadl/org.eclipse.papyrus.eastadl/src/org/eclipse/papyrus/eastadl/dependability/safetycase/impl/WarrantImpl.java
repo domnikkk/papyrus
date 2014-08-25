@@ -52,7 +52,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	 * The cached value of the '{@link #getDecomposedGoal() <em>Decomposed Goal</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDecomposedGoal()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	 * The cached value of the '{@link #getEvidence() <em>Evidence</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvidence()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	 * The cached value of the '{@link #getJustification() <em>Justification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJustification()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected WarrantImpl() {
@@ -105,7 +105,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -179,7 +179,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +243,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -273,7 +273,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +288,7 @@ public class WarrantImpl extends TraceableSpecificationImpl implements Warrant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

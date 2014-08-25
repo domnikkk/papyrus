@@ -30,7 +30,7 @@ public class HwI_OImpl extends HwDeviceImpl implements HwI_O {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwI_OImpl() {
@@ -40,7 +40,7 @@ public class HwI_OImpl extends HwDeviceImpl implements HwI_O {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

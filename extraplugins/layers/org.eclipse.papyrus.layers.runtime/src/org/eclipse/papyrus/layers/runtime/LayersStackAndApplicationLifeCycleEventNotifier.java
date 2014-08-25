@@ -166,7 +166,7 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean isDisposed() {
@@ -275,7 +275,7 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeLayersModelEventListener(ILayersStackApplicationEventListener listener) {
@@ -296,7 +296,7 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeLayersStackApplicationLifeCycleEventListener(ILayersModelRootEventListener listener) {

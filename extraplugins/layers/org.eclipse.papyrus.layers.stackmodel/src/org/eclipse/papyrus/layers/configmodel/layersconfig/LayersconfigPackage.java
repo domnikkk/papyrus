@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigFactory
  * @model kind="package"
  * @generated
@@ -42,7 +42,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "layersconfig";
@@ -51,7 +51,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "org.eclipse.papyrus.layersconfig.0.10";
@@ -60,7 +60,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "layersconfig";
@@ -69,7 +69,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	LayersconfigPackage eINSTANCE = org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl.init();
@@ -78,7 +78,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderElementImpl <em>Folder Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderElementImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getFolderElement()
 	 * @generated
@@ -89,7 +89,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -99,7 +99,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Folder Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -109,7 +109,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Folder Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -119,7 +119,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderImpl <em>Folder</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getFolder()
 	 * @generated
@@ -130,7 +130,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -140,7 +140,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Folder Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -150,7 +150,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Folder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +160,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Folder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -170,7 +170,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl <em>Instanciable Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getInstanciableElement()
 	 * @generated
@@ -181,7 +181,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -191,7 +191,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -201,7 +201,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +211,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +221,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -231,7 +231,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -241,7 +241,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Instanciable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -251,7 +251,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Instanciable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -261,7 +261,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorConfigImpl <em>Layer Operator Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorConfigImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getLayerOperatorConfig()
 	 * @generated
@@ -272,7 +272,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -282,7 +282,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -292,7 +292,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -302,7 +302,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -312,7 +312,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -322,7 +322,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +332,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Operator Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -342,7 +342,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The operation id for the '<em>Create Layers Operator Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -352,7 +352,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Operator Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -362,7 +362,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorConfigImpl <em>Operator Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorConfigImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getOperatorConfig()
 	 * @generated
@@ -373,7 +373,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -383,7 +383,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -393,7 +393,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -403,7 +403,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -413,7 +413,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -423,7 +423,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -433,7 +433,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Operator Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -443,7 +443,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The operation id for the '<em>Create Operator Descriptor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -453,7 +453,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Operator Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -463,7 +463,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.PropertyIdImpl <em>Property Id</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.PropertyIdImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getPropertyId()
 	 * @generated
@@ -474,7 +474,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -484,7 +484,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -494,7 +494,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -504,7 +504,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Property Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -514,7 +514,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.TypeConfigImpl <em>Type Config</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.TypeConfigImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getTypeConfig()
 	 * @generated
@@ -525,7 +525,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -535,7 +535,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Type Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -545,7 +545,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Type Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -555,7 +555,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl <em>Layer Operator Multiple Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getLayerOperatorMultipleBinding()
 	 * @generated
@@ -566,7 +566,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -576,7 +576,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Config</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -586,7 +586,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -596,7 +596,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Layer Operator Multiple Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -606,7 +606,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Layer Operator Multiple Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -616,7 +616,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl <em>Operator Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getOperatorBinding()
 	 * @generated
@@ -627,7 +627,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Operator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -637,7 +637,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Layer Operator Config</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -647,7 +647,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -657,7 +657,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -667,7 +667,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of structural features of the '<em>Operator Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -677,7 +677,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The number of operations of the '<em>Operator Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -687,7 +687,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind <em>Classname Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getClassnameKind()
 	 * @generated
@@ -698,7 +698,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '<em>String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getString()
 	 * @generated
@@ -710,7 +710,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '<em>Instanciation Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.InstanciationException
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getInstanciationException()
 	 * @generated
@@ -721,7 +721,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '<em>Layer Operator Descriptor</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getLayerOperatorDescriptor()
 	 * @generated
@@ -733,7 +733,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * The meta object id for the '<em>Property Operator</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getPropertyOperator()
 	 * @generated
@@ -745,7 +745,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.Folder <em>Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Folder</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.Folder
 	 * @generated
@@ -756,7 +756,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.Folder#getFolderElements <em>Folder Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Folder Elements</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.Folder#getFolderElements()
 	 * @see #getFolder()
@@ -768,7 +768,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement <em>Folder Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Folder Element</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement
 	 * @generated
@@ -779,7 +779,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement#getName()
 	 * @see #getFolderElement()
@@ -791,7 +791,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig <em>Layer Operator Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Operator Config</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig
 	 * @generated
@@ -802,7 +802,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig#createLayersOperatorDescriptor() <em>Create Layers Operator Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Create Layers Operator Descriptor</em>' operation.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig#createLayersOperatorDescriptor()
 	 * @generated
@@ -813,7 +813,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement <em>Instanciable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Instanciable Element</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement
 	 * @generated
@@ -824,7 +824,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getClassname <em>Classname</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Classname</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getClassname()
 	 * @see #getInstanciableElement()
@@ -836,7 +836,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getBundleID <em>Bundle ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Bundle ID</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getBundleID()
 	 * @see #getInstanciableElement()
@@ -848,7 +848,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getDisplayName <em>Display Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Display Name</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getDisplayName()
 	 * @see #getInstanciableElement()
@@ -860,7 +860,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getIconPath <em>Icon Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Icon Path</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getIconPath()
 	 * @see #getInstanciableElement()
@@ -872,7 +872,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getClassnameKind <em>Classname Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Classname Kind</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciableElement#getClassnameKind()
 	 * @see #getInstanciableElement()
@@ -884,7 +884,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig <em>Operator Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Operator Config</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig
 	 * @generated
@@ -895,7 +895,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig#createOperatorDescriptor() <em>Create Operator Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Create Operator Descriptor</em>' operation.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig#createOperatorDescriptor()
 	 * @generated
@@ -906,7 +906,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId <em>Property Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Id</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId
 	 * @generated
@@ -917,7 +917,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId#getType()
 	 * @see #getPropertyId()
@@ -929,7 +929,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig <em>Type Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Type Config</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig
 	 * @generated
@@ -940,7 +940,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding <em>Layer Operator Multiple Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Layer Operator Multiple Binding</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding
 	 * @generated
@@ -951,7 +951,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding#getLayerOperatorConfig <em>Layer Operator Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Layer Operator Config</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding#getLayerOperatorConfig()
 	 * @see #getLayerOperatorMultipleBinding()
@@ -963,7 +963,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding#getBindings <em>Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Bindings</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding#getBindings()
 	 * @see #getLayerOperatorMultipleBinding()
@@ -975,7 +975,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding <em>Operator Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Operator Binding</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding
 	 * @generated
@@ -986,7 +986,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getOperator()
 	 * @see #getOperatorBinding()
@@ -998,7 +998,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getLayerOperatorConfig <em>Layer Operator Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Layer Operator Config</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getLayerOperatorConfig()
 	 * @see #getOperatorBinding()
@@ -1010,7 +1010,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getPropertyId <em>Property Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property Id</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getPropertyId()
 	 * @see #getOperatorBinding()
@@ -1022,7 +1022,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Owner</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getOwner()
 	 * @see #getOperatorBinding()
@@ -1034,7 +1034,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind <em>Classname Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Classname Kind</em>'.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind
 	 * @generated
@@ -1045,7 +1045,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -1057,7 +1057,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.InstanciationException <em>Instanciation Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Instanciation Exception</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.InstanciationException
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.InstanciationException"
@@ -1069,7 +1069,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor <em>Layer Operator Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Layer Operator Descriptor</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor"
@@ -1081,7 +1081,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator <em>Property Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Property Operator</em>'.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator
 	 * @model instanceClass="org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator"
@@ -1093,7 +1093,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1110,7 +1110,7 @@ public interface LayersconfigPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1118,7 +1118,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderImpl <em>Folder</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getFolder()
 		 * @generated
@@ -1129,7 +1129,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Folder Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FOLDER__FOLDER_ELEMENTS = eINSTANCE.getFolder_FolderElements();
@@ -1138,7 +1138,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderElementImpl <em>Folder Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderElementImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getFolderElement()
 		 * @generated
@@ -1149,7 +1149,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FOLDER_ELEMENT__NAME = eINSTANCE.getFolderElement_Name();
@@ -1158,7 +1158,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorConfigImpl <em>Layer Operator Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorConfigImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getLayerOperatorConfig()
 		 * @generated
@@ -1169,7 +1169,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Layers Operator Descriptor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation LAYER_OPERATOR_CONFIG___CREATE_LAYERS_OPERATOR_DESCRIPTOR = eINSTANCE.getLayerOperatorConfig__CreateLayersOperatorDescriptor();
@@ -1178,7 +1178,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl <em>Instanciable Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.InstanciableElementImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getInstanciableElement()
 		 * @generated
@@ -1189,7 +1189,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Classname</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTANCIABLE_ELEMENT__CLASSNAME = eINSTANCE.getInstanciableElement_Classname();
@@ -1198,7 +1198,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bundle ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTANCIABLE_ELEMENT__BUNDLE_ID = eINSTANCE.getInstanciableElement_BundleID();
@@ -1207,7 +1207,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTANCIABLE_ELEMENT__DISPLAY_NAME = eINSTANCE.getInstanciableElement_DisplayName();
@@ -1216,7 +1216,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTANCIABLE_ELEMENT__ICON_PATH = eINSTANCE.getInstanciableElement_IconPath();
@@ -1225,7 +1225,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Classname Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTANCIABLE_ELEMENT__CLASSNAME_KIND = eINSTANCE.getInstanciableElement_ClassnameKind();
@@ -1234,7 +1234,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorConfigImpl <em>Operator Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorConfigImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getOperatorConfig()
 		 * @generated
@@ -1245,7 +1245,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Operator Descriptor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation OPERATOR_CONFIG___CREATE_OPERATOR_DESCRIPTOR = eINSTANCE.getOperatorConfig__CreateOperatorDescriptor();
@@ -1254,7 +1254,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.PropertyIdImpl <em>Property Id</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.PropertyIdImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getPropertyId()
 		 * @generated
@@ -1265,7 +1265,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_ID__TYPE = eINSTANCE.getPropertyId_Type();
@@ -1274,7 +1274,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.TypeConfigImpl <em>Type Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.TypeConfigImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getTypeConfig()
 		 * @generated
@@ -1285,7 +1285,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl <em>Layer Operator Multiple Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getLayerOperatorMultipleBinding()
 		 * @generated
@@ -1296,7 +1296,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Operator Config</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG = eINSTANCE.getLayerOperatorMultipleBinding_LayerOperatorConfig();
@@ -1305,7 +1305,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS = eINSTANCE.getLayerOperatorMultipleBinding_Bindings();
@@ -1314,7 +1314,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl <em>Operator Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getOperatorBinding()
 		 * @generated
@@ -1325,7 +1325,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Operator</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference OPERATOR_BINDING__OPERATOR = eINSTANCE.getOperatorBinding_Operator();
@@ -1334,7 +1334,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layer Operator Config</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference OPERATOR_BINDING__LAYER_OPERATOR_CONFIG = eINSTANCE.getOperatorBinding_LayerOperatorConfig();
@@ -1343,7 +1343,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference OPERATOR_BINDING__PROPERTY_ID = eINSTANCE.getOperatorBinding_PropertyId();
@@ -1352,7 +1352,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owner</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference OPERATOR_BINDING__OWNER = eINSTANCE.getOperatorBinding_Owner();
@@ -1361,7 +1361,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind <em>Classname Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.ClassnameKind
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getClassnameKind()
 		 * @generated
@@ -1372,7 +1372,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em>String</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getString()
 		 * @generated
@@ -1383,7 +1383,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em>Instanciation Exception</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.InstanciationException
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getInstanciationException()
 		 * @generated
@@ -1394,7 +1394,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em>Layer Operator Descriptor</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getLayerOperatorDescriptor()
 		 * @generated
@@ -1405,7 +1405,7 @@ public interface LayersconfigPackage extends EPackage {
 		 * The meta object literal for the '<em>Property Operator</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator
 		 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayersconfigPackageImpl#getPropertyOperator()
 		 * @generated

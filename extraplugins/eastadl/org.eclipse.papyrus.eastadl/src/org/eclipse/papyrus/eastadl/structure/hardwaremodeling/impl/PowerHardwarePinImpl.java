@@ -33,7 +33,7 @@ public class PowerHardwarePinImpl extends HardwarePinImpl implements PowerHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PowerHardwarePinImpl() {
@@ -43,7 +43,7 @@ public class PowerHardwarePinImpl extends HardwarePinImpl implements PowerHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

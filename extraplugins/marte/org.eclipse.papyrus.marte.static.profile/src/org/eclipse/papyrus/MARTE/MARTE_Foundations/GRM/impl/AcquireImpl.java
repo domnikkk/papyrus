@@ -37,7 +37,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	 * The default value of the '{@link #isIsBlocking() <em>Is Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBlocking()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	 * The cached value of the '{@link #isIsBlocking() <em>Is Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsBlocking()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AcquireImpl() {
@@ -68,7 +68,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

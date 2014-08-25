@@ -31,7 +31,7 @@ public interface FaultFailurePropagationLink_fromPortInstanceRef extends Instanc
 	 * If the meaning of the '<em>Fault Fairelure Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fault Fairelure Port</em>' reference.
 	 * @see #setFaultFairelurePort(FaultFailurePort)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getFaultFailurePropagationLink_fromPortInstanceRef_FaultFairelurePort()
@@ -44,7 +44,7 @@ public interface FaultFailurePropagationLink_fromPortInstanceRef extends Instanc
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePropagationLink_fromPortInstanceRef#getFaultFairelurePort <em>Fault Fairelure Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Fault Fairelure Port</em>' reference.
 	 * @see #getFaultFairelurePort()
@@ -60,7 +60,7 @@ public interface FaultFailurePropagationLink_fromPortInstanceRef extends Instanc
 	 * If the meaning of the '<em>Error Model Prototype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Error Model Prototype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getFaultFailurePropagationLink_fromPortInstanceRef_ErrorModelPrototype()
 	 * @model ordered="false"

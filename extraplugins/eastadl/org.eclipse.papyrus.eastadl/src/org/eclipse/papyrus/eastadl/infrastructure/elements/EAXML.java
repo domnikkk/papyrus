@@ -33,7 +33,7 @@ public interface EAXML extends EObject {
 	 * If the meaning of the '<em>Admindocument Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Admindocument Version</em>' attribute.
 	 * @see #setAdmindocumentVersion(String)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAXML_AdmindocumentVersion()
@@ -47,7 +47,7 @@ public interface EAXML extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAXML#getAdmindocumentVersion <em>Admindocument Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Admindocument Version</em>' attribute.
 	 * @see #getAdmindocumentVersion()
@@ -63,7 +63,7 @@ public interface EAXML extends EObject {
 	 * If the meaning of the '<em>Autosardocument Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Autosardocument Version</em>' attribute.
 	 * @see #setAutosardocumentVersion(String)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAXML_AutosardocumentVersion()
@@ -77,7 +77,7 @@ public interface EAXML extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAXML#getAutosardocumentVersion <em>Autosardocument Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Autosardocument Version</em>' attribute.
 	 * @see #getAutosardocumentVersion()
@@ -93,7 +93,7 @@ public interface EAXML extends EObject {
 	 * If the meaning of the '<em>Xmlglobalelement</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Xmlglobalelement</em>' attribute.
 	 * @see #setXmlglobalelement(boolean)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAXML_Xmlglobalelement()
@@ -107,7 +107,7 @@ public interface EAXML extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAXML#isXmlglobalelement <em>Xmlglobalelement</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Xmlglobalelement</em>' attribute.
 	 * @see #isXmlglobalelement()
@@ -123,7 +123,7 @@ public interface EAXML extends EObject {
 	 * If the meaning of the '<em>Top Level Package</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Top Level Package</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAXML_TopLevelPackage()
 	 * @model ordered="false"

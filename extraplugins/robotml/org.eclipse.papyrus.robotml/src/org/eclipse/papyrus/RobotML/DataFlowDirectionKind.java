@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Data Flow Direction Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getDataFlowDirectionKind()
  * @model
  * @generated
@@ -23,7 +23,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * The '<em><b>In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #IN_VALUE
 	 * @generated
 	 * @ordered
@@ -34,7 +34,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * The '<em><b>Out</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OUT_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * The '<em><b>Inout</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INOUT_VALUE
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * If the meaning of '<em><b>In</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #IN
 	 * @model name="in"
 	 * @generated
@@ -74,7 +74,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * If the meaning of '<em><b>Out</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OUT
 	 * @model name="out"
 	 * @generated
@@ -89,7 +89,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * If the meaning of '<em><b>Inout</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INOUT
 	 * @model name="inout"
 	 * @generated
@@ -101,7 +101,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * An array of all the '<em><b>Data Flow Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final DataFlowDirectionKind[] VALUES_ARRAY =
@@ -115,7 +115,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Data Flow Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<DataFlowDirectionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -124,7 +124,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * Returns the '<em><b>Data Flow Direction Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DataFlowDirectionKind get(String literal) {
@@ -141,7 +141,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * Returns the '<em><b>Data Flow Direction Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DataFlowDirectionKind getByName(String name) {
@@ -158,7 +158,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * Returns the '<em><b>Data Flow Direction Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DataFlowDirectionKind get(int value) {
@@ -176,7 +176,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -184,7 +184,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -192,7 +192,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -201,7 +201,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private DataFlowDirectionKind(int value, String name, String literal) {
@@ -213,7 +213,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -223,7 +223,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -233,7 +233,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLiteral() {
@@ -244,7 +244,7 @@ public enum DataFlowDirectionKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

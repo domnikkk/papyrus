@@ -36,7 +36,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The default value of the '{@link #isIsLogicalTimeSuspended() <em>Is Logical Time Suspended</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsLogicalTimeSuspended()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The cached value of the '{@link #isIsLogicalTimeSuspended() <em>Is Logical Time Suspended</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsLogicalTimeSuspended()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The cached value of the '{@link #getEndPointReference() <em>End Point Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEndPointReference()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The cached value of the '{@link #getStartPointReference() <em>Start Point Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStartPointReference()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	 * The cached value of the '{@link #getConsecutiveTimeCondition() <em>Consecutive Time Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConsecutiveTimeCondition()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LogicalTimeConditionImpl() {
@@ -133,7 +133,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TransitionEvent basicGetEndPointReference() {
@@ -200,7 +200,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TransitionEvent basicGetStartPointReference() {
@@ -245,7 +245,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAValue basicGetWidth() {
@@ -290,7 +290,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +305,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAValue basicGetLower() {
@@ -335,7 +335,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -350,7 +350,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAValue basicGetUpper() {
@@ -380,7 +380,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +415,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LogicalTimeCondition basicGetConsecutiveTimeCondition() {
@@ -425,7 +425,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +440,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -485,7 +485,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -519,7 +519,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -553,7 +553,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -580,7 +580,7 @@ public class LogicalTimeConditionImpl extends EAElementImpl implements LogicalTi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

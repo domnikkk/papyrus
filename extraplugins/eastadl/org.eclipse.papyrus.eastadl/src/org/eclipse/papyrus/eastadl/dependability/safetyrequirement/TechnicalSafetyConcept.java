@@ -55,7 +55,7 @@ public interface TechnicalSafetyConcept extends RequirementsHierarchy {
 	 * <!-- begin-model-doc -->
 	 * technicalSafety Requirements.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Technical Safety Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage#getTechnicalSafetyConcept_TechnicalSafetyRequirement()
 	 * @model

@@ -30,7 +30,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "HwGeneral";
@@ -49,7 +49,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/HwGeneral/1";
@@ -58,7 +58,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "HwGeneral";
@@ -67,7 +67,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HwGeneralPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwGeneralPackageImpl.init();
@@ -76,7 +76,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceServiceImpl <em>Hw Resource Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceServiceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwGeneralPackageImpl#getHwResourceService()
 	 * @generated
@@ -87,7 +87,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Execution Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavioral Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Collaboration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Collaboration Use</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Consumption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Dissipation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Resource Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +177,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceImpl <em>Hw Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwGeneralPackageImpl#getHwResource()
 	 * @generated
@@ -188,7 +188,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -218,7 +218,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -228,7 +228,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -238,7 +238,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -248,7 +248,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -258,7 +258,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -268,7 +268,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -278,7 +278,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>PHW Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -288,7 +288,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>RHW Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -298,7 +298,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned HW</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -308,7 +308,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>End Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -318,7 +318,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -328,7 +328,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * The number of structural features of the '<em>Hw Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,7 +339,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService <em>Hw Resource Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Resource Service</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService
 	 * @generated
@@ -350,7 +350,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService#getConsumption <em>Consumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Consumption</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService#getConsumption()
 	 * @see #getHwResourceService()
@@ -362,7 +362,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService#getDissipation <em>Dissipation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Dissipation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResourceService#getDissipation()
 	 * @see #getHwResourceService()
@@ -374,7 +374,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource <em>Hw Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hw Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource
 	 * @generated
@@ -385,7 +385,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getDescription()
 	 * @see #getHwResource()
@@ -397,7 +397,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getP_HW_Services <em>PHW Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>PHW Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getP_HW_Services()
 	 * @see #getHwResource()
@@ -409,7 +409,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getR_HW_Services <em>RHW Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>RHW Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getR_HW_Services()
 	 * @see #getHwResource()
@@ -421,7 +421,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getOwnedHW <em>Owned HW</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Owned HW</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getOwnedHW()
 	 * @see #getHwResource()
@@ -433,7 +433,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getEndPoints <em>End Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>End Points</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getEndPoints()
 	 * @see #getHwResource()
@@ -445,7 +445,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getFrequency <em>Frequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Frequency</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getFrequency()
 	 * @see #getHwResource()
@@ -457,7 +457,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -473,7 +473,7 @@ public interface HwGeneralPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -481,7 +481,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceServiceImpl <em>Hw Resource Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceServiceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwGeneralPackageImpl#getHwResourceService()
 		 * @generated
@@ -492,7 +492,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Consumption</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RESOURCE_SERVICE__CONSUMPTION = eINSTANCE.getHwResourceService_Consumption();
@@ -501,7 +501,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Dissipation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RESOURCE_SERVICE__DISSIPATION = eINSTANCE.getHwResourceService_Dissipation();
@@ -510,7 +510,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceImpl <em>Hw Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.impl.HwGeneralPackageImpl#getHwResource()
 		 * @generated
@@ -521,7 +521,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RESOURCE__DESCRIPTION = eINSTANCE.getHwResource_Description();
@@ -530,7 +530,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>PHW Services</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_RESOURCE__PHW_SERVICES = eINSTANCE.getHwResource_P_HW_Services();
@@ -539,7 +539,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>RHW Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_RESOURCE__RHW_SERVICES = eINSTANCE.getHwResource_R_HW_Services();
@@ -548,7 +548,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owned HW</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_RESOURCE__OWNED_HW = eINSTANCE.getHwResource_OwnedHW();
@@ -557,7 +557,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>End Points</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HW_RESOURCE__END_POINTS = eINSTANCE.getHwResource_EndPoints();
@@ -566,7 +566,7 @@ public interface HwGeneralPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HW_RESOURCE__FREQUENCY = eINSTANCE.getHwResource_Frequency();

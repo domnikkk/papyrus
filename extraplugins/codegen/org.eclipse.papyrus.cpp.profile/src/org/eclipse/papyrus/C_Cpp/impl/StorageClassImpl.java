@@ -38,7 +38,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	 * The default value of the '{@link #getStorageClass() <em>Storage Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStorageClass()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	 * The cached value of the '{@link #getStorageClass() <em>Storage Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStorageClass()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StorageClassImpl() {
@@ -69,7 +69,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class StorageClassImpl extends MinimalEObjectImpl.Container implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

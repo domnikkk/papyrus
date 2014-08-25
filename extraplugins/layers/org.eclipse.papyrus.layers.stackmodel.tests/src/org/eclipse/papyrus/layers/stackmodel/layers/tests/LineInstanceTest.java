@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LineInstance;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Line Instance</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LineInstanceTest extends TypeInstanceTest {
@@ -19,7 +19,7 @@ public class LineInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class LineInstanceTest extends TypeInstanceTest {
 	 * Constructs a new Line Instance test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LineInstanceTest(String name) {
@@ -41,7 +41,7 @@ public class LineInstanceTest extends TypeInstanceTest {
 	 * Returns the fixture for this Line Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class LineInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class LineInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

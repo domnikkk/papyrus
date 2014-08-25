@@ -14,7 +14,6 @@
 
 package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext;
 
-import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.StereotypeApplicationWithVSLStandaloneSetupGenerated;
 
 /**
  * Initialization support for running Xtext languages

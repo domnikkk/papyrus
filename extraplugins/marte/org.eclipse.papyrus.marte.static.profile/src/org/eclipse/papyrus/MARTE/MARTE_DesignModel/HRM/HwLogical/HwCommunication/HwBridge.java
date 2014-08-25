@@ -40,7 +40,7 @@ public interface HwBridge extends HwMedia {
 	 * If the meaning of the '<em>Sides</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sides</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage#getHwBridge_Sides()
 	 * @model ordered="false"

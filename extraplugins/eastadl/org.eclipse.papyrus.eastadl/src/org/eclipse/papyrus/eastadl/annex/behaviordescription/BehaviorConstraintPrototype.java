@@ -39,7 +39,7 @@ public interface BehaviorConstraintPrototype extends TraceableSpecification {
 	 * If the meaning of the '<em>Instantiation Variable</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Instantiation Variable</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintPrototype_InstantiationVariable()
 	 * @model ordered="false"
@@ -55,7 +55,7 @@ public interface BehaviorConstraintPrototype extends TraceableSpecification {
 	 * If the meaning of the '<em>Target Vehicle Feature Element</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target Vehicle Feature Element</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintPrototype_TargetVehicleFeatureElement()
 	 * @model ordered="false"
@@ -70,7 +70,7 @@ public interface BehaviorConstraintPrototype extends TraceableSpecification {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(BehaviorConstraintType)
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintPrototype_Type()
@@ -83,7 +83,7 @@ public interface BehaviorConstraintPrototype extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()
@@ -99,7 +99,7 @@ public interface BehaviorConstraintPrototype extends TraceableSpecification {
 	 * If the meaning of the '<em>Function Target</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintPrototype_FunctionTarget()
 	 * @model containment="true" ordered="false"
@@ -115,7 +115,7 @@ public interface BehaviorConstraintPrototype extends TraceableSpecification {
 	 * If the meaning of the '<em>Hardware Component Target</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Component Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintPrototype_HardwareComponentTarget()
 	 * @model containment="true" ordered="false"
@@ -131,7 +131,7 @@ public interface BehaviorConstraintPrototype extends TraceableSpecification {
 	 * If the meaning of the '<em>Error Model Target</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Error Model Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintPrototype_ErrorModelTarget()
 	 * @model containment="true" ordered="false"

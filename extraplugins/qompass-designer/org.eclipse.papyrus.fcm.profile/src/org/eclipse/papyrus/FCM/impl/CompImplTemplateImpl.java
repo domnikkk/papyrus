@@ -13,13 +13,10 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.FCM.CompImplTemplate;
 import org.eclipse.papyrus.FCM.FCMPackage;
 
@@ -42,7 +39,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	 * The default value of the '{@link #getTemplateDefs() <em>Template Defs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateDefs()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	 * The cached value of the '{@link #getTemplateDefs() <em>Template Defs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemplateDefs()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -74,7 +71,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CompImplTemplateImpl() {
@@ -84,7 +81,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +92,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +103,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +118,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -151,7 +148,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +163,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +183,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +202,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +221,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +238,7 @@ public class CompImplTemplateImpl extends EObjectImpl implements CompImplTemplat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

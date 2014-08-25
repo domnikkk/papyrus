@@ -45,7 +45,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The cached value of the '{@link #getSelectionRef() <em>Selection Ref</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelectionRef()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The default value of the '{@link #isSubTypes() <em>Sub Types</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSubTypes()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The cached value of the '{@link #isSubTypes() <em>Sub Types</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSubTypes()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The default value of the '{@link #getStereotypedBy() <em>Stereotyped By</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypedBy()
 	 * @generated
 	 * @ordered
@@ -122,7 +122,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	 * The cached value of the '{@link #getStereotypedBy() <em>Stereotyped By</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypedBy()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractSelectionImpl() {
@@ -142,7 +142,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getElement() {
@@ -172,7 +172,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetElement() {
@@ -182,7 +182,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElement(EObject newElement) {
@@ -196,7 +196,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SelectionKind getKind() {
@@ -206,7 +206,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setKind(SelectionKind newKind) {
@@ -220,7 +220,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<SelectionRef> getSelectionRef() {
@@ -233,7 +233,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSubTypes() {
@@ -243,7 +243,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSubTypes(boolean newSubTypes) {
@@ -257,7 +257,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStereotypedBy() {
@@ -267,7 +267,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStereotypedBy(String newStereotypedBy) {
@@ -281,7 +281,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +322,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -352,7 +352,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public abstract class AbstractSelectionImpl extends EObjectImpl implements Abstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

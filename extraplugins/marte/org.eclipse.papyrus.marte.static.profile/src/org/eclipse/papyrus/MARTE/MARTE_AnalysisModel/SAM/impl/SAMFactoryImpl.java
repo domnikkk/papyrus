@@ -35,7 +35,7 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
@@ -43,7 +43,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SAMFactory init() {
@@ -62,7 +62,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SAMFactoryImpl() {
@@ -72,7 +72,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OptimallityCriterionKind createOptimallityCriterionKindFromString(EDataType eDataType, String initialValue) {
@@ -244,7 +244,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertOptimallityCriterionKindToString(EDataType eDataType, Object instanceValue) {
@@ -254,7 +254,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class SAMFactoryImpl extends EFactoryImpl implements SAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

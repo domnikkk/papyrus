@@ -40,9 +40,9 @@ import org.eclipse.xtext.scoping.impl.SimpleScope;
 public class StereotypeApplicationWithVSLScopeProvider extends VSLScopeProvider {
 
 	/* ****************************************************************
-	 * 
+	 *
 	 * Custom scoping for StereotypeApplicationRule_stereotype
-	 * 
+	 *
 	 * ***************************************************************
 	 */
 
@@ -61,9 +61,9 @@ public class StereotypeApplicationWithVSLScopeProvider extends VSLScopeProvider 
 	}
 
 	/* ****************************************************************
-	 * 
+	 *
 	 * Custom scoping for StereotypeApplicationRule_stereotype
-	 * 
+	 *
 	 * ***************************************************************
 	 */
 

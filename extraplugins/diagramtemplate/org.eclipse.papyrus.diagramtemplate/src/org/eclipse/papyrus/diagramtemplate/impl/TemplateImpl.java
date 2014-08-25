@@ -41,7 +41,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	 * The cached value of the '{@link #getDiagramDefinitions() <em>Diagram Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDiagramDefinitions()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	 * The cached value of the '{@link #getTargetRoot() <em>Target Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetRoot()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TemplateImpl() {
@@ -72,7 +72,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<DiagramDefinition> getDiagramDefinitions() {
@@ -96,7 +96,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getTargetRoot() {
@@ -115,7 +115,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetTargetRoot() {
@@ -125,7 +125,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTargetRoot(EObject newTargetRoot) {
@@ -139,7 +139,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -195,7 +195,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

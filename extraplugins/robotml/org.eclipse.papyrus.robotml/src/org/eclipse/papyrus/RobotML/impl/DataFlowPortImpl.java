@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.DataFlowDirectionKind;
 import org.eclipse.papyrus.RobotML.DataFlowPort;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
@@ -33,7 +30,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The default value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBufferSize()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	 * The cached value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBufferSize()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataFlowPortImpl() {
@@ -86,7 +83,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +94,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataFlowDirectionKind getDirection() {
@@ -107,7 +104,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDirection(DataFlowDirectionKind newDirection) {
@@ -121,7 +118,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getBufferSize() {
@@ -131,7 +128,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBufferSize(int newBufferSize) {
@@ -145,7 +142,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +159,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +178,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +197,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +214,7 @@ public class DataFlowPortImpl extends PortImpl implements DataFlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

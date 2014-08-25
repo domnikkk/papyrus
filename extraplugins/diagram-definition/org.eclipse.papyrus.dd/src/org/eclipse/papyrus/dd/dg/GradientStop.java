@@ -12,11 +12,9 @@
 package org.eclipse.papyrus.dd.dg;
 
 import java.awt.Color;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.facademapping;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -43,7 +42,7 @@ public interface StereotypedMapping extends Mapping {
 	 * If the meaning of the '<em>Applied Stereotypes</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Applied Stereotypes</em>' reference list.
 	 * @see org.eclipse.papyrus.facademapping.FacademappingPackage#getStereotypedMapping_AppliedStereotypes()
 	 * @model required="true"
@@ -59,7 +58,7 @@ public interface StereotypedMapping extends Mapping {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.facademapping.ExtensionDefinitionKind
 	 * @see #setKind(ExtensionDefinitionKind)
@@ -73,7 +72,7 @@ public interface StereotypedMapping extends Mapping {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.facademapping.ExtensionDefinitionKind

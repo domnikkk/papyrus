@@ -16,7 +16,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression) <em>Add Layer</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class LayersContainerTest extends TestCase {
@@ -25,7 +25,7 @@ public abstract class LayersContainerTest extends TestCase {
 	 * The fixture for this Container test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayersContainer fixture = null;
@@ -34,7 +34,7 @@ public abstract class LayersContainerTest extends TestCase {
 	 * Constructs a new Container test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersContainerTest(String name) {
@@ -45,7 +45,7 @@ public abstract class LayersContainerTest extends TestCase {
 	 * Sets the fixture for this Container test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(LayersContainer fixture) {
@@ -56,7 +56,7 @@ public abstract class LayersContainerTest extends TestCase {
 	 * Returns the fixture for this Container test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayersContainer getFixture() {
@@ -67,7 +67,7 @@ public abstract class LayersContainerTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression) <em>Add Layer</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer#addLayer(org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression)
 	 * @generated
 	 */

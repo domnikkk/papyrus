@@ -56,7 +56,7 @@ public interface HardwareConnector extends EAElement, EAConnector {
 	 * If the meaning of the '<em>Pin</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pin</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareConnector_Pin()
 	 * @model containment="true" lower="2" upper="2" ordered="false"

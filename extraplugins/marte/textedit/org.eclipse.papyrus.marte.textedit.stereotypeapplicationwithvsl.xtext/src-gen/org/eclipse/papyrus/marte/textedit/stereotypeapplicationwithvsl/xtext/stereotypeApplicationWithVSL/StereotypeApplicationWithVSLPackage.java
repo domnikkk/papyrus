@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLFactory
  * @model kind="package"
  * @generated
@@ -28,7 +28,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "stereotypeApplicationWithVSL";
@@ -37,7 +37,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/marte/textedit/stereotypeapplicationwithvsl/xtext/StereotypeApplicationWithVSL";
@@ -46,7 +46,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "stereotypeApplicationWithVSL";
@@ -55,7 +55,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	StereotypeApplicationWithVSLPackage eINSTANCE = org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl.init();
@@ -64,7 +64,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationsRuleImpl <em>Stereotype Applications Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationsRuleImpl
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getStereotypeApplicationsRule()
 	 * @generated
@@ -75,7 +75,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The feature id for the '<em><b>Stereotype Applications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -85,7 +85,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The number of structural features of the '<em>Stereotype Applications Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -95,7 +95,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationRuleImpl <em>Stereotype Application Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationRuleImpl
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getStereotypeApplicationRule()
 	 * @generated
@@ -106,7 +106,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The feature id for the '<em><b>Stereotype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -116,7 +116,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The feature id for the '<em><b>Tag Specification</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -126,7 +126,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The number of structural features of the '<em>Stereotype Application Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,7 +136,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.TagSpecificationRuleImpl <em>Tag Specification Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.TagSpecificationRuleImpl
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getTagSpecificationRule()
 	 * @generated
@@ -147,7 +147,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The number of structural features of the '<em>Tag Specification Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -177,7 +177,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.ExpressionValueRuleImpl <em>Expression Value Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.ExpressionValueRuleImpl
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getExpressionValueRule()
 	 * @generated
@@ -188,7 +188,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * The number of structural features of the '<em>Expression Value Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationsRule <em>Stereotype Applications Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stereotype Applications Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationsRule
 	 * @generated
@@ -221,7 +221,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Stereotype Applications</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationsRule#getStereotypeApplications()
 	 * @see #getStereotypeApplicationsRule()
@@ -233,7 +233,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule <em>Stereotype Application Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stereotype Application Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule
 	 * @generated
@@ -244,7 +244,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule#getStereotype <em>Stereotype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Stereotype</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule#getStereotype()
 	 * @see #getStereotypeApplicationRule()
@@ -256,7 +256,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule#getTagSpecification <em>Tag Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Tag Specification</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule#getTagSpecification()
 	 * @see #getStereotypeApplicationRule()
@@ -268,7 +268,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule <em>Tag Specification Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Tag Specification Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule
 	 * @generated
@@ -279,7 +279,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule#getProperty()
 	 * @see #getTagSpecificationRule()
@@ -291,7 +291,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule#getValue()
 	 * @see #getTagSpecificationRule()
@@ -303,7 +303,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.ExpressionValueRule <em>Expression Value Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Expression Value Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.ExpressionValueRule
 	 * @generated
@@ -314,7 +314,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.ExpressionValueRule#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.ExpressionValueRule#getExpression()
 	 * @see #getExpressionValueRule()
@@ -326,7 +326,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -342,7 +342,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -351,7 +351,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationsRuleImpl <em>Stereotype Applications Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationsRuleImpl
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getStereotypeApplicationsRule()
 		 * @generated
@@ -362,7 +362,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Stereotype Applications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS = eINSTANCE.getStereotypeApplicationsRule_StereotypeApplications();
@@ -371,7 +371,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationRuleImpl <em>Stereotype Application Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationRuleImpl
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getStereotypeApplicationRule()
 		 * @generated
@@ -382,7 +382,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Stereotype</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STEREOTYPE_APPLICATION_RULE__STEREOTYPE = eINSTANCE.getStereotypeApplicationRule_Stereotype();
@@ -391,7 +391,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Tag Specification</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STEREOTYPE_APPLICATION_RULE__TAG_SPECIFICATION = eINSTANCE.getStereotypeApplicationRule_TagSpecification();
@@ -400,7 +400,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.TagSpecificationRuleImpl <em>Tag Specification Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.TagSpecificationRuleImpl
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getTagSpecificationRule()
 		 * @generated
@@ -411,7 +411,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TAG_SPECIFICATION_RULE__PROPERTY = eINSTANCE.getTagSpecificationRule_Property();
@@ -420,7 +420,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TAG_SPECIFICATION_RULE__VALUE = eINSTANCE.getTagSpecificationRule_Value();
@@ -429,7 +429,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.ExpressionValueRuleImpl <em>Expression Value Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.ExpressionValueRuleImpl
 		 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationWithVSLPackageImpl#getExpressionValueRule()
 		 * @generated
@@ -440,7 +440,7 @@ public interface StereotypeApplicationWithVSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXPRESSION_VALUE_RULE__EXPRESSION = eINSTANCE.getExpressionValueRule_Expression();

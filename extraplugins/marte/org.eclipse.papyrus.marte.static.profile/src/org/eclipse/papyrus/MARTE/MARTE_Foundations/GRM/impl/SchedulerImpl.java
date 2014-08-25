@@ -57,7 +57,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #isIsPreemptible() <em>Is Preemptible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPreemptible()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #isIsPreemptible() <em>Is Preemptible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPreemptible()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #getSchedPolicy() <em>Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getSchedPolicy() <em>Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #getOtherSchedPolicy() <em>Other Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOtherSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getOtherSchedPolicy() <em>Other Sched Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOtherSchedPolicy()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The default value of the '{@link #getSchedule() <em>Schedule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedule()
 	 * @generated
 	 * @ordered
@@ -134,7 +134,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getSchedule() <em>Schedule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedule()
 	 * @generated
 	 * @ordered
@@ -145,7 +145,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getProcessingUnits() <em>Processing Units</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProcessingUnits()
 	 * @generated
 	 * @ordered
@@ -156,7 +156,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -167,7 +167,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getProtectedSharedResources() <em>Protected Shared Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProtectedSharedResources()
 	 * @generated
 	 * @ordered
@@ -178,7 +178,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	 * The cached value of the '{@link #getSchedulableResources() <em>Schedulable Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedulableResources()
 	 * @generated
 	 * @ordered
@@ -188,7 +188,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SchedulerImpl() {
@@ -198,7 +198,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +327,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +347,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComputingResource basicGetHost() {
@@ -357,7 +357,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +386,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -418,7 +418,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -435,7 +435,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -467,7 +467,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -508,7 +508,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -545,7 +545,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -574,7 +574,7 @@ public class SchedulerImpl extends ResourceImpl implements Scheduler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

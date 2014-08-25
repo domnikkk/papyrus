@@ -50,7 +50,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	 * The cached value of the '{@link #getOnPorts() <em>On Ports</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOnPorts()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	 * The cached value of the '{@link #getOnFeatures() <em>On Features</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOnFeatures()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	 * The cached value of the '{@link #getInvocations() <em>Invocations</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInvocations()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GCMInvocatingBehaviorImpl() {
@@ -103,7 +103,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -144,7 +144,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -254,7 +254,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public class GCMInvocatingBehaviorImpl extends EObjectImpl implements GCMInvocat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

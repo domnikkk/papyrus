@@ -13,14 +13,10 @@ package org.eclipse.papyrus.dd.dg.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.dd.dc.Point;
-
 import org.eclipse.papyrus.dd.dg.CubicCurveTo;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 

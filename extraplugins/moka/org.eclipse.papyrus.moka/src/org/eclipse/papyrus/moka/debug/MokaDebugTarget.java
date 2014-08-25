@@ -147,7 +147,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.debug.MokaDebugElement#getLaunch()
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#getProcess()
 	 */
 	public IProcess getProcess() {
@@ -188,7 +188,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#getThreads()
 	 */
 	public IThread[] getThreads() throws DebugException {
@@ -197,7 +197,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#hasThreads()
 	 */
 	public boolean hasThreads() throws DebugException {
@@ -206,7 +206,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#getName()
 	 */
 	public String getName() throws DebugException {
@@ -227,7 +227,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDebugTarget#supportsBreakpoint(org.eclipse.debug.core.model.IBreakpoint)
 	 */
 	public boolean supportsBreakpoint(IBreakpoint breakpoint) {
@@ -244,7 +244,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.IBreakpointListener#breakpointAdded(org.eclipse.debug.core.model.IBreakpoint)
 	 */
 	public void breakpointAdded(IBreakpoint breakpoint) {
@@ -271,7 +271,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.IBreakpointListener#breakpointRemoved(org.eclipse.debug.core.model.IBreakpoint,
 	 * org.eclipse.core.resources.IMarkerDelta)
 	 */
@@ -295,7 +295,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.IBreakpointListener#breakpointChanged(org.eclipse.debug.core.model.IBreakpoint,
 	 * org.eclipse.core.resources.IMarkerDelta)
 	 */
@@ -324,7 +324,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDisconnect#canDisconnect()
 	 */
 	public boolean canDisconnect() {
@@ -334,7 +334,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDisconnect#disconnect()
 	 */
 	public void disconnect() throws DebugException {
@@ -354,7 +354,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IDisconnect#isDisconnected()
 	 */
 	public boolean isDisconnected() {
@@ -367,7 +367,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IMemoryBlockRetrieval#supportsStorageRetrieval()
 	 */
 	public boolean supportsStorageRetrieval() {
@@ -377,7 +377,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IMemoryBlockRetrieval#getMemoryBlock(long, long)
 	 */
 	public IMemoryBlock getMemoryBlock(long startAddress, long length) throws DebugException {
@@ -395,7 +395,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canResume()
 	 */
 	public boolean canResume() {
@@ -405,7 +405,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canSuspend()
 	 */
 	public boolean canSuspend() {
@@ -415,7 +415,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#isSuspended()
 	 */
 	public boolean isSuspended() {
@@ -424,7 +424,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#resume()
 	 */
 	public void resume() throws DebugException {
@@ -474,7 +474,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#suspend()
 	 */
 	public void suspend() throws DebugException {
@@ -541,7 +541,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#canTerminate()
 	 */
 	public boolean canTerminate() {
@@ -551,7 +551,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#isTerminated()
 	 */
 	public boolean isTerminated() {
@@ -574,7 +574,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#terminate()
 	 */
 	public void terminate() throws DebugException {
@@ -625,7 +625,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IDebugTarget {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor)
 		 */
 		@Override

@@ -141,6 +141,7 @@ public class IsPossibleColumnEditingSupport extends EditingSupport {
 				try {
 					dialog.run(false, false, new IRunnableWithProgress() {
 
+						@Override
 						public void run(IProgressMonitor monitor) {
 							monitor.beginTask(Messages.IsPossibleColumnEditingSupport_2, IProgressMonitor.UNKNOWN);
 

@@ -32,7 +32,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.launch.EditorUtils;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.StructuralFeature;
 
 public class FUMLPresentationUtils {

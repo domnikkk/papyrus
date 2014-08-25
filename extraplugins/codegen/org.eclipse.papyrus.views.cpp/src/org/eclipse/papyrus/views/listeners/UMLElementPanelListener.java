@@ -30,7 +30,7 @@ public class UMLElementPanelListener implements Adapter {
 
 	/**
 	 * Creates a new UMLElementListener for the given panel.
-	 * 
+	 *
 	 * @param panel
 	 *            the panel that describes this element
 	 */
@@ -40,7 +40,7 @@ public class UMLElementPanelListener implements Adapter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class UMLElementPanelListener implements Adapter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#getTarget()
 	 */
 	@Override
@@ -62,7 +62,7 @@ public class UMLElementPanelListener implements Adapter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#setTarget(org.eclipse.emf.common.notify.Notifier)
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class UMLElementPanelListener implements Adapter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#isAdapterForType(java.lang.Object)
 	 */
 	@Override

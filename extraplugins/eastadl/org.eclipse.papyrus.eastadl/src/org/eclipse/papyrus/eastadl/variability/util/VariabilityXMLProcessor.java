@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.variability.VariabilityPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VariabilityXMLProcessor extends XMLProcessor {
@@ -35,7 +35,7 @@ public class VariabilityXMLProcessor extends XMLProcessor {
 	/**
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VariabilityXMLProcessor() {

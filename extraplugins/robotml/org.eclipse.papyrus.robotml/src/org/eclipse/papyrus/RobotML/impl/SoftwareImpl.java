@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.Software;
 
@@ -33,7 +30,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The default value of the '{@link #isIsPeriodic() <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPeriodic()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The cached value of the '{@link #isIsPeriodic() <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPeriodic()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The default value of the '{@link #getPeriod() <em>Period</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPeriod()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPeriod()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The default value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeadline()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The cached value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeadline()
 	 * @generated
 	 * @ordered
@@ -121,7 +118,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The default value of the '{@link #getWcet() <em>Wcet</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWcet()
 	 * @generated
 	 * @ordered
@@ -132,7 +129,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	 * The cached value of the '{@link #getWcet() <em>Wcet</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWcet()
 	 * @generated
 	 * @ordered
@@ -142,7 +139,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SoftwareImpl() {
@@ -152,7 +149,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +160,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIsPeriodic() {
@@ -173,7 +170,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIsPeriodic(boolean newIsPeriodic) {
@@ -187,7 +184,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getPeriod() {
@@ -197,7 +194,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPeriod(float newPeriod) {
@@ -211,7 +208,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getPriority() {
@@ -221,7 +218,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPriority(char newPriority) {
@@ -235,7 +232,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getDeadline() {
@@ -245,7 +242,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDeadline(float newDeadline) {
@@ -259,7 +256,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getWcet() {
@@ -269,7 +266,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWcet(float newWcet) {
@@ -283,7 +280,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +303,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +331,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +359,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -385,7 +382,7 @@ public class SoftwareImpl extends SystemImpl implements Software {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

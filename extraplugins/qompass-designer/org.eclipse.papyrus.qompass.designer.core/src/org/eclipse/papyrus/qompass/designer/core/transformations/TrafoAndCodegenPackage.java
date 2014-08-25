@@ -20,7 +20,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -67,7 +66,7 @@ public class TrafoAndCodegenPackage {
 
 	/**
 	 * Iterate over source model and apply transformation
-	 * 
+	 *
 	 * @param copy
 	 * @param pkg
 	 * @throws TransformationException
@@ -114,7 +113,7 @@ public class TrafoAndCodegenPackage {
 	 *            a deployment plan (UML package) or a configuration (UML class)
 	 * @param monitor
 	 *            a progress monitor.
-	 * 
+	 *
 	 * @param project
 	 *            the current project. This information is used to store the intermediate model in
 	 *            a subfolder (tmpModel) of the current project

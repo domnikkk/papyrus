@@ -41,7 +41,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getPatternShape() <em>Pattern Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPatternShape()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getPatternShape() <em>Pattern Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPatternShape()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getRepetitionSpace() <em>Repetition Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepetitionSpace()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getRepetitionSpace() <em>Repetition Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepetitionSpace()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getFromTiler() <em>From Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFromTiler()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getFromTiler() <em>From Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFromTiler()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getToTiler() <em>To Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getToTiler()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getToTiler() <em>To Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getToTiler()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DistributeImpl() {
@@ -138,7 +138,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +299,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

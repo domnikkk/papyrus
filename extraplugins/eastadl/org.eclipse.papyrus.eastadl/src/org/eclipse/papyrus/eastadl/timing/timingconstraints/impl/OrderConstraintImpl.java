@@ -30,7 +30,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OrderConstraintImpl() {
@@ -61,7 +61,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetSource() {
@@ -102,7 +102,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetTarget() {
@@ -147,7 +147,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

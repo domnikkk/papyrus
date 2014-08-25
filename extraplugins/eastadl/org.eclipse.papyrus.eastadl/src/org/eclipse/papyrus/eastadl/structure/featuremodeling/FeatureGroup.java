@@ -56,7 +56,7 @@ public interface FeatureGroup extends FeatureTreeNode {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureGroup_Base_Class()
@@ -69,7 +69,7 @@ public interface FeatureGroup extends FeatureTreeNode {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -103,7 +103,7 @@ public interface FeatureGroup extends FeatureTreeNode {
 	 * If the meaning of the '<em>Child Feature</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Child Feature</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureGroup_ChildFeature()
 	 * @model lower="2" transient="true" volatile="true" derived="true" ordered="false"
@@ -115,7 +115,7 @@ public interface FeatureGroup extends FeatureTreeNode {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getCardinality <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Cardinality</em>' attribute.
 	 * @see #getCardinality()

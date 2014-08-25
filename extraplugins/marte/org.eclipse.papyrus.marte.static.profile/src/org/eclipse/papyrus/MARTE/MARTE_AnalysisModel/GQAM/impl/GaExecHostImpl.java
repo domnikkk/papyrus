@@ -56,7 +56,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The default value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getSpeedFactor() <em>Speed Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpeedFactor()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getMainScheduler() <em>Main Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMainScheduler()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The default value of the '{@link #getCommTxOvh() <em>Comm Tx Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommTxOvh()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getCommTxOvh() <em>Comm Tx Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommTxOvh()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The default value of the '{@link #getCommRcvOvh() <em>Comm Rcv Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommRcvOvh()
 	 * @generated
 	 * @ordered
@@ -122,7 +122,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getCommRcvOvh() <em>Comm Rcv Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommRcvOvh()
 	 * @generated
 	 * @ordered
@@ -133,7 +133,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The default value of the '{@link #getCntxtSwT() <em>Cntxt Sw T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCntxtSwT()
 	 * @generated
 	 * @ordered
@@ -144,7 +144,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getCntxtSwT() <em>Cntxt Sw T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCntxtSwT()
 	 * @generated
 	 * @ordered
@@ -155,7 +155,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The default value of the '{@link #getClockOvh() <em>Clock Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClockOvh()
 	 * @generated
 	 * @ordered
@@ -166,7 +166,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getClockOvh() <em>Clock Ovh</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClockOvh()
 	 * @generated
 	 * @ordered
@@ -177,7 +177,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The default value of the '{@link #getSchedPriRange() <em>Sched Pri Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedPriRange()
 	 * @generated
 	 * @ordered
@@ -188,7 +188,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getSchedPriRange() <em>Sched Pri Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedPriRange()
 	 * @generated
 	 * @ordered
@@ -199,7 +199,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The default value of the '{@link #getMemSize() <em>Mem Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemSize()
 	 * @generated
 	 * @ordered
@@ -210,7 +210,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getMemSize() <em>Mem Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemSize()
 	 * @generated
 	 * @ordered
@@ -221,7 +221,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -232,7 +232,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -242,7 +242,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaExecHostImpl() {
@@ -252,7 +252,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetMainScheduler() {
@@ -319,7 +319,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +334,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +371,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +386,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +397,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -412,7 +412,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -423,7 +423,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +438,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -449,7 +449,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +464,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -475,7 +475,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -490,7 +490,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +504,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -518,7 +518,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -554,7 +554,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -600,7 +600,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -643,7 +643,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -676,7 +676,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -703,7 +703,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -730,7 +730,7 @@ public class GaExecHostImpl extends SchedulerImpl implements GaExecHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

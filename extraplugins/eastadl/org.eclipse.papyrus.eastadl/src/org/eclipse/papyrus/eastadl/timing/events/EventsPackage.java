@@ -37,7 +37,7 @@ import org.eclipse.papyrus.eastadl.timing.TimingPackage;
  * <!-- begin-model-doc -->
  * This section describes the concept of events for EAST-ADL2.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.timing.events.EventsFactory
  * @model kind="package"
  * @generated
@@ -53,7 +53,7 @@ public interface EventsPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -61,7 +61,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionFlowPortImpl <em>Event Function Flow Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionFlowPortImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunctionFlowPort()
 		 * @generated
@@ -72,7 +72,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EVENT_FUNCTION_FLOW_PORT__PORT = eINSTANCE.getEventFunctionFlowPort_Port();
@@ -81,7 +81,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionClientServerPortImpl <em>Event Function Client Server Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionClientServerPortImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunctionClientServerPort()
 		 * @generated
@@ -92,7 +92,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Event Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EVENT_FUNCTION_CLIENT_SERVER_PORT__EVENT_KIND = eINSTANCE.getEventFunctionClientServerPort_EventKind();
@@ -101,7 +101,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EVENT_FUNCTION_CLIENT_SERVER_PORT__PORT = eINSTANCE.getEventFunctionClientServerPort_Port();
@@ -110,7 +110,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionImpl <em>Event Function</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunction()
 		 * @generated
@@ -121,7 +121,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Function</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EVENT_FUNCTION__FUNCTION = eINSTANCE.getEventFunction_Function();
@@ -130,7 +130,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Function Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EVENT_FUNCTION__FUNCTION_TYPE = eINSTANCE.getEventFunction_FunctionType();
@@ -139,7 +139,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.AUTOSAREventImpl <em>AUTOSAR Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.AUTOSAREventImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getAUTOSAREvent()
 		 * @generated
@@ -150,7 +150,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference AUTOSAR_EVENT__REF = eINSTANCE.getAUTOSAREvent_Ref();
@@ -159,7 +159,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFaultFailureImpl <em>Event Fault Failure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFaultFailureImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFaultFailure()
 		 * @generated
@@ -170,7 +170,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fault Failure</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EVENT_FAULT_FAILURE__FAULT_FAILURE = eINSTANCE.getEventFaultFailure_FaultFailure();
@@ -179,7 +179,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFeatureFlawImpl <em>Event Feature Flaw</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFeatureFlawImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFeatureFlaw()
 		 * @generated
@@ -190,7 +190,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature Flaw</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EVENT_FEATURE_FLAW__FEATURE_FLAW = eINSTANCE.getEventFeatureFlaw_FeatureFlaw();
@@ -199,7 +199,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.ExternalEventImpl <em>External Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.ExternalEventImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getExternalEvent()
 		 * @generated
@@ -210,7 +210,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl <em>Mode Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getModeEvent()
 		 * @generated
@@ -221,7 +221,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODE_EVENT__START = eINSTANCE.getModeEvent_Start();
@@ -230,7 +230,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>End</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODE_EVENT__END = eINSTANCE.getModeEvent_End();
@@ -239,7 +239,7 @@ public interface EventsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPortKind <em>Event Function Client Server Port Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPortKind
 		 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunctionClientServerPortKind()
 		 * @generated
@@ -252,7 +252,7 @@ public interface EventsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "events";
@@ -261,7 +261,7 @@ public interface EventsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Timing/Events/1";
@@ -270,7 +270,7 @@ public interface EventsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "Events";
@@ -279,7 +279,7 @@ public interface EventsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	EventsPackage eINSTANCE = org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl.init();
@@ -288,7 +288,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionFlowPortImpl <em>Event Function Flow Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionFlowPortImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunctionFlowPort()
 	 * @generated
@@ -299,7 +299,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +309,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +319,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -329,7 +329,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,7 +339,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -349,7 +349,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -359,7 +359,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -369,7 +369,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>Event Function Flow Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -379,7 +379,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>Event Function Flow Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -389,7 +389,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionClientServerPortImpl <em>Event Function Client Server Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionClientServerPortImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunctionClientServerPort()
 	 * @generated
@@ -400,7 +400,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -410,7 +410,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -420,7 +420,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +430,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +440,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -450,7 +450,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -460,7 +460,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Event Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -470,7 +470,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -480,7 +480,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>Event Function Client Server Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -490,7 +490,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>Event Function Client Server Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -500,7 +500,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionImpl <em>Event Function</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFunctionImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunction()
 	 * @generated
@@ -511,7 +511,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -521,7 +521,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -531,7 +531,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -541,7 +541,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -551,7 +551,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Function</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -561,7 +561,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Function Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -571,7 +571,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>Event Function</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -581,7 +581,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>Event Function</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -591,7 +591,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.AUTOSAREventImpl <em>AUTOSAR Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.AUTOSAREventImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getAUTOSAREvent()
 	 * @generated
@@ -602,7 +602,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -612,7 +612,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -622,7 +622,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -632,7 +632,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -642,7 +642,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -652,7 +652,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>AUTOSAR Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -662,7 +662,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>AUTOSAR Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -672,7 +672,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFaultFailureImpl <em>Event Fault Failure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFaultFailureImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFaultFailure()
 	 * @generated
@@ -683,7 +683,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -693,7 +693,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -703,7 +703,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -713,7 +713,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -723,7 +723,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Fault Failure</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -733,7 +733,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>Event Fault Failure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -743,7 +743,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>Event Fault Failure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -753,7 +753,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.EventFeatureFlawImpl <em>Event Feature Flaw</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventFeatureFlawImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFeatureFlaw()
 	 * @generated
@@ -764,7 +764,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -774,7 +774,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -784,7 +784,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -794,7 +794,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -804,7 +804,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature Flaw</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -814,7 +814,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>Event Feature Flaw</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -824,7 +824,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>Event Feature Flaw</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -834,7 +834,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.ExternalEventImpl <em>External Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.ExternalEventImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getExternalEvent()
 	 * @generated
@@ -845,7 +845,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -855,7 +855,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -865,7 +865,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -875,7 +875,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -885,7 +885,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>External Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -895,7 +895,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>External Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -905,7 +905,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl <em>Mode Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.ModeEventImpl
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getModeEvent()
 	 * @generated
@@ -916,7 +916,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -926,7 +926,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -936,7 +936,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -946,7 +946,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -956,7 +956,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -966,7 +966,7 @@ public interface EventsPackage extends EPackage {
 	 * The feature id for the '<em><b>End</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -976,7 +976,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of structural features of the '<em>Mode Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -986,7 +986,7 @@ public interface EventsPackage extends EPackage {
 	 * The number of operations of the '<em>Mode Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -996,7 +996,7 @@ public interface EventsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPortKind <em>Event Function Client Server Port Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPortKind
 	 * @see org.eclipse.papyrus.eastadl.timing.events.impl.EventsPackageImpl#getEventFunctionClientServerPortKind()
 	 * @generated
@@ -1007,7 +1007,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunction <em>Event Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Event Function</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunction
 	 * @generated
@@ -1018,7 +1018,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunction#getFunction <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Function</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunction#getFunction()
 	 * @see #getEventFunction()
@@ -1030,7 +1030,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunction#getFunctionType <em>Function Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Function Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunction#getFunctionType()
 	 * @see #getEventFunction()
@@ -1042,7 +1042,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent <em>AUTOSAR Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>AUTOSAR Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent
 	 * @generated
@@ -1053,7 +1053,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Ref</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.AUTOSAREvent#getRef()
 	 * @see #getAUTOSAREvent()
@@ -1065,7 +1065,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.EventFaultFailure <em>Event Fault Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Event Fault Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFaultFailure
 	 * @generated
@@ -1076,7 +1076,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.events.EventFaultFailure#getFaultFailure <em>Fault Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Fault Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFaultFailure#getFaultFailure()
 	 * @see #getEventFaultFailure()
@@ -1088,7 +1088,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw <em>Event Feature Flaw</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Event Feature Flaw</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw
 	 * @generated
@@ -1099,7 +1099,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw#getFeatureFlaw <em>Feature Flaw</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Feature Flaw</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFeatureFlaw#getFeatureFlaw()
 	 * @see #getEventFeatureFlaw()
@@ -1111,7 +1111,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.ExternalEvent <em>External Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>External Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.ExternalEvent
 	 * @generated
@@ -1122,7 +1122,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.ModeEvent <em>Mode Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Mode Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.ModeEvent
 	 * @generated
@@ -1133,7 +1133,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.timing.events.ModeEvent#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.ModeEvent#getStart()
 	 * @see #getModeEvent()
@@ -1145,7 +1145,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.timing.events.ModeEvent#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>End</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.ModeEvent#getEnd()
 	 * @see #getModeEvent()
@@ -1157,7 +1157,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort <em>Event Function Client Server Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Event Function Client Server Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort
 	 * @generated
@@ -1168,7 +1168,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort#getEventKind <em>Event Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Event Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort#getEventKind()
 	 * @see #getEventFunctionClientServerPort()
@@ -1180,7 +1180,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPort#getPort()
 	 * @see #getEventFunctionClientServerPort()
@@ -1192,7 +1192,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPortKind <em>Event Function Client Server Port Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Event Function Client Server Port Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionClientServerPortKind
 	 * @generated
@@ -1203,7 +1203,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort <em>Event Function Flow Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Event Function Flow Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort
 	 * @generated
@@ -1214,7 +1214,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort()
 	 * @see #getEventFunctionFlowPort()
@@ -1226,7 +1226,7 @@ public interface EventsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

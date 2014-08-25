@@ -54,7 +54,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getTypeRegistry() <em>Type Registry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeRegistry()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getPropertiesCount() <em>Properties Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertiesCount()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOt
 	 */
 	protected PropertyRegistryImpl() {
@@ -119,7 +119,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 				"fill", "Fill", "0, 15053796", // "transparency, fillColor"
 				"line", "LineType", "0, -1", // "lineColor, lineWith"
 				"font", "FontType", "Segoe UI, 9, 0, false", // "FontName, FontHeight, FontColor, Bold"
-				// "bgcolor", "Color",
+		// "bgcolor", "Color",
 				// "fgcolor", "Color",
 		};
 
@@ -144,7 +144,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTypeRegistry(TypeRegistry newTypeRegistry, NotificationChain msgs) {
@@ -200,7 +200,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +333,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -354,7 +354,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +373,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public class PropertyRegistryImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -18,7 +18,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Type;
 
 /**
  * Utility for {@link Property}
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -35,7 +35,7 @@ public class PropertyUtils {
 
 	/**
 	 * Get an instance of the class.
-	 * 
+	 *
 	 * @return
 	 */
 	public static PropertyUtils getInstance() {
@@ -44,7 +44,7 @@ public class PropertyUtils {
 
 	/**
 	 * Create a property with the specified name and type.
-	 * 
+	 *
 	 * @param name
 	 * @param typeClass
 	 * @return

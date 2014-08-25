@@ -26,7 +26,7 @@ import org.eclipse.papyrus.MARTE_Library.RS_Library.RS_LibraryPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFactory {
@@ -34,7 +34,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static RS_LibraryFactory init() {
@@ -53,7 +53,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RS_LibraryFactoryImpl() {
@@ -63,7 +63,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createTilerSpecificationFromString(EDataType eDataType, String initialValue) {
@@ -123,7 +123,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTilerSpecificationToString(EDataType eDataType, Object instanceValue) {
@@ -133,7 +133,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createShapeSpecificationFromString(EDataType eDataType, String initialValue) {
@@ -143,7 +143,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertShapeSpecificationToString(EDataType eDataType, Object instanceValue) {
@@ -153,7 +153,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

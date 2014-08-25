@@ -52,7 +52,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	 * The cached value of the '{@link #getUaValue() <em>Ua Value</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUaValue()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	 * The cached value of the '{@link #getUaType() <em>Ua Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUaType()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	 * The cached value of the '{@link #getAttributedElement() <em>Attributed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAttributedElement()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UserAttributeableElementImpl() {
@@ -105,7 +105,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -181,7 +181,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetAttributedElement() {
@@ -261,7 +261,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -306,7 +306,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +321,7 @@ public class UserAttributeableElementImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -14,12 +14,10 @@ package org.eclipse.papyrus.dd.di.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.dd.di.*;
+import org.eclipse.papyrus.dd.di.DIFactory;
+import org.eclipse.papyrus.dd.di.DIPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--

@@ -15,8 +15,8 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivities.ExpansionActivationGroup;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 
 public class ActivityFinalNodeActivation extends ControlNodeActivation {
 

@@ -38,7 +38,7 @@ public interface QualityRequirement extends Requirement {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind
 	 * @see #setKind(QualityRequirementKind)
@@ -52,7 +52,7 @@ public interface QualityRequirement extends Requirement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirement#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirementKind

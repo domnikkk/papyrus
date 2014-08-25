@@ -12,20 +12,20 @@
 package org.eclipse.papyrus.dd.dc.util;
 
 import java.awt.Color;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
-import org.eclipse.papyrus.dd.dc.*;
+import org.eclipse.papyrus.dd.dc.Bounds;
+import org.eclipse.papyrus.dd.dc.DCPackage;
+import org.eclipse.papyrus.dd.dc.Dimension;
+import org.eclipse.papyrus.dd.dc.KnownColor;
+import org.eclipse.papyrus.dd.dc.Point;
 
 /**
  * <!-- begin-user-doc --> The <b>Validator</b> for the model. <!-- end-user-doc

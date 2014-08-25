@@ -62,7 +62,7 @@ public class LayersFactoryTestUtils {
 
 	/**
 	 * Create a TopLayer
-	 * 
+	 *
 	 * @return
 	 */
 	public TopLayerOperator newTopLayer() {
@@ -75,7 +75,7 @@ public class LayersFactoryTestUtils {
 
 	/**
 	 * Create a TopLayer
-	 * 
+	 *
 	 * @return
 	 */
 	public TopLayerOperator newTopLayer(String name) {
@@ -87,7 +87,7 @@ public class LayersFactoryTestUtils {
 
 	/**
 	 * Create a TopLayer
-	 * 
+	 *
 	 * @return
 	 */
 	public TopLayerOperator newTopLayer(String name, LayerExpression... exprs) {
@@ -99,7 +99,7 @@ public class LayersFactoryTestUtils {
 
 	/**
 	 * Create a TopLayer
-	 * 
+	 *
 	 * @return
 	 */
 	public TopLayerOperator newTopLayer(LayerExpression... exprs) {
@@ -115,7 +115,7 @@ public class LayersFactoryTestUtils {
 
 	/**
 	 * Create a Layer
-	 * 
+	 *
 	 * @return
 	 */
 	public LayerExpression newLayer() {
@@ -128,7 +128,7 @@ public class LayersFactoryTestUtils {
 
 	/**
 	 * Create a TopLayer
-	 * 
+	 *
 	 * @return
 	 */
 	public LayerExpression newLayer(String name) {

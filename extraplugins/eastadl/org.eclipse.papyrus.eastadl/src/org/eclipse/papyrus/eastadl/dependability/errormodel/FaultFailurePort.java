@@ -47,7 +47,7 @@ public interface FaultFailurePort extends Anomaly, EAPort {
 	 * If the meaning of the '<em>Function Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getFaultFailurePort_FunctionTarget()
 	 * @model containment="true" ordered="false"
@@ -63,7 +63,7 @@ public interface FaultFailurePort extends Anomaly, EAPort {
 	 * If the meaning of the '<em>Hw Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hw Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getFaultFailurePort_HwTarget()
 	 * @model containment="true" ordered="false"

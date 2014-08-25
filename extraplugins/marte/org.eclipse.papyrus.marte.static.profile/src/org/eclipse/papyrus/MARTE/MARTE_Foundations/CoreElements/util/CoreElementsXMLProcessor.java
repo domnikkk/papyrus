@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.CoreElementsPack
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CoreElementsXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class CoreElementsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CoreElementsXMLProcessor() {
@@ -45,7 +45,7 @@ public class CoreElementsXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the CoreElementsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

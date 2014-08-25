@@ -16,18 +16,24 @@ package org.eclipse.papyrus.facade.virtualmetamodel.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.facade.virtualmetamodel.*;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualEnum;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualLiteral;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetamodel;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelFactory;
+import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements VirtualmetamodelFactory {
@@ -35,7 +41,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VirtualmetamodelFactory init() {
@@ -54,7 +60,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VirtualmetamodelFactoryImpl() {
@@ -64,7 +70,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +100,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +112,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +124,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +136,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +148,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +160,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +172,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +184,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +196,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +207,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

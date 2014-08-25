@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.eastadl.annex.behaviordescription.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -39,7 +40,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	 * The cached value of the '{@link #getSharedVariable() <em>Shared Variable</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSharedVariable()
 	 * @generated
 	 * @ordered
@@ -50,7 +51,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	 * The cached value of the '{@link #getInterfaceVariable() <em>Interface Variable</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInterfaceVariable()
 	 * @generated
 	 * @ordered
@@ -61,7 +62,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	 * The cached value of the '{@link #getPart() <em>Part</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPart()
 	 * @generated
 	 * @ordered
@@ -72,7 +73,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	 * The cached value of the '{@link #getAttributeQuantificationconstraint() <em>Attribute Quantificationconstraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAttributeQuantificationconstraint()
 	 * @generated
 	 * @ordered
@@ -83,7 +84,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	 * The cached value of the '{@link #getTemporalConstraint() <em>Temporal Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTemporalConstraint()
 	 * @generated
 	 * @ordered
@@ -94,7 +95,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	 * The cached value of the '{@link #getComputationConstraint() <em>Computation Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComputationConstraint()
 	 * @generated
 	 * @ordered
@@ -104,7 +105,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintTypeImpl() {
@@ -114,7 +115,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +126,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +140,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +154,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +168,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +182,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +196,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +210,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +235,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -272,7 +273,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +304,7 @@ public class BehaviorConstraintTypeImpl extends ContextImpl implements BehaviorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

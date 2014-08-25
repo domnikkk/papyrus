@@ -5,18 +5,15 @@ package org.eclipse.papyrus.marte.vsl.vSL.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VSLXMLProcessor extends XMLProcessor
@@ -26,7 +23,7 @@ public class VSLXMLProcessor extends XMLProcessor
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VSLXMLProcessor()
@@ -39,7 +36,7 @@ public class VSLXMLProcessor extends XMLProcessor
 	 * Register for "*" and "xml" file extensions the VSLResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

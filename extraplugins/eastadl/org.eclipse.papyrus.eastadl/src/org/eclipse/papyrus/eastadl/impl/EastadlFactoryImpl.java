@@ -27,14 +27,14 @@ import org.eclipse.papyrus.eastadl.EastadlPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -46,7 +46,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EastadlFactory init() {
@@ -64,7 +64,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EastadlFactoryImpl() {
@@ -73,7 +73,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createDummyFromString(EDataType eDataType, String initialValue) {
@@ -99,7 +99,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDummyToString(EDataType eDataType, Object instanceValue) {
@@ -108,7 +108,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class EastadlFactoryImpl extends EFactoryImpl implements EastadlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -30,7 +30,7 @@ public interface Realization_realizedByInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Identifiable target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Identifiable target</em>' reference.
 	 * @see #setIdentifiable_target(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getRealization_realizedByInstanceRef_Identifiable_target()
@@ -43,7 +43,7 @@ public interface Realization_realizedByInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.Realization_realizedByInstanceRef#getIdentifiable_target <em>Identifiable target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Identifiable target</em>' reference.
 	 * @see #getIdentifiable_target()
@@ -59,7 +59,7 @@ public interface Realization_realizedByInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Identifiable context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Identifiable context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getRealization_realizedByInstanceRef_Identifiable_context()
 	 * @model ordered="false"

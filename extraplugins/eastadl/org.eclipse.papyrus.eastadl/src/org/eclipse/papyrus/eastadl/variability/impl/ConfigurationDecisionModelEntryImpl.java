@@ -43,7 +43,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	 * The default value of the '{@link #isIsActive() <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsActive()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	 * The cached value of the '{@link #isIsActive() <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsActive()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationDecisionModelEntryImpl() {
@@ -85,7 +85,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -227,7 +227,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public abstract class ConfigurationDecisionModelEntryImpl extends EAElementImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

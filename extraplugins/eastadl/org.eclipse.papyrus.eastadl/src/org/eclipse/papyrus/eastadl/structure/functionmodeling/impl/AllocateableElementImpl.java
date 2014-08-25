@@ -34,7 +34,7 @@ public abstract class AllocateableElementImpl extends MinimalEObjectImpl.Contain
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AllocateableElementImpl() {
@@ -44,7 +44,7 @@ public abstract class AllocateableElementImpl extends MinimalEObjectImpl.Contain
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

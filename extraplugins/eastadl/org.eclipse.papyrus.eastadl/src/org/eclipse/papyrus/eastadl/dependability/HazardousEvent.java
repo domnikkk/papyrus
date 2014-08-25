@@ -73,7 +73,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_Base_Class()
@@ -86,7 +86,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.HazardousEvent#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -101,7 +101,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Classification Assumptions</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Classification Assumptions</em>' attribute.
 	 * @see #setClassificationAssumptions(String)
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_ClassificationAssumptions()
@@ -118,7 +118,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Controllability</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Controllability</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.ControllabilityClassKind
 	 * @see #setControllability(ControllabilityClassKind)
@@ -136,7 +136,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Environment</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Environment</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_Environment()
 	 * @model ordered="false"
@@ -152,7 +152,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Exposure</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exposure</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.ExposureClassKind
 	 * @see #setExposure(ExposureClassKind)
@@ -170,7 +170,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>External Measures</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>External Measures</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_ExternalMeasures()
 	 * @model ordered="false"
@@ -186,7 +186,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Hazard</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hazard</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_Hazard()
 	 * @model required="true" ordered="false"
@@ -202,7 +202,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Hazard Classification</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hazard Classification</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
 	 * @see #setHazardClassification(ASILKind)
@@ -216,7 +216,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.HazardousEvent#getHazardClassification <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hazard Classification</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
@@ -233,7 +233,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Operating Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operating Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_OperatingMode()
 	 * @model ordered="false"
@@ -249,7 +249,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Operational Situation Use Case</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operational Situation Use Case</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_OperationalSituationUseCase()
 	 * @model required="true" ordered="false"
@@ -265,7 +265,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Severity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Severity</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.SeverityClassKind
 	 * @see #setSeverity(SeverityClassKind)
@@ -283,7 +283,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * If the meaning of the '<em>Traffic</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Traffic</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getHazardousEvent_Traffic()
 	 * @model ordered="false"
@@ -295,7 +295,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.HazardousEvent#getClassificationAssumptions <em>Classification Assumptions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Classification Assumptions</em>' attribute.
 	 * @see #getClassificationAssumptions()
@@ -307,7 +307,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.HazardousEvent#getControllability <em>Controllability</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Controllability</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.ControllabilityClassKind
@@ -320,7 +320,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.HazardousEvent#getExposure <em>Exposure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Exposure</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.ExposureClassKind
@@ -333,7 +333,7 @@ public interface HazardousEvent extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.HazardousEvent#getSeverity <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Severity</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.SeverityClassKind

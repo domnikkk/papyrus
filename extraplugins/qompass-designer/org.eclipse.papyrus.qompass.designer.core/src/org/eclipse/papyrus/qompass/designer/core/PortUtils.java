@@ -133,7 +133,7 @@ public class PortUtils {
 	/**
 	 * When given a list of ports, flatten the extended ports within this list
 	 * and return a list of port-infos, i.e. information about ports.
-	 * 
+	 *
 	 * @param ports
 	 *            A list of ports
 	 * @return A list of port-infos
@@ -149,7 +149,7 @@ public class PortUtils {
 
 	/**
 	 * Flatten the given extended port and return a list of port-infos.
-	 * 
+	 *
 	 * @param port
 	 * @return
 	 */
@@ -186,7 +186,7 @@ public class PortUtils {
 
 	/**
 	 * Return true, if the passed port is an extended port
-	 * 
+	 *
 	 * @param port
 	 * @return
 	 */
@@ -201,7 +201,7 @@ public class PortUtils {
 
 	/**
 	 * Return true, if the passed port is an extended port
-	 * 
+	 *
 	 * @param port
 	 * @return
 	 */
@@ -292,7 +292,7 @@ public class PortUtils {
 	 * return true, if intfA is a sub-interface of intfB, i.e. either both interfaces are identical or one of the
 	 * superclasses (generalizations of intfA) is identical to B.
 	 * more general than interfaceB.
-	 * 
+	 *
 	 * @param intfA
 	 * @param intfB
 	 * @return

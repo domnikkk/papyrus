@@ -62,7 +62,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getSchedParams() <em>Sched Params</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedParams()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getDependentScheduler() <em>Dependent Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDependentScheduler()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The default value of the '{@link #isIsStaticSchedulingFeature() <em>Is Static Scheduling Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsStaticSchedulingFeature()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #isIsStaticSchedulingFeature() <em>Is Static Scheduling Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsStaticSchedulingFeature()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The default value of the '{@link #isIsPreemptable() <em>Is Preemptable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPreemptable()
 	 * @generated
 	 * @ordered
@@ -128,7 +128,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #isIsPreemptable() <em>Is Preemptable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPreemptable()
 	 * @generated
 	 * @ordered
@@ -139,7 +139,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getSchedulers() <em>Schedulers</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchedulers()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getDeadlineElements() <em>Deadline Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeadlineElements()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getDeadlineTypeElements() <em>Deadline Type Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeadlineTypeElements()
 	 * @generated
 	 * @ordered
@@ -172,7 +172,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getTimeSliceElements() <em>Time Slice Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeSliceElements()
 	 * @generated
 	 * @ordered
@@ -183,7 +183,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getDelayServices() <em>Delay Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDelayServices()
 	 * @generated
 	 * @ordered
@@ -194,7 +194,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getJoinServices() <em>Join Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJoinServices()
 	 * @generated
 	 * @ordered
@@ -205,7 +205,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	 * The cached value of the '{@link #getYieldServices() <em>Yield Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getYieldServices()
 	 * @generated
 	 * @ordered
@@ -215,7 +215,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwSchedulableResourceImpl() {
@@ -225,7 +225,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SecondaryScheduler basicGetDependentScheduler() {
@@ -280,7 +280,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDependentScheduler(SecondaryScheduler newDependentScheduler, NotificationChain msgs) {
@@ -300,7 +300,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -346,7 +346,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Scheduler basicGetHost() {
@@ -356,7 +356,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHost(Scheduler newHost, NotificationChain msgs) {
@@ -376,7 +376,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,7 +402,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -413,7 +413,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +439,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -454,7 +454,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -474,7 +474,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetSchedulers() {
@@ -484,7 +484,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -499,7 +499,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -513,7 +513,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -527,7 +527,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -541,7 +541,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -555,7 +555,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -569,7 +569,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -583,7 +583,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -606,7 +606,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -623,7 +623,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -669,7 +669,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -726,7 +726,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -775,7 +775,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -812,7 +812,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -835,7 +835,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -858,7 +858,7 @@ public class SwSchedulableResourceImpl extends SwConcurrentResourceImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

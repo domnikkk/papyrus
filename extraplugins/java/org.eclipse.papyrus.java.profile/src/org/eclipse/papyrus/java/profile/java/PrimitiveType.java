@@ -33,7 +33,7 @@ public interface PrimitiveType extends JavaGen {
 	 * If the meaning of the '<em>Implementation Class</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Implementation Class</em>' attribute.
 	 * @see #setImplementationClass(String)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getPrimitiveType_ImplementationClass()
@@ -46,7 +46,7 @@ public interface PrimitiveType extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.PrimitiveType#getImplementationClass <em>Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Implementation Class</em>' attribute.
 	 * @see #getImplementationClass()
@@ -61,7 +61,7 @@ public interface PrimitiveType extends JavaGen {
 	 * If the meaning of the '<em>Base Primitive Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Primitive Type</em>' reference.
 	 * @see #setBase_PrimitiveType(org.eclipse.uml2.uml.PrimitiveType)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getPrimitiveType_Base_PrimitiveType()
@@ -74,7 +74,7 @@ public interface PrimitiveType extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.PrimitiveType#getBase_PrimitiveType <em>Base Primitive Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Primitive Type</em>' reference.
 	 * @see #getBase_PrimitiveType()
@@ -89,7 +89,7 @@ public interface PrimitiveType extends JavaGen {
 	 * If the meaning of the '<em>Collection Implementation Class</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Collection Implementation Class</em>' attribute.
 	 * @see #setCollectionImplementationClass(String)
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage#getPrimitiveType_CollectionImplementationClass()
@@ -102,7 +102,7 @@ public interface PrimitiveType extends JavaGen {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.profile.java.PrimitiveType#getCollectionImplementationClass <em>Collection Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Collection Implementation Class</em>' attribute.
 	 * @see #getCollectionImplementationClass()

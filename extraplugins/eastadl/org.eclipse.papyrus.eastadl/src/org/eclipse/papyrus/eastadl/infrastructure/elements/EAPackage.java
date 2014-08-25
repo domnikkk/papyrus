@@ -44,7 +44,7 @@ public interface EAPackage extends EAElement {
 	 * If the meaning of the '<em>Sub Package</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sub Package</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAPackage_SubPackage()
 	 * @model ordered="false"
@@ -60,7 +60,7 @@ public interface EAPackage extends EAElement {
 	 * If the meaning of the '<em>Element</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAPackage_Element()
 	 * @model ordered="false"
@@ -75,7 +75,7 @@ public interface EAPackage extends EAElement {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAPackage_Base_Package()
@@ -88,7 +88,7 @@ public interface EAPackage extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackage#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()

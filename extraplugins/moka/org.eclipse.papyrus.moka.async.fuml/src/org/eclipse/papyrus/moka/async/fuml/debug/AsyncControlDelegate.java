@@ -85,7 +85,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.debug.ControlDelegate#getThreads()
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.debug.ControlDelegate#waitForTermination()
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.debug.ControlDelegate#resume(org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request)
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.debug.ControlDelegate#terminate(org.eclipse.papyrus.moka.communication.request.iterminate.Terminate_Request)
 	 */
 	@Override
@@ -301,7 +301,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.debug.ControlDelegate#suspend(org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request)
 	 */
 	@Override
@@ -320,7 +320,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.debug.ControlDelegate#control(java.lang.Object)
 	 */
 	@Override

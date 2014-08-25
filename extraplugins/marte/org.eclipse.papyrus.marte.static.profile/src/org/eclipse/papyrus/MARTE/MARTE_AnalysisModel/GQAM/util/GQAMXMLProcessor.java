@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GQAMXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class GQAMXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GQAMXMLProcessor() {
@@ -45,7 +45,7 @@ public class GQAMXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the GQAMResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

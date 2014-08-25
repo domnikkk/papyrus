@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.umldi.util;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 
 /**

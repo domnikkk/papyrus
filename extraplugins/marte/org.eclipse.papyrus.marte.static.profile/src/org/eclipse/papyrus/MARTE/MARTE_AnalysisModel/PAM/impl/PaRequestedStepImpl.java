@@ -41,7 +41,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	 * The cached value of the '{@link #getBase_Operation() <em>Base Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Operation()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PaRequestedStepImpl() {
@@ -61,7 +61,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetBase_Operation() {
@@ -102,7 +102,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class PaRequestedStepImpl extends PaStepImpl implements PaRequestedStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

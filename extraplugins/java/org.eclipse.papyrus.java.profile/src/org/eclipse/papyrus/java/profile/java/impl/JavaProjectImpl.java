@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.java.profile.java.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 import org.eclipse.papyrus.java.profile.java.JavaProject;
 
@@ -34,7 +31,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaProjectImpl() {
@@ -54,7 +51,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,7 +62,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +82,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -95,7 +92,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +107,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +125,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +141,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +157,7 @@ public class JavaProjectImpl extends JavaGenImpl implements JavaProject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

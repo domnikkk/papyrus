@@ -37,7 +37,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
@@ -45,7 +45,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HLAMFactory init() {
@@ -64,7 +64,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HLAMFactoryImpl() {
@@ -74,7 +74,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PoolMgtPolicyKind createPoolMgtPolicyKindFromString(EDataType eDataType, String initialValue) {
@@ -234,7 +234,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPoolMgtPolicyKindToString(EDataType eDataType, Object instanceValue) {
@@ -244,7 +244,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CallConcurrencyKind createCallConcurrencyKindFromString(EDataType eDataType, String initialValue) {
@@ -258,7 +258,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertCallConcurrencyKindToString(EDataType eDataType, Object instanceValue) {
@@ -268,7 +268,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SynchronizationKind createSynchronizationKindFromString(EDataType eDataType, String initialValue) {
@@ -282,7 +282,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSynchronizationKindToString(EDataType eDataType, Object instanceValue) {
@@ -292,7 +292,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExecutionKind createExecutionKindFromString(EDataType eDataType, String initialValue) {
@@ -306,7 +306,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertExecutionKindToString(EDataType eDataType, Object instanceValue) {
@@ -316,7 +316,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConcurrencyKind createConcurrencyKindFromString(EDataType eDataType, String initialValue) {
@@ -330,7 +330,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertConcurrencyKindToString(EDataType eDataType, Object instanceValue) {
@@ -340,7 +340,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +351,7 @@ public class HLAMFactoryImpl extends EFactoryImpl implements HLAMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

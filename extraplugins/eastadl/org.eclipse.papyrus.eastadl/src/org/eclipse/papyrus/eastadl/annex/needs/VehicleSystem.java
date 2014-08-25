@@ -48,7 +48,7 @@ public interface VehicleSystem extends Concept {
 	 * If the meaning of the '<em>Fulfills</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fulfills</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getVehicleSystem_Fulfills()
 	 * @model required="true" ordered="false"
@@ -64,7 +64,7 @@ public interface VehicleSystem extends Concept {
 	 * If the meaning of the '<em>Has</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Has</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getVehicleSystem_Has()
 	 * @model required="true" ordered="false"
@@ -79,7 +79,7 @@ public interface VehicleSystem extends Concept {
 	 * If the meaning of the '<em>Has An</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Has An</em>' reference.
 	 * @see #setHasAn(Architecture)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getVehicleSystem_HasAn()
@@ -92,7 +92,7 @@ public interface VehicleSystem extends Concept {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHasAn <em>Has An</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Has An</em>' reference.
 	 * @see #getHasAn()

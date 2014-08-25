@@ -4,15 +4,11 @@ package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.GPSSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
 
 /**
@@ -33,7 +29,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	 * The cached value of the '{@link #getOriginPosition() <em>Origin Position</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOriginPosition()
 	 * @generated
 	 * @ordered
@@ -43,7 +39,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GPSSystemImpl() {
@@ -53,7 +49,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +60,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Point32 getOriginPosition() {
@@ -74,7 +70,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOriginPosition(Point32 newOriginPosition, NotificationChain msgs) {
@@ -94,7 +90,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOriginPosition(Point32 newOriginPosition) {
@@ -119,7 +115,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +130,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +145,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +161,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +177,7 @@ public class GPSSystemImpl extends LocalizationSensorSystemImpl implements GPSSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

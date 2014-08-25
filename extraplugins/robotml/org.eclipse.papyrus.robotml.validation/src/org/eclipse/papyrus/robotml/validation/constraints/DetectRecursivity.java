@@ -24,7 +24,7 @@ public class DetectRecursivity extends AbstractModelConstraint {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.validation.AbstractModelConstraint#validate(org.eclipse.emf.validation.IValidationContext)
 	 */
 

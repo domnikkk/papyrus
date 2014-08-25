@@ -54,7 +54,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getBase_BehavioralFeature() <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeadline()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeadline()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getSpareCap() <em>Spare Cap</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpareCap()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getSpareCap() <em>Spare Cap</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpareCap()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -131,7 +131,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getPreemptT() <em>Preempt T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreemptT()
 	 * @generated
 	 * @ordered
@@ -142,7 +142,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getPreemptT() <em>Preempt T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreemptT()
 	 * @generated
 	 * @ordered
@@ -153,7 +153,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getReadyT() <em>Ready T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReadyT()
 	 * @generated
 	 * @ordered
@@ -164,7 +164,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getReadyT() <em>Ready T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReadyT()
 	 * @generated
 	 * @ordered
@@ -175,7 +175,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getNonpreemptionBlocking() <em>Nonpreemption Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNonpreemptionBlocking()
 	 * @generated
 	 * @ordered
@@ -186,7 +186,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getNonpreemptionBlocking() <em>Nonpreemption Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNonpreemptionBlocking()
 	 * @generated
 	 * @ordered
@@ -197,7 +197,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getSharedRes() <em>Shared Res</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSharedRes()
 	 * @generated
 	 * @ordered
@@ -208,7 +208,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getSelfSuspensionBlocking() <em>Self Suspension Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelfSuspensionBlocking()
 	 * @generated
 	 * @ordered
@@ -219,7 +219,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getSelfSuspensionBlocking() <em>Self Suspension Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelfSuspensionBlocking()
 	 * @generated
 	 * @ordered
@@ -230,7 +230,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The default value of the '{@link #getNumberSelfSuspensions() <em>Number Self Suspensions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNumberSelfSuspensions()
 	 * @generated
 	 * @ordered
@@ -241,7 +241,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	 * The cached value of the '{@link #getNumberSelfSuspensions() <em>Number Self Suspensions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNumberSelfSuspensions()
 	 * @generated
 	 * @ordered
@@ -251,7 +251,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SaStepImpl() {
@@ -261,7 +261,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetBase_BehavioralFeature() {
@@ -302,7 +302,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +328,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +343,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -354,7 +354,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +369,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +406,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -421,7 +421,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -432,7 +432,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -447,7 +447,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -458,7 +458,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -473,7 +473,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -487,7 +487,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -498,7 +498,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -513,7 +513,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -524,7 +524,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -539,7 +539,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -575,7 +575,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -620,7 +620,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -663,7 +663,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -696,7 +696,7 @@ public class SaStepImpl extends GaStepImpl implements SaStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

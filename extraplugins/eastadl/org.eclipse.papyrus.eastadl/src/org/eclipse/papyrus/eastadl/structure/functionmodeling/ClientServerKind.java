@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getClientServerKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum ClientServerKind implements Enumerator {
 	 * The '<em><b>Client</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CLIENT_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum ClientServerKind implements Enumerator {
 	 * The '<em><b>Server</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SERVER_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum ClientServerKind implements Enumerator {
 	 * If the meaning of '<em><b>Client</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CLIENT
 	 * @model name="client"
 	 * @generated
@@ -85,7 +85,7 @@ public enum ClientServerKind implements Enumerator {
 	 * If the meaning of '<em><b>Server</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SERVER
 	 * @model name="server"
 	 * @generated
@@ -97,7 +97,7 @@ public enum ClientServerKind implements Enumerator {
 	 * An array of all the '<em><b>Client Server Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ClientServerKind[] VALUES_ARRAY =
@@ -110,7 +110,7 @@ public enum ClientServerKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Client Server Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ClientServerKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -119,7 +119,7 @@ public enum ClientServerKind implements Enumerator {
 	 * Returns the '<em><b>Client Server Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ClientServerKind get(int value) {
@@ -136,7 +136,7 @@ public enum ClientServerKind implements Enumerator {
 	 * Returns the '<em><b>Client Server Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ClientServerKind get(String literal) {
@@ -153,7 +153,7 @@ public enum ClientServerKind implements Enumerator {
 	 * Returns the '<em><b>Client Server Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ClientServerKind getByName(String name) {
@@ -169,7 +169,7 @@ public enum ClientServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -177,7 +177,7 @@ public enum ClientServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -185,7 +185,7 @@ public enum ClientServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -194,7 +194,7 @@ public enum ClientServerKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ClientServerKind(int value, String name, String literal) {
@@ -206,7 +206,7 @@ public enum ClientServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public enum ClientServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public enum ClientServerKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public enum ClientServerKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

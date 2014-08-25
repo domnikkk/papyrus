@@ -152,7 +152,7 @@ public interface EProblem extends CDOObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Code</em>' attribute.
 	 * @see #getCode()
@@ -208,7 +208,7 @@ public interface EProblem extends CDOObject {
 	 * If the meaning of the '<em>Container</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Container</em>' container reference.
 	 * @see #setContainer(EProblemsContainer)
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblem_Container()
@@ -222,7 +222,7 @@ public interface EProblem extends CDOObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getContainer <em>Container</em>}' container reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Container</em>' container reference.
 	 * @see #getContainer()
@@ -238,7 +238,7 @@ public interface EProblem extends CDOObject {
 	 * <!-- begin-model-doc -->
 	 * Optional identifier of a problem type. This should correspond to a marker type registered on the Eclipse {@code org.eclipse.core.resources.markers} extension point.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblem_Type()
@@ -251,7 +251,7 @@ public interface EProblem extends CDOObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see #getType()
@@ -268,7 +268,7 @@ public interface EProblem extends CDOObject {
 	 * If the meaning of the '<em>Attributes</em>' map isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attributes</em>' map.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#getEProblem_Attributes()
 	 * @model mapType="org.eclipse.papyrus.cdo.validation.problems.Attribute<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EString>"
@@ -278,7 +278,7 @@ public interface EProblem extends CDOObject {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.cdo.validation.problems.EDiagnostic" required="true"
 	 * @generated
 	 */

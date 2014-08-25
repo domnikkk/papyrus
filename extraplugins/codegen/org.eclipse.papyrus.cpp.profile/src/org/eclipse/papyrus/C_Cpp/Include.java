@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.C_Cpp;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.PackageImport;
 
 /**
@@ -51,7 +50,7 @@ public interface Include extends EObject {
 	 * If the meaning of the '<em>Body</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Body</em>' attribute.
 	 * @see #setBody(String)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getInclude_Body()
@@ -64,7 +63,7 @@ public interface Include extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Include#getBody <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Body</em>' attribute.
 	 * @see #getBody()
@@ -80,7 +79,7 @@ public interface Include extends EObject {
 	 * If the meaning of the '<em>Pre Body</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pre Body</em>' attribute.
 	 * @see #setPreBody(String)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getInclude_PreBody()
@@ -93,7 +92,7 @@ public interface Include extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Include#getPreBody <em>Pre Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Pre Body</em>' attribute.
 	 * @see #getPreBody()
@@ -109,7 +108,7 @@ public interface Include extends EObject {
 	 * If the meaning of the '<em>Header</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Header</em>' attribute.
 	 * @see #setHeader(String)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getInclude_Header()
@@ -122,7 +121,7 @@ public interface Include extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Include#getHeader <em>Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Header</em>' attribute.
 	 * @see #getHeader()
@@ -137,7 +136,7 @@ public interface Include extends EObject {
 	 * If the meaning of the '<em>Base package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base package</em>' reference.
 	 * @see #setBase_package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getInclude_Base_package()
@@ -150,7 +149,7 @@ public interface Include extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Include#getBase_package <em>Base package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base package</em>' reference.
 	 * @see #getBase_package()
@@ -165,7 +164,7 @@ public interface Include extends EObject {
 	 * If the meaning of the '<em>Base class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base class</em>' reference.
 	 * @see #setBase_class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getInclude_Base_class()
@@ -178,7 +177,7 @@ public interface Include extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Include#getBase_class <em>Base class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base class</em>' reference.
 	 * @see #getBase_class()
@@ -193,7 +192,7 @@ public interface Include extends EObject {
 	 * If the meaning of the '<em>Base Package Import</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package Import</em>' reference.
 	 * @see #setBase_PackageImport(PackageImport)
 	 * @see org.eclipse.papyrus.C_Cpp.C_CppPackage#getInclude_Base_PackageImport()
@@ -206,7 +205,7 @@ public interface Include extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.C_Cpp.Include#getBase_PackageImport <em>Base Package Import</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package Import</em>' reference.
 	 * @see #getBase_PackageImport()

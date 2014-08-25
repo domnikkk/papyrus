@@ -55,7 +55,7 @@ public interface JDTMember extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Type Parameters</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type Parameters</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMember_TypeParameters()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter#getDeclaringMember
@@ -73,7 +73,7 @@ public interface JDTMember extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Visibility</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.VisibilityKind
 	 * @see #setVisibility(VisibilityKind)
@@ -87,7 +87,7 @@ public interface JDTMember extends JDTParentJavaElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMember#getVisibility <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.VisibilityKind
@@ -104,7 +104,7 @@ public interface JDTMember extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Explicit Required Imports</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Explicit Required Imports</em>' reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMember_ExplicitRequiredImports()
 	 * @model ordered="false"
@@ -120,7 +120,7 @@ public interface JDTMember extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Explicit Plain Text Required Imports</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Explicit Plain Text Required Imports</em>' attribute list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMember_ExplicitPlainTextRequiredImports()
 	 * @model dataType="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.String" ordered="false"

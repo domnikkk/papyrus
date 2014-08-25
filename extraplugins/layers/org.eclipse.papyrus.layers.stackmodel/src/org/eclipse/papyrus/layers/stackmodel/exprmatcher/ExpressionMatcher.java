@@ -404,7 +404,7 @@ public class ExpressionMatcher implements IValueChangedEventListener {
 
 	/**
 	 * Called when a value change in one of the elements of the observed roots.
-	 * 
+	 *
 	 * @param msg
 	 */
 	@Override

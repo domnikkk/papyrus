@@ -42,7 +42,7 @@ public interface PrecedenceConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Preceding</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Preceding</em>' containment reference.
 	 * @see #setPreceding(PrecedenceConstraint_precedingInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getPrecedenceConstraint_Preceding()
@@ -55,7 +55,7 @@ public interface PrecedenceConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.PrecedenceConstraint#getPreceding <em>Preceding</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Preceding</em>' containment reference.
 	 * @see #getPreceding()
@@ -68,7 +68,7 @@ public interface PrecedenceConstraint extends TimingConstraint {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_successiveInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Successive</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.TimingPackage#getPrecedenceConstraint_Successive()
 	 * @model containment="true" required="true" ordered="false"

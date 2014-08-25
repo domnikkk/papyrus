@@ -26,7 +26,7 @@ public interface INotationDiagramRemovedEventListener {
 
 	/**
 	 * Called by events when a {@link Diagram} is removed from the {@link NotationModel}
-	 * 
+	 *
 	 * @param msg
 	 */
 	public void diagramRemoved(Notification msg);

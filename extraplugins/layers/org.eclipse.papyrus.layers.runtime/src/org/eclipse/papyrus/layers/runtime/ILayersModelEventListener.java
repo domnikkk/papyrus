@@ -66,7 +66,7 @@ public interface ILayersModelEventListener {
 	 * Method called when a view is moved from one layer to another.
 	 * The event contains: the layer, the view.
 	 * Warning : this handler is never called in the current implementation.
-	 * 
+	 *
 	 * @param notification
 	 */
 	public void viewMovedBetweenLayer(Notification notification);

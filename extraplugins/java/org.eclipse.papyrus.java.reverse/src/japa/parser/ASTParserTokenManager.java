@@ -19,9 +19,14 @@
  */
 package japa.parser;
 
-import java.util.*;
-import japa.parser.ast.*;
-import japa.parser.ast.body.*;
+import japa.parser.ast.BlockComment;
+import japa.parser.ast.Comment;
+import japa.parser.ast.LineComment;
+import japa.parser.ast.body.JavadocComment;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
 /** Token Manager. */
 public class ASTParserTokenManager implements ASTParserConstants {

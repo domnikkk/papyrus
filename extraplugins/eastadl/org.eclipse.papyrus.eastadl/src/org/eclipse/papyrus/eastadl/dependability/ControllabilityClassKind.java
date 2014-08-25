@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getControllabilityClassKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * The '<em><b>C1</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #C1_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * The '<em><b>C2</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #C2_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * The '<em><b>C3</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #C3_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * The '<em><b>C0</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #C0_VALUE
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Simply controllable
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #C1
 	 * @model
 	 * @generated
@@ -107,7 +107,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Normally controllable
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #C2
 	 * @model
 	 * @generated
@@ -122,7 +122,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Difficult to control or uncontrollable
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #C3
 	 * @model
 	 * @generated
@@ -137,7 +137,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Controllable in general
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #C0
 	 * @model
 	 * @generated
@@ -149,7 +149,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * An array of all the '<em><b>Controllability Class Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ControllabilityClassKind[] VALUES_ARRAY =
@@ -164,7 +164,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Controllability Class Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ControllabilityClassKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -173,7 +173,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * Returns the '<em><b>Controllability Class Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ControllabilityClassKind get(int value) {
@@ -194,7 +194,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * Returns the '<em><b>Controllability Class Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ControllabilityClassKind get(String literal) {
@@ -211,7 +211,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * Returns the '<em><b>Controllability Class Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ControllabilityClassKind getByName(String name) {
@@ -227,7 +227,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -235,7 +235,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -243,7 +243,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -252,7 +252,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ControllabilityClassKind(int value, String name, String literal) {
@@ -264,7 +264,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public enum ControllabilityClassKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -42,7 +42,7 @@ public interface TimedInstantObservation extends TimedElement {
 	 * If the meaning of the '<em>Obs Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Obs Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind
 	 * @see #setObsKind(EventKind)
@@ -56,7 +56,7 @@ public interface TimedInstantObservation extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation#getObsKind <em>Obs Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Obs Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind
@@ -72,7 +72,7 @@ public interface TimedInstantObservation extends TimedElement {
 	 * If the meaning of the '<em>Base Time Observation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Time Observation</em>' reference.
 	 * @see #setBase_TimeObservation(TimeObservation)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedInstantObservation_Base_TimeObservation()
@@ -85,7 +85,7 @@ public interface TimedInstantObservation extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation#getBase_TimeObservation <em>Base Time Observation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Time Observation</em>' reference.
 	 * @see #getBase_TimeObservation()

@@ -3,16 +3,12 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.Transition;
-
 import org.eclipse.uml2.uml.Behavior;
 
 /**
@@ -35,7 +31,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * The cached value of the '{@link #getBase_Transition() <em>Base Transition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Transition()
 	 * @generated
 	 * @ordered
@@ -46,7 +42,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGuard()
 	 * @generated
 	 * @ordered
@@ -57,7 +53,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -67,7 +63,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TransitionImpl() {
@@ -77,7 +73,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +84,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Transition getBase_Transition() {
@@ -107,7 +103,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Transition basicGetBase_Transition() {
@@ -117,7 +113,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Transition(org.eclipse.uml2.uml.Transition newBase_Transition) {
@@ -131,7 +127,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior getGuard() {
@@ -150,7 +146,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetGuard() {
@@ -160,7 +156,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGuard(Behavior newGuard) {
@@ -174,7 +170,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior getEffect() {
@@ -193,7 +189,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetEffect() {
@@ -203,7 +199,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEffect(Behavior newEffect) {
@@ -217,7 +213,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +241,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +263,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +285,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

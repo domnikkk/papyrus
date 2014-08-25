@@ -15,17 +15,12 @@ package org.eclipse.papyrus.FCM.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.ContainerRule;
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.RuleApplication;
@@ -50,7 +45,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -61,7 +56,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	 * The cached value of the '{@link #getContainerRule() <em>Container Rule</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContainerRule()
 	 * @generated
 	 * @ordered
@@ -72,7 +67,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -82,7 +77,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RuleApplicationImpl() {
@@ -92,7 +87,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +98,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +118,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -133,7 +128,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +143,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +157,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +177,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -192,7 +187,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +202,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +227,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -256,7 +251,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +273,7 @@ public class RuleApplicationImpl extends EObjectImpl implements RuleApplication 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

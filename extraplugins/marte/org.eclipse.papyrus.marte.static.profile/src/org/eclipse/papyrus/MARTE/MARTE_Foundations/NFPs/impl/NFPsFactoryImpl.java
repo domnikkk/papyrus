@@ -32,7 +32,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
@@ -40,7 +40,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NFPsFactory init() {
@@ -59,7 +59,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NFPsFactoryImpl() {
@@ -69,7 +69,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintKind createConstraintKindFromString(EDataType eDataType, String initialValue) {
@@ -199,7 +199,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertConstraintKindToString(EDataType eDataType, Object instanceValue) {
@@ -209,7 +209,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class NFPsFactoryImpl extends EFactoryImpl implements NFPsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

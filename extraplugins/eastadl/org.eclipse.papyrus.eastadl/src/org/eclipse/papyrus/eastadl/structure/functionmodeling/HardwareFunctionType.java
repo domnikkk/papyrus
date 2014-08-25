@@ -62,7 +62,7 @@ public interface HardwareFunctionType extends DesignFunctionType {
 	 * If the meaning of the '<em>Hardware Component</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Component</em>' reference.
 	 * @see #setHardwareComponent(HardwareComponentType)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getHardwareFunctionType_HardwareComponent()
@@ -75,7 +75,7 @@ public interface HardwareFunctionType extends DesignFunctionType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.HardwareFunctionType#getHardwareComponent <em>Hardware Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hardware Component</em>' reference.
 	 * @see #getHardwareComponent()

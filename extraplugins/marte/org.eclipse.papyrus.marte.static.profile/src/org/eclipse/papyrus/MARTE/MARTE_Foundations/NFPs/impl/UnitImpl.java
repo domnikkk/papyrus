@@ -43,7 +43,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The default value of the '{@link #getConvFactor() <em>Conv Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConvFactor()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getConvFactor() <em>Conv Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConvFactor()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The default value of the '{@link #getConvOffset() <em>Conv Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConvOffset()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getConvOffset() <em>Conv Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConvOffset()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getBaseUnit() <em>Base Unit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseUnit()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getBase_EnumerationLiteral() <em>Base Enumeration Literal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_EnumerationLiteral()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UnitImpl() {
@@ -118,7 +118,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Unit basicGetBaseUnit() {
@@ -211,7 +211,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnumerationLiteral basicGetBase_EnumerationLiteral() {
@@ -256,7 +256,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +323,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +348,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +369,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

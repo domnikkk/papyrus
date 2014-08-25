@@ -52,7 +52,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureGroupImpl() {
@@ -91,7 +91,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -153,7 +153,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -194,7 +194,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -264,7 +264,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public class FeatureGroupImpl extends FeatureTreeNodeImpl implements FeatureGrou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

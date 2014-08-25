@@ -47,7 +47,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void addListener(ILabelProviderListener listener) {
@@ -56,7 +56,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
 	 */
 	public void dispose() {
@@ -65,7 +65,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
 	 */
 	public boolean isLabelProperty(Object element, String property) {
@@ -75,7 +75,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 */
 	public void removeListener(ILabelProviderListener listener) {
@@ -84,7 +84,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.ISourcePresentation#getEditorInput(java.lang.Object)
 	 */
 	public IEditorInput getEditorInput(Object element) {
@@ -103,7 +103,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.ISourcePresentation#getEditorId(org.eclipse.ui.IEditorInput, java.lang.Object)
 	 */
 	public String getEditorId(IEditorInput input, Object element) {
@@ -112,7 +112,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#setAttribute(java.lang.String, java.lang.Object)
 	 */
 	public void setAttribute(String attribute, Object value) {
@@ -121,7 +121,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#getImage(java.lang.Object)
 	 */
 	public Image getImage(Object element) {
@@ -133,7 +133,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#getText(java.lang.Object)
 	 */
 	public String getText(Object element) {
@@ -148,7 +148,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugModelPresentation#computeDetail(org.eclipse.debug.core.model.IValue, org.eclipse.debug.ui.IValueDetailListener)
 	 */
 	public void computeDetail(IValue value, IValueDetailListener listener) {
@@ -162,7 +162,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#addAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IStackFrame)
 	 */
 	public boolean addAnnotations(IEditorPart editorPart, IStackFrame frame) {
@@ -192,7 +192,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#removeAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IThread)
 	 */
 	public void removeAnnotations(IEditorPart editorPart, IThread thread) {

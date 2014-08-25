@@ -50,7 +50,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	 * The cached value of the '{@link #getConcurrentResources() <em>Concurrent Resources</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcurrentResources()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	 * The cached value of the '{@link #getMemorySpaces() <em>Memory Spaces</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySpaces()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	 * The cached value of the '{@link #getFork() <em>Fork</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFork()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	 * The cached value of the '{@link #getExit() <em>Exit</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExit()
 	 * @generated
 	 * @ordered
@@ -94,7 +94,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	 * The cached value of the '{@link #getBase_Namespace() <em>Base Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Namespace()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MemoryPartitionImpl() {
@@ -114,7 +114,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Namespace basicGetBase_Namespace() {
@@ -211,7 +211,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -285,7 +285,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -313,7 +313,7 @@ public class MemoryPartitionImpl extends SwResourceImpl implements MemoryPartiti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

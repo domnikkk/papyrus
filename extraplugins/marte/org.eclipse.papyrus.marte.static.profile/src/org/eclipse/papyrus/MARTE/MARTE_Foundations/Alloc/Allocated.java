@@ -44,7 +44,7 @@ public interface Allocated extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocated_Base_NamedElement()
@@ -57,7 +57,7 @@ public interface Allocated extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocated#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()
@@ -73,7 +73,7 @@ public interface Allocated extends EObject {
 	 * If the meaning of the '<em>Allocated To</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocated To</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocated_AllocatedTo()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
@@ -89,7 +89,7 @@ public interface Allocated extends EObject {
 	 * If the meaning of the '<em>Allocated From</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocated From</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocated_AllocatedFrom()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
@@ -105,7 +105,7 @@ public interface Allocated extends EObject {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationEndKind
 	 * @see #setKind(AllocationEndKind)
@@ -119,7 +119,7 @@ public interface Allocated extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocated#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationEndKind

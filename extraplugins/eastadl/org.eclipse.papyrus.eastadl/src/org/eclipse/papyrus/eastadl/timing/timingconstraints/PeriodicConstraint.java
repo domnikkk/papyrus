@@ -37,7 +37,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The jitter specifies the maximal possible time interval the occurrence of an event can vary (formerly: be delayed).
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Jitter</em>' reference.
 	 * @see #setJitter(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPeriodicConstraint_Jitter()
@@ -50,7 +50,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PeriodicConstraint#getJitter <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Jitter</em>' reference.
 	 * @see #getJitter()
@@ -65,7 +65,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The period specifies the ideal time interval between two subsequent occurrences of the event.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Period</em>' reference.
 	 * @see #setPeriod(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPeriodicConstraint_Period()
@@ -78,7 +78,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PeriodicConstraint#getPeriod <em>Period</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Period</em>' reference.
 	 * @see #getPeriod()
@@ -93,7 +93,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The minimum inter-arrival time specifies the minimal possible time interval between two consecutive occurrences of an event.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Minimum</em>' reference.
 	 * @see #setMinimum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPeriodicConstraint_Minimum()
@@ -106,7 +106,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PeriodicConstraint#getMinimum <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Minimum</em>' reference.
 	 * @see #getMinimum()
@@ -121,7 +121,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Event</em>' reference.
 	 * @see #setEvent(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPeriodicConstraint_Event()
@@ -134,7 +134,7 @@ public interface PeriodicConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PeriodicConstraint#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Event</em>' reference.
 	 * @see #getEvent()

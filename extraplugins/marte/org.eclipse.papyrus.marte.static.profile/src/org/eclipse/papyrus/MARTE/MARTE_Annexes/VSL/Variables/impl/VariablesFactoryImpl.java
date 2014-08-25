@@ -29,7 +29,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.VariablesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFactory {
@@ -37,7 +37,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VariablesFactory init() {
@@ -56,7 +56,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VariablesFactoryImpl() {
@@ -66,7 +66,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VariableDirectionKind createVariableDirectionKindFromString(EDataType eDataType, String initialValue) {
@@ -154,7 +154,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVariableDirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -164,7 +164,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class VariablesFactoryImpl extends EFactoryImpl implements VariablesFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

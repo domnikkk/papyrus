@@ -39,7 +39,7 @@ public interface VVCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVCase_Base_Class()
@@ -52,7 +52,7 @@ public interface VVCase extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -67,7 +67,7 @@ public interface VVCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Abstract VV Case</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Abstract VV Case</em>' reference.
 	 * @see #setAbstractVVCase(VVCase)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVCase_AbstractVVCase()
@@ -80,7 +80,7 @@ public interface VVCase extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getAbstractVVCase <em>Abstract VV Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Abstract VV Case</em>' reference.
 	 * @see #getAbstractVVCase()
@@ -96,7 +96,7 @@ public interface VVCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Vv Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVCase_VvTarget()
 	 * @model ordered="false"
@@ -112,7 +112,7 @@ public interface VVCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Vv Subject</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Subject</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVCase_VvSubject()
 	 * @model containment="true" ordered="false"
@@ -128,7 +128,7 @@ public interface VVCase extends TraceableSpecification {
 	 * If the meaning of the '<em>Vv Log</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Log</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVCase_VvLog()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -144,7 +144,7 @@ public interface VVCase extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * The abstract VV procedures for this AbstractVVCase.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Procedure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVCase_VvProcedure()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"

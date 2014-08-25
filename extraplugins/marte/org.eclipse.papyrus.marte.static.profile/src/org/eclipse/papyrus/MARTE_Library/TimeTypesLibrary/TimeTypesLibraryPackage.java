@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeTypesLibraryFactory
  * @model kind="package"
  * @generated
@@ -37,7 +37,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "TimeTypesLibrary";
@@ -46,7 +46,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http:///MARTE_Library/TimeTypesLibrary.ecore";
@@ -55,7 +55,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "MARTE_Library.TimeTypesLibrary";
@@ -64,7 +64,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	TimeTypesLibraryPackage eINSTANCE = org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl.init();
@@ -73,7 +73,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind <em>Time Nature Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getTimeNatureKind()
 	 * @generated
@@ -84,7 +84,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind <em>Time Interpretation Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getTimeInterpretationKind()
 	 * @generated
@@ -95,7 +95,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind <em>Event Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getEventKind()
 	 * @generated
@@ -106,7 +106,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind <em>Time Standard Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getTimeStandardKind()
 	 * @generated
@@ -118,7 +118,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind <em>Time Nature Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Time Nature Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind
 	 * @generated
@@ -129,7 +129,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind <em>Time Interpretation Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Time Interpretation Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind
 	 * @generated
@@ -140,7 +140,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind <em>Event Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Event Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind
 	 * @generated
@@ -151,7 +151,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind <em>Time Standard Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Time Standard Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind
 	 * @generated
@@ -162,7 +162,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -178,7 +178,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -186,7 +186,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind <em>Time Nature Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeNatureKind
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getTimeNatureKind()
 		 * @generated
@@ -197,7 +197,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind <em>Time Interpretation Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getTimeInterpretationKind()
 		 * @generated
@@ -208,7 +208,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind <em>Event Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.EventKind
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getEventKind()
 		 * @generated
@@ -219,7 +219,7 @@ public interface TimeTypesLibraryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind <em>Time Standard Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind
 		 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.impl.TimeTypesLibraryPackageImpl#getTimeStandardKind()
 		 * @generated

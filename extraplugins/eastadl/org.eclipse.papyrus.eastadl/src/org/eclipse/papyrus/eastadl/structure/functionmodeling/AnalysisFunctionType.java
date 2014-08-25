@@ -65,7 +65,7 @@ public interface AnalysisFunctionType extends FunctionType {
 	 * If the meaning of the '<em>Part</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Part</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getAnalysisFunctionType_Part()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

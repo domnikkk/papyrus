@@ -46,7 +46,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The default value of the '{@link #getVirtualAddrSpace() <em>Virtual Addr Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVirtualAddrSpace()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The cached value of the '{@link #getVirtualAddrSpace() <em>Virtual Addr Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVirtualAddrSpace()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The default value of the '{@link #getPhysicalAddrSpace() <em>Physical Addr Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPhysicalAddrSpace()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The cached value of the '{@link #getPhysicalAddrSpace() <em>Physical Addr Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPhysicalAddrSpace()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The default value of the '{@link #getMemoryProtection() <em>Memory Protection</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemoryProtection()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The cached value of the '{@link #getMemoryProtection() <em>Memory Protection</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemoryProtection()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The default value of the '{@link #getNbEntries() <em>Nb Entries</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbEntries()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	 * The cached value of the '{@link #getOwnedTLBs() <em>Owned TL Bs</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedTLBs()
 	 * @generated
 	 * @ordered
@@ -133,7 +133,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwMMUImpl() {
@@ -143,7 +143,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -327,7 +327,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -378,7 +378,7 @@ public class HwMMUImpl extends HwStorageManagerImpl implements HwMMU {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

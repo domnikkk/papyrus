@@ -33,7 +33,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeInstanceMap
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AbstractLayerItemProvider
@@ -49,7 +49,7 @@ public class AbstractLayerItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AbstractLayerItemProvider(AdapterFactory adapterFactory,
@@ -82,7 +82,7 @@ public class AbstractLayerItemProvider
 	 * <li></li>
 	 * <li></li>
 	 * </ul>
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 *
 	 * @param object
@@ -148,7 +148,7 @@ public class AbstractLayerItemProvider
 
 	/**
 	 * Return true if the value should be a children of the node
-	 * 
+	 *
 	 * @param child
 	 * @return
 	 */
@@ -166,7 +166,7 @@ public class AbstractLayerItemProvider
 	 * This returns RegExpLayer.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class AbstractLayerItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class AbstractLayerItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class AbstractLayerItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

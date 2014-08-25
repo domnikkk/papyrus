@@ -44,7 +44,7 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DesignFunctionPrototypeImpl() {
@@ -75,7 +75,7 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

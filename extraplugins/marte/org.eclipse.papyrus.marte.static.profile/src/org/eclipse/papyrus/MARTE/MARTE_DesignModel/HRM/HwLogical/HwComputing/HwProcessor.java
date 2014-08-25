@@ -52,7 +52,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Architecture</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Architecture</em>' attribute.
 	 * @see #setArchitecture(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_Architecture()
@@ -65,7 +65,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getArchitecture <em>Architecture</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Architecture</em>' attribute.
 	 * @see #getArchitecture()
@@ -80,7 +80,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Mips</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mips</em>' attribute.
 	 * @see #setMips(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_Mips()
@@ -93,7 +93,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getMips <em>Mips</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Mips</em>' attribute.
 	 * @see #getMips()
@@ -108,7 +108,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Ipc</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ipc</em>' attribute.
 	 * @see #setIpc(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_Ipc()
@@ -121,7 +121,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getIpc <em>Ipc</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Ipc</em>' attribute.
 	 * @see #getIpc()
@@ -136,7 +136,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Nb Cores</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb Cores</em>' attribute.
 	 * @see #setNbCores(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_NbCores()
@@ -149,7 +149,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getNbCores <em>Nb Cores</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb Cores</em>' attribute.
 	 * @see #getNbCores()
@@ -164,7 +164,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Nb Pipelines</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb Pipelines</em>' attribute.
 	 * @see #setNbPipelines(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_NbPipelines()
@@ -177,7 +177,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getNbPipelines <em>Nb Pipelines</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb Pipelines</em>' attribute.
 	 * @see #getNbPipelines()
@@ -192,7 +192,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Nb Stages</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb Stages</em>' attribute.
 	 * @see #setNbStages(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_NbStages()
@@ -205,7 +205,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getNbStages <em>Nb Stages</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb Stages</em>' attribute.
 	 * @see #getNbStages()
@@ -220,7 +220,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Nb AL Us</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb AL Us</em>' attribute.
 	 * @see #setNbALUs(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_NbALUs()
@@ -233,7 +233,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getNbALUs <em>Nb AL Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb AL Us</em>' attribute.
 	 * @see #getNbALUs()
@@ -248,7 +248,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Nb FP Us</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Nb FP Us</em>' attribute.
 	 * @see #setNbFPUs(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_NbFPUs()
@@ -261,7 +261,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwProcessor#getNbFPUs <em>Nb FP Us</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Nb FP Us</em>' attribute.
 	 * @see #getNbFPUs()
@@ -277,7 +277,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Owned IS As</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned IS As</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_OwnedISAs()
 	 * @model ordered="false"
@@ -293,7 +293,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Predictors</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Predictors</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_Predictors()
 	 * @model ordered="false"
@@ -309,7 +309,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Caches</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Caches</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_Caches()
 	 * @model ordered="false"
@@ -325,7 +325,7 @@ public interface HwProcessor extends HwComputingResource {
 	 * If the meaning of the '<em>Owned MM Us</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned MM Us</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.HwComputingPackage#getHwProcessor_OwnedMMUs()
 	 * @model ordered="false"

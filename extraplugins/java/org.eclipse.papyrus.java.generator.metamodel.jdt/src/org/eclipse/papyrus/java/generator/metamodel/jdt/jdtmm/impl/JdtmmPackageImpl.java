@@ -65,7 +65,7 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
@@ -73,7 +73,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtMethodBodyEClass = null;
@@ -81,7 +81,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtJavaElementEClass = null;
@@ -89,7 +89,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtParentEClass = null;
@@ -97,7 +97,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtMemberEClass = null;
@@ -105,7 +105,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtParentJavaElementEClass = null;
@@ -113,7 +113,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtTypeParameterEClass = null;
@@ -121,7 +121,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtFieldEClass = null;
@@ -129,7 +129,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtTypeEClass = null;
@@ -137,7 +137,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtMethodEClass = null;
@@ -145,7 +145,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtCompilationUnitEClass = null;
@@ -153,7 +153,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtTypeRootEClass = null;
@@ -161,7 +161,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtPackageFragmentEClass = null;
@@ -169,7 +169,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtPackageFragmentRootEClass = null;
@@ -177,7 +177,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtJavaProjectEClass = null;
@@ -185,7 +185,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtClassEClass = null;
@@ -193,7 +193,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtInterfaceEClass = null;
@@ -201,7 +201,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtEnumEClass = null;
@@ -209,7 +209,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtImportDeclarationEClass = null;
@@ -217,7 +217,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtImportContainerEClass = null;
@@ -225,7 +225,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtParameterEClass = null;
@@ -233,7 +233,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtExceptionEClass = null;
@@ -241,7 +241,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtOpaqueBodyEClass = null;
@@ -249,7 +249,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum visibilityKindEEnum = null;
@@ -257,7 +257,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum trueFalseDefaultEEnum = null;
@@ -265,7 +265,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass jdtJavaModelEClass = null;
@@ -273,7 +273,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType intEDataType = null;
@@ -281,7 +281,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -289,7 +289,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType jdtVisitorExceptionEDataType = null;
@@ -297,7 +297,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType visitorEDataType = null;
@@ -305,7 +305,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType booleanEDataType = null;
@@ -315,7 +315,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#eNS_URI
 	 * @see #init()
@@ -328,7 +328,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -338,7 +338,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link JdtmmPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -372,7 +372,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +383,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,7 +394,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +405,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +416,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -427,7 +427,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +438,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -449,7 +449,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -460,7 +460,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -471,7 +471,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -482,7 +482,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -493,7 +493,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +504,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -515,7 +515,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -526,7 +526,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -537,7 +537,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +548,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -559,7 +559,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -570,7 +570,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -581,7 +581,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -592,7 +592,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -603,7 +603,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -614,7 +614,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -625,7 +625,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -636,7 +636,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -647,7 +647,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -658,7 +658,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -669,7 +669,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -680,7 +680,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -691,7 +691,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -702,7 +702,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -713,7 +713,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -724,7 +724,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -735,7 +735,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -746,7 +746,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -757,7 +757,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -768,7 +768,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -779,7 +779,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -790,7 +790,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -801,7 +801,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -812,7 +812,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -823,7 +823,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -834,7 +834,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -845,7 +845,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -856,7 +856,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -867,7 +867,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -878,7 +878,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -889,7 +889,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -900,7 +900,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -911,7 +911,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -922,7 +922,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -933,7 +933,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -944,7 +944,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -955,7 +955,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -966,7 +966,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -977,7 +977,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -988,7 +988,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -999,7 +999,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1010,7 +1010,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1021,7 +1021,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1032,7 +1032,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1043,7 +1043,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1054,7 +1054,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1065,7 +1065,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1076,7 +1076,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1087,7 +1087,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1098,7 +1098,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1109,7 +1109,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1120,7 +1120,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1131,7 +1131,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1142,7 +1142,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1153,7 +1153,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1164,7 +1164,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1175,7 +1175,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1186,7 +1186,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1197,7 +1197,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1208,7 +1208,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1219,7 +1219,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1230,7 +1230,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1241,7 +1241,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1252,7 +1252,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1263,7 +1263,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1274,7 +1274,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1285,7 +1285,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1296,7 +1296,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1307,7 +1307,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1318,7 +1318,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1329,7 +1329,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1340,7 +1340,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1351,7 +1351,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1362,7 +1362,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1373,7 +1373,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1384,7 +1384,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1395,7 +1395,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1405,7 +1405,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1538,7 +1538,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1548,7 +1548,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -1771,7 +1771,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	 * Initializes the annotations for <b>union</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createUnionAnnotations() {
@@ -1786,7 +1786,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	 * Initializes the annotations for <b>redefines</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createRedefinesAnnotations() {
@@ -1846,7 +1846,7 @@ public class JdtmmPackageImpl extends EPackageImpl implements JdtmmPackage {
 	 * Initializes the annotations for <b>subsets</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createSubsetsAnnotations() {

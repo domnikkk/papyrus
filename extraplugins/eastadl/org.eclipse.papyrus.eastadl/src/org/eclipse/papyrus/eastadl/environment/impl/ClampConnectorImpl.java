@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.environment.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -50,7 +51,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -61,7 +62,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -70,7 +71,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClampConnectorImpl() {
@@ -79,7 +80,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +99,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +115,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -134,7 +135,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +145,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +163,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +177,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +197,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -206,7 +207,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +222,7 @@ public class ClampConnectorImpl extends EAElementImpl implements ClampConnector 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage#getExposureClassKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * The '<em><b>E1</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #E1_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * The '<em><b>E2</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #E2_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * The '<em><b>E3</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #E3_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * The '<em><b>E4</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #E4_VALUE
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Rare events
 	 * Situations that occur less often yhan once a year for the great majority of drivers
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #E1
 	 * @model
 	 * @generated
@@ -109,7 +109,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Sometimes
 	 * Situations that occur a few times a year for the great majority of drivers
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #E2
 	 * @model
 	 * @generated
@@ -125,7 +125,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Quite often
 	 * Situations that occur once a month or more often for an average driver
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #E3
 	 * @model
 	 * @generated
@@ -141,7 +141,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Often
 	 * All situations that occur during almost every drive on average
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #E4
 	 * @model
 	 * @generated
@@ -153,7 +153,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * An array of all the '<em><b>Exposure Class Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ExposureClassKind[] VALUES_ARRAY =
@@ -168,7 +168,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Exposure Class Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ExposureClassKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -177,7 +177,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Returns the '<em><b>Exposure Class Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExposureClassKind get(int value) {
@@ -198,7 +198,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Returns the '<em><b>Exposure Class Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExposureClassKind get(String literal) {
@@ -215,7 +215,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Returns the '<em><b>Exposure Class Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExposureClassKind getByName(String name) {
@@ -231,7 +231,7 @@ public enum ExposureClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -239,7 +239,7 @@ public enum ExposureClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -247,7 +247,7 @@ public enum ExposureClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -256,7 +256,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ExposureClassKind(int value, String name, String literal) {
@@ -268,7 +268,7 @@ public enum ExposureClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public enum ExposureClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public enum ExposureClassKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public enum ExposureClassKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

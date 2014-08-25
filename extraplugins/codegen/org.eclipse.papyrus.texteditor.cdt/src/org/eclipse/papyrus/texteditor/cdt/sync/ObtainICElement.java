@@ -18,7 +18,6 @@ import org.eclipse.cdt.core.model.IParent;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
@@ -27,7 +26,7 @@ import org.eclipse.uml2.uml.Transition;
 public class ObtainICElement {
 	/**
 	 * Return the ICelement associated with a UML element. Currently, only methods are supported.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent (typically the translation unit of a CDT file)
 	 * @param element

@@ -105,7 +105,7 @@ public class NotationDiagramRemovedFromResourceEventNotifier {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean isDisposed() {
@@ -134,7 +134,7 @@ public class NotationDiagramRemovedFromResourceEventNotifier {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeLayersModelEventListener(INotationDiagramRemovedEventListener listener) {
@@ -144,7 +144,7 @@ public class NotationDiagramRemovedFromResourceEventNotifier {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void fireDiagramRemovedEvent(Notification msg) {
@@ -155,7 +155,7 @@ public class NotationDiagramRemovedFromResourceEventNotifier {
 
 	/**
 	 * Get the removed diagram in case of diagramRemoved event
-	 * 
+	 *
 	 * @param msg
 	 * @return
 	 */

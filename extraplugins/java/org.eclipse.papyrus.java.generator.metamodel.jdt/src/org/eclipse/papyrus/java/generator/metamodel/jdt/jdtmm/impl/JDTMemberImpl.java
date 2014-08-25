@@ -23,11 +23,10 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -62,7 +61,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The cached value of the '{@link #getTypeParameters() <em>Type Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeParameters()
 	 * @generated
 	 * @ordered
@@ -73,7 +72,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibility()
 	 * @generated
 	 * @ordered
@@ -84,7 +83,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The cached value of the '{@link #getExplicitRequiredImports() <em>Explicit Required Imports</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExplicitRequiredImports()
 	 * @generated
 	 * @ordered
@@ -95,7 +94,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The cached value of the '{@link #getExplicitPlainTextRequiredImports() <em>Explicit Plain Text Required Imports</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExplicitPlainTextRequiredImports()
 	 * @generated
 	 * @ordered
@@ -105,7 +104,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTMemberImpl() {
@@ -115,7 +114,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +125,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +188,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +202,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +216,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -233,7 +232,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +247,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +268,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -298,7 +297,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +322,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +343,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

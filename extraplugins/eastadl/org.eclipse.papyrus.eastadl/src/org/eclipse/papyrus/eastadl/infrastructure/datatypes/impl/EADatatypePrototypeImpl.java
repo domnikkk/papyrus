@@ -47,7 +47,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	 * The cached value of the '{@link #getBase_Parameter() <em>Base Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Parameter()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EADatatypePrototypeImpl() {
@@ -89,7 +89,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Parameter basicGetBase_Parameter() {
@@ -99,7 +99,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -109,7 +109,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -119,7 +119,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class EADatatypePrototypeImpl extends EAElementImpl implements EADatatype
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SafetycaseXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class SafetycaseXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SafetycaseXMLProcessor() {
@@ -48,7 +48,7 @@ public class SafetycaseXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the SafetycaseResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

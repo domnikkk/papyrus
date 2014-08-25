@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.facademapping.FacademappingFactory
  * @model kind="package"
  * @generated
@@ -41,7 +41,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "facademapping";
@@ -50,7 +50,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/facademapping";
@@ -59,7 +59,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "facademapping";
@@ -68,7 +68,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	FacademappingPackage eINSTANCE = org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl.init();
@@ -77,7 +77,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facademapping.impl.MappingImpl <em>Mapping</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facademapping.impl.MappingImpl
 	 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getMapping()
 	 * @generated
@@ -88,7 +88,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The feature id for the '<em><b>Specific Domain Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The number of structural features of the '<em>Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The number of operations of the '<em>Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl <em>Stereotyped Mapping</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl
 	 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getStereotypedMapping()
 	 * @generated
@@ -139,7 +139,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -149,7 +149,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The feature id for the '<em><b>Specific Domain Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The feature id for the '<em><b>Applied Stereotypes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -179,7 +179,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The number of structural features of the '<em>Stereotyped Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The number of operations of the '<em>Stereotyped Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facademapping.impl.FacadeMapppingImpl <em>Facade Mappping</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facademapping.impl.FacadeMapppingImpl
 	 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getFacadeMappping()
 	 * @generated
@@ -210,7 +210,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The feature id for the '<em><b>Mappings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -220,7 +220,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The number of structural features of the '<em>Facade Mappping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -230,7 +230,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The number of operations of the '<em>Facade Mappping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -240,7 +240,7 @@ public interface FacademappingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.facademapping.ExtensionDefinitionKind <em>Extension Definition Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.facademapping.ExtensionDefinitionKind
 	 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getExtensionDefinitionKind()
 	 * @generated
@@ -252,7 +252,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facademapping.Mapping <em>Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Mapping</em>'.
 	 * @see org.eclipse.papyrus.facademapping.Mapping
 	 * @generated
@@ -263,7 +263,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.facademapping.Mapping#getUmlElement <em>Uml Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Uml Element</em>'.
 	 * @see org.eclipse.papyrus.facademapping.Mapping#getUmlElement()
 	 * @see #getMapping()
@@ -275,7 +275,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.facademapping.Mapping#getSpecificDomainElement <em>Specific Domain Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Specific Domain Element</em>'.
 	 * @see org.eclipse.papyrus.facademapping.Mapping#getSpecificDomainElement()
 	 * @see #getMapping()
@@ -287,7 +287,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facademapping.StereotypedMapping <em>Stereotyped Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stereotyped Mapping</em>'.
 	 * @see org.eclipse.papyrus.facademapping.StereotypedMapping
 	 * @generated
@@ -298,7 +298,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getAppliedStereotypes <em>Applied Stereotypes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Applied Stereotypes</em>'.
 	 * @see org.eclipse.papyrus.facademapping.StereotypedMapping#getAppliedStereotypes()
 	 * @see #getStereotypedMapping()
@@ -310,7 +310,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.facademapping.StereotypedMapping#getKind()
 	 * @see #getStereotypedMapping()
@@ -322,7 +322,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.facademapping.FacadeMappping <em>Facade Mappping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Facade Mappping</em>'.
 	 * @see org.eclipse.papyrus.facademapping.FacadeMappping
 	 * @generated
@@ -333,7 +333,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.facademapping.FacadeMappping#getMappings <em>Mappings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Mappings</em>'.
 	 * @see org.eclipse.papyrus.facademapping.FacadeMappping#getMappings()
 	 * @see #getFacadeMappping()
@@ -345,7 +345,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.facademapping.ExtensionDefinitionKind <em>Extension Definition Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Extension Definition Kind</em>'.
 	 * @see org.eclipse.papyrus.facademapping.ExtensionDefinitionKind
 	 * @generated
@@ -356,7 +356,7 @@ public interface FacademappingPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -373,7 +373,7 @@ public interface FacademappingPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -381,7 +381,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facademapping.impl.MappingImpl <em>Mapping</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facademapping.impl.MappingImpl
 		 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getMapping()
 		 * @generated
@@ -392,7 +392,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Uml Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MAPPING__UML_ELEMENT = eINSTANCE.getMapping_UmlElement();
@@ -401,7 +401,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Specific Domain Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MAPPING__SPECIFIC_DOMAIN_ELEMENT = eINSTANCE.getMapping_SpecificDomainElement();
@@ -410,7 +410,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl <em>Stereotyped Mapping</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl
 		 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getStereotypedMapping()
 		 * @generated
@@ -421,7 +421,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Applied Stereotypes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STEREOTYPED_MAPPING__APPLIED_STEREOTYPES = eINSTANCE.getStereotypedMapping_AppliedStereotypes();
@@ -430,7 +430,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_MAPPING__KIND = eINSTANCE.getStereotypedMapping_Kind();
@@ -439,7 +439,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facademapping.impl.FacadeMapppingImpl <em>Facade Mappping</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facademapping.impl.FacadeMapppingImpl
 		 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getFacadeMappping()
 		 * @generated
@@ -450,7 +450,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mappings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FACADE_MAPPPING__MAPPINGS = eINSTANCE.getFacadeMappping_Mappings();
@@ -459,7 +459,7 @@ public interface FacademappingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.facademapping.ExtensionDefinitionKind <em>Extension Definition Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.facademapping.ExtensionDefinitionKind
 		 * @see org.eclipse.papyrus.facademapping.impl.FacademappingPackageImpl#getExtensionDefinitionKind()
 		 * @generated

@@ -55,7 +55,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	 * The cached value of the '{@link #getBase_ValueSpecification() <em>Base Value Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ValueSpecification()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SelectionCriterionImpl() {
@@ -108,7 +108,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -240,7 +240,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -281,7 +281,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSpecification basicGetBase_ValueSpecification() {
@@ -326,7 +326,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +341,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -410,7 +410,7 @@ public class SelectionCriterionImpl extends EAElementImpl implements SelectionCr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

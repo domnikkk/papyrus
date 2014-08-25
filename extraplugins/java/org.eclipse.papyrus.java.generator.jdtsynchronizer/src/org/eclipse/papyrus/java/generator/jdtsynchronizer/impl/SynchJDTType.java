@@ -136,11 +136,11 @@ public class SynchJDTType extends SynchJDTCommentable {
 					 * it = createType("public enum " + type.getElementName() + " { \n" +
 					 * fieldStr +
 					 * "\tprivate final int value;\n\n"+
-					 * 
+					 *
 					 * "\tprivate "+ type.getElementName() +"(int value) {\n"+
 					 * "\t\tthis.value = value;\n"+
 					 * "\t}\n\n"+
-					 * 
+					 *
 					 * "\tpublic int getValue() {\n" +
 					 * "\t\treturn this.value;\n" +
 					 * "\t}\n" +
@@ -271,7 +271,7 @@ public class SynchJDTType extends SynchJDTCommentable {
 
 	/**
 	 * Generate imports that are explicitly declared in the type
-	 * 
+	 *
 	 * @param it
 	 *            The jdt type to be generated
 	 * @throws JavaModelException
@@ -416,7 +416,7 @@ public class SynchJDTType extends SynchJDTCommentable {
 
 	/**
 	 * Propagate a {@link JDTVisitorException} if the flag is not set
-	 * 
+	 *
 	 * @param msg
 	 * @param e
 	 * @throws JDTVisitorException

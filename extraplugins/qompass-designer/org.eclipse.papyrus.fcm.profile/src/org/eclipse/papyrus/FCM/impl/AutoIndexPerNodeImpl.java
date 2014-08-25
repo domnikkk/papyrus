@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.FCM.AutoIndexPerNode;
 import org.eclipse.papyrus.FCM.FCMPackage;
 
@@ -30,7 +29,7 @@ public class AutoIndexPerNodeImpl extends AutoIndexImpl implements AutoIndexPerN
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AutoIndexPerNodeImpl() {
@@ -40,7 +39,7 @@ public class AutoIndexPerNodeImpl extends AutoIndexImpl implements AutoIndexPerN
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

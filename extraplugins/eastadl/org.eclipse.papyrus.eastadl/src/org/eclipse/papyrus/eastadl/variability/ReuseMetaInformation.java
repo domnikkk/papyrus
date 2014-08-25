@@ -82,7 +82,7 @@ public interface ReuseMetaInformation extends TraceableSpecification {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ReuseMetaInformation#getInformation <em>Information</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Information</em>' attribute.
 	 * @see #getInformation()
@@ -93,7 +93,7 @@ public interface ReuseMetaInformation extends TraceableSpecification {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ReuseMetaInformation#isIsReusable <em>Is Reusable</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Reusable</em>' attribute.
 	 * @see #isIsReusable()
@@ -108,7 +108,7 @@ public interface ReuseMetaInformation extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getReuseMetaInformation_Base_Class()
@@ -121,7 +121,7 @@ public interface ReuseMetaInformation extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.ReuseMetaInformation#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()

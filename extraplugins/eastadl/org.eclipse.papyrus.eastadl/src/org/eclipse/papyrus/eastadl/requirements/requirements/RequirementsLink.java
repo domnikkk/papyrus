@@ -47,7 +47,7 @@ public interface RequirementsLink extends RequirementsRelationship {
 	 * If the meaning of the '<em>Is Bidirectional</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Bidirectional</em>' attribute.
 	 * @see #setIsBidirectional(boolean)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsLink_IsBidirectional()
@@ -60,7 +60,7 @@ public interface RequirementsLink extends RequirementsRelationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#isIsBidirectional <em>Is Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Bidirectional</em>' attribute.
 	 * @see #isIsBidirectional()
@@ -76,7 +76,7 @@ public interface RequirementsLink extends RequirementsRelationship {
 	 * If the meaning of the '<em>Source</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsLink_Source()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -92,7 +92,7 @@ public interface RequirementsLink extends RequirementsRelationship {
 	 * If the meaning of the '<em>Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsLink_Target()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -107,7 +107,7 @@ public interface RequirementsLink extends RequirementsRelationship {
 	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Dependency</em>' reference.
 	 * @see #setBase_Dependency(Dependency)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirementsLink_Base_Dependency()
@@ -120,7 +120,7 @@ public interface RequirementsLink extends RequirementsRelationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink#getBase_Dependency <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Dependency</em>' reference.
 	 * @see #getBase_Dependency()

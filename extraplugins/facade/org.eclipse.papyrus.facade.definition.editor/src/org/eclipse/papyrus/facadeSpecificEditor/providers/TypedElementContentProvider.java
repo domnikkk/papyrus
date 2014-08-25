@@ -30,6 +30,7 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 	 *
 	 */
 
+	@Override
 	public void dispose() {
 
 	}
@@ -42,6 +43,7 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 	 * @param newInput
 	 */
 
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 
 	}
@@ -53,6 +55,7 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 	 * @return
 	 */
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 		ArrayList<VirtualElement> output = new ArrayList<VirtualElement>();
 		if (inputElement instanceof VirtualMetaclass) {
@@ -66,6 +69,7 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 		return output.toArray();
 	}
 
+	@Override
 	public Object[] getChildren(Object parentElement) {
 		List<Object> result = new ArrayList<Object>();
 		if (parentElement instanceof VirtualOperation) {
@@ -75,10 +79,12 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 		return result.toArray();
 	}
 
+	@Override
 	public Object getParent(Object element) {
 		return null;
 	}
 
+	@Override
 	public boolean hasChildren(Object element) {
 		if (getChildren(element).length == 0) {
 			return false;

@@ -47,7 +47,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The default value of the '{@link #getConcPolicy() <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcPolicy()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The cached value of the '{@link #getConcPolicy() <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcPolicy()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The default value of the '{@link #getExeKind() <em>Exe Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExeKind()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The cached value of the '{@link #getExeKind() <em>Exe Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExeKind()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The default value of the '{@link #isIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsAtomic()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The cached value of the '{@link #isIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsAtomic()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The default value of the '{@link #getSynchKind() <em>Synch Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSynchKind()
 	 * @generated
 	 * @ordered
@@ -124,7 +124,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The cached value of the '{@link #getSynchKind() <em>Synch Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSynchKind()
 	 * @generated
 	 * @ordered
@@ -135,7 +135,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	 * The cached value of the '{@link #getBase_BehavioralFeature() <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 * @ordered
@@ -145,7 +145,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RtServiceImpl() {
@@ -155,7 +155,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetBase_BehavioralFeature() {
@@ -300,7 +300,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +341,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +369,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +397,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -420,7 +420,7 @@ public class RtServiceImpl extends EObjectImpl implements RtService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -35,7 +35,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getAdmindocumentVersion() <em>Admindocument Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdmindocumentVersion()
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getAdmindocumentVersion() <em>Admindocument Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdmindocumentVersion()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #getAutosardocumentVersion() <em>Autosardocument Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAutosardocumentVersion()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getAutosardocumentVersion() <em>Autosardocument Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAutosardocumentVersion()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 * The default value of the '{@link #isXmlglobalelement() <em>Xmlglobalelement</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isXmlglobalelement()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #isXmlglobalelement() <em>Xmlglobalelement</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isXmlglobalelement()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getTopLevelPackage() <em>Top Level Package</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTopLevelPackage()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EAXMLImpl() {
@@ -121,7 +121,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -272,7 +272,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +318,7 @@ public abstract class EAXMLImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

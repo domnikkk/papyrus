@@ -30,7 +30,7 @@ public interface NullInstance extends TypeInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */

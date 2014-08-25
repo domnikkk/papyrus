@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -41,7 +42,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The default value of the '{@link #isIsErrorState() <em>Is Error State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsErrorState()
 	 * @generated
 	 * @ordered
@@ -52,7 +53,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #isIsErrorState() <em>Is Error State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsErrorState()
 	 * @generated
 	 * @ordered
@@ -63,7 +64,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The default value of the '{@link #isIsHazard() <em>Is Hazard</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsHazard()
 	 * @generated
 	 * @ordered
@@ -74,7 +75,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #isIsHazard() <em>Is Hazard</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsHazard()
 	 * @generated
 	 * @ordered
@@ -85,7 +86,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The default value of the '{@link #isIsInitState() <em>Is Init State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsInitState()
 	 * @generated
 	 * @ordered
@@ -96,7 +97,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #isIsInitState() <em>Is Init State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsInitState()
 	 * @generated
 	 * @ordered
@@ -107,7 +108,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The default value of the '{@link #isIsMode() <em>Is Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMode()
 	 * @generated
 	 * @ordered
@@ -118,7 +119,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #isIsMode() <em>Is Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMode()
 	 * @generated
 	 * @ordered
@@ -129,7 +130,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #getHazardDeclaration() <em>Hazard Declaration</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHazardDeclaration()
 	 * @generated
 	 * @ordered
@@ -140,7 +141,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #getModeDeclaration() <em>Mode Declaration</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModeDeclaration()
 	 * @generated
 	 * @ordered
@@ -151,7 +152,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #getQuantificationInvariant() <em>Quantification Invariant</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQuantificationInvariant()
 	 * @generated
 	 * @ordered
@@ -162,7 +163,7 @@ public class StateImpl extends EAElementImpl implements State {
 	 * The cached value of the '{@link #getTimeInvariant() <em>Time Invariant</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeInvariant()
 	 * @generated
 	 * @ordered
@@ -172,7 +173,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StateImpl() {
@@ -182,7 +183,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +194,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +205,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +220,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +231,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +246,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +257,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +272,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +283,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +298,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +312,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +326,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +340,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +354,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +383,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -424,7 +425,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -461,7 +462,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -490,7 +491,7 @@ public class StateImpl extends EAElementImpl implements State {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

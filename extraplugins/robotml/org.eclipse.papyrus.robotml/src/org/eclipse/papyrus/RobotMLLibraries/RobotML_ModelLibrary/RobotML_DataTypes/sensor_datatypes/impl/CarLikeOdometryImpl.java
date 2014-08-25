@@ -4,16 +4,12 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -39,7 +35,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -50,7 +46,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getSteering_angle() <em>Steering angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSteering_angle()
 	 * @generated
 	 * @ordered
@@ -61,7 +57,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getSteering_angle() <em>Steering angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSteering_angle()
 	 * @generated
 	 * @ordered
@@ -72,7 +68,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getLeft_rear_wheel_distance() <em>Left rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -83,7 +79,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getLeft_rear_wheel_distance() <em>Left rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -94,7 +90,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getRight_rear_wheel_distance() <em>Right rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -105,7 +101,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getRight_rear_wheel_distance() <em>Right rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -116,7 +112,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getRight_rear_wheel_velocity() <em>Right rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -127,7 +123,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getRight_rear_wheel_velocity() <em>Right rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -138,7 +134,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getLeft_rear_wheel_velocity() <em>Left rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -149,7 +145,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getLeft_rear_wheel_velocity() <em>Left rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -159,7 +155,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CarLikeOdometryImpl() {
@@ -169,7 +165,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +176,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -190,7 +186,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -210,7 +206,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -235,7 +231,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getSteering_angle() {
@@ -245,7 +241,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSteering_angle(double newSteering_angle) {
@@ -259,7 +255,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getLeft_rear_wheel_distance() {
@@ -269,7 +265,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLeft_rear_wheel_distance(double newLeft_rear_wheel_distance) {
@@ -283,7 +279,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getRight_rear_wheel_distance() {
@@ -293,7 +289,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRight_rear_wheel_distance(double newRight_rear_wheel_distance) {
@@ -307,7 +303,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getRight_rear_wheel_velocity() {
@@ -317,7 +313,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRight_rear_wheel_velocity(double newRight_rear_wheel_velocity) {
@@ -331,7 +327,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getLeft_rear_wheel_velocity() {
@@ -341,7 +337,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLeft_rear_wheel_velocity(double newLeft_rear_wheel_velocity) {
@@ -355,7 +351,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +366,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +391,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,7 +422,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -457,7 +453,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -482,7 +478,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

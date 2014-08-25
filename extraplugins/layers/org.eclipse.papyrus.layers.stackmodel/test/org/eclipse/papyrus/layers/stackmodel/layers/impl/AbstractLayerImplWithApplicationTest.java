@@ -72,7 +72,7 @@ public class AbstractLayerImplWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl#getAttachedProperties()}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

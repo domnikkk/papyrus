@@ -29,7 +29,7 @@ public interface EACompositeValue extends EAValue {
 	 * If the meaning of the '<em>Value</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage#getEACompositeValue_Value()
 	 * @model required="true" ordered="false"

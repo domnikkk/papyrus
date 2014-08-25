@@ -42,7 +42,7 @@ public interface NfpType extends TupleType {
 	 * If the meaning of the '<em>Value Attrib</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value Attrib</em>' reference.
 	 * @see #setValueAttrib(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getNfpType_ValueAttrib()
@@ -55,7 +55,7 @@ public interface NfpType extends TupleType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getValueAttrib <em>Value Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value Attrib</em>' reference.
 	 * @see #getValueAttrib()
@@ -70,7 +70,7 @@ public interface NfpType extends TupleType {
 	 * If the meaning of the '<em>Unit Attrib</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unit Attrib</em>' reference.
 	 * @see #setUnitAttrib(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getNfpType_UnitAttrib()
@@ -83,7 +83,7 @@ public interface NfpType extends TupleType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getUnitAttrib <em>Unit Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Unit Attrib</em>' reference.
 	 * @see #getUnitAttrib()
@@ -98,7 +98,7 @@ public interface NfpType extends TupleType {
 	 * If the meaning of the '<em>Expr Attrib</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Expr Attrib</em>' reference.
 	 * @see #setExprAttrib(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getNfpType_ExprAttrib()
@@ -111,7 +111,7 @@ public interface NfpType extends TupleType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpType#getExprAttrib <em>Expr Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Expr Attrib</em>' reference.
 	 * @see #getExprAttrib()

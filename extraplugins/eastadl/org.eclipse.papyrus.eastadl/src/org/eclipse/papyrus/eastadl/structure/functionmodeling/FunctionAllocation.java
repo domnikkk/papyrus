@@ -67,7 +67,7 @@ public interface FunctionAllocation extends EAElement {
 	 * If the meaning of the '<em>Allocated Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocated Element</em>' containment reference.
 	 * @see #setAllocatedElement(AllocatedElementInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionAllocation_AllocatedElement()
@@ -80,7 +80,7 @@ public interface FunctionAllocation extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getAllocatedElement <em>Allocated Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allocated Element</em>' containment reference.
 	 * @see #getAllocatedElement()
@@ -95,7 +95,7 @@ public interface FunctionAllocation extends EAElement {
 	 * If the meaning of the '<em>Base Abstraction</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Abstraction</em>' reference.
 	 * @see #setBase_Abstraction(Abstraction)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionAllocation_Base_Abstraction()
@@ -108,7 +108,7 @@ public interface FunctionAllocation extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getBase_Abstraction <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Abstraction</em>' reference.
 	 * @see #getBase_Abstraction()
@@ -120,7 +120,7 @@ public interface FunctionAllocation extends EAElement {
 	 * Returns the value of the '<em><b>Target</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' containment reference.
 	 * @see #setTarget(TargetInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionAllocation_Target()
@@ -133,7 +133,7 @@ public interface FunctionAllocation extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation#getTarget <em>Target</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target</em>' containment reference.
 	 * @see #getTarget()

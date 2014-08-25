@@ -39,7 +39,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	 * The cached value of the '{@link #getBase_element() <em>Base element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_element()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NoCodeGenImpl() {
@@ -59,7 +59,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Element basicGetBase_element() {
@@ -100,7 +100,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class NoCodeGenImpl extends MinimalEObjectImpl.Container implements NoCod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

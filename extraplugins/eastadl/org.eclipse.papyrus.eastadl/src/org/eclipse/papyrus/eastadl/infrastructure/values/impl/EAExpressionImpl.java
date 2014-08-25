@@ -19,7 +19,7 @@ public class EAExpressionImpl extends EAValueImpl implements EAExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EAExpressionImpl() {
@@ -29,7 +29,7 @@ public class EAExpressionImpl extends EAValueImpl implements EAExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

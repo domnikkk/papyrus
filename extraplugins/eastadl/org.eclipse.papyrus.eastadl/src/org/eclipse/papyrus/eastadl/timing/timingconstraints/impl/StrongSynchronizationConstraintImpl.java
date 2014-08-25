@@ -36,7 +36,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StrongSynchronizationConstraintImpl() {
@@ -56,7 +56,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public TimingExpression basicGetTolerance() {
@@ -116,7 +116,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -154,7 +154,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class StrongSynchronizationConstraintImpl extends TimingConstraintImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

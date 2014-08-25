@@ -17,7 +17,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Metamodel;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getEPackage() <em>Get EPackage</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class MetamodelTest extends FolderElementTest {
@@ -25,7 +25,7 @@ public class MetamodelTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class MetamodelTest extends FolderElementTest {
 	 * Constructs a new Metamodel test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MetamodelTest(String name) {
@@ -47,7 +47,7 @@ public class MetamodelTest extends FolderElementTest {
 	 * Returns the fixture for this Metamodel test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class MetamodelTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public class MetamodelTest extends FolderElementTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -83,7 +83,7 @@ public class MetamodelTest extends FolderElementTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getEPackage() <em>Get EPackage</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.Metamodel#getEPackage()
 	 * @generated
 	 */

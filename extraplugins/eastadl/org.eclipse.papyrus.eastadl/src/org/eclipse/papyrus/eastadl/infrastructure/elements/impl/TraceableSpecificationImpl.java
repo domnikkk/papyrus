@@ -40,7 +40,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	 * The default value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	 * The cached value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TraceableSpecificationImpl() {
@@ -71,7 +71,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public abstract class TraceableSpecificationImpl extends EAPackageableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

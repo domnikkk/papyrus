@@ -33,7 +33,7 @@ public class MissionImpl extends ConceptImpl implements Mission {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MissionImpl() {
@@ -43,7 +43,7 @@ public class MissionImpl extends ConceptImpl implements Mission {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

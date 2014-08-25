@@ -33,7 +33,7 @@ public class FillImpl extends TypeImpl implements Fill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected FillImpl() {
@@ -44,7 +44,7 @@ public class FillImpl extends TypeImpl implements Fill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class FillImpl extends TypeImpl implements Fill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -5,18 +5,55 @@ package org.eclipse.papyrus.marte.vsl.vSL.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.marte.vsl.vSL.*;
+import org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.BooleanLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple;
+import org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.DataTypeName;
+import org.eclipse.papyrus.marte.vsl.vSL.DateTimeLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.DefaultLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.DurationObsName;
+import org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.Expression;
+import org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.InstantObsName;
+import org.eclipse.papyrus.marte.vsl.vSL.IntegerLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.Interval;
+import org.eclipse.papyrus.marte.vsl.vSL.JitterExp;
+import org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs;
+import org.eclipse.papyrus.marte.vsl.vSL.ListOfValues;
+import org.eclipse.papyrus.marte.vsl.vSL.Literal;
+import org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall;
+import org.eclipse.papyrus.marte.vsl.vSL.NullLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.NumberLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.QualifiedName;
+import org.eclipse.papyrus.marte.vsl.vSL.RealLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.StringLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.TimeExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.Tuple;
+import org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.UnlimitedLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.VSLFactory;
+import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
+import org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair;
+import org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification;
+import org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
@@ -25,7 +62,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static VSLFactory init()
@@ -48,7 +85,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VSLFactoryImpl()
@@ -59,7 +96,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +190,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +203,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +216,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +229,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +242,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +255,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +268,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +281,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +294,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +307,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +320,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +333,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +346,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +359,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +372,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +385,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +398,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +411,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +424,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +437,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -413,7 +450,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,7 +463,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +476,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -452,7 +489,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -465,7 +502,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -478,7 +515,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -491,7 +528,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +541,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -517,7 +554,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -530,7 +567,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -543,7 +580,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -556,7 +593,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -569,7 +606,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -582,7 +619,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -595,7 +632,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -608,7 +645,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -621,7 +658,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -634,7 +671,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -647,7 +684,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -660,7 +697,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -672,7 +709,7 @@ public class VSLFactoryImpl extends EFactoryImpl implements VSLFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

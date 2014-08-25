@@ -27,15 +27,11 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.command.Command;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -45,11 +41,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmFactory;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
-
 import org.eclipse.uml2.common.edit.command.SubsetAddCommand;
 import org.eclipse.uml2.common.edit.command.SubsetSupersetReplaceCommand;
 import org.eclipse.uml2.common.edit.command.SupersetRemoveCommand;
@@ -58,7 +52,7 @@ import org.eclipse.uml2.common.edit.command.SupersetRemoveCommand;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JDTTypeItemProvider
@@ -73,7 +67,7 @@ public class JDTTypeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JDTTypeItemProvider(AdapterFactory adapterFactory) {
@@ -84,7 +78,7 @@ public class JDTTypeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +104,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addClassPropertyDescriptor(Object object) {
@@ -133,7 +127,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addInterfacePropertyDescriptor(Object object) {
@@ -156,7 +150,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Enum feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addEnumPropertyDescriptor(Object object) {
@@ -179,7 +173,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Abstract feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAbstractPropertyDescriptor(Object object) {
@@ -202,7 +196,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Final feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFinalPropertyDescriptor(Object object) {
@@ -225,7 +219,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Static feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addStaticPropertyDescriptor(Object object) {
@@ -248,7 +242,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Super Interfaces feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSuperInterfacesPropertyDescriptor(Object object) {
@@ -271,7 +265,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Super Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSuperClassPropertyDescriptor(Object object) {
@@ -294,7 +288,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Super Interface Names feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSuperInterfaceNamesPropertyDescriptor(Object object) {
@@ -317,7 +311,7 @@ public class JDTTypeItemProvider
 	 * This adds a property descriptor for the Super Class Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSuperClassNamePropertyDescriptor(Object object) {
@@ -341,7 +335,7 @@ public class JDTTypeItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +352,7 @@ public class JDTTypeItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +367,7 @@ public class JDTTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +383,7 @@ public class JDTTypeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -421,7 +415,7 @@ public class JDTTypeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

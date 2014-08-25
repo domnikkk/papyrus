@@ -19,13 +19,12 @@ import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.papyrus.RobotML.DataFlowPort;
 import org.eclipse.papyrus.RobotML.ServicePort;
-import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -37,7 +36,7 @@ public class PortsAreCorrectlyConnected extends AbstractModelConstraint {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.emf.validation.AbstractModelConstraint#validate(org.eclipse
 	 * .emf.validation.IValidationContext)

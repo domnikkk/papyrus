@@ -41,7 +41,7 @@ public interface DeriveRequirement extends RequirementsRelationship, DeriveReqt 
 	 * The set of ADL requirements derived from the supplier ADL requirement.
 	 * {derived from UML::DirectedRelationship::target}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Derived</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getDeriveRequirement_Derived()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -58,7 +58,7 @@ public interface DeriveRequirement extends RequirementsRelationship, DeriveReqt 
 	 * The set of ADL requirements that the client ADL requirement are derived from.
 	 * {derived from UML::DirectedRelationship::source}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Derived From</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getDeriveRequirement_DerivedFrom()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"

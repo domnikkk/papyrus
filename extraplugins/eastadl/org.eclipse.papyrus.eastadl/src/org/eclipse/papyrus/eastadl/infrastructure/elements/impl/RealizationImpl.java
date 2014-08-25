@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.eastadl.infrastructure.elements.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -50,7 +51,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	 * The cached value of the '{@link #getBase_Realization() <em>Base Realization</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Realization()
 	 * @generated
 	 * @ordered
@@ -61,7 +62,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	 * The cached value of the '{@link #getRealized() <em>Realized</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRealized()
 	 * @generated
 	 * @ordered
@@ -71,7 +72,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	 * The cached value of the '{@link #getRealizedBy() <em>Realized By</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRealizedBy()
 	 * @generated
 	 * @ordered
@@ -80,7 +81,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RealizationImpl() {
@@ -89,7 +90,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +111,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +129,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -152,7 +153,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +163,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +184,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +197,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +211,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +231,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Realization basicGetBase_Realization() {
@@ -240,7 +241,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +256,7 @@ public class RealizationImpl extends RelationshipImpl implements Realization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Condition Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.HwLayoutPackage#getConditionType()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum ConditionType implements Enumerator {
 	 * The '<em><b>Temperature</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TEMPERATURE_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum ConditionType implements Enumerator {
 	 * The '<em><b>Humidity</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HUMIDITY_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum ConditionType implements Enumerator {
 	 * The '<em><b>Altitude</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ALTITUDE_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum ConditionType implements Enumerator {
 	 * The '<em><b>Vibration</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #VIBRATION_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum ConditionType implements Enumerator {
 	 * The '<em><b>Shock</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SHOCK_VALUE
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public enum ConditionType implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public enum ConditionType implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public enum ConditionType implements Enumerator {
 	 * If the meaning of '<em><b>Temperature</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TEMPERATURE
 	 * @model name="temperature"
 	 * @generated
@@ -129,7 +129,7 @@ public enum ConditionType implements Enumerator {
 	 * If the meaning of '<em><b>Humidity</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HUMIDITY
 	 * @model name="humidity"
 	 * @generated
@@ -144,7 +144,7 @@ public enum ConditionType implements Enumerator {
 	 * If the meaning of '<em><b>Altitude</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ALTITUDE
 	 * @model name="altitude"
 	 * @generated
@@ -159,7 +159,7 @@ public enum ConditionType implements Enumerator {
 	 * If the meaning of '<em><b>Vibration</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #VIBRATION
 	 * @model name="vibration"
 	 * @generated
@@ -174,7 +174,7 @@ public enum ConditionType implements Enumerator {
 	 * If the meaning of '<em><b>Shock</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SHOCK
 	 * @model name="shock"
 	 * @generated
@@ -189,7 +189,7 @@ public enum ConditionType implements Enumerator {
 	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -204,7 +204,7 @@ public enum ConditionType implements Enumerator {
 	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF
 	 * @model name="undef"
 	 * @generated
@@ -216,7 +216,7 @@ public enum ConditionType implements Enumerator {
 	 * An array of all the '<em><b>Condition Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ConditionType[] VALUES_ARRAY =
@@ -234,7 +234,7 @@ public enum ConditionType implements Enumerator {
 	 * A public read-only list of all the '<em><b>Condition Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ConditionType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -243,7 +243,7 @@ public enum ConditionType implements Enumerator {
 	 * Returns the '<em><b>Condition Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ConditionType get(String literal) {
@@ -260,7 +260,7 @@ public enum ConditionType implements Enumerator {
 	 * Returns the '<em><b>Condition Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ConditionType getByName(String name) {
@@ -277,7 +277,7 @@ public enum ConditionType implements Enumerator {
 	 * Returns the '<em><b>Condition Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ConditionType get(int value) {
@@ -303,7 +303,7 @@ public enum ConditionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -311,7 +311,7 @@ public enum ConditionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -319,7 +319,7 @@ public enum ConditionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -328,7 +328,7 @@ public enum ConditionType implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ConditionType(int value, String name, String literal) {
@@ -340,7 +340,7 @@ public enum ConditionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +351,7 @@ public enum ConditionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +362,7 @@ public enum ConditionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +374,7 @@ public enum ConditionType implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

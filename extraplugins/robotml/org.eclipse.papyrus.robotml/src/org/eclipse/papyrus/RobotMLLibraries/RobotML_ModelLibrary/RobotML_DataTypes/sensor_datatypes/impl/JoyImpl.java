@@ -6,20 +6,14 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Joy;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -42,7 +36,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -53,7 +47,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	 * The cached value of the '{@link #getAxes() <em>Axes</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAxes()
 	 * @generated
 	 * @ordered
@@ -64,7 +58,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	 * The cached value of the '{@link #getButtons() <em>Buttons</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getButtons()
 	 * @generated
 	 * @ordered
@@ -74,7 +68,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JoyImpl() {
@@ -84,7 +78,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +89,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -105,7 +99,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -125,7 +119,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -150,7 +144,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Float> getAxes() {
@@ -163,7 +157,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Integer> getButtons() {
@@ -176,7 +170,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +185,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +204,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -235,7 +229,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +251,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +270,7 @@ public class JoyImpl extends MinimalEObjectImpl.Container implements Joy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

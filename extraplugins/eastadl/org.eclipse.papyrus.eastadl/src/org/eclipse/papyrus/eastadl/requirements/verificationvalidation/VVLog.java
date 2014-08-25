@@ -44,7 +44,7 @@ public interface VVLog extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * Date and time when this log was captured.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Date</em>' attribute.
 	 * @see #setDate(String)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVLog_Date()
@@ -57,7 +57,7 @@ public interface VVLog extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getDate <em>Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Date</em>' attribute.
 	 * @see #getDate()
@@ -73,7 +73,7 @@ public interface VVLog extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * Set of outcome results.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vv Actual Outcome</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVLog_VvActualOutcome()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -88,7 +88,7 @@ public interface VVLog extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVLog_Base_Class()
@@ -101,7 +101,7 @@ public interface VVLog extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -116,7 +116,7 @@ public interface VVLog extends TraceableSpecification {
 	 * If the meaning of the '<em>Performed VV Procedure</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Performed VV Procedure</em>' reference.
 	 * @see #setPerformedVVProcedure(VVProcedure)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVLog_PerformedVVProcedure()
@@ -129,7 +129,7 @@ public interface VVLog extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getPerformedVVProcedure <em>Performed VV Procedure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Performed VV Procedure</em>' reference.
 	 * @see #getPerformedVVProcedure()

@@ -31,7 +31,7 @@ public class HwCommunicationResourceImpl extends HwResourceImpl implements HwCom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwCommunicationResourceImpl() {
@@ -41,7 +41,7 @@ public class HwCommunicationResourceImpl extends HwResourceImpl implements HwCom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -41,7 +41,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.PortSpecificationKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
@@ -49,7 +49,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static GCMFactory init() {
@@ -68,7 +68,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GCMFactoryImpl() {
@@ -78,7 +78,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +266,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +278,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FlowDirectionKind createFlowDirectionKindFromString(EDataType eDataType, String initialValue) {
@@ -304,7 +304,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertFlowDirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -314,7 +314,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PortSpecificationKind createPortSpecificationKindFromString(EDataType eDataType, String initialValue) {
@@ -328,7 +328,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertPortSpecificationKindToString(EDataType eDataType, Object instanceValue) {
@@ -338,7 +338,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ClientServerKind createClientServerKindFromString(EDataType eDataType, String initialValue) {
@@ -352,7 +352,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertClientServerKindToString(EDataType eDataType, Object instanceValue) {
@@ -362,7 +362,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataPoolOrderingKind createDataPoolOrderingKindFromString(EDataType eDataType, String initialValue) {
@@ -376,7 +376,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDataPoolOrderingKindToString(EDataType eDataType, Object instanceValue) {
@@ -386,7 +386,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +397,7 @@ public class GCMFactoryImpl extends EFactoryImpl implements GCMFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

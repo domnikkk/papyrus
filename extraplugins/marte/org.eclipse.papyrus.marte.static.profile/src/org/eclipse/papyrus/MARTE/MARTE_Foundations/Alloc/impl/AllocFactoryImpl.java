@@ -36,7 +36,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.NfpRefine;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
@@ -44,7 +44,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocFactory init() {
@@ -63,7 +63,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocFactoryImpl() {
@@ -73,7 +73,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocationEndKind createAllocationEndKindFromString(EDataType eDataType, String initialValue) {
@@ -219,7 +219,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAllocationEndKindToString(EDataType eDataType, Object instanceValue) {
@@ -229,7 +229,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocationNature createAllocationNatureFromString(EDataType eDataType, String initialValue) {
@@ -243,7 +243,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAllocationNatureToString(EDataType eDataType, Object instanceValue) {
@@ -253,7 +253,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocationKind createAllocationKindFromString(EDataType eDataType, String initialValue) {
@@ -267,7 +267,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAllocationKindToString(EDataType eDataType, Object instanceValue) {
@@ -277,7 +277,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AssignmentKind createAssignmentKindFromString(EDataType eDataType, String initialValue) {
@@ -291,7 +291,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAssignmentKindToString(EDataType eDataType, Object instanceValue) {
@@ -301,7 +301,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AssignmentNature createAssignmentNatureFromString(EDataType eDataType, String initialValue) {
@@ -315,7 +315,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAssignmentNatureToString(EDataType eDataType, Object instanceValue) {
@@ -325,7 +325,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +336,7 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

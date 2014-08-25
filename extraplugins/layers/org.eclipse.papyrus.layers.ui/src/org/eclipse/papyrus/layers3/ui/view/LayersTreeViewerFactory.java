@@ -62,7 +62,7 @@ public class LayersTreeViewerFactory {
 
 	/**
 	 * Set appropriate Content and Label providers for the LayersTreeViewer.
-	 * 
+	 *
 	 * @param layersExplorerTree
 	 */
 	protected static void initContentAndLabelProviders(TreeViewer layersExplorerTree) {
@@ -74,7 +74,7 @@ public class LayersTreeViewerFactory {
 
 	/**
 	 * Create an AdapterFactory suitable for the LayersTreeViewer.
-	 * 
+	 *
 	 * @return
 	 */
 	static public AdapterFactory createLayersTreeViewerItemProvidersFactory() {

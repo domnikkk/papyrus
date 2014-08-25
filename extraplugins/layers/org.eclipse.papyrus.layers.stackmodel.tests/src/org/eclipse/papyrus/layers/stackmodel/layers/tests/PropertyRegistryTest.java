@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -27,7 +26,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#addProperty(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Add Property</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PropertyRegistryTest extends TestCase {
@@ -36,7 +35,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * The fixture for this Property Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyRegistry fixture = null;
@@ -44,7 +43,7 @@ public class PropertyRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -55,7 +54,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * Constructs a new Property Registry test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertyRegistryTest(String name) {
@@ -66,7 +65,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * Sets the fixture for this Property Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(PropertyRegistry fixture) {
@@ -77,7 +76,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * Returns the fixture for this Property Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyRegistry getFixture() {
@@ -87,7 +86,7 @@ public class PropertyRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -99,7 +98,7 @@ public class PropertyRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -112,7 +111,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertiesCount() <em>Properties Count</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertiesCount()
 	 * @generated
 	 */
@@ -126,7 +125,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertyIndex(java.lang.String) <em>Get Property Index</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getPropertyIndex(java.lang.String)
 	 * @generated
 	 */
@@ -140,7 +139,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getProperty(java.lang.String) <em>Get Property</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#getProperty(java.lang.String)
 	 * @generated
 	 */
@@ -154,7 +153,7 @@ public class PropertyRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#addProperty(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Add Property</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry#addProperty(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */

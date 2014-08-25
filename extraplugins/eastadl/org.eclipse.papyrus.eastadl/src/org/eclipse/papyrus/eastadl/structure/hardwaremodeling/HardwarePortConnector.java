@@ -46,7 +46,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwarePortConnector_Base_Class()
@@ -59,7 +59,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -74,7 +74,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * If the meaning of the '<em>Bus Speed</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bus Speed</em>' attribute.
 	 * @see #setBusSpeed(Float)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwarePortConnector_BusSpeed()
@@ -87,7 +87,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBusSpeed <em>Bus Speed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Bus Speed</em>' attribute.
 	 * @see #getBusSpeed()
@@ -103,7 +103,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * If the meaning of the '<em>Bus Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bus Type</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind
 	 * @see #setBusType(HardwareBusKind)
@@ -117,7 +117,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBusType <em>Bus Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Bus Type</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind
@@ -134,7 +134,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * If the meaning of the '<em>Connector</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Connector</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwarePortConnector_Connector()
 	 * @model ordered="false"
@@ -150,7 +150,7 @@ public interface HardwarePortConnector extends AllocationTarget, EAConnector {
 	 * If the meaning of the '<em>Port</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwarePortConnector_Port()
 	 * @model containment="true" lower="2" upper="2" ordered="false"

@@ -40,14 +40,14 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayersconfigPackageImpl extends EPackageImpl implements LayersconfigPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass folderEClass = null;
@@ -55,7 +55,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass folderElementEClass = null;
@@ -63,7 +63,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass layerOperatorConfigEClass = null;
@@ -71,7 +71,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass instanciableElementEClass = null;
@@ -79,7 +79,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass operatorConfigEClass = null;
@@ -87,7 +87,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyIdEClass = null;
@@ -95,7 +95,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass typeConfigEClass = null;
@@ -103,7 +103,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass layerOperatorMultipleBindingEClass = null;
@@ -111,7 +111,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass operatorBindingEClass = null;
@@ -119,7 +119,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum classnameKindEEnum = null;
@@ -127,7 +127,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -135,7 +135,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType instanciationExceptionEDataType = null;
@@ -143,7 +143,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType layerOperatorDescriptorEDataType = null;
@@ -151,7 +151,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType propertyOperatorEDataType = null;
@@ -161,7 +161,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#eNS_URI
 	 * @see #init()
@@ -174,7 +174,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -185,7 +185,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	 * <p>
 	 * This method is used to initialize {@link LayersconfigPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -219,7 +219,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +318,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +329,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +351,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +362,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +373,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +384,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +406,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +439,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -450,7 +450,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -461,7 +461,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -472,7 +472,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -483,7 +483,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -494,7 +494,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -505,7 +505,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +516,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -527,7 +527,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -538,7 +538,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -549,7 +549,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -560,7 +560,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -570,7 +570,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -627,7 +627,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -637,7 +637,7 @@ public class LayersconfigPackageImpl extends EPackageImpl implements Layersconfi
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

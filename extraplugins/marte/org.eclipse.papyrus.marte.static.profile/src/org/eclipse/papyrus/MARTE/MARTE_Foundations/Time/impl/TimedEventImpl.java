@@ -43,7 +43,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	 * The default value of the '{@link #getRepetition() <em>Repetition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepetition()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	 * The cached value of the '{@link #getRepetition() <em>Repetition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepetition()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	 * The cached value of the '{@link #getBase_TimeEvent() <em>Base Time Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_TimeEvent()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	 * The cached value of the '{@link #getEvery() <em>Every</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvery()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TimedEventImpl() {
@@ -96,7 +96,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeEvent basicGetBase_TimeEvent() {
@@ -163,7 +163,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetEvery(ValueSpecification newEvery, NotificationChain msgs) {
@@ -209,7 +209,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class TimedEventImpl extends TimedElementImpl implements TimedEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

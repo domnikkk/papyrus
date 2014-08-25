@@ -32,7 +32,7 @@ public interface PhysicalObject extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Eveloves In</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Eveloves In</em>' reference list.
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getPhysicalObject_EvelovesIn()
 	 * @model ordered="false"
@@ -47,7 +47,7 @@ public interface PhysicalObject extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Has Surface</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Has Surface</em>' reference.
 	 * @see #setHasSurface(Surface)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getPhysicalObject_HasSurface()
@@ -60,7 +60,7 @@ public interface PhysicalObject extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.PhysicalObject#getHasSurface <em>Has Surface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Has Surface</em>' reference.
 	 * @see #getHasSurface()
@@ -75,7 +75,7 @@ public interface PhysicalObject extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Height</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Height</em>' attribute.
 	 * @see #setHeight(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getPhysicalObject_Height()
@@ -88,7 +88,7 @@ public interface PhysicalObject extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.PhysicalObject#getHeight <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Height</em>' attribute.
 	 * @see #getHeight()
@@ -103,7 +103,7 @@ public interface PhysicalObject extends org.eclipse.papyrus.RobotML.System {
 	 * If the meaning of the '<em>Mass</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mass</em>' attribute.
 	 * @see #setMass(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getPhysicalObject_Mass()
@@ -116,7 +116,7 @@ public interface PhysicalObject extends org.eclipse.papyrus.RobotML.System {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.PhysicalObject#getMass <em>Mass</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Mass</em>' attribute.
 	 * @see #getMass()

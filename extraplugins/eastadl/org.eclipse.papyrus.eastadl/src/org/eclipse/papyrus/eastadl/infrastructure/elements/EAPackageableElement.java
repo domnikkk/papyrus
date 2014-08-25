@@ -41,7 +41,7 @@ public interface EAPackageableElement extends EAElement {
 	 * If the meaning of the '<em>Base Packageable Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Packageable Element</em>' reference.
 	 * @see #setBase_PackageableElement(PackageableElement)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAPackageableElement_Base_PackageableElement()
@@ -54,7 +54,7 @@ public interface EAPackageableElement extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement#getBase_PackageableElement <em>Base Packageable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Packageable Element</em>' reference.
 	 * @see #getBase_PackageableElement()

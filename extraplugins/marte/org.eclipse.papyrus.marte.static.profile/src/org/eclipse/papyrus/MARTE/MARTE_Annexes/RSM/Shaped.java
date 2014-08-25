@@ -41,7 +41,7 @@ public interface Shaped extends EObject {
 	 * If the meaning of the '<em>Shape</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Shape</em>' attribute.
 	 * @see #setShape(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getShaped_Shape()
@@ -54,7 +54,7 @@ public interface Shaped extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped#getShape <em>Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Shape</em>' attribute.
 	 * @see #getShape()
@@ -69,7 +69,7 @@ public interface Shaped extends EObject {
 	 * If the meaning of the '<em>Base Multiplicity Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Multiplicity Element</em>' reference.
 	 * @see #setBase_MultiplicityElement(MultiplicityElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getShaped_Base_MultiplicityElement()
@@ -82,7 +82,7 @@ public interface Shaped extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped#getBase_MultiplicityElement <em>Base Multiplicity Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Multiplicity Element</em>' reference.
 	 * @see #getBase_MultiplicityElement()

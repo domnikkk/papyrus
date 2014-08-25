@@ -23,7 +23,6 @@
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTInterface;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
 
@@ -41,7 +40,7 @@ public class JDTInterfaceImpl extends JDTTypeImpl implements JDTInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JDTInterfaceImpl() {
@@ -51,7 +50,7 @@ public class JDTInterfaceImpl extends JDTTypeImpl implements JDTInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

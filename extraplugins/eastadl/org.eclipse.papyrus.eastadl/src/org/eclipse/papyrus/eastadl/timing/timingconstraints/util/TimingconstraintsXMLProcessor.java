@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TimingconstraintsXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class TimingconstraintsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingconstraintsXMLProcessor() {
@@ -48,7 +48,7 @@ public class TimingconstraintsXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the TimingconstraintsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

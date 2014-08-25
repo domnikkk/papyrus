@@ -4,19 +4,55 @@ package org.eclipse.papyrus.marte.vsl.vSL.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.marte.vsl.vSL.*;
+import org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.BooleanLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple;
+import org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.DataTypeName;
+import org.eclipse.papyrus.marte.vsl.vSL.DateTimeLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.DefaultLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.DurationObsName;
+import org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.Expression;
+import org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.InstantObsName;
+import org.eclipse.papyrus.marte.vsl.vSL.IntegerLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.Interval;
+import org.eclipse.papyrus.marte.vsl.vSL.JitterExp;
+import org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs;
+import org.eclipse.papyrus.marte.vsl.vSL.ListOfValues;
+import org.eclipse.papyrus.marte.vsl.vSL.Literal;
+import org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall;
+import org.eclipse.papyrus.marte.vsl.vSL.NullLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.NumberLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.QualifiedName;
+import org.eclipse.papyrus.marte.vsl.vSL.RealLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.StringLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.TimeExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.Tuple;
+import org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.UnlimitedLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
+import org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair;
+import org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification;
+import org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage
  * @generated
  */
@@ -26,7 +62,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static VSLPackage modelPackage;
@@ -35,7 +71,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VSLAdapterFactory()
@@ -51,7 +87,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -73,7 +109,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VSLSwitch<Adapter> modelSwitch =
@@ -324,7 +360,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -343,7 +379,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Expression
 	 * @generated
@@ -359,7 +395,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression
 	 * @generated
@@ -375,7 +411,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression
 	 * @generated
@@ -391,7 +427,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression
 	 * @generated
@@ -407,7 +443,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression
 	 * @generated
@@ -423,7 +459,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression
 	 * @generated
@@ -439,7 +475,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression
 	 * @generated
@@ -455,7 +491,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression
 	 * @generated
@@ -471,7 +507,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression
 	 * @generated
@@ -487,7 +523,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification
 	 * @generated
@@ -503,7 +539,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression
 	 * @generated
@@ -519,7 +555,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression
 	 * @generated
@@ -535,7 +571,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression
 	 * @generated
@@ -551,7 +587,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Literal
 	 * @generated
@@ -567,7 +603,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall
 	 * @generated
@@ -583,7 +619,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.QualifiedName
 	 * @generated
@@ -599,7 +635,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Interval
 	 * @generated
@@ -615,7 +651,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple
 	 * @generated
@@ -631,7 +667,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Tuple
 	 * @generated
@@ -647,7 +683,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ListOfValues
 	 * @generated
@@ -663,7 +699,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs
 	 * @generated
@@ -679,7 +715,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair
 	 * @generated
@@ -695,7 +731,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.TimeExpression
 	 * @generated
@@ -711,7 +747,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression
 	 * @generated
@@ -727,7 +763,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsName
 	 * @generated
@@ -743,7 +779,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression
 	 * @generated
@@ -759,7 +795,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsName
 	 * @generated
@@ -775,7 +811,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.JitterExp
 	 * @generated
@@ -791,7 +827,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration
 	 * @generated
@@ -807,7 +843,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DataTypeName
 	 * @generated
@@ -823,7 +859,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NumberLiteralRule
 	 * @generated
@@ -839,7 +875,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.IntegerLiteralRule
 	 * @generated
@@ -855,7 +891,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.UnlimitedLiteralRule
 	 * @generated
@@ -871,7 +907,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.RealLiteralRule
 	 * @generated
@@ -887,7 +923,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DateTimeLiteralRule
 	 * @generated
@@ -903,7 +939,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.BooleanLiteralRule
 	 * @generated
@@ -919,7 +955,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NullLiteralRule
 	 * @generated
@@ -935,7 +971,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DefaultLiteralRule
 	 * @generated
@@ -951,7 +987,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.StringLiteralRule
 	 * @generated
@@ -966,7 +1002,7 @@ public class VSLAdapterFactory extends AdapterFactoryImpl
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

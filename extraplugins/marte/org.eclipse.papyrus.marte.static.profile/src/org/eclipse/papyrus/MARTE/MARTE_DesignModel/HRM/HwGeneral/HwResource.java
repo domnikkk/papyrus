@@ -46,7 +46,7 @@ public interface HwResource extends Resource {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResource_Description()
@@ -59,7 +59,7 @@ public interface HwResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -75,7 +75,7 @@ public interface HwResource extends Resource {
 	 * If the meaning of the '<em>PHW Services</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>PHW Services</em>' containment reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResource_P_HW_Services()
 	 * @model containment="true" ordered="false"
@@ -91,7 +91,7 @@ public interface HwResource extends Resource {
 	 * If the meaning of the '<em>RHW Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>RHW Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResource_R_HW_Services()
 	 * @model ordered="false"
@@ -107,7 +107,7 @@ public interface HwResource extends Resource {
 	 * If the meaning of the '<em>Owned HW</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned HW</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResource_OwnedHW()
 	 * @model ordered="false"
@@ -123,7 +123,7 @@ public interface HwResource extends Resource {
 	 * If the meaning of the '<em>End Points</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>End Points</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResource_EndPoints()
 	 * @model ordered="false"
@@ -138,7 +138,7 @@ public interface HwResource extends Resource {
 	 * If the meaning of the '<em>Frequency</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Frequency</em>' attribute.
 	 * @see #setFrequency(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwGeneralPackage#getHwResource_Frequency()
@@ -151,7 +151,7 @@ public interface HwResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwGeneral.HwResource#getFrequency <em>Frequency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Frequency</em>' attribute.
 	 * @see #getFrequency()

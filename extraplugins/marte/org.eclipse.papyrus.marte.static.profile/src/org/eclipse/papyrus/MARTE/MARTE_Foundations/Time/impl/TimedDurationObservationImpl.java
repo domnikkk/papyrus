@@ -45,7 +45,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	 * The cached value of the '{@link #getObsKind() <em>Obs Kind</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getObsKind()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	 * The cached value of the '{@link #getBase_DurationObservation() <em>Base Duration Observation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_DurationObservation()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TimedDurationObservationImpl() {
@@ -76,7 +76,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DurationObservation basicGetBase_DurationObservation() {
@@ -131,7 +131,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -187,7 +187,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class TimedDurationObservationImpl extends TimedElementImpl implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

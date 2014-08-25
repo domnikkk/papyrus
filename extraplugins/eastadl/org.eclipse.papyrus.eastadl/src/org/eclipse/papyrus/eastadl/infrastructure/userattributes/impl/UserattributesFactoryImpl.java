@@ -32,14 +32,14 @@ import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesP
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UserattributesFactoryImpl extends EFactoryImpl implements UserattributesFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -52,7 +52,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UserattributesFactory init() {
@@ -71,7 +71,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UserattributesFactoryImpl() {
@@ -81,7 +81,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class UserattributesFactoryImpl extends EFactoryImpl implements Userattri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

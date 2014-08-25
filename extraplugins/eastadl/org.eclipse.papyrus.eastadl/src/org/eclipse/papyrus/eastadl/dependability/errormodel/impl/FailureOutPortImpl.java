@@ -33,7 +33,7 @@ public class FailureOutPortImpl extends FaultFailurePortImpl implements FailureO
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FailureOutPortImpl() {
@@ -43,7 +43,7 @@ public class FailureOutPortImpl extends FaultFailurePortImpl implements FailureO
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

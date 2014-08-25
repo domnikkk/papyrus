@@ -31,7 +31,7 @@ public interface FaultFailurePort_functionTargetInstanceRef extends InstanceRef 
 	 * If the meaning of the '<em>Function Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Port</em>' reference.
 	 * @see #setFunctionPort(FunctionPort)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getFaultFailurePort_functionTargetInstanceRef_FunctionPort()
@@ -44,7 +44,7 @@ public interface FaultFailurePort_functionTargetInstanceRef extends InstanceRef 
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePort_functionTargetInstanceRef#getFunctionPort <em>Function Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function Port</em>' reference.
 	 * @see #getFunctionPort()
@@ -60,7 +60,7 @@ public interface FaultFailurePort_functionTargetInstanceRef extends InstanceRef 
 	 * If the meaning of the '<em>Function Prototype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Prototype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getFaultFailurePort_functionTargetInstanceRef_FunctionPrototype()
 	 * @model ordered="false"

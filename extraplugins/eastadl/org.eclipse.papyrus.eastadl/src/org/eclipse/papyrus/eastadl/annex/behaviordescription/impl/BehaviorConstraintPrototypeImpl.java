@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.eastadl.annex.behaviordescription.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -45,7 +46,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	 * The cached value of the '{@link #getInstantiationVariable() <em>Instantiation Variable</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInstantiationVariable()
 	 * @generated
 	 * @ordered
@@ -56,7 +57,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	 * The cached value of the '{@link #getTargetVehicleFeatureElement() <em>Target Vehicle Feature Element</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetVehicleFeatureElement()
 	 * @generated
 	 * @ordered
@@ -67,7 +68,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -78,7 +79,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	 * The cached value of the '{@link #getFunctionTarget() <em>Function Target</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionTarget()
 	 * @generated
 	 * @ordered
@@ -89,7 +90,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	 * The cached value of the '{@link #getHardwareComponentTarget() <em>Hardware Component Target</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareComponentTarget()
 	 * @generated
 	 * @ordered
@@ -100,7 +101,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	 * The cached value of the '{@link #getErrorModelTarget() <em>Error Model Target</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getErrorModelTarget()
 	 * @generated
 	 * @ordered
@@ -110,7 +111,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintPrototypeImpl() {
@@ -120,7 +121,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +132,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +146,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +160,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +180,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehaviorConstraintType basicGetType() {
@@ -189,7 +190,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +205,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +219,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +234,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +249,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +268,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +296,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -332,7 +333,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +364,7 @@ public class BehaviorConstraintPrototypeImpl extends TraceableSpecificationImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,16 +13,12 @@
 package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.FCM.DerivedElement;
 import org.eclipse.papyrus.FCM.FCMPackage;
-
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -44,7 +40,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	 * The cached value of the '{@link #getBase_Element() <em>Base Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Element()
 	 * @generated
 	 * @ordered
@@ -55,7 +51,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -65,7 +61,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DerivedElementImpl() {
@@ -75,7 +71,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +82,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +102,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Element basicGetBase_Element() {
@@ -116,7 +112,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +127,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +147,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Element basicGetSource() {
@@ -161,7 +157,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +172,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +195,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +214,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +233,7 @@ public class DerivedElementImpl extends EObjectImpl implements DerivedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

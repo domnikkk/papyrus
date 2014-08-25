@@ -39,7 +39,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	 * The cached value of the '{@link #getBase_operation() <em>Base operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_operation()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualImpl() {
@@ -59,7 +59,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetBase_operation() {
@@ -100,7 +100,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class VirtualImpl extends MinimalEObjectImpl.Container implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

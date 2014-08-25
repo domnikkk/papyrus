@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.umldi.impl;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -21,13 +20,9 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.dd.dc.DCPackage;
-
 import org.eclipse.papyrus.dd.di.DIPackage;
-
 import org.eclipse.papyrus.umldi.UMLDIFactory;
 import org.eclipse.papyrus.umldi.UMLDIPackage;
 import org.eclipse.papyrus.umldi.UmlCompartment;
@@ -39,9 +34,7 @@ import org.eclipse.papyrus.umldi.UmlLabel;
 import org.eclipse.papyrus.umldi.UmlLabelKind;
 import org.eclipse.papyrus.umldi.UmlShape;
 import org.eclipse.papyrus.umldi.UmlStyle;
-
 import org.eclipse.papyrus.umldi.util.UMLDIValidator;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**

@@ -29,7 +29,7 @@ public class LayerImpl extends AbstractLayerImpl implements Layer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected LayerImpl() {
@@ -39,7 +39,7 @@ public class LayerImpl extends AbstractLayerImpl implements Layer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

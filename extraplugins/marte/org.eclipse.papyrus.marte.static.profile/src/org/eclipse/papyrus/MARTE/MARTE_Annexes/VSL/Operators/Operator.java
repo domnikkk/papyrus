@@ -35,7 +35,7 @@ public interface Operator extends EObject {
 	 * If the meaning of the '<em>Symbol</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Symbol</em>' attribute.
 	 * @see #setSymbol(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.OperatorsPackage#getOperator_Symbol()
@@ -48,7 +48,7 @@ public interface Operator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getSymbol <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Symbol</em>' attribute.
 	 * @see #getSymbol()
@@ -63,7 +63,7 @@ public interface Operator extends EObject {
 	 * If the meaning of the '<em>Arity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Arity</em>' attribute.
 	 * @see #setArity(int)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.OperatorsPackage#getOperator_Arity()
@@ -76,7 +76,7 @@ public interface Operator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getArity <em>Arity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Arity</em>' attribute.
 	 * @see #getArity()
@@ -91,7 +91,7 @@ public interface Operator extends EObject {
 	 * If the meaning of the '<em>Base Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavior</em>' reference.
 	 * @see #setBase_Behavior(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.OperatorsPackage#getOperator_Base_Behavior()
@@ -104,7 +104,7 @@ public interface Operator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getBase_Behavior <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavior</em>' reference.
 	 * @see #getBase_Behavior()

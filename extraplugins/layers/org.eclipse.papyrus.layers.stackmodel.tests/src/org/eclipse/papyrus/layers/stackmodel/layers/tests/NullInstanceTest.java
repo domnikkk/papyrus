@@ -17,7 +17,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.NullInstance;
  * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.NullInstance#getInstance() <em>Get Instance</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class NullInstanceTest extends TypeInstanceTest {
@@ -25,7 +25,7 @@ public class NullInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class NullInstanceTest extends TypeInstanceTest {
 	 * Constructs a new Null Instance test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NullInstanceTest(String name) {
@@ -47,7 +47,7 @@ public class NullInstanceTest extends TypeInstanceTest {
 	 * Returns the fixture for this Null Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class NullInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public class NullInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -83,7 +83,7 @@ public class NullInstanceTest extends TypeInstanceTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.NullInstance#getInstance() <em>Get Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.NullInstance#getInstance()
 	 * @generated
 	 */

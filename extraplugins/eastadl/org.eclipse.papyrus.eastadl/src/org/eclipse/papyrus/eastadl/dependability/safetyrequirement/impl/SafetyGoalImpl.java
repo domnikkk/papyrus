@@ -54,7 +54,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getDerivedFrom() <em>Derived From</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDerivedFrom()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getRequirement() <em>Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRequirement()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The default value of the '{@link #getHazardClassification() <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHazardClassification()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getHazardClassification() <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHazardClassification()
 	 * @generated
 	 * @ordered
@@ -109,7 +109,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getSafeState() <em>Safe State</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSafeState()
 	 * @generated
 	 * @ordered
@@ -119,7 +119,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SafetyGoalImpl() {
@@ -129,7 +129,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -210,7 +210,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -289,7 +289,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +303,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +337,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -347,7 +347,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +362,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

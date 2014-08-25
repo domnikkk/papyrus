@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.BlenderMorse;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.Shade;
@@ -33,7 +30,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The default value of the '{@link #isDebugMode() <em>Debug Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDebugMode()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The cached value of the '{@link #isDebugMode() <em>Debug Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDebugMode()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The default value of the '{@link #isDebugDisplay() <em>Debug Display</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDebugDisplay()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The cached value of the '{@link #isDebugDisplay() <em>Debug Display</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDebugDisplay()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The default value of the '{@link #getGravity() <em>Gravity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGravity()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The cached value of the '{@link #getGravity() <em>Gravity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGravity()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The default value of the '{@link #get_viewport_shade() <em>viewport shade</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #get_viewport_shade()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	 * The cached value of the '{@link #get_viewport_shade() <em>viewport shade</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #get_viewport_shade()
 	 * @generated
 	 * @ordered
@@ -120,7 +117,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BlenderMorseImpl() {
@@ -130,7 +127,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isDebugMode() {
@@ -151,7 +148,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDebugMode(boolean newDebugMode) {
@@ -165,7 +162,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isDebugDisplay() {
@@ -175,7 +172,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDebugDisplay(boolean newDebugDisplay) {
@@ -189,7 +186,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getGravity() {
@@ -199,7 +196,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGravity(float newGravity) {
@@ -213,7 +210,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Shade get_viewport_shade() {
@@ -223,7 +220,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void set_viewport_shade(Shade new_viewport_shade) {
@@ -237,7 +234,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +255,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +280,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +305,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +326,7 @@ public class BlenderMorseImpl extends RoboticSimulatorImpl implements BlenderMor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

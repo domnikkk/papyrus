@@ -36,7 +36,7 @@ public interface TemporalConstraint extends EAElement {
 	 * If the meaning of the '<em>Transition Event</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Transition Event</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTemporalConstraint_TransitionEvent()
 	 * @model ordered="false"
@@ -52,7 +52,7 @@ public interface TemporalConstraint extends EAElement {
 	 * If the meaning of the '<em>Time Condition</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Time Condition</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTemporalConstraint_TimeCondition()
 	 * @model ordered="false"
@@ -68,7 +68,7 @@ public interface TemporalConstraint extends EAElement {
 	 * If the meaning of the '<em>Transition</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Transition</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTemporalConstraint_Transition()
 	 * @model ordered="false"
@@ -84,7 +84,7 @@ public interface TemporalConstraint extends EAElement {
 	 * If the meaning of the '<em>State</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>State</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTemporalConstraint_State()
 	 * @model ordered="false"
@@ -99,7 +99,7 @@ public interface TemporalConstraint extends EAElement {
 	 * If the meaning of the '<em>Init State</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Init State</em>' reference.
 	 * @see #setInitState(State)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTemporalConstraint_InitState()
@@ -112,7 +112,7 @@ public interface TemporalConstraint extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getInitState <em>Init State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Init State</em>' reference.
 	 * @see #getInitState()
@@ -127,7 +127,7 @@ public interface TemporalConstraint extends EAElement {
 	 * If the meaning of the '<em>Assertion</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Assertion</em>' reference.
 	 * @see #setAssertion(EAExpression)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getTemporalConstraint_Assertion()
@@ -140,7 +140,7 @@ public interface TemporalConstraint extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalConstraint#getAssertion <em>Assertion</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Assertion</em>' reference.
 	 * @see #getAssertion()

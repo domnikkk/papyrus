@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.RobotML.RobotMLPackage
  * @generated
  */
@@ -18,7 +18,7 @@ public interface RobotMLFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	RobotMLFactory eINSTANCE = org.eclipse.papyrus.RobotML.impl.RobotMLFactoryImpl.init();
@@ -27,7 +27,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Transition</em>'.
 	 * @generated
 	 */
@@ -37,7 +37,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Algorithm</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Algorithm</em>'.
 	 * @generated
 	 */
@@ -47,7 +47,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>State</em>'.
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Actuated Joint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Actuated Joint</em>'.
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Joint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Joint</em>'.
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Complete Bonding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Complete Bonding</em>'.
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Robot</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Robot</em>'.
 	 * @generated
 	 */
@@ -97,7 +97,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>System</em>'.
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Agent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Agent</em>'.
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Physical Object</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Physical Object</em>'.
 	 * @generated
 	 */
@@ -127,7 +127,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Environment</em>'.
 	 * @generated
 	 */
@@ -137,7 +137,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Surface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Surface</em>'.
 	 * @generated
 	 */
@@ -147,7 +147,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Data Flow Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Data Flow Port</em>'.
 	 * @generated
 	 */
@@ -157,7 +157,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Service Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Service Port</em>'.
 	 * @generated
 	 */
@@ -167,7 +167,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Actuator System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Actuator System</em>'.
 	 * @generated
 	 */
@@ -177,7 +177,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Robotic System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Robotic System</em>'.
 	 * @generated
 	 */
@@ -187,7 +187,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Cyber Physical System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Cyber Physical System</em>'.
 	 * @generated
 	 */
@@ -197,7 +197,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Sensor System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Sensor System</em>'.
 	 * @generated
 	 */
@@ -207,7 +207,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hardware</em>'.
 	 * @generated
 	 */
@@ -217,7 +217,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Software</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Software</em>'.
 	 * @generated
 	 */
@@ -227,7 +227,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Engine System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Engine System</em>'.
 	 * @generated
 	 */
@@ -237,7 +237,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Steered Wheel System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Steered Wheel System</em>'.
 	 * @generated
 	 */
@@ -247,7 +247,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Locomotion System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Locomotion System</em>'.
 	 * @generated
 	 */
@@ -257,7 +257,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Image Sensor System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Image Sensor System</em>'.
 	 * @generated
 	 */
@@ -267,7 +267,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Camera System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Camera System</em>'.
 	 * @generated
 	 */
@@ -277,7 +277,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Object Detection Sensor System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Object Detection Sensor System</em>'.
 	 * @generated
 	 */
@@ -287,7 +287,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Object Tracking Sensor System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Object Tracking Sensor System</em>'.
 	 * @generated
 	 */
@@ -297,7 +297,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Lidar System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Lidar System</em>'.
 	 * @generated
 	 */
@@ -307,7 +307,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Localization Sensor System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Localization Sensor System</em>'.
 	 * @generated
 	 */
@@ -317,7 +317,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>GPS System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>GPS System</em>'.
 	 * @generated
 	 */
@@ -327,7 +327,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Algorithm Library</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Algorithm Library</em>'.
 	 * @generated
 	 */
@@ -337,7 +337,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Sensor Driver</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Sensor Driver</em>'.
 	 * @generated
 	 */
@@ -347,7 +347,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Building</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Building</em>'.
 	 * @generated
 	 */
@@ -357,7 +357,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Planet</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Planet</em>'.
 	 * @generated
 	 */
@@ -367,7 +367,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Land Surface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Land Surface</em>'.
 	 * @generated
 	 */
@@ -377,7 +377,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Floor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Floor</em>'.
 	 * @generated
 	 */
@@ -387,7 +387,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Water Surface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Water Surface</em>'.
 	 * @generated
 	 */
@@ -397,7 +397,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Human</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Human</em>'.
 	 * @generated
 	 */
@@ -407,7 +407,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Pedestrian</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Pedestrian</em>'.
 	 * @generated
 	 */
@@ -417,7 +417,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Stairs</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Stairs</em>'.
 	 * @generated
 	 */
@@ -427,7 +427,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Platform</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Platform</em>'.
 	 * @generated
 	 */
@@ -437,7 +437,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>External Library</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>External Library</em>'.
 	 * @generated
 	 */
@@ -447,7 +447,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Robotic Middleware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Robotic Middleware</em>'.
 	 * @generated
 	 */
@@ -457,7 +457,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Robotic Simulator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Robotic Simulator</em>'.
 	 * @generated
 	 */
@@ -467,7 +467,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Cycab TK</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Cycab TK</em>'.
 	 * @generated
 	 */
@@ -477,7 +477,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Blender Morse</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Blender Morse</em>'.
 	 * @generated
 	 */
@@ -487,7 +487,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>On Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>On Port</em>'.
 	 * @generated
 	 */
@@ -497,7 +497,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Allocate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Allocate</em>'.
 	 * @generated
 	 */
@@ -507,7 +507,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Inertial Measurement Unit System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Inertial Measurement Unit System</em>'.
 	 * @generated
 	 */
@@ -517,7 +517,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Inertial Navigation System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Inertial Navigation System</em>'.
 	 * @generated
 	 */
@@ -527,7 +527,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Odometry System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Odometry System</em>'.
 	 * @generated
 	 */
@@ -537,7 +537,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Infra Red Proximetry System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Infra Red Proximetry System</em>'.
 	 * @generated
 	 */
@@ -547,7 +547,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Deployment Plan</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Deployment Plan</em>'.
 	 * @generated
 	 */
@@ -557,7 +557,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Gyroscope</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Gyroscope</em>'.
 	 * @generated
 	 */
@@ -567,7 +567,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>On Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>On Property</em>'.
 	 * @generated
 	 */
@@ -577,7 +577,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Chassis</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Chassis</em>'.
 	 * @generated
 	 */
@@ -587,7 +587,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Supporting Structure</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Supporting Structure</em>'.
 	 * @generated
 	 */
@@ -597,7 +597,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Mechanical Linkage</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Mechanical Linkage</em>'.
 	 * @generated
 	 */
@@ -607,7 +607,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Leg</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Leg</em>'.
 	 * @generated
 	 */
@@ -617,7 +617,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Locomotion Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Locomotion Hardware</em>'.
 	 * @generated
 	 */
@@ -627,7 +627,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Actuator Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Actuator Hardware</em>'.
 	 * @generated
 	 */
@@ -637,7 +637,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Mobile Robot</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Mobile Robot</em>'.
 	 * @generated
 	 */
@@ -647,7 +647,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Manipulator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Manipulator</em>'.
 	 * @generated
 	 */
@@ -657,7 +657,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Piloted System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Piloted System</em>'.
 	 * @generated
 	 */
@@ -667,7 +667,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Power Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Power Hardware</em>'.
 	 * @generated
 	 */
@@ -677,7 +677,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Sensor Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Sensor Hardware</em>'.
 	 * @generated
 	 */
@@ -687,7 +687,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Grasping Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Grasping Hardware</em>'.
 	 * @generated
 	 */
@@ -697,7 +697,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Steered Wheel Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Steered Wheel Hardware</em>'.
 	 * @generated
 	 */
@@ -707,7 +707,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Arm</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Arm</em>'.
 	 * @generated
 	 */
@@ -717,7 +717,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Leg System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Leg System</em>'.
 	 * @generated
 	 */
@@ -727,7 +727,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Grasping System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Grasping System</em>'.
 	 * @generated
 	 */
@@ -737,7 +737,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Weapon System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Weapon System</em>'.
 	 * @generated
 	 */
@@ -747,7 +747,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Man Machine Interface System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Man Machine Interface System</em>'.
 	 * @generated
 	 */
@@ -757,7 +757,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Closed Loop Control System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Closed Loop Control System</em>'.
 	 * @generated
 	 */
@@ -767,7 +767,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Open Loop Control System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Open Loop Control System</em>'.
 	 * @generated
 	 */
@@ -777,7 +777,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Robotic Head</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Robotic Head</em>'.
 	 * @generated
 	 */
@@ -787,7 +787,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Navigation Command System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Navigation Command System</em>'.
 	 * @generated
 	 */
@@ -797,7 +797,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns a new object of class '<em>Joystic Navigation System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Joystic Navigation System</em>'.
 	 * @generated
 	 */
@@ -807,7 +807,7 @@ public interface RobotMLFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

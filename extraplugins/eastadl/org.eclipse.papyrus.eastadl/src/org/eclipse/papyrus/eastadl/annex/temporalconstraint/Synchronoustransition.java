@@ -28,7 +28,7 @@ public interface Synchronoustransition extends Transition {
 	 * If the meaning of the '<em>Read Transition Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Read Transition Event</em>' reference.
 	 * @see #setReadTransitionEvent(TransitionEvent)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getSynchronoustransition_ReadTransitionEvent()
@@ -41,7 +41,7 @@ public interface Synchronoustransition extends Transition {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition#getReadTransitionEvent <em>Read Transition Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Read Transition Event</em>' reference.
 	 * @see #getReadTransitionEvent()
@@ -56,7 +56,7 @@ public interface Synchronoustransition extends Transition {
 	 * If the meaning of the '<em>Write Transition Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Write Transition Event</em>' reference.
 	 * @see #setWriteTransitionEvent(TransitionEvent)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getSynchronoustransition_WriteTransitionEvent()
@@ -69,7 +69,7 @@ public interface Synchronoustransition extends Transition {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.Synchronoustransition#getWriteTransitionEvent <em>Write Transition Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Write Transition Event</em>' reference.
 	 * @see #getWriteTransitionEvent()

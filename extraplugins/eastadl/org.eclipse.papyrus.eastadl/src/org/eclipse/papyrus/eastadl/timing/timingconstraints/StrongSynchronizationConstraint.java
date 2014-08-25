@@ -33,7 +33,7 @@ public interface StrongSynchronizationConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Event</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Event</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongSynchronizationConstraint_Event()
 	 * @model lower="2" ordered="false"
@@ -48,7 +48,7 @@ public interface StrongSynchronizationConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Tolerance</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Tolerance</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongSynchronizationConstraint_Tolerance()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

@@ -39,7 +39,7 @@ public interface TimerResource extends TimingResource {
 	 * If the meaning of the '<em>Duration</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Duration</em>' attribute.
 	 * @see #setDuration(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getTimerResource_Duration()
@@ -52,7 +52,7 @@ public interface TimerResource extends TimingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.TimerResource#getDuration <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Duration</em>' attribute.
 	 * @see #getDuration()
@@ -67,7 +67,7 @@ public interface TimerResource extends TimingResource {
 	 * If the meaning of the '<em>Is Periodic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Periodic</em>' attribute.
 	 * @see #setIsPeriodic(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getTimerResource_IsPeriodic()
@@ -80,7 +80,7 @@ public interface TimerResource extends TimingResource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.TimerResource#isIsPeriodic <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Periodic</em>' attribute.
 	 * @see #isIsPeriodic()

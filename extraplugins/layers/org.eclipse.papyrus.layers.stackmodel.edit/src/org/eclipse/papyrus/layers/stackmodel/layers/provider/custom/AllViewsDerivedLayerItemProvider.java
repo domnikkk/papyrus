@@ -14,7 +14,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AllViewsDerivedLayerItemProvider
@@ -29,7 +29,7 @@ public class AllViewsDerivedLayerItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllViewsDerivedLayerItemProvider(AdapterFactory adapterFactory,

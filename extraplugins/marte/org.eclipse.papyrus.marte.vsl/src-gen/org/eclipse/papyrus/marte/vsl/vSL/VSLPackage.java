@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.marte.vsl.vSL.VSLFactory
  * @model kind="package"
  * @generated
@@ -29,7 +29,7 @@ public interface VSLPackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "vSL";
@@ -38,7 +38,7 @@ public interface VSLPackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/marte/vsl/VSL";
@@ -47,7 +47,7 @@ public interface VSLPackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "vSL";
@@ -56,7 +56,7 @@ public interface VSLPackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	VSLPackage eINSTANCE = org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl.init();
@@ -65,7 +65,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ValueSpecificationImpl <em>Value Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ValueSpecificationImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getValueSpecification()
 	 * @generated
@@ -76,7 +76,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Value Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -86,7 +86,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ExpressionImpl <em>Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getExpression()
 	 * @generated
@@ -97,7 +97,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.AndOrXorExpressionImpl <em>And Or Xor Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.AndOrXorExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getAndOrXorExpression()
 	 * @generated
@@ -128,7 +128,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +148,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>And Or Xor Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.EqualityExpressionImpl <em>Equality Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.EqualityExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getEqualityExpression()
 	 * @generated
@@ -169,7 +169,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -179,7 +179,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Equality Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.RelationalExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getRelationalExpression()
 	 * @generated
@@ -210,7 +210,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -220,7 +220,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -230,7 +230,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Relational Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -240,7 +240,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ConditionalExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getConditionalExpression()
 	 * @generated
@@ -251,7 +251,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -261,7 +261,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -271,7 +271,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Conditional Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -281,7 +281,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.AdditiveExpressionImpl <em>Additive Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.AdditiveExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getAdditiveExpression()
 	 * @generated
@@ -292,7 +292,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -302,7 +302,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -312,7 +312,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Additive Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -322,7 +322,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.MultiplicativeExpressionImpl <em>Multiplicative Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.MultiplicativeExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getMultiplicativeExpression()
 	 * @generated
@@ -333,7 +333,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -343,7 +343,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -353,7 +353,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Multiplicative Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -363,7 +363,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.UnaryExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getUnaryExpression()
 	 * @generated
@@ -374,7 +374,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -384,7 +384,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Unary</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -394,7 +394,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -404,7 +404,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Unary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -414,7 +414,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.PrimaryExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getPrimaryExpression()
 	 * @generated
@@ -425,7 +425,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Prefix</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -435,7 +435,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Suffix</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -445,7 +445,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Primary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -455,7 +455,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.SuffixExpressionImpl <em>Suffix Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.SuffixExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getSuffixExpression()
 	 * @generated
@@ -466,7 +466,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Suffix</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -476,7 +476,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Suffix Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -486,7 +486,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.PropertyCallExpressionImpl <em>Property Call Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.PropertyCallExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getPropertyCallExpression()
 	 * @generated
@@ -497,7 +497,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Suffix</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -507,7 +507,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -517,7 +517,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Property Call Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -527,7 +527,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.OperationCallExpressionImpl <em>Operation Call Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.OperationCallExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getOperationCallExpression()
 	 * @generated
@@ -538,7 +538,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Suffix</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -548,7 +548,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -558,7 +558,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -568,7 +568,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Operation Call Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -578,7 +578,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.LiteralImpl <em>Literal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.LiteralImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getLiteral()
 	 * @generated
@@ -589,7 +589,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -599,7 +599,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -609,7 +609,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.NameOrChoiceOrBehaviorCallImpl <em>Name Or Choice Or Behavior Call</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.NameOrChoiceOrBehaviorCallImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getNameOrChoiceOrBehaviorCall()
 	 * @generated
@@ -620,7 +620,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -630,7 +630,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -640,7 +640,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,7 +650,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Name Or Choice Or Behavior Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -660,7 +660,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.QualifiedNameImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getQualifiedName()
 	 * @generated
@@ -671,7 +671,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -681,7 +681,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Remaining</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -691,7 +691,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Qualified Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -701,7 +701,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.IntervalImpl <em>Interval</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.IntervalImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getInterval()
 	 * @generated
@@ -712,7 +712,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Is Lower Included</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -722,7 +722,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Lower</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -732,7 +732,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Upper</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -742,7 +742,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Is Upper Included</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -752,7 +752,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Interval</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -762,7 +762,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.CollectionOrTupleImpl <em>Collection Or Tuple</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.CollectionOrTupleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getCollectionOrTuple()
 	 * @generated
@@ -773,7 +773,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>List Of Values</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -783,7 +783,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Collection Or Tuple</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -793,7 +793,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.TupleImpl <em>Tuple</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.TupleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getTuple()
 	 * @generated
@@ -804,7 +804,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>List Of Value Name Pairs</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -814,7 +814,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Tuple</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -824,7 +824,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValuesImpl <em>List Of Values</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValuesImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getListOfValues()
 	 * @generated
@@ -835,7 +835,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -845,7 +845,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>List Of Values</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -855,7 +855,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValueNamePairsImpl <em>List Of Value Name Pairs</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValueNamePairsImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getListOfValueNamePairs()
 	 * @generated
@@ -866,7 +866,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value Name Pairs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -876,7 +876,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>List Of Value Name Pairs</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -886,7 +886,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ValueNamePairImpl <em>Value Name Pair</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ValueNamePairImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getValueNamePair()
 	 * @generated
@@ -897,7 +897,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -907,7 +907,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -917,7 +917,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Value Name Pair</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -927,7 +927,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.TimeExpressionImpl <em>Time Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.TimeExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getTimeExpression()
 	 * @generated
@@ -938,7 +938,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Time Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -948,7 +948,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsExpressionImpl <em>Instant Obs Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getInstantObsExpression()
 	 * @generated
@@ -959,7 +959,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -969,7 +969,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Index</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -979,7 +979,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -989,7 +989,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Instant Obs Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -999,7 +999,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsNameImpl <em>Instant Obs Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsNameImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getInstantObsName()
 	 * @generated
@@ -1010,7 +1010,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1020,7 +1020,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Instant Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1030,7 +1030,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Instant Obs Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1040,7 +1040,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsExpressionImpl <em>Duration Obs Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsExpressionImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDurationObsExpression()
 	 * @generated
@@ -1051,7 +1051,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1061,7 +1061,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Index</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1071,7 +1071,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1081,7 +1081,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Duration Obs Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1091,7 +1091,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsNameImpl <em>Duration Obs Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsNameImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDurationObsName()
 	 * @generated
@@ -1102,7 +1102,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1112,7 +1112,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Duration Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1122,7 +1122,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Duration Obs Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1132,7 +1132,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.JitterExpImpl <em>Jitter Exp</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.JitterExpImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getJitterExp()
 	 * @generated
@@ -1143,7 +1143,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>First Instant</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1153,7 +1153,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Second Instant</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1163,7 +1163,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Jitter Exp</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1173,7 +1173,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VariableDeclarationImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getVariableDeclaration()
 	 * @generated
@@ -1184,7 +1184,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Variable Declaration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1194,7 +1194,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1204,7 +1204,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1214,7 +1214,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Init Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1224,7 +1224,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Variable Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1234,7 +1234,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DataTypeNameImpl <em>Data Type Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DataTypeNameImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDataTypeName()
 	 * @generated
@@ -1245,7 +1245,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1255,7 +1255,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1265,7 +1265,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Data Type Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1275,7 +1275,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.NumberLiteralRuleImpl <em>Number Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.NumberLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getNumberLiteralRule()
 	 * @generated
@@ -1286,7 +1286,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1296,7 +1296,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Number Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1306,7 +1306,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.IntegerLiteralRuleImpl <em>Integer Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.IntegerLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getIntegerLiteralRule()
 	 * @generated
@@ -1317,7 +1317,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1327,7 +1327,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Integer Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1337,7 +1337,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.UnlimitedLiteralRuleImpl <em>Unlimited Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.UnlimitedLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getUnlimitedLiteralRule()
 	 * @generated
@@ -1348,7 +1348,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1358,7 +1358,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Unlimited Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1368,7 +1368,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.RealLiteralRuleImpl <em>Real Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.RealLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getRealLiteralRule()
 	 * @generated
@@ -1379,7 +1379,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1389,7 +1389,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Real Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1399,7 +1399,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DateTimeLiteralRuleImpl <em>Date Time Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DateTimeLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDateTimeLiteralRule()
 	 * @generated
@@ -1410,7 +1410,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1420,7 +1420,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Date Time Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1430,7 +1430,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.BooleanLiteralRuleImpl <em>Boolean Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.BooleanLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getBooleanLiteralRule()
 	 * @generated
@@ -1441,7 +1441,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1451,7 +1451,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Boolean Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1461,7 +1461,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.NullLiteralRuleImpl <em>Null Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.NullLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getNullLiteralRule()
 	 * @generated
@@ -1472,7 +1472,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1482,7 +1482,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Null Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1492,7 +1492,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DefaultLiteralRuleImpl <em>Default Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DefaultLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDefaultLiteralRule()
 	 * @generated
@@ -1503,7 +1503,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1513,7 +1513,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>Default Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1523,7 +1523,7 @@ public interface VSLPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.StringLiteralRuleImpl <em>String Literal Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.StringLiteralRuleImpl
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getStringLiteralRule()
 	 * @generated
@@ -1534,7 +1534,7 @@ public interface VSLPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1544,7 +1544,7 @@ public interface VSLPackage extends EPackage
 	 * The number of structural features of the '<em>String Literal Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1555,7 +1555,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Expression
 	 * @generated
@@ -1566,7 +1566,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.Expression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Expression#getExp()
 	 * @see #getExpression()
@@ -1578,7 +1578,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression <em>And Or Xor Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>And Or Xor Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression
 	 * @generated
@@ -1589,7 +1589,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression#getExp()
 	 * @see #getAndOrXorExpression()
@@ -1601,7 +1601,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression#getOp()
 	 * @see #getAndOrXorExpression()
@@ -1613,7 +1613,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression <em>Equality Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Equality Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression
 	 * @generated
@@ -1624,7 +1624,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression#getExp()
 	 * @see #getEqualityExpression()
@@ -1636,7 +1636,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression#getOp()
 	 * @see #getEqualityExpression()
@@ -1648,7 +1648,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression <em>Relational Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Relational Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression
 	 * @generated
@@ -1659,7 +1659,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression#getExp()
 	 * @see #getRelationalExpression()
@@ -1671,7 +1671,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression#getOp()
 	 * @see #getRelationalExpression()
@@ -1683,7 +1683,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression <em>Conditional Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Conditional Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression
 	 * @generated
@@ -1694,7 +1694,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression#getExp()
 	 * @see #getConditionalExpression()
@@ -1706,7 +1706,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression#getOp()
 	 * @see #getConditionalExpression()
@@ -1718,7 +1718,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression <em>Additive Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Additive Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression
 	 * @generated
@@ -1729,7 +1729,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression#getExp()
 	 * @see #getAdditiveExpression()
@@ -1741,7 +1741,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression#getOp()
 	 * @see #getAdditiveExpression()
@@ -1753,7 +1753,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression <em>Multiplicative Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Multiplicative Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression
 	 * @generated
@@ -1764,7 +1764,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression#getExp()
 	 * @see #getMultiplicativeExpression()
@@ -1776,7 +1776,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression#getOp()
 	 * @see #getMultiplicativeExpression()
@@ -1788,7 +1788,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression <em>Unary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Unary Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression
 	 * @generated
@@ -1799,7 +1799,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression#getOp()
 	 * @see #getUnaryExpression()
@@ -1811,7 +1811,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression#getUnary <em>Unary</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Unary</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression#getUnary()
 	 * @see #getUnaryExpression()
@@ -1823,7 +1823,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression#getExp()
 	 * @see #getUnaryExpression()
@@ -1835,7 +1835,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression <em>Primary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Primary Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression
 	 * @generated
@@ -1846,7 +1846,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression#getPrefix <em>Prefix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Prefix</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression#getPrefix()
 	 * @see #getPrimaryExpression()
@@ -1858,7 +1858,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression#getSuffix <em>Suffix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Suffix</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression#getSuffix()
 	 * @see #getPrimaryExpression()
@@ -1870,7 +1870,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification <em>Value Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Value Specification</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification
 	 * @generated
@@ -1881,7 +1881,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression <em>Suffix Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Suffix Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression
 	 * @generated
@@ -1892,7 +1892,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression#getSuffix <em>Suffix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Suffix</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression#getSuffix()
 	 * @see #getSuffixExpression()
@@ -1904,7 +1904,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression <em>Property Call Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Call Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression
 	 * @generated
@@ -1915,7 +1915,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression#getProperty()
 	 * @see #getPropertyCallExpression()
@@ -1927,7 +1927,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression <em>Operation Call Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Operation Call Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression
 	 * @generated
@@ -1938,7 +1938,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Operation</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression#getOperation()
 	 * @see #getOperationCallExpression()
@@ -1950,7 +1950,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression#getArguments <em>Arguments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Arguments</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression#getArguments()
 	 * @see #getOperationCallExpression()
@@ -1962,7 +1962,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.Literal <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Literal</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Literal
 	 * @generated
@@ -1973,7 +1973,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.marte.vsl.vSL.Literal#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Literal#getValue()
 	 * @see #getLiteral()
@@ -1985,7 +1985,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall <em>Name Or Choice Or Behavior Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Name Or Choice Or Behavior Call</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall
 	 * @generated
@@ -1996,7 +1996,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall#getPath()
 	 * @see #getNameOrChoiceOrBehaviorCall()
@@ -2008,7 +2008,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Id</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall#getId()
 	 * @see #getNameOrChoiceOrBehaviorCall()
@@ -2020,7 +2020,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall#getArguments <em>Arguments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Arguments</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall#getArguments()
 	 * @see #getNameOrChoiceOrBehaviorCall()
@@ -2032,7 +2032,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.QualifiedName <em>Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Qualified Name</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.QualifiedName
 	 * @generated
@@ -2043,7 +2043,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.QualifiedName#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.QualifiedName#getPath()
 	 * @see #getQualifiedName()
@@ -2055,7 +2055,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.QualifiedName#getRemaining <em>Remaining</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Remaining</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.QualifiedName#getRemaining()
 	 * @see #getQualifiedName()
@@ -2067,7 +2067,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval <em>Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Interval</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Interval
 	 * @generated
@@ -2078,7 +2078,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getIsLowerIncluded <em>Is Lower Included</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Lower Included</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Interval#getIsLowerIncluded()
 	 * @see #getInterval()
@@ -2090,7 +2090,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getLower <em>Lower</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Lower</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Interval#getLower()
 	 * @see #getInterval()
@@ -2102,7 +2102,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getUpper <em>Upper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Upper</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Interval#getUpper()
 	 * @see #getInterval()
@@ -2114,7 +2114,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.marte.vsl.vSL.Interval#getIsUpperIncluded <em>Is Upper Included</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Upper Included</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Interval#getIsUpperIncluded()
 	 * @see #getInterval()
@@ -2126,7 +2126,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple <em>Collection Or Tuple</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Collection Or Tuple</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple
 	 * @generated
@@ -2137,7 +2137,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple#getListOfValues <em>List Of Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>List Of Values</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple#getListOfValues()
 	 * @see #getCollectionOrTuple()
@@ -2149,7 +2149,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.Tuple <em>Tuple</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Tuple</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Tuple
 	 * @generated
@@ -2160,7 +2160,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.Tuple#getListOfValueNamePairs <em>List Of Value Name Pairs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>List Of Value Name Pairs</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.Tuple#getListOfValueNamePairs()
 	 * @see #getTuple()
@@ -2172,7 +2172,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.ListOfValues <em>List Of Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>List Of Values</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ListOfValues
 	 * @generated
@@ -2183,7 +2183,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.ListOfValues#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ListOfValues#getValues()
 	 * @see #getListOfValues()
@@ -2195,7 +2195,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs <em>List Of Value Name Pairs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>List Of Value Name Pairs</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs
 	 * @generated
@@ -2206,7 +2206,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs#getValueNamePairs <em>Value Name Pairs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Value Name Pairs</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs#getValueNamePairs()
 	 * @see #getListOfValueNamePairs()
@@ -2218,7 +2218,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair <em>Value Name Pair</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Value Name Pair</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair
 	 * @generated
@@ -2229,7 +2229,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair#getProperty()
 	 * @see #getValueNamePair()
@@ -2241,7 +2241,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair#getValue()
 	 * @see #getValueNamePair()
@@ -2253,7 +2253,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.TimeExpression <em>Time Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Time Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.TimeExpression
 	 * @generated
@@ -2264,7 +2264,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression <em>Instant Obs Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Instant Obs Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression
 	 * @generated
@@ -2275,7 +2275,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Id</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getId()
 	 * @see #getInstantObsExpression()
@@ -2287,7 +2287,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getIndex <em>Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Index</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getIndex()
 	 * @see #getInstantObsExpression()
@@ -2299,7 +2299,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Condition</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression#getCondition()
 	 * @see #getInstantObsExpression()
@@ -2311,7 +2311,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsName <em>Instant Obs Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Instant Obs Name</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsName
 	 * @generated
@@ -2322,7 +2322,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsName#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsName#getPath()
 	 * @see #getInstantObsName()
@@ -2334,7 +2334,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.InstantObsName#getInstantId <em>Instant Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Instant Id</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.InstantObsName#getInstantId()
 	 * @see #getInstantObsName()
@@ -2346,7 +2346,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression <em>Duration Obs Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Duration Obs Expression</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression
 	 * @generated
@@ -2357,7 +2357,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Id</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression#getId()
 	 * @see #getDurationObsExpression()
@@ -2369,7 +2369,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression#getIndex <em>Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Index</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression#getIndex()
 	 * @see #getDurationObsExpression()
@@ -2381,7 +2381,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Condition</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression#getCondition()
 	 * @see #getDurationObsExpression()
@@ -2393,7 +2393,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.DurationObsName <em>Duration Obs Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Duration Obs Name</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsName
 	 * @generated
@@ -2404,7 +2404,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.DurationObsName#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsName#getPath()
 	 * @see #getDurationObsName()
@@ -2416,7 +2416,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.DurationObsName#getDurationId <em>Duration Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Duration Id</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DurationObsName#getDurationId()
 	 * @see #getDurationObsName()
@@ -2428,7 +2428,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.JitterExp <em>Jitter Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Jitter Exp</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.JitterExp
 	 * @generated
@@ -2439,7 +2439,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.JitterExp#getFirstInstant <em>First Instant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>First Instant</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.JitterExp#getFirstInstant()
 	 * @see #getJitterExp()
@@ -2451,7 +2451,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.JitterExp#getSecondInstant <em>Second Instant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Second Instant</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.JitterExp#getSecondInstant()
 	 * @see #getJitterExp()
@@ -2463,7 +2463,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration <em>Variable Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Variable Declaration</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration
 	 * @generated
@@ -2474,7 +2474,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getVariableDeclaration <em>Variable Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Variable Declaration</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getVariableDeclaration()
 	 * @see #getVariableDeclaration()
@@ -2486,7 +2486,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getName()
 	 * @see #getVariableDeclaration()
@@ -2498,7 +2498,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getType()
 	 * @see #getVariableDeclaration()
@@ -2510,7 +2510,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getInitValue <em>Init Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Init Value</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getInitValue()
 	 * @see #getVariableDeclaration()
@@ -2522,7 +2522,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.DataTypeName <em>Data Type Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Data Type Name</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DataTypeName
 	 * @generated
@@ -2533,7 +2533,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.marte.vsl.vSL.DataTypeName#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DataTypeName#getPath()
 	 * @see #getDataTypeName()
@@ -2545,7 +2545,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.marte.vsl.vSL.DataTypeName#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DataTypeName#getType()
 	 * @see #getDataTypeName()
@@ -2557,7 +2557,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.NumberLiteralRule <em>Number Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Number Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NumberLiteralRule
 	 * @generated
@@ -2568,7 +2568,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.IntegerLiteralRule <em>Integer Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Integer Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.IntegerLiteralRule
 	 * @generated
@@ -2579,7 +2579,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.UnlimitedLiteralRule <em>Unlimited Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Unlimited Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.UnlimitedLiteralRule
 	 * @generated
@@ -2590,7 +2590,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.RealLiteralRule <em>Real Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Real Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.RealLiteralRule
 	 * @generated
@@ -2601,7 +2601,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.DateTimeLiteralRule <em>Date Time Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Date Time Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DateTimeLiteralRule
 	 * @generated
@@ -2612,7 +2612,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.BooleanLiteralRule <em>Boolean Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Boolean Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.BooleanLiteralRule
 	 * @generated
@@ -2623,7 +2623,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.NullLiteralRule <em>Null Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Null Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.NullLiteralRule
 	 * @generated
@@ -2634,7 +2634,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.DefaultLiteralRule <em>Default Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Default Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.DefaultLiteralRule
 	 * @generated
@@ -2645,7 +2645,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.marte.vsl.vSL.StringLiteralRule <em>String Literal Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String Literal Rule</em>'.
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.StringLiteralRule
 	 * @generated
@@ -2656,7 +2656,7 @@ public interface VSLPackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2672,7 +2672,7 @@ public interface VSLPackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -2681,7 +2681,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getExpression()
 		 * @generated
@@ -2692,7 +2692,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXPRESSION__EXP = eINSTANCE.getExpression_Exp();
@@ -2701,7 +2701,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.AndOrXorExpressionImpl <em>And Or Xor Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.AndOrXorExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getAndOrXorExpression()
 		 * @generated
@@ -2712,7 +2712,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference AND_OR_XOR_EXPRESSION__EXP = eINSTANCE.getAndOrXorExpression_Exp();
@@ -2721,7 +2721,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute AND_OR_XOR_EXPRESSION__OP = eINSTANCE.getAndOrXorExpression_Op();
@@ -2730,7 +2730,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.EqualityExpressionImpl <em>Equality Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.EqualityExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getEqualityExpression()
 		 * @generated
@@ -2741,7 +2741,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EQUALITY_EXPRESSION__EXP = eINSTANCE.getEqualityExpression_Exp();
@@ -2750,7 +2750,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EQUALITY_EXPRESSION__OP = eINSTANCE.getEqualityExpression_Op();
@@ -2759,7 +2759,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.RelationalExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getRelationalExpression()
 		 * @generated
@@ -2770,7 +2770,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference RELATIONAL_EXPRESSION__EXP = eINSTANCE.getRelationalExpression_Exp();
@@ -2779,7 +2779,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute RELATIONAL_EXPRESSION__OP = eINSTANCE.getRelationalExpression_Op();
@@ -2788,7 +2788,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ConditionalExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getConditionalExpression()
 		 * @generated
@@ -2799,7 +2799,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONDITIONAL_EXPRESSION__EXP = eINSTANCE.getConditionalExpression_Exp();
@@ -2808,7 +2808,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONDITIONAL_EXPRESSION__OP = eINSTANCE.getConditionalExpression_Op();
@@ -2817,7 +2817,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.AdditiveExpressionImpl <em>Additive Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.AdditiveExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getAdditiveExpression()
 		 * @generated
@@ -2828,7 +2828,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ADDITIVE_EXPRESSION__EXP = eINSTANCE.getAdditiveExpression_Exp();
@@ -2837,7 +2837,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ADDITIVE_EXPRESSION__OP = eINSTANCE.getAdditiveExpression_Op();
@@ -2846,7 +2846,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.MultiplicativeExpressionImpl <em>Multiplicative Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.MultiplicativeExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getMultiplicativeExpression()
 		 * @generated
@@ -2857,7 +2857,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MULTIPLICATIVE_EXPRESSION__EXP = eINSTANCE.getMultiplicativeExpression_Exp();
@@ -2866,7 +2866,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MULTIPLICATIVE_EXPRESSION__OP = eINSTANCE.getMultiplicativeExpression_Op();
@@ -2875,7 +2875,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.UnaryExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getUnaryExpression()
 		 * @generated
@@ -2886,7 +2886,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute UNARY_EXPRESSION__OP = eINSTANCE.getUnaryExpression_Op();
@@ -2895,7 +2895,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unary</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UNARY_EXPRESSION__UNARY = eINSTANCE.getUnaryExpression_Unary();
@@ -2904,7 +2904,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UNARY_EXPRESSION__EXP = eINSTANCE.getUnaryExpression_Exp();
@@ -2913,7 +2913,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.PrimaryExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getPrimaryExpression()
 		 * @generated
@@ -2924,7 +2924,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Prefix</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PRIMARY_EXPRESSION__PREFIX = eINSTANCE.getPrimaryExpression_Prefix();
@@ -2933,7 +2933,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Suffix</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PRIMARY_EXPRESSION__SUFFIX = eINSTANCE.getPrimaryExpression_Suffix();
@@ -2942,7 +2942,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ValueSpecificationImpl <em>Value Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ValueSpecificationImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getValueSpecification()
 		 * @generated
@@ -2953,7 +2953,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.SuffixExpressionImpl <em>Suffix Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.SuffixExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getSuffixExpression()
 		 * @generated
@@ -2964,7 +2964,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Suffix</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SUFFIX_EXPRESSION__SUFFIX = eINSTANCE.getSuffixExpression_Suffix();
@@ -2973,7 +2973,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.PropertyCallExpressionImpl <em>Property Call Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.PropertyCallExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getPropertyCallExpression()
 		 * @generated
@@ -2984,7 +2984,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_CALL_EXPRESSION__PROPERTY = eINSTANCE.getPropertyCallExpression_Property();
@@ -2993,7 +2993,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.OperationCallExpressionImpl <em>Operation Call Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.OperationCallExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getOperationCallExpression()
 		 * @generated
@@ -3004,7 +3004,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference OPERATION_CALL_EXPRESSION__OPERATION = eINSTANCE.getOperationCallExpression_Operation();
@@ -3013,7 +3013,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference OPERATION_CALL_EXPRESSION__ARGUMENTS = eINSTANCE.getOperationCallExpression_Arguments();
@@ -3022,7 +3022,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.LiteralImpl <em>Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.LiteralImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getLiteral()
 		 * @generated
@@ -3033,7 +3033,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LITERAL__VALUE = eINSTANCE.getLiteral_Value();
@@ -3042,7 +3042,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.NameOrChoiceOrBehaviorCallImpl <em>Name Or Choice Or Behavior Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.NameOrChoiceOrBehaviorCallImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getNameOrChoiceOrBehaviorCall()
 		 * @generated
@@ -3053,7 +3053,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NAME_OR_CHOICE_OR_BEHAVIOR_CALL__PATH = eINSTANCE.getNameOrChoiceOrBehaviorCall_Path();
@@ -3062,7 +3062,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NAME_OR_CHOICE_OR_BEHAVIOR_CALL__ID = eINSTANCE.getNameOrChoiceOrBehaviorCall_Id();
@@ -3071,7 +3071,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NAME_OR_CHOICE_OR_BEHAVIOR_CALL__ARGUMENTS = eINSTANCE.getNameOrChoiceOrBehaviorCall_Arguments();
@@ -3080,7 +3080,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.QualifiedNameImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getQualifiedName()
 		 * @generated
@@ -3091,7 +3091,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__PATH = eINSTANCE.getQualifiedName_Path();
@@ -3100,7 +3100,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Remaining</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__REMAINING = eINSTANCE.getQualifiedName_Remaining();
@@ -3109,7 +3109,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.IntervalImpl <em>Interval</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.IntervalImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getInterval()
 		 * @generated
@@ -3120,7 +3120,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Is Lower Included</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INTERVAL__IS_LOWER_INCLUDED = eINSTANCE.getInterval_IsLowerIncluded();
@@ -3129,7 +3129,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Lower</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INTERVAL__LOWER = eINSTANCE.getInterval_Lower();
@@ -3138,7 +3138,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Upper</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INTERVAL__UPPER = eINSTANCE.getInterval_Upper();
@@ -3147,7 +3147,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Is Upper Included</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INTERVAL__IS_UPPER_INCLUDED = eINSTANCE.getInterval_IsUpperIncluded();
@@ -3156,7 +3156,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.CollectionOrTupleImpl <em>Collection Or Tuple</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.CollectionOrTupleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getCollectionOrTuple()
 		 * @generated
@@ -3167,7 +3167,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>List Of Values</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COLLECTION_OR_TUPLE__LIST_OF_VALUES = eINSTANCE.getCollectionOrTuple_ListOfValues();
@@ -3176,7 +3176,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.TupleImpl <em>Tuple</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.TupleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getTuple()
 		 * @generated
@@ -3187,7 +3187,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>List Of Value Name Pairs</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TUPLE__LIST_OF_VALUE_NAME_PAIRS = eINSTANCE.getTuple_ListOfValueNamePairs();
@@ -3196,7 +3196,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValuesImpl <em>List Of Values</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValuesImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getListOfValues()
 		 * @generated
@@ -3207,7 +3207,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LIST_OF_VALUES__VALUES = eINSTANCE.getListOfValues_Values();
@@ -3216,7 +3216,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValueNamePairsImpl <em>List Of Value Name Pairs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ListOfValueNamePairsImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getListOfValueNamePairs()
 		 * @generated
@@ -3227,7 +3227,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value Name Pairs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LIST_OF_VALUE_NAME_PAIRS__VALUE_NAME_PAIRS = eINSTANCE.getListOfValueNamePairs_ValueNamePairs();
@@ -3236,7 +3236,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.ValueNamePairImpl <em>Value Name Pair</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.ValueNamePairImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getValueNamePair()
 		 * @generated
@@ -3247,7 +3247,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VALUE_NAME_PAIR__PROPERTY = eINSTANCE.getValueNamePair_Property();
@@ -3256,7 +3256,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VALUE_NAME_PAIR__VALUE = eINSTANCE.getValueNamePair_Value();
@@ -3265,7 +3265,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.TimeExpressionImpl <em>Time Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.TimeExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getTimeExpression()
 		 * @generated
@@ -3276,7 +3276,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsExpressionImpl <em>Instant Obs Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getInstantObsExpression()
 		 * @generated
@@ -3287,7 +3287,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTANT_OBS_EXPRESSION__ID = eINSTANCE.getInstantObsExpression_Id();
@@ -3296,7 +3296,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Index</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTANT_OBS_EXPRESSION__INDEX = eINSTANCE.getInstantObsExpression_Index();
@@ -3305,7 +3305,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTANT_OBS_EXPRESSION__CONDITION = eINSTANCE.getInstantObsExpression_Condition();
@@ -3314,7 +3314,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsNameImpl <em>Instant Obs Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.InstantObsNameImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getInstantObsName()
 		 * @generated
@@ -3325,7 +3325,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTANT_OBS_NAME__PATH = eINSTANCE.getInstantObsName_Path();
@@ -3334,7 +3334,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Instant Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTANT_OBS_NAME__INSTANT_ID = eINSTANCE.getInstantObsName_InstantId();
@@ -3343,7 +3343,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsExpressionImpl <em>Duration Obs Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsExpressionImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDurationObsExpression()
 		 * @generated
@@ -3354,7 +3354,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DURATION_OBS_EXPRESSION__ID = eINSTANCE.getDurationObsExpression_Id();
@@ -3363,7 +3363,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Index</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DURATION_OBS_EXPRESSION__INDEX = eINSTANCE.getDurationObsExpression_Index();
@@ -3372,7 +3372,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DURATION_OBS_EXPRESSION__CONDITION = eINSTANCE.getDurationObsExpression_Condition();
@@ -3381,7 +3381,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsNameImpl <em>Duration Obs Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DurationObsNameImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDurationObsName()
 		 * @generated
@@ -3392,7 +3392,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DURATION_OBS_NAME__PATH = eINSTANCE.getDurationObsName_Path();
@@ -3401,7 +3401,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Duration Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DURATION_OBS_NAME__DURATION_ID = eINSTANCE.getDurationObsName_DurationId();
@@ -3410,7 +3410,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.JitterExpImpl <em>Jitter Exp</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.JitterExpImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getJitterExp()
 		 * @generated
@@ -3421,7 +3421,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>First Instant</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference JITTER_EXP__FIRST_INSTANT = eINSTANCE.getJitterExp_FirstInstant();
@@ -3430,7 +3430,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Second Instant</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference JITTER_EXP__SECOND_INSTANT = eINSTANCE.getJitterExp_SecondInstant();
@@ -3439,7 +3439,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VariableDeclarationImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getVariableDeclaration()
 		 * @generated
@@ -3450,7 +3450,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Variable Declaration</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VARIABLE_DECLARATION__VARIABLE_DECLARATION = eINSTANCE.getVariableDeclaration_VariableDeclaration();
@@ -3459,7 +3459,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VARIABLE_DECLARATION__NAME = eINSTANCE.getVariableDeclaration_Name();
@@ -3468,7 +3468,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VARIABLE_DECLARATION__TYPE = eINSTANCE.getVariableDeclaration_Type();
@@ -3477,7 +3477,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Init Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VARIABLE_DECLARATION__INIT_VALUE = eINSTANCE.getVariableDeclaration_InitValue();
@@ -3486,7 +3486,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DataTypeNameImpl <em>Data Type Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DataTypeNameImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDataTypeName()
 		 * @generated
@@ -3497,7 +3497,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DATA_TYPE_NAME__PATH = eINSTANCE.getDataTypeName_Path();
@@ -3506,7 +3506,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DATA_TYPE_NAME__TYPE = eINSTANCE.getDataTypeName_Type();
@@ -3515,7 +3515,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.NumberLiteralRuleImpl <em>Number Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.NumberLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getNumberLiteralRule()
 		 * @generated
@@ -3526,7 +3526,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.IntegerLiteralRuleImpl <em>Integer Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.IntegerLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getIntegerLiteralRule()
 		 * @generated
@@ -3537,7 +3537,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.UnlimitedLiteralRuleImpl <em>Unlimited Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.UnlimitedLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getUnlimitedLiteralRule()
 		 * @generated
@@ -3548,7 +3548,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.RealLiteralRuleImpl <em>Real Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.RealLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getRealLiteralRule()
 		 * @generated
@@ -3559,7 +3559,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DateTimeLiteralRuleImpl <em>Date Time Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DateTimeLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDateTimeLiteralRule()
 		 * @generated
@@ -3570,7 +3570,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.BooleanLiteralRuleImpl <em>Boolean Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.BooleanLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getBooleanLiteralRule()
 		 * @generated
@@ -3581,7 +3581,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.NullLiteralRuleImpl <em>Null Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.NullLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getNullLiteralRule()
 		 * @generated
@@ -3592,7 +3592,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.DefaultLiteralRuleImpl <em>Default Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.DefaultLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getDefaultLiteralRule()
 		 * @generated
@@ -3603,7 +3603,7 @@ public interface VSLPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.marte.vsl.vSL.impl.StringLiteralRuleImpl <em>String Literal Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.StringLiteralRuleImpl
 		 * @see org.eclipse.papyrus.marte.vsl.vSL.impl.VSLPackageImpl#getStringLiteralRule()
 		 * @generated

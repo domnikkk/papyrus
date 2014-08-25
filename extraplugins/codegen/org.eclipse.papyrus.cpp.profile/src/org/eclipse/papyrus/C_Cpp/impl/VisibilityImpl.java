@@ -40,7 +40,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	 * The cached value of the '{@link #getBase_generalization() <em>Base generalization</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_generalization()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VisibilityImpl() {
@@ -82,7 +82,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Generalization basicGetBase_generalization() {
@@ -149,7 +149,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class VisibilityImpl extends MinimalEObjectImpl.Container implements Visi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

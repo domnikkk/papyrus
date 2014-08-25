@@ -33,7 +33,7 @@ public class Description {
 	 * Convenience function: Return a description of an element. It will delegate to
 	 * default getDescription, but returns a user specified text, if a description is
 	 * not available in the model.
-	 * 
+	 *
 	 * @param element
 	 * @param unavailable
 	 *            The text that is return, if no description is available

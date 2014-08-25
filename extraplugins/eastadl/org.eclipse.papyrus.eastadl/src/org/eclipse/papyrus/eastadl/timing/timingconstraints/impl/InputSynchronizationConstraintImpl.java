@@ -50,7 +50,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScope()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InputSynchronizationConstraintImpl() {
@@ -70,7 +70,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -125,7 +125,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public TimingExpression basicGetTolerance() {
@@ -171,7 +171,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class InputSynchronizationConstraintImpl extends TimingConstraintImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

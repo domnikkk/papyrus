@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.dd.dg.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.dd.dg.ClipPath;
 import org.eclipse.papyrus.dd.dg.DGPackage;
 

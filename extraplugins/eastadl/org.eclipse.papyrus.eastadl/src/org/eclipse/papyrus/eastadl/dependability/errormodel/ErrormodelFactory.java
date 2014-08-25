@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ErrormodelFactory eINSTANCE = org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelFactoryImpl.init();
@@ -40,7 +40,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Anomaly</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Anomaly</em>'.
 	 * @generated
 	 */
@@ -50,7 +50,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Error Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Error Behavior</em>'.
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Error Model Prototype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Error Model Prototype</em>'.
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Error Model Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Error Model Type</em>'.
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Failure Out Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Failure Out Port</em>'.
 	 * @generated
 	 */
@@ -90,7 +90,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Fault Failure Propagation Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Fault Failure Propagation Link</em>'.
 	 * @generated
 	 */
@@ -100,7 +100,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Fault In Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Fault In Port</em>'.
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Internal Fault Prototype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Internal Fault Prototype</em>'.
 	 * @generated
 	 */
@@ -120,7 +120,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns a new object of class '<em>Process Fault Prototype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Process Fault Prototype</em>'.
 	 * @generated
 	 */
@@ -130,7 +130,7 @@ public interface ErrormodelFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

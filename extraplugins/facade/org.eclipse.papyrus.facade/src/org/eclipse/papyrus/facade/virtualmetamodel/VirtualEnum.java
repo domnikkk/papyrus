@@ -40,7 +40,7 @@ public interface VirtualEnum extends VirtualClassifier {
 	 * If the meaning of the '<em>Literals</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Literals</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualEnum_Literals()
 	 * @model containment="true"

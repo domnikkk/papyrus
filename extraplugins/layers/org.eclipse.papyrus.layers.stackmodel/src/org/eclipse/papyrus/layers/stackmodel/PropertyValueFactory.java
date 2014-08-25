@@ -52,7 +52,7 @@ public class PropertyValueFactory {
 	/**
 	 * Load requested class from the current classloader. If not found, try to get it from the
 	 * specified plugin.
-	 * 
+	 *
 	 * @param declaringID
 	 * @param className
 	 * @return
@@ -81,7 +81,7 @@ public class PropertyValueFactory {
 
 	/**
 	 * Create an instance of the specified model concept.
-	 * 
+	 *
 	 * @param nsURI
 	 * @param propertyName
 	 * @return

@@ -15,17 +15,12 @@ package org.eclipse.papyrus.FCM.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.ConfigOption;
 import org.eclipse.papyrus.FCM.ContainerRule;
 import org.eclipse.papyrus.FCM.ContainerRuleKind;
@@ -51,7 +46,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -62,7 +57,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The cached value of the '{@link #getForConfig() <em>For Config</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getForConfig()
 	 * @generated
 	 * @ordered
@@ -73,7 +68,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -84,7 +79,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -94,7 +89,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ContainerRuleImpl() {
@@ -104,7 +99,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +110,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +130,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -145,7 +140,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +155,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +169,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +180,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +195,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +217,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -246,7 +241,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +263,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +282,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

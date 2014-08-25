@@ -55,7 +55,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SystemModelImpl() {
@@ -86,7 +86,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public AnalysisLevel basicGetAnalysisLevel() {
@@ -110,7 +110,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public DesignLevel basicGetDesignLevel() {
@@ -135,7 +135,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public ImplementationLevel basicGetImplementationLevel() {
@@ -159,7 +159,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public VehicleLevel basicGetVehicleLevel() {
@@ -183,7 +183,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +293,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +336,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +348,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +360,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -385,7 +385,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -398,7 +398,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -411,7 +411,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -424,7 +424,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +444,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -454,7 +454,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -469,7 +469,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -489,7 +489,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -499,7 +499,7 @@ public class SystemModelImpl extends ContextImpl implements SystemModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

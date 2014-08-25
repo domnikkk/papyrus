@@ -44,7 +44,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EProblemsContainerImpl() {
@@ -53,7 +53,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,7 +63,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class EProblemsContainerImpl extends CDOObjectImpl implements EProblemsCo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -30,7 +30,7 @@ public interface AllocatedElementInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Allocateable Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocateable Element</em>' reference.
 	 * @see #setAllocateableElement(AllocateableElement)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getAllocatedElementInstanceRef_AllocateableElement()
@@ -43,7 +43,7 @@ public interface AllocatedElementInstanceRef extends InstanceRef {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.AllocatedElementInstanceRef#getAllocateableElement <em>Allocateable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Allocateable Element</em>' reference.
 	 * @see #getAllocateableElement()
@@ -59,7 +59,7 @@ public interface AllocatedElementInstanceRef extends InstanceRef {
 	 * If the meaning of the '<em>Allocateable Element context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocateable Element context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getAllocatedElementInstanceRef_AllocateableElement_context()
 	 * @model ordered="false"

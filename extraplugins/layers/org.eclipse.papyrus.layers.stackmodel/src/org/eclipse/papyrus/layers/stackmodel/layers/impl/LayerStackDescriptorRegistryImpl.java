@@ -13,9 +13,7 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 
@@ -32,7 +30,7 @@ public class LayerStackDescriptorRegistryImpl extends MinimalEObjectImpl.Contain
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayerStackDescriptorRegistryImpl() {
@@ -42,7 +40,7 @@ public class LayerStackDescriptorRegistryImpl extends MinimalEObjectImpl.Contain
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -68,7 +68,7 @@ public interface ErrorModelPrototype extends EAElement, EAPrototype {
 	 * If the meaning of the '<em>Function Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelPrototype_FunctionTarget()
 	 * @model containment="true" ordered="false"
@@ -84,7 +84,7 @@ public interface ErrorModelPrototype extends EAElement, EAPrototype {
 	 * If the meaning of the '<em>Hw Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hw Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelPrototype_HwTarget()
 	 * @model containment="true" ordered="false"
@@ -99,7 +99,7 @@ public interface ErrorModelPrototype extends EAElement, EAPrototype {
 	 * If the meaning of the '<em>Target</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelPrototype_Target()
@@ -115,7 +115,7 @@ public interface ErrorModelPrototype extends EAElement, EAPrototype {
 	 * <!-- begin-model-doc -->
 	 * {derived from UML::TypedElement::type}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorModelPrototype_Type()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -127,7 +127,7 @@ public interface ErrorModelPrototype extends EAElement, EAPrototype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target</em>' reference.
 	 * @see #getTarget()

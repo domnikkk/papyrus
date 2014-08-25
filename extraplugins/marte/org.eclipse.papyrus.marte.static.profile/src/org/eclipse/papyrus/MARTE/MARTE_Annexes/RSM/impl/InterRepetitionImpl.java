@@ -38,7 +38,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The default value of the '{@link #getRepetitionShapeDependence() <em>Repetition Shape Dependence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepetitionShapeDependence()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The cached value of the '{@link #getRepetitionShapeDependence() <em>Repetition Shape Dependence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepetitionShapeDependence()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The default value of the '{@link #isIsModulo() <em>Is Modulo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsModulo()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	 * The cached value of the '{@link #isIsModulo() <em>Is Modulo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsModulo()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InterRepetitionImpl() {
@@ -91,7 +91,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class InterRepetitionImpl extends LinkTopologyImpl implements InterRepeti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

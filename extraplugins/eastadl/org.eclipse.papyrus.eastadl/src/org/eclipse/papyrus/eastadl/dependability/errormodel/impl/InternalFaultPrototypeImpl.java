@@ -43,7 +43,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	 * The cached value of the '{@link #getBase_Event() <em>Base Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Event()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InternalFaultPrototypeImpl() {
@@ -74,7 +74,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -174,7 +174,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Event basicGetBase_Event() {
@@ -219,7 +219,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class InternalFaultPrototypeImpl extends AnomalyImpl implements InternalF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

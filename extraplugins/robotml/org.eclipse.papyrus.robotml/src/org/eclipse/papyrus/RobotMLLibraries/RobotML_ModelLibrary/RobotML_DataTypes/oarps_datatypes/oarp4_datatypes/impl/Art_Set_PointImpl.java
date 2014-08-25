@@ -4,13 +4,10 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Art_Set_Point;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Velocity_Angular;
@@ -34,7 +31,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	 * The cached value of the '{@link #getOmega_left() <em>Omega left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOmega_left()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	 * The cached value of the '{@link #getOmega_right() <em>Omega right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOmega_right()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Art_Set_PointImpl() {
@@ -65,7 +62,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +73,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Angular getOmega_left() {
@@ -86,7 +83,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOmega_left(Velocity_Angular newOmega_left, NotificationChain msgs) {
@@ -106,7 +103,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOmega_left(Velocity_Angular newOmega_left) {
@@ -131,7 +128,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Velocity_Angular getOmega_right() {
@@ -141,7 +138,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOmega_right(Velocity_Angular newOmega_right, NotificationChain msgs) {
@@ -161,7 +158,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOmega_right(Velocity_Angular newOmega_right) {
@@ -186,7 +183,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +200,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +217,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +236,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +255,7 @@ public class Art_Set_PointImpl extends MinimalEObjectImpl.Container implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

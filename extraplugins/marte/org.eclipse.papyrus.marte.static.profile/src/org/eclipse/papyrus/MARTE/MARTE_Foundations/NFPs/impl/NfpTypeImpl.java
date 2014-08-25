@@ -42,7 +42,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	 * The cached value of the '{@link #getValueAttrib() <em>Value Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValueAttrib()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	 * The cached value of the '{@link #getUnitAttrib() <em>Unit Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnitAttrib()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	 * The cached value of the '{@link #getExprAttrib() <em>Expr Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExprAttrib()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NfpTypeImpl() {
@@ -84,7 +84,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetValueAttrib() {
@@ -125,7 +125,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetUnitAttrib() {
@@ -170,7 +170,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetExprAttrib() {
@@ -215,7 +215,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

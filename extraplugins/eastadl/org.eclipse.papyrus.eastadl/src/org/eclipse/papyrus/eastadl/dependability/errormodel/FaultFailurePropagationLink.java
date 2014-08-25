@@ -67,7 +67,7 @@ public interface FaultFailurePropagationLink extends EAElement, EAConnector {
 	 * If the meaning of the '<em>From Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>From Port</em>' containment reference.
 	 * @see #setFromPort(FaultFailurePropagationLink_fromPortInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getFaultFailurePropagationLink_FromPort()
@@ -80,7 +80,7 @@ public interface FaultFailurePropagationLink extends EAElement, EAConnector {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#getFromPort <em>From Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>From Port</em>' containment reference.
 	 * @see #getFromPort()
@@ -95,7 +95,7 @@ public interface FaultFailurePropagationLink extends EAElement, EAConnector {
 	 * If the meaning of the '<em>To Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>To Port</em>' containment reference.
 	 * @see #setToPort(FaultFailurePropagationLink_toPortInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getFaultFailurePropagationLink_ToPort()
@@ -108,7 +108,7 @@ public interface FaultFailurePropagationLink extends EAElement, EAConnector {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#getToPort <em>To Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>To Port</em>' containment reference.
 	 * @see #getToPort()
@@ -124,7 +124,7 @@ public interface FaultFailurePropagationLink extends EAElement, EAConnector {
 	 * If the meaning of the '<em>Immediate Propagation</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Immediate Propagation</em>' attribute.
 	 * @see #setImmediatePropagation(boolean)
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getFaultFailurePropagationLink_ImmediatePropagation()
@@ -137,7 +137,7 @@ public interface FaultFailurePropagationLink extends EAElement, EAConnector {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#isImmediatePropagation <em>Immediate Propagation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Immediate Propagation</em>' attribute.
 	 * @see #isImmediatePropagation()

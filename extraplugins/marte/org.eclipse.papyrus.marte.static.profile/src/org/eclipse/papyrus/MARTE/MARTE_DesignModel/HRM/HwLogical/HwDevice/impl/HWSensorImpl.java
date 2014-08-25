@@ -30,7 +30,7 @@ public class HWSensorImpl extends HwI_OImpl implements HWSensor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HWSensorImpl() {
@@ -40,7 +40,7 @@ public class HWSensorImpl extends HwI_OImpl implements HWSensor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

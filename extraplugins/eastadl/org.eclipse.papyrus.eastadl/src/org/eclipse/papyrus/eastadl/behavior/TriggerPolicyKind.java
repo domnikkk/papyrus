@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getTriggerPolicyKind()
  * @model
  * @generated
@@ -45,7 +45,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * The '<em><b>EVENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EVENT_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * The '<em><b>TIME</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TIME_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Triggering by event.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #EVENT
 	 * @model
 	 * @generated
@@ -85,7 +85,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Triggering by time.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #TIME
 	 * @model
 	 * @generated
@@ -97,7 +97,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * An array of all the '<em><b>Trigger Policy Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final TriggerPolicyKind[] VALUES_ARRAY =
@@ -110,7 +110,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Trigger Policy Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<TriggerPolicyKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -119,7 +119,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * Returns the '<em><b>Trigger Policy Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TriggerPolicyKind get(int value) {
@@ -136,7 +136,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * Returns the '<em><b>Trigger Policy Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TriggerPolicyKind get(String literal) {
@@ -153,7 +153,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * Returns the '<em><b>Trigger Policy Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TriggerPolicyKind getByName(String name) {
@@ -169,7 +169,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -177,7 +177,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -185,7 +185,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -194,7 +194,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private TriggerPolicyKind(int value, String name, String literal) {
@@ -206,7 +206,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public enum TriggerPolicyKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

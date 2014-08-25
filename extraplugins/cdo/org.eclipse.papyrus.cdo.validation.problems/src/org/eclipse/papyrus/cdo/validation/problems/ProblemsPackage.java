@@ -43,7 +43,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "problems"; //$NON-NLS-1$
@@ -51,7 +51,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/cdo/problems/1.0.0"; //$NON-NLS-1$
@@ -59,7 +59,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "problems"; //$NON-NLS-1$
@@ -68,7 +68,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ProblemsPackage eINSTANCE = org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl.init();
@@ -76,7 +76,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemImpl <em>EProblem</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.cdo.validation.problems.impl.EProblemImpl
 	 * @see org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl#getEProblem()
 	 * @generated
@@ -140,7 +140,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -150,7 +150,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +160,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The feature id for the '<em><b>Attributes</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -197,7 +197,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl <em>EProblems Container</em>}' class.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl
 	 * @see org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl#getEProblemsContainer()
 	 * @generated
@@ -207,7 +207,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Problems</b></em>' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -225,7 +225,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Subcontainers</b></em>' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -234,7 +234,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -243,7 +243,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>EProblems Container</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -297,7 +297,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>EProblems Container</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -307,7 +307,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.cdo.validation.problems.impl.AttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.cdo.validation.problems.impl.AttributeImpl
 	 * @see org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl#getAttribute()
 	 * @generated
@@ -318,7 +318,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -328,7 +328,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -338,7 +338,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The number of structural features of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -348,7 +348,7 @@ public interface ProblemsPackage extends EPackage {
 	 * The number of operations of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -357,7 +357,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.cdo.validation.problems.ESeverity <em>ESeverity</em>}' enum.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ESeverity
 	 * @see org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl#getESeverity()
 	 * @generated
@@ -387,7 +387,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem <em>EProblem</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>EProblem</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem
 	 * @generated
@@ -397,7 +397,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getSeverity <em>Severity</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Severity</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getSeverity()
 	 * @see #getEProblem()
@@ -408,7 +408,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Message</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getMessage()
 	 * @see #getEProblem()
@@ -419,7 +419,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Source</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getSource()
 	 * @see #getEProblem()
@@ -430,7 +430,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getCode <em>Code</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Code</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getCode()
 	 * @see #getEProblem()
@@ -441,7 +441,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getElement()
 	 * @see #getEProblem()
@@ -452,7 +452,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getRelated <em>Related</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Related</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getRelated()
 	 * @see #getEProblem()
@@ -463,7 +463,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Container</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getContainer()
 	 * @see #getEProblem()
@@ -475,7 +475,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getType()
 	 * @see #getEProblem()
@@ -487,7 +487,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the map '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the map '<em>Attributes</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#getAttributes()
 	 * @see #getEProblem()
@@ -499,7 +499,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblem#toDiagnostic() <em>To Diagnostic</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>To Diagnostic</em>' operation.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblem#toDiagnostic()
 	 * @generated
@@ -520,7 +520,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getProblems <em>Problems</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Problems</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getProblems()
 	 * @see #getEProblemsContainer()
@@ -531,7 +531,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubjects <em>Subjects</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Subjects</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubjects()
 	 * @see #getEProblemsContainer()
@@ -542,7 +542,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubcontainers <em>Subcontainers</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Subcontainers</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getSubcontainers()
 	 * @see #getEProblemsContainer()
@@ -553,7 +553,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Container</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getContainer()
 	 * @see #getEProblemsContainer()
@@ -565,7 +565,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allProblems() <em>All Problems</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>All Problems</em>' operation.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allProblems()
 	 * @generated
@@ -576,7 +576,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allProblems(org.eclipse.emf.ecore.EObject) <em>All Problems</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>All Problems</em>' operation.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allProblems(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -587,7 +587,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allDiagnostics() <em>All Diagnostics</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>All Diagnostics</em>' operation.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allDiagnostics()
 	 * @generated
@@ -598,7 +598,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allDiagnostics(org.eclipse.emf.ecore.EObject) <em>All Diagnostics</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>All Diagnostics</em>' operation.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#allDiagnostics(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -609,7 +609,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getWorstProblem(org.eclipse.emf.ecore.EObject) <em>Get Worst Problem</em>}' operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Worst Problem</em>' operation.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer#getWorstProblem(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -620,7 +620,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Attribute</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyDataType="org.eclipse.emf.ecore.EString" keyRequired="true"
@@ -633,7 +633,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getAttribute()
@@ -645,7 +645,7 @@ public interface ProblemsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getAttribute()
@@ -656,7 +656,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.cdo.validation.problems.ESeverity <em>ESeverity</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>ESeverity</em>'.
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ESeverity
 	 * @generated
@@ -666,7 +666,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link org.eclipse.emf.common.util.Diagnostic <em>EDiagnostic</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>EDiagnostic</em>'.
 	 * @see org.eclipse.emf.common.util.Diagnostic
 	 * @model instanceClass="org.eclipse.emf.common.util.Diagnostic" serializeable="false"
@@ -677,7 +677,7 @@ public interface ProblemsPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link java.util.Iterator <em>EIterator</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>EIterator</em>'.
 	 * @see java.util.Iterator
 	 * @model instanceClass="java.util.Iterator" serializeable="false" typeParameters="E"
@@ -705,7 +705,7 @@ public interface ProblemsPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -724,7 +724,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Severity</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EPROBLEM__SEVERITY = eINSTANCE.getEProblem_Severity();
@@ -732,7 +732,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EPROBLEM__MESSAGE = eINSTANCE.getEProblem_Message();
@@ -740,7 +740,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EPROBLEM__SOURCE = eINSTANCE.getEProblem_Source();
@@ -748,7 +748,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EPROBLEM__CODE = eINSTANCE.getEProblem_Code();
@@ -756,7 +756,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Element</b></em>' reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEM__ELEMENT = eINSTANCE.getEProblem_Element();
@@ -764,7 +764,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Related</b></em>' reference list feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEM__RELATED = eINSTANCE.getEProblem_Related();
@@ -772,7 +772,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Container</b></em>' container reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEM__CONTAINER = eINSTANCE.getEProblem_Container();
@@ -781,7 +781,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EPROBLEM__TYPE = eINSTANCE.getEProblem_Type();
@@ -790,7 +790,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attributes</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEM__ATTRIBUTES = eINSTANCE.getEProblem_Attributes();
@@ -798,7 +798,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>To Diagnostic</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation EPROBLEM___TO_DIAGNOSTIC = eINSTANCE.getEProblem__ToDiagnostic();
@@ -807,7 +807,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl <em>EProblems Container</em>}' class.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.cdo.validation.problems.impl.EProblemsContainerImpl
 		 * @see org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl#getEProblemsContainer()
 		 * @generated
@@ -818,7 +818,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Problems</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEMS_CONTAINER__PROBLEMS = eINSTANCE.getEProblemsContainer_Problems();
@@ -826,7 +826,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Subjects</b></em>' reference list feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEMS_CONTAINER__SUBJECTS = eINSTANCE.getEProblemsContainer_Subjects();
@@ -835,7 +835,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Subcontainers</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEMS_CONTAINER__SUBCONTAINERS = eINSTANCE.getEProblemsContainer_Subcontainers();
@@ -843,7 +843,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Container</b></em>' container reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EPROBLEMS_CONTAINER__CONTAINER = eINSTANCE.getEProblemsContainer_Container();
@@ -851,7 +851,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Problems</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation EPROBLEMS_CONTAINER___ALL_PROBLEMS = eINSTANCE.getEProblemsContainer__AllProblems();
@@ -859,7 +859,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Problems</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation EPROBLEMS_CONTAINER___ALL_PROBLEMS__EOBJECT = eINSTANCE.getEProblemsContainer__AllProblems__EObject();
@@ -867,7 +867,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Diagnostics</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation EPROBLEMS_CONTAINER___ALL_DIAGNOSTICS = eINSTANCE.getEProblemsContainer__AllDiagnostics();
@@ -875,7 +875,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Diagnostics</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation EPROBLEMS_CONTAINER___ALL_DIAGNOSTICS__EOBJECT = eINSTANCE.getEProblemsContainer__AllDiagnostics__EObject();
@@ -883,7 +883,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Get Worst Problem</b></em>' operation.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation EPROBLEMS_CONTAINER___GET_WORST_PROBLEM__EOBJECT = eINSTANCE.getEProblemsContainer__GetWorstProblem__EObject();
@@ -892,7 +892,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.cdo.validation.problems.impl.AttributeImpl <em>Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.cdo.validation.problems.impl.AttributeImpl
 		 * @see org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl#getAttribute()
 		 * @generated
@@ -903,7 +903,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE__KEY = eINSTANCE.getAttribute_Key();
@@ -912,7 +912,7 @@ public interface ProblemsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
@@ -931,7 +931,7 @@ public interface ProblemsPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>EDiagnostic</em>' data type.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.emf.common.util.Diagnostic
 		 * @see org.eclipse.papyrus.cdo.validation.problems.impl.ProblemsPackageImpl#getEDiagnostic()
 		 * @generated

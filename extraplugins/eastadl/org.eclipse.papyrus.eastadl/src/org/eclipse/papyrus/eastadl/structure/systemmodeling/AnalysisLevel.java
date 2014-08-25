@@ -57,7 +57,7 @@ public interface AnalysisLevel extends Context {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getAnalysisLevel_Base_Class()
@@ -70,7 +70,7 @@ public interface AnalysisLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -85,7 +85,7 @@ public interface AnalysisLevel extends Context {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getAnalysisLevel_Base_Package()
@@ -98,7 +98,7 @@ public interface AnalysisLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -113,7 +113,7 @@ public interface AnalysisLevel extends Context {
 	 * If the meaning of the '<em>Functional Analysis Architecture</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Functional Analysis Architecture</em>' reference.
 	 * @see #setFunctionalAnalysisArchitecture(AnalysisFunctionPrototype)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getAnalysisLevel_FunctionalAnalysisArchitecture()
@@ -126,7 +126,7 @@ public interface AnalysisLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.AnalysisLevel#getFunctionalAnalysisArchitecture <em>Functional Analysis Architecture</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Functional Analysis Architecture</em>' reference.
 	 * @see #getFunctionalAnalysisArchitecture()

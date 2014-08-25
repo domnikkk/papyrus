@@ -34,7 +34,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	 * The cached value of the '{@link #getHardwareConnector() <em>Hardware Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareConnector()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	 * The cached value of the '{@link #getHardwareComponentPrototype() <em>Hardware Component Prototype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHardwareComponentPrototype()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRefImpl() {
@@ -65,7 +65,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HardwareConnector basicGetHardwareConnector() {
@@ -106,7 +106,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -177,7 +177,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

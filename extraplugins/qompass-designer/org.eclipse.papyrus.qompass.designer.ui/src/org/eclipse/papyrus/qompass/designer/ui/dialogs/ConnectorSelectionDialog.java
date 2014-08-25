@@ -18,7 +18,6 @@ package org.eclipse.papyrus.qompass.designer.ui.dialogs;
 import java.util.Arrays;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;

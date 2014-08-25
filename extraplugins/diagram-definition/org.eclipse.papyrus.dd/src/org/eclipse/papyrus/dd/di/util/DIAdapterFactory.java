@@ -13,12 +13,14 @@ package org.eclipse.papyrus.dd.di.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.dd.di.*;
+import org.eclipse.papyrus.dd.di.DIPackage;
+import org.eclipse.papyrus.dd.di.Diagram;
+import org.eclipse.papyrus.dd.di.DiagramElement;
+import org.eclipse.papyrus.dd.di.Edge;
+import org.eclipse.papyrus.dd.di.Shape;
+import org.eclipse.papyrus.dd.di.Style;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides

@@ -40,7 +40,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Is Error State</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Error State</em>' attribute.
 	 * @see #setIsErrorState(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_IsErrorState()
@@ -53,7 +53,7 @@ public interface State extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsErrorState <em>Is Error State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Error State</em>' attribute.
 	 * @see #isIsErrorState()
@@ -69,7 +69,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Is Hazard</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Hazard</em>' attribute.
 	 * @see #setIsHazard(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_IsHazard()
@@ -82,7 +82,7 @@ public interface State extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsHazard <em>Is Hazard</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Hazard</em>' attribute.
 	 * @see #isIsHazard()
@@ -98,7 +98,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Is Init State</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Init State</em>' attribute.
 	 * @see #setIsInitState(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_IsInitState()
@@ -111,7 +111,7 @@ public interface State extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsInitState <em>Is Init State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Init State</em>' attribute.
 	 * @see #isIsInitState()
@@ -127,7 +127,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Is Mode</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Mode</em>' attribute.
 	 * @see #setIsMode(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_IsMode()
@@ -140,7 +140,7 @@ public interface State extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.State#isIsMode <em>Is Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Mode</em>' attribute.
 	 * @see #isIsMode()
@@ -156,7 +156,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Hazard Declaration</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hazard Declaration</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_HazardDeclaration()
 	 * @model ordered="false"
@@ -172,7 +172,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Mode Declaration</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode Declaration</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_ModeDeclaration()
 	 * @model ordered="false"
@@ -188,7 +188,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Quantification Invariant</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Quantification Invariant</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_QuantificationInvariant()
 	 * @model ordered="false"
@@ -204,7 +204,7 @@ public interface State extends EAElement {
 	 * If the meaning of the '<em>Time Invariant</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Time Invariant</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getState_TimeInvariant()
 	 * @model ordered="false"

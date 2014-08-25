@@ -30,7 +30,7 @@ public interface OperatorConfig extends InstanciableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyOperator" required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.configmodel.layersconfig.InstanciationException"
 	 * @generated
 	 */

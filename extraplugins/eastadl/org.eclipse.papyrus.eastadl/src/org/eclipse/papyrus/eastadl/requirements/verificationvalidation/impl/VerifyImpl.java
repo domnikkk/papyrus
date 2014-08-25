@@ -46,7 +46,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	 * The cached value of the '{@link #getVerifiedByProcedure() <em>Verified By Procedure</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVerifiedByProcedure()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VerifyImpl() {
@@ -77,7 +77,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -118,7 +118,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -252,7 +252,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class VerifyImpl extends RequirementsRelationshipImpl implements Verify {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

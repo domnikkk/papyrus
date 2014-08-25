@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Behavior;
 
 /**
@@ -36,7 +35,7 @@ public interface State extends EObject {
 	 * If the meaning of the '<em>Base State</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base State</em>' reference.
 	 * @see #setBase_State(org.eclipse.uml2.uml.State)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getState_Base_State()
@@ -49,7 +48,7 @@ public interface State extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.State#getBase_State <em>Base State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base State</em>' reference.
 	 * @see #getBase_State()
@@ -64,7 +63,7 @@ public interface State extends EObject {
 	 * If the meaning of the '<em>Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Behavior</em>' reference.
 	 * @see #setBehavior(Behavior)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getState_Behavior()
@@ -77,7 +76,7 @@ public interface State extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.State#getBehavior <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Behavior</em>' reference.
 	 * @see #getBehavior()

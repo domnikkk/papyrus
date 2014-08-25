@@ -12,14 +12,14 @@ package org.eclipse.papyrus.qompass.designer.validation.constraints;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
-import org.eclipse.uml2.uml.Slot;
-import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.papyrus.FCM.ConfigurationProperty;
 import org.eclipse.papyrus.uml.tools.utils.StereotypeUtil;
+import org.eclipse.uml2.uml.Slot;
+import org.eclipse.uml2.uml.StructuralFeature;
 
 /**
  * Verify if all configuration attribute have a (user-provided) value.
- * 
+ *
  * @author ansgar
  *
  *         TODO: implementation assumes that at least the slot exists

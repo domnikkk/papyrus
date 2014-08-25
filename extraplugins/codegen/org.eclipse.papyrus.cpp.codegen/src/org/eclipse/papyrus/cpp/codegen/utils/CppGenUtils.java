@@ -116,7 +116,7 @@ public class CppGenUtils {
 	 * - The named element has the stereotype External or NoCodeGen
 	 * - The named element is part of the ANSI C library
 	 * - The named element is a primitive type that has no further definition via a stereotype (TODO: why is this required/useful?)
-	 * 
+	 *
 	 * @param ne
 	 * @return
 	 */

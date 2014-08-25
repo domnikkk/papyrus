@@ -4,7 +4,6 @@ package org.eclipse.papyrus.marte.vsl.vSL;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
@@ -36,7 +35,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * If the meaning of the '<em>Variable Declaration</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Variable Declaration</em>' attribute.
 	 * @see #setVariableDeclaration(String)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getVariableDeclaration_VariableDeclaration()
@@ -49,7 +48,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getVariableDeclaration <em>Variable Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Variable Declaration</em>' attribute.
 	 * @see #getVariableDeclaration()
@@ -64,7 +63,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getVariableDeclaration_Name()
@@ -77,7 +76,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -92,7 +91,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * If the meaning of the '<em>Type</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(DataTypeName)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getVariableDeclaration_Type()
@@ -105,7 +104,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getType <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' containment reference.
 	 * @see #getType()
@@ -120,7 +119,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * If the meaning of the '<em>Init Value</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Init Value</em>' containment reference.
 	 * @see #setInitValue(Expression)
 	 * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage#getVariableDeclaration_InitValue()
@@ -133,7 +132,7 @@ public interface VariableDeclaration extends ValueSpecification
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration#getInitValue <em>Init Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Init Value</em>' containment reference.
 	 * @see #getInitValue()
@@ -144,7 +143,7 @@ public interface VariableDeclaration extends ValueSpecification
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;'"
 	 * @generated
 	 */
@@ -154,7 +153,7 @@ public interface VariableDeclaration extends ValueSpecification
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;'"
 	 * @generated
@@ -165,7 +164,7 @@ public interface VariableDeclaration extends ValueSpecification
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;'"
 	 * @generated

@@ -47,7 +47,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The default value of the '{@link #isIsIntraMemoryPartitionInteraction() <em>Is Intra Memory Partition Interaction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsIntraMemoryPartitionInteraction()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #isIsIntraMemoryPartitionInteraction() <em>Is Intra Memory Partition Interaction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsIntraMemoryPartitionInteraction()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The default value of the '{@link #getWaitingQueuePolicy() <em>Waiting Queue Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWaitingQueuePolicy()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #getWaitingQueuePolicy() <em>Waiting Queue Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWaitingQueuePolicy()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The default value of the '{@link #getWaitingQueueCapacity() <em>Waiting Queue Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWaitingQueueCapacity()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #getWaitingQueueCapacity() <em>Waiting Queue Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWaitingQueueCapacity()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #getWaitingPolicyElements() <em>Waiting Policy Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWaitingPolicyElements()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SwInteractionResourceImpl() {
@@ -133,7 +133,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -284,7 +284,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +330,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

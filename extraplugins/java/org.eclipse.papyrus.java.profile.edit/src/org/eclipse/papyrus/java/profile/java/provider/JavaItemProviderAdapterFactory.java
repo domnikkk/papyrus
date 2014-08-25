@@ -12,7 +12,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -24,7 +23,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.java.profile.java.util.JavaAdapterFactory;
 
 /**
@@ -34,7 +32,7 @@ import org.eclipse.papyrus.java.profile.java.util.JavaAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -42,7 +40,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -51,7 +49,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -60,7 +58,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -69,7 +67,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaItemProviderAdapterFactory() {
@@ -84,7 +82,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.JavaClass} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaClassItemProvider javaClassItemProvider;
@@ -93,7 +91,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaClass}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +107,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.JavaPackage_} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaPackage_ItemProvider javaPackage_ItemProvider;
@@ -118,7 +116,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaPackage_}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +132,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.JavaMethod} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaMethodItemProvider javaMethodItemProvider;
@@ -143,7 +141,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaMethod}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +157,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.JavaParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaParameterItemProvider javaParameterItemProvider;
@@ -168,7 +166,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +182,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.JavaProperty} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaPropertyItemProvider javaPropertyItemProvider;
@@ -193,7 +191,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +207,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.PrimitiveType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PrimitiveTypeItemProvider primitiveTypeItemProvider;
@@ -218,7 +216,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.PrimitiveType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +232,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.JavaProject} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaProjectItemProvider javaProjectItemProvider;
@@ -243,7 +241,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaProject}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +257,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.profile.java.JavaSrcFolder} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaSrcFolderItemProvider javaSrcFolderItemProvider;
@@ -268,7 +266,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaSrcFolder}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +282,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +294,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +305,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +317,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +328,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +347,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +359,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +371,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +387,7 @@ public class JavaItemProviderAdapterFactory extends JavaAdapterFactory implement
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

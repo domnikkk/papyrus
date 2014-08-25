@@ -14,7 +14,9 @@
 
 package org.eclipse.papyrus.layers.stackmodel.notifier;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;

@@ -29,14 +29,14 @@ import org.eclipse.papyrus.eastadl.annex.AnnexPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -49,7 +49,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AnnexFactory init() {
@@ -68,7 +68,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AnnexFactoryImpl() {
@@ -78,7 +78,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDummyToString(EDataType eDataType, Object instanceValue) {
@@ -88,7 +88,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createDummyFromString(EDataType eDataType, String initialValue) {
@@ -128,7 +128,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class AnnexFactoryImpl extends EFactoryImpl implements AnnexFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

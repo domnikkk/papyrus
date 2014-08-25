@@ -25,7 +25,7 @@ public abstract class AsyncGetNextEventStrategy extends SemanticStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy#getName()
 	 */
 	@Override

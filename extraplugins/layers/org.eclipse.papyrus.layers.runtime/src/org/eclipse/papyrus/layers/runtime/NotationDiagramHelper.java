@@ -87,7 +87,7 @@ public class NotationDiagramHelper {
 	/**
 	 * Constructor.
 	 * Construct the manager and initialize it.
-	 * 
+	 *
 	 * @param layersModel
 	 *
 	 */

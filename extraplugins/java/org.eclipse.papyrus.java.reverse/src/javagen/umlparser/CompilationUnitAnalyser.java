@@ -950,7 +950,7 @@ public class CompilationUnitAnalyser {
 	 * The Classifier is created exactly in the directly enclosing namespace.
 	 * First, a lookup is done to check if it has been created elsewhere in the namespaces. If true, correct the location
 	 * and maybe the type.
-	 * 
+	 *
 	 * Only need to create the object and fill it with data available at this level.
 	 *
 	 * @param parent

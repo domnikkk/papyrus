@@ -47,7 +47,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The default value of the '{@link #getDrivingNeeds() <em>Driving Needs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDrivingNeeds()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The cached value of the '{@link #getDrivingNeeds() <em>Driving Needs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDrivingNeeds()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The default value of the '{@link #getKeyCapabilities() <em>Key Capabilities</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKeyCapabilities()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The cached value of the '{@link #getKeyCapabilities() <em>Key Capabilities</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKeyCapabilities()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The default value of the '{@link #getPrimaryCompetitiveAlternative() <em>Primary Competitive Alternative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrimaryCompetitiveAlternative()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The cached value of the '{@link #getPrimaryCompetitiveAlternative() <em>Primary Competitive Alternative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrimaryCompetitiveAlternative()
 	 * @generated
 	 * @ordered
@@ -124,7 +124,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The default value of the '{@link #getPrimaryDifferentiation() <em>Primary Differentiation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrimaryDifferentiation()
 	 * @generated
 	 * @ordered
@@ -135,7 +135,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The cached value of the '{@link #getPrimaryDifferentiation() <em>Primary Differentiation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrimaryDifferentiation()
 	 * @generated
 	 * @ordered
@@ -146,7 +146,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The default value of the '{@link #getTargetCustomers() <em>Target Customers</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetCustomers()
 	 * @generated
 	 * @ordered
@@ -157,7 +157,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	 * The cached value of the '{@link #getTargetCustomers() <em>Target Customers</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetCustomers()
 	 * @generated
 	 * @ordered
@@ -167,7 +167,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProductPositioningImpl() {
@@ -177,7 +177,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -302,7 +302,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +348,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +359,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +381,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -418,7 +418,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -433,7 +433,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +448,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -463,7 +463,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -478,7 +478,7 @@ public class ProductPositioningImpl extends TraceableSpecificationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

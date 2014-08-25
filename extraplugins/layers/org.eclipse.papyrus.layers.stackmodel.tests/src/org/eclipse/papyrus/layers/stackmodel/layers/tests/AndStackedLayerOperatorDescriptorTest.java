@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>And Stacked Layer Operator Descriptor</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AndStackedLayerOperatorDescriptorTest extends StackedLayerOperatorDescriptorTest {
@@ -19,7 +19,7 @@ public class AndStackedLayerOperatorDescriptorTest extends StackedLayerOperatorD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class AndStackedLayerOperatorDescriptorTest extends StackedLayerOperatorD
 	 * Constructs a new And Stacked Layer Operator Descriptor test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AndStackedLayerOperatorDescriptorTest(String name) {
@@ -41,7 +41,7 @@ public class AndStackedLayerOperatorDescriptorTest extends StackedLayerOperatorD
 	 * Returns the fixture for this And Stacked Layer Operator Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class AndStackedLayerOperatorDescriptorTest extends StackedLayerOperatorD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class AndStackedLayerOperatorDescriptorTest extends StackedLayerOperatorD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

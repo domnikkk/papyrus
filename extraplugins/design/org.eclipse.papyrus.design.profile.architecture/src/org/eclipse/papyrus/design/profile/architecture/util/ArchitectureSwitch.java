@@ -8,10 +8,14 @@ package org.eclipse.papyrus.design.profile.architecture.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.design.profile.architecture.*;
+import org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage;
+import org.eclipse.papyrus.design.profile.architecture.Element;
+import org.eclipse.papyrus.design.profile.architecture.Layer;
+import org.eclipse.papyrus.design.profile.architecture.LayerDependency;
+import org.eclipse.papyrus.design.profile.architecture.Plugin;
+import org.eclipse.papyrus.design.profile.architecture.Project;
+import org.eclipse.papyrus.design.profile.architecture.ProjectDependency;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +26,7 @@ import org.eclipse.papyrus.design.profile.architecture.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage
  * @generated
  */
@@ -31,7 +35,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static ArchitecturePackage modelPackage;
@@ -40,7 +44,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureSwitch() {
@@ -53,7 +57,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -67,7 +71,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -151,7 +155,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer</em>'.
@@ -168,7 +172,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
@@ -185,7 +189,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Layer Dependency</em>'.
@@ -202,7 +206,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Plugin</em>'.
@@ -219,7 +223,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Project</em>'.
@@ -236,7 +240,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Project Dependency</em>'.
@@ -253,7 +257,7 @@ public class ArchitectureSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

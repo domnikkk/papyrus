@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * Test the Acceleo handler: call a dialog that opens the
- * 
+ *
  * @author ansgar
  *
  */

@@ -5,13 +5,9 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JointState;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
 
@@ -36,7 +32,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -47,7 +43,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition()
 	 * @generated
 	 * @ordered
@@ -58,7 +54,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	 * The cached value of the '{@link #getVelocity() <em>Velocity</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVelocity()
 	 * @generated
 	 * @ordered
@@ -69,7 +65,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	 * The cached value of the '{@link #getEffort() <em>Effort</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffort()
 	 * @generated
 	 * @ordered
@@ -79,7 +75,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JointStateImpl() {
@@ -89,7 +85,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +96,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getName() {
@@ -113,7 +109,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getPosition() {
@@ -126,7 +122,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getVelocity() {
@@ -139,7 +135,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Double> getEffort() {
@@ -152,7 +148,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +169,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -203,7 +199,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +224,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +245,7 @@ public class JointStateImpl extends MinimalEObjectImpl.Container implements Join
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

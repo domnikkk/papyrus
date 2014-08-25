@@ -67,7 +67,7 @@ public class LayersFactoryForStackTestUtils {
 	/**
 	 * Constructor.
 	 * Use the global factory for {@link LayersFactoryForStack}
-	 * 
+	 *
 	 * @param stack
 	 * @param application
 	 */
@@ -93,7 +93,7 @@ public class LayersFactoryForStackTestUtils {
 
 	/**
 	 * Create a TopLayer
-	 * 
+	 *
 	 * @return
 	 * @throws LayersException
 	 */
@@ -106,7 +106,7 @@ public class LayersFactoryForStackTestUtils {
 
 	/**
 	 * Create a TopLayer
-	 * 
+	 *
 	 * @return
 	 * @throws LayersException
 	 */
@@ -120,7 +120,7 @@ public class LayersFactoryForStackTestUtils {
 	/**
 	 * Create a TopLayer and add the specified sublayers to it.
 	 * Sublayers are initialized with {@link LayersFactoryForStack#initLayer(LayerExpression, org.eclipse.papyrus.layers.stackmodel.layers.LayersContainer, LayersStack, LayersStackApplication)} before being added to their parent.
-	 * 
+	 *
 	 * @return
 	 * @throws LayersException
 	 */
@@ -151,7 +151,7 @@ public class LayersFactoryForStackTestUtils {
 
 	/**
 	 * Create an uninitialized Layer
-	 * 
+	 *
 	 * @return
 	 */
 	public LayerExpression newLayer() {
@@ -163,7 +163,7 @@ public class LayersFactoryForStackTestUtils {
 
 	/**
 	 * Create a an uninitialized Layer and store it in the map of layers under the specified name.
-	 * 
+	 *
 	 * @return
 	 */
 	public LayerExpression newLayer(String name) {

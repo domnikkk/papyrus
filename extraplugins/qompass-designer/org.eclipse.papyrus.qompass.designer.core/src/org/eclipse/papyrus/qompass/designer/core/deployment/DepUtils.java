@@ -448,7 +448,7 @@ public class DepUtils {
 
 	/**
 	 * Return true, if an instance is shared
-	 * 
+	 *
 	 * @param slot
 	 * @return
 	 */
@@ -483,7 +483,7 @@ public class DepUtils {
 
 	/**
 	 * Get all instances within a package that comply with a filter criterion. Recurse into sub-packages.
-	 * 
+	 *
 	 * @param pkg
 	 *            Starting package for search
 	 * @param instanceList
@@ -507,7 +507,7 @@ public class DepUtils {
 
 	/**
 	 * Return the first value for a slot.
-	 * 
+	 *
 	 * @param slot
 	 *            the slot for which the first value should be returned.
 	 * @return

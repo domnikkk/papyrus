@@ -29,7 +29,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.ModeTransition;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElementsFactory {
@@ -37,7 +37,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CoreElementsFactory init() {
@@ -56,7 +56,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CoreElementsFactoryImpl() {
@@ -66,7 +66,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class CoreElementsFactoryImpl extends EFactoryImpl implements CoreElement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

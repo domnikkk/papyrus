@@ -37,7 +37,7 @@ public class ConnectorItemProvider extends org.eclipse.gmf.runtime.notation.prov
 
 	/**
 	 * Return the text of the underlying UML element if any.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.notation.provider.ShapeItemProvider#getText(java.lang.Object)
 	 *
 	 * @param object

@@ -50,7 +50,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	 * The cached value of the '{@link #getItem() <em>Item</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getItem()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	 * The cached value of the '{@link #getNonFulfilledRequirement() <em>Non Fulfilled Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNonFulfilledRequirement()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureFlawImpl() {
@@ -91,7 +91,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -157,7 +157,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -198,7 +198,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class FeatureFlawImpl extends TraceableSpecificationImpl implements Featu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

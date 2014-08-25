@@ -36,7 +36,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * If the meaning of the '<em>Is Logical Time Suspended</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Logical Time Suspended</em>' attribute.
 	 * @see #setIsLogicalTimeSuspended(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getLogicalTimeCondition_IsLogicalTimeSuspended()
@@ -49,7 +49,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#isIsLogicalTimeSuspended <em>Is Logical Time Suspended</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Logical Time Suspended</em>' attribute.
 	 * @see #isIsLogicalTimeSuspended()
@@ -64,7 +64,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * If the meaning of the '<em>End Point Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>End Point Reference</em>' reference.
 	 * @see #setEndPointReference(TransitionEvent)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getLogicalTimeCondition_EndPointReference()
@@ -77,7 +77,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getEndPointReference <em>End Point Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>End Point Reference</em>' reference.
 	 * @see #getEndPointReference()
@@ -92,7 +92,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * If the meaning of the '<em>Start Point Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Start Point Reference</em>' reference.
 	 * @see #setStartPointReference(TransitionEvent)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getLogicalTimeCondition_StartPointReference()
@@ -105,7 +105,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getStartPointReference <em>Start Point Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Start Point Reference</em>' reference.
 	 * @see #getStartPointReference()
@@ -120,7 +120,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * If the meaning of the '<em>Width</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Width</em>' reference.
 	 * @see #setWidth(EAValue)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getLogicalTimeCondition_Width()
@@ -133,7 +133,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getWidth <em>Width</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Width</em>' reference.
 	 * @see #getWidth()
@@ -148,7 +148,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * If the meaning of the '<em>Lower</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lower</em>' reference.
 	 * @see #setLower(EAValue)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getLogicalTimeCondition_Lower()
@@ -161,7 +161,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getLower <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lower</em>' reference.
 	 * @see #getLower()
@@ -176,7 +176,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * If the meaning of the '<em>Upper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Upper</em>' reference.
 	 * @see #setUpper(EAValue)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getLogicalTimeCondition_Upper()
@@ -189,7 +189,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getUpper <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Upper</em>' reference.
 	 * @see #getUpper()
@@ -204,7 +204,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * If the meaning of the '<em>Consecutive Time Condition</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Consecutive Time Condition</em>' reference.
 	 * @see #setConsecutiveTimeCondition(LogicalTimeCondition)
 	 * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage#getLogicalTimeCondition_ConsecutiveTimeCondition()
@@ -217,7 +217,7 @@ public interface LogicalTimeCondition extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition#getConsecutiveTimeCondition <em>Consecutive Time Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Consecutive Time Condition</em>' reference.
 	 * @see #getConsecutiveTimeCondition()

@@ -20,7 +20,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.jdt.internal.ui.preferences.TypeFilterInputDialog;
-import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.preference.ListEditor;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
@@ -77,7 +76,7 @@ public class PackageListEditor extends ListEditor {
 	/*
 	 * (non-Javadoc)
 	 * initialize list of items
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.ListEditor#parseString(java.lang.String)
 	 */
 	@Override

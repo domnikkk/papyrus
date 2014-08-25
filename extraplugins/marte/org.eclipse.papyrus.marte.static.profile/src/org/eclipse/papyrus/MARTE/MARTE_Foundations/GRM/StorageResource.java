@@ -38,7 +38,7 @@ public interface StorageResource extends Resource {
 	 * If the meaning of the '<em>Element Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Size</em>' attribute.
 	 * @see #setElementSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getStorageResource_ElementSize()
@@ -51,7 +51,7 @@ public interface StorageResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.StorageResource#getElementSize <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Size</em>' attribute.
 	 * @see #getElementSize()

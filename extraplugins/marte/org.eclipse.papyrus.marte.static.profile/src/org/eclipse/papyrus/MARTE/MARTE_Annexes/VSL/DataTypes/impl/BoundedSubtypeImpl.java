@@ -45,7 +45,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The cached value of the '{@link #getBaseType() <em>Base Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseType()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The default value of the '{@link #getMinValue() <em>Min Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinValue()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The cached value of the '{@link #getMinValue() <em>Min Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinValue()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The default value of the '{@link #getMaxValue() <em>Max Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxValue()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The cached value of the '{@link #getMaxValue() <em>Max Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaxValue()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The default value of the '{@link #isIsMinOpen() <em>Is Min Open</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMinOpen()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The cached value of the '{@link #isIsMinOpen() <em>Is Min Open</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMinOpen()
 	 * @generated
 	 * @ordered
@@ -122,7 +122,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The default value of the '{@link #isIsMaxOpen() <em>Is Max Open</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMaxOpen()
 	 * @generated
 	 * @ordered
@@ -133,7 +133,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The cached value of the '{@link #isIsMaxOpen() <em>Is Max Open</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsMaxOpen()
 	 * @generated
 	 * @ordered
@@ -144,7 +144,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BoundedSubtypeImpl() {
@@ -164,7 +164,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataType basicGetBaseType() {
@@ -205,7 +205,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +283,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +344,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataType basicGetBase_DataType() {
@@ -354,7 +354,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +369,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -431,7 +431,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -462,7 +462,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -487,7 +487,7 @@ public class BoundedSubtypeImpl extends EObjectImpl implements BoundedSubtype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

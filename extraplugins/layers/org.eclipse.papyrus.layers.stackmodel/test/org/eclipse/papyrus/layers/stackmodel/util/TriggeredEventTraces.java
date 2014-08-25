@@ -39,7 +39,7 @@ public class TriggeredEventTraces<E> {
 
 	/**
 	 * Add a trace to the list of traces
-	 * 
+	 *
 	 * @param name
 	 * @param notification
 	 */
@@ -49,7 +49,7 @@ public class TriggeredEventTraces<E> {
 
 	/**
 	 * Return true if one of the trace has the specified name.
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -68,7 +68,7 @@ public class TriggeredEventTraces<E> {
 
 	/**
 	 * Return true if one of the trace has the specified name.
-	 * 
+	 *
 	 * @param name
 	 *            Name of the event to found
 	 * @return the first event with the specified name, or null if nothing is found.
@@ -124,7 +124,7 @@ public class TriggeredEventTraces<E> {
 
 	/**
 	 * Return the number of traces
-	 * 
+	 *
 	 * @return
 	 */
 	public int size() {
@@ -133,7 +133,7 @@ public class TriggeredEventTraces<E> {
 
 	/**
 	 * Get the specified trace.
-	 * 
+	 *
 	 * @param i
 	 * @return
 	 */

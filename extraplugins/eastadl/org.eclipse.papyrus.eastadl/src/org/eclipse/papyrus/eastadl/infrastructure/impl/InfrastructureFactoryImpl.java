@@ -21,21 +21,52 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.infrastructure.*;
+import org.eclipse.papyrus.eastadl.infrastructure.AllocatedElementInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_errorModelTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_functionTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintPrototype_hardwareComponentTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.ClampConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_functionTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_hwTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.EventFunctionClientServerPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.EventFunctionFlowPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.EventFunctionInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePort_functionTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePort_hwTargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePropagationLink_fromPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePropagationLink_toPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FaultFailure_anomalyInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.FunctionConnectorPortInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.HardwareConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.HardwarePortConnectorInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.InfrastructureFactory;
+import org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage;
+import org.eclipse.papyrus.eastadl.infrastructure.InstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_precedingInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.PrecedenceConstraint_successiveInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.Realization_realizedByInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.Realization_realizedInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.RefineInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.SatisfyInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.TargetInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.VVCaseInstanceRef;
+import org.eclipse.papyrus.eastadl.infrastructure.VVTargetInstanceRef;
 
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InfrastructureFactoryImpl extends EFactoryImpl implements InfrastructureFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -48,7 +79,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static InfrastructureFactory init() {
@@ -67,7 +98,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InfrastructureFactoryImpl() {
@@ -77,7 +108,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDummyToString(EDataType eDataType, Object instanceValue) {
@@ -87,7 +118,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +134,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +146,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +158,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +170,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +182,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +194,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +206,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +218,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +230,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +242,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +254,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +266,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +278,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +290,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +302,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +314,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +326,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +338,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +350,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,7 +362,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +374,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +386,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -367,7 +398,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +410,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -391,7 +422,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +434,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +446,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -427,7 +458,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -439,7 +470,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -451,7 +482,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -463,7 +494,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -537,7 +568,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createDummyFromString(EDataType eDataType, String initialValue) {
@@ -547,7 +578,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -563,7 +594,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

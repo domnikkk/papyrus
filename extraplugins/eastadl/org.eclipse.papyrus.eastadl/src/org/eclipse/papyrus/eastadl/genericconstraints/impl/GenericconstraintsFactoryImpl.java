@@ -33,14 +33,14 @@ import org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GenericconstraintsFactoryImpl extends EFactoryImpl implements GenericconstraintsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -53,7 +53,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static GenericconstraintsFactory init() {
@@ -72,7 +72,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenericconstraintsFactoryImpl() {
@@ -82,7 +82,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertGenericConstraintKindToString(EDataType eDataType, Object instanceValue) {
@@ -92,7 +92,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenericConstraintKind createGenericConstraintKindFromString(EDataType eDataType, String initialValue) {
@@ -170,7 +170,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -4,17 +4,13 @@ package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.st
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.ExpressionValueRule;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
@@ -39,7 +35,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -50,7 +46,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -60,7 +56,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TagSpecificationRuleImpl()
@@ -71,7 +67,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +79,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +102,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetProperty()
@@ -117,7 +113,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +129,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +141,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetValue(ExpressionValueRule newValue, NotificationChain msgs)
@@ -167,7 +163,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +191,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +203,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +215,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +232,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +254,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +275,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +296,7 @@ public class TagSpecificationRuleImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

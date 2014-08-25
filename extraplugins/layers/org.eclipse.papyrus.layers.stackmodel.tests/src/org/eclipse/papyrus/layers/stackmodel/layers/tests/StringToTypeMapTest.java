@@ -5,7 +5,6 @@ package org.eclipse.papyrus.layers.stackmodel.layers.tests;
 import java.util.Map;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -16,7 +15,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Type;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>String To Type Map</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StringToTypeMapTest extends TestCase {
@@ -25,7 +24,7 @@ public class StringToTypeMapTest extends TestCase {
 	 * The fixture for this String To Type Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Map.Entry<String, Type> fixture = null;
@@ -33,7 +32,7 @@ public class StringToTypeMapTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -44,7 +43,7 @@ public class StringToTypeMapTest extends TestCase {
 	 * Constructs a new String To Type Map test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StringToTypeMapTest(String name) {
@@ -55,7 +54,7 @@ public class StringToTypeMapTest extends TestCase {
 	 * Sets the fixture for this String To Type Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(Map.Entry<String, Type> fixture) {
@@ -66,7 +65,7 @@ public class StringToTypeMapTest extends TestCase {
 	 * Returns the fixture for this String To Type Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Map.Entry<String, Type> getFixture() {
@@ -76,7 +75,7 @@ public class StringToTypeMapTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -89,7 +88,7 @@ public class StringToTypeMapTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

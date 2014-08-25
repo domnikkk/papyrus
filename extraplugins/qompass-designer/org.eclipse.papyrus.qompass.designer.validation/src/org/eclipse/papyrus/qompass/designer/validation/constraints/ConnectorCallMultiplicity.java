@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Property;
 /**
  * Check whether the multiplicity of the ports (of a part) are consistent with the defined connectors, in particular whether a
  * port with a required interface is not connected with more connectors than its own multiplicity
- * 
+ *
  * @author ansgar
  *
  *         TODO: does not find violation on composite side (partWithPort = null), simplify? (loop over connectors)

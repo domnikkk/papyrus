@@ -43,7 +43,7 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Something happen on the tree of object
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
@@ -130,7 +130,7 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the object is disposed.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -159,7 +159,7 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Remove the specified listener from the list of listeners.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeEventListener(IUmlNamedElementChangedEventListener listener) {
@@ -169,7 +169,7 @@ public class UmlNamedElementChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void fireValueChangedEvent(Notification msg) {

@@ -51,7 +51,7 @@ public interface ModeGroup extends TraceableSpecification {
 	 * If the meaning of the '<em>Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getModeGroup_Mode()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -66,7 +66,7 @@ public interface ModeGroup extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getModeGroup_Base_Class()
@@ -79,7 +79,7 @@ public interface ModeGroup extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.ModeGroup#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -94,7 +94,7 @@ public interface ModeGroup extends TraceableSpecification {
 	 * If the meaning of the '<em>Precondition</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Precondition</em>' attribute.
 	 * @see #setPrecondition(String)
 	 * @see org.eclipse.papyrus.eastadl.behavior.BehaviorPackage#getModeGroup_Precondition()
@@ -107,7 +107,7 @@ public interface ModeGroup extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.behavior.ModeGroup#getPrecondition <em>Precondition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Precondition</em>' attribute.
 	 * @see #getPrecondition()

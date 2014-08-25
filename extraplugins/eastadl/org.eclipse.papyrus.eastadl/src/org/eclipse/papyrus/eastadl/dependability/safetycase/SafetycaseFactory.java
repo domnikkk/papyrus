@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.dependability.safetycase.SafetycasePackage
  * @generated
  */
@@ -31,7 +31,7 @@ public interface SafetycaseFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SafetycaseFactory eINSTANCE = org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetycaseFactoryImpl.init();
@@ -40,7 +40,7 @@ public interface SafetycaseFactory extends EFactory {
 	 * Returns a new object of class '<em>Claim</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Claim</em>'.
 	 * @generated
 	 */
@@ -50,7 +50,7 @@ public interface SafetycaseFactory extends EFactory {
 	 * Returns a new object of class '<em>Ground</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Ground</em>'.
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface SafetycaseFactory extends EFactory {
 	 * Returns a new object of class '<em>Safety Case</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Safety Case</em>'.
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public interface SafetycaseFactory extends EFactory {
 	 * Returns a new object of class '<em>Warrant</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Warrant</em>'.
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface SafetycaseFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

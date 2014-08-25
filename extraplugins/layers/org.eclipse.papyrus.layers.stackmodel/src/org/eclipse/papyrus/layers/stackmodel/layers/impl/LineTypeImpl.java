@@ -32,7 +32,7 @@ public class LineTypeImpl extends TypeImpl implements LineType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected LineTypeImpl() {
@@ -43,7 +43,7 @@ public class LineTypeImpl extends TypeImpl implements LineType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class LineTypeImpl extends TypeImpl implements LineType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override

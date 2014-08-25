@@ -37,7 +37,7 @@ public interface IntValue extends TypeInstance {
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(int)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getIntValue_Value()
@@ -50,7 +50,7 @@ public interface IntValue extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.IntValue#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()

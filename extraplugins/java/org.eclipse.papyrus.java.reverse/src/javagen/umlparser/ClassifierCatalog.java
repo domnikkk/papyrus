@@ -51,7 +51,7 @@ public class ClassifierCatalog {
 	/**
 	 * Constructor.
 	 * Not used anymore
-	 * 
+	 *
 	 * @param model
 	 *            The Resource containing the packages
 	 */

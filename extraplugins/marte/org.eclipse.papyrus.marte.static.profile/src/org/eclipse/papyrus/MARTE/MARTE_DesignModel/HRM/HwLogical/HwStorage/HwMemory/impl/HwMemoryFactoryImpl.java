@@ -35,7 +35,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMem
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory {
@@ -43,7 +43,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwMemoryFactory init() {
@@ -62,7 +62,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwMemoryFactoryImpl() {
@@ -72,7 +72,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Repl_Policy createRepl_PolicyFromString(EDataType eDataType, String initialValue) {
@@ -226,7 +226,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRepl_PolicyToString(EDataType eDataType, Object instanceValue) {
@@ -236,7 +236,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public WritePolicy createWritePolicyFromString(EDataType eDataType, String initialValue) {
@@ -250,7 +250,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertWritePolicyToString(EDataType eDataType, Object instanceValue) {
@@ -260,7 +260,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CacheType createCacheTypeFromString(EDataType eDataType, String initialValue) {
@@ -274,7 +274,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertCacheTypeToString(EDataType eDataType, Object instanceValue) {
@@ -284,7 +284,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ROM_Type createROM_TypeFromString(EDataType eDataType, String initialValue) {
@@ -298,7 +298,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertROM_TypeToString(EDataType eDataType, Object instanceValue) {
@@ -308,7 +308,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createTimingFromString(EDataType eDataType, String initialValue) {
@@ -318,7 +318,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertTimingToString(EDataType eDataType, Object instanceValue) {
@@ -328,7 +328,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createCacheStructureFromString(EDataType eDataType, String initialValue) {
@@ -338,7 +338,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertCacheStructureToString(EDataType eDataType, Object instanceValue) {
@@ -348,7 +348,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createMemoryOrganizationFromString(EDataType eDataType, String initialValue) {
@@ -358,7 +358,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertMemoryOrganizationToString(EDataType eDataType, Object instanceValue) {
@@ -368,7 +368,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +379,7 @@ public class HwMemoryFactoryImpl extends EFactoryImpl implements HwMemoryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

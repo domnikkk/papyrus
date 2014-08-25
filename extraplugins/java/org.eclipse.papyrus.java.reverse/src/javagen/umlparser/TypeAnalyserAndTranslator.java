@@ -3,10 +3,10 @@
  */
 package javagen.umlparser;
 
+import japa.parser.ast.type.Type;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import japa.parser.ast.type.Type;
 
 /**
  * Allows to analyse an ast type, and to translate it according to recognized
@@ -104,7 +104,7 @@ public class TypeAnalyserAndTranslator extends TypeAnalyser {
 
 		/**
 		 * Get the Real name, taking into account if it is a generic.
-		 * 
+		 *
 		 * @return
 		 */
 		public List<String> getTranslatedQualifiedName() {

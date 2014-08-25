@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.MobileRobot;
 import org.eclipse.papyrus.RobotML.MobileRobotKind;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
@@ -30,7 +27,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -41,7 +38,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MobileRobotImpl() {
@@ -61,7 +58,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +69,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MobileRobotKind getKind() {
@@ -82,7 +79,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setKind(MobileRobotKind newKind) {
@@ -96,7 +93,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +108,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +124,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +140,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +155,7 @@ public class MobileRobotImpl extends RobotImpl implements MobileRobot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

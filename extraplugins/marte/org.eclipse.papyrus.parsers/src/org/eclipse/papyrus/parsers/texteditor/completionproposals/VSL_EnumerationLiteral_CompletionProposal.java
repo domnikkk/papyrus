@@ -64,7 +64,7 @@ public class VSL_EnumerationLiteral_CompletionProposal implements ICompletionPro
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)

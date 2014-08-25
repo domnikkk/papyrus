@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Data Pool Ordering Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.GCMPackage#getDataPoolOrderingKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * The '<em><b>FIFO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIFO_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * The '<em><b>LIFO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LIFO_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * The '<em><b>User Defined</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #USER_DEFINED_VALUE
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * If the meaning of '<em><b>FIFO</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIFO
 	 * @model
 	 * @generated
@@ -85,7 +85,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * If the meaning of '<em><b>LIFO</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LIFO
 	 * @model
 	 * @generated
@@ -100,7 +100,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * If the meaning of '<em><b>User Defined</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #USER_DEFINED
 	 * @model name="UserDefined"
 	 * @generated
@@ -112,7 +112,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * An array of all the '<em><b>Data Pool Ordering Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final DataPoolOrderingKind[] VALUES_ARRAY =
@@ -126,7 +126,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Data Pool Ordering Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<DataPoolOrderingKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -135,7 +135,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * Returns the '<em><b>Data Pool Ordering Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DataPoolOrderingKind get(String literal) {
@@ -152,7 +152,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * Returns the '<em><b>Data Pool Ordering Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DataPoolOrderingKind getByName(String name) {
@@ -169,7 +169,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * Returns the '<em><b>Data Pool Ordering Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DataPoolOrderingKind get(int value) {
@@ -187,7 +187,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -195,7 +195,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -203,7 +203,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -212,7 +212,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private DataPoolOrderingKind(int value, String name, String literal) {
@@ -224,7 +224,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public enum DataPoolOrderingKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -29,7 +29,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	 * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRef()
 	 * @generated
 	 * @ordered
@@ -39,7 +39,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AUTOSAREventImpl() {
@@ -49,7 +49,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,7 +60,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeEvent basicGetRef() {
@@ -90,7 +90,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class AUTOSAREventImpl extends EventImpl implements AUTOSAREvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

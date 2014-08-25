@@ -41,7 +41,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	 * The cached value of the '{@link #getReadServices() <em>Read Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReadServices()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	 * The cached value of the '{@link #getWriteServices() <em>Write Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWriteServices()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SharedDataComResourceImpl() {
@@ -72,7 +72,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -150,7 +150,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class SharedDataComResourceImpl extends SwCommunicationResourceImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

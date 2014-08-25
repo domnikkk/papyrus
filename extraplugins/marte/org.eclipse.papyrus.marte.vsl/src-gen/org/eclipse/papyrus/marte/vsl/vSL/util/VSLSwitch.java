@@ -4,10 +4,47 @@ package org.eclipse.papyrus.marte.vsl.vSL.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.marte.vsl.vSL.*;
+import org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.BooleanLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple;
+import org.eclipse.papyrus.marte.vsl.vSL.ConditionalExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.DataTypeName;
+import org.eclipse.papyrus.marte.vsl.vSL.DateTimeLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.DefaultLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.DurationObsExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.DurationObsName;
+import org.eclipse.papyrus.marte.vsl.vSL.EqualityExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.Expression;
+import org.eclipse.papyrus.marte.vsl.vSL.InstantObsExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.InstantObsName;
+import org.eclipse.papyrus.marte.vsl.vSL.IntegerLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.Interval;
+import org.eclipse.papyrus.marte.vsl.vSL.JitterExp;
+import org.eclipse.papyrus.marte.vsl.vSL.ListOfValueNamePairs;
+import org.eclipse.papyrus.marte.vsl.vSL.ListOfValues;
+import org.eclipse.papyrus.marte.vsl.vSL.Literal;
+import org.eclipse.papyrus.marte.vsl.vSL.MultiplicativeExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.NameOrChoiceOrBehaviorCall;
+import org.eclipse.papyrus.marte.vsl.vSL.NullLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.NumberLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.OperationCallExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.PrimaryExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.PropertyCallExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.QualifiedName;
+import org.eclipse.papyrus.marte.vsl.vSL.RealLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.RelationalExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.StringLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.SuffixExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.TimeExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.Tuple;
+import org.eclipse.papyrus.marte.vsl.vSL.UnaryExpression;
+import org.eclipse.papyrus.marte.vsl.vSL.UnlimitedLiteralRule;
+import org.eclipse.papyrus.marte.vsl.vSL.VSLPackage;
+import org.eclipse.papyrus.marte.vsl.vSL.ValueNamePair;
+import org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification;
+import org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +55,7 @@ import org.eclipse.papyrus.marte.vsl.vSL.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.marte.vsl.vSL.VSLPackage
  * @generated
  */
@@ -28,7 +65,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static VSLPackage modelPackage;
@@ -37,7 +74,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VSLSwitch()
@@ -52,7 +89,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -67,7 +104,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -510,7 +547,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
@@ -528,7 +565,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>And Or Xor Expression</em>'.
@@ -546,7 +583,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Equality Expression</em>'.
@@ -564,7 +601,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Relational Expression</em>'.
@@ -582,7 +619,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Conditional Expression</em>'.
@@ -600,7 +637,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Additive Expression</em>'.
@@ -618,7 +655,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Multiplicative Expression</em>'.
@@ -636,7 +673,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
@@ -654,7 +691,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Primary Expression</em>'.
@@ -672,7 +709,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Value Specification</em>'.
@@ -690,7 +727,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Suffix Expression</em>'.
@@ -708,7 +745,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Call Expression</em>'.
@@ -726,7 +763,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Operation Call Expression</em>'.
@@ -744,7 +781,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
@@ -762,7 +799,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Name Or Choice Or Behavior Call</em>'.
@@ -780,7 +817,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Qualified Name</em>'.
@@ -798,7 +835,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Interval</em>'.
@@ -816,7 +853,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Collection Or Tuple</em>'.
@@ -834,7 +871,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Tuple</em>'.
@@ -852,7 +889,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>List Of Values</em>'.
@@ -870,7 +907,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>List Of Value Name Pairs</em>'.
@@ -888,7 +925,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Value Name Pair</em>'.
@@ -906,7 +943,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Time Expression</em>'.
@@ -924,7 +961,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Instant Obs Expression</em>'.
@@ -942,7 +979,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Instant Obs Name</em>'.
@@ -960,7 +997,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Duration Obs Expression</em>'.
@@ -978,7 +1015,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Duration Obs Name</em>'.
@@ -996,7 +1033,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Jitter Exp</em>'.
@@ -1014,7 +1051,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
@@ -1032,7 +1069,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Data Type Name</em>'.
@@ -1050,7 +1087,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Number Literal Rule</em>'.
@@ -1068,7 +1105,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Integer Literal Rule</em>'.
@@ -1086,7 +1123,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Unlimited Literal Rule</em>'.
@@ -1104,7 +1141,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Real Literal Rule</em>'.
@@ -1122,7 +1159,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Date Time Literal Rule</em>'.
@@ -1140,7 +1177,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Boolean Literal Rule</em>'.
@@ -1158,7 +1195,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Null Literal Rule</em>'.
@@ -1176,7 +1213,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Default Literal Rule</em>'.
@@ -1194,7 +1231,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String Literal Rule</em>'.
@@ -1212,7 +1249,7 @@ public class VSLSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

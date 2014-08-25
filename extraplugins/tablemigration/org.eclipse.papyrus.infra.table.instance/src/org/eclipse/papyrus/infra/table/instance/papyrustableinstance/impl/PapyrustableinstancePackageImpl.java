@@ -10,14 +10,10 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.emf.facet.infra.query.QueryPackage;
-
 import org.eclipse.emf.facet.widgets.nattable.instance.tableinstance2.Tableinstance2Package;
-
 import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance;
 import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstanceFactory;
 import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage;
@@ -26,14 +22,14 @@ import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.Papyrustabl
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PapyrustableinstancePackageImpl extends EPackageImpl implements PapyrustableinstancePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusTableInstanceEClass = null;
@@ -43,7 +39,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#eNS_URI
 	 * @see #init()
@@ -56,7 +52,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -67,7 +63,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	 * <p>
 	 * This method is used to initialize {@link PapyrustableinstancePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -105,7 +101,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +112,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +123,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +134,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +145,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +156,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +167,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +178,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +189,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +200,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -214,7 +210,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -237,7 +233,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -247,7 +243,7 @@ public class PapyrustableinstancePackageImpl extends EPackageImpl implements Pap
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

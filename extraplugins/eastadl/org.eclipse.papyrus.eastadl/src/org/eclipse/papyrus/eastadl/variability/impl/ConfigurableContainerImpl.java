@@ -60,7 +60,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	 * The cached value of the '{@link #getConfigurableElement() <em>Configurable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConfigurableElement()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurableContainerImpl() {
@@ -102,7 +102,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetConfigurableElement() {
@@ -112,7 +112,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public InternalBinding basicGetInternalBinding() {
@@ -135,7 +135,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public FeatureModel basicGetPublicFeatureModel() {
@@ -158,7 +158,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +314,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -351,7 +351,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +371,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -381,7 +381,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +396,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +416,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -426,7 +426,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +441,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -456,7 +456,7 @@ public class ConfigurableContainerImpl extends EAElementImpl implements Configur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override

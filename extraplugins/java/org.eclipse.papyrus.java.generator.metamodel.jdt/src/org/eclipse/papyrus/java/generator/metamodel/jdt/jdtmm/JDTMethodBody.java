@@ -37,7 +37,7 @@ public interface JDTMethodBody extends EObject {
 	 * If the meaning of the '<em>Owner</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' container reference.
 	 * @see #setOwner(JDTMethod)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTMethodBody_Owner()
@@ -51,7 +51,7 @@ public interface JDTMethodBody extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethodBody#getOwner <em>Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()
@@ -62,7 +62,7 @@ public interface JDTMethodBody extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.String" required="true" ordered="false"
 	 * @generated
 	 */

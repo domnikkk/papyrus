@@ -5,24 +5,16 @@ package org.eclipse.papyrus.eastadl.annex.computationconstraint.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.LogicalEvent;
-
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalPath;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.TransformationOccurrence;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
-
 import org.eclipse.papyrus.eastadl.timing.EventChain;
 
 /**
@@ -50,7 +42,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getStrand() <em>Strand</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStrand()
 	 * @generated
 	 * @ordered
@@ -61,7 +53,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getSegment() <em>Segment</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSegment()
 	 * @generated
 	 * @ordered
@@ -72,7 +64,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getTransformationOccurrence() <em>Transformation Occurrence</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransformationOccurrence()
 	 * @generated
 	 * @ordered
@@ -83,7 +75,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getPrecedingExecutionEventChain() <em>Preceding Execution Event Chain</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrecedingExecutionEventChain()
 	 * @generated
 	 * @ordered
@@ -94,7 +86,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getSucceedingExecutionEventChain() <em>Succeeding Execution Event Chain</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSucceedingExecutionEventChain()
 	 * @generated
 	 * @ordered
@@ -105,7 +97,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getCorrespondingExecutionEventChain() <em>Corresponding Execution Event Chain</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCorrespondingExecutionEventChain()
 	 * @generated
 	 * @ordered
@@ -116,7 +108,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getLogicalResponse() <em>Logical Response</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLogicalResponse()
 	 * @generated
 	 * @ordered
@@ -127,7 +119,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getLogicalStimulus() <em>Logical Stimulus</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLogicalStimulus()
 	 * @generated
 	 * @ordered
@@ -137,7 +129,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LogicalPathImpl() {
@@ -147,7 +139,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +150,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +164,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +178,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +198,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TransformationOccurrence basicGetTransformationOccurrence() {
@@ -216,7 +208,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +223,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +237,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +251,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +265,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +279,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +293,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +325,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -378,7 +370,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +407,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

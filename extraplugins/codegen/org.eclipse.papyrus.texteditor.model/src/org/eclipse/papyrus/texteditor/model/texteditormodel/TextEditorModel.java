@@ -43,7 +43,7 @@ public interface TextEditorModel extends EModelElement {
 	 * If the meaning of the '<em>Edited Object</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Edited Object</em>' reference.
 	 * @see #setEditedObject(EObject)
 	 * @see org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelPackage#getTextEditorModel_EditedObject()
@@ -56,7 +56,7 @@ public interface TextEditorModel extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel#getEditedObject <em>Edited Object</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Edited Object</em>' reference.
 	 * @see #getEditedObject()
@@ -71,7 +71,7 @@ public interface TextEditorModel extends EModelElement {
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelPackage#getTextEditorModel_Type()
@@ -84,7 +84,7 @@ public interface TextEditorModel extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see #getType()
@@ -99,7 +99,7 @@ public interface TextEditorModel extends EModelElement {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelPackage#getTextEditorModel_Name()
@@ -112,7 +112,7 @@ public interface TextEditorModel extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -127,7 +127,7 @@ public interface TextEditorModel extends EModelElement {
 	 * If the meaning of the '<em>Selected Object</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Selected Object</em>' reference.
 	 * @see #setSelectedObject(EObject)
 	 * @see org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelPackage#getTextEditorModel_SelectedObject()
@@ -140,7 +140,7 @@ public interface TextEditorModel extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel#getSelectedObject <em>Selected Object</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Selected Object</em>' reference.
 	 * @see #getSelectedObject()
@@ -155,7 +155,7 @@ public interface TextEditorModel extends EModelElement {
 	 * If the meaning of the '<em>Line Number</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Line Number</em>' attribute.
 	 * @see #setLineNumber(int)
 	 * @see org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelPackage#getTextEditorModel_LineNumber()
@@ -168,7 +168,7 @@ public interface TextEditorModel extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel#getLineNumber <em>Line Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Line Number</em>' attribute.
 	 * @see #getLineNumber()

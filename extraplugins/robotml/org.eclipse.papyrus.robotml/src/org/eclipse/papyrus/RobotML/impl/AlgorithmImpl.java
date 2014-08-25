@@ -3,16 +3,12 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotML.Algorithm;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
-
 import org.eclipse.uml2.uml.Operation;
 
 /**
@@ -37,7 +33,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The cached value of the '{@link #getBase_Operation() <em>Base Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Operation()
 	 * @generated
 	 * @ordered
@@ -48,7 +44,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The default value of the '{@link #isIsExternal() <em>Is External</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsExternal()
 	 * @generated
 	 * @ordered
@@ -59,7 +55,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The cached value of the '{@link #isIsExternal() <em>Is External</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsExternal()
 	 * @generated
 	 * @ordered
@@ -70,7 +66,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The default value of the '{@link #getExtFunctionName() <em>Ext Function Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtFunctionName()
 	 * @generated
 	 * @ordered
@@ -81,7 +77,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The cached value of the '{@link #getExtFunctionName() <em>Ext Function Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtFunctionName()
 	 * @generated
 	 * @ordered
@@ -92,7 +88,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The default value of the '{@link #getLibPath() <em>Lib Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLibPath()
 	 * @generated
 	 * @ordered
@@ -103,7 +99,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The cached value of the '{@link #getLibPath() <em>Lib Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLibPath()
 	 * @generated
 	 * @ordered
@@ -114,7 +110,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The default value of the '{@link #getLibFileFormat() <em>Lib File Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLibFileFormat()
 	 * @generated
 	 * @ordered
@@ -125,7 +121,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 * The cached value of the '{@link #getLibFileFormat() <em>Lib File Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLibFileFormat()
 	 * @generated
 	 * @ordered
@@ -135,7 +131,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AlgorithmImpl() {
@@ -145,7 +141,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +152,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation getBase_Operation() {
@@ -175,7 +171,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Operation basicGetBase_Operation() {
@@ -185,7 +181,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Operation(Operation newBase_Operation) {
@@ -199,7 +195,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIsExternal() {
@@ -209,7 +205,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIsExternal(boolean newIsExternal) {
@@ -223,7 +219,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getExtFunctionName() {
@@ -233,7 +229,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setExtFunctionName(String newExtFunctionName) {
@@ -247,7 +243,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLibPath() {
@@ -257,7 +253,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLibPath(String newLibPath) {
@@ -271,7 +267,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLibFileFormat() {
@@ -281,7 +277,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLibFileFormat(String newLibFileFormat) {
@@ -295,7 +291,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +317,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +345,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +373,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +396,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

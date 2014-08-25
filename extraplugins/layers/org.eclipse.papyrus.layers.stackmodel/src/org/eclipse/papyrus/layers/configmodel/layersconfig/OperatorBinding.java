@@ -41,7 +41,7 @@ public interface OperatorBinding extends EObject {
 	 * If the meaning of the '<em>Operator</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operator</em>' reference.
 	 * @see #setOperator(OperatorConfig)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getOperatorBinding_Operator()
@@ -54,7 +54,7 @@ public interface OperatorBinding extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getOperator <em>Operator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Operator</em>' reference.
 	 * @see #getOperator()
@@ -69,7 +69,7 @@ public interface OperatorBinding extends EObject {
 	 * If the meaning of the '<em>Layer Operator Config</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Layer Operator Config</em>' reference.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getOperatorBinding_LayerOperatorConfig()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -84,7 +84,7 @@ public interface OperatorBinding extends EObject {
 	 * If the meaning of the '<em>Property Id</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property Id</em>' reference.
 	 * @see #setPropertyId(PropertyId)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getOperatorBinding_PropertyId()
@@ -97,7 +97,7 @@ public interface OperatorBinding extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getPropertyId <em>Property Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Property Id</em>' reference.
 	 * @see #getPropertyId()
@@ -113,7 +113,7 @@ public interface OperatorBinding extends EObject {
 	 * If the meaning of the '<em>Owner</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' container reference.
 	 * @see #setOwner(LayerOperatorMultipleBinding)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getOperatorBinding_Owner()
@@ -127,7 +127,7 @@ public interface OperatorBinding extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getOwner <em>Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()

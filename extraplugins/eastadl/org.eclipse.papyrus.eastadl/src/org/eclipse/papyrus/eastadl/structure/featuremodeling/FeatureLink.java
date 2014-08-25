@@ -71,7 +71,7 @@ public interface FeatureLink extends Relationship {
 	 * If the meaning of the '<em>Custom Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Custom Type</em>' attribute.
 	 * @see #setCustomType(String)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureLink_CustomType()
@@ -107,7 +107,7 @@ public interface FeatureLink extends Relationship {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind
 	 * @see #setKind(VariabilityDependencyKind)
@@ -143,7 +143,7 @@ public interface FeatureLink extends Relationship {
 	 * If the meaning of the '<em>Is Bidirectional</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Bidirectional</em>' attribute.
 	 * @see #setIsBidirectional(boolean)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureLink_IsBidirectional()
@@ -156,7 +156,7 @@ public interface FeatureLink extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getCustomType <em>Custom Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Custom Type</em>' attribute.
 	 * @see #getCustomType()
@@ -171,7 +171,7 @@ public interface FeatureLink extends Relationship {
 	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Dependency</em>' reference.
 	 * @see #setBase_Dependency(Dependency)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureLink_Base_Dependency()
@@ -184,7 +184,7 @@ public interface FeatureLink extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getBase_Dependency <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Dependency</em>' reference.
 	 * @see #getBase_Dependency()
@@ -196,7 +196,7 @@ public interface FeatureLink extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getEnd <em>End</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>End</em>' reference.
 	 * @see #getEnd()
@@ -211,7 +211,7 @@ public interface FeatureLink extends Relationship {
 	 * If the meaning of the '<em>Base Association Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Association Class</em>' reference.
 	 * @see #setBase_AssociationClass(AssociationClass)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeatureLink_Base_AssociationClass()
@@ -224,7 +224,7 @@ public interface FeatureLink extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getBase_AssociationClass <em>Base Association Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Association Class</em>' reference.
 	 * @see #getBase_AssociationClass()
@@ -235,7 +235,7 @@ public interface FeatureLink extends Relationship {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#isIsBidirectional <em>Is Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Bidirectional</em>' attribute.
 	 * @see #isIsBidirectional()
@@ -247,7 +247,7 @@ public interface FeatureLink extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind
@@ -260,7 +260,7 @@ public interface FeatureLink extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getStart <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Start</em>' reference.
 	 * @see #getStart()

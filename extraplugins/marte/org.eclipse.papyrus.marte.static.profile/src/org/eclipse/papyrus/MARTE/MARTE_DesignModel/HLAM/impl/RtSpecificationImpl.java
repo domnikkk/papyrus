@@ -52,7 +52,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getUtility() <em>Utility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtility()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getUtility() <em>Utility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtility()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getOccKind() <em>Occ Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccKind()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getOccKind() <em>Occ Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccKind()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getTRef() <em>TRef</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTRef()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getRelDl() <em>Rel Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRelDl()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getRelDl() <em>Rel Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRelDl()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getAbsDl() <em>Abs Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAbsDl()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getAbsDl() <em>Abs Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAbsDl()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getBoundDl() <em>Bound Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBoundDl()
 	 * @generated
 	 * @ordered
@@ -162,7 +162,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getBoundDl() <em>Bound Dl</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBoundDl()
 	 * @generated
 	 * @ordered
@@ -173,7 +173,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getRdTime() <em>Rd Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRdTime()
 	 * @generated
 	 * @ordered
@@ -184,7 +184,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getRdTime() <em>Rd Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRdTime()
 	 * @generated
 	 * @ordered
@@ -195,7 +195,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getMiss() <em>Miss</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMiss()
 	 * @generated
 	 * @ordered
@@ -206,7 +206,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getMiss() <em>Miss</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMiss()
 	 * @generated
 	 * @ordered
@@ -217,7 +217,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -228,7 +228,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -239,7 +239,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	 * The cached value of the '{@link #getBase_Comment() <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Comment()
 	 * @generated
 	 * @ordered
@@ -249,7 +249,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RtSpecificationImpl() {
@@ -259,7 +259,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +322,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimedInstantObservation basicGetTRef() {
@@ -352,7 +352,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -367,7 +367,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -378,7 +378,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +393,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +404,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -419,7 +419,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +430,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -445,7 +445,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -456,7 +456,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -471,7 +471,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -482,7 +482,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -497,7 +497,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -508,7 +508,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -523,7 +523,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -543,7 +543,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment basicGetBase_Comment() {
@@ -553,7 +553,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -568,7 +568,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -580,7 +580,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetContext() {
@@ -593,7 +593,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -606,7 +606,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -650,7 +650,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -696,7 +696,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -742,7 +742,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -777,7 +777,7 @@ public class RtSpecificationImpl extends EObjectImpl implements RtSpecification 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

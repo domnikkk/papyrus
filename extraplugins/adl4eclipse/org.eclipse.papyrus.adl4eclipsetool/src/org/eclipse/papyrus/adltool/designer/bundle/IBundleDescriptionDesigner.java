@@ -68,7 +68,7 @@ public interface IBundleDescriptionDesigner {
 
 	/**
 	 * fill properties of stereotypes from Meta-information of the JAVA bundle object
-	 * 
+	 *
 	 * @param bundleComponent
 	 *            the UML representation of a bundle
 	 * @param bundleProject
@@ -78,7 +78,7 @@ public interface IBundleDescriptionDesigner {
 
 	/**
 	 * get the symbolic name from the JAVA object that represent the bundle
-	 * 
+	 *
 	 * @param bundleProject
 	 * @return the symbolic name
 	 */
@@ -86,7 +86,7 @@ public interface IBundleDescriptionDesigner {
 
 	/**
 	 * get the name from the JAVA object that represent the bundle
-	 * 
+	 *
 	 * @param bundleProject
 	 * @return the name
 	 */
@@ -94,7 +94,7 @@ public interface IBundleDescriptionDesigner {
 
 	/**
 	 * create packages that are exported to other plugins
-	 * 
+	 *
 	 * @param bundleComponent
 	 *            the UML representation of the bundle
 	 * @param bundleProject
@@ -104,7 +104,7 @@ public interface IBundleDescriptionDesigner {
 
 	/**
 	 * return the list of referenced OSGI element from a bundle
-	 * 
+	 *
 	 * @param bundleComponent
 	 *            the UML component that represent the bundle
 	 * @param bundleProject

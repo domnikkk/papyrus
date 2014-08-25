@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -39,7 +40,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrom()
 	 * @generated
 	 * @ordered
@@ -50,7 +51,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTo()
 	 * @generated
 	 * @ordered
@@ -61,7 +62,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getQuantificationGuard() <em>Quantification Guard</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQuantificationGuard()
 	 * @generated
 	 * @ordered
@@ -72,7 +73,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getTimeGuard() <em>Time Guard</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeGuard()
 	 * @generated
 	 * @ordered
@@ -83,7 +84,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -93,7 +94,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TransitionImpl() {
@@ -103,7 +104,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +115,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +135,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State basicGetFrom() {
@@ -144,7 +145,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +160,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +180,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State basicGetTo() {
@@ -189,7 +190,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +205,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +219,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +233,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +253,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TransformationOccurrence basicGetEffect() {
@@ -262,7 +263,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +278,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +310,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -340,7 +341,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +369,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

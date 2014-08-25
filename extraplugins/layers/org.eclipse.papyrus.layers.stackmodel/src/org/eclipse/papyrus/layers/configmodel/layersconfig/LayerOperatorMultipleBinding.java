@@ -39,7 +39,7 @@ public interface LayerOperatorMultipleBinding extends FolderElement {
 	 * If the meaning of the '<em>Layer Operator Config</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Layer Operator Config</em>' reference.
 	 * @see #setLayerOperatorConfig(LayerOperatorConfig)
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getLayerOperatorMultipleBinding_LayerOperatorConfig()
@@ -52,7 +52,7 @@ public interface LayerOperatorMultipleBinding extends FolderElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorMultipleBinding#getLayerOperatorConfig <em>Layer Operator Config</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Layer Operator Config</em>' reference.
 	 * @see #getLayerOperatorConfig()
@@ -69,7 +69,7 @@ public interface LayerOperatorMultipleBinding extends FolderElement {
 	 * If the meaning of the '<em>Bindings</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bindings</em>' containment reference list.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getLayerOperatorMultipleBinding_Bindings()
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding#getOwner

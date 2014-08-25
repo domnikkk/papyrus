@@ -40,7 +40,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	 * The cached value of the '{@link #getBase_StateMachine() <em>Base State Machine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_StateMachine()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModeBehaviorImpl() {
@@ -60,7 +60,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StateMachine basicGetBase_StateMachine() {
@@ -101,7 +101,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class ModeBehaviorImpl extends EObjectImpl implements ModeBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

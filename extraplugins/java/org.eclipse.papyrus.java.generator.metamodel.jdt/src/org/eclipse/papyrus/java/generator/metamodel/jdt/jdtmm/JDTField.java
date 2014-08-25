@@ -63,7 +63,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Owner</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' container reference.
 	 * @see #setOwner(JDTType)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTField_Owner()
@@ -77,7 +77,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#getOwner <em>Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()
@@ -93,7 +93,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Abstract</em>' attribute.
 	 * @see #setAbstract(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTField_Abstract()
@@ -106,7 +106,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#isAbstract <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Abstract</em>' attribute.
 	 * @see #isAbstract()
@@ -122,7 +122,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Final</em>' attribute.
 	 * @see #setFinal(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTField_Final()
@@ -135,7 +135,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#isFinal <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Final</em>' attribute.
 	 * @see #isFinal()
@@ -151,7 +151,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Static</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Static</em>' attribute.
 	 * @see #setStatic(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTField_Static()
@@ -164,7 +164,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#isStatic <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Static</em>' attribute.
 	 * @see #isStatic()
@@ -180,7 +180,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Is Multi Valued</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Multi Valued</em>' attribute.
 	 * @see #setIsMultiValued(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTField_IsMultiValued()
@@ -193,7 +193,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#isMultiValued <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Multi Valued</em>' attribute.
 	 * @see #isMultiValued()
@@ -208,7 +208,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(JDTType)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTField_Type()
@@ -221,7 +221,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()
@@ -236,7 +236,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTField_Value()
@@ -249,7 +249,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()
@@ -265,7 +265,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Generate Getter</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Generate Getter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.TrueFalseDefault
 	 * @see #setGenerateGetter(TrueFalseDefault)
@@ -279,7 +279,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#getGenerateGetter <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Generate Getter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.TrueFalseDefault
@@ -296,7 +296,7 @@ public interface JDTField extends JDTMember {
 	 * If the meaning of the '<em>Generate Setter</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Generate Setter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.TrueFalseDefault
 	 * @see #setGenerateSetter(TrueFalseDefault)
@@ -310,7 +310,7 @@ public interface JDTField extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#getGenerateSetter <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Generate Setter</em>' attribute.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.TrueFalseDefault

@@ -14,7 +14,6 @@ package org.eclipse.papyrus.layers.configmodel.layersconfig.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
@@ -39,7 +38,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -49,7 +48,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyIdImpl() {
@@ -59,7 +58,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,7 +69,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +89,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TypeConfig basicGetType() {
@@ -100,7 +99,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +114,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +132,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +148,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +164,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

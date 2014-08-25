@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
@@ -34,7 +33,7 @@ public interface TagSpecificationRule extends EObject
 	 * If the meaning of the '<em>Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property</em>' reference.
 	 * @see #setProperty(Property)
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage#getTagSpecificationRule_Property()
@@ -47,7 +46,7 @@ public interface TagSpecificationRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule#getProperty <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Property</em>' reference.
 	 * @see #getProperty()
@@ -62,7 +61,7 @@ public interface TagSpecificationRule extends EObject
 	 * If the meaning of the '<em>Value</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(ExpressionValueRule)
 	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage#getTagSpecificationRule_Value()
@@ -75,7 +74,7 @@ public interface TagSpecificationRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule#getValue <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' containment reference.
 	 * @see #getValue()
@@ -86,7 +85,7 @@ public interface TagSpecificationRule extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getExpectedType(this) ;'"
 	 * @generated
@@ -96,7 +95,7 @@ public interface TagSpecificationRule extends EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getContextElement(this) ;'"
 	 * @generated

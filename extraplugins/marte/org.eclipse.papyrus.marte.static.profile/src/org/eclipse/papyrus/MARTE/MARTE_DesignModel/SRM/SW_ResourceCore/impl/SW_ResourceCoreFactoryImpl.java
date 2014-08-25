@@ -26,7 +26,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwAccessS
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SW_ResourceCoreFactoryImpl extends EFactoryImpl implements SW_ResourceCoreFactory {
@@ -34,7 +34,7 @@ public class SW_ResourceCoreFactoryImpl extends EFactoryImpl implements SW_Resou
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SW_ResourceCoreFactory init() {
@@ -53,7 +53,7 @@ public class SW_ResourceCoreFactoryImpl extends EFactoryImpl implements SW_Resou
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SW_ResourceCoreFactoryImpl() {
@@ -63,7 +63,7 @@ public class SW_ResourceCoreFactoryImpl extends EFactoryImpl implements SW_Resou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class SW_ResourceCoreFactoryImpl extends EFactoryImpl implements SW_Resou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class SW_ResourceCoreFactoryImpl extends EFactoryImpl implements SW_Resou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class SW_ResourceCoreFactoryImpl extends EFactoryImpl implements SW_Resou
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

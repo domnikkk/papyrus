@@ -15,9 +15,9 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivi
 
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ObjectNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.Token;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.ExpansionNode;
 import org.eclipse.uml2.uml.ExpansionRegion;
 

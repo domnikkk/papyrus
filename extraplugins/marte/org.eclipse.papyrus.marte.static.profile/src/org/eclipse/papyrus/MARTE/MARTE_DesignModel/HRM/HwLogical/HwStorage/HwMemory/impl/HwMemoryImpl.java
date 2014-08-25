@@ -48,7 +48,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getAdressSize() <em>Adress Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdressSize()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getAdressSize() <em>Adress Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdressSize()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getTimings() <em>Timings</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimings()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -146,7 +146,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwMemoryImpl() {
@@ -156,7 +156,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +308,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -338,7 +338,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +389,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -408,7 +408,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -427,7 +427,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

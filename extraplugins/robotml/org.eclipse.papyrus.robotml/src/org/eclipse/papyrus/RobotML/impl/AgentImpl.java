@@ -5,11 +5,8 @@ package org.eclipse.papyrus.RobotML.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.RobotML.Agent;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.Surface;
@@ -32,7 +29,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	 * The cached value of the '{@link #getMovesOver() <em>Moves Over</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMovesOver()
 	 * @generated
 	 * @ordered
@@ -42,7 +39,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AgentImpl() {
@@ -52,7 +49,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,7 +60,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Surface> getMovesOver() {
@@ -76,7 +73,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +88,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -109,7 +106,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +122,7 @@ public class AgentImpl extends PhysicalObjectImpl implements Agent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

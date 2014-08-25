@@ -55,7 +55,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	 * The cached value of the '{@link #getSafetyRequirement() <em>Safety Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSafetyRequirement()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	 * The cached value of the '{@link #getSupportedArgument() <em>Supported Argument</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSupportedArgument()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	 * The cached value of the '{@link #getJustification() <em>Justification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJustification()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	 * The cached value of the '{@link #getEvidence() <em>Evidence</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvidence()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	 * The cached value of the '{@link #getGoalDecompositionStrategy() <em>Goal Decomposition Strategy</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGoalDecompositionStrategy()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ClaimImpl() {
@@ -130,7 +130,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -220,7 +220,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -310,7 +310,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -320,7 +320,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +363,7 @@ public class ClaimImpl extends TraceableSpecificationImpl implements Claim {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

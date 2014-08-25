@@ -40,7 +40,7 @@ public interface HwPowerSupply extends HwComponent {
 	 * If the meaning of the '<em>Supplied Power</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Supplied Power</em>' attribute.
 	 * @see #setSuppliedPower(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwPowerPackage#getHwPowerSupply_SuppliedPower()
@@ -53,7 +53,7 @@ public interface HwPowerSupply extends HwComponent {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwPowerSupply#getSuppliedPower <em>Supplied Power</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Supplied Power</em>' attribute.
 	 * @see #getSuppliedPower()
@@ -68,7 +68,7 @@ public interface HwPowerSupply extends HwComponent {
 	 * If the meaning of the '<em>Capacity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Capacity</em>' attribute.
 	 * @see #setCapacity(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwPowerPackage#getHwPowerSupply_Capacity()
@@ -81,7 +81,7 @@ public interface HwPowerSupply extends HwComponent {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwPowerSupply#getCapacity <em>Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Capacity</em>' attribute.
 	 * @see #getCapacity()

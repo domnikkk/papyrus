@@ -14,7 +14,6 @@ package org.eclipse.papyrus.robotml.diagram.ui;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.robotml.diagram.common.commands.CreateRobotmlModelCommand;
 import org.eclipse.papyrus.uml.diagram.wizards.CreateModelWizard;
-
 import org.eclipse.papyrus.uml.diagram.wizards.pages.SelectDiagramCategoryPage;
 import org.eclipse.ui.IWorkbench;
 

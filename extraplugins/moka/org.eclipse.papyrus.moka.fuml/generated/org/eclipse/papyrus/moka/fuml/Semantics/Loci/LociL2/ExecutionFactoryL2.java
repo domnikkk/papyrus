@@ -13,13 +13,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL2;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ReadStructuralFeatureActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.CallBehaviorActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.CallOperationActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.InputPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.OutputPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.SendSignalActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ClearAssociationActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ClearStructuralFeatureActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.CreateLinkActionActivation;
@@ -28,6 +27,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.Destr
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.DestroyObjectActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ReadLinkActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ReadSelfActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ReadStructuralFeatureActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.RemoveStructuralFeatureValueActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.TestIdentityActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ValueSpecificationActionActivation;

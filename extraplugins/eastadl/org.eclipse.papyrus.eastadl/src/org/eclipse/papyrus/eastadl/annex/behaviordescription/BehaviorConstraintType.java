@@ -38,7 +38,7 @@ public interface BehaviorConstraintType extends Context {
 	 * If the meaning of the '<em>Shared Variable</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Shared Variable</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintType_SharedVariable()
 	 * @model ordered="false"
@@ -54,7 +54,7 @@ public interface BehaviorConstraintType extends Context {
 	 * If the meaning of the '<em>Interface Variable</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Interface Variable</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintType_InterfaceVariable()
 	 * @model ordered="false"
@@ -70,7 +70,7 @@ public interface BehaviorConstraintType extends Context {
 	 * If the meaning of the '<em>Part</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Part</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintType_Part()
 	 * @model ordered="false"
@@ -86,7 +86,7 @@ public interface BehaviorConstraintType extends Context {
 	 * If the meaning of the '<em>Attribute Quantificationconstraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attribute Quantificationconstraint</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintType_AttributeQuantificationconstraint()
 	 * @model ordered="false"
@@ -102,7 +102,7 @@ public interface BehaviorConstraintType extends Context {
 	 * If the meaning of the '<em>Temporal Constraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Temporal Constraint</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintType_TemporalConstraint()
 	 * @model ordered="false"
@@ -118,7 +118,7 @@ public interface BehaviorConstraintType extends Context {
 	 * If the meaning of the '<em>Computation Constraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Computation Constraint</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#getBehaviorConstraintType_ComputationConstraint()
 	 * @model ordered="false"

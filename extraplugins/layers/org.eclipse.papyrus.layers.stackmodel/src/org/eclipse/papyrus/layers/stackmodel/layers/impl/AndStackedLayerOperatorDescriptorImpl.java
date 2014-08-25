@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.layers.stackmodel.layers.AndStackedLayerOperatorDescriptor;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 
@@ -30,7 +29,7 @@ public class AndStackedLayerOperatorDescriptorImpl extends StackedLayerOperatorD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AndStackedLayerOperatorDescriptorImpl() {
@@ -40,7 +39,7 @@ public class AndStackedLayerOperatorDescriptorImpl extends StackedLayerOperatorD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

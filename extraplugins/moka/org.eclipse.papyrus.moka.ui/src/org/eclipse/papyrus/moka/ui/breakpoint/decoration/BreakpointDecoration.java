@@ -35,7 +35,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getImageDescriptorForGE(org.eclipse.papyrus.infra.services.
 	 * markerlistener.IPapyrusMarker)
 	 */
@@ -54,7 +54,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getImageDescriptorForME(org.eclipse.papyrus.infra.services.
 	 * markerlistener.IPapyrusMarker)
 	 */
@@ -73,7 +73,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getPreferedPosition(org.eclipse.papyrus.infra.services.markerlistener
 	 * .IPapyrusMarker)
@@ -84,7 +84,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getMessage(org.eclipse.papyrus.infra.services.markerlistener.
 	 * IPapyrusMarker)
 	 */
@@ -95,7 +95,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#getPriority(org.eclipse.papyrus.infra.services.markerlistener.
 	 * IPapyrusMarker)
 	 */
@@ -105,7 +105,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#supportsMarkerPropagation()
 	 */
 	public MarkChildren supportsMarkerPropagation() {
@@ -114,7 +114,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationSpecificFunctions#markerPropagation(org.eclipse.emf.common.util.EList)
 	 */
 	public IPapyrusDecoration markerPropagation(EList<IPapyrusDecoration> childDecorations) {

@@ -60,7 +60,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#adjustForNumColumns(int)
 	 */
 	@Override
@@ -74,7 +74,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.preference.FieldEditor#doFillIntoGrid(org.eclipse.swt
 	 * .widgets.Composite, int)
@@ -173,7 +173,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoad()
 	 */
 	@Override
@@ -183,7 +183,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoadDefault()
 	 */
 	@Override
@@ -200,7 +200,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doStore()
 	 */
 	@Override
@@ -213,7 +213,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#getNumberOfControls()
 	 */
 	@Override

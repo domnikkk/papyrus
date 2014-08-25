@@ -20,7 +20,7 @@ public class ExternalEventImpl extends EventImpl implements ExternalEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExternalEventImpl() {
@@ -30,7 +30,7 @@ public class ExternalEventImpl extends EventImpl implements ExternalEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

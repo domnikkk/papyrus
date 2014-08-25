@@ -31,7 +31,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommunicationFactory {
@@ -39,7 +39,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HwCommunicationFactory init() {
@@ -58,7 +58,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HwCommunicationFactoryImpl() {
@@ -68,7 +68,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

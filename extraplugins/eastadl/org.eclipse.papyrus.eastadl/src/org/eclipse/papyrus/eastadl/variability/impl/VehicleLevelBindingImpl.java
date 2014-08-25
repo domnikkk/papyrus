@@ -43,7 +43,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	 * The cached value of the '{@link #getSourceVehicleFeatureModel() <em>Source Vehicle Feature Model</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSourceVehicleFeatureModel()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	 * The cached value of the '{@link #getTargetFeatureModel() <em>Target Feature Model</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetFeatureModel()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VehicleLevelBindingImpl() {
@@ -74,7 +74,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -152,7 +152,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class VehicleLevelBindingImpl extends ConfigurationDecisionModelImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

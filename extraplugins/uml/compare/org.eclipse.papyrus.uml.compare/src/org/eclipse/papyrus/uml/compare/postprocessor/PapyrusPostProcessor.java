@@ -39,7 +39,7 @@ public class PapyrusPostProcessor implements IPostProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.compare.postprocessor.IPostProcessor#postMatch(org.eclipse.emf.compare.Comparison, org.eclipse.emf.common.util.Monitor)
 	 */
 	@Override
@@ -48,7 +48,7 @@ public class PapyrusPostProcessor implements IPostProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.compare.postprocessor.IPostProcessor#postDiff(org.eclipse.emf.compare.Comparison, org.eclipse.emf.common.util.Monitor)
 	 */
 	@Override
@@ -57,7 +57,7 @@ public class PapyrusPostProcessor implements IPostProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.compare.postprocessor.IPostProcessor#postRequirements(org.eclipse.emf.compare.Comparison,
 	 * org.eclipse.emf.common.util.Monitor)
 	 */
@@ -67,7 +67,7 @@ public class PapyrusPostProcessor implements IPostProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.compare.postprocessor.IPostProcessor#postEquivalences(org.eclipse.emf.compare.Comparison,
 	 * org.eclipse.emf.common.util.Monitor)
 	 */
@@ -77,7 +77,7 @@ public class PapyrusPostProcessor implements IPostProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.compare.postprocessor.IPostProcessor#postConflicts(org.eclipse.emf.compare.Comparison,
 	 * org.eclipse.emf.common.util.Monitor)
 	 */

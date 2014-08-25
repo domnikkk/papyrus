@@ -42,7 +42,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	 * The cached value of the '{@link #getSuspentions() <em>Suspentions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuspentions()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	 * The cached value of the '{@link #getBlockT() <em>Block T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBlockT()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	 * The cached value of the '{@link #getOverlaps() <em>Overlaps</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOverlaps()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SaSchedObsImpl() {
@@ -84,7 +84,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -182,7 +182,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class SaSchedObsImpl extends GaTimedObsImpl implements SaSchedObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -48,7 +48,7 @@ public interface TimedProcessing extends TimedElement {
 	 * If the meaning of the '<em>Base Action</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Action</em>' reference.
 	 * @see #setBase_Action(Action)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedProcessing_Base_Action()
@@ -61,7 +61,7 @@ public interface TimedProcessing extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Action <em>Base Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Action</em>' reference.
 	 * @see #getBase_Action()
@@ -76,7 +76,7 @@ public interface TimedProcessing extends TimedElement {
 	 * If the meaning of the '<em>Base Behavior</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Behavior</em>' reference.
 	 * @see #setBase_Behavior(Behavior)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedProcessing_Base_Behavior()
@@ -89,7 +89,7 @@ public interface TimedProcessing extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Behavior <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Behavior</em>' reference.
 	 * @see #getBase_Behavior()
@@ -104,7 +104,7 @@ public interface TimedProcessing extends TimedElement {
 	 * If the meaning of the '<em>Base Message</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Message</em>' reference.
 	 * @see #setBase_Message(Message)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedProcessing_Base_Message()
@@ -117,7 +117,7 @@ public interface TimedProcessing extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Message <em>Base Message</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Message</em>' reference.
 	 * @see #getBase_Message()
@@ -132,7 +132,7 @@ public interface TimedProcessing extends TimedElement {
 	 * If the meaning of the '<em>Duration</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Duration</em>' containment reference.
 	 * @see #setDuration(ValueSpecification)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedProcessing_Duration()
@@ -145,7 +145,7 @@ public interface TimedProcessing extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getDuration <em>Duration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Duration</em>' containment reference.
 	 * @see #getDuration()
@@ -160,7 +160,7 @@ public interface TimedProcessing extends TimedElement {
 	 * If the meaning of the '<em>Start</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Start</em>' reference.
 	 * @see #setStart(Event)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedProcessing_Start()
@@ -173,7 +173,7 @@ public interface TimedProcessing extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getStart <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Start</em>' reference.
 	 * @see #getStart()
@@ -188,7 +188,7 @@ public interface TimedProcessing extends TimedElement {
 	 * If the meaning of the '<em>Finish</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Finish</em>' reference.
 	 * @see #setFinish(Event)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getTimedProcessing_Finish()
@@ -201,7 +201,7 @@ public interface TimedProcessing extends TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getFinish <em>Finish</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Finish</em>' reference.
 	 * @see #getFinish()

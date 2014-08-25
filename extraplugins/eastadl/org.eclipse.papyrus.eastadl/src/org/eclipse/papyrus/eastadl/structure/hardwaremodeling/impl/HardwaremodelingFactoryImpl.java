@@ -43,14 +43,14 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Sensor;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class HardwaremodelingFactoryImpl extends EFactoryImpl implements HardwaremodelingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -63,7 +63,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static HardwaremodelingFactory init() {
@@ -82,7 +82,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HardwaremodelingFactoryImpl() {
@@ -92,7 +92,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HardwareBusKind createHardwareBusKindFromString(EDataType eDataType, String initialValue) {
@@ -174,7 +174,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertHardwareBusKindToString(EDataType eDataType, Object instanceValue) {
@@ -184,7 +184,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IOHardwarePinKind createIOHardwarePinKindFromString(EDataType eDataType, String initialValue) {
@@ -288,7 +288,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertIOHardwarePinKindToString(EDataType eDataType, Object instanceValue) {
@@ -298,7 +298,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -310,7 +310,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +322,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +334,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -346,7 +346,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +358,7 @@ public class HardwaremodelingFactoryImpl extends EFactoryImpl implements Hardwar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

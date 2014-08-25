@@ -53,7 +53,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -61,7 +61,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl <em>Feature Model</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureModel()
 		 * @generated
@@ -88,7 +88,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Root Feature</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_MODEL__ROOT_FEATURE = eINSTANCE.getFeatureModel_RootFeature();
@@ -97,7 +97,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature Link</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_MODEL__FEATURE_LINK = eINSTANCE.getFeatureModel_FeatureLink();
@@ -106,7 +106,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature Constraint</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_MODEL__FEATURE_CONSTRAINT = eINSTANCE.getFeatureModel_FeatureConstraint();
@@ -114,7 +114,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureLinkImpl <em>Feature Link</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureLinkImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureLink()
 		 * @generated
@@ -124,7 +124,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Is Bidirectional</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_LINK__IS_BIDIRECTIONAL = eINSTANCE.getFeatureLink_IsBidirectional();
@@ -133,7 +133,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Custom Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_LINK__CUSTOM_TYPE = eINSTANCE.getFeatureLink_CustomType();
@@ -166,7 +166,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Association Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_LINK__BASE_ASSOCIATION_CLASS = eINSTANCE.getFeatureLink_Base_AssociationClass();
@@ -175,7 +175,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_LINK__KIND = eINSTANCE.getFeatureLink_Kind();
@@ -183,7 +183,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureImpl <em>Feature</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeature()
 		 * @generated
@@ -209,7 +209,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Required Binding Time</b></em>' reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE__REQUIRED_BINDING_TIME = eINSTANCE.getFeature_RequiredBindingTime();
@@ -217,7 +217,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Actual Binding Time</b></em>' reference feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE__ACTUAL_BINDING_TIME = eINSTANCE.getFeature_ActualBindingTime();
@@ -226,7 +226,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature Parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE__FEATURE_PARAMETER = eINSTANCE.getFeature_FeatureParameter();
@@ -235,7 +235,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Child Node</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE__CHILD_NODE = eINSTANCE.getFeature_ChildNode();
@@ -243,7 +243,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureTreeNodeImpl <em>Feature Tree Node</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureTreeNodeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureTreeNode()
 		 * @generated
@@ -253,7 +253,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.BindingTimeImpl <em>Binding Time</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.BindingTimeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getBindingTime()
 		 * @generated
@@ -279,7 +279,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureGroupImpl <em>Feature Group</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureGroupImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureGroup()
 		 * @generated
@@ -306,7 +306,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Child Feature</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_GROUP__CHILD_FEATURE = eINSTANCE.getFeatureGroup_ChildFeature();
@@ -314,7 +314,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureConstraintImpl <em>Feature Constraint</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureConstraintImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureConstraint()
 		 * @generated
@@ -341,7 +341,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Constraint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_CONSTRAINT__BASE_CONSTRAINT = eINSTANCE.getFeatureConstraint_Base_Constraint();
@@ -349,7 +349,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTimeKind <em>Binding Time Kind</em>}' enum.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTimeKind
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getBindingTimeKind()
 		 * @generated
@@ -360,7 +360,7 @@ public interface FeaturemodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind <em>Variability Dependency Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind
 		 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getVariabilityDependencyKind()
 		 * @generated
@@ -372,7 +372,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "featuremodeling";
@@ -380,7 +380,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Structure/FeatureModeling/1";
@@ -388,7 +388,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "FeatureModeling";
@@ -396,7 +396,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	FeaturemodelingPackage eINSTANCE = org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl.init();
@@ -404,7 +404,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl <em>Feature Model</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureModel()
 	 * @generated
@@ -414,7 +414,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureLinkImpl <em>Feature Link</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureLinkImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureLink()
 	 * @generated
@@ -424,7 +424,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureImpl <em>Feature</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeature()
 	 * @generated
@@ -434,7 +434,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureTreeNodeImpl <em>Feature Tree Node</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureTreeNodeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureTreeNode()
 	 * @generated
@@ -444,7 +444,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.BindingTimeImpl <em>Binding Time</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.BindingTimeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getBindingTime()
 	 * @generated
@@ -454,7 +454,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureGroupImpl <em>Feature Group</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureGroupImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureGroup()
 	 * @generated
@@ -464,7 +464,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureConstraintImpl <em>Feature Constraint</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureConstraintImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getFeatureConstraint()
 	 * @generated
@@ -475,7 +475,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -485,7 +485,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -495,7 +495,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -505,7 +505,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -542,7 +542,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Feature Tree Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -552,7 +552,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -562,7 +562,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -572,7 +572,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -582,7 +582,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -610,7 +610,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -620,7 +620,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -630,7 +630,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Root Feature</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -640,7 +640,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature Link</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,7 +650,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -660,7 +660,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature Model</em>' class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -670,7 +670,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Feature Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -680,7 +680,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -690,7 +690,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -700,7 +700,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -710,7 +710,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -738,7 +738,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -748,7 +748,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -758,7 +758,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Required Binding Time</b></em>' reference.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -768,7 +768,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Actual Binding Time</b></em>' reference.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -778,7 +778,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -788,7 +788,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Node</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -798,7 +798,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -808,7 +808,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -818,7 +818,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -828,7 +828,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -838,7 +838,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -848,7 +848,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -858,7 +858,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -868,7 +868,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Binding Time</em>' class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -878,7 +878,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Binding Time</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -888,7 +888,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -898,7 +898,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -908,7 +908,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -918,7 +918,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Bidirectional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -928,7 +928,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Custom Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -938,7 +938,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -948,7 +948,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -958,7 +958,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>End</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -968,7 +968,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Association Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -978,7 +978,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -988,7 +988,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature Link</em>' class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -998,7 +998,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Feature Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1008,7 +1008,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1018,7 +1018,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1028,7 +1028,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1038,7 +1038,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Criterion</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1048,7 +1048,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1058,7 +1058,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1077,7 +1077,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Feature Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1087,7 +1087,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1097,7 +1097,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1107,7 +1107,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1117,7 +1117,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1145,7 +1145,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1155,7 +1155,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1165,7 +1165,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Child Feature</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1175,7 +1175,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature Group</em>' class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1185,7 +1185,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Feature Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1194,7 +1194,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTimeKind <em>Binding Time Kind</em>}' enum.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTimeKind
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getBindingTimeKind()
 	 * @generated
@@ -1205,7 +1205,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind <em>Variability Dependency Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeaturemodelingPackageImpl#getVariabilityDependencyKind()
 	 * @generated
@@ -1215,7 +1215,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTime <em>Binding Time</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Binding Time</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTime
 	 * @generated
@@ -1225,7 +1225,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTime#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTime#getKind()
 	 * @see #getBindingTime()
@@ -1237,7 +1237,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTime#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTime#getBase_Class()
 	 * @see #getBindingTime()
@@ -1248,7 +1248,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTimeKind <em>Binding Time Kind</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Binding Time Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.BindingTimeKind
 	 * @generated
@@ -1258,7 +1258,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature <em>Feature</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature
 	 * @generated
@@ -1269,7 +1269,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getBase_Class()
 	 * @see #getFeature()
@@ -1280,7 +1280,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getActualBindingTime <em>Actual Binding Time</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Actual Binding Time</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getActualBindingTime()
 	 * @see #getFeature()
@@ -1291,7 +1291,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Cardinality</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getCardinality()
 	 * @see #getFeature()
@@ -1303,7 +1303,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getChildNode <em>Child Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Child Node</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getChildNode()
 	 * @see #getFeature()
@@ -1315,7 +1315,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getFeatureParameter <em>Feature Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Feature Parameter</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getFeatureParameter()
 	 * @see #getFeature()
@@ -1326,7 +1326,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getRequiredBindingTime <em>Required Binding Time</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Required Binding Time</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getRequiredBindingTime()
 	 * @see #getFeature()
@@ -1337,7 +1337,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint <em>Feature Constraint</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint
 	 * @generated
@@ -1347,7 +1347,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint#getCriterion <em>Criterion</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Criterion</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint#getCriterion()
 	 * @see #getFeatureConstraint()
@@ -1359,7 +1359,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint#getBase_Class()
 	 * @see #getFeatureConstraint()
@@ -1371,7 +1371,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint#getBase_Constraint <em>Base Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureConstraint#getBase_Constraint()
 	 * @see #getFeatureConstraint()
@@ -1382,7 +1382,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup <em>Feature Group</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Group</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup
 	 * @generated
@@ -1393,7 +1393,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getBase_Class()
 	 * @see #getFeatureGroup()
@@ -1404,7 +1404,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Cardinality</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getCardinality()
 	 * @see #getFeatureGroup()
@@ -1416,7 +1416,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getChildFeature <em>Child Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Child Feature</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureGroup#getChildFeature()
 	 * @see #getFeatureGroup()
@@ -1427,7 +1427,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink <em>Feature Link</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Link</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink
 	 * @generated
@@ -1438,7 +1438,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getCustomType <em>Custom Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Custom Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getCustomType()
 	 * @see #getFeatureLink()
@@ -1450,7 +1450,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getBase_Dependency <em>Base Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Dependency</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getBase_Dependency()
 	 * @see #getFeatureLink()
@@ -1461,7 +1461,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>End</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getEnd()
 	 * @see #getFeatureLink()
@@ -1473,7 +1473,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getBase_AssociationClass <em>Base Association Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Association Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getBase_AssociationClass()
 	 * @see #getFeatureLink()
@@ -1484,7 +1484,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#isIsBidirectional <em>Is Bidirectional</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Bidirectional</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#isIsBidirectional()
 	 * @see #getFeatureLink()
@@ -1496,7 +1496,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getKind()
 	 * @see #getFeatureLink()
@@ -1507,7 +1507,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureLink#getStart()
 	 * @see #getFeatureLink()
@@ -1518,7 +1518,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel <em>Feature Model</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Model</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel
 	 * @generated
@@ -1529,7 +1529,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getBase_Package()
 	 * @see #getFeatureModel()
@@ -1541,7 +1541,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getBase_Class()
 	 * @see #getFeatureModel()
@@ -1553,7 +1553,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getFeatureConstraint <em>Feature Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Feature Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getFeatureConstraint()
 	 * @see #getFeatureModel()
@@ -1565,7 +1565,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getFeatureLink <em>Feature Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Feature Link</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getFeatureLink()
 	 * @see #getFeatureModel()
@@ -1577,7 +1577,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getRootFeature <em>Root Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Root Feature</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureModel#getRootFeature()
 	 * @see #getFeatureModel()
@@ -1589,7 +1589,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1598,7 +1598,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureTreeNode <em>Feature Tree Node</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Tree Node</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeatureTreeNode
 	 * @generated
@@ -1609,7 +1609,7 @@ public interface FeaturemodelingPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind <em>Variability Dependency Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Variability Dependency Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependencyKind
 	 * @generated

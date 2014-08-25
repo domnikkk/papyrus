@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Reg Exp Layer Descriptor</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RegExpLayerDescriptorTest extends LayerDescriptorTest {
@@ -19,7 +19,7 @@ public class RegExpLayerDescriptorTest extends LayerDescriptorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class RegExpLayerDescriptorTest extends LayerDescriptorTest {
 	 * Constructs a new Reg Exp Layer Descriptor test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RegExpLayerDescriptorTest(String name) {
@@ -41,7 +41,7 @@ public class RegExpLayerDescriptorTest extends LayerDescriptorTest {
 	 * Returns the fixture for this Reg Exp Layer Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class RegExpLayerDescriptorTest extends LayerDescriptorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class RegExpLayerDescriptorTest extends LayerDescriptorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

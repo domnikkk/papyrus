@@ -17,11 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Activator;
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Evaluation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueBehavior;

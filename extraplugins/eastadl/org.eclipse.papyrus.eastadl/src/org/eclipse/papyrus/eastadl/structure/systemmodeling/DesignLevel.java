@@ -82,7 +82,7 @@ public interface DesignLevel extends Context {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getDesignLevel_Base_Class()
@@ -95,7 +95,7 @@ public interface DesignLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -110,7 +110,7 @@ public interface DesignLevel extends Context {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getDesignLevel_Base_Package()
@@ -123,7 +123,7 @@ public interface DesignLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -139,7 +139,7 @@ public interface DesignLevel extends Context {
 	 * If the meaning of the '<em>Allocation</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocation</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getDesignLevel_Allocation()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
@@ -151,7 +151,7 @@ public interface DesignLevel extends Context {
 	 * Returns the value of the '<em><b>Functional Design Architecture</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Functional Design Architecture</em>' reference.
 	 * @see #setFunctionalDesignArchitecture(DesignFunctionPrototype)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getDesignLevel_FunctionalDesignArchitecture()
@@ -167,7 +167,7 @@ public interface DesignLevel extends Context {
 	 * If the meaning of the '<em>Hardware Design Architecture</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hardware Design Architecture</em>' reference.
 	 * @see #setHardwareDesignArchitecture(HardwareComponentPrototype)
 	 * @see org.eclipse.papyrus.eastadl.structure.systemmodeling.SystemmodelingPackage#getDesignLevel_HardwareDesignArchitecture()
@@ -180,7 +180,7 @@ public interface DesignLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getFunctionalDesignArchitecture <em>Functional Design Architecture</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Functional Design Architecture</em>' reference.
 	 * @see #getFunctionalDesignArchitecture()
@@ -192,7 +192,7 @@ public interface DesignLevel extends Context {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.systemmodeling.DesignLevel#getHardwareDesignArchitecture <em>Hardware Design Architecture</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hardware Design Architecture</em>' reference.
 	 * @see #getHardwareDesignArchitecture()

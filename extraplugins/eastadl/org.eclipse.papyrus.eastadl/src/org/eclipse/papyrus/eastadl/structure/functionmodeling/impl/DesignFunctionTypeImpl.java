@@ -46,7 +46,7 @@ public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DesignFunctionTypeImpl() {
@@ -55,7 +55,7 @@ public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class DesignFunctionTypeImpl extends FunctionTypeImpl implements DesignFu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

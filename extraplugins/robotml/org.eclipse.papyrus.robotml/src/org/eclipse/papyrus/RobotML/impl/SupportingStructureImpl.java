@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 import org.eclipse.papyrus.RobotML.SupportingStructure;
 
@@ -20,7 +19,7 @@ public class SupportingStructureImpl extends HardwareImpl implements SupportingS
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SupportingStructureImpl() {
@@ -30,7 +29,7 @@ public class SupportingStructureImpl extends HardwareImpl implements SupportingS
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

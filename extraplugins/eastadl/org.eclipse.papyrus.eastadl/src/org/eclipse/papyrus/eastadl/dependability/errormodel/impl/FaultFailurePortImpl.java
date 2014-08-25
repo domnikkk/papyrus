@@ -54,7 +54,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	 * The cached value of the '{@link #getFunctionTarget() <em>Function Target</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionTarget()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	 * The cached value of the '{@link #getHwTarget() <em>Hw Target</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHwTarget()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FaultFailurePortImpl() {
@@ -96,7 +96,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -200,7 +200,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -241,7 +241,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +278,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +306,7 @@ public abstract class FaultFailurePortImpl extends AnomalyImpl implements FaultF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

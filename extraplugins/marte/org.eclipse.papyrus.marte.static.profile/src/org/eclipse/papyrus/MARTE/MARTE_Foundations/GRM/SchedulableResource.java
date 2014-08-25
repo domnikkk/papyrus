@@ -42,7 +42,7 @@ public interface SchedulableResource extends Resource {
 	 * If the meaning of the '<em>Sched Params</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sched Params</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getSchedulableResource_SchedParams()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.SchedParameters" ordered="false"
@@ -58,7 +58,7 @@ public interface SchedulableResource extends Resource {
 	 * If the meaning of the '<em>Dependent Scheduler</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Dependent Scheduler</em>' reference.
 	 * @see #setDependentScheduler(SecondaryScheduler)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getSchedulableResource_DependentScheduler()
@@ -72,7 +72,7 @@ public interface SchedulableResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getDependentScheduler <em>Dependent Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Dependent Scheduler</em>' reference.
 	 * @see #getDependentScheduler()
@@ -88,7 +88,7 @@ public interface SchedulableResource extends Resource {
 	 * If the meaning of the '<em>Host</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Host</em>' reference.
 	 * @see #setHost(Scheduler)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getSchedulableResource_Host()
@@ -102,7 +102,7 @@ public interface SchedulableResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SchedulableResource#getHost <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Host</em>' reference.
 	 * @see #getHost()

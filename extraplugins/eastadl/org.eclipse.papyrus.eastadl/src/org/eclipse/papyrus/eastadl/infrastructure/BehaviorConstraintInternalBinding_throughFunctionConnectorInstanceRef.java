@@ -31,7 +31,7 @@ public interface BehaviorConstraintInternalBinding_throughFunctionConnectorInsta
 	 * If the meaning of the '<em>Function Connector</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Connector</em>' reference.
 	 * @see #setFunctionConnector(FunctionConnector)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionConnector()
@@ -44,7 +44,7 @@ public interface BehaviorConstraintInternalBinding_throughFunctionConnectorInsta
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.BehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef#getFunctionConnector <em>Function Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function Connector</em>' reference.
 	 * @see #getFunctionConnector()
@@ -60,7 +60,7 @@ public interface BehaviorConstraintInternalBinding_throughFunctionConnectorInsta
 	 * If the meaning of the '<em>Function Prototype</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Prototype</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef_FunctionPrototype()
 	 * @model ordered="false"

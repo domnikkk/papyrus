@@ -40,7 +40,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The default value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The default value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	 * The cached value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -105,7 +105,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PaLogicalResourceImpl() {
@@ -115,7 +115,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public class PaLogicalResourceImpl extends ResourceImpl implements PaLogicalReso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

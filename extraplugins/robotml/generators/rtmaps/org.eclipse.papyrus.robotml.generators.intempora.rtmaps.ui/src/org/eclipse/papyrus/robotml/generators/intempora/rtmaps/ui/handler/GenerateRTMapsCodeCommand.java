@@ -84,10 +84,10 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 		codeGenerator.runAcceleoTransformation(selectedElement, rtmapsTargetFolderPath);
 		/*
 		 * try {
-		 * 
+		 *
 		 * monitordialog.run(true, true, new IRunnableWithProgress() {
-		 * 
-		 * 
+		 *
+		 *
 		 * public void run(IProgressMonitor monitor)
 		 * throws InvocationTargetException, InterruptedException {
 		 * monitor.beginTask("Generating Acceleo files", 100);
@@ -95,9 +95,9 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 		 * codeGenerator.runAcceleoTransformation(selectedElement, rtmapsTargetFolderPath);
 		 * monitor.done();
 		 * }
-		 * 
+		 *
 		 * });
-		 * 
+		 *
 		 * } catch (InvocationTargetException e) {
 		 * // TODO Auto-generated catch block
 		 * e.printStackTrace();

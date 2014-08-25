@@ -38,7 +38,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	 * The cached value of the '{@link #getVisibleThroughFunctionPort() <em>Visible Through Function Port</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibleThroughFunctionPort()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	 * The cached value of the '{@link #getVisibleThroughHardwarePin() <em>Visible Through Hardware Pin</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibleThroughHardwarePin()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	 * The cached value of the '{@link #getVisibleThroughHardwarePort() <em>Visible Through Hardware Port</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibleThroughHardwarePort()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAttribute()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	 * The cached value of the '{@link #getVisibleThroughAnomaly() <em>Visible Through Anomaly</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibleThroughAnomaly()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BehaviorAttributeBindingImpl() {
@@ -102,7 +102,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +169,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -240,7 +240,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +268,7 @@ public class BehaviorAttributeBindingImpl extends RelationshipImpl implements Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

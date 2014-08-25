@@ -41,7 +41,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	 * The cached value of the '{@link #getResource() <em>Resource</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResource()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	 * The default value of the '{@link #getResUnits() <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResUnits()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	 * The cached value of the '{@link #getResUnits() <em>Res Units</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResUnits()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PaResPassStepImpl() {
@@ -83,7 +83,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Resource basicGetResource() {
@@ -124,7 +124,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class PaResPassStepImpl extends GaStepImpl implements PaResPassStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

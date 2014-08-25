@@ -49,7 +49,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	 * The cached value of the '{@link #getAbstractVVCase() <em>Abstract VV Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAbstractVVCase()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	 * The cached value of the '{@link #getVvTarget() <em>Vv Target</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVvTarget()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	 * The cached value of the '{@link #getVvSubject() <em>Vv Subject</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVvSubject()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VVCaseImpl() {
@@ -102,7 +102,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -143,7 +143,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VVCase basicGetAbstractVVCase() {
@@ -188,7 +188,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +327,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -355,7 +355,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public class VVCaseImpl extends TraceableSpecificationImpl implements VVCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

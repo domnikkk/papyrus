@@ -29,7 +29,7 @@ public interface Agent extends PhysicalObject {
 	 * If the meaning of the '<em>Moves Over</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Moves Over</em>' reference list.
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getAgent_MovesOver()
 	 * @model ordered="false"

@@ -18,38 +18,31 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.facade.FacadePackage;
-
 import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
 import org.eclipse.papyrus.facade.extensiondefinition.Combination;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinitionKind;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionFactory;
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
-
 import org.eclipse.papyrus.facade.impl.FacadePackageImpl;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualmetamodelPackageImpl;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtensiondefinitionPackageImpl extends EPackageImpl implements ExtensiondefinitionPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass extensionDefinitionEClass = null;
@@ -57,7 +50,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass baseMetaclassEClass = null;
@@ -65,7 +58,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass combinationEClass = null;
@@ -73,7 +66,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum extensionDefinitionKindEEnum = null;
@@ -83,7 +76,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#eNS_URI
 	 * @see #init()
@@ -96,7 +89,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -107,7 +100,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	 * <p>
 	 * This method is used to initialize {@link ExtensiondefinitionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -154,7 +147,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +158,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +169,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +180,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +191,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +202,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +213,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +224,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +235,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +246,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +257,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +268,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +279,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +290,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +301,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +312,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +323,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -340,7 +333,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -374,7 +367,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -384,7 +377,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

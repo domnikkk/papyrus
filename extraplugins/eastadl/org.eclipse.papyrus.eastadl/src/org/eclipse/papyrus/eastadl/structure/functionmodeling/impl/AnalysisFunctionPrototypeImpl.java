@@ -44,7 +44,7 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AnalysisFunctionPrototypeImpl() {
@@ -76,7 +76,7 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

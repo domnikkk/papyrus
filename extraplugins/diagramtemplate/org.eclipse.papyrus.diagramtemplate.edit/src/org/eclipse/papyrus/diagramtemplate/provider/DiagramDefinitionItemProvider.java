@@ -32,7 +32,7 @@ import org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.DiagramDefinition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiagramDefinitionItemProvider
@@ -47,7 +47,7 @@ public class DiagramDefinitionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiagramDefinitionItemProvider(AdapterFactory adapterFactory) {
@@ -58,7 +58,7 @@ public class DiagramDefinitionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class DiagramDefinitionItemProvider
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
@@ -103,7 +103,7 @@ public class DiagramDefinitionItemProvider
 	 * This adds a property descriptor for the From Root feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFromRootPropertyDescriptor(Object object) {
@@ -126,7 +126,7 @@ public class DiagramDefinitionItemProvider
 	 * This adds a property descriptor for the Diagram Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDiagramKindPropertyDescriptor(Object object) {
@@ -149,7 +149,7 @@ public class DiagramDefinitionItemProvider
 	 * This adds a property descriptor for the Layout To Apply feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLayoutToApplyPropertyDescriptor(Object object) {
@@ -172,7 +172,7 @@ public class DiagramDefinitionItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -195,7 +195,7 @@ public class DiagramDefinitionItemProvider
 	 * This adds a property descriptor for the Prefix feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPrefixPropertyDescriptor(Object object) {
@@ -219,7 +219,7 @@ public class DiagramDefinitionItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class DiagramDefinitionItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class DiagramDefinitionItemProvider
 	 * This returns DiagramDefinition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class DiagramDefinitionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class DiagramDefinitionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class DiagramDefinitionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +321,7 @@ public class DiagramDefinitionItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

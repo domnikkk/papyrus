@@ -33,7 +33,7 @@ public class CommandSupport
 {
 	/**
 	 * Execute the passed Runnable within a command
-	 * 
+	 *
 	 * @param label
 	 * @param command
 	 */
@@ -56,7 +56,7 @@ public class CommandSupport
 
 	/**
 	 * Execute the passed Runnable within a command
-	 * 
+	 *
 	 * @param label
 	 * @param command
 	 */

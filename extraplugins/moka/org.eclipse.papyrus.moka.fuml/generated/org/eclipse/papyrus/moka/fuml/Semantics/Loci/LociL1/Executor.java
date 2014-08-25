@@ -16,12 +16,12 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Activator;
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.ValueSpecification;

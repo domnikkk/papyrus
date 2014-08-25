@@ -100,7 +100,7 @@ public class BundleActivatorResolver extends TemplateVariableResolver {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.text.templates.TemplateVariableResolver#resolveAll(org.eclipse.jface.text.templates.TemplateContext)
 	 */
 	@Override

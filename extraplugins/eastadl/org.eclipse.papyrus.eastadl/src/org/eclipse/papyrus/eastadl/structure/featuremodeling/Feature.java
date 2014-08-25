@@ -64,7 +64,7 @@ public interface Feature extends FeatureTreeNode {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeature_Base_Class()
@@ -77,7 +77,7 @@ public interface Feature extends FeatureTreeNode {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -133,7 +133,7 @@ public interface Feature extends FeatureTreeNode {
 	 * If the meaning of the '<em>Child Node</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Child Node</em>' reference.
 	 * @see #setChildNode(FeatureTreeNode)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeature_ChildNode()
@@ -146,7 +146,7 @@ public interface Feature extends FeatureTreeNode {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getChildNode <em>Child Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Child Node</em>' reference.
 	 * @see #getChildNode()
@@ -161,7 +161,7 @@ public interface Feature extends FeatureTreeNode {
 	 * If the meaning of the '<em>Feature Parameter</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Feature Parameter</em>' reference.
 	 * @see #setFeatureParameter(EADatatype)
 	 * @see org.eclipse.papyrus.eastadl.structure.featuremodeling.FeaturemodelingPackage#getFeature_FeatureParameter()
@@ -174,7 +174,7 @@ public interface Feature extends FeatureTreeNode {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getFeatureParameter <em>Feature Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Feature Parameter</em>' reference.
 	 * @see #getFeatureParameter()
@@ -200,7 +200,7 @@ public interface Feature extends FeatureTreeNode {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getActualBindingTime <em>Actual Binding Time</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Actual Binding Time</em>' reference.
 	 * @see #getActualBindingTime()
@@ -211,7 +211,7 @@ public interface Feature extends FeatureTreeNode {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getCardinality <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Cardinality</em>' attribute.
 	 * @see #getCardinality()
@@ -222,7 +222,7 @@ public interface Feature extends FeatureTreeNode {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.Feature#getRequiredBindingTime <em>Required Binding Time</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Required Binding Time</em>' reference.
 	 * @see #getRequiredBindingTime()

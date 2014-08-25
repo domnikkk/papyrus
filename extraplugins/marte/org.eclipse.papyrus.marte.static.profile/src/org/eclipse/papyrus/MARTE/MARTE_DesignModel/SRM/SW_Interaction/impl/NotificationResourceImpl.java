@@ -52,7 +52,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The default value of the '{@link #getOccurence() <em>Occurence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurence()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getOccurence() <em>Occurence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurence()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The default value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMechanism()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMechanism()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getOccurenceCountElements() <em>Occurence Count Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOccurenceCountElements()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getMaskElements() <em>Mask Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaskElements()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getFlushServices() <em>Flush Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFlushServices()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getSignalServices() <em>Signal Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSignalServices()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getWaitServices() <em>Wait Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWaitServices()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	 * The cached value of the '{@link #getClearServices() <em>Clear Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClearServices()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NotificationResourceImpl() {
@@ -171,7 +171,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +318,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +347,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -391,7 +391,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +428,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -457,7 +457,7 @@ public class NotificationResourceImpl extends SwSynchronizationResourceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

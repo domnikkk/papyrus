@@ -67,7 +67,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
 	 * @see #setKind(GenericConstraintKind)
@@ -81,7 +81,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraintKind
@@ -98,7 +98,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Mode()
 	 * @model ordered="false"
@@ -113,7 +113,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Value</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Value()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -129,7 +129,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Target()
 	 * @model ordered="false"
@@ -144,7 +144,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Constraint</em>' reference.
 	 * @see #setBase_Constraint(Constraint)
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Base_Constraint()
@@ -157,7 +157,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Constraint <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Constraint</em>' reference.
 	 * @see #getBase_Constraint()
@@ -172,7 +172,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getGenericConstraint_Base_Class()
@@ -185,7 +185,7 @@ public interface GenericConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.genericconstraints.GenericConstraint#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()

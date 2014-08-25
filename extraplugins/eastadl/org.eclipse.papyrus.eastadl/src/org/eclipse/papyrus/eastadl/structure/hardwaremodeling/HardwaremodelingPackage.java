@@ -43,7 +43,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * Conversely, the Functional Analysis Architecture and the Functional Design Architecture may be revised based on analysis using information from the Hardware Design Architecture. An example is control law design, where algorithms may be modified for expected
  * computational and communication delays. Thus, the Hardware Design Architecture contains information about properties in order to support, e.g., timing analysis and performance in these respects.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingFactory
  * @model kind="package"
  * @generated
@@ -59,7 +59,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -67,7 +67,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentTypeImpl <em>Hardware Component Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareComponentType()
 		 * @generated
@@ -78,7 +78,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_COMPONENT_TYPE__CONNECTOR = eINSTANCE.getHardwareComponentType_Connector();
@@ -87,7 +87,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pin</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_COMPONENT_TYPE__PIN = eINSTANCE.getHardwareComponentType_Pin();
@@ -96,7 +96,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_COMPONENT_TYPE__PORT = eINSTANCE.getHardwareComponentType_Port();
@@ -105,7 +105,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Part</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_COMPONENT_TYPE__PART = eINSTANCE.getHardwareComponentType_Part();
@@ -114,7 +114,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_COMPONENT_TYPE__PORT_CONNECTOR = eINSTANCE.getHardwareComponentType_PortConnector();
@@ -123,7 +123,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind <em>IO Hardware Pin Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getIOHardwarePinKind()
 		 * @generated
@@ -134,7 +134,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl <em>Hardware Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareConnector()
 		 * @generated
@@ -145,7 +145,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pin</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_CONNECTOR__PIN = eINSTANCE.getHardwareConnector_Pin();
@@ -154,7 +154,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePinImpl <em>Hardware Pin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePinImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwarePin()
 		 * @generated
@@ -165,7 +165,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Ground</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HARDWARE_PIN__IS_GROUND = eINSTANCE.getHardwarePin_IsGround();
@@ -174,7 +174,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HARDWARE_PIN__DIRECTION = eINSTANCE.getHardwarePin_Direction();
@@ -183,7 +183,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentPrototypeImpl <em>Hardware Component Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareComponentPrototype()
 		 * @generated
@@ -194,7 +194,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_COMPONENT_PROTOTYPE__TYPE = eINSTANCE.getHardwareComponentPrototype_Type();
@@ -203,7 +203,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Icon</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation HARDWARE_COMPONENT_PROTOTYPE___GET_ICON = eINSTANCE.getHardwareComponentPrototype__GetIcon();
@@ -212,7 +212,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortConnectorImpl <em>Hardware Port Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortConnectorImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwarePortConnector()
 		 * @generated
@@ -223,7 +223,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_PORT_CONNECTOR__BASE_CLASS = eINSTANCE.getHardwarePortConnector_Base_Class();
@@ -232,7 +232,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bus Speed</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HARDWARE_PORT_CONNECTOR__BUS_SPEED = eINSTANCE.getHardwarePortConnector_BusSpeed();
@@ -241,7 +241,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bus Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HARDWARE_PORT_CONNECTOR__BUS_TYPE = eINSTANCE.getHardwarePortConnector_BusType();
@@ -250,7 +250,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_PORT_CONNECTOR__CONNECTOR = eINSTANCE.getHardwarePortConnector_Connector();
@@ -259,7 +259,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Port</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_PORT_CONNECTOR__PORT = eINSTANCE.getHardwarePortConnector_Port();
@@ -268,7 +268,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwarePort()
 		 * @generated
@@ -279,7 +279,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_PORT__BASE_CLASS = eINSTANCE.getHardwarePort_Base_Class();
@@ -288,7 +288,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Shield</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HARDWARE_PORT__IS_SHIELD = eINSTANCE.getHardwarePort_IsShield();
@@ -297,7 +297,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Contained Pin</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_PORT__CONTAINED_PIN = eINSTANCE.getHardwarePort_ContainedPin();
@@ -306,7 +306,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Referenced Pin</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_PORT__REFERENCED_PIN = eINSTANCE.getHardwarePort_ReferencedPin();
@@ -315,7 +315,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Contained Port</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference HARDWARE_PORT__CONTAINED_PORT = eINSTANCE.getHardwarePort_ContainedPort();
@@ -324,7 +324,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.AllocationTargetImpl <em>Allocation Target</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.AllocationTargetImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getAllocationTarget()
 		 * @generated
@@ -335,7 +335,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind <em>Hardware Bus Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareBusKind()
 		 * @generated
@@ -346,7 +346,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.PowerHardwarePinImpl <em>Power Hardware Pin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.PowerHardwarePinImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getPowerHardwarePin()
 		 * @generated
@@ -357,7 +357,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.IOHardwarePinImpl <em>IO Hardware Pin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.IOHardwarePinImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getIOHardwarePin()
 		 * @generated
@@ -368,7 +368,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute IO_HARDWARE_PIN__TYPE = eINSTANCE.getIOHardwarePin_Type();
@@ -377,7 +377,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.CommunicationHardwarePinImpl <em>Communication Hardware Pin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.CommunicationHardwarePinImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getCommunicationHardwarePin()
 		 * @generated
@@ -388,7 +388,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.NodeImpl <em>Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.NodeImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getNode()
 		 * @generated
@@ -399,7 +399,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Execution Rate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NODE__EXECUTION_RATE = eINSTANCE.getNode_ExecutionRate();
@@ -408,7 +408,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ElectricalComponentImpl <em>Electrical Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ElectricalComponentImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getElectricalComponent()
 		 * @generated
@@ -419,7 +419,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Active</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ELECTRICAL_COMPONENT__IS_ACTIVE = eINSTANCE.getElectricalComponent_IsActive();
@@ -428,7 +428,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.SensorImpl <em>Sensor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.SensorImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getSensor()
 		 * @generated
@@ -439,7 +439,7 @@ public interface HardwaremodelingPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ActuatorImpl <em>Actuator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ActuatorImpl
 		 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getActuator()
 		 * @generated
@@ -452,7 +452,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "hardwaremodeling";
@@ -461,7 +461,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Structure/HardwareModeling/1";
@@ -470,7 +470,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "HardwareModeling";
@@ -479,7 +479,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	HardwaremodelingPackage eINSTANCE = org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl.init();
@@ -488,7 +488,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentTypeImpl <em>Hardware Component Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareComponentType()
 	 * @generated
@@ -499,7 +499,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl <em>Hardware Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareConnectorImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareConnector()
 	 * @generated
@@ -510,7 +510,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePinImpl <em>Hardware Pin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePinImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwarePin()
 	 * @generated
@@ -521,7 +521,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentPrototypeImpl <em>Hardware Component Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwareComponentPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareComponentPrototype()
 	 * @generated
@@ -532,7 +532,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.AllocationTargetImpl <em>Allocation Target</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.AllocationTargetImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getAllocationTarget()
 	 * @generated
@@ -543,7 +543,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.PowerHardwarePinImpl <em>Power Hardware Pin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.PowerHardwarePinImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getPowerHardwarePin()
 	 * @generated
@@ -554,7 +554,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.IOHardwarePinImpl <em>IO Hardware Pin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.IOHardwarePinImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getIOHardwarePin()
 	 * @generated
@@ -565,7 +565,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.CommunicationHardwarePinImpl <em>Communication Hardware Pin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.CommunicationHardwarePinImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getCommunicationHardwarePin()
 	 * @generated
@@ -576,7 +576,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.NodeImpl <em>Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.NodeImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getNode()
 	 * @generated
@@ -587,7 +587,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.SensorImpl <em>Sensor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.SensorImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getSensor()
 	 * @generated
@@ -598,7 +598,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ActuatorImpl <em>Actuator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ActuatorImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getActuator()
 	 * @generated
@@ -609,7 +609,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortConnectorImpl <em>Hardware Port Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortConnectorImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwarePortConnector()
 	 * @generated
@@ -620,7 +620,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwarePortImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwarePort()
 	 * @generated
@@ -631,7 +631,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -641,7 +641,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -651,7 +651,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -661,7 +661,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -671,7 +671,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -681,7 +681,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -691,7 +691,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -701,7 +701,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -711,7 +711,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Pin</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -721,7 +721,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -731,7 +731,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -741,7 +741,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -751,7 +751,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hardware Component Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -761,7 +761,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Hardware Component Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -771,7 +771,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -781,7 +781,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -791,7 +791,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -801,7 +801,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -811,7 +811,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -821,7 +821,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hardware Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -831,7 +831,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Hardware Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -841,7 +841,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -851,7 +851,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -861,7 +861,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -871,7 +871,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -881,7 +881,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Ground</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -891,7 +891,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -901,7 +901,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -911,7 +911,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -921,7 +921,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -931,7 +931,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -941,7 +941,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -951,7 +951,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Allocation Target</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -961,7 +961,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Allocation Target</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -971,7 +971,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -981,7 +981,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -991,7 +991,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1001,7 +1001,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1011,7 +1011,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1021,7 +1021,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hardware Component Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1031,7 +1031,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The operation id for the '<em>Get Icon</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1041,7 +1041,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Hardware Component Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1051,7 +1051,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1061,7 +1061,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1071,7 +1071,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1081,7 +1081,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1091,7 +1091,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1101,7 +1101,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Bus Speed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1111,7 +1111,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Bus Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1121,7 +1121,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1131,7 +1131,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1141,7 +1141,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hardware Port Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1151,7 +1151,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Hardware Port Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1161,7 +1161,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1171,7 +1171,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1181,7 +1181,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1191,7 +1191,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1201,7 +1201,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1211,7 +1211,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Shield</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1221,7 +1221,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Contained Pin</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1231,7 +1231,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Referenced Pin</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1241,7 +1241,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Contained Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1251,7 +1251,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Hardware Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1261,7 +1261,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Hardware Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1271,7 +1271,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1281,7 +1281,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1291,7 +1291,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1301,7 +1301,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1311,7 +1311,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Ground</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1321,7 +1321,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1331,7 +1331,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1341,7 +1341,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>IO Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1351,7 +1351,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>IO Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1361,7 +1361,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1371,7 +1371,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1381,7 +1381,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1391,7 +1391,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1401,7 +1401,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Ground</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1411,7 +1411,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1421,7 +1421,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Power Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1431,7 +1431,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Power Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1441,7 +1441,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1451,7 +1451,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1461,7 +1461,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1471,7 +1471,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1481,7 +1481,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Ground</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1491,7 +1491,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1501,7 +1501,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Communication Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1511,7 +1511,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Communication Hardware Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1521,7 +1521,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1531,7 +1531,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1541,7 +1541,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1551,7 +1551,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1561,7 +1561,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1571,7 +1571,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1581,7 +1581,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1591,7 +1591,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1601,7 +1601,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Pin</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1611,7 +1611,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1621,7 +1621,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1631,7 +1631,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1641,7 +1641,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Execution Rate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1651,7 +1651,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1661,7 +1661,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1671,7 +1671,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ElectricalComponentImpl <em>Electrical Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.ElectricalComponentImpl
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getElectricalComponent()
 	 * @generated
@@ -1682,7 +1682,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1692,7 +1692,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1702,7 +1702,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1712,7 +1712,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1722,7 +1722,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1732,7 +1732,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1742,7 +1742,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1752,7 +1752,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1762,7 +1762,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Pin</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1772,7 +1772,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1782,7 +1782,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1792,7 +1792,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1802,7 +1802,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1812,7 +1812,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Electrical Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1822,7 +1822,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Electrical Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1832,7 +1832,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1842,7 +1842,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1852,7 +1852,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1862,7 +1862,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1872,7 +1872,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1882,7 +1882,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1892,7 +1892,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1902,7 +1902,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1912,7 +1912,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Pin</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1922,7 +1922,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1932,7 +1932,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1942,7 +1942,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1952,7 +1952,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1962,7 +1962,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1972,7 +1972,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1982,7 +1982,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1992,7 +1992,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2002,7 +2002,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2012,7 +2012,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2022,7 +2022,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2032,7 +2032,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2042,7 +2042,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2052,7 +2052,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Pin</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2062,7 +2062,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2072,7 +2072,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2082,7 +2082,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2092,7 +2092,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of structural features of the '<em>Actuator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2102,7 +2102,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The number of operations of the '<em>Actuator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2112,7 +2112,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind <em>Hardware Bus Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getHardwareBusKind()
 	 * @generated
@@ -2123,7 +2123,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind <em>IO Hardware Pin Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.impl.HardwaremodelingPackageImpl#getIOHardwarePinKind()
 	 * @generated
@@ -2134,7 +2134,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Actuator <em>Actuator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Actuator</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Actuator
 	 * @generated
@@ -2145,7 +2145,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.AllocationTarget <em>Allocation Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Allocation Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.AllocationTarget
 	 * @generated
@@ -2156,7 +2156,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind <em>Hardware Bus Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Hardware Bus Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareBusKind
 	 * @generated
@@ -2167,7 +2167,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePin <em>IO Hardware Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>IO Hardware Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePin
 	 * @generated
@@ -2178,7 +2178,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePin#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePin#getType()
 	 * @see #getIOHardwarePin()
@@ -2190,7 +2190,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.CommunicationHardwarePin <em>Communication Hardware Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Communication Hardware Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.CommunicationHardwarePin
 	 * @generated
@@ -2201,7 +2201,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype <em>Hardware Component Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hardware Component Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype
 	 * @generated
@@ -2212,7 +2212,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getType()
 	 * @see #getHardwareComponentPrototype()
@@ -2224,7 +2224,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getIcon() <em>Get Icon</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Get Icon</em>' operation.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getIcon()
 	 * @generated
@@ -2235,7 +2235,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector <em>Hardware Port Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hardware Port Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector
 	 * @generated
@@ -2246,7 +2246,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBase_Class()
 	 * @see #getHardwarePortConnector()
@@ -2258,7 +2258,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBusSpeed <em>Bus Speed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Bus Speed</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBusSpeed()
 	 * @see #getHardwarePortConnector()
@@ -2270,7 +2270,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBusType <em>Bus Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Bus Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getBusType()
 	 * @see #getHardwarePortConnector()
@@ -2282,7 +2282,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getConnector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getConnector()
 	 * @see #getHardwarePortConnector()
@@ -2294,7 +2294,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector#getPort()
 	 * @see #getHardwarePortConnector()
@@ -2306,7 +2306,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort <em>Hardware Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hardware Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort
 	 * @generated
@@ -2317,7 +2317,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getBase_Class()
 	 * @see #getHardwarePort()
@@ -2329,7 +2329,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#isIsShield <em>Is Shield</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Shield</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#isIsShield()
 	 * @see #getHardwarePort()
@@ -2341,7 +2341,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getContainedPin <em>Contained Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Contained Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getContainedPin()
 	 * @see #getHardwarePort()
@@ -2353,7 +2353,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getReferencedPin <em>Referenced Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Referenced Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getReferencedPin()
 	 * @see #getHardwarePort()
@@ -2365,7 +2365,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getContainedPort <em>Contained Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Contained Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort#getContainedPort()
 	 * @see #getHardwarePort()
@@ -2377,7 +2377,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType <em>Hardware Component Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hardware Component Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType
 	 * @generated
@@ -2388,7 +2388,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getConnector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getConnector()
 	 * @see #getHardwareComponentType()
@@ -2400,7 +2400,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPin <em>Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPin()
 	 * @see #getHardwareComponentType()
@@ -2412,7 +2412,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Part</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPart()
 	 * @see #getHardwareComponentType()
@@ -2424,7 +2424,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPortConnector <em>Port Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Port Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPortConnector()
 	 * @see #getHardwareComponentType()
@@ -2436,7 +2436,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPort()
 	 * @see #getHardwareComponentType()
@@ -2448,7 +2448,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind <em>IO Hardware Pin Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>IO Hardware Pin Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.IOHardwarePinKind
 	 * @generated
@@ -2459,7 +2459,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector <em>Hardware Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hardware Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector
 	 * @generated
@@ -2470,7 +2470,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector#getPin <em>Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareConnector#getPin()
 	 * @see #getHardwareConnector()
@@ -2482,7 +2482,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2492,7 +2492,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin <em>Hardware Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hardware Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin
 	 * @generated
@@ -2503,7 +2503,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#getDirection <em>Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Direction</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#getDirection()
 	 * @see #getHardwarePin()
@@ -2515,7 +2515,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#isIsGround <em>Is Ground</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Ground</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#isIsGround()
 	 * @see #getHardwarePin()
@@ -2527,7 +2527,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Node</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node
 	 * @generated
@@ -2538,7 +2538,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node#getExecutionRate <em>Execution Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Execution Rate</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Node#getExecutionRate()
 	 * @see #getNode()
@@ -2550,7 +2550,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent <em>Electrical Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Electrical Component</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent
 	 * @generated
@@ -2561,7 +2561,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent#isIsActive <em>Is Active</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Active</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent#isIsActive()
 	 * @see #getElectricalComponent()
@@ -2573,7 +2573,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.PowerHardwarePin <em>Power Hardware Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Power Hardware Pin</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.PowerHardwarePin
 	 * @generated
@@ -2584,7 +2584,7 @@ public interface HardwaremodelingPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Sensor <em>Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sensor</em>'.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.Sensor
 	 * @generated

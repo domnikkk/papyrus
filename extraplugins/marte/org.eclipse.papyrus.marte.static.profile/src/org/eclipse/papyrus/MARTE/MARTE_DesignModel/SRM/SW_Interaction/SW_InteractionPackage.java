@@ -31,7 +31,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_Resour
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionFactory
  * @model kind="package"
  * @generated
@@ -41,7 +41,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "SW_Interaction";
@@ -50,7 +50,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/SW_Interaction/1";
@@ -59,7 +59,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "SW_Interaction";
@@ -68,7 +68,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SW_InteractionPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl.init();
@@ -77,7 +77,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl <em>Sw Interaction Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwInteractionResource()
 	 * @generated
@@ -88,7 +88,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +148,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +168,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +188,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -218,7 +218,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -228,7 +228,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -238,7 +238,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -248,7 +248,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -258,7 +258,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -268,7 +268,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Interaction Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -278,7 +278,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwCommunicationResourceImpl <em>Sw Communication Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwCommunicationResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwCommunicationResource()
 	 * @generated
@@ -289,7 +289,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +299,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +309,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +319,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -329,7 +329,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,7 +339,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -349,7 +349,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -359,7 +359,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -369,7 +369,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -379,7 +379,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -389,7 +389,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -399,7 +399,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -409,7 +409,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -419,7 +419,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -429,7 +429,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -439,7 +439,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -449,7 +449,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -459,7 +459,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -469,7 +469,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -479,7 +479,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -489,7 +489,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -499,7 +499,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -509,7 +509,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Transm Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -519,7 +519,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -529,7 +529,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -539,7 +539,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Capacity</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -549,7 +549,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Communication Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -559,7 +559,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwSynchronizationResourceImpl <em>Sw Synchronization Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwSynchronizationResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwSynchronizationResource()
 	 * @generated
@@ -570,7 +570,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -580,7 +580,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -590,7 +590,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -600,7 +600,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -610,7 +610,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -620,7 +620,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -630,7 +630,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -640,7 +640,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,7 +650,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -660,7 +660,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -670,7 +670,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -680,7 +680,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -690,7 +690,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -700,7 +700,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -710,7 +710,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -720,7 +720,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -730,7 +730,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -740,7 +740,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -750,7 +750,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Synchronization Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -760,7 +760,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SharedDataComResourceImpl <em>Shared Data Com Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SharedDataComResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSharedDataComResource()
 	 * @generated
@@ -771,7 +771,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -781,7 +781,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -791,7 +791,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -801,7 +801,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -811,7 +811,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -821,7 +821,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -831,7 +831,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -841,7 +841,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -851,7 +851,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -861,7 +861,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -871,7 +871,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -881,7 +881,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -891,7 +891,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -901,7 +901,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -911,7 +911,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -921,7 +921,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -931,7 +931,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -941,7 +941,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -951,7 +951,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -961,7 +961,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -971,7 +971,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -981,7 +981,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -991,7 +991,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Transm Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1001,7 +1001,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1011,7 +1011,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1021,7 +1021,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Capacity</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1031,7 +1031,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Read Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1041,7 +1041,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Write Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1051,7 +1051,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The number of structural features of the '<em>Shared Data Com Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1061,7 +1061,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.MessageComResourceImpl <em>Message Com Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.MessageComResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getMessageComResource()
 	 * @generated
@@ -1072,7 +1072,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1082,7 +1082,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1092,7 +1092,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1102,7 +1102,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1112,7 +1112,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1122,7 +1122,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1132,7 +1132,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1142,7 +1142,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1152,7 +1152,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1162,7 +1162,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1172,7 +1172,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1182,7 +1182,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1192,7 +1192,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1202,7 +1202,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1212,7 +1212,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1222,7 +1222,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1232,7 +1232,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1242,7 +1242,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1252,7 +1252,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1262,7 +1262,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Main Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1272,7 +1272,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1282,7 +1282,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1292,7 +1292,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Transm Mode</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1302,7 +1302,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Block T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1312,7 +1312,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Packet T</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1322,7 +1322,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Capacity</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1332,7 +1332,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Fixed Message Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1342,7 +1342,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Mechanism</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1352,7 +1352,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Message Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1362,7 +1362,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Message Queue Capacity Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1372,7 +1372,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Message Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1382,7 +1382,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Send Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1392,7 +1392,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Receive Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1402,7 +1402,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The number of structural features of the '<em>Message Com Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1412,7 +1412,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.NotificationResourceImpl <em>Notification Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.NotificationResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getNotificationResource()
 	 * @generated
@@ -1423,7 +1423,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1433,7 +1433,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1443,7 +1443,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1453,7 +1453,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1463,7 +1463,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1473,7 +1473,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1483,7 +1483,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1493,7 +1493,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1503,7 +1503,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1513,7 +1513,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1523,7 +1523,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1533,7 +1533,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1543,7 +1543,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1553,7 +1553,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1563,7 +1563,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1573,7 +1573,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1583,7 +1583,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1593,7 +1593,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1603,7 +1603,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurence</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1613,7 +1613,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Mechanism</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1623,7 +1623,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurence Count Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1633,7 +1633,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Mask Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1643,7 +1643,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Flush Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1653,7 +1653,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Signal Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1663,7 +1663,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Wait Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1673,7 +1673,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Clear Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1683,7 +1683,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The number of structural features of the '<em>Notification Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1693,7 +1693,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwMutualExclusionResourceImpl <em>Sw Mutual Exclusion Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwMutualExclusionResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwMutualExclusionResource()
 	 * @generated
@@ -1704,7 +1704,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1714,7 +1714,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1724,7 +1724,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1734,7 +1734,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1744,7 +1744,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1754,7 +1754,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1764,7 +1764,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1774,7 +1774,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1784,7 +1784,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1794,7 +1794,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1804,7 +1804,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1814,7 +1814,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1824,7 +1824,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1834,7 +1834,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1844,7 +1844,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1854,7 +1854,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1864,7 +1864,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1874,7 +1874,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1884,7 +1884,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Protect Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1894,7 +1894,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Ceiling</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1904,7 +1904,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Other Protect Protocol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1914,7 +1914,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1924,7 +1924,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Mechanism</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1934,7 +1934,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Concurrent Access Protocol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1944,7 +1944,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Access Token Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1954,7 +1954,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Release Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1964,7 +1964,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The feature id for the '<em><b>Acquire Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1974,7 +1974,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Mutual Exclusion Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1984,7 +1984,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.QueuePolicyKind <em>Queue Policy Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.QueuePolicyKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getQueuePolicyKind()
 	 * @generated
@@ -1995,7 +1995,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageResourceKind <em>Message Resource Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageResourceKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getMessageResourceKind()
 	 * @generated
@@ -2006,7 +2006,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind <em>Notification Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getNotificationKind()
 	 * @generated
@@ -2017,7 +2017,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind <em>Notification Resource Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getNotificationResourceKind()
 	 * @generated
@@ -2028,7 +2028,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MutualExclusionResourceKind <em>Mutual Exclusion Resource Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MutualExclusionResourceKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getMutualExclusionResourceKind()
 	 * @generated
@@ -2039,7 +2039,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.ConcurrentAccessProtocolKind <em>Concurrent Access Protocol Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.ConcurrentAccessProtocolKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getConcurrentAccessProtocolKind()
 	 * @generated
@@ -2051,7 +2051,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource <em>Sw Interaction Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Interaction Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource
 	 * @generated
@@ -2062,7 +2062,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#isIsIntraMemoryPartitionInteraction <em>Is Intra Memory Partition Interaction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Intra Memory Partition Interaction</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#isIsIntraMemoryPartitionInteraction()
 	 * @see #getSwInteractionResource()
@@ -2074,7 +2074,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#getWaitingQueuePolicy <em>Waiting Queue Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Waiting Queue Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#getWaitingQueuePolicy()
 	 * @see #getSwInteractionResource()
@@ -2086,7 +2086,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#getWaitingQueueCapacity <em>Waiting Queue Capacity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Waiting Queue Capacity</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#getWaitingQueueCapacity()
 	 * @see #getSwInteractionResource()
@@ -2098,7 +2098,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#getWaitingPolicyElements <em>Waiting Policy Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Waiting Policy Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwInteractionResource#getWaitingPolicyElements()
 	 * @see #getSwInteractionResource()
@@ -2110,7 +2110,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwCommunicationResource <em>Sw Communication Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Communication Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwCommunicationResource
 	 * @generated
@@ -2121,7 +2121,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwSynchronizationResource <em>Sw Synchronization Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Synchronization Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwSynchronizationResource
 	 * @generated
@@ -2132,7 +2132,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SharedDataComResource <em>Shared Data Com Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Shared Data Com Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SharedDataComResource
 	 * @generated
@@ -2143,7 +2143,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SharedDataComResource#getReadServices <em>Read Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Read Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SharedDataComResource#getReadServices()
 	 * @see #getSharedDataComResource()
@@ -2155,7 +2155,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SharedDataComResource#getWriteServices <em>Write Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Write Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SharedDataComResource#getWriteServices()
 	 * @see #getSharedDataComResource()
@@ -2167,7 +2167,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource <em>Message Com Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Message Com Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource
 	 * @generated
@@ -2178,7 +2178,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#isIsFixedMessageSize <em>Is Fixed Message Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Fixed Message Size</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#isIsFixedMessageSize()
 	 * @see #getMessageComResource()
@@ -2190,7 +2190,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMechanism <em>Mechanism</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Mechanism</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMechanism()
 	 * @see #getMessageComResource()
@@ -2202,7 +2202,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMessageSizeElements <em>Message Size Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Message Size Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMessageSizeElements()
 	 * @see #getMessageComResource()
@@ -2214,7 +2214,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMessageQueueCapacityElements <em>Message Queue Capacity Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Message Queue Capacity Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMessageQueueCapacityElements()
 	 * @see #getMessageComResource()
@@ -2226,7 +2226,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMessageQueuePolicy <em>Message Queue Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Message Queue Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getMessageQueuePolicy()
 	 * @see #getMessageComResource()
@@ -2238,7 +2238,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getSendServices <em>Send Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Send Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getSendServices()
 	 * @see #getMessageComResource()
@@ -2250,7 +2250,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getReceiveServices <em>Receive Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Receive Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageComResource#getReceiveServices()
 	 * @see #getMessageComResource()
@@ -2262,7 +2262,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource <em>Notification Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Notification Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource
 	 * @generated
@@ -2273,7 +2273,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getOccurence <em>Occurence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Occurence</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getOccurence()
 	 * @see #getNotificationResource()
@@ -2285,7 +2285,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getMechanism <em>Mechanism</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Mechanism</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getMechanism()
 	 * @see #getNotificationResource()
@@ -2297,7 +2297,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getOccurenceCountElements <em>Occurence Count Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Occurence Count Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getOccurenceCountElements()
 	 * @see #getNotificationResource()
@@ -2309,7 +2309,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getMaskElements <em>Mask Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Mask Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getMaskElements()
 	 * @see #getNotificationResource()
@@ -2321,7 +2321,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getFlushServices <em>Flush Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Flush Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getFlushServices()
 	 * @see #getNotificationResource()
@@ -2333,7 +2333,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getSignalServices <em>Signal Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Signal Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getSignalServices()
 	 * @see #getNotificationResource()
@@ -2345,7 +2345,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getWaitServices <em>Wait Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Wait Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getWaitServices()
 	 * @see #getNotificationResource()
@@ -2357,7 +2357,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getClearServices <em>Clear Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Clear Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResource#getClearServices()
 	 * @see #getNotificationResource()
@@ -2369,7 +2369,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource <em>Sw Mutual Exclusion Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Mutual Exclusion Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource
 	 * @generated
@@ -2380,7 +2380,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getMechanism <em>Mechanism</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Mechanism</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getMechanism()
 	 * @see #getSwMutualExclusionResource()
@@ -2392,7 +2392,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getConcurrentAccessProtocol <em>Concurrent Access Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Concurrent Access Protocol</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getConcurrentAccessProtocol()
 	 * @see #getSwMutualExclusionResource()
@@ -2404,7 +2404,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getAccessTokenElements <em>Access Token Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Access Token Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getAccessTokenElements()
 	 * @see #getSwMutualExclusionResource()
@@ -2416,7 +2416,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getReleaseServices <em>Release Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Release Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getReleaseServices()
 	 * @see #getSwMutualExclusionResource()
@@ -2428,7 +2428,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getAcquireServices <em>Acquire Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Acquire Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualExclusionResource#getAcquireServices()
 	 * @see #getSwMutualExclusionResource()
@@ -2440,7 +2440,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.QueuePolicyKind <em>Queue Policy Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Queue Policy Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.QueuePolicyKind
 	 * @generated
@@ -2451,7 +2451,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageResourceKind <em>Message Resource Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Message Resource Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageResourceKind
 	 * @generated
@@ -2462,7 +2462,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind <em>Notification Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Notification Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind
 	 * @generated
@@ -2473,7 +2473,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind <em>Notification Resource Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Notification Resource Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind
 	 * @generated
@@ -2484,7 +2484,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MutualExclusionResourceKind <em>Mutual Exclusion Resource Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Mutual Exclusion Resource Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MutualExclusionResourceKind
 	 * @generated
@@ -2495,7 +2495,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.ConcurrentAccessProtocolKind <em>Concurrent Access Protocol Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Concurrent Access Protocol Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.ConcurrentAccessProtocolKind
 	 * @generated
@@ -2506,7 +2506,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2522,7 +2522,7 @@ public interface SW_InteractionPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -2530,7 +2530,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl <em>Sw Interaction Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwInteractionResource()
 		 * @generated
@@ -2541,7 +2541,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION = eINSTANCE.getSwInteractionResource_IsIntraMemoryPartitionInteraction();
@@ -2550,7 +2550,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Waiting Queue Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY = eINSTANCE.getSwInteractionResource_WaitingQueuePolicy();
@@ -2559,7 +2559,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Waiting Queue Capacity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY = eINSTANCE.getSwInteractionResource_WaitingQueueCapacity();
@@ -2568,7 +2568,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Waiting Policy Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS = eINSTANCE.getSwInteractionResource_WaitingPolicyElements();
@@ -2577,7 +2577,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwCommunicationResourceImpl <em>Sw Communication Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwCommunicationResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwCommunicationResource()
 		 * @generated
@@ -2588,7 +2588,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwSynchronizationResourceImpl <em>Sw Synchronization Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwSynchronizationResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwSynchronizationResource()
 		 * @generated
@@ -2599,7 +2599,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SharedDataComResourceImpl <em>Shared Data Com Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SharedDataComResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSharedDataComResource()
 		 * @generated
@@ -2610,7 +2610,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Read Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SHARED_DATA_COM_RESOURCE__READ_SERVICES = eINSTANCE.getSharedDataComResource_ReadServices();
@@ -2619,7 +2619,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Write Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SHARED_DATA_COM_RESOURCE__WRITE_SERVICES = eINSTANCE.getSharedDataComResource_WriteServices();
@@ -2628,7 +2628,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.MessageComResourceImpl <em>Message Com Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.MessageComResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getMessageComResource()
 		 * @generated
@@ -2639,7 +2639,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Fixed Message Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MESSAGE_COM_RESOURCE__IS_FIXED_MESSAGE_SIZE = eINSTANCE.getMessageComResource_IsFixedMessageSize();
@@ -2648,7 +2648,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mechanism</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MESSAGE_COM_RESOURCE__MECHANISM = eINSTANCE.getMessageComResource_Mechanism();
@@ -2657,7 +2657,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Message Size Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MESSAGE_COM_RESOURCE__MESSAGE_SIZE_ELEMENTS = eINSTANCE.getMessageComResource_MessageSizeElements();
@@ -2666,7 +2666,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Message Queue Capacity Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MESSAGE_COM_RESOURCE__MESSAGE_QUEUE_CAPACITY_ELEMENTS = eINSTANCE.getMessageComResource_MessageQueueCapacityElements();
@@ -2675,7 +2675,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Message Queue Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MESSAGE_COM_RESOURCE__MESSAGE_QUEUE_POLICY = eINSTANCE.getMessageComResource_MessageQueuePolicy();
@@ -2684,7 +2684,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Send Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MESSAGE_COM_RESOURCE__SEND_SERVICES = eINSTANCE.getMessageComResource_SendServices();
@@ -2693,7 +2693,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Receive Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MESSAGE_COM_RESOURCE__RECEIVE_SERVICES = eINSTANCE.getMessageComResource_ReceiveServices();
@@ -2702,7 +2702,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.NotificationResourceImpl <em>Notification Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.NotificationResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getNotificationResource()
 		 * @generated
@@ -2713,7 +2713,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Occurence</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NOTIFICATION_RESOURCE__OCCURENCE = eINSTANCE.getNotificationResource_Occurence();
@@ -2722,7 +2722,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mechanism</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NOTIFICATION_RESOURCE__MECHANISM = eINSTANCE.getNotificationResource_Mechanism();
@@ -2731,7 +2731,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Occurence Count Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NOTIFICATION_RESOURCE__OCCURENCE_COUNT_ELEMENTS = eINSTANCE.getNotificationResource_OccurenceCountElements();
@@ -2740,7 +2740,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mask Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NOTIFICATION_RESOURCE__MASK_ELEMENTS = eINSTANCE.getNotificationResource_MaskElements();
@@ -2749,7 +2749,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Flush Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NOTIFICATION_RESOURCE__FLUSH_SERVICES = eINSTANCE.getNotificationResource_FlushServices();
@@ -2758,7 +2758,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Signal Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NOTIFICATION_RESOURCE__SIGNAL_SERVICES = eINSTANCE.getNotificationResource_SignalServices();
@@ -2767,7 +2767,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Wait Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NOTIFICATION_RESOURCE__WAIT_SERVICES = eINSTANCE.getNotificationResource_WaitServices();
@@ -2776,7 +2776,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Clear Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NOTIFICATION_RESOURCE__CLEAR_SERVICES = eINSTANCE.getNotificationResource_ClearServices();
@@ -2785,7 +2785,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwMutualExclusionResourceImpl <em>Sw Mutual Exclusion Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwMutualExclusionResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getSwMutualExclusionResource()
 		 * @generated
@@ -2796,7 +2796,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mechanism</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_MUTUAL_EXCLUSION_RESOURCE__MECHANISM = eINSTANCE.getSwMutualExclusionResource_Mechanism();
@@ -2805,7 +2805,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Concurrent Access Protocol</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_MUTUAL_EXCLUSION_RESOURCE__CONCURRENT_ACCESS_PROTOCOL = eINSTANCE.getSwMutualExclusionResource_ConcurrentAccessProtocol();
@@ -2814,7 +2814,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Access Token Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_MUTUAL_EXCLUSION_RESOURCE__ACCESS_TOKEN_ELEMENTS = eINSTANCE.getSwMutualExclusionResource_AccessTokenElements();
@@ -2823,7 +2823,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Release Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_MUTUAL_EXCLUSION_RESOURCE__RELEASE_SERVICES = eINSTANCE.getSwMutualExclusionResource_ReleaseServices();
@@ -2832,7 +2832,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Acquire Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_MUTUAL_EXCLUSION_RESOURCE__ACQUIRE_SERVICES = eINSTANCE.getSwMutualExclusionResource_AcquireServices();
@@ -2841,7 +2841,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.QueuePolicyKind <em>Queue Policy Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.QueuePolicyKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getQueuePolicyKind()
 		 * @generated
@@ -2852,7 +2852,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageResourceKind <em>Message Resource Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MessageResourceKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getMessageResourceKind()
 		 * @generated
@@ -2863,7 +2863,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind <em>Notification Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getNotificationKind()
 		 * @generated
@@ -2874,7 +2874,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind <em>Notification Resource Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.NotificationResourceKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getNotificationResourceKind()
 		 * @generated
@@ -2885,7 +2885,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MutualExclusionResourceKind <em>Mutual Exclusion Resource Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.MutualExclusionResourceKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getMutualExclusionResourceKind()
 		 * @generated
@@ -2896,7 +2896,7 @@ public interface SW_InteractionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.ConcurrentAccessProtocolKind <em>Concurrent Access Protocol Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.ConcurrentAccessProtocolKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SW_InteractionPackageImpl#getConcurrentAccessProtocolKind()
 		 * @generated

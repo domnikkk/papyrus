@@ -52,7 +52,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	 * The cached value of the '{@link #getWorkload() <em>Workload</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWorkload()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	 * The cached value of the '{@link #getPlatform() <em>Platform</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPlatform()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaAnalysisContextImpl() {
@@ -105,7 +105,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -146,7 +146,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -256,7 +256,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +321,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class GaAnalysisContextImpl extends ConfigurationImpl implements GaAnalys
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

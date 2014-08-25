@@ -37,7 +37,7 @@ public class PrefixConstants {
 	 * Initialize a specific CIF variant
 	 *
 	 * TODO currently unused
-	 * 
+	 *
 	 * @param cif
 	 *            Which CIF variant should used?
 	 */

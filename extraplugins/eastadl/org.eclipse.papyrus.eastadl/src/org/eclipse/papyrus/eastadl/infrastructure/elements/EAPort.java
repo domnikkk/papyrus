@@ -29,7 +29,7 @@ public interface EAPort extends EObject {
 	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getEAPort_Base_Port()
@@ -42,7 +42,7 @@ public interface EAPort extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.EAPort#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()

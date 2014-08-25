@@ -30,7 +30,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupDirector#initializeParticipants()
 	 */
 	public void initializeParticipants() {
@@ -45,7 +45,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector#getSourceElement(java.lang.Object)
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#sourceContainersChanged(org.eclipse.debug.core.sourcelookup.ISourceLookupDirector
 		 * )
@@ -75,7 +75,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#init(org.eclipse.debug.core.sourcelookup.ISourceLookupDirector)
 		 */
 		public void init(ISourceLookupDirector director) {
@@ -83,7 +83,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#getSourceName(java.lang.Object)
 		 */
 		public String getSourceName(Object object) throws CoreException {
@@ -92,7 +92,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#findSourceElements(java.lang.Object)
 		 */
 		public Object[] findSourceElements(Object object) throws CoreException {
@@ -101,7 +101,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#dispose()
 		 */
 		public void dispose() {

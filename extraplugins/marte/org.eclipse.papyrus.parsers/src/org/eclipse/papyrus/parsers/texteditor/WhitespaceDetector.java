@@ -27,7 +27,7 @@ public class WhitespaceDetector implements IWhitespaceDetector {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.text.rules.IWhitespaceDetector#isWhitespace(char)
 	 */
 	/**

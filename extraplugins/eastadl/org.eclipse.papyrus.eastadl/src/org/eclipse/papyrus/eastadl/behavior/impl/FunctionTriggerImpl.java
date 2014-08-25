@@ -63,7 +63,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getBase_ValueSpecification() <em>Base Value Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ValueSpecification()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The default value of the '{@link #getTriggerPolicy() <em>Trigger Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTriggerPolicy()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getTriggerPolicy() <em>Trigger Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTriggerPolicy()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunction()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	 * The cached value of the '{@link #getFunctionPrototype() <em>Function Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionTriggerImpl() {
@@ -171,7 +171,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionType basicGetFunction() {
@@ -181,7 +181,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionPrototype basicGetFunctionPrototype() {
@@ -191,7 +191,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -318,7 +318,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -358,7 +358,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -369,7 +369,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +389,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -399,7 +399,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +414,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -434,7 +434,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSpecification basicGetBase_ValueSpecification() {
@@ -444,7 +444,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -459,7 +459,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -496,7 +496,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +516,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +536,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -550,7 +550,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -564,7 +564,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -575,7 +575,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -590,7 +590,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -605,7 +605,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -625,7 +625,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -635,7 +635,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -650,7 +650,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -665,7 +665,7 @@ public class FunctionTriggerImpl extends EAElementImpl implements FunctionTrigge
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

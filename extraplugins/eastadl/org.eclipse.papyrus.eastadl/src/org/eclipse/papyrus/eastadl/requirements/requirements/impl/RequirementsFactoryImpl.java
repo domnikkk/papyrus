@@ -26,7 +26,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RequirementsFactoryImpl extends EFactoryImpl implements RequirementsFactory {
@@ -34,7 +34,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static RequirementsFactory init() {
@@ -53,7 +53,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RequirementsFactoryImpl() {
@@ -63,7 +63,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QualityRequirementKind createQualityRequirementKindFromString(EDataType eDataType, String initialValue) {
@@ -263,7 +263,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertQualityRequirementKindToString(EDataType eDataType, Object instanceValue) {
@@ -273,7 +273,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

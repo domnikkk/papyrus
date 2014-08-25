@@ -43,7 +43,7 @@ public interface GaCommHost extends CommunicationMedia, Scheduler {
 	 * If the meaning of the '<em>Throughput</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Throughput</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaCommHost_Throughput()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Frequency" ordered="false"
@@ -59,7 +59,7 @@ public interface GaCommHost extends CommunicationMedia, Scheduler {
 	 * If the meaning of the '<em>Utilization</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Utilization</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaCommHost_Utilization()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real" ordered="false"

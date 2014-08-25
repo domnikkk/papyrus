@@ -33,7 +33,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyFactory
  * @model kind="package"
  * @generated
@@ -43,7 +43,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "SW_Concurrency";
@@ -52,7 +52,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/SW_Concurrency/1";
@@ -61,7 +61,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "SW_Concurrency";
@@ -70,7 +70,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SW_ConcurrencyPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl.init();
@@ -79,7 +79,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.EntryPointImpl <em>Entry Point</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.EntryPointImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getEntryPoint()
 	 * @generated
@@ -90,7 +90,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,7 +100,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Nature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -110,7 +110,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -120,7 +120,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Implied Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,7 +130,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Reentrant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -140,7 +140,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Routine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -150,7 +150,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The number of structural features of the '<em>Entry Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +160,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwConcurrentResourceImpl <em>Sw Concurrent Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwConcurrentResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getSwConcurrentResource()
 	 * @generated
@@ -171,7 +171,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +181,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -191,7 +191,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -201,7 +201,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +211,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +221,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -231,7 +231,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -241,7 +241,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -251,7 +251,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -261,7 +261,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -271,7 +271,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -281,7 +281,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -291,7 +291,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -311,7 +311,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -321,7 +321,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activation Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -331,7 +331,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Entry Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -341,7 +341,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Space</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -351,7 +351,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Period Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -361,7 +361,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -371,7 +371,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Stack Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -381,7 +381,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -391,7 +391,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Enable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -401,7 +401,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Resume Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -411,7 +411,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Suspend Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -421,7 +421,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Terminate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -431,7 +431,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Disable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -441,7 +441,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Share Data Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -451,7 +451,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Message Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -461,7 +461,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Mutual Exclusion Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -471,7 +471,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Notification Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -481,7 +481,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Heap Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -491,7 +491,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Concurrent Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -501,7 +501,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.InterruptResourceImpl <em>Interrupt Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.InterruptResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getInterruptResource()
 	 * @generated
@@ -512,7 +512,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -522,7 +522,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -532,7 +532,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -542,7 +542,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -552,7 +552,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -562,7 +562,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -572,7 +572,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -582,7 +582,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -592,7 +592,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -602,7 +602,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -612,7 +612,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -622,7 +622,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -632,7 +632,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -642,7 +642,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -652,7 +652,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -662,7 +662,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activation Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -672,7 +672,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Entry Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -682,7 +682,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Space</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -692,7 +692,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Period Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -702,7 +702,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -712,7 +712,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Stack Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -722,7 +722,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -732,7 +732,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Enable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -742,7 +742,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Resume Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -752,7 +752,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Suspend Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -762,7 +762,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Terminate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -772,7 +772,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Disable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -782,7 +782,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Share Data Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -792,7 +792,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Message Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -802,7 +802,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Mutual Exclusion Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -812,7 +812,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Notification Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -822,7 +822,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Heap Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -832,7 +832,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -842,7 +842,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Maskable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -852,7 +852,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Vector Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -862,7 +862,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Mask Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -872,7 +872,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Routine Connect Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -882,7 +882,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Routine Disconnect Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -892,7 +892,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The number of structural features of the '<em>Interrupt Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -902,7 +902,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwSchedulableResourceImpl <em>Sw Schedulable Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwSchedulableResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getSwSchedulableResource()
 	 * @generated
@@ -913,7 +913,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -923,7 +923,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -933,7 +933,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -943,7 +943,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -953,7 +953,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -963,7 +963,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -973,7 +973,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -983,7 +983,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -993,7 +993,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1003,7 +1003,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1013,7 +1013,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1023,7 +1023,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1033,7 +1033,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1043,7 +1043,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1053,7 +1053,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1063,7 +1063,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activation Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1073,7 +1073,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Entry Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1083,7 +1083,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Space</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1093,7 +1093,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Period Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1103,7 +1103,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1113,7 +1113,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Stack Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1123,7 +1123,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1133,7 +1133,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Enable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1143,7 +1143,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Resume Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1153,7 +1153,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Suspend Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1163,7 +1163,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Terminate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1173,7 +1173,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Disable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1183,7 +1183,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Share Data Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1193,7 +1193,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Message Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1203,7 +1203,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Mutual Exclusion Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1213,7 +1213,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Notification Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1223,7 +1223,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Heap Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1233,7 +1233,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Sched Params</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1243,7 +1243,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Dependent Scheduler</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1253,7 +1253,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Host</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1263,7 +1263,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Static Scheduling Feature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1273,7 +1273,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Preemptable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1283,7 +1283,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Schedulers</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1293,7 +1293,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Deadline Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1303,7 +1303,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Deadline Type Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1313,7 +1313,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Time Slice Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1323,7 +1323,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Delay Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1333,7 +1333,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Join Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1343,7 +1343,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Yield Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1353,7 +1353,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Schedulable Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1363,7 +1363,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwTimerResourceImpl <em>Sw Timer Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwTimerResourceImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getSwTimerResource()
 	 * @generated
@@ -1374,7 +1374,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1384,7 +1384,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1394,7 +1394,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1404,7 +1404,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1414,7 +1414,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1424,7 +1424,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1434,7 +1434,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1444,7 +1444,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1454,7 +1454,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1464,7 +1464,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Periodic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1474,7 +1474,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Duration Elements</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1484,7 +1484,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The number of structural features of the '<em>Sw Timer Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1494,7 +1494,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.MemoryPartitionImpl <em>Memory Partition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.MemoryPartitionImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getMemoryPartition()
 	 * @generated
@@ -1505,7 +1505,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1515,7 +1515,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1525,7 +1525,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1535,7 +1535,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1545,7 +1545,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1555,7 +1555,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1565,7 +1565,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1575,7 +1575,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1585,7 +1585,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1595,7 +1595,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1605,7 +1605,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1615,7 +1615,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1625,7 +1625,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1635,7 +1635,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1645,7 +1645,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Concurrent Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1655,7 +1655,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Spaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1665,7 +1665,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Fork</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1675,7 +1675,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Exit</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1685,7 +1685,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1695,7 +1695,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The number of structural features of the '<em>Memory Partition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1705,7 +1705,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.AlarmImpl <em>Alarm</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.AlarmImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getAlarm()
 	 * @generated
@@ -1716,7 +1716,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1726,7 +1726,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1736,7 +1736,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1746,7 +1746,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1756,7 +1756,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1766,7 +1766,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1776,7 +1776,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1786,7 +1786,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1796,7 +1796,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1806,7 +1806,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1816,7 +1816,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1826,7 +1826,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1836,7 +1836,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1846,7 +1846,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1856,7 +1856,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1866,7 +1866,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activation Capacity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1876,7 +1876,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Entry Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1886,7 +1886,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Adress Space</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1896,7 +1896,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Period Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1906,7 +1906,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1916,7 +1916,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Stack Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1926,7 +1926,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Activate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1936,7 +1936,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Enable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1946,7 +1946,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Resume Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1956,7 +1956,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Suspend Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1966,7 +1966,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Terminate Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1976,7 +1976,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Disable Concurrency Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1986,7 +1986,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Share Data Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1996,7 +1996,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Message Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2006,7 +2006,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Mutual Exclusion Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2016,7 +2016,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Notification Resources</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2026,7 +2026,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Heap Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2036,7 +2036,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2046,7 +2046,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Maskable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2056,7 +2056,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Vector Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2066,7 +2066,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Mask Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2076,7 +2076,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Routine Connect Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2086,7 +2086,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Routine Disconnect Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2096,7 +2096,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Watchdog</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2106,7 +2106,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The feature id for the '<em><b>Timers</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2116,7 +2116,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The number of structural features of the '<em>Alarm</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -2126,7 +2126,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptKind <em>Interrupt Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getInterruptKind()
 	 * @generated
@@ -2138,7 +2138,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint <em>Entry Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Entry Point</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint
 	 * @generated
@@ -2149,7 +2149,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint#isIsReentrant <em>Is Reentrant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Reentrant</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint#isIsReentrant()
 	 * @see #getEntryPoint()
@@ -2161,7 +2161,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint#getRoutine <em>Routine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Routine</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint#getRoutine()
 	 * @see #getEntryPoint()
@@ -2173,7 +2173,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource <em>Sw Concurrent Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Concurrent Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource
 	 * @generated
@@ -2184,7 +2184,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getType()
 	 * @see #getSwConcurrentResource()
@@ -2196,7 +2196,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getActivationCapacity <em>Activation Capacity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Activation Capacity</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getActivationCapacity()
 	 * @see #getSwConcurrentResource()
@@ -2208,7 +2208,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getEntryPoints <em>Entry Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Entry Points</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getEntryPoints()
 	 * @see #getSwConcurrentResource()
@@ -2220,7 +2220,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getAdressSpace <em>Adress Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Adress Space</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getAdressSpace()
 	 * @see #getSwConcurrentResource()
@@ -2232,7 +2232,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getPeriodElements <em>Period Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Period Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getPeriodElements()
 	 * @see #getSwConcurrentResource()
@@ -2244,7 +2244,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getPriorityElements <em>Priority Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Priority Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getPriorityElements()
 	 * @see #getSwConcurrentResource()
@@ -2256,7 +2256,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getStackSizeElements <em>Stack Size Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Stack Size Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getStackSizeElements()
 	 * @see #getSwConcurrentResource()
@@ -2268,7 +2268,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getActivateServices <em>Activate Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Activate Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getActivateServices()
 	 * @see #getSwConcurrentResource()
@@ -2280,7 +2280,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getEnableConcurrencyServices <em>Enable Concurrency Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Enable Concurrency Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getEnableConcurrencyServices()
 	 * @see #getSwConcurrentResource()
@@ -2292,7 +2292,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getResumeServices <em>Resume Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Resume Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getResumeServices()
 	 * @see #getSwConcurrentResource()
@@ -2304,7 +2304,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getSuspendServices <em>Suspend Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Suspend Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getSuspendServices()
 	 * @see #getSwConcurrentResource()
@@ -2316,7 +2316,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getTerminateServices <em>Terminate Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Terminate Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getTerminateServices()
 	 * @see #getSwConcurrentResource()
@@ -2328,7 +2328,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getDisableConcurrencyServices <em>Disable Concurrency Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Disable Concurrency Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getDisableConcurrencyServices()
 	 * @see #getSwConcurrentResource()
@@ -2340,7 +2340,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getShareDataResources <em>Share Data Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Share Data Resources</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getShareDataResources()
 	 * @see #getSwConcurrentResource()
@@ -2352,7 +2352,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getMessageResources <em>Message Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Message Resources</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getMessageResources()
 	 * @see #getSwConcurrentResource()
@@ -2364,7 +2364,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getMutualExclusionResources <em>Mutual Exclusion Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Mutual Exclusion Resources</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getMutualExclusionResources()
 	 * @see #getSwConcurrentResource()
@@ -2376,7 +2376,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getNotificationResources <em>Notification Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Notification Resources</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getNotificationResources()
 	 * @see #getSwConcurrentResource()
@@ -2388,7 +2388,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getHeapSizeElements <em>Heap Size Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Heap Size Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwConcurrentResource#getHeapSizeElements()
 	 * @see #getSwConcurrentResource()
@@ -2400,7 +2400,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource <em>Interrupt Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Interrupt Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource
 	 * @generated
@@ -2411,7 +2411,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getKind()
 	 * @see #getInterruptResource()
@@ -2423,7 +2423,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#isIsMaskable <em>Is Maskable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Maskable</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#isIsMaskable()
 	 * @see #getInterruptResource()
@@ -2435,7 +2435,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getVectorElements <em>Vector Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Vector Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getVectorElements()
 	 * @see #getInterruptResource()
@@ -2447,7 +2447,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getMaskElements <em>Mask Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Mask Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getMaskElements()
 	 * @see #getInterruptResource()
@@ -2459,7 +2459,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getRoutineConnectServices <em>Routine Connect Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Routine Connect Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getRoutineConnectServices()
 	 * @see #getInterruptResource()
@@ -2471,7 +2471,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getRoutineDisconnectServices <em>Routine Disconnect Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Routine Disconnect Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptResource#getRoutineDisconnectServices()
 	 * @see #getInterruptResource()
@@ -2483,7 +2483,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource <em>Sw Schedulable Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Schedulable Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource
 	 * @generated
@@ -2494,7 +2494,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsStaticSchedulingFeature <em>Is Static Scheduling Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Static Scheduling Feature</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsStaticSchedulingFeature()
 	 * @see #getSwSchedulableResource()
@@ -2506,7 +2506,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsPreemptable <em>Is Preemptable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Preemptable</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsPreemptable()
 	 * @see #getSwSchedulableResource()
@@ -2518,7 +2518,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getSchedulers <em>Schedulers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Schedulers</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getSchedulers()
 	 * @see #getSwSchedulableResource()
@@ -2530,7 +2530,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineElements <em>Deadline Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Deadline Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineElements()
 	 * @see #getSwSchedulableResource()
@@ -2542,7 +2542,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineTypeElements <em>Deadline Type Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Deadline Type Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineTypeElements()
 	 * @see #getSwSchedulableResource()
@@ -2554,7 +2554,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getTimeSliceElements <em>Time Slice Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Time Slice Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getTimeSliceElements()
 	 * @see #getSwSchedulableResource()
@@ -2566,7 +2566,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDelayServices <em>Delay Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Delay Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDelayServices()
 	 * @see #getSwSchedulableResource()
@@ -2578,7 +2578,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getJoinServices <em>Join Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Join Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getJoinServices()
 	 * @see #getSwSchedulableResource()
@@ -2590,7 +2590,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getYieldServices <em>Yield Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Yield Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getYieldServices()
 	 * @see #getSwSchedulableResource()
@@ -2602,7 +2602,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwTimerResource <em>Sw Timer Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sw Timer Resource</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwTimerResource
 	 * @generated
@@ -2613,7 +2613,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwTimerResource#getDurationElements <em>Duration Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Duration Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwTimerResource#getDurationElements()
 	 * @see #getSwTimerResource()
@@ -2625,7 +2625,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition <em>Memory Partition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Memory Partition</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition
 	 * @generated
@@ -2636,7 +2636,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getConcurrentResources <em>Concurrent Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Concurrent Resources</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getConcurrentResources()
 	 * @see #getMemoryPartition()
@@ -2648,7 +2648,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getMemorySpaces <em>Memory Spaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Memory Spaces</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getMemorySpaces()
 	 * @see #getMemoryPartition()
@@ -2660,7 +2660,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getFork <em>Fork</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Fork</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getFork()
 	 * @see #getMemoryPartition()
@@ -2672,7 +2672,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getExit <em>Exit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Exit</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getExit()
 	 * @see #getMemoryPartition()
@@ -2684,7 +2684,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getBase_Namespace <em>Base Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Base Namespace</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.MemoryPartition#getBase_Namespace()
 	 * @see #getMemoryPartition()
@@ -2696,7 +2696,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm <em>Alarm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Alarm</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm
 	 * @generated
@@ -2707,7 +2707,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm#isIsWatchdog <em>Is Watchdog</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Watchdog</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm#isIsWatchdog()
 	 * @see #getAlarm()
@@ -2719,7 +2719,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm#getTimers <em>Timers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Timers</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.Alarm#getTimers()
 	 * @see #getAlarm()
@@ -2731,7 +2731,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptKind <em>Interrupt Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Interrupt Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptKind
 	 * @generated
@@ -2742,7 +2742,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2758,7 +2758,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -2766,7 +2766,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.EntryPointImpl <em>Entry Point</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.EntryPointImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getEntryPoint()
 		 * @generated
@@ -2777,7 +2777,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Reentrant</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ENTRY_POINT__IS_REENTRANT = eINSTANCE.getEntryPoint_IsReentrant();
@@ -2786,7 +2786,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Routine</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ENTRY_POINT__ROUTINE = eINSTANCE.getEntryPoint_Routine();
@@ -2795,7 +2795,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwConcurrentResourceImpl <em>Sw Concurrent Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwConcurrentResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getSwConcurrentResource()
 		 * @generated
@@ -2806,7 +2806,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_CONCURRENT_RESOURCE__TYPE = eINSTANCE.getSwConcurrentResource_Type();
@@ -2815,7 +2815,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Activation Capacity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_CONCURRENT_RESOURCE__ACTIVATION_CAPACITY = eINSTANCE.getSwConcurrentResource_ActivationCapacity();
@@ -2824,7 +2824,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Entry Points</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__ENTRY_POINTS = eINSTANCE.getSwConcurrentResource_EntryPoints();
@@ -2833,7 +2833,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Adress Space</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__ADRESS_SPACE = eINSTANCE.getSwConcurrentResource_AdressSpace();
@@ -2842,7 +2842,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Period Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__PERIOD_ELEMENTS = eINSTANCE.getSwConcurrentResource_PeriodElements();
@@ -2851,7 +2851,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Priority Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__PRIORITY_ELEMENTS = eINSTANCE.getSwConcurrentResource_PriorityElements();
@@ -2860,7 +2860,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stack Size Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__STACK_SIZE_ELEMENTS = eINSTANCE.getSwConcurrentResource_StackSizeElements();
@@ -2869,7 +2869,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Activate Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__ACTIVATE_SERVICES = eINSTANCE.getSwConcurrentResource_ActivateServices();
@@ -2878,7 +2878,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Enable Concurrency Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__ENABLE_CONCURRENCY_SERVICES = eINSTANCE.getSwConcurrentResource_EnableConcurrencyServices();
@@ -2887,7 +2887,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Resume Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__RESUME_SERVICES = eINSTANCE.getSwConcurrentResource_ResumeServices();
@@ -2896,7 +2896,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Suspend Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__SUSPEND_SERVICES = eINSTANCE.getSwConcurrentResource_SuspendServices();
@@ -2905,7 +2905,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Terminate Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__TERMINATE_SERVICES = eINSTANCE.getSwConcurrentResource_TerminateServices();
@@ -2914,7 +2914,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Disable Concurrency Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__DISABLE_CONCURRENCY_SERVICES = eINSTANCE.getSwConcurrentResource_DisableConcurrencyServices();
@@ -2923,7 +2923,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Share Data Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__SHARE_DATA_RESOURCES = eINSTANCE.getSwConcurrentResource_ShareDataResources();
@@ -2932,7 +2932,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Message Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__MESSAGE_RESOURCES = eINSTANCE.getSwConcurrentResource_MessageResources();
@@ -2941,7 +2941,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mutual Exclusion Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__MUTUAL_EXCLUSION_RESOURCES = eINSTANCE.getSwConcurrentResource_MutualExclusionResources();
@@ -2950,7 +2950,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Notification Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__NOTIFICATION_RESOURCES = eINSTANCE.getSwConcurrentResource_NotificationResources();
@@ -2959,7 +2959,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Heap Size Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_CONCURRENT_RESOURCE__HEAP_SIZE_ELEMENTS = eINSTANCE.getSwConcurrentResource_HeapSizeElements();
@@ -2968,7 +2968,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.InterruptResourceImpl <em>Interrupt Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.InterruptResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getInterruptResource()
 		 * @generated
@@ -2979,7 +2979,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INTERRUPT_RESOURCE__KIND = eINSTANCE.getInterruptResource_Kind();
@@ -2988,7 +2988,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Maskable</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INTERRUPT_RESOURCE__IS_MASKABLE = eINSTANCE.getInterruptResource_IsMaskable();
@@ -2997,7 +2997,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vector Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INTERRUPT_RESOURCE__VECTOR_ELEMENTS = eINSTANCE.getInterruptResource_VectorElements();
@@ -3006,7 +3006,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mask Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INTERRUPT_RESOURCE__MASK_ELEMENTS = eINSTANCE.getInterruptResource_MaskElements();
@@ -3015,7 +3015,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Routine Connect Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INTERRUPT_RESOURCE__ROUTINE_CONNECT_SERVICES = eINSTANCE.getInterruptResource_RoutineConnectServices();
@@ -3024,7 +3024,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Routine Disconnect Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INTERRUPT_RESOURCE__ROUTINE_DISCONNECT_SERVICES = eINSTANCE.getInterruptResource_RoutineDisconnectServices();
@@ -3033,7 +3033,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwSchedulableResourceImpl <em>Sw Schedulable Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwSchedulableResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getSwSchedulableResource()
 		 * @generated
@@ -3044,7 +3044,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Static Scheduling Feature</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_SCHEDULABLE_RESOURCE__IS_STATIC_SCHEDULING_FEATURE = eINSTANCE.getSwSchedulableResource_IsStaticSchedulingFeature();
@@ -3053,7 +3053,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Preemptable</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SW_SCHEDULABLE_RESOURCE__IS_PREEMPTABLE = eINSTANCE.getSwSchedulableResource_IsPreemptable();
@@ -3062,7 +3062,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Schedulers</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_SCHEDULABLE_RESOURCE__SCHEDULERS = eINSTANCE.getSwSchedulableResource_Schedulers();
@@ -3071,7 +3071,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Deadline Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_SCHEDULABLE_RESOURCE__DEADLINE_ELEMENTS = eINSTANCE.getSwSchedulableResource_DeadlineElements();
@@ -3080,7 +3080,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Deadline Type Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_SCHEDULABLE_RESOURCE__DEADLINE_TYPE_ELEMENTS = eINSTANCE.getSwSchedulableResource_DeadlineTypeElements();
@@ -3089,7 +3089,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Time Slice Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_SCHEDULABLE_RESOURCE__TIME_SLICE_ELEMENTS = eINSTANCE.getSwSchedulableResource_TimeSliceElements();
@@ -3098,7 +3098,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Delay Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_SCHEDULABLE_RESOURCE__DELAY_SERVICES = eINSTANCE.getSwSchedulableResource_DelayServices();
@@ -3107,7 +3107,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Join Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_SCHEDULABLE_RESOURCE__JOIN_SERVICES = eINSTANCE.getSwSchedulableResource_JoinServices();
@@ -3116,7 +3116,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Yield Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_SCHEDULABLE_RESOURCE__YIELD_SERVICES = eINSTANCE.getSwSchedulableResource_YieldServices();
@@ -3125,7 +3125,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwTimerResourceImpl <em>Sw Timer Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SwTimerResourceImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getSwTimerResource()
 		 * @generated
@@ -3136,7 +3136,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Duration Elements</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SW_TIMER_RESOURCE__DURATION_ELEMENTS = eINSTANCE.getSwTimerResource_DurationElements();
@@ -3145,7 +3145,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.MemoryPartitionImpl <em>Memory Partition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.MemoryPartitionImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getMemoryPartition()
 		 * @generated
@@ -3156,7 +3156,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Concurrent Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MEMORY_PARTITION__CONCURRENT_RESOURCES = eINSTANCE.getMemoryPartition_ConcurrentResources();
@@ -3165,7 +3165,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Memory Spaces</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MEMORY_PARTITION__MEMORY_SPACES = eINSTANCE.getMemoryPartition_MemorySpaces();
@@ -3174,7 +3174,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fork</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MEMORY_PARTITION__FORK = eINSTANCE.getMemoryPartition_Fork();
@@ -3183,7 +3183,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Exit</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MEMORY_PARTITION__EXIT = eINSTANCE.getMemoryPartition_Exit();
@@ -3192,7 +3192,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MEMORY_PARTITION__BASE_NAMESPACE = eINSTANCE.getMemoryPartition_Base_Namespace();
@@ -3201,7 +3201,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.AlarmImpl <em>Alarm</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.AlarmImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getAlarm()
 		 * @generated
@@ -3212,7 +3212,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Watchdog</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ALARM__IS_WATCHDOG = eINSTANCE.getAlarm_IsWatchdog();
@@ -3221,7 +3221,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Timers</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ALARM__TIMERS = eINSTANCE.getAlarm_Timers();
@@ -3230,7 +3230,7 @@ public interface SW_ConcurrencyPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptKind <em>Interrupt Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.InterruptKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.impl.SW_ConcurrencyPackageImpl#getInterruptKind()
 		 * @generated

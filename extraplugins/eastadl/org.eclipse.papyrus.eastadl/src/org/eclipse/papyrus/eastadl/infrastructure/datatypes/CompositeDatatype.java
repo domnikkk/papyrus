@@ -55,7 +55,7 @@ public interface CompositeDatatype extends EADatatype {
 	 * If the meaning of the '<em>Datatype Prototype</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Datatype Prototype</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getCompositeDatatype_DatatypePrototype()
 	 * @model containment="true" required="true"

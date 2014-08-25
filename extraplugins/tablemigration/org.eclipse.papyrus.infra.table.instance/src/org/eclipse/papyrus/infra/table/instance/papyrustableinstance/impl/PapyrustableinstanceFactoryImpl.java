@@ -9,18 +9,17 @@ package org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.*;
+import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance;
+import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstanceFactory;
+import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PapyrustableinstanceFactoryImpl extends EFactoryImpl implements PapyrustableinstanceFactory {
@@ -28,7 +27,7 @@ public class PapyrustableinstanceFactoryImpl extends EFactoryImpl implements Pap
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PapyrustableinstanceFactory init() {
@@ -47,7 +46,7 @@ public class PapyrustableinstanceFactoryImpl extends EFactoryImpl implements Pap
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrustableinstanceFactoryImpl() {
@@ -57,7 +56,7 @@ public class PapyrustableinstanceFactoryImpl extends EFactoryImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +72,7 @@ public class PapyrustableinstanceFactoryImpl extends EFactoryImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +84,7 @@ public class PapyrustableinstanceFactoryImpl extends EFactoryImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +95,7 @@ public class PapyrustableinstanceFactoryImpl extends EFactoryImpl implements Pap
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

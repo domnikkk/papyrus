@@ -39,7 +39,7 @@ public interface HwCoolingSupply extends HwComponent {
 	 * If the meaning of the '<em>Cooling Power</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Cooling Power</em>' attribute.
 	 * @see #setCoolingPower(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwPowerPackage#getHwCoolingSupply_CoolingPower()
@@ -52,7 +52,7 @@ public interface HwCoolingSupply extends HwComponent {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwPower.HwCoolingSupply#getCoolingPower <em>Cooling Power</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Cooling Power</em>' attribute.
 	 * @see #getCoolingPower()

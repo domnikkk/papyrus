@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.DecisionNode;

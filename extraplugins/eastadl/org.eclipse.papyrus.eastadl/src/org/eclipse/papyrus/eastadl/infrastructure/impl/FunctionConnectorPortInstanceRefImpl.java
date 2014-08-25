@@ -30,7 +30,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	 * The cached value of the '{@link #getFunctionPort() <em>Function Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionPort()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	 * The cached value of the '{@link #getFunctionPrototype() <em>Function Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionConnectorPortInstanceRefImpl() {
@@ -61,7 +61,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionPort basicGetFunctionPort() {
@@ -102,7 +102,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionPrototype basicGetFunctionPrototype() {
@@ -147,7 +147,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class FunctionConnectorPortInstanceRefImpl extends InstanceRefImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

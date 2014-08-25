@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Extension Definition Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.facademapping.FacademappingPackage#getExtensionDefinitionKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * The '<em><b>Association</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASSOCIATION_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * The '<em><b>Generalization</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GENERALIZATION_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * The '<em><b>Multi Generalization</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MULTI_GENERALIZATION_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * The '<em><b>Fusion</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FUSION_VALUE
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * If the meaning of '<em><b>Association</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ASSOCIATION
 	 * @model name="Association"
 	 * @generated
@@ -96,7 +96,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * If the meaning of '<em><b>Generalization</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GENERALIZATION
 	 * @model name="Generalization"
 	 * @generated
@@ -111,7 +111,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * If the meaning of '<em><b>Multi Generalization</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MULTI_GENERALIZATION
 	 * @model name="MultiGeneralization"
 	 * @generated
@@ -126,7 +126,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * If the meaning of '<em><b>Fusion</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FUSION
 	 * @model name="Fusion"
 	 * @generated
@@ -138,7 +138,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * An array of all the '<em><b>Extension Definition Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ExtensionDefinitionKind[] VALUES_ARRAY =
@@ -153,7 +153,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Extension Definition Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ExtensionDefinitionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -162,7 +162,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * Returns the '<em><b>Extension Definition Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExtensionDefinitionKind get(String literal) {
@@ -179,7 +179,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * Returns the '<em><b>Extension Definition Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExtensionDefinitionKind getByName(String name) {
@@ -196,7 +196,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * Returns the '<em><b>Extension Definition Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExtensionDefinitionKind get(int value) {
@@ -216,7 +216,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -224,7 +224,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -232,7 +232,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -241,7 +241,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ExtensionDefinitionKind(int value, String name, String literal) {
@@ -253,7 +253,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +275,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +287,7 @@ public enum ExtensionDefinitionKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

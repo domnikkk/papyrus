@@ -32,7 +32,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	 * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMaximum()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScope()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AgeConstraintImpl() {
@@ -74,7 +74,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMaximum() {
@@ -115,7 +115,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -160,7 +160,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventChain basicGetScope() {
@@ -205,7 +205,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

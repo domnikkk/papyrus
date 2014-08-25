@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,7 +21,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.papyrus.java.profile.java.JavaPackage;
 import org.eclipse.papyrus.java.profile.java.PrimitiveType;
 
@@ -30,7 +28,7 @@ import org.eclipse.papyrus.java.profile.java.PrimitiveType;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.profile.java.PrimitiveType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PrimitiveTypeItemProvider
@@ -45,7 +43,7 @@ public class PrimitiveTypeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PrimitiveTypeItemProvider(AdapterFactory adapterFactory) {
@@ -56,7 +54,7 @@ public class PrimitiveTypeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +73,7 @@ public class PrimitiveTypeItemProvider
 	 * This adds a property descriptor for the Implementation Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addImplementationClassPropertyDescriptor(Object object) {
@@ -98,7 +96,7 @@ public class PrimitiveTypeItemProvider
 	 * This adds a property descriptor for the Base Primitive Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_PrimitiveTypePropertyDescriptor(Object object) {
@@ -121,7 +119,7 @@ public class PrimitiveTypeItemProvider
 	 * This adds a property descriptor for the Collection Implementation Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCollectionImplementationClassPropertyDescriptor(Object object) {
@@ -144,7 +142,7 @@ public class PrimitiveTypeItemProvider
 	 * This returns PrimitiveType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +154,7 @@ public class PrimitiveTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +170,7 @@ public class PrimitiveTypeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +191,7 @@ public class PrimitiveTypeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

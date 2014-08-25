@@ -38,7 +38,7 @@ public interface Layer extends Element {
 	 * An alternative name to be used in place of the stereotyped element's name.
 	 * </p>
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayer_Name()
@@ -51,7 +51,7 @@ public interface Layer extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Layer#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -74,7 +74,7 @@ public interface Layer extends Element {
 	 * Ex: plugins
 	 * </p>
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parent Folder</em>' attribute.
 	 * @see #setParentFolder(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayer_ParentFolder()
@@ -87,7 +87,7 @@ public interface Layer extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Layer#getParentFolder <em>Parent Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Parent Folder</em>' attribute.
 	 * @see #getParentFolder()
@@ -102,7 +102,7 @@ public interface Layer extends Element {
 	 * If the meaning of the '<em>Base Package</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Package</em>' reference.
 	 * @see #setBase_Package(org.eclipse.uml2.uml.Package)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayer_Base_Package()
@@ -115,7 +115,7 @@ public interface Layer extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Layer#getBase_Package <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Package</em>' reference.
 	 * @see #getBase_Package()
@@ -130,7 +130,7 @@ public interface Layer extends Element {
 	 * If the meaning of the '<em>Is Deprecated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #setIsDeprecated(boolean)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayer_IsDeprecated()
@@ -143,7 +143,7 @@ public interface Layer extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Layer#isDeprecated <em>Is Deprecated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Deprecated</em>' attribute.
 	 * @see #isDeprecated()
@@ -160,7 +160,7 @@ public interface Layer extends Element {
 	 * A comment associated to the isDeprecated=true
 	 * </p>
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #setDeprecatedComment(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayer_DeprecatedComment()
@@ -173,7 +173,7 @@ public interface Layer extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Layer#getDeprecatedComment <em>Deprecated Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Deprecated Comment</em>' attribute.
 	 * @see #getDeprecatedComment()
@@ -188,7 +188,7 @@ public interface Layer extends Element {
 	 * If the meaning of the '<em>Referent</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Referent</em>' attribute.
 	 * @see #setReferent(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getLayer_Referent()
@@ -201,7 +201,7 @@ public interface Layer extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Layer#getReferent <em>Referent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Referent</em>' attribute.
 	 * @see #getReferent()

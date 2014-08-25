@@ -26,7 +26,7 @@ public class CDTPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
 	@Override

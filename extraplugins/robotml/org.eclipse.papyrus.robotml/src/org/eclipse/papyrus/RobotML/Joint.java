@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.RobotML;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Connector;
 
 /**
@@ -30,7 +29,7 @@ public interface Joint extends EObject {
 	 * If the meaning of the '<em>Base Connector</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Connector</em>' reference.
 	 * @see #setBase_Connector(Connector)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getJoint_Base_Connector()
@@ -43,7 +42,7 @@ public interface Joint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Joint#getBase_Connector <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Connector</em>' reference.
 	 * @see #getBase_Connector()

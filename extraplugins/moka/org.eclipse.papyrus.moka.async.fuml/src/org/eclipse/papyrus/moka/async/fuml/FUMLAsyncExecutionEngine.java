@@ -46,7 +46,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.composites.CompositeStructuresExecutionEngine#start(org.eclipse.uml2.uml.Behavior)
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.moka.composites.CompositeStructuresExecutionEngine#registerSemanticStrategies(org.eclipse.papyrus.moka.fuml.Semantics.Loci
 	 * .LociL1.Locus)
@@ -93,7 +93,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.fuml.FUMLExecutionEngineForMoka#getControlDelegate()
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.moka.fuml.FUMLExecutionEngineForMoka#resume(org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request)
 	 */

@@ -41,7 +41,7 @@ public interface EntryPoint extends Allocate {
 	 * If the meaning of the '<em>Is Reentrant</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Reentrant</em>' attribute.
 	 * @see #setIsReentrant(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getEntryPoint_IsReentrant()
@@ -54,7 +54,7 @@ public interface EntryPoint extends Allocate {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint#isIsReentrant <em>Is Reentrant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Reentrant</em>' attribute.
 	 * @see #isIsReentrant()
@@ -69,7 +69,7 @@ public interface EntryPoint extends Allocate {
 	 * If the meaning of the '<em>Routine</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Routine</em>' reference.
 	 * @see #setRoutine(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getEntryPoint_Routine()
@@ -82,7 +82,7 @@ public interface EntryPoint extends Allocate {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.EntryPoint#getRoutine <em>Routine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Routine</em>' reference.
 	 * @see #getRoutine()

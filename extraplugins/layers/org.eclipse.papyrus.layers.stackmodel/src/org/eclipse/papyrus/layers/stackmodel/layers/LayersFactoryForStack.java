@@ -19,7 +19,7 @@ import org.eclipse.papyrus.layers.stackmodel.LayersException;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage
  * @generated
  */
@@ -28,7 +28,7 @@ public interface LayersFactoryForStack {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	LayersFactoryForStack eINSTANCE = org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersFactoryForStackImpl.init();
@@ -37,7 +37,7 @@ public interface LayersFactoryForStack {
 	 * Returns a new object of class '<em>Stack</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Stack</em>'.
 	 * @generated
 	 */
@@ -47,7 +47,7 @@ public interface LayersFactoryForStack {
 	 * Returns a new object of class '<em>Layer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Layer</em>'.
 	 * @generated NOT
 	 */
@@ -59,7 +59,7 @@ public interface LayersFactoryForStack {
 	 * Returns a new object of class '<em>Reg Exp Layer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Reg Exp Layer</em>'.
 	 * @throws LayersException
 	 * @generated
@@ -70,7 +70,7 @@ public interface LayersFactoryForStack {
 	 * Returns a new object of class '<em>Top Layer Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Top Layer Operator</em>'.
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface LayersFactoryForStack {
 	 * Returns a new object of class '<em>Stacked Layer Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Stacked Layer Operator</em>'.
 	 * @generated
 	 */

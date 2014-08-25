@@ -40,7 +40,7 @@ public interface VirtualOperation extends VirtualTypedElement {
 	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualOperation_Parameters()
 	 * @model containment="true"

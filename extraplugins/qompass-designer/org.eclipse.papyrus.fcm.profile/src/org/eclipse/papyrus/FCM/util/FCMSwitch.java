@@ -14,10 +14,46 @@ package org.eclipse.papyrus.FCM.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.FCM.*;
+import org.eclipse.papyrus.FCM.Assembly;
+import org.eclipse.papyrus.FCM.AutoIndex;
+import org.eclipse.papyrus.FCM.AutoIndexPerNode;
+import org.eclipse.papyrus.FCM.BindTemplate;
+import org.eclipse.papyrus.FCM.BindingHelper;
+import org.eclipse.papyrus.FCM.CodeGenOptions;
+import org.eclipse.papyrus.FCM.CompImplTemplate;
+import org.eclipse.papyrus.FCM.CompToOOmapping;
+import org.eclipse.papyrus.FCM.CompilerChain;
+import org.eclipse.papyrus.FCM.ConfigOption;
+import org.eclipse.papyrus.FCM.ConfigurableElementInstance;
+import org.eclipse.papyrus.FCM.Configuration;
+import org.eclipse.papyrus.FCM.ConfigurationProperty;
+import org.eclipse.papyrus.FCM.Connector;
+import org.eclipse.papyrus.FCM.ConnectorConfiguration;
+import org.eclipse.papyrus.FCM.ContainerRule;
+import org.eclipse.papyrus.FCM.CopyAttributeValue;
+import org.eclipse.papyrus.FCM.DeploymentPlan;
+import org.eclipse.papyrus.FCM.DerivedElement;
+import org.eclipse.papyrus.FCM.FCMPackage;
+import org.eclipse.papyrus.FCM.Flatten;
+import org.eclipse.papyrus.FCM.Fragment;
+import org.eclipse.papyrus.FCM.ImplementationGroup;
+import org.eclipse.papyrus.FCM.ImplementationProperties;
+import org.eclipse.papyrus.FCM.InitPrecedence;
+import org.eclipse.papyrus.FCM.InstanceConfigurator;
+import org.eclipse.papyrus.FCM.InteractionComponent;
+import org.eclipse.papyrus.FCM.InterceptionRule;
+import org.eclipse.papyrus.FCM.OperatingSystem;
+import org.eclipse.papyrus.FCM.Port;
+import org.eclipse.papyrus.FCM.PortKind;
+import org.eclipse.papyrus.FCM.ProgLanguage;
+import org.eclipse.papyrus.FCM.RuleApplication;
+import org.eclipse.papyrus.FCM.Singleton;
+import org.eclipse.papyrus.FCM.Target;
+import org.eclipse.papyrus.FCM.TargetArchitecture;
+import org.eclipse.papyrus.FCM.Template;
+import org.eclipse.papyrus.FCM.TemplatePort;
+import org.eclipse.papyrus.FCM.UseInstanceConfigurator;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +64,7 @@ import org.eclipse.papyrus.FCM.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.FCM.FCMPackage
  * @generated
  */
@@ -37,7 +73,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static FCMPackage modelPackage;
@@ -46,7 +82,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FCMSwitch() {
@@ -59,7 +95,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -73,7 +109,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -410,7 +446,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Template</em>'.
@@ -427,7 +463,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Binding Helper</em>'.
@@ -444,7 +480,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Configuration Property</em>'.
@@ -461,7 +497,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Implementation Group</em>'.
@@ -478,7 +514,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Assembly</em>'.
@@ -495,7 +531,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Flatten</em>'.
@@ -512,7 +548,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Comp To OOmapping</em>'.
@@ -529,7 +565,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Prog Language</em>'.
@@ -546,7 +582,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Code Gen Options</em>'.
@@ -563,7 +599,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Interaction Component</em>'.
@@ -580,7 +616,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Singleton</em>'.
@@ -597,7 +633,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
@@ -614,7 +650,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Configurable Element Instance</em>'.
@@ -631,7 +667,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Use Instance Configurator</em>'.
@@ -648,7 +684,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Instance Configurator</em>'.
@@ -665,7 +701,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Rule Application</em>'.
@@ -682,7 +718,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Container Rule</em>'.
@@ -699,7 +735,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Config Option</em>'.
@@ -716,7 +752,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Template Port</em>'.
@@ -733,7 +769,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Port</em>'.
@@ -750,7 +786,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Port Kind</em>'.
@@ -767,7 +803,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Deployment Plan</em>'.
@@ -784,7 +820,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Derived Element</em>'.
@@ -801,7 +837,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Comp Impl Template</em>'.
@@ -818,7 +854,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Implementation Properties</em>'.
@@ -835,7 +871,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Operating System</em>'.
@@ -852,7 +888,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Target Architecture</em>'.
@@ -869,7 +905,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Configuration</em>'.
@@ -886,7 +922,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Interception Rule</em>'.
@@ -903,7 +939,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Target</em>'.
@@ -920,7 +956,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Compiler Chain</em>'.
@@ -937,7 +973,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fragment</em>'.
@@ -954,7 +990,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Copy Attribute Value</em>'.
@@ -971,7 +1007,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Auto Index</em>'.
@@ -988,7 +1024,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Auto Index Per Node</em>'.
@@ -1005,7 +1041,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Init Precedence</em>'.
@@ -1022,7 +1058,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Connector Configuration</em>'.
@@ -1039,7 +1075,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Bind Template</em>'.
@@ -1056,7 +1092,7 @@ public class FCMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

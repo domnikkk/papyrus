@@ -83,7 +83,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getThread()
 	 */
 	public IThread getThread() {
@@ -102,7 +102,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getVariables()
 	 */
 	public IVariable[] getVariables() throws DebugException {
@@ -130,7 +130,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#hasVariables()
 	 */
 	public boolean hasVariables() throws DebugException {
@@ -139,7 +139,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getLineNumber()
 	 */
 	public int getLineNumber() throws DebugException {
@@ -149,7 +149,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getCharStart()
 	 */
 	public int getCharStart() throws DebugException {
@@ -159,7 +159,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getCharEnd()
 	 */
 	public int getCharEnd() throws DebugException {
@@ -180,7 +180,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getName()
 	 */
 	public String getName() throws DebugException {
@@ -203,7 +203,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#getRegisterGroups()
 	 */
 	public IRegisterGroup[] getRegisterGroups() throws DebugException {
@@ -231,7 +231,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStackFrame#hasRegisterGroups()
 	 */
 	public boolean hasRegisterGroups() throws DebugException {
@@ -244,7 +244,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#canStepInto()
 	 */
 	public boolean canStepInto() {
@@ -254,7 +254,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#canStepOver()
 	 */
 	public boolean canStepOver() {
@@ -264,7 +264,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#canStepReturn()
 	 */
 	public boolean canStepReturn() {
@@ -274,7 +274,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#isStepping()
 	 */
 	public boolean isStepping() {
@@ -284,7 +284,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#stepInto()
 	 */
 	public void stepInto() throws DebugException {
@@ -294,7 +294,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#stepOver()
 	 */
 	public void stepOver() throws DebugException {
@@ -304,7 +304,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.IStep#stepReturn()
 	 */
 	public void stepReturn() throws DebugException {
@@ -318,7 +318,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canResume()
 	 */
 	public boolean canResume() {
@@ -328,7 +328,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#canSuspend()
 	 */
 	public boolean canSuspend() {
@@ -338,7 +338,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#isSuspended()
 	 */
 	public boolean isSuspended() {
@@ -348,7 +348,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#resume()
 	 */
 	public void resume() throws DebugException {
@@ -358,7 +358,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ISuspendResume#suspend()
 	 */
 	public void suspend() throws DebugException {
@@ -372,7 +372,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#canTerminate()
 	 */
 	public boolean canTerminate() {
@@ -382,7 +382,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#isTerminated()
 	 */
 	public boolean isTerminated() {
@@ -392,7 +392,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.debug.core.model.ITerminate#terminate()
 	 */
 	public void terminate() throws DebugException {

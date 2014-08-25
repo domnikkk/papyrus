@@ -38,7 +38,7 @@ public interface Acquire extends GrService {
 	 * If the meaning of the '<em>Is Blocking</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Blocking</em>' attribute.
 	 * @see #setIsBlocking(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getAcquire_IsBlocking()
@@ -51,7 +51,7 @@ public interface Acquire extends GrService {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Acquire#isIsBlocking <em>Is Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Blocking</em>' attribute.
 	 * @see #isIsBlocking()

@@ -37,7 +37,7 @@ public interface ElectricalComponent extends HardwareComponentType {
 	 * <!-- begin-model-doc -->
 	 * Indicates if the PowerSupply is active or passive.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Active</em>' attribute.
 	 * @see #setIsActive(boolean)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getElectricalComponent_IsActive()
@@ -50,7 +50,7 @@ public interface ElectricalComponent extends HardwareComponentType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.ElectricalComponent#isIsActive <em>Is Active</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Active</em>' attribute.
 	 * @see #isIsActive()

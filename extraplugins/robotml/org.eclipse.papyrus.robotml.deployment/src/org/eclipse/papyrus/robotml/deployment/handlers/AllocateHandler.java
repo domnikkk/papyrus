@@ -17,14 +17,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.papyrus.RobotML.DeploymentPlan;
 import org.eclipse.papyrus.robotml.deployment.CommandSupport;
 import org.eclipse.papyrus.robotml.deployment.DepUtils;
 import org.eclipse.papyrus.robotml.deployment.RunnableWithResult;
 import org.eclipse.papyrus.robotml.deployment.StUtils;
 import org.eclipse.papyrus.robotml.deployment.dialog.AllocationDialog;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * Implementation class for ClassAction action

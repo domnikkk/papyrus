@@ -59,7 +59,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The default value of the '{@link #getFailureLogic() <em>Failure Logic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFailureLogic()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getFailureLogic() <em>Failure Logic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFailureLogic()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -114,7 +114,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getInternalFault() <em>Internal Fault</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInternalFault()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getExternalFailure() <em>External Failure</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExternalFailure()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getExternalFault() <em>External Fault</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExternalFault()
 	 * @generated
 	 * @ordered
@@ -147,7 +147,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getProcessFault() <em>Process Fault</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProcessFault()
 	 * @generated
 	 * @ordered
@@ -158,7 +158,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	 * The cached value of the '{@link #getInternalFailure() <em>Internal Failure</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInternalFailure()
 	 * @generated
 	 * @ordered
@@ -168,7 +168,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ErrorBehaviorImpl() {
@@ -178,7 +178,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +242,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -284,7 +284,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +295,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -325,7 +325,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +340,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -391,7 +391,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +405,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +416,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -431,7 +431,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -445,7 +445,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -459,7 +459,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -479,7 +479,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FailureOutPort basicGetInternalFailure() {
@@ -489,7 +489,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +504,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -515,7 +515,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -530,7 +530,7 @@ public class ErrorBehaviorImpl extends EAElementImpl implements ErrorBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -18,7 +18,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 /**
  * A subclass registering events
  * For tests purpose.
- * 
+ *
  * @author cedric dumoulin
  *
  */

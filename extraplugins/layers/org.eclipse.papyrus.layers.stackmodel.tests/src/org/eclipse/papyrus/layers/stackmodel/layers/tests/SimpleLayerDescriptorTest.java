@@ -11,7 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Simple Layer Descriptor</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SimpleLayerDescriptorTest extends LayerDescriptorTest {
@@ -19,7 +19,7 @@ public class SimpleLayerDescriptorTest extends LayerDescriptorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class SimpleLayerDescriptorTest extends LayerDescriptorTest {
 	 * Constructs a new Simple Layer Descriptor test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SimpleLayerDescriptorTest(String name) {
@@ -41,7 +41,7 @@ public class SimpleLayerDescriptorTest extends LayerDescriptorTest {
 	 * Returns the fixture for this Simple Layer Descriptor test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class SimpleLayerDescriptorTest extends LayerDescriptorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class SimpleLayerDescriptorTest extends LayerDescriptorTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

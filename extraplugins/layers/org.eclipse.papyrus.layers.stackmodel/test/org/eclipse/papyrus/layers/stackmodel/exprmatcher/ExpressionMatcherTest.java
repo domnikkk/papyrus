@@ -84,7 +84,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Get the diagram contained in the specified resource.
-	 * 
+	 *
 	 * @param modelFileName
 	 * @return
 	 */
@@ -98,7 +98,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.exprmatcher.ExpressionMatcher#ExpressionMatcher(java.lang.String, java.util.List)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -121,7 +121,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test an expression
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -151,7 +151,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.exprmatcher.ExpressionMatcher#ExpressionMatcher(java.lang.String, java.util.List)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -177,7 +177,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.exprmatcher.ExpressionMatcher#refreshMatchingElements()}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -202,7 +202,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.exprmatcher.ExpressionMatcher#getExpression()}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -220,7 +220,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.exprmatcher.ExpressionMatcher#setExpression(java.lang.String)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -246,7 +246,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.exprmatcher.ExpressionMatcher#getMatchingElements()}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -301,7 +301,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test removing elements.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -340,7 +340,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test removing elements.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -383,7 +383,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Test removing elements.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test
@@ -427,7 +427,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Remove n Views from the provided diagram
-	 * 
+	 *
 	 * @param diagram
 	 * @param removedElementCount
 	 */
@@ -445,7 +445,7 @@ public class ExpressionMatcherTest {
 
 	/**
 	 * Add n Views to the provided diagram
-	 * 
+	 *
 	 * @param diagram
 	 * @param removedElementCount
 	 */

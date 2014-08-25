@@ -59,7 +59,7 @@ public interface PrivateContent extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getPrivateContent_Base_Class()
@@ -72,7 +72,7 @@ public interface PrivateContent extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -87,7 +87,7 @@ public interface PrivateContent extends EAElement {
 	 * If the meaning of the '<em>Private Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Private Element</em>' reference.
 	 * @see #setPrivateElement(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getPrivateContent_PrivateElement()
@@ -100,7 +100,7 @@ public interface PrivateContent extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getPrivateElement <em>Private Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Private Element</em>' reference.
 	 * @see #getPrivateElement()

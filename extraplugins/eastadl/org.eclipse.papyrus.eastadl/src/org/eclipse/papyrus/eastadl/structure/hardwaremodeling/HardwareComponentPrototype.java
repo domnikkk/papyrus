@@ -51,7 +51,7 @@ public interface HardwareComponentPrototype extends AllocationTarget, EAPrototyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public interface HardwareComponentPrototype extends AllocationTarget, EAPrototyp
 	 * The type of the HWElement.
 	 * {derived from UML::TypedElement::type}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(HardwareComponentType)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareComponentPrototype_Type()
@@ -78,7 +78,7 @@ public interface HardwareComponentPrototype extends AllocationTarget, EAPrototyp
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentPrototype#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()

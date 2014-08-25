@@ -25,7 +25,7 @@ public class WordDetector implements IWordDetector {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.text.rules.IWordDetector#isWordPart(char)
 	 */
 	/**
@@ -41,7 +41,7 @@ public class WordDetector implements IWordDetector {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.text.rules.IWordDetector#isWordStart(char)
 	 */
 	/**

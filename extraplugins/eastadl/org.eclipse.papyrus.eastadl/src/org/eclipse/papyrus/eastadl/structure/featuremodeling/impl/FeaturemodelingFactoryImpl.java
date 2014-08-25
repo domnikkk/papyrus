@@ -35,14 +35,14 @@ import org.eclipse.papyrus.eastadl.structure.featuremodeling.VariabilityDependen
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FeaturemodelingFactoryImpl extends EFactoryImpl implements FeaturemodelingFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -54,7 +54,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FeaturemodelingFactory init() {
@@ -72,7 +72,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeaturemodelingFactoryImpl() {
@@ -81,7 +81,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertBindingTimeKindToString(EDataType eDataType, Object instanceValue) {
@@ -90,7 +90,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVariabilityDependencyKindToString(EDataType eDataType, Object instanceValue) {
@@ -117,7 +117,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BindingTimeKind createBindingTimeKindFromString(EDataType eDataType, String initialValue) {
@@ -166,7 +166,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VariabilityDependencyKind createVariabilityDependencyKindFromString(EDataType eDataType, String initialValue) {
@@ -253,7 +253,7 @@ public class FeaturemodelingFactoryImpl extends EFactoryImpl implements Featurem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

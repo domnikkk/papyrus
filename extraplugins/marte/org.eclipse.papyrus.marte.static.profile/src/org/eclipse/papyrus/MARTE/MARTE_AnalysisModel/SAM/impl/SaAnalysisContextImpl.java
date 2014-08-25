@@ -40,7 +40,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The default value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The cached value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The default value of the '{@link #getOptCriterion() <em>Opt Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOptCriterion()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	 * The cached value of the '{@link #getOptCriterion() <em>Opt Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOptCriterion()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SaAnalysisContextImpl() {
@@ -93,7 +93,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class SaAnalysisContextImpl extends GaAnalysisContextImpl implements SaAn
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

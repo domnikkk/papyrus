@@ -41,7 +41,7 @@ public interface HwBus extends HwMedia {
 	 * If the meaning of the '<em>Adress Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Adress Width</em>' attribute.
 	 * @see #setAdressWidth(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage#getHwBus_AdressWidth()
@@ -54,7 +54,7 @@ public interface HwBus extends HwMedia {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getAdressWidth <em>Adress Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Adress Width</em>' attribute.
 	 * @see #getAdressWidth()
@@ -69,7 +69,7 @@ public interface HwBus extends HwMedia {
 	 * If the meaning of the '<em>Word Width</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Word Width</em>' attribute.
 	 * @see #setWordWidth(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage#getHwBus_WordWidth()
@@ -82,7 +82,7 @@ public interface HwBus extends HwMedia {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getWordWidth <em>Word Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Word Width</em>' attribute.
 	 * @see #getWordWidth()
@@ -97,7 +97,7 @@ public interface HwBus extends HwMedia {
 	 * If the meaning of the '<em>Is Synchronous</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Synchronous</em>' attribute.
 	 * @see #setIsSynchronous(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage#getHwBus_IsSynchronous()
@@ -110,7 +110,7 @@ public interface HwBus extends HwMedia {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getIsSynchronous <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Synchronous</em>' attribute.
 	 * @see #getIsSynchronous()
@@ -125,7 +125,7 @@ public interface HwBus extends HwMedia {
 	 * If the meaning of the '<em>Is Serial</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Serial</em>' attribute.
 	 * @see #setIsSerial(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwCommunicationPackage#getHwBus_IsSerial()
@@ -138,7 +138,7 @@ public interface HwBus extends HwMedia {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus#getIsSerial <em>Is Serial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Serial</em>' attribute.
 	 * @see #getIsSerial()

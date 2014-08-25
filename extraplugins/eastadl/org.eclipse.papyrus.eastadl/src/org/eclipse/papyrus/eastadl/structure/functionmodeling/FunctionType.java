@@ -91,7 +91,7 @@ public interface FunctionType extends Context, EAType {
 	 * If the meaning of the '<em>Connector</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Connector</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionType_Connector()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -102,7 +102,7 @@ public interface FunctionType extends Context, EAType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface FunctionType extends Context, EAType {
 	 * Owned in- and out-flow ports.
 	 * {derived from UML::EncapsulatedClassifier::ownedPort}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionType_Port()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -134,7 +134,7 @@ public interface FunctionType extends Context, EAType {
 	 * Grouping of ports owned by this element.
 	 * {derived from UML::Class::nestedClassifier}
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port Group</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionType_PortGroup()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -150,7 +150,7 @@ public interface FunctionType extends Context, EAType {
 	 * If the meaning of the '<em>Is Elementary</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Elementary</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getFunctionType_IsElementary()
 	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"

@@ -17,12 +17,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.dd.dc.*;
+import org.eclipse.papyrus.dd.dc.Bounds;
+import org.eclipse.papyrus.dd.dc.DCFactory;
+import org.eclipse.papyrus.dd.dc.DCPackage;
+import org.eclipse.papyrus.dd.dc.Dimension;
+import org.eclipse.papyrus.dd.dc.KnownColor;
+import org.eclipse.papyrus.dd.dc.Point;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--

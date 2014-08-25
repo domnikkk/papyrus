@@ -28,7 +28,7 @@ public interface GPSSystem extends LocalizationSensorSystem {
 	 * If the meaning of the '<em>Origin Position</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Origin Position</em>' containment reference.
 	 * @see #setOriginPosition(Point32)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getGPSSystem_OriginPosition()
@@ -41,7 +41,7 @@ public interface GPSSystem extends LocalizationSensorSystem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.GPSSystem#getOriginPosition <em>Origin Position</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Origin Position</em>' containment reference.
 	 * @see #getOriginPosition()

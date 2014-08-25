@@ -31,7 +31,7 @@ public class IdealClockImpl extends EObjectImpl implements IdealClock {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IdealClockImpl() {
@@ -41,7 +41,7 @@ public class IdealClockImpl extends EObjectImpl implements IdealClock {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class IdealClockImpl extends EObjectImpl implements IdealClock {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

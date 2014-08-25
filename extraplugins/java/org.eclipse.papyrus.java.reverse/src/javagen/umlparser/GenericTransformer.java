@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 
 /**
  * The Class GenericTransformer. Permits to transform an eobject of eclass to

@@ -29,7 +29,7 @@ public interface DataFlowPort extends Port {
 	 * If the meaning of the '<em>Direction</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.DataFlowDirectionKind
 	 * @see #setDirection(DataFlowDirectionKind)
@@ -43,7 +43,7 @@ public interface DataFlowPort extends Port {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.DataFlowPort#getDirection <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.RobotML.DataFlowDirectionKind
@@ -60,7 +60,7 @@ public interface DataFlowPort extends Port {
 	 * If the meaning of the '<em>Buffer Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Buffer Size</em>' attribute.
 	 * @see #setBufferSize(int)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getDataFlowPort_BufferSize()
@@ -73,7 +73,7 @@ public interface DataFlowPort extends Port {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.DataFlowPort#getBufferSize <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Buffer Size</em>' attribute.
 	 * @see #getBufferSize()

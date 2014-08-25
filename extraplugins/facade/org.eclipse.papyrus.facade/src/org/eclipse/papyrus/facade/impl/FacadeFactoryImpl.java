@@ -16,18 +16,17 @@ package org.eclipse.papyrus.facade.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.facade.*;
+import org.eclipse.papyrus.facade.Facade;
+import org.eclipse.papyrus.facade.FacadeFactory;
+import org.eclipse.papyrus.facade.FacadePackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FacadeFactoryImpl extends EFactoryImpl implements FacadeFactory {
@@ -35,7 +34,7 @@ public class FacadeFactoryImpl extends EFactoryImpl implements FacadeFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FacadeFactory init() {
@@ -54,7 +53,7 @@ public class FacadeFactoryImpl extends EFactoryImpl implements FacadeFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacadeFactoryImpl() {
@@ -64,7 +63,7 @@ public class FacadeFactoryImpl extends EFactoryImpl implements FacadeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +79,7 @@ public class FacadeFactoryImpl extends EFactoryImpl implements FacadeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +91,7 @@ public class FacadeFactoryImpl extends EFactoryImpl implements FacadeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +102,7 @@ public class FacadeFactoryImpl extends EFactoryImpl implements FacadeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

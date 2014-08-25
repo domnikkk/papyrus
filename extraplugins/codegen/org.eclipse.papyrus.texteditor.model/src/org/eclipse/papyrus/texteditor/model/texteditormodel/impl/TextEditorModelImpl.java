@@ -13,14 +13,11 @@
 package org.eclipse.papyrus.texteditor.model.texteditormodel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel;
 import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModelPackage;
 
@@ -46,7 +43,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The cached value of the '{@link #getEditedObject() <em>Edited Object</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEditedObject()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -79,7 +76,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -90,7 +87,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -101,7 +98,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The cached value of the '{@link #getSelectedObject() <em>Selected Object</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelectedObject()
 	 * @generated
 	 * @ordered
@@ -112,7 +109,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The default value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLineNumber()
 	 * @generated
 	 * @ordered
@@ -123,7 +120,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	 * The cached value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLineNumber()
 	 * @generated
 	 * @ordered
@@ -133,7 +130,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TextEditorModelImpl() {
@@ -143,7 +140,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +151,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +171,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetEditedObject() {
@@ -184,7 +181,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +196,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +207,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +222,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +233,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +248,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +268,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetSelectedObject() {
@@ -281,7 +278,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +293,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +304,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +319,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +348,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +376,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +404,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,7 +427,7 @@ public class TextEditorModelImpl extends EModelElementImpl implements TextEditor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

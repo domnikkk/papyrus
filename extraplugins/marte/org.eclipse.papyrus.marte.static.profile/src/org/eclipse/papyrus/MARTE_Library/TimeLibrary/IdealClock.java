@@ -29,7 +29,7 @@ public interface IdealClock extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.MARTE_PrimitivesTypes.Real" required="true" ordered="false"
 	 * @generated
 	 */

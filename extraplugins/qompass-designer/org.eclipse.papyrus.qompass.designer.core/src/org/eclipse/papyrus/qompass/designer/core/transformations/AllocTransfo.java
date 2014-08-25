@@ -16,7 +16,6 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Transform the allocations towards an execution resource (thread) into a suitable connection

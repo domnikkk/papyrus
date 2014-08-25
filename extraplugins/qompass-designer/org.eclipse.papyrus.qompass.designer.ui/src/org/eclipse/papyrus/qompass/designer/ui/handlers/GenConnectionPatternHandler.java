@@ -3,7 +3,6 @@ package org.eclipse.papyrus.qompass.designer.ui.handlers;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.papyrus.FCM.InteractionComponent;
 import org.eclipse.papyrus.FCM.util.FCMUtil;

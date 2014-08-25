@@ -44,7 +44,7 @@ public interface GaAnalysisContext extends Configuration, ExpressionContext {
 	 * If the meaning of the '<em>Context</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Context</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaAnalysisContext_Context()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_String" ordered="false"
@@ -60,7 +60,7 @@ public interface GaAnalysisContext extends Configuration, ExpressionContext {
 	 * If the meaning of the '<em>Workload</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Workload</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaAnalysisContext_Workload()
 	 * @model required="true" ordered="false"
@@ -76,7 +76,7 @@ public interface GaAnalysisContext extends Configuration, ExpressionContext {
 	 * If the meaning of the '<em>Platform</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Platform</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaAnalysisContext_Platform()
 	 * @model required="true" ordered="false"

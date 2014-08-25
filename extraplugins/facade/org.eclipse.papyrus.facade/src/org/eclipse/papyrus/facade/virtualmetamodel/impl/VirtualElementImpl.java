@@ -14,14 +14,11 @@
 package org.eclipse.papyrus.facade.virtualmetamodel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
 
@@ -46,7 +43,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getAliasName() <em>Alias Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAliasName()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getAliasName() <em>Alias Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAliasName()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #isKept() <em>Kept</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isKept()
 	 * @generated
 	 * @ordered
@@ -79,7 +76,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #isKept() <em>Kept</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isKept()
 	 * @generated
 	 * @ordered
@@ -90,7 +87,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getRepresentedElement() <em>Represented Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRepresentedElement()
 	 * @generated
 	 * @ordered
@@ -101,7 +98,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #isUseRepresented() <em>Use Represented</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUseRepresented()
 	 * @generated
 	 * @ordered
@@ -112,7 +109,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #isUseRepresented() <em>Use Represented</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUseRepresented()
 	 * @generated
 	 * @ordered
@@ -122,7 +119,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualElementImpl() {
@@ -132,7 +129,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +140,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +151,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +166,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +177,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +192,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +212,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetRepresentedElement() {
@@ -225,7 +222,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +248,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +263,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +287,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +312,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +337,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +358,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

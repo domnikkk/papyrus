@@ -30,7 +30,7 @@ public class LayersConfigModelUtils {
 
 	/**
 	 * Create a {@link Folder} element
-	 * 
+	 *
 	 * @param parent
 	 * @param name
 	 * @return
@@ -44,7 +44,7 @@ public class LayersConfigModelUtils {
 
 	/**
 	 * Create a {@link LayerOperatorConfig} element
-	 * 
+	 *
 	 * @param parent
 	 * @param ID
 	 * @param classname
@@ -60,7 +60,7 @@ public class LayersConfigModelUtils {
 
 	/**
 	 * Create a {@link OperatorConfig} element
-	 * 
+	 *
 	 * @param parent
 	 * @param ID
 	 * @param classname

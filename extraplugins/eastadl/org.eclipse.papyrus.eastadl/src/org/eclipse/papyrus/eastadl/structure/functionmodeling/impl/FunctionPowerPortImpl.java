@@ -39,7 +39,7 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FunctionPowerPortImpl() {
@@ -67,7 +67,7 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

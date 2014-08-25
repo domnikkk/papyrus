@@ -15,13 +15,13 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions;
 
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.ActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Link;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.DestroyObjectAction;
 import org.eclipse.uml2.uml.Property;

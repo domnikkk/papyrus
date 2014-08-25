@@ -18,24 +18,80 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.papyrus.layers.stackmodel.BadStateException;
 import org.eclipse.papyrus.layers.stackmodel.LayersException;
 import org.eclipse.papyrus.layers.stackmodel.NotFoundException;
-
 import org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand;
-import org.eclipse.papyrus.layers.stackmodel.layers.*;
+import org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer;
+import org.eclipse.papyrus.layers.stackmodel.layers.AndStackedLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.BooleanType;
+import org.eclipse.papyrus.layers.stackmodel.layers.Color;
+import org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.CustomLayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.CustomType;
+import org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.EventLevel;
+import org.eclipse.papyrus.layers.stackmodel.layers.Fill;
+import org.eclipse.papyrus.layers.stackmodel.layers.FillInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.FillPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.Folder;
+import org.eclipse.papyrus.layers.stackmodel.layers.FontInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.FontPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.FontType;
+import org.eclipse.papyrus.layers.stackmodel.layers.IntInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.IntType;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsValidPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.IsVisiblePropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.Layer;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayerState;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
+import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
+import org.eclipse.papyrus.layers.stackmodel.layers.LineInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.LinePropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.LineType;
+import org.eclipse.papyrus.layers.stackmodel.layers.Metamodel;
+import org.eclipse.papyrus.layers.stackmodel.layers.NullInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.OrStackedLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.Property;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetter;
+import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry;
+import org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer;
+import org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.StringInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.StringType;
+import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator;
+import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperatorDescriptor;
+import org.eclipse.papyrus.layers.stackmodel.layers.Type;
+import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
+import org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry;
 import org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
@@ -43,7 +99,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static LayersFactory init() {
@@ -62,7 +118,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersFactoryImpl() {
@@ -72,7 +128,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +258,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +296,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +334,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +346,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +358,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +370,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +382,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +394,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -350,7 +406,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +418,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +430,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Map.Entry<String, Type> createStringToTypeMap() {
@@ -385,7 +441,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +453,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -409,7 +465,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -421,7 +477,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -433,7 +489,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Map.Entry<String, PropertySetter> createStringToPropertySetter() {
@@ -444,7 +500,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Map.Entry<String, TypeInstance> createStringToTypeInstanceMap() {
@@ -455,7 +511,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -467,7 +523,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -479,7 +535,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -491,7 +547,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +559,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -515,7 +571,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -527,7 +583,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -539,7 +595,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -551,7 +607,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -563,7 +619,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -575,7 +631,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -587,7 +643,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -599,7 +655,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -611,7 +667,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -623,7 +679,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -635,7 +691,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Map.Entry<String, PropertyIndex> createStringToPropertyIndexMap() {
@@ -646,7 +702,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -658,7 +714,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -670,7 +726,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -682,7 +738,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -694,7 +750,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -706,7 +762,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -718,7 +774,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -730,7 +786,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -742,7 +798,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -754,7 +810,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -766,7 +822,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -778,7 +834,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -790,7 +846,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -802,7 +858,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -814,7 +870,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -826,7 +882,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -838,7 +894,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -850,7 +906,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -862,7 +918,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -874,7 +930,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -886,7 +942,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -898,7 +954,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -910,7 +966,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -922,7 +978,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -934,7 +990,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -946,7 +1002,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -958,7 +1014,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -970,7 +1026,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerState createLayerStateFromString(EDataType eDataType, String initialValue) {
@@ -984,7 +1040,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertLayerStateToString(EDataType eDataType, Object instanceValue) {
@@ -994,7 +1050,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EventLevel createEventLevelFromString(EDataType eDataType, String initialValue) {
@@ -1008,7 +1064,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEventLevelToString(EDataType eDataType, Object instanceValue) {
@@ -1018,7 +1074,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
@@ -1028,7 +1084,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -1038,7 +1094,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Boolean createbooleanFromString(EDataType eDataType, String initialValue) {
@@ -1048,7 +1104,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertbooleanToString(EDataType eDataType, Object instanceValue) {
@@ -1058,7 +1114,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EPackage createEPackageFromString(EDataType eDataType, String initialValue) {
@@ -1068,7 +1124,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEPackageToString(EDataType eDataType, Object instanceValue) {
@@ -1078,7 +1134,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BadStateException createBadStateExceptionFromString(EDataType eDataType, String initialValue) {
@@ -1088,7 +1144,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertBadStateExceptionToString(EDataType eDataType, Object instanceValue) {
@@ -1098,7 +1154,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayersException createLayersExceptionFromString(EDataType eDataType, String initialValue) {
@@ -1108,7 +1164,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertLayersExceptionToString(EDataType eDataType, Object instanceValue) {
@@ -1118,7 +1174,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotFoundException createNotFoundExceptionFromString(EDataType eDataType, String initialValue) {
@@ -1128,7 +1184,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNotFoundExceptionToString(EDataType eDataType, Object instanceValue) {
@@ -1138,7 +1194,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComputePropertyValueCommand createComputePropertyValueCommandFromString(EDataType eDataType, String initialValue) {
@@ -1148,7 +1204,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertComputePropertyValueCommandToString(EDataType eDataType, Object instanceValue) {
@@ -1158,7 +1214,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Integer createintFromString(EDataType eDataType, String initialValue) {
@@ -1168,7 +1224,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertintToString(EDataType eDataType, Object instanceValue) {
@@ -1178,7 +1234,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Object createObjectFromString(EDataType eDataType, String initialValue) {
@@ -1188,7 +1244,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertObjectToString(EDataType eDataType, Object instanceValue) {
@@ -1198,7 +1254,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomPropertyOperatorsInstance createCustomPropertyOpertorInstanceFromString(EDataType eDataType, String initialValue) {
@@ -1208,7 +1264,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertCustomPropertyOpertorInstanceToString(EDataType eDataType, Object instanceValue) {
@@ -1218,7 +1274,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1229,7 +1285,7 @@ public class LayersFactoryImpl extends EFactoryImpl implements LayersFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

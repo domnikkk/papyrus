@@ -38,7 +38,7 @@ public interface BehaviorAttributeBinding extends Relationship {
 	 * If the meaning of the '<em>Visible Through Function Port</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visible Through Function Port</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getBehaviorAttributeBinding_VisibleThroughFunctionPort()
 	 * @model ordered="false"
@@ -54,7 +54,7 @@ public interface BehaviorAttributeBinding extends Relationship {
 	 * If the meaning of the '<em>Visible Through Hardware Pin</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visible Through Hardware Pin</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getBehaviorAttributeBinding_VisibleThroughHardwarePin()
 	 * @model ordered="false"
@@ -70,7 +70,7 @@ public interface BehaviorAttributeBinding extends Relationship {
 	 * If the meaning of the '<em>Visible Through Hardware Port</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visible Through Hardware Port</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getBehaviorAttributeBinding_VisibleThroughHardwarePort()
 	 * @model ordered="false"
@@ -86,7 +86,7 @@ public interface BehaviorAttributeBinding extends Relationship {
 	 * If the meaning of the '<em>Attribute</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attribute</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getBehaviorAttributeBinding_Attribute()
 	 * @model required="true" ordered="false"
@@ -102,7 +102,7 @@ public interface BehaviorAttributeBinding extends Relationship {
 	 * If the meaning of the '<em>Visible Through Anomaly</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visible Through Anomaly</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getBehaviorAttributeBinding_VisibleThroughAnomaly()
 	 * @model required="true" ordered="false"

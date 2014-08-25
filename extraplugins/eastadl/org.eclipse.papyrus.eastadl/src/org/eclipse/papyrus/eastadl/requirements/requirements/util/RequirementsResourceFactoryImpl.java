@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.requirements.requirements.util.RequirementsResourceImpl
  * @generated
  */
@@ -20,7 +20,7 @@ public class RequirementsResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RequirementsResourceFactoryImpl() {
@@ -31,7 +31,7 @@ public class RequirementsResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -16,8 +16,8 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;

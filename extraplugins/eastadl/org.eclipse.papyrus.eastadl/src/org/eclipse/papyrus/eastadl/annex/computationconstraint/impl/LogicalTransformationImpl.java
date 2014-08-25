@@ -5,28 +5,18 @@ package org.eclipse.papyrus.eastadl.annex.computationconstraint.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Attribute;
 import org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quantification;
-
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.ComputationconstraintPackage;
 import org.eclipse.papyrus.eastadl.annex.computationconstraint.LogicalTransformation;
-
 import org.eclipse.papyrus.eastadl.annex.temporalconstraint.LogicalTimeCondition;
-
 import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
-
 import org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression;
-
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.Operation;
 
 /**
@@ -56,7 +46,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The default value of the '{@link #isIsClientServerInterface() <em>Is Client Server Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsClientServerInterface()
 	 * @generated
 	 * @ordered
@@ -67,7 +57,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #isIsClientServerInterface() <em>Is Client Server Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsClientServerInterface()
 	 * @generated
 	 * @ordered
@@ -78,7 +68,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getClientServerinterfaceOperation() <em>Client Serverinterface Operation</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClientServerinterfaceOperation()
 	 * @generated
 	 * @ordered
@@ -89,7 +79,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getContained() <em>Contained</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContained()
 	 * @generated
 	 * @ordered
@@ -100,7 +90,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getOut() <em>Out</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOut()
 	 * @generated
 	 * @ordered
@@ -111,7 +101,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getIn() <em>In</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIn()
 	 * @generated
 	 * @ordered
@@ -122,7 +112,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -133,7 +123,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getQuantificationInvariant() <em>Quantification Invariant</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQuantificationInvariant()
 	 * @generated
 	 * @ordered
@@ -144,7 +134,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getPreCondition() <em>Pre Condition</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreCondition()
 	 * @generated
 	 * @ordered
@@ -155,7 +145,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getPostCondition() <em>Post Condition</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPostCondition()
 	 * @generated
 	 * @ordered
@@ -166,7 +156,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	 * The cached value of the '{@link #getTimeInvariant() <em>Time Invariant</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimeInvariant()
 	 * @generated
 	 * @ordered
@@ -176,7 +166,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LogicalTransformationImpl() {
@@ -186,7 +176,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +187,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +198,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +213,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +227,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +241,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +255,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +269,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +289,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAExpression basicGetExpression() {
@@ -309,7 +299,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +314,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +328,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +342,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +356,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -386,7 +376,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LogicalTimeCondition basicGetTimeInvariant() {
@@ -396,7 +386,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -411,7 +401,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -450,7 +440,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -501,7 +491,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -544,7 +534,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -577,7 +567,7 @@ public class LogicalTransformationImpl extends EAElementImpl implements LogicalT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

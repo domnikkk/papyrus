@@ -30,7 +30,7 @@ public class ReleaseImpl extends GrServiceImpl implements Release {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ReleaseImpl() {
@@ -40,7 +40,7 @@ public class ReleaseImpl extends GrServiceImpl implements Release {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

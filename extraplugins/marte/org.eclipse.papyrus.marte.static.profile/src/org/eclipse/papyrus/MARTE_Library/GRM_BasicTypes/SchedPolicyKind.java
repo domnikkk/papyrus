@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Sched Policy Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.GRM_BasicTypesPackage#getSchedPolicyKind()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>Earliest Deadline First</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EARLIEST_DEADLINE_FIRST_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>FIFO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIFO_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>Fixed Priority</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIXED_PRIORITY_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>Least Laxity First</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LEAST_LAXITY_FIRST_VALUE
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>Round Robin</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ROUND_ROBIN_VALUE
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>Time Table Driven</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TIME_TABLE_DRIVEN_VALUE
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>Earliest Deadline First</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EARLIEST_DEADLINE_FIRST
 	 * @model name="EarliestDeadlineFirst"
 	 * @generated
@@ -140,7 +140,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>FIFO</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIFO
 	 * @model
 	 * @generated
@@ -155,7 +155,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>Fixed Priority</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIXED_PRIORITY
 	 * @model name="FixedPriority"
 	 * @generated
@@ -170,7 +170,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>Least Laxity First</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LEAST_LAXITY_FIRST
 	 * @model name="LeastLaxityFirst"
 	 * @generated
@@ -185,7 +185,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>Round Robin</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ROUND_ROBIN
 	 * @model name="RoundRobin"
 	 * @generated
@@ -200,7 +200,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>Time Table Driven</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TIME_TABLE_DRIVEN
 	 * @model name="TimeTableDriven"
 	 * @generated
@@ -215,7 +215,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNDEF
 	 * @model name="Undef"
 	 * @generated
@@ -230,7 +230,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #OTHER
 	 * @model name="Other"
 	 * @generated
@@ -242,7 +242,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * An array of all the '<em><b>Sched Policy Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final SchedPolicyKind[] VALUES_ARRAY =
@@ -261,7 +261,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Sched Policy Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<SchedPolicyKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -270,7 +270,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * Returns the '<em><b>Sched Policy Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SchedPolicyKind get(String literal) {
@@ -287,7 +287,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * Returns the '<em><b>Sched Policy Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SchedPolicyKind getByName(String name) {
@@ -304,7 +304,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * Returns the '<em><b>Sched Policy Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SchedPolicyKind get(int value) {
@@ -332,7 +332,7 @@ public enum SchedPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -340,7 +340,7 @@ public enum SchedPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -348,7 +348,7 @@ public enum SchedPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -357,7 +357,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private SchedPolicyKind(int value, String name, String literal) {
@@ -369,7 +369,7 @@ public enum SchedPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +380,7 @@ public enum SchedPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -391,7 +391,7 @@ public enum SchedPolicyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +403,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

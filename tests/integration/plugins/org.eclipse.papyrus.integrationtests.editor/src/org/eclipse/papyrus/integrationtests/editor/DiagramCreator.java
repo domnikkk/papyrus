@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,17 +26,16 @@ import org.eclipse.papyrus.uml.diagram.emftree.CreateEMFTreeDiagramHandler;
 
 
 /**
- * This class is used to create programmatically various diagram available in Papyrus.
- * <br>
+ * This class is used to create programmatically various diagram available in Papyrus. <br>
  * This class is designed for tests purpose. It is not intended to be used in regular editor.
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class DiagramCreator {
 
 	public ProgramaticPapyrusEditor editorCreator;
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -47,15 +46,16 @@ public class DiagramCreator {
 
 	/**
 	 * Create a diagram of the requested type. Return the {@link IPage} used in {@link ISashWindowsContainer}.
+	 *
 	 * @param name
 	 * @return
-	 * @throws DiagramCreationException 
+	 * @throws DiagramCreationException
 	 */
 	public IPage createClassDiagram(String name) throws DiagramCreationException {
-		
+
 		try {
 			ModelSet modelSet = editorCreator.getModelSet();
-			
+
 			ICreationCommand command = new CreateClassDiagramCommand();
 			command.createDiagram(modelSet, null, name);
 
@@ -68,18 +68,19 @@ public class DiagramCreator {
 			throw new DiagramCreationException(e);
 		}
 	}
-	
+
 	/**
 	 * Create a diagram of the requested type. Return the {@link IPage} used in {@link ISashWindowsContainer}.
+	 *
 	 * @param name
 	 * @return
-	 * @throws DiagramCreationException 
+	 * @throws DiagramCreationException
 	 */
 	public IPage createActivityDiagram(String name) throws DiagramCreationException {
-		
+
 		try {
 			ModelSet modelSet = editorCreator.getModelSet();
-			
+
 			ICreationCommand command = new CreateActivityDiagramCommand();
 			command.createDiagram(modelSet, null, name);
 
@@ -92,17 +93,19 @@ public class DiagramCreator {
 			throw new DiagramCreationException(e);
 		}
 	}
+
 	/**
 	 * Create a diagram of the requested type. Return the {@link IPage} used in {@link ISashWindowsContainer}.
+	 *
 	 * @param name
 	 * @return
-	 * @throws DiagramCreationException 
+	 * @throws DiagramCreationException
 	 */
 	public IPage createEmfTreeDiagram(String name) throws DiagramCreationException {
-		
+
 		try {
 			ModelSet modelSet = editorCreator.getModelSet();
-			
+
 			CreateEMFTreeDiagramHandler command = new CreateEMFTreeDiagramHandler();
 			command.execute(editorCreator.getServiceRegistry());
 

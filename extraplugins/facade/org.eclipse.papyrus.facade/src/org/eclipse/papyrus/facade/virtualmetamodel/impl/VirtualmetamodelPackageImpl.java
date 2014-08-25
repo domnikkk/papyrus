@@ -18,17 +18,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.facade.FacadePackage;
-
 import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage;
-
 import org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensiondefinitionPackageImpl;
-
 import org.eclipse.papyrus.facade.impl.FacadePackageImpl;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualDatatype;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualElement;
@@ -42,23 +36,21 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelFactory;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
-
 import org.eclipse.uml2.types.TypesPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class VirtualmetamodelPackageImpl extends EPackageImpl implements VirtualmetamodelPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualMetamodelEClass = null;
@@ -66,7 +58,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualElementEClass = null;
@@ -74,7 +66,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualClassifierEClass = null;
@@ -82,7 +74,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualMetaclassEClass = null;
@@ -90,7 +82,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualPropertyEClass = null;
@@ -98,7 +90,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualOperationEClass = null;
@@ -106,7 +98,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualParameterEClass = null;
@@ -114,7 +106,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualDatatypeEClass = null;
@@ -122,7 +114,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualEnumEClass = null;
@@ -130,7 +122,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualLiteralEClass = null;
@@ -138,7 +130,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass virtualTypedElementEClass = null;
@@ -148,7 +140,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#eNS_URI
 	 * @see #init()
@@ -161,7 +153,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -172,7 +164,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	 * <p>
 	 * This method is used to initialize {@link VirtualmetamodelPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -218,7 +210,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +221,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +232,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +243,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +254,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +265,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +276,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +287,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +298,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +309,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +320,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +331,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -350,7 +342,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,7 +353,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +364,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +375,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,7 +386,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +397,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +408,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -427,7 +419,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +430,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -449,7 +441,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -460,7 +452,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -471,7 +463,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -482,7 +474,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -493,7 +485,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +496,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -515,7 +507,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -526,7 +518,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -537,7 +529,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +540,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -559,7 +551,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -570,7 +562,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -581,7 +573,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -592,7 +584,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -602,7 +594,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -660,7 +652,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -670,7 +662,7 @@ public class VirtualmetamodelPackageImpl extends EPackageImpl implements Virtual
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

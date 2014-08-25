@@ -2,16 +2,36 @@
 
 package org.eclipse.papyrus.parsers.antlr;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.EarlyExitException;
+import org.antlr.runtime.IntStream;
+import org.antlr.runtime.MismatchedSetException;
+import org.antlr.runtime.MismatchedTokenException;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.ParserRuleReturnScope;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
+import org.antlr.runtime.debug.DebugEventListener;
+import org.antlr.runtime.debug.DebugEventSocketProxy;
+import org.antlr.runtime.debug.DebugParser;
+import org.antlr.runtime.debug.DebugTokenStream;
+import org.antlr.runtime.debug.DebugTreeAdaptor;
+import org.antlr.runtime.tree.CommonTreeAdaptor;
+import org.antlr.runtime.tree.TreeAdaptor;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.parsers.texteditor.parameterlabel.IContext;
 import org.eclipse.papyrus.parsers.util.IErrorReporter;
-import org.eclipse.papyrus.parsers.util.NameException;
+import org.eclipse.papyrus.parsers.util.Messages;
 import org.eclipse.papyrus.parsers.util.MultiplicityException;
+import org.eclipse.papyrus.parsers.util.NameException;
 import org.eclipse.papyrus.parsers.util.TypeRecognitionException;
 import org.eclipse.papyrus.parsers.util.UnboundTemplateRecognitionException;
-import org.eclipse.papyrus.parsers.util.Messages;
 import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
 import org.eclipse.papyrus.uml.tools.utils.TemplateSignatureUtil;
 import org.eclipse.uml2.uml.Package;
@@ -20,14 +40,6 @@ import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.VisibilityKind;
-
-import org.antlr.runtime.*;
-
-import org.antlr.runtime.debug.*;
-
-import java.io.IOException;
-
-import org.antlr.runtime.tree.*;
 
 public class ParameterLabelParser extends DebugParser {
 	public static final String[] tokenNames = new String[] {

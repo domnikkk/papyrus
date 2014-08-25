@@ -4,16 +4,12 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -38,7 +34,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -49,7 +45,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The default value of the '{@link #getRight_distance() <em>Right distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_distance()
 	 * @generated
 	 * @ordered
@@ -60,7 +56,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getRight_distance() <em>Right distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_distance()
 	 * @generated
 	 * @ordered
@@ -71,7 +67,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The default value of the '{@link #getLeft_distance() <em>Left distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_distance()
 	 * @generated
 	 * @ordered
@@ -82,7 +78,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getLeft_distance() <em>Left distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_distance()
 	 * @generated
 	 * @ordered
@@ -93,7 +89,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The default value of the '{@link #getLeft_velocity() <em>Left velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_velocity()
 	 * @generated
 	 * @ordered
@@ -104,7 +100,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getLeft_velocity() <em>Left velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft_velocity()
 	 * @generated
 	 * @ordered
@@ -115,7 +111,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The default value of the '{@link #getRight_velocity() <em>Right velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_velocity()
 	 * @generated
 	 * @ordered
@@ -126,7 +122,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getRight_velocity() <em>Right velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight_velocity()
 	 * @generated
 	 * @ordered
@@ -136,7 +132,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DifferentialOdometryImpl() {
@@ -146,7 +142,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +153,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -167,7 +163,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -187,7 +183,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -212,7 +208,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getRight_distance() {
@@ -222,7 +218,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRight_distance(double newRight_distance) {
@@ -236,7 +232,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getLeft_distance() {
@@ -246,7 +242,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLeft_distance(double newLeft_distance) {
@@ -260,7 +256,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getLeft_velocity() {
@@ -270,7 +266,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLeft_velocity(double newLeft_velocity) {
@@ -284,7 +280,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public double getRight_velocity() {
@@ -294,7 +290,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRight_velocity(double newRight_velocity) {
@@ -308,7 +304,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +319,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -346,7 +342,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +370,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,7 +398,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -425,7 +421,7 @@ public class DifferentialOdometryImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

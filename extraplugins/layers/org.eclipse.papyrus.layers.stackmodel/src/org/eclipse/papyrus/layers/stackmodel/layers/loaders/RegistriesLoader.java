@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.eclipse.papyrus.layers.stackmodel.layers.loaders;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayerOperatorConfig;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig;
@@ -20,12 +22,11 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegis
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
 import org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 
 /**
  * A loader used to load various Registries from a unique {@link LayersConfigModel}.
- * 
+ *
  * @author cedric dumoulin
  *
  */

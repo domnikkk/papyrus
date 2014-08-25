@@ -41,7 +41,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IOHardwarePinImpl() {
@@ -71,7 +71,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class IOHardwarePinImpl extends HardwarePinImpl implements IOHardwarePin 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

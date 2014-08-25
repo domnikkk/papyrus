@@ -12,6 +12,8 @@
  */
 package org.eclipse.papyrus.layers.stackmodel.layers.impl;
 
+import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -30,7 +32,6 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayerExpression;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
 import org.eclipse.papyrus.layers.stackmodel.layers.Property;
-import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +52,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * The cached value of the '{@link #getLayerOperatorDescriptor() <em>Layer Operator Descriptor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerOperatorDescriptor()
 	 * @generated
 	 * @ordered
@@ -62,7 +63,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * The default value of the '{@link #getLayerOperatorDescriptorName() <em>Layer Operator Descriptor Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerOperatorDescriptorName()
 	 * @generated
 	 * @ordered
@@ -72,7 +73,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * The cached value of the '{@link #getLayerOperatorDescriptorName() <em>Layer Operator Descriptor Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayerOperatorDescriptorName()
 	 * @generated
 	 * @ordered
@@ -82,7 +83,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractLayerOperatorImpl() {
@@ -92,7 +93,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +104,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +124,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayerOperatorDescriptor basicGetLayerOperatorDescriptor() {
@@ -133,7 +134,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +149,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +160,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -181,7 +182,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -221,7 +222,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 
 	/**
 	 * Override in order to call {@link #resetDescriptor()}
-	 * 
+	 *
 	 * @param newApplication
 	 */
 	// @Override
@@ -233,7 +234,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -245,7 +246,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +266,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +285,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +304,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +321,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +339,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +360,7 @@ public abstract class AbstractLayerOperatorImpl extends LayerOperatorImpl implem
 	 * Walk all layers and collect the non null command for the property and view.
 	 * Then return the command provided by a call to the properties'operator(collectedCmd).
 	 *
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerExpressionImpl#getComputePropertyValueCommand(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 *
 	 * @param view

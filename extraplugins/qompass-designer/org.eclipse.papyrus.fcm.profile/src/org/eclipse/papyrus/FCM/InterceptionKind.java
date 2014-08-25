@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * - "Matching" = kind of interceptor and component port need to match
  *
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.FCM.FCMPackage#getInterceptionKind()
  * @model
  * @generated
@@ -40,7 +40,7 @@ public enum InterceptionKind implements Enumerator {
 	 * The '<em><b>Intercept Some</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_SOME_VALUE
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public enum InterceptionKind implements Enumerator {
 	 * The '<em><b>Intercept All</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_ALL_VALUE
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public enum InterceptionKind implements Enumerator {
 	 * The '<em><b>Intercept All Out</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_ALL_OUT_VALUE
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public enum InterceptionKind implements Enumerator {
 	 * The '<em><b>Intercept All In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_ALL_IN_VALUE
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public enum InterceptionKind implements Enumerator {
 	 * The '<em><b>Intercept Matching</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_MATCHING_VALUE
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public enum InterceptionKind implements Enumerator {
 	 * If the meaning of '<em><b>Intercept Some</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_SOME
 	 * @model name="InterceptSome"
 	 * @generated
@@ -111,7 +111,7 @@ public enum InterceptionKind implements Enumerator {
 	 * If the meaning of '<em><b>Intercept All</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_ALL
 	 * @model name="InterceptAll"
 	 * @generated
@@ -126,7 +126,7 @@ public enum InterceptionKind implements Enumerator {
 	 * If the meaning of '<em><b>Intercept All Out</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_ALL_OUT
 	 * @model name="InterceptAllOut"
 	 * @generated
@@ -141,7 +141,7 @@ public enum InterceptionKind implements Enumerator {
 	 * If the meaning of '<em><b>Intercept All In</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_ALL_IN
 	 * @model name="InterceptAllIn"
 	 * @generated
@@ -156,7 +156,7 @@ public enum InterceptionKind implements Enumerator {
 	 * If the meaning of '<em><b>Intercept Matching</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INTERCEPT_MATCHING
 	 * @model name="InterceptMatching"
 	 * @generated
@@ -168,7 +168,7 @@ public enum InterceptionKind implements Enumerator {
 	 * An array of all the '<em><b>Interception Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final InterceptionKind[] VALUES_ARRAY =
@@ -184,7 +184,7 @@ public enum InterceptionKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Interception Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<InterceptionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -193,7 +193,7 @@ public enum InterceptionKind implements Enumerator {
 	 * Returns the '<em><b>Interception Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static InterceptionKind get(String literal) {
@@ -210,7 +210,7 @@ public enum InterceptionKind implements Enumerator {
 	 * Returns the '<em><b>Interception Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static InterceptionKind getByName(String name) {
@@ -227,7 +227,7 @@ public enum InterceptionKind implements Enumerator {
 	 * Returns the '<em><b>Interception Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static InterceptionKind get(int value) {
@@ -249,7 +249,7 @@ public enum InterceptionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -257,7 +257,7 @@ public enum InterceptionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -265,7 +265,7 @@ public enum InterceptionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -274,7 +274,7 @@ public enum InterceptionKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private InterceptionKind(int value, String name, String literal) {
@@ -286,7 +286,7 @@ public enum InterceptionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public enum InterceptionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +308,7 @@ public enum InterceptionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +320,7 @@ public enum InterceptionKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -61,7 +61,7 @@ public interface EventFunction extends Event {
 	 * If the meaning of the '<em>Function</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function</em>' containment reference.
 	 * @see #setFunction(EventFunctionInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunction_Function()
@@ -74,7 +74,7 @@ public interface EventFunction extends Event {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunction#getFunction <em>Function</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function</em>' containment reference.
 	 * @see #getFunction()
@@ -89,7 +89,7 @@ public interface EventFunction extends Event {
 	 * If the meaning of the '<em>Function Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Function Type</em>' reference.
 	 * @see #setFunctionType(FunctionType)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunction_FunctionType()
@@ -102,7 +102,7 @@ public interface EventFunction extends Event {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunction#getFunctionType <em>Function Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Function Type</em>' reference.
 	 * @see #getFunctionType()

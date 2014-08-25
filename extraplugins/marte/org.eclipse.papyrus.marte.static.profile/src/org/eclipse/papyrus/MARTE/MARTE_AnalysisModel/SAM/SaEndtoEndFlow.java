@@ -47,7 +47,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * If the meaning of the '<em>Is Sched</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Sched</em>' attribute.
 	 * @see #setIsSched(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaEndtoEndFlow_IsSched()
@@ -60,7 +60,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaEndtoEndFlow#getIsSched <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Sched</em>' attribute.
 	 * @see #getIsSched()
@@ -75,7 +75,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * If the meaning of the '<em>Sch Slack</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sch Slack</em>' attribute.
 	 * @see #setSchSlack(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaEndtoEndFlow_SchSlack()
@@ -88,7 +88,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaEndtoEndFlow#getSchSlack <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sch Slack</em>' attribute.
 	 * @see #getSchSlack()
@@ -104,7 +104,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * If the meaning of the '<em>End2 End T</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>End2 End T</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaEndtoEndFlow_End2EndT()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -120,7 +120,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * If the meaning of the '<em>End2 End D</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>End2 End D</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaEndtoEndFlow_End2EndD()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Duration" ordered="false"
@@ -136,7 +136,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * If the meaning of the '<em>Timing</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Timing</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaEndtoEndFlow_Timing()
 	 * @model
@@ -151,7 +151,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaEndtoEndFlow_Base_NamedElement()
@@ -164,7 +164,7 @@ public interface SaEndtoEndFlow extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaEndtoEndFlow#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()

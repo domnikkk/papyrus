@@ -27,7 +27,7 @@ import org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NeedsXMLProcessor extends XMLProcessor {
@@ -36,7 +36,7 @@ public class NeedsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NeedsXMLProcessor() {
@@ -48,7 +48,7 @@ public class NeedsXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the NeedsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

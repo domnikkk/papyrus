@@ -41,7 +41,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	 * The default value of the '{@link #isIsReentrant() <em>Is Reentrant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsReentrant()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	 * The cached value of the '{@link #isIsReentrant() <em>Is Reentrant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsReentrant()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	 * The cached value of the '{@link #getRoutine() <em>Routine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRoutine()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EntryPointImpl() {
@@ -83,7 +83,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehavioralFeature basicGetRoutine() {
@@ -150,7 +150,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class EntryPointImpl extends AllocateImpl implements EntryPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -6,11 +6,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.papyrus.RobotML.ActuatedJoint;
 import org.eclipse.papyrus.RobotML.ActuatorHardware;
 import org.eclipse.papyrus.RobotML.ActuatorSystem;
@@ -102,7 +99,7 @@ import org.eclipse.papyrus.RobotML.WeaponSystem;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
@@ -110,7 +107,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static RobotMLFactory init() {
@@ -129,7 +126,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RobotMLFactoryImpl() {
@@ -139,7 +136,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +306,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +334,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +362,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Transition createTransition() {
@@ -376,7 +373,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Algorithm createAlgorithm() {
@@ -387,7 +384,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State createState() {
@@ -398,7 +395,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ActuatedJoint createActuatedJoint() {
@@ -409,7 +406,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Joint createJoint() {
@@ -420,7 +417,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CompleteBonding createCompleteBonding() {
@@ -431,7 +428,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Robot createRobot() {
@@ -442,7 +439,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.RobotML.System createSystem() {
@@ -453,7 +450,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Agent createAgent() {
@@ -464,7 +461,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PhysicalObject createPhysicalObject() {
@@ -475,7 +472,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Environment createEnvironment() {
@@ -486,7 +483,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Surface createSurface() {
@@ -497,7 +494,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataFlowPort createDataFlowPort() {
@@ -508,7 +505,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServicePort createServicePort() {
@@ -519,7 +516,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ActuatorSystem createActuatorSystem() {
@@ -530,7 +527,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RoboticSystem createRoboticSystem() {
@@ -541,7 +538,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CyberPhysicalSystem createCyberPhysicalSystem() {
@@ -552,7 +549,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SensorSystem createSensorSystem() {
@@ -563,7 +560,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Hardware createHardware() {
@@ -574,7 +571,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Software createSoftware() {
@@ -585,7 +582,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EngineSystem createEngineSystem() {
@@ -596,7 +593,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SteeredWheelSystem createSteeredWheelSystem() {
@@ -607,7 +604,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LocomotionSystem createLocomotionSystem() {
@@ -618,7 +615,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ImageSensorSystem createImageSensorSystem() {
@@ -629,7 +626,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CameraSystem createCameraSystem() {
@@ -640,7 +637,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ObjectDetectionSensorSystem createObjectDetectionSensorSystem() {
@@ -651,7 +648,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ObjectTrackingSensorSystem createObjectTrackingSensorSystem() {
@@ -662,7 +659,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LidarSystem createLidarSystem() {
@@ -673,7 +670,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LocalizationSensorSystem createLocalizationSensorSystem() {
@@ -684,7 +681,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GPSSystem createGPSSystem() {
@@ -695,7 +692,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AlgorithmLibrary createAlgorithmLibrary() {
@@ -706,7 +703,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SensorDriver createSensorDriver() {
@@ -717,7 +714,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Building createBuilding() {
@@ -728,7 +725,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Planet createPlanet() {
@@ -739,7 +736,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LandSurface createLandSurface() {
@@ -750,7 +747,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Floor createFloor() {
@@ -761,7 +758,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public WaterSurface createWaterSurface() {
@@ -772,7 +769,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Human createHuman() {
@@ -783,7 +780,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Pedestrian createPedestrian() {
@@ -794,7 +791,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Stairs createStairs() {
@@ -805,7 +802,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Platform createPlatform() {
@@ -816,7 +813,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExternalLibrary createExternalLibrary() {
@@ -827,7 +824,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RoboticMiddleware createRoboticMiddleware() {
@@ -838,7 +835,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RoboticSimulator createRoboticSimulator() {
@@ -849,7 +846,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CycabTK createCycabTK() {
@@ -860,7 +857,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BlenderMorse createBlenderMorse() {
@@ -871,7 +868,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OnPort createOnPort() {
@@ -882,7 +879,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Allocate createAllocate() {
@@ -893,7 +890,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InertialMeasurementUnitSystem createInertialMeasurementUnitSystem() {
@@ -904,7 +901,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InertialNavigationSystem createInertialNavigationSystem() {
@@ -915,7 +912,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OdometrySystem createOdometrySystem() {
@@ -926,7 +923,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InfraRedProximetrySystem createInfraRedProximetrySystem() {
@@ -937,7 +934,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DeploymentPlan createDeploymentPlan() {
@@ -948,7 +945,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Gyroscope createGyroscope() {
@@ -959,7 +956,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OnProperty createOnProperty() {
@@ -970,7 +967,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Chassis createChassis() {
@@ -981,7 +978,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SupportingStructure createSupportingStructure() {
@@ -992,7 +989,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MechanicalLinkage createMechanicalLinkage() {
@@ -1003,7 +1000,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Leg createLeg() {
@@ -1014,7 +1011,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LocomotionHardware createLocomotionHardware() {
@@ -1025,7 +1022,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ActuatorHardware createActuatorHardware() {
@@ -1036,7 +1033,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MobileRobot createMobileRobot() {
@@ -1047,7 +1044,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Manipulator createManipulator() {
@@ -1058,7 +1055,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PilotedSystem createPilotedSystem() {
@@ -1069,7 +1066,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PowerHardware createPowerHardware() {
@@ -1080,7 +1077,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SensorHardware createSensorHardware() {
@@ -1091,7 +1088,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GraspingHardware createGraspingHardware() {
@@ -1102,7 +1099,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SteeredWheelHardware createSteeredWheelHardware() {
@@ -1113,7 +1110,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Arm createArm() {
@@ -1124,7 +1121,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LegSystem createLegSystem() {
@@ -1135,7 +1132,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GraspingSystem createGraspingSystem() {
@@ -1146,7 +1143,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public WeaponSystem createWeaponSystem() {
@@ -1157,7 +1154,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ManMachineInterfaceSystem createManMachineInterfaceSystem() {
@@ -1168,7 +1165,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ClosedLoopControlSystem createClosedLoopControlSystem() {
@@ -1179,7 +1176,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OpenLoopControlSystem createOpenLoopControlSystem() {
@@ -1190,7 +1187,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RoboticHead createRoboticHead() {
@@ -1201,7 +1198,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NavigationCommandSystem createNavigationCommandSystem() {
@@ -1212,7 +1209,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JoysticNavigationSystem createJoysticNavigationSystem() {
@@ -1223,7 +1220,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SynchronizationKind createSynchronizationKindFromString(EDataType eDataType, String initialValue) {
@@ -1237,7 +1234,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSynchronizationKindToString(EDataType eDataType, Object instanceValue) {
@@ -1247,7 +1244,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DataFlowDirectionKind createDataFlowDirectionKindFromString(EDataType eDataType, String initialValue) {
@@ -1261,7 +1258,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDataFlowDirectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -1271,7 +1268,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServiceFlowKind createServiceFlowKindFromString(EDataType eDataType, String initialValue) {
@@ -1285,7 +1282,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertServiceFlowKindToString(EDataType eDataType, Object instanceValue) {
@@ -1295,7 +1292,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UGVKind createUGVKindFromString(EDataType eDataType, String initialValue) {
@@ -1309,7 +1306,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertUGVKindToString(EDataType eDataType, Object instanceValue) {
@@ -1319,7 +1316,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RoboticMiddlewareKind createRoboticMiddlewareKindFromString(EDataType eDataType, String initialValue) {
@@ -1333,7 +1330,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertRoboticMiddlewareKindToString(EDataType eDataType, Object instanceValue) {
@@ -1343,7 +1340,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Shade createShadeFromString(EDataType eDataType, String initialValue) {
@@ -1357,7 +1354,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertShadeToString(EDataType eDataType, Object instanceValue) {
@@ -1367,7 +1364,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MobileRobotKind createMobileRobotKindFromString(EDataType eDataType, String initialValue) {
@@ -1381,7 +1378,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertMobileRobotKindToString(EDataType eDataType, Object instanceValue) {
@@ -1391,7 +1388,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RobotMLPackage getRobotMLPackage() {
@@ -1401,7 +1398,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

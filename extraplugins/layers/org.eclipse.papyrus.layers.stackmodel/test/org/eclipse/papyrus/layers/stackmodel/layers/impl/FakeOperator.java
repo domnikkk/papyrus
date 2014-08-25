@@ -19,7 +19,7 @@ import org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsIn
 
 /**
  * A fake operator implementation used for tests purposes.
- * 
+ *
  * @author cedric dumoulin
  *
  */

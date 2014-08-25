@@ -31,7 +31,7 @@ public class HwBranchPredictorImpl extends HwResourceImpl implements HwBranchPre
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HwBranchPredictorImpl() {
@@ -41,7 +41,7 @@ public class HwBranchPredictorImpl extends HwResourceImpl implements HwBranchPre
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

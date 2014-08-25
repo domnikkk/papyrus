@@ -71,7 +71,7 @@ public class ECoreUtilsTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.util.ECoreUtils#lookupAncestorOfType(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EClass)}.
-	 * 
+	 *
 	 * @throws LayersException
 	 */
 	@Test

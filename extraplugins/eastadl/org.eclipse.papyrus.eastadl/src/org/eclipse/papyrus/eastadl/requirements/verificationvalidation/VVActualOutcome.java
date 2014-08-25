@@ -37,7 +37,7 @@ public interface VVActualOutcome extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVActualOutcome_Base_Class()
@@ -50,7 +50,7 @@ public interface VVActualOutcome extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -65,7 +65,7 @@ public interface VVActualOutcome extends TraceableSpecification {
 	 * <!-- begin-model-doc -->
 	 * Denotes the VVIntendedOutcome that must be matched by this actual outcome.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Intended Outcome</em>' reference.
 	 * @see #setIntendedOutcome(VVIntendedOutcome)
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage#getVVActualOutcome_IntendedOutcome()
@@ -78,7 +78,7 @@ public interface VVActualOutcome extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome#getIntendedOutcome <em>Intended Outcome</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Intended Outcome</em>' reference.
 	 * @see #getIntendedOutcome()

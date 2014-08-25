@@ -8,7 +8,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -20,7 +19,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.util.GeneratoroptionsmmAdapterFactory;
 
 /**
@@ -30,7 +28,7 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.util.
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GeneratoroptionsmmItemProviderAdapterFactory extends GeneratoroptionsmmAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -38,7 +36,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -47,7 +45,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -56,7 +54,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -65,7 +63,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GeneratoroptionsmmItemProviderAdapterFactory() {
@@ -80,7 +78,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Options} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OptionsItemProvider optionsItemProvider;
@@ -89,7 +87,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This creates an adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Options}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +103,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +115,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +126,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +138,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +149,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +168,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +180,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +192,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +208,7 @@ public class GeneratoroptionsmmItemProviderAdapterFactory extends Generatoroptio
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

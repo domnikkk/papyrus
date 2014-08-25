@@ -63,7 +63,7 @@ public interface OutputSynchronizationConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Scope</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Scope</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getOutputSynchronizationConstraint_Scope()
 	 * @model lower="2" ordered="false"
@@ -78,7 +78,7 @@ public interface OutputSynchronizationConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Tolerance</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Tolerance</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getOutputSynchronizationConstraint_Tolerance()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

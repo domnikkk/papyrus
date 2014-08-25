@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
 /**
  * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a create method for each
  * non-abstract class of the model. <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage
  * @generated
  */
@@ -29,7 +29,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	FunctionmodelingFactory eINSTANCE = org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionmodelingFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Allocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Allocation</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Analysis Function Prototype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Analysis Function Prototype</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Analysis Function Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Analysis Function Type</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Basic Software Function Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Basic Software Function Type</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Design Function Prototype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Design Function Prototype</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Design Function Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Design Function Type</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Functional Device</em>'.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Functional Device</em>'.
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Function Allocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Function Allocation</em>'.
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Function Client Server Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Function Client Server Interface</em>'.
 	 * @generated
 	 */
@@ -128,7 +128,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Function Client Server Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Function Client Server Port</em>'.
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Function Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Function Connector</em>'.
 	 * @generated
 	 */
@@ -148,7 +148,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Function Flow Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Function Flow Port</em>'.
 	 * @generated
 	 */
@@ -158,7 +158,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Function Power Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Function Power Port</em>'.
 	 * @generated
 	 */
@@ -168,7 +168,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Hardware Function Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Hardware Function Type</em>'.
 	 * @generated
 	 */
@@ -178,7 +178,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Local Device Manager</em>'.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Local Device Manager</em>'.
 	 * @generated
 	 */
@@ -188,7 +188,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Operation</em>'.
 	 * @generated
 	 */
@@ -198,7 +198,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	 * Returns a new object of class '<em>Port Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Port Group</em>'.
 	 * @generated
 	 */
@@ -207,7 +207,7 @@ public interface FunctionmodelingFactory extends EFactory {
 	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

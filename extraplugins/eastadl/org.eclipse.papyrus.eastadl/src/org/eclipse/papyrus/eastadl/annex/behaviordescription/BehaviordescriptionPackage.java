@@ -21,7 +21,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionFactory
  * @model kind="package"
  * @generated
@@ -31,7 +31,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "behaviordescription";
@@ -40,7 +40,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Annex/BehaviorDescription/1";
@@ -49,7 +49,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "BehaviorDescription";
@@ -58,7 +58,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	BehaviordescriptionPackage eINSTANCE = org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl.init();
@@ -67,7 +67,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingAttributeImpl <em>Behavior Constraint Binding Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingAttributeImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintBindingAttribute()
 	 * @generated
@@ -78,7 +78,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -88,7 +88,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Extern Visible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Clamp Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Function Connector</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +148,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Hardware Connector</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of structural features of the '<em>Behavior Constraint Binding Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +168,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of operations of the '<em>Behavior Constraint Binding Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintParameterImpl <em>Behavior Constraint Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintParameterImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintParameter()
 	 * @generated
@@ -189,7 +189,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of structural features of the '<em>Behavior Constraint Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of operations of the '<em>Behavior Constraint Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintInternalBindingImpl <em>Behavior Constraint Internal Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintInternalBindingImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintInternalBinding()
 	 * @generated
@@ -220,7 +220,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Clamp Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -230,7 +230,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Function Connector</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -240,7 +240,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Hardware Connector</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -250,7 +250,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of structural features of the '<em>Behavior Constraint Internal Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -260,7 +260,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of operations of the '<em>Behavior Constraint Internal Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +270,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingEventImpl <em>Behavior Constraint Binding Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingEventImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintBindingEvent()
 	 * @generated
@@ -281,7 +281,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -291,7 +291,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -311,7 +311,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Feature Flaw</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -321,7 +321,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Hazardous Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -331,7 +331,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Fault Failure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -341,7 +341,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Execution Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -351,7 +351,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Occurred Logical Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -361,7 +361,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Clamp Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -371,7 +371,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Function Connector</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -381,7 +381,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding Through Hardware Connector</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -391,7 +391,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of structural features of the '<em>Behavior Constraint Binding Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -401,7 +401,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of operations of the '<em>Behavior Constraint Binding Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -411,7 +411,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintPrototypeImpl <em>Behavior Constraint Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintPrototype()
 	 * @generated
@@ -422,7 +422,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -432,7 +432,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -442,7 +442,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -452,7 +452,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -462,7 +462,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -472,7 +472,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Instantiation Variable</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -482,7 +482,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Vehicle Feature Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -492,7 +492,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -502,7 +502,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Function Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -512,7 +512,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Hardware Component Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -522,7 +522,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Error Model Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -532,7 +532,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of structural features of the '<em>Behavior Constraint Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -542,7 +542,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of operations of the '<em>Behavior Constraint Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -552,7 +552,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTypeImpl <em>Behavior Constraint Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintType()
 	 * @generated
@@ -563,7 +563,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -573,7 +573,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -583,7 +583,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -593,7 +593,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -603,7 +603,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -613,7 +613,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -623,7 +623,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Variable</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -633,7 +633,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Interface Variable</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -643,7 +643,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -653,7 +653,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Attribute Quantificationconstraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -663,7 +663,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Temporal Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -673,7 +673,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Computation Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -683,7 +683,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of structural features of the '<em>Behavior Constraint Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -693,7 +693,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of operations of the '<em>Behavior Constraint Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -703,7 +703,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTargetBindingImpl <em>Behavior Constraint Target Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTargetBindingImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintTargetBinding()
 	 * @generated
@@ -714,7 +714,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -724,7 +724,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -734,7 +734,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -744,7 +744,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Behavior Constraint Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -754,7 +754,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Targeted Vehicle Feature</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -764,7 +764,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Targeted Function Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -774,7 +774,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Constrained Error Model</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -784,7 +784,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Targeted Hardware Component Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -794,7 +794,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Constrained Function Triggering</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -804,7 +804,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Constrained Mode Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -814,7 +814,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The feature id for the '<em><b>Constrained Function Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -824,7 +824,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of structural features of the '<em>Behavior Constraint Target Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -834,7 +834,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * The number of operations of the '<em>Behavior Constraint Target Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -845,7 +845,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintBindingAttribute <em>Behavior Constraint Binding Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Behavior Constraint Binding Attribute</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintBindingAttribute
 	 * @generated
@@ -856,7 +856,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintParameter <em>Behavior Constraint Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Behavior Constraint Parameter</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintParameter
 	 * @generated
@@ -867,7 +867,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding <em>Behavior Constraint Internal Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Behavior Constraint Internal Binding</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding
 	 * @generated
@@ -878,7 +878,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughClampConnector <em>Binding Through Clamp Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Binding Through Clamp Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughClampConnector()
 	 * @see #getBehaviorConstraintInternalBinding()
@@ -890,7 +890,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughFunctionConnector <em>Binding Through Function Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Binding Through Function Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughFunctionConnector()
 	 * @see #getBehaviorConstraintInternalBinding()
@@ -902,7 +902,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughHardwareConnector <em>Binding Through Hardware Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Binding Through Hardware Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintInternalBinding#getBindingThroughHardwareConnector()
 	 * @see #getBehaviorConstraintInternalBinding()
@@ -914,7 +914,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintBindingEvent <em>Behavior Constraint Binding Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Behavior Constraint Binding Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintBindingEvent
 	 * @generated
@@ -925,7 +925,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype <em>Behavior Constraint Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Behavior Constraint Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype
 	 * @generated
@@ -936,7 +936,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getInstantiationVariable <em>Instantiation Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Instantiation Variable</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getInstantiationVariable()
 	 * @see #getBehaviorConstraintPrototype()
@@ -948,7 +948,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getTargetVehicleFeatureElement <em>Target Vehicle Feature Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Target Vehicle Feature Element</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getTargetVehicleFeatureElement()
 	 * @see #getBehaviorConstraintPrototype()
@@ -960,7 +960,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getType()
 	 * @see #getBehaviorConstraintPrototype()
@@ -972,7 +972,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getFunctionTarget <em>Function Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Function Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getFunctionTarget()
 	 * @see #getBehaviorConstraintPrototype()
@@ -984,7 +984,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getHardwareComponentTarget <em>Hardware Component Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Hardware Component Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getHardwareComponentTarget()
 	 * @see #getBehaviorConstraintPrototype()
@@ -996,7 +996,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getErrorModelTarget <em>Error Model Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Error Model Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintPrototype#getErrorModelTarget()
 	 * @see #getBehaviorConstraintPrototype()
@@ -1008,7 +1008,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType <em>Behavior Constraint Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Behavior Constraint Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType
 	 * @generated
@@ -1019,7 +1019,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getSharedVariable <em>Shared Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Shared Variable</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getSharedVariable()
 	 * @see #getBehaviorConstraintType()
@@ -1031,7 +1031,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getInterfaceVariable <em>Interface Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Interface Variable</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getInterfaceVariable()
 	 * @see #getBehaviorConstraintType()
@@ -1043,7 +1043,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Part</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getPart()
 	 * @see #getBehaviorConstraintType()
@@ -1055,7 +1055,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getAttributeQuantificationconstraint <em>Attribute Quantificationconstraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Attribute Quantificationconstraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getAttributeQuantificationconstraint()
 	 * @see #getBehaviorConstraintType()
@@ -1067,7 +1067,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getTemporalConstraint <em>Temporal Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Temporal Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getTemporalConstraint()
 	 * @see #getBehaviorConstraintType()
@@ -1079,7 +1079,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getComputationConstraint <em>Computation Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Computation Constraint</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintType#getComputationConstraint()
 	 * @see #getBehaviorConstraintType()
@@ -1091,7 +1091,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding <em>Behavior Constraint Target Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Behavior Constraint Target Binding</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding
 	 * @generated
@@ -1102,7 +1102,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getBehaviorConstraintType <em>Behavior Constraint Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Behavior Constraint Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getBehaviorConstraintType()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1114,7 +1114,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getTargetedVehicleFeature <em>Targeted Vehicle Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Targeted Vehicle Feature</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getTargetedVehicleFeature()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1126,7 +1126,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getTargetedFunctionType <em>Targeted Function Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Targeted Function Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getTargetedFunctionType()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1138,7 +1138,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedErrorModel <em>Constrained Error Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Constrained Error Model</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedErrorModel()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1150,7 +1150,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getTargetedHardwareComponentType <em>Targeted Hardware Component Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Targeted Hardware Component Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getTargetedHardwareComponentType()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1162,7 +1162,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedFunctionTriggering <em>Constrained Function Triggering</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Constrained Function Triggering</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedFunctionTriggering()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1174,7 +1174,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedModeBehavior <em>Constrained Mode Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Constrained Mode Behavior</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedModeBehavior()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1186,7 +1186,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedFunctionBehavior <em>Constrained Function Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Constrained Function Behavior</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviorConstraintTargetBinding#getConstrainedFunctionBehavior()
 	 * @see #getBehaviorConstraintTargetBinding()
@@ -1198,7 +1198,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1215,7 +1215,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1223,7 +1223,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingAttributeImpl <em>Behavior Constraint Binding Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingAttributeImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintBindingAttribute()
 		 * @generated
@@ -1234,7 +1234,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintParameterImpl <em>Behavior Constraint Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintParameterImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintParameter()
 		 * @generated
@@ -1245,7 +1245,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintInternalBindingImpl <em>Behavior Constraint Internal Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintInternalBindingImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintInternalBinding()
 		 * @generated
@@ -1256,7 +1256,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Binding Through Clamp Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_INTERNAL_BINDING__BINDING_THROUGH_CLAMP_CONNECTOR = eINSTANCE.getBehaviorConstraintInternalBinding_BindingThroughClampConnector();
@@ -1265,7 +1265,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Binding Through Function Connector</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_INTERNAL_BINDING__BINDING_THROUGH_FUNCTION_CONNECTOR = eINSTANCE.getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector();
@@ -1274,7 +1274,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Binding Through Hardware Connector</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_INTERNAL_BINDING__BINDING_THROUGH_HARDWARE_CONNECTOR = eINSTANCE.getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector();
@@ -1283,7 +1283,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingEventImpl <em>Behavior Constraint Binding Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintBindingEventImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintBindingEvent()
 		 * @generated
@@ -1294,7 +1294,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintPrototypeImpl <em>Behavior Constraint Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintPrototype()
 		 * @generated
@@ -1305,7 +1305,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Instantiation Variable</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_PROTOTYPE__INSTANTIATION_VARIABLE = eINSTANCE.getBehaviorConstraintPrototype_InstantiationVariable();
@@ -1314,7 +1314,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target Vehicle Feature Element</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_PROTOTYPE__TARGET_VEHICLE_FEATURE_ELEMENT = eINSTANCE.getBehaviorConstraintPrototype_TargetVehicleFeatureElement();
@@ -1323,7 +1323,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_PROTOTYPE__TYPE = eINSTANCE.getBehaviorConstraintPrototype_Type();
@@ -1332,7 +1332,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Function Target</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_PROTOTYPE__FUNCTION_TARGET = eINSTANCE.getBehaviorConstraintPrototype_FunctionTarget();
@@ -1341,7 +1341,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hardware Component Target</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_PROTOTYPE__HARDWARE_COMPONENT_TARGET = eINSTANCE.getBehaviorConstraintPrototype_HardwareComponentTarget();
@@ -1350,7 +1350,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Error Model Target</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_PROTOTYPE__ERROR_MODEL_TARGET = eINSTANCE.getBehaviorConstraintPrototype_ErrorModelTarget();
@@ -1359,7 +1359,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTypeImpl <em>Behavior Constraint Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintType()
 		 * @generated
@@ -1370,7 +1370,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Shared Variable</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TYPE__SHARED_VARIABLE = eINSTANCE.getBehaviorConstraintType_SharedVariable();
@@ -1379,7 +1379,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Interface Variable</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TYPE__INTERFACE_VARIABLE = eINSTANCE.getBehaviorConstraintType_InterfaceVariable();
@@ -1388,7 +1388,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Part</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TYPE__PART = eINSTANCE.getBehaviorConstraintType_Part();
@@ -1397,7 +1397,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attribute Quantificationconstraint</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TYPE__ATTRIBUTE_QUANTIFICATIONCONSTRAINT = eINSTANCE.getBehaviorConstraintType_AttributeQuantificationconstraint();
@@ -1406,7 +1406,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Temporal Constraint</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TYPE__TEMPORAL_CONSTRAINT = eINSTANCE.getBehaviorConstraintType_TemporalConstraint();
@@ -1415,7 +1415,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Computation Constraint</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TYPE__COMPUTATION_CONSTRAINT = eINSTANCE.getBehaviorConstraintType_ComputationConstraint();
@@ -1424,7 +1424,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTargetBindingImpl <em>Behavior Constraint Target Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviorConstraintTargetBindingImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.impl.BehaviordescriptionPackageImpl#getBehaviorConstraintTargetBinding()
 		 * @generated
@@ -1435,7 +1435,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Behavior Constraint Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__BEHAVIOR_CONSTRAINT_TYPE = eINSTANCE.getBehaviorConstraintTargetBinding_BehaviorConstraintType();
@@ -1444,7 +1444,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Targeted Vehicle Feature</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__TARGETED_VEHICLE_FEATURE = eINSTANCE.getBehaviorConstraintTargetBinding_TargetedVehicleFeature();
@@ -1453,7 +1453,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Targeted Function Type</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__TARGETED_FUNCTION_TYPE = eINSTANCE.getBehaviorConstraintTargetBinding_TargetedFunctionType();
@@ -1462,7 +1462,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Constrained Error Model</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__CONSTRAINED_ERROR_MODEL = eINSTANCE.getBehaviorConstraintTargetBinding_ConstrainedErrorModel();
@@ -1471,7 +1471,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Targeted Hardware Component Type</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__TARGETED_HARDWARE_COMPONENT_TYPE = eINSTANCE.getBehaviorConstraintTargetBinding_TargetedHardwareComponentType();
@@ -1480,7 +1480,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Constrained Function Triggering</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__CONSTRAINED_FUNCTION_TRIGGERING = eINSTANCE.getBehaviorConstraintTargetBinding_ConstrainedFunctionTriggering();
@@ -1489,7 +1489,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Constrained Mode Behavior</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__CONSTRAINED_MODE_BEHAVIOR = eINSTANCE.getBehaviorConstraintTargetBinding_ConstrainedModeBehavior();
@@ -1498,7 +1498,7 @@ public interface BehaviordescriptionPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Constrained Function Behavior</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BEHAVIOR_CONSTRAINT_TARGET_BINDING__CONSTRAINED_FUNCTION_BEHAVIOR = eINSTANCE.getBehaviorConstraintTargetBinding_ConstrainedFunctionBehavior();

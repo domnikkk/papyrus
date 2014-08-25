@@ -36,7 +36,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SwMutualEx
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_InteractionFactory {
@@ -44,7 +44,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SW_InteractionFactory init() {
@@ -63,7 +63,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SW_InteractionFactoryImpl() {
@@ -73,7 +73,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QueuePolicyKind createQueuePolicyKindFromString(EDataType eDataType, String initialValue) {
@@ -209,7 +209,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertQueuePolicyKindToString(EDataType eDataType, Object instanceValue) {
@@ -219,7 +219,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MessageResourceKind createMessageResourceKindFromString(EDataType eDataType, String initialValue) {
@@ -233,7 +233,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertMessageResourceKindToString(EDataType eDataType, Object instanceValue) {
@@ -243,7 +243,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationKind createNotificationKindFromString(EDataType eDataType, String initialValue) {
@@ -257,7 +257,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNotificationKindToString(EDataType eDataType, Object instanceValue) {
@@ -267,7 +267,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationResourceKind createNotificationResourceKindFromString(EDataType eDataType, String initialValue) {
@@ -281,7 +281,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertNotificationResourceKindToString(EDataType eDataType, Object instanceValue) {
@@ -291,7 +291,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MutualExclusionResourceKind createMutualExclusionResourceKindFromString(EDataType eDataType, String initialValue) {
@@ -305,7 +305,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertMutualExclusionResourceKindToString(EDataType eDataType, Object instanceValue) {
@@ -315,7 +315,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConcurrentAccessProtocolKind createConcurrentAccessProtocolKindFromString(EDataType eDataType, String initialValue) {
@@ -329,7 +329,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertConcurrentAccessProtocolKindToString(EDataType eDataType, Object instanceValue) {
@@ -339,7 +339,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -350,7 +350,7 @@ public class SW_InteractionFactoryImpl extends EFactoryImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

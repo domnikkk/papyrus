@@ -43,7 +43,7 @@ public interface Unit extends EObject {
 	 * If the meaning of the '<em>Conv Factor</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Conv Factor</em>' attribute.
 	 * @see #setConvFactor(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getUnit_ConvFactor()
@@ -56,7 +56,7 @@ public interface Unit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getConvFactor <em>Conv Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Conv Factor</em>' attribute.
 	 * @see #getConvFactor()
@@ -71,7 +71,7 @@ public interface Unit extends EObject {
 	 * If the meaning of the '<em>Conv Offset</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Conv Offset</em>' attribute.
 	 * @see #setConvOffset(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getUnit_ConvOffset()
@@ -84,7 +84,7 @@ public interface Unit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getConvOffset <em>Conv Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Conv Offset</em>' attribute.
 	 * @see #getConvOffset()
@@ -99,7 +99,7 @@ public interface Unit extends EObject {
 	 * If the meaning of the '<em>Base Unit</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Unit</em>' reference.
 	 * @see #setBaseUnit(Unit)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getUnit_BaseUnit()
@@ -112,7 +112,7 @@ public interface Unit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getBaseUnit <em>Base Unit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Unit</em>' reference.
 	 * @see #getBaseUnit()
@@ -127,7 +127,7 @@ public interface Unit extends EObject {
 	 * If the meaning of the '<em>Base Enumeration Literal</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Enumeration Literal</em>' reference.
 	 * @see #setBase_EnumerationLiteral(EnumerationLiteral)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage#getUnit_Base_EnumerationLiteral()
@@ -140,7 +140,7 @@ public interface Unit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.Unit#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Enumeration Literal</em>' reference.
 	 * @see #getBase_EnumerationLiteral()

@@ -25,7 +25,7 @@ public interface ILayersModelRootEventListener {
 
 	/**
 	 * Called by events when a root of type {@link LayersStackApplication} is added to the {@link LayersModel} elements.
-	 * 
+	 *
 	 * @param msg
 	 */
 	public void layersModelRootAdded(Notification msg);
@@ -33,7 +33,7 @@ public interface ILayersModelRootEventListener {
 	/**
 	 * Called by events when a root of type {@link LayersStackApplication} is removed from the {@link Diagram} or one of its contained
 	 * elements.
-	 * 
+	 *
 	 * @param msg
 	 */
 	public void layersModelRootRemoved(Notification msg);

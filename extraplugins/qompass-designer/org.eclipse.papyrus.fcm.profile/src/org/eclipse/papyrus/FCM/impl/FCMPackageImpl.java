@@ -67,14 +67,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass templateEClass = null;
@@ -82,7 +82,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass bindingHelperEClass = null;
@@ -90,7 +90,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass configurationPropertyEClass = null;
@@ -98,7 +98,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass implementationGroupEClass = null;
@@ -106,7 +106,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass assemblyEClass = null;
@@ -114,7 +114,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass flattenEClass = null;
@@ -122,7 +122,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compToOOmappingEClass = null;
@@ -130,7 +130,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass progLanguageEClass = null;
@@ -138,7 +138,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass codeGenOptionsEClass = null;
@@ -146,7 +146,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass interactionComponentEClass = null;
@@ -154,7 +154,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass singletonEClass = null;
@@ -162,7 +162,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass connectorEClass = null;
@@ -170,7 +170,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass configurableElementInstanceEClass = null;
@@ -178,7 +178,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass useInstanceConfiguratorEClass = null;
@@ -186,7 +186,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass instanceConfiguratorEClass = null;
@@ -194,7 +194,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass ruleApplicationEClass = null;
@@ -202,7 +202,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass containerRuleEClass = null;
@@ -210,7 +210,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass configOptionEClass = null;
@@ -218,7 +218,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass templatePortEClass = null;
@@ -226,7 +226,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass portEClass = null;
@@ -234,7 +234,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass portKindEClass = null;
@@ -242,7 +242,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass deploymentPlanEClass = null;
@@ -250,7 +250,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass derivedElementEClass = null;
@@ -258,7 +258,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compImplTemplateEClass = null;
@@ -266,7 +266,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass implementationPropertiesEClass = null;
@@ -274,7 +274,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass operatingSystemEClass = null;
@@ -282,7 +282,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass targetArchitectureEClass = null;
@@ -290,7 +290,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass configurationEClass = null;
@@ -298,7 +298,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass interceptionRuleEClass = null;
@@ -306,7 +306,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass targetEClass = null;
@@ -314,7 +314,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compilerChainEClass = null;
@@ -322,7 +322,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass fragmentEClass = null;
@@ -330,7 +330,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass copyAttributeValueEClass = null;
@@ -338,7 +338,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass autoIndexEClass = null;
@@ -346,7 +346,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass autoIndexPerNodeEClass = null;
@@ -354,7 +354,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass initPrecedenceEClass = null;
@@ -362,7 +362,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass connectorConfigurationEClass = null;
@@ -370,7 +370,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass bindTemplateEClass = null;
@@ -378,7 +378,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum containerRuleKindEEnum = null;
@@ -386,7 +386,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum interceptionKindEEnum = null;
@@ -396,7 +396,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#eNS_URI
 	 * @see #init()
@@ -409,7 +409,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -419,7 +419,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link FCMPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -456,7 +456,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -467,7 +467,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -478,7 +478,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -489,7 +489,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -500,7 +500,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -511,7 +511,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -522,7 +522,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -533,7 +533,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -544,7 +544,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -555,7 +555,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -566,7 +566,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -577,7 +577,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -588,7 +588,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -599,7 +599,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -610,7 +610,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -621,7 +621,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -632,7 +632,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -643,7 +643,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -654,7 +654,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -665,7 +665,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -676,7 +676,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -687,7 +687,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -698,7 +698,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -709,7 +709,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -720,7 +720,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -731,7 +731,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -742,7 +742,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -753,7 +753,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -764,7 +764,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -775,7 +775,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -786,7 +786,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -797,7 +797,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -808,7 +808,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -819,7 +819,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -830,7 +830,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -841,7 +841,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -852,7 +852,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -863,7 +863,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -874,7 +874,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -885,7 +885,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -896,7 +896,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -907,7 +907,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -918,7 +918,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -929,7 +929,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -940,7 +940,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -951,7 +951,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -962,7 +962,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -973,7 +973,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -984,7 +984,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -995,7 +995,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1006,7 +1006,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1017,7 +1017,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1028,7 +1028,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1039,7 +1039,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1050,7 +1050,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1061,7 +1061,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1072,7 +1072,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1083,7 +1083,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1094,7 +1094,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1105,7 +1105,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1116,7 +1116,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1127,7 +1127,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1138,7 +1138,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1149,7 +1149,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1160,7 +1160,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1171,7 +1171,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1182,7 +1182,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1193,7 +1193,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1204,7 +1204,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1215,7 +1215,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1226,7 +1226,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1237,7 +1237,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1248,7 +1248,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1259,7 +1259,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1270,7 +1270,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1281,7 +1281,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1292,7 +1292,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1303,7 +1303,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1314,7 +1314,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1325,7 +1325,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1336,7 +1336,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1347,7 +1347,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1358,7 +1358,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1369,7 +1369,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1380,7 +1380,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1391,7 +1391,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1402,7 +1402,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1413,7 +1413,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1424,7 +1424,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1435,7 +1435,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1446,7 +1446,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1457,7 +1457,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1468,7 +1468,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1479,7 +1479,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1490,7 +1490,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1501,7 +1501,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1512,7 +1512,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1523,7 +1523,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1534,7 +1534,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1545,7 +1545,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1556,7 +1556,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1567,7 +1567,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1578,7 +1578,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1589,7 +1589,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1600,7 +1600,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1611,7 +1611,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1622,7 +1622,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1633,7 +1633,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1644,7 +1644,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1655,7 +1655,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1666,7 +1666,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1677,7 +1677,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1688,7 +1688,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1699,7 +1699,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1710,7 +1710,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1721,7 +1721,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1732,7 +1732,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1743,7 +1743,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1754,7 +1754,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1765,7 +1765,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1776,7 +1776,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1787,7 +1787,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1797,7 +1797,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1971,7 +1971,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1981,7 +1981,7 @@ public class FCMPackageImpl extends EPackageImpl implements FCMPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

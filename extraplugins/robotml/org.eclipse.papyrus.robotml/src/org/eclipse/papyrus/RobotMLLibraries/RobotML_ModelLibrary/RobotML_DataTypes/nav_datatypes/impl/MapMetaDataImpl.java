@@ -6,15 +6,11 @@ import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
 
@@ -39,7 +35,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	 * The default value of the '{@link #getMap_load_time() <em>Map load time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMap_load_time()
 	 * @generated
 	 * @ordered
@@ -50,7 +46,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	 * The cached value of the '{@link #getMap_load_time() <em>Map load time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMap_load_time()
 	 * @generated
 	 * @ordered
@@ -61,7 +57,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	 * The default value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -72,7 +68,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	 * The cached value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -83,7 +79,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -94,7 +90,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -105,7 +101,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	 * The cached value of the '{@link #getOrigin() <em>Origin</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrigin()
 	 * @generated
 	 * @ordered
@@ -115,7 +111,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MapMetaDataImpl() {
@@ -125,7 +121,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +132,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Date getMap_load_time() {
@@ -146,7 +142,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMap_load_time(Date newMap_load_time) {
@@ -160,7 +156,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getResolution() {
@@ -170,7 +166,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setResolution(float newResolution) {
@@ -184,7 +180,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getWidth() {
@@ -194,7 +190,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
@@ -208,7 +204,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Pose getOrigin() {
@@ -218,7 +214,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOrigin(Pose newOrigin, NotificationChain msgs) {
@@ -238,7 +234,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOrigin(Pose newOrigin) {
@@ -263,7 +259,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +274,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +295,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +320,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +345,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +366,7 @@ public class MapMetaDataImpl extends MinimalEObjectImpl.Container implements Map
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -51,7 +51,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getStakeholderNeed_Base_Class()
@@ -64,7 +64,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -79,7 +79,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * If the meaning of the '<em>Need</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Need</em>' attribute.
 	 * @see #setNeed(String)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getStakeholderNeed_Need()
@@ -95,7 +95,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * If the meaning of the '<em>Priority</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(int)
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getStakeholderNeed_Priority()
@@ -112,7 +112,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * If the meaning of the '<em>Problem Statement</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Problem Statement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getStakeholderNeed_ProblemStatement()
 	 * @model required="true" ordered="false"
@@ -128,7 +128,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * If the meaning of the '<em>Stake Holder</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stake Holder</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getStakeholderNeed_StakeHolder()
 	 * @model required="true" ordered="false"
@@ -140,7 +140,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getNeed <em>Need</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Need</em>' attribute.
 	 * @see #getNeed()
@@ -152,7 +152,7 @@ public interface StakeholderNeed extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getPriority <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Priority</em>' attribute.
 	 * @see #getPriority()

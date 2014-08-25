@@ -32,7 +32,7 @@ public interface AttributeQuantificationconstraint extends EAElement, BehaviorCo
 	 * If the meaning of the '<em>Attribute</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attribute</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getAttributeQuantificationconstraint_Attribute()
 	 * @model ordered="false"
@@ -48,7 +48,7 @@ public interface AttributeQuantificationconstraint extends EAElement, BehaviorCo
 	 * If the meaning of the '<em>Quantification</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Quantification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getAttributeQuantificationconstraint_Quantification()
 	 * @model ordered="false"

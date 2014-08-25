@@ -52,7 +52,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The default value of the '{@link #getAccessPolicy() <em>Access Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccessPolicy()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getAccessPolicy() <em>Access Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAccessPolicy()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getMemories() <em>Memories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemories()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getMemoryBlockAdressElements() <em>Memory Block Adress Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemoryBlockAdressElements()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getMemoryBlockSizeElements() <em>Memory Block Size Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMemoryBlockSizeElements()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getLockServices() <em>Lock Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLockServices()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getUnlockServices() <em>Unlock Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnlockServices()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getMapServices() <em>Map Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMapServices()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	 * The cached value of the '{@link #getUnMapServices() <em>Un Map Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnMapServices()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MemoryBrokerImpl() {
@@ -160,7 +160,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +267,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +295,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -369,7 +369,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +406,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -435,7 +435,7 @@ public class MemoryBrokerImpl extends SwResourceImpl implements MemoryBroker {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

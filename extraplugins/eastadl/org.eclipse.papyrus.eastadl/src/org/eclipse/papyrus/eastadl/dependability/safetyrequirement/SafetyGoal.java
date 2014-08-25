@@ -70,7 +70,7 @@ public interface SafetyGoal extends EAElement {
 	 * If the meaning of the '<em>Derived From</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Derived From</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage#getSafetyGoal_DerivedFrom()
 	 * @model required="true" ordered="false"
@@ -86,7 +86,7 @@ public interface SafetyGoal extends EAElement {
 	 * If the meaning of the '<em>Hazard Classification</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hazard Classification</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
 	 * @see #setHazardClassification(ASILKind)
@@ -100,7 +100,7 @@ public interface SafetyGoal extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getHazardClassification <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Hazard Classification</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.ASILKind
@@ -117,7 +117,7 @@ public interface SafetyGoal extends EAElement {
 	 * If the meaning of the '<em>Safe State</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Safe State</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage#getSafetyGoal_SafeState()
 	 * @model ordered="false"
@@ -133,7 +133,7 @@ public interface SafetyGoal extends EAElement {
 	 * If the meaning of the '<em>Requirement</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage#getSafetyGoal_Requirement()
 	 * @model required="true" ordered="false"
@@ -148,7 +148,7 @@ public interface SafetyGoal extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage#getSafetyGoal_Base_Class()
@@ -161,7 +161,7 @@ public interface SafetyGoal extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyGoal#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()

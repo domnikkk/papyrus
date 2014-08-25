@@ -54,7 +54,7 @@ public interface Requirement extends org.eclipse.papyrus.sysml.requirements.Requ
 	 * <!-- begin-model-doc -->
 	 * Specifies the language used for the requirement statement.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Formalism</em>' attribute.
 	 * @see #setFormalism(String)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirement_Formalism()
@@ -67,7 +67,7 @@ public interface Requirement extends org.eclipse.papyrus.sysml.requirements.Requ
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getFormalism <em>Formalism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Formalism</em>' attribute.
 	 * @see #getFormalism()
@@ -82,7 +82,7 @@ public interface Requirement extends org.eclipse.papyrus.sysml.requirements.Requ
 	 * <!-- begin-model-doc -->
 	 * Reference to possible external file containing the requirement statement.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirement_Url()
@@ -95,7 +95,7 @@ public interface Requirement extends org.eclipse.papyrus.sysml.requirements.Requ
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.requirements.Requirement#getUrl <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Url</em>' attribute.
 	 * @see #getUrl()
@@ -111,7 +111,7 @@ public interface Requirement extends org.eclipse.papyrus.sysml.requirements.Requ
 	 * If the meaning of the '<em>Mode</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Mode</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage#getRequirement_Mode()
 	 * @model ordered="false"

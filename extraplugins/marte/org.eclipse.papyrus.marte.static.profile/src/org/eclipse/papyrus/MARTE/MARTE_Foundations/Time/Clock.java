@@ -50,7 +50,7 @@ public interface Clock extends EObject {
 	 * If the meaning of the '<em>Standard</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Standard</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind
 	 * @see #setStandard(TimeStandardKind)
@@ -64,7 +64,7 @@ public interface Clock extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getStandard <em>Standard</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Standard</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeStandardKind
@@ -80,7 +80,7 @@ public interface Clock extends EObject {
 	 * If the meaning of the '<em>Base Instance Specification</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Instance Specification</em>' reference.
 	 * @see #setBase_InstanceSpecification(InstanceSpecification)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClock_Base_InstanceSpecification()
@@ -93,7 +93,7 @@ public interface Clock extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_InstanceSpecification <em>Base Instance Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Instance Specification</em>' reference.
 	 * @see #getBase_InstanceSpecification()
@@ -108,7 +108,7 @@ public interface Clock extends EObject {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(ClockType)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClock_Type()
@@ -121,7 +121,7 @@ public interface Clock extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()
@@ -136,7 +136,7 @@ public interface Clock extends EObject {
 	 * If the meaning of the '<em>Unit</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unit</em>' reference.
 	 * @see #setUnit(Unit)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClock_Unit()
@@ -149,7 +149,7 @@ public interface Clock extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getUnit <em>Unit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Unit</em>' reference.
 	 * @see #getUnit()
@@ -164,7 +164,7 @@ public interface Clock extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClock_Base_Property()
@@ -177,7 +177,7 @@ public interface Clock extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
@@ -192,7 +192,7 @@ public interface Clock extends EObject {
 	 * If the meaning of the '<em>Base Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Event</em>' reference.
 	 * @see #setBase_Event(Event)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClock_Base_Event()
@@ -205,7 +205,7 @@ public interface Clock extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_Event <em>Base Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Event</em>' reference.
 	 * @see #getBase_Event()

@@ -24,7 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_Resour
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SW_ResourceCoreXMLProcessor extends XMLProcessor {
@@ -33,7 +33,7 @@ public class SW_ResourceCoreXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SW_ResourceCoreXMLProcessor() {
@@ -45,7 +45,7 @@ public class SW_ResourceCoreXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the SW_ResourceCoreResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

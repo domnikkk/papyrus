@@ -60,7 +60,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Constrained Fault Failure</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constrained Fault Failure</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getQuantitativeSafetyConstraint_ConstrainedFaultFailure()
 	 * @model required="true" ordered="false"
@@ -75,7 +75,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Failure Rate</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Failure Rate</em>' attribute.
 	 * @see #setFailureRate(Float)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getQuantitativeSafetyConstraint_FailureRate()
@@ -91,7 +91,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Repair Rate</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Repair Rate</em>' attribute.
 	 * @see #setRepairRate(Float)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getQuantitativeSafetyConstraint_RepairRate()
@@ -104,7 +104,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getFailureRate <em>Failure Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Failure Rate</em>' attribute.
 	 * @see #getFailureRate()
@@ -116,7 +116,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getRepairRate <em>Repair Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Repair Rate</em>' attribute.
 	 * @see #getRepairRate()
@@ -131,7 +131,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getQuantitativeSafetyConstraint_Base_Class()
@@ -144,7 +144,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -159,7 +159,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * If the meaning of the '<em>Base Constraint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Constraint</em>' reference.
 	 * @see #setBase_Constraint(Constraint)
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getQuantitativeSafetyConstraint_Base_Constraint()
@@ -172,7 +172,7 @@ public interface QuantitativeSafetyConstraint extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.dependability.safetyconstraints.QuantitativeSafetyConstraint#getBase_Constraint <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Constraint</em>' reference.
 	 * @see #getBase_Constraint()

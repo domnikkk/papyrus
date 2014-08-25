@@ -16,18 +16,42 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.C_Cpp.*;
+import org.eclipse.papyrus.C_Cpp.Array;
+import org.eclipse.papyrus.C_Cpp.C_CppFactory;
+import org.eclipse.papyrus.C_Cpp.C_CppPackage;
+import org.eclipse.papyrus.C_Cpp.Const;
+import org.eclipse.papyrus.C_Cpp.ConstInit;
+import org.eclipse.papyrus.C_Cpp.CppInit;
+import org.eclipse.papyrus.C_Cpp.CppRoot;
+import org.eclipse.papyrus.C_Cpp.EAccessKind;
+import org.eclipse.papyrus.C_Cpp.EStorageClass;
+import org.eclipse.papyrus.C_Cpp.ExternLibrary;
+import org.eclipse.papyrus.C_Cpp.External;
+import org.eclipse.papyrus.C_Cpp.Friend;
+import org.eclipse.papyrus.C_Cpp.Include;
+import org.eclipse.papyrus.C_Cpp.Inline;
+import org.eclipse.papyrus.C_Cpp.ManualGeneration;
+import org.eclipse.papyrus.C_Cpp.NoCodeGen;
+import org.eclipse.papyrus.C_Cpp.Ptr;
+import org.eclipse.papyrus.C_Cpp.Ref;
+import org.eclipse.papyrus.C_Cpp.StorageClass;
+import org.eclipse.papyrus.C_Cpp.Template;
+import org.eclipse.papyrus.C_Cpp.TemplateBinding;
+import org.eclipse.papyrus.C_Cpp.TemplateParameter;
+import org.eclipse.papyrus.C_Cpp.Typedef;
+import org.eclipse.papyrus.C_Cpp.Union;
+import org.eclipse.papyrus.C_Cpp.Virtual;
+import org.eclipse.papyrus.C_Cpp.Visibility;
+import org.eclipse.papyrus.C_Cpp.VisibilityKind;
+import org.eclipse.papyrus.C_Cpp.Volatile;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
@@ -35,7 +59,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static C_CppFactory init() {
@@ -54,7 +78,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public C_CppFactoryImpl() {
@@ -64,7 +88,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +148,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +168,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +188,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +200,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +212,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +224,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +236,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +248,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +260,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +272,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +284,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +296,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +308,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +320,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +332,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +344,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +356,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +368,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +380,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +392,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +404,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +416,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +428,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +440,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +452,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +464,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VisibilityKind createVisibilityKindFromString(EDataType eDataType, String initialValue) {
@@ -455,7 +479,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVisibilityKindToString(EDataType eDataType, Object instanceValue) {
@@ -465,7 +489,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAccessKind createEAccessKindFromString(EDataType eDataType, String initialValue) {
@@ -480,7 +504,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEAccessKindToString(EDataType eDataType, Object instanceValue) {
@@ -490,7 +514,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EStorageClass createEStorageClassFromString(EDataType eDataType, String initialValue) {
@@ -505,7 +529,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEStorageClassToString(EDataType eDataType, Object instanceValue) {
@@ -515,7 +539,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -526,7 +550,7 @@ public class C_CppFactoryImpl extends EFactoryImpl implements C_CppFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

@@ -32,7 +32,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	 * The default value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	 * The cached value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	 * The cached value of the '{@link #getVisibleThroughFunctionPort() <em>Visible Through Function Port</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibleThroughFunctionPort()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LogicalEventImpl() {
@@ -74,7 +74,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -47,7 +47,7 @@ public interface ArchitecturalDescription extends Concept {
 	 * If the meaning of the '<em>Aggregates</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Aggregates</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getArchitecturalDescription_Aggregates()
 	 * @model required="true" ordered="false"
@@ -63,7 +63,7 @@ public interface ArchitecturalDescription extends Concept {
 	 * If the meaning of the '<em>Identifies</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Identifies</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsPackage#getArchitecturalDescription_Identifies()
 	 * @model required="true" ordered="false"

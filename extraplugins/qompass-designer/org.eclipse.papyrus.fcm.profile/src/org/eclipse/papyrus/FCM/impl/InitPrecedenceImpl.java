@@ -15,17 +15,12 @@ package org.eclipse.papyrus.FCM.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.FCM.FCMPackage;
 import org.eclipse.papyrus.FCM.InitPrecedence;
 
@@ -49,7 +44,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	 * The cached value of the '{@link #getInvokeAfter() <em>Invoke After</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInvokeAfter()
 	 * @generated
 	 * @ordered
@@ -60,7 +55,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	 * The cached value of the '{@link #getInvokeBefore() <em>Invoke Before</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInvokeBefore()
 	 * @generated
 	 * @ordered
@@ -71,7 +66,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -81,7 +76,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InitPrecedenceImpl() {
@@ -91,7 +86,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +97,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +111,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +125,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +145,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -160,7 +155,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +170,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +192,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -222,7 +217,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +239,7 @@ public class InitPrecedenceImpl extends EObjectImpl implements InitPrecedence {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

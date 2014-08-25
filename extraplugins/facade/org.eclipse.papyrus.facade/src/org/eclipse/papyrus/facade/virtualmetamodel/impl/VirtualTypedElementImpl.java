@@ -14,12 +14,9 @@
 package org.eclipse.papyrus.facade.virtualmetamodel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement;
 import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
@@ -44,7 +41,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	 * The default value of the '{@link #getLower() <em>Lower</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	 * The default value of the '{@link #getUpper() <em>Upper</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -98,7 +95,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected VirtualTypedElementImpl() {
@@ -108,7 +105,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +116,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +127,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +142,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +153,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +168,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +188,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VirtualClassifier basicGetType() {
@@ -201,7 +198,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +213,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +235,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +257,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +279,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +298,7 @@ public abstract class VirtualTypedElementImpl extends VirtualElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

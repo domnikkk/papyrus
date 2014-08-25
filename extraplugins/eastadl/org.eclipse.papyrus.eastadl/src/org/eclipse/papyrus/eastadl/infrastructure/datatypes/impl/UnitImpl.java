@@ -33,7 +33,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The default value of the '{@link #getFactor() <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFactor()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The cached value of the '{@link #getFactor() <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFactor()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -120,7 +120,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UnitImpl() {
@@ -130,7 +130,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +178,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Quantity basicGetQuantity() {
@@ -249,7 +249,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Unit basicGetReference() {
@@ -294,7 +294,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +338,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -394,7 +394,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -417,7 +417,7 @@ public class UnitImpl extends EAPackageableElementImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

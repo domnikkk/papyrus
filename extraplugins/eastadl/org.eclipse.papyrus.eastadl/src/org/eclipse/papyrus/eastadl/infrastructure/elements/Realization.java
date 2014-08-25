@@ -62,7 +62,7 @@ public interface Realization extends Relationship {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.Realization_realizedInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Realized</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getRealization_Realized()
 	 * @model containment="true" required="true" ordered="false"
@@ -75,7 +75,7 @@ public interface Realization extends Relationship {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.Realization_realizedByInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Realized By</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getRealization_RealizedBy()
 	 * @model containment="true" required="true" ordered="false"
@@ -90,7 +90,7 @@ public interface Realization extends Relationship {
 	 * If the meaning of the '<em>Base Realization</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Realization</em>' reference.
 	 * @see #setBase_Realization(org.eclipse.uml2.uml.Realization)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getRealization_Base_Realization()
@@ -103,7 +103,7 @@ public interface Realization extends Relationship {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Realization#getBase_Realization <em>Base Realization</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Realization</em>' reference.
 	 * @see #getBase_Realization()

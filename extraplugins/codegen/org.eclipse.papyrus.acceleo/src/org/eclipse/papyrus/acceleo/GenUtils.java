@@ -307,7 +307,7 @@ public class GenUtils {
 	/**
 	 * Retrieve the comments associated with an element
 	 * TODO: check whether comment's annotated element link belongs to element in question
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
@@ -501,7 +501,7 @@ public class GenUtils {
 	/**
 	 * return the first occurrence of a stereotype application in the ownership tree
 	 * Variant of @see getApplicationTree that is useful for Acceleo
-	 * 
+	 *
 	 * @param elt
 	 *            an element
 	 * @param definition
@@ -530,7 +530,7 @@ public class GenUtils {
 	 * Return a stereotype application when given the eClass of that application.
 	 * In case of Java, we use the class above (without the A) prefix. In case of Acceleo, a stereotype
 	 * such as C_Cpp::Include is passed as EClass and we therefore use this operation from Acceleo.
-	 * 
+	 *
 	 * @param element
 	 *            the UML model element
 	 * @param eClass
@@ -592,7 +592,7 @@ public class GenUtils {
 
 	/**
 	 * Remove <CR> from a String. These confuse Acceleo's indentation
-	 * 
+	 *
 	 * @param str
 	 * @return
 	 */
@@ -642,7 +642,7 @@ public class GenUtils {
 	/**
 	 * Return the type of a behavior, i.e. the type of the first parameter with
 	 * "return" direction
-	 * 
+	 *
 	 * @param behavior
 	 *            a behavior
 	 * @return the associated type

@@ -48,7 +48,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getBaseDimension() <em>Base Dimension</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseDimension()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getBaseExponent() <em>Base Exponent</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseExponent()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getBase_Enumeration() <em>Base Enumeration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DimensionImpl() {
@@ -112,7 +112,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Enumeration basicGetBase_Enumeration() {
@@ -207,7 +207,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -274,7 +274,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +299,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +320,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

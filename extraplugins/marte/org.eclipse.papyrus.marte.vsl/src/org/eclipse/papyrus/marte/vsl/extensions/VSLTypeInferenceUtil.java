@@ -18,16 +18,6 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.uml2.uml.Behavior;
-import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.DataType;
-import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.Parameter;
-import org.eclipse.uml2.uml.ParameterDirectionKind;
-import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.Type;
-
 import org.eclipse.papyrus.marte.vsl.vSL.AdditiveExpression;
 import org.eclipse.papyrus.marte.vsl.vSL.AndOrXorExpression;
 import org.eclipse.papyrus.marte.vsl.vSL.BooleanLiteralRule;
@@ -64,6 +54,15 @@ import org.eclipse.papyrus.marte.vsl.vSL.ValueSpecification;
 import org.eclipse.papyrus.marte.vsl.vSL.VariableDeclaration;
 //import org.eclipse.papyrus.marte.vsl.validation.VSLJavaValidator.ExpectedKind;
 import org.eclipse.papyrus.marte.vsl.validation.VSLJavaValidator;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.ParameterDirectionKind;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 
 
 

@@ -14,11 +14,9 @@ package org.eclipse.papyrus.FCM.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.FCM.BindingHelper;
 import org.eclipse.papyrus.FCM.FCMPackage;
 
@@ -40,7 +38,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -50,7 +48,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BindingHelperImpl() {
@@ -60,7 +58,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +69,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +89,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -101,7 +99,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +114,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +132,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +148,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +164,7 @@ public class BindingHelperImpl extends EObjectImpl implements BindingHelper {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

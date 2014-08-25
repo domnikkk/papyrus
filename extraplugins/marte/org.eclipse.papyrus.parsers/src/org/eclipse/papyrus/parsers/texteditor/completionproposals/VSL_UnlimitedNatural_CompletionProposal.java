@@ -39,7 +39,7 @@ public class VSL_UnlimitedNatural_CompletionProposal implements ICompletionPropo
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.classdiagram.parsers.texteditor.completionproposals.ICompletionProposalComputer
 	 * #generateCompletionProposals(int, int, java.lang.String)

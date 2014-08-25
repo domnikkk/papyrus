@@ -20,7 +20,6 @@ import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ste
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage;
 import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.TagSpecificationRule;
-import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.AbstractStereotypeApplicationWithVSLJavaValidator;
 import org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil;
 import org.eclipse.papyrus.marte.vsl.vSL.CollectionOrTuple;
 import org.eclipse.papyrus.marte.vsl.validation.VSLJavaValidator;

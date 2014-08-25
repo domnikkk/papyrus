@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
 
@@ -32,7 +29,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -43,7 +40,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -54,7 +51,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSize()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSize()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getStride() <em>Stride</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStride()
 	 * @generated
 	 * @ordered
@@ -87,7 +84,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getStride() <em>Stride</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStride()
 	 * @generated
 	 * @ordered
@@ -97,7 +94,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MultiArrayDimensionImpl() {
@@ -107,7 +104,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +115,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLabel() {
@@ -128,7 +125,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLabel(String newLabel) {
@@ -142,7 +139,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getSize() {
@@ -152,7 +149,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSize(long newSize) {
@@ -166,7 +163,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public long getStride() {
@@ -176,7 +173,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStride(long newStride) {
@@ -190,7 +187,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +206,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +228,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +250,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +269,7 @@ public class MultiArrayDimensionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -5,7 +5,6 @@ import org.eclipse.papyrus.eastadl.service.types.elements.EastadlElementTypes;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionAllocation;
 import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage;
 import org.eclipse.papyrus.uml.nattable.manager.axis.AbstractStereotypedElementUMLSynchronizedOnFeatureAxisManager;
-
 import org.eclipse.uml2.uml.Abstraction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLUtil;

@@ -33,7 +33,7 @@ public class CommunicationHardwarePinImpl extends HardwarePinImpl implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommunicationHardwarePinImpl() {
@@ -43,7 +43,7 @@ public class CommunicationHardwarePinImpl extends HardwarePinImpl implements Com
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

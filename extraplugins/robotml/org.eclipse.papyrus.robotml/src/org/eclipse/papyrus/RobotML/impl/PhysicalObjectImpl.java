@@ -5,16 +5,11 @@ package org.eclipse.papyrus.RobotML.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.PhysicalObject;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
@@ -41,7 +36,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	 * The cached value of the '{@link #getEvelovesIn() <em>Eveloves In</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEvelovesIn()
 	 * @generated
 	 * @ordered
@@ -52,7 +47,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	 * The cached value of the '{@link #getHasSurface() <em>Has Surface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHasSurface()
 	 * @generated
 	 * @ordered
@@ -63,7 +58,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -74,7 +69,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeight()
 	 * @generated
 	 * @ordered
@@ -85,7 +80,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	 * The default value of the '{@link #getMass() <em>Mass</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMass()
 	 * @generated
 	 * @ordered
@@ -96,7 +91,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	 * The cached value of the '{@link #getMass() <em>Mass</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMass()
 	 * @generated
 	 * @ordered
@@ -106,7 +101,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PhysicalObjectImpl() {
@@ -116,7 +111,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +122,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Environment> getEvelovesIn() {
@@ -140,7 +135,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Surface getHasSurface() {
@@ -159,7 +154,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Surface basicGetHasSurface() {
@@ -169,7 +164,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHasSurface(Surface newHasSurface) {
@@ -183,7 +178,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getHeight() {
@@ -193,7 +188,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeight(float newHeight) {
@@ -207,7 +202,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public float getMass() {
@@ -217,7 +212,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMass(float newMass) {
@@ -231,7 +226,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +250,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -282,7 +277,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +302,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +323,7 @@ public class PhysicalObjectImpl extends SystemImpl implements PhysicalObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

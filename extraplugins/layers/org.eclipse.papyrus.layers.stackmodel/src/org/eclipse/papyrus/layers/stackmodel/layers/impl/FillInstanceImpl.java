@@ -41,7 +41,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	 * The default value of the '{@link #getTransparency() <em>Transparency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransparency()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	 * The cached value of the '{@link #getTransparency() <em>Transparency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTransparency()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	 * The cached value of the '{@link #getFillColor() <em>Fill Color</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFillColor()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FillInstanceImpl() {
@@ -83,7 +83,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetFillColor(ColorInstance newFillColor, NotificationChain msgs) {
@@ -151,7 +151,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -288,7 +288,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -308,7 +308,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

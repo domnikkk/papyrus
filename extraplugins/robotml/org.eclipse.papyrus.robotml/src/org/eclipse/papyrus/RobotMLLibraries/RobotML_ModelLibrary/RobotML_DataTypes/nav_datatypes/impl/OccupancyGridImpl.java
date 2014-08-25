@@ -6,21 +6,15 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.MapMetaData;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.OccupancyGrid;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header;
 
 /**
@@ -43,7 +37,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -54,7 +48,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	 * The cached value of the '{@link #getInfo() <em>Info</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInfo()
 	 * @generated
 	 * @ordered
@@ -65,7 +59,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -75,7 +69,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OccupancyGridImpl() {
@@ -85,7 +79,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +90,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -106,7 +100,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -126,7 +120,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
@@ -151,7 +145,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MapMetaData getInfo() {
@@ -161,7 +155,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetInfo(MapMetaData newInfo, NotificationChain msgs) {
@@ -181,7 +175,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setInfo(MapMetaData newInfo) {
@@ -206,7 +200,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Character> getData() {
@@ -219,7 +213,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +230,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +249,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -279,7 +273,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +295,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +314,7 @@ public class OccupancyGridImpl extends MinimalEObjectImpl.Container implements O
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -58,7 +58,7 @@ public interface JDTPackageFragment extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Package Fragment Root</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Package Fragment Root</em>' container reference.
 	 * @see #setPackageFragmentRoot(JDTPackageFragmentRoot)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTPackageFragment_PackageFragmentRoot()
@@ -72,7 +72,7 @@ public interface JDTPackageFragment extends JDTParentJavaElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTPackageFragment#getPackageFragmentRoot <em>Package Fragment Root</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Package Fragment Root</em>' container reference.
 	 * @see #getPackageFragmentRoot()
@@ -95,7 +95,7 @@ public interface JDTPackageFragment extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Compilation Units</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Compilation Units</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTPackageFragment_CompilationUnits()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTCompilationUnit#getPackageFragment

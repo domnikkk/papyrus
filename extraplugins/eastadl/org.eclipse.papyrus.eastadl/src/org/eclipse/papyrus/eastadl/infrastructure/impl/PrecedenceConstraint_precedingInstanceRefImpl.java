@@ -33,7 +33,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	 * The cached value of the '{@link #getFunctionPrototype_target() <em>Function Prototype target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionPrototype_target()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	 * The cached value of the '{@link #getFunctionPrototype_context() <em>Function Prototype context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFunctionPrototype_context()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PrecedenceConstraint_precedingInstanceRefImpl() {
@@ -64,7 +64,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FunctionPrototype basicGetFunctionPrototype_target() {
@@ -105,7 +105,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -175,7 +175,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class PrecedenceConstraint_precedingInstanceRefImpl extends InstanceRefIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

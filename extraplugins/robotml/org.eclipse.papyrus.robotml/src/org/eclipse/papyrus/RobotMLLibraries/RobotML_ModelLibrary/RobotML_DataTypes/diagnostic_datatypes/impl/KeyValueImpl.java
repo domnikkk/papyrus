@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.KeyValue;
 
@@ -31,7 +28,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKey()
 	 * @generated
 	 * @ordered
@@ -42,7 +39,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKey()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -74,7 +71,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected KeyValueImpl() {
@@ -84,7 +81,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +92,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getKey() {
@@ -105,7 +102,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setKey(String newKey) {
@@ -119,7 +116,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getValue() {
@@ -129,7 +126,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(String newValue) {
@@ -143,7 +140,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +157,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +176,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +195,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +212,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

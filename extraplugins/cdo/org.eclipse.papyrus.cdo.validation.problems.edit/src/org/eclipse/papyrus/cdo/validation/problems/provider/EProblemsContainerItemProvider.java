@@ -40,7 +40,7 @@ import org.eclipse.papyrus.cdo.validation.problems.edit.ProblemTypeItemProviderA
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.cdo.validation.problems.EProblemsContainer} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EProblemsContainerItemProvider extends ProblemTypeItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
@@ -88,7 +88,7 @@ public class EProblemsContainerItemProvider extends ProblemTypeItemProviderAdapt
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class EProblemsContainerItemProvider extends ProblemTypeItemProviderAdapt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class EProblemsContainerItemProvider extends ProblemTypeItemProviderAdapt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class EProblemsContainerItemProvider extends ProblemTypeItemProviderAdapt
 	 * This returns EProblemsContainer.gif.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class EProblemsContainerItemProvider extends ProblemTypeItemProviderAdapt
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class EProblemsContainerItemProvider extends ProblemTypeItemProviderAdapt
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

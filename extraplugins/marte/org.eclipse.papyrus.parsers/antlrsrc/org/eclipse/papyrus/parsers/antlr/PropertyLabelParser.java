@@ -2,20 +2,39 @@
 
 package org.eclipse.papyrus.parsers.antlr;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Vector;
 
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.EarlyExitException;
+import org.antlr.runtime.IntStream;
+import org.antlr.runtime.MismatchedSetException;
+import org.antlr.runtime.MismatchedTokenException;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.ParserRuleReturnScope;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
+import org.antlr.runtime.debug.DebugEventListener;
+import org.antlr.runtime.debug.DebugEventSocketProxy;
+import org.antlr.runtime.debug.DebugParser;
+import org.antlr.runtime.debug.DebugTokenStream;
+import org.antlr.runtime.debug.DebugTreeAdaptor;
+import org.antlr.runtime.tree.CommonTreeAdaptor;
+import org.antlr.runtime.tree.TreeAdaptor;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.parsers.texteditor.propertylabel.IContext;
 import org.eclipse.papyrus.parsers.util.IErrorReporter;
-import org.eclipse.papyrus.parsers.util.NameException;
+import org.eclipse.papyrus.parsers.util.Messages;
 import org.eclipse.papyrus.parsers.util.MultiplicityException;
+import org.eclipse.papyrus.parsers.util.NameException;
 import org.eclipse.papyrus.parsers.util.TypeRecognitionException;
 import org.eclipse.papyrus.parsers.util.UnboundTemplateRecognitionException;
-import org.eclipse.papyrus.parsers.util.Messages;
 import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
 import org.eclipse.papyrus.uml.tools.utils.PropertyUtil;
 import org.eclipse.papyrus.uml.tools.utils.TemplateSignatureUtil;
@@ -24,14 +43,6 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.VisibilityKind;
-
-import org.antlr.runtime.*;
-
-import org.antlr.runtime.debug.*;
-
-import java.io.IOException;
-
-import org.antlr.runtime.tree.*;
 
 public class PropertyLabelParser extends DebugParser {
 	public static final String[] tokenNames = new String[] {
@@ -344,7 +355,7 @@ public class PropertyLabelParser extends DebugParser {
 
 	/**
 	 * Find a type given its name and a context to find it.
-	 * 
+	 *
 	 * @param name
 	 *            the name of the type
 	 * @return the type found or <code>null</code> if the element was not found.
@@ -354,7 +365,7 @@ public class PropertyLabelParser extends DebugParser {
 	 * Type type = null;
 	 * int numTypes = 0;
 	 * org.eclipse.uml2.uml.Package contextPackage = context.getNearestPackage();
-	 * 
+	 *
 	 * // seek the package in which the element should be found...
 	 * Iterator it = contextPackage.getMembers().iterator();
 	 * while( it.hasNext() ) {
@@ -380,20 +391,20 @@ public class PropertyLabelParser extends DebugParser {
 	 * }
 	 * }
 	 * }
-	 * 
+	 *
 	 * if(numTypes == 0) {
 	 * throw new RecognitionException("Type "+name+" not found for property "+property.getName());
 	 * } else if(numTypes > 1) {
 	 * debug("There are "+numTypes+" types with the same name....");
 	 * }
-	 * 
+	 *
 	 * return type;
 	 * }
 	 */
 
 	/**
 	 * Find a subsetted property given its name and a context to find it.
-	 * 
+	 *
 	 * @param name
 	 *            the name of the property
 	 * @return the property found or <code>null</code> if the element was not found.
@@ -445,7 +456,7 @@ public class PropertyLabelParser extends DebugParser {
 
 	/**
 	 * Find a redefined property given its name and a context to find it.
-	 * 
+	 *
 	 * @param name
 	 *            the name of the property
 	 * @return the property found or <code>null</code> if the element was not found.

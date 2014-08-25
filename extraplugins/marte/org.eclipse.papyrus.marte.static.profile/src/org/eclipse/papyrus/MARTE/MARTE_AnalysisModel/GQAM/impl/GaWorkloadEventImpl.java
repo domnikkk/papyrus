@@ -49,7 +49,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The default value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPattern()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPattern()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getGenerator() <em>Generator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenerator()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getTrace() <em>Trace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTrace()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getTimedEvent() <em>Timed Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTimedEvent()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GaWorkloadEventImpl() {
@@ -135,7 +135,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaWorkloadGenerator basicGetGenerator() {
@@ -202,7 +202,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaEventTrace basicGetTrace() {
@@ -247,7 +247,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +262,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GaScenario basicGetEffect() {
@@ -292,7 +292,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +327,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TimeEvent basicGetTimedEvent() {
@@ -337,7 +337,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -382,7 +382,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -397,7 +397,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -437,7 +437,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -468,7 +468,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -499,7 +499,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -524,7 +524,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

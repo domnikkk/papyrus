@@ -4,13 +4,10 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage;
@@ -34,7 +31,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getLayers() <em>Layers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayers()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getNbLayer() <em>Nb Layer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbLayer()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getNbLayer() <em>Nb Layer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNbLayer()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MultiLayerLidarScanImpl() {
@@ -76,7 +73,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +84,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtentedLidarScan getLayers() {
@@ -97,7 +94,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayers(ExtentedLidarScan newLayers, NotificationChain msgs) {
@@ -117,7 +114,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLayers(ExtentedLidarScan newLayers) {
@@ -142,7 +139,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public char getNbLayer() {
@@ -152,7 +149,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setNbLayer(char newNbLayer) {
@@ -166,7 +163,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +178,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +195,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +214,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +233,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +250,7 @@ public class MultiLayerLidarScanImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

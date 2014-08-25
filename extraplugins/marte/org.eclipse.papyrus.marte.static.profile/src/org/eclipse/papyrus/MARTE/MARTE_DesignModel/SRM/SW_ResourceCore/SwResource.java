@@ -48,7 +48,7 @@ public interface SwResource extends Resource {
 	 * If the meaning of the '<em>Identifier Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Identifier Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_ResourceCorePackage#getSwResource_IdentifierElements()
 	 * @model ordered="false"
@@ -64,7 +64,7 @@ public interface SwResource extends Resource {
 	 * If the meaning of the '<em>State Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>State Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_ResourceCorePackage#getSwResource_StateElements()
 	 * @model ordered="false"
@@ -79,7 +79,7 @@ public interface SwResource extends Resource {
 	 * If the meaning of the '<em>Memory Size Footprint</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Memory Size Footprint</em>' reference.
 	 * @see #setMemorySizeFootprint(TypedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_ResourceCorePackage#getSwResource_MemorySizeFootprint()
@@ -92,7 +92,7 @@ public interface SwResource extends Resource {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SwResource#getMemorySizeFootprint <em>Memory Size Footprint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Memory Size Footprint</em>' reference.
 	 * @see #getMemorySizeFootprint()
@@ -108,7 +108,7 @@ public interface SwResource extends Resource {
 	 * If the meaning of the '<em>Create Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Create Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_ResourceCorePackage#getSwResource_CreateServices()
 	 * @model ordered="false"
@@ -124,7 +124,7 @@ public interface SwResource extends Resource {
 	 * If the meaning of the '<em>Delete Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Delete Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_ResourceCorePackage#getSwResource_DeleteServices()
 	 * @model ordered="false"
@@ -140,7 +140,7 @@ public interface SwResource extends Resource {
 	 * If the meaning of the '<em>Initialize Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Initialize Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_ResourceCorePackage#getSwResource_InitializeServices()
 	 * @model ordered="false"

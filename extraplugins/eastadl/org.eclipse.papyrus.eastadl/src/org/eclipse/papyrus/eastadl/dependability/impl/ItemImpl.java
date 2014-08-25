@@ -50,7 +50,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	 * The default value of the '{@link #getDevelopmentCategory() <em>Development Category</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDevelopmentCategory()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	 * The cached value of the '{@link #getDevelopmentCategory() <em>Development Category</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDevelopmentCategory()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	 * The cached value of the '{@link #getVehicleFeature() <em>Vehicle Feature</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVehicleFeature()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ItemImpl() {
@@ -103,7 +103,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -168,7 +168,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -209,7 +209,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +286,7 @@ public class ItemImpl extends TraceableSpecificationImpl implements Item {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

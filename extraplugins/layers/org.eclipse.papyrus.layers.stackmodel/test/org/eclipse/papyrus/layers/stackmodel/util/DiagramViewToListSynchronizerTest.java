@@ -14,17 +14,20 @@
 
 package org.eclipse.papyrus.layers.stackmodel.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.Class;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.eclipse.uml2.uml.Class;
 
 import com.google.common.collect.Lists;
 

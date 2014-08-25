@@ -7,18 +7,15 @@
 package org.eclipse.papyrus.java.profile.java.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.eclipse.uml2.uml.edit.UMLEditPlugin;
 
 /**
  * This is the central singleton for the Java edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public final class JavaEditPlugin extends EMFPlugin {
@@ -26,7 +23,7 @@ public final class JavaEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final JavaEditPlugin INSTANCE = new JavaEditPlugin();
@@ -35,7 +32,7 @@ public final class JavaEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -44,7 +41,7 @@ public final class JavaEditPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaEditPlugin() {
@@ -58,7 +55,7 @@ public final class JavaEditPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -71,7 +68,7 @@ public final class JavaEditPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -83,7 +80,7 @@ public final class JavaEditPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -91,7 +88,7 @@ public final class JavaEditPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public Implementation() {

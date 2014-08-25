@@ -39,7 +39,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The default value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The cached value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The default value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	 * The cached value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SaCommHostImpl() {
@@ -92,7 +92,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class SaCommHostImpl extends GaCommHostImpl implements SaCommHost {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

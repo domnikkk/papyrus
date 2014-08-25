@@ -256,7 +256,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#addBreakpoint()
 	 */
 	public abstract void addBreakpoint(MokaBreakpoint breakpoint);
@@ -277,7 +277,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#removeBreakpoint()
 	 */
 	public abstract void removeBreakpoint(MokaBreakpoint breakpoint);
@@ -297,7 +297,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#removeBreakpoint()
 	 */
 	public abstract void disconnect();
@@ -309,7 +309,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#removeBreakpoint()
 	 */
 	public IMemoryBlock getMemoryBlock(long startAddress, long length) {
@@ -333,7 +333,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#resume(Resume_Request request)
 	 */
 	public abstract void resume(Resume_Request request);
@@ -354,7 +354,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#suspend(Suspend_Request request)
 	 */
 	public abstract void suspend(Suspend_Request request);
@@ -397,7 +397,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#getStackFrames(IThread thread)
 	 */
 	public abstract IStackFrame[] getStackFrames(IThread thread);
@@ -417,7 +417,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#getVariables(IStackFrame stackFrame)
 	 */
 	public IVariable[] getVariables(IDebugElement stackFrameOrValue) {
@@ -427,7 +427,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#getRegisterGroups(IStackFrame stackFrame)
 	 */
 	public IRegisterGroup[] getRegisterGroups(IStackFrame stackFrame) {
@@ -450,7 +450,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#getValue(IVariable variable)
 	 */
 	public IValue getValue(IVariable variable) {
@@ -477,7 +477,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#getReferenceTypeName(IDebugElement debugElement)
 	 */
 	public String getReferenceTypeName(IDebugElement debugElement) {
@@ -500,7 +500,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#getValueString(IValue value)
 	 */
 	public String getValueString(IValue value) {

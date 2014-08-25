@@ -15,6 +15,7 @@ package org.eclipse.papyrus.layers.configmodel.layersconfig.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -29,7 +30,7 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class OperatorConfigItemProvider
@@ -44,7 +45,7 @@ public class OperatorConfigItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OperatorConfigItemProvider(AdapterFactory adapterFactory) {
@@ -55,7 +56,7 @@ public class OperatorConfigItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +72,7 @@ public class OperatorConfigItemProvider
 	 * This returns OperatorConfig.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +84,7 @@ public class OperatorConfigItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +100,7 @@ public class OperatorConfigItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +114,7 @@ public class OperatorConfigItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

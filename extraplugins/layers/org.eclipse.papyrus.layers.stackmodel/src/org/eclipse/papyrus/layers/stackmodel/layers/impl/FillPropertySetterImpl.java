@@ -34,7 +34,7 @@ public class FillPropertySetterImpl extends PropertySetterImpl implements FillPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected FillPropertySetterImpl() {
@@ -46,7 +46,7 @@ public class FillPropertySetterImpl extends PropertySetterImpl implements FillPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -56,7 +56,7 @@ public class FillPropertySetterImpl extends PropertySetterImpl implements FillPr
 
 	/**
 	 * Set the property of the specified view.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view

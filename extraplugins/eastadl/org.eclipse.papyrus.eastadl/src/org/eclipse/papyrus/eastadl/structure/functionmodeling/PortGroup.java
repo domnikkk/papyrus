@@ -58,7 +58,7 @@ public interface PortGroup extends EAElement {
 	 * The grouped ports.
 	 * {derived from UML::EncapsulatedClassifier::ownedPort} when this stereotype is applied on a Class. When the stereotype is applied on a Port the value is derived from the ports in the type.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getPortGroup_Port()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -73,7 +73,7 @@ public interface PortGroup extends EAElement {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getPortGroup_Base_Class()
@@ -86,7 +86,7 @@ public interface PortGroup extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
@@ -101,7 +101,7 @@ public interface PortGroup extends EAElement {
 	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getPortGroup_Base_Port()
@@ -114,7 +114,7 @@ public interface PortGroup extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.PortGroup#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()
@@ -130,7 +130,7 @@ public interface PortGroup extends EAElement {
 	 * If the meaning of the '<em>Port Group</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Port Group</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPackage#getPortGroup_PortGroup()
 	 * @model ordered="false"

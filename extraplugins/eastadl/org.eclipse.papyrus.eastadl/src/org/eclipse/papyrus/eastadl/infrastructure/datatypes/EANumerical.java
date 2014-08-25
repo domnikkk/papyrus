@@ -35,7 +35,7 @@ public interface EANumerical extends EADatatype {
 	 * If the meaning of the '<em>Max</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Max</em>' attribute.
 	 * @see #setMax(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEANumerical_Max()
@@ -48,7 +48,7 @@ public interface EANumerical extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Max</em>' attribute.
 	 * @see #getMax()
@@ -63,7 +63,7 @@ public interface EANumerical extends EADatatype {
 	 * If the meaning of the '<em>Min</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Min</em>' attribute.
 	 * @see #setMin(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEANumerical_Min()
@@ -76,7 +76,7 @@ public interface EANumerical extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Min</em>' attribute.
 	 * @see #getMin()
@@ -91,7 +91,7 @@ public interface EANumerical extends EADatatype {
 	 * If the meaning of the '<em>Unit</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unit</em>' reference.
 	 * @see #setUnit(Unit)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getEANumerical_Unit()
@@ -104,7 +104,7 @@ public interface EANumerical extends EADatatype {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.EANumerical#getUnit <em>Unit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Unit</em>' reference.
 	 * @see #getUnit()

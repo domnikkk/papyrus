@@ -65,7 +65,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Start</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Start</em>' reference.
 	 * @see #setStart(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getExecutionTimeConstraint_Start()
@@ -78,7 +78,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ExecutionTimeConstraint#getStart <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Start</em>' reference.
 	 * @see #getStart()
@@ -93,7 +93,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Stop</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stop</em>' reference.
 	 * @see #setStop(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getExecutionTimeConstraint_Stop()
@@ -106,7 +106,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ExecutionTimeConstraint#getStop <em>Stop</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Stop</em>' reference.
 	 * @see #getStop()
@@ -122,7 +122,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Preemption</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Preemption</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getExecutionTimeConstraint_Preemption()
 	 * @model
@@ -138,7 +138,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Resume</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Resume</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getExecutionTimeConstraint_Resume()
 	 * @model ordered="false"
@@ -153,7 +153,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Upper</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Upper</em>' reference.
 	 * @see #setUpper(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getExecutionTimeConstraint_Upper()
@@ -166,7 +166,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ExecutionTimeConstraint#getUpper <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Upper</em>' reference.
 	 * @see #getUpper()
@@ -181,7 +181,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * If the meaning of the '<em>Lower</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lower</em>' reference.
 	 * @see #setLower(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getExecutionTimeConstraint_Lower()
@@ -194,7 +194,7 @@ public interface ExecutionTimeConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.ExecutionTimeConstraint#getLower <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Lower</em>' reference.
 	 * @see #getLower()

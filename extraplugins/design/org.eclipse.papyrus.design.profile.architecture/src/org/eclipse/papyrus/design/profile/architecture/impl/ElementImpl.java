@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.design.profile.architecture.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage;
 import org.eclipse.papyrus.design.profile.architecture.Element;
 
@@ -35,7 +32,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -46,7 +43,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementImpl() {
@@ -88,7 +85,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +96,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +107,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +122,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +133,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +148,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +165,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +184,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +203,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +220,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -42,7 +42,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	 * The cached value of the '{@link #getBase_AnyReceiveEvent() <em>Base Any Receive Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_AnyReceiveEvent()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassifier()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataEventImpl() {
@@ -73,7 +73,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AnyReceiveEvent basicGetBase_AnyReceiveEvent() {
@@ -114,7 +114,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Classifier basicGetClassifier() {
@@ -159,7 +159,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class DataEventImpl extends EObjectImpl implements DataEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

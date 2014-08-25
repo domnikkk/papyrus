@@ -51,7 +51,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Is Atomic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Atomic</em>' attribute.
 	 * @see #setIsAtomic(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_IsAtomic()
@@ -64,7 +64,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getIsAtomic <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Atomic</em>' attribute.
 	 * @see #getIsAtomic()
@@ -79,7 +79,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Block T</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Block T</em>' attribute.
 	 * @see #setBlockT(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_BlockT()
@@ -92,7 +92,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getBlockT <em>Block T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Block T</em>' attribute.
 	 * @see #getBlockT()
@@ -108,7 +108,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Rep</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rep</em>' attribute.
 	 * @see #setRep(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_Rep()
@@ -121,7 +121,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getRep <em>Rep</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Rep</em>' attribute.
 	 * @see #getRep()
@@ -137,7 +137,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Prob</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Prob</em>' attribute.
 	 * @see #setProb(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_Prob()
@@ -150,7 +150,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getProb <em>Prob</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Prob</em>' attribute.
 	 * @see #getProb()
@@ -165,7 +165,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Priority</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_Priority()
@@ -178,7 +178,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getPriority <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Priority</em>' attribute.
 	 * @see #getPriority()
@@ -193,7 +193,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Concur Res</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Concur Res</em>' reference.
 	 * @see #setConcurRes(SchedulableResource)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_ConcurRes()
@@ -206,7 +206,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getConcurRes <em>Concur Res</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Concur Res</em>' reference.
 	 * @see #getConcurRes()
@@ -221,7 +221,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Host</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Host</em>' reference.
 	 * @see #setHost(GaExecHost)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_Host()
@@ -234,7 +234,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getHost <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Host</em>' reference.
 	 * @see #getHost()
@@ -250,7 +250,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Serv Demand</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Serv Demand</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_ServDemand()
 	 * @model
@@ -266,7 +266,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Serv Count</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Serv Count</em>' attribute list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_ServCount()
 	 * @model dataType="org.eclipse.papyrus.MARTE_Library.BasicNFP_Types.NFP_Real"
@@ -281,7 +281,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Self Delay</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Self Delay</em>' attribute.
 	 * @see #setSelfDelay(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_SelfDelay()
@@ -294,7 +294,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getSelfDelay <em>Self Delay</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Self Delay</em>' attribute.
 	 * @see #getSelfDelay()
@@ -310,7 +310,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Scenario</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Scenario</em>' reference.
 	 * @see #setScenario(GaScenario)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_Scenario()
@@ -324,7 +324,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getScenario <em>Scenario</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Scenario</em>' reference.
 	 * @see #getScenario()
@@ -340,7 +340,7 @@ public interface GaStep extends GaScenario {
 	 * If the meaning of the '<em>Child Scenario</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Child Scenario</em>' reference.
 	 * @see #setChildScenario(GaScenario)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaStep_ChildScenario()
@@ -354,7 +354,7 @@ public interface GaStep extends GaScenario {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep#getChildScenario <em>Child Scenario</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Child Scenario</em>' reference.
 	 * @see #getChildScenario()
