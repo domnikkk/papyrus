@@ -103,6 +103,12 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 		boolean result = super.hasWantedType(eobject, wantedType);
 		if (result) {
 			if (eobject instanceof Association) {
+				Association association = (Association) eobject;
+				// Skip incomplete associations: it can't be a duplicate of the current link (Which has a source and a target)
+				if (association.getMemberEnds().size() < 2) {
+					return false;
+				}
+
 				final AggregationKind current = getAssociationAggregationKind((Association) eobject);
 				if (current == AggregationKind.NONE_LITERAL) {
 					if (SysMLElementTypes.ASSOCIATION_NONE.equals(current) || SysMLElementTypes.ASSOCIATION_NONE_DIRECTED.equals(wantedType)) {
@@ -132,8 +138,14 @@ public class SysMLCreateOrShowExistingElementHelper extends CreateOrShowExisting
 	 *         the association kind for the association
 	 */
 	private static final AggregationKind getAssociationAggregationKind(final Association association) {
+		// Incomplete associations
+		if (association.getMemberEnds().size() < 2) {
+			return AggregationKind.NONE_LITERAL;
+		}
+
 		final Property source = association.getMemberEnds().get(0);
 		final Property target = association.getMemberEnds().get(1);
+
 		if (source.getAggregation() == AggregationKind.NONE_LITERAL && target.getAggregation() == AggregationKind.NONE_LITERAL) {
 			return AggregationKind.NONE_LITERAL;
 		} else if ((source.getAggregation() == AggregationKind.COMPOSITE_LITERAL) || (target.getAggregation() == AggregationKind.COMPOSITE_LITERAL)) {
