@@ -13,6 +13,7 @@
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 434635
  *  Christian W. Damus (CEA) - bug 437217
+ *  Christian W. Damus (CEA) - bug 441857
  *
  *****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer;
@@ -734,44 +735,74 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		scheduleRefresh();
 	}
 
-	private boolean needsRefresh = false;
+	private Runnable refreshRunnable;
 
 	/**
 	 * Thread-safe
 	 * Schedule a runnable which will refresh the view if necessary
 	 */
 	protected void scheduleRefresh() {
+		final Runnable schedule;
+
 		synchronized (this) {
-			needsRefresh = true;
+			if (refreshRunnable == null) {
+				// No refresh is yet pending. Schedule one
+				schedule = createRefreshRunnable();
+				refreshRunnable = schedule;
+			} else {
+				schedule = null;
+			}
 		}
 
-		getControl().getDisplay().asyncExec(new Runnable() {
+		if (schedule != null) {
+			Control control = getControl();
+			Display display = ((control == null) || control.isDisposed()) ? null : control.getDisplay();
 
-			/**
-			 * {@inheritDoc}
-			 */
+			if (display != null) {
+				// Don't need to schedule a refresh if we have no control or it's disposed
+				display.asyncExec(schedule);
+			}
+		}
+	}
+
+	private Runnable createRefreshRunnable() {
+		return new Runnable() {
+
 			public void run() {
+				// Only run if I'm still pending
 				synchronized (ModelExplorerView.this) {
-					if (!needsRefresh) {
+					if (refreshRunnable != this) {
 						return;
 					}
-					needsRefresh = false;
+
+					refreshRunnable = null;
 				}
+
 				refreshInUIThread();
 			}
-		});
+		};
 	}
 
 	/**
-	 * Thread-safe method to refresh the ModelExplorer view, synchronously
+	 * Thread-safe method to hurry up a pending refresh of the Model Explorer view (if any), synchronously.
+	 * When this method returns, then either the explorer has been refreshed or it doesn't need to be.
 	 */
 	protected void syncRefresh() {
-		getControl().getDisplay().syncExec(new Runnable() {
+		final Runnable pending;
 
-			public void run() {
-				refreshInUIThread();
+		synchronized (this) {
+			pending = refreshRunnable;
+		}
+
+		if (pending != null) {
+			Control control = getControl();
+			Display display = ((control == null) || control.isDisposed()) ? null : control.getDisplay();
+
+			if (display != null) {
+				// Don't need to execute a refresh if we have no control or it's disposed
+				display.syncExec(pending);
 			}
-		});
+		}
 	}
 
 	/**
@@ -833,7 +864,15 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		saveAndDirtyService.addInputChangedListener(editorInputChangedListener);
 
 		if (this.getCommonViewer() != null) {
-			syncRefresh();
+			// Force a refresh
+			Display display = getControl().getDisplay();
+			if (display == Display.getCurrent()) {
+				refreshInUIThread();
+			} else {
+				// Hmm. We should be on the UI thread
+				Activator.log.warn("Model Explorer activated on a non-UI thread."); //$NON-NLS-1$
+				scheduleRefresh();
+			}
 		}
 	}
 
@@ -1056,11 +1095,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				 * in the good order. This is a lot faster than going through the whole tree
 				 * using getChildren of the ContentProvider since our Viewer uses a Hashtable
 				 * to keep track of the revealed elements.
-				 *
+				 * 
 				 * However we need to use a dedicated MatchingItem to do the matching,
 				 * and a specific comparer in our viewer so than the equals of MatchingItem is
 				 * used in priority.
-				 *
+				 * 
 				 * Please refer to MatchingItem for more infos.
 				 */
 				EObject previousParent = null;
